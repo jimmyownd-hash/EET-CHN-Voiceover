@@ -380,7 +380,8 @@ std::string translateLocked(Overrides &data, const std::string &text, int depth)
     }
 
     for (const Separator &separator :
-         {Separator{" · ", " · "}, Separator{", ", "、"}, Separator{" / ", " / "}, Separator{" and ", "和"}})
+         {Separator{"\n", "\n"}, Separator{" - ", " - "}, Separator{" · ", " · "}, Separator{", ", "、"},
+          Separator{" / ", " / "}, Separator{" and ", "和"}})
     {
         if (depth == 0 && std::string(separator.find) == " and ")
         {
@@ -427,7 +428,7 @@ std::string translateLocked(Overrides &data, const std::string &text, int depth)
                 }
             }
 
-            const std::string translated = piece.size() <= 48 ? translateLocked(data, piece, depth + 1) : piece;
+            const std::string translated = piece.size() <= (find == "\n" ? 400 : 48) ? translateLocked(data, piece, depth + 1) : piece;
             changed = changed || translated != piece;
             result += (result.empty() && start == 0 ? "" : separator.join) + translated + tail;
             start = end + find.size();
