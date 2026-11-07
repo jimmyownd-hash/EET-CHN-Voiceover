@@ -1,0 +1,125 @@
+#pragma once
+
+#include "game/events/ScriptedEventProgram.h"
+#include "game/outdoor/OutdoorGameView.h"
+
+#include <bgfx/bgfx.h>
+#include <bx/math.h>
+
+#include <cstddef>
+#include <string>
+
+namespace OpenYAMM::Game
+{
+class ViewFrustum;
+
+class OutdoorBillboardRenderer
+{
+public:
+    static void initializeBillboardResources(OutdoorGameView &view);
+    static void queueEventBillboardTextureWarmup(OutdoorGameView &view, const ScriptedEventProgram &eventProgram);
+    static void preloadPendingLevelSpriteTextures(OutdoorGameView &view);
+    static void preloadPendingSpriteFrameWarmupsParallel(OutdoorGameView &view);
+    static void processPendingSpriteFrameWarmups(OutdoorGameView &view, size_t maxSpriteFrames);
+    static void prepareKeyboardInteractionBillboardCache(
+        OutdoorGameView &view,
+        int viewWidth,
+        int viewHeight,
+        const float *pViewMatrix,
+        const float *pProjectionMatrix,
+        const bx::Vec3 &cameraPosition);
+    static const OutdoorGameView::BillboardTextureHandle *ensureSpriteBillboardTexture(
+        OutdoorGameView &view,
+        const std::string &textureName,
+        int16_t paletteId,
+        const char *pLoadPhase = "render");
+    static void invalidateRenderAssets(OutdoorGameView &view);
+    // Decoration billboard the context action points at and its outline colour (sprites and decoration models).
+    static std::optional<std::pair<size_t, uint32_t>> highlightedDecoration(const OutdoorGameView &view);
+    static void destroyRenderAssets(OutdoorGameView &view);
+    static void renderDecorationBillboards(
+        OutdoorGameView &view,
+        uint16_t viewId,
+        uint16_t viewWidth,
+        uint16_t viewHeight,
+        const float *pViewMatrix,
+        const bx::Vec3 &cameraPosition);
+    static void renderActorPreviewBillboards(
+        OutdoorGameView &view,
+        uint16_t viewId,
+        const float *pViewMatrix,
+        const float *pProjectionMatrix,
+        const bx::Vec3 &cameraPosition,
+        const ViewFrustum &frustum,
+        const WaterRenderer::Reflection *pReflection = nullptr);
+    // Hover and context-action outlines of the item models on the ground.
+    static void outlineRuntimeWorldItems(OutdoorGameView &view, const float *pViewMatrix);
+    static void renderRuntimeProjectiles(
+        OutdoorGameView &view,
+        uint16_t viewId,
+        const float *pViewMatrix,
+        const bx::Vec3 &cameraPosition);
+    static void renderFxContactShadows(
+        OutdoorGameView &view,
+        uint16_t viewId);
+    static void renderFxSegmentProjectiles(
+        OutdoorGameView &view,
+        uint16_t viewId,
+        const float *pViewMatrix);
+    static void renderSpriteObjectBillboards(
+        OutdoorGameView &view,
+        uint16_t viewId,
+        const float *pViewMatrix,
+        const bx::Vec3 &cameraPosition);
+
+private:
+    static const OutdoorGameView::BillboardTextureHandle *restoreBillboardTexture(
+        OutdoorGameView &view, const std::string &name, int16_t palette, const std::string &resourceIdentity = {});
+    static bool uploadBillboardTexture(OutdoorGameView &view, const OutdoorBitmapTexture &texture);
+    static void appendWorldQuadVertices(
+        std::vector<OutdoorGameView::TerrainVertex> &vertices,
+        const bx::Vec3 &center,
+        const bx::Vec3 &right,
+        const bx::Vec3 &up,
+        uint32_t colorAbgr);
+    static void submitColoredVertices(
+        OutdoorGameView &view,
+        uint16_t viewId,
+        const std::vector<OutdoorGameView::TerrainVertex> &vertices,
+        uint64_t renderState);
+    static void appendLitBillboardVertices(
+        std::vector<OutdoorGameView::LitBillboardVertex> &vertices,
+        const bx::Vec3 &center,
+        const bx::Vec3 &right,
+        const bx::Vec3 &up,
+        float u0,
+        float u1,
+        uint32_t lightContributionAbgr,
+        float hitFlash = 0.0f);
+    static void writeLitBillboardVertices(
+        OutdoorGameView::LitBillboardVertex *pVertices,
+        const bx::Vec3 &center,
+        const bx::Vec3 &right,
+        const bx::Vec3 &up,
+        float u0,
+        float u1,
+        uint32_t lightContributionAbgr,
+        float hitFlash = 0.0f);
+    static uint32_t computeBillboardLightContributionAbgr(
+        OutdoorGameView &view,
+        float x,
+        float y,
+        float z);
+    static std::optional<OutdoorGameView::InspectHit> resolveHoveredOutlineInspectHit(
+        OutdoorGameView &view,
+        const float *pViewMatrix);
+    static void applyBillboardAmbientUniform(OutdoorGameView &view);
+    static void applyBillboardOverrideColorUniform(OutdoorGameView &view, uint32_t colorAbgr, float alpha);
+    static void applyBillboardOutlineParamsUniform(
+        OutdoorGameView &view,
+        float texelWidth,
+        float texelHeight,
+        float thicknessPixels);
+    static void applyBillboardFogUniforms(OutdoorGameView &view, float renderDistance);
+};
+} // namespace OpenYAMM::Game

@@ -1,0 +1,232 @@
+#pragma once
+
+#include "engine/AssetFileSystem.h"
+#include "engine/FontAsset.h"
+#include "game/ui/GameplayHudCommon.h"
+#include "game/ui/IScreen.h"
+
+#include <bgfx/bgfx.h>
+
+#include <array>
+#include <cstdint>
+#include <optional>
+#include <string>
+#include <unordered_map>
+#include <vector>
+
+namespace OpenYAMM::Game
+{
+class UiLayoutManager;
+
+class MenuScreenBase : public IScreen
+{
+public:
+    struct Rect
+    {
+        float x = 0.0f;
+        float y = 0.0f;
+        float width = 0.0f;
+        float height = 0.0f;
+    };
+
+    struct SourceRect
+    {
+        float x = 0.0f;
+        float y = 0.0f;
+        float width = 0.0f;
+        float height = 0.0f;
+    };
+
+    struct TextureSize
+    {
+        float width = 0.0f;
+        float height = 0.0f;
+    };
+
+    struct TexturePixelsBgra
+    {
+        int physicalWidth = 0;
+        int physicalHeight = 0;
+        int logicalWidth = 0;
+        int logicalHeight = 0;
+        std::vector<uint8_t> pixels;
+    };
+
+    struct ButtonVisualSet
+    {
+        std::string defaultTextureName;
+        std::string highlightedTextureName;
+        std::string pressedTextureName;
+    };
+
+    struct ButtonState
+    {
+        bool hovered = false;
+        bool pressed = false;
+        bool clicked = false;
+    };
+
+    explicit MenuScreenBase(const Engine::AssetFileSystem &assetFileSystem);
+    ~MenuScreenBase() override;
+
+    static void shutdownSharedResources();
+
+    void renderFrame(
+        int width,
+        int height,
+        const GameplayInputFrame &inputFrame,
+        float deltaSeconds) override;
+
+protected:
+    const Engine::AssetFileSystem &assetFileSystem() const;
+    int frameWidth() const;
+    int frameHeight() const;
+    float mouseX() const;
+    float mouseY() const;
+    float mouseWheelDelta() const;
+    bool leftMouseDown() const;
+    bool leftMouseJustPressed() const;
+    bool leftMouseJustReleased() const;
+    bool rightMouseDown() const;
+    bool rightMouseJustPressed() const;
+    bool rightMouseJustReleased() const;
+    bool isScancodeHeld(SDL_Scancode scancode) const;
+    const GameplayInputFrame &inputFrame() const;
+
+    void drawTexture(const std::string &textureName, const Rect &rect);
+    void drawTextureRegion(const std::string &textureName, const SourceRect &sourceRect, const Rect &rect);
+    void drawTextureColor(const std::string &textureName, const Rect &rect, uint32_t colorAbgr);
+    void drawPixelsBgra(
+        const std::string &cacheKey,
+        int width,
+        int height,
+        const std::vector<uint8_t> &pixelsBgra,
+        const Rect &rect);
+    void drawTextureHandle(
+        bgfx::TextureHandle textureHandle, const Rect &rect, bool flipVertically = false, bool blendAlpha = true);
+    void drawTextureRegionColor(
+        const std::string &textureName,
+        const SourceRect &sourceRect,
+        const Rect &rect,
+        uint32_t colorAbgr,
+        float rotationRadians = 0.0f);
+    std::optional<TextureSize> textureSize(const std::string &textureName);
+    std::optional<TexturePixelsBgra> texturePixelsBgra(const std::string &textureName);
+    bool drawText(
+        const std::string &fontName,
+        const std::string &text,
+        float pixelX,
+        float pixelY,
+        uint32_t colorAbgr = 0xffffffffu,
+        float scale = 1.0f,
+        bool drawShadow = true);
+    float measureTextWidth(const std::string &fontName, const std::string &text, float scale = 1.0f);
+    int fontHeight(const std::string &fontName);
+    void setRenderViewId(uint16_t viewId);
+    void setClearBackground(bool clearBackground);
+    ButtonState drawButton(const ButtonVisualSet &visuals, const Rect &rect);
+    void drawDebugText(int pixelX, int pixelY, uint8_t color, const std::string &text) const;
+    bool hitTest(const Rect &rect) const;
+    void drawViewportSidePanels(const std::string &textureName, float logicalWidth, float logicalHeight);
+    void preloadTexture(const std::string &textureName);
+    void preloadFont(const std::string &fontName);
+    void preloadLayoutAssets(const UiLayoutManager &layoutManager);
+    void setClipRect(const std::optional<Rect> &rect);
+    void drawSolidRect(const Rect &rect, uint32_t colorAbgr);
+    void drawEllipseOutline(const Rect &rect, float thickness, uint32_t colorAbgr);
+
+  private:
+    struct MenuVertex
+    {
+        float x;
+        float y;
+        float z;
+        float u;
+        float v;
+
+        static void init();
+
+        static bgfx::VertexLayout ms_layout;
+    };
+
+    struct TextureHandle
+    {
+        std::string normalizedTextureName;
+        int width = 0;
+        int height = 0;
+        int physicalWidth = 0;
+        int physicalHeight = 0;
+        // Empty for cooked art, whose blocks go straight to the GPU.
+        std::vector<uint8_t> bgraPixels;
+        bgfx::TextureHandle handle = BGFX_INVALID_HANDLE;
+        // Cooked art is padded to whole blocks (and power-of-two sides when mipped); UVs cover the content only.
+        float uScale = 1.0f;
+        float vScale = 1.0f;
+        TextureFilterProfile filterProfile = TextureFilterProfile::Ui;
+    };
+
+    struct DynamicTextureHandle
+    {
+        std::string cacheKey;
+        int width = 0;
+        int height = 0;
+        bgfx::TextureHandle handle = BGFX_INVALID_HANDLE;
+    };
+
+    using FontGlyphMetrics = Engine::FontGlyphMetrics;
+
+    // Fonts are shared with the gameplay HUD (SharedFontCache).
+    using FontHandle = GameplayHudFontData;
+
+    virtual void drawScreen(float deltaSeconds) = 0;
+
+    void ensureRendererInitialized();
+    void destroyRendererResources();
+    const TextureHandle *findTexture(const std::string &textureName) const;
+    const TextureHandle *ensureTexture(const std::string &textureName);
+    const TextureHandle *ensureCookedTexture(
+        const std::string &textureName, const std::string &resolvedPath, const std::vector<uint8_t> &bytes);
+    const FontHandle *findFont(const std::string &fontName, int pixelHeight) const;
+    const FontHandle *ensureFont(const std::string &fontName, int pixelHeight = 0);
+    const FontHandle *ensureTextFont(const std::string &fontName, float &scale);
+    void resizeFontCache(int width, int height);
+    bgfx::TextureHandle ensureDynamicTexture(
+        const std::string &cacheKey,
+        int width,
+        int height,
+        const std::vector<uint8_t> &pixelsBgra);
+    std::optional<std::string> resolveTexturePath(const std::string &textureName);
+    // Releases the shared textures when the mounted assets changed since they were loaded.
+    void releaseTexturesIfAssetsChanged();
+    static void releaseSharedTextures();
+
+    const Engine::AssetFileSystem *m_pAssetFileSystem = nullptr;
+    const GameplayInputFrame *m_pInputFrame = nullptr;
+    int m_frameWidth = 0;
+    int m_frameHeight = 0;
+    float m_mouseX = 0.0f;
+    float m_mouseY = 0.0f;
+    float m_mouseWheelDelta = 0.0f;
+    bool m_leftMouseDown = false;
+    bool m_leftMouseDownPrevious = false;
+    bool m_rightMouseDown = false;
+    bool m_rightMouseDownPrevious = false;
+    bool m_rendererInitialized = false;
+    uint16_t m_renderViewId = 0;
+    bool m_clearBackground = true;
+    std::optional<Rect> m_clipRect;
+    void applyClipRect() const;
+    bgfx::ProgramHandle m_texturedProgramHandle = BGFX_INVALID_HANDLE;
+    bgfx::UniformHandle m_textureUniformHandle = BGFX_INVALID_HANDLE;
+    bgfx::UniformHandle m_tintUniformHandle = BGFX_INVALID_HANDLE;
+    uint32_t m_drawTint = 0xffffffffu;
+    static std::vector<TextureHandle> s_textureHandles;
+    static std::vector<DynamicTextureHandle> s_dynamicTextureHandles;
+    static std::unordered_map<std::string, size_t> s_textureIndexByName;
+    static int s_fontFrameWidth;
+    static int s_fontFrameHeight;
+    static std::unordered_map<std::string, std::unordered_map<std::string, std::string>> s_directoryEntriesByPath;
+    static std::unordered_map<std::string, std::optional<std::string>> s_resolvedTexturePaths;
+    static uint64_t s_assetContentGeneration;
+};
+}

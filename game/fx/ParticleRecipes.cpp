@@ -1,0 +1,3623 @@
+#include "game/fx/ParticleRecipes.h"
+
+#include "game/party/SpellIds.h"
+#include "game/StringUtils.h"
+#include "game/SpriteObjectDefs.h"
+#include "game/fx/FxSharedTypes.h"
+#include "game/fx/ParticleSystem.h"
+
+#include <algorithm>
+#include <array>
+#include <cctype>
+#include <cstring>
+#include <cmath>
+#include <cstdint>
+#include <functional>
+
+namespace OpenYAMM::Game
+{
+namespace FxRecipes
+{
+namespace
+{
+constexpr float ProjectileVisualSizeScale = 1.25f;
+constexpr float ProjectileTrailParticleSizeScale = 1.18f * ProjectileVisualSizeScale;
+constexpr float ProjectileTrailParticleDensityScale = 1.33f;
+constexpr float ProjectileTrailParticleLifetimeScale = 2.05f;
+constexpr float ImpactBurstParticleSizeScale = 1.24f;
+constexpr float ImpactBurstParticleVelocityScale = 1.32f;
+constexpr float ImpactBurstParticleLifetimeScale = 1.18f;
+constexpr float ImpactCloudSpreadScale = 1.35f;
+constexpr float ImpactCloudSizeScale = 1.22f;
+constexpr float LightningTrailParticleSizeScale = 3.0f;
+constexpr float LightningTrailParticleLifetimeScale = 2.0f;
+constexpr float TwoPi = 6.28318530717958647692f;
+constexpr float HangingProjectileTrailLateralOffset = 4.0f;
+constexpr float HangingProjectileTrailInitialLifetimeMinSeconds = 1.0f;
+constexpr float HangingProjectileTrailInitialLifetimeMaxSeconds = 2.0f;
+constexpr float HangingProjectileTrailLifetimeMinSeconds = 0.75f;
+constexpr float HangingProjectileTrailLifetimeMaxSeconds = 1.25f;
+constexpr float ReferenceParticleSizeUnitWorld = 24.0f;
+constexpr float RoundAdditiveParticleRendererScale = 5.04f;
+
+constexpr uint32_t ProjectileFxOrangeyRed = 0xff1e3cffu;
+constexpr uint32_t ProjectileFxMustardYellow = 0xff14c8c8u;
+constexpr uint32_t ProjectileFxMediumGrey = 0xff7e7e7eu;
+constexpr uint32_t ProjectileFxCarolinaBlue = 0xfff1b99eu;
+constexpr uint32_t ProjectileFxGreenTeal = 0xff50b40au;
+constexpr uint32_t ProjectileFxDirtyYellow = 0xff05c8c8u;
+constexpr uint32_t ProjectileFxScienceBlue = 0xffd06200u;
+constexpr uint32_t ProjectileFxCarnabyTan = 0xff0e315cu;
+constexpr uint32_t ProjectileFxAzure = 0xffffaa0au;
+constexpr uint32_t ProjectileFxGreenishBrown = 0xff0f6464u;
+constexpr uint32_t ProjectileFxBloodRed = 0xff0000f0u;
+constexpr uint32_t ProjectileFxRed = 0xff0000ffu;
+constexpr uint32_t ProjectileFxWhite = 0xffffffffu;
+
+constexpr std::array<std::string_view, 64> ProjectileRecipeNames = {
+    "none",
+    "fire_bolt",
+    "fireball",
+    "fire_spike",
+    "immolation",
+    "meteor_shower",
+    "inferno",
+    "incinerate",
+    "starburst",
+    "implosion",
+    "cannonball",
+    "blaster",
+    "sparks",
+    "lightning_bolt",
+    "ice_bolt",
+    "ice_blast_fallout",
+    "poison_spray",
+    "acid_burst",
+    "light_bolt",
+    "sunray",
+    "stun",
+    "rock_blast",
+    "blades",
+    "death_blossom",
+    "harm",
+    "flying_fist",
+    "destroy_undead",
+    "sharpmetal",
+    "dragon_breath",
+    "dark_fire_bolt",
+    "mind_blast",
+    "toxic_cloud",
+    "monster_air_bolt",
+    "monster_earth_bolt",
+    "monster_fire_bolt",
+    "monster_water_bolt",
+    "monster_body_bolt",
+    "monster_mind_bolt",
+    "monster_spirit_bolt",
+    "monster_light_bolt",
+    "monster_dark_bolt",
+    "arrow",
+    "fire_arrow",
+    "deadly_swarm",
+    "mass_distortion",
+    "spirit_lash",
+    "prismatic_light",
+    "souldrinker",
+    "lifedrain",
+    "shrinking_ray",
+    "charm",
+    "blind",
+    "telepathy",
+    "berserk",
+    "enslave",
+    "control_undead",
+    "fire_trap",
+    "elec_trap",
+    "cold_trap",
+    "poison_trap",
+    "armageddon",
+    "generic_particle_trail",
+    "generic_fire_trail",
+    "generic_line_trail",
+};
+
+static_assert(ProjectileRecipeNames.size() == static_cast<size_t>(ProjectileRecipe::GenericLineTrail) + 1);
+
+std::string normalizeRecipeName(std::string_view name)
+{
+    std::string normalized;
+    normalized.reserve(name.size());
+
+    for (char character : name)
+    {
+        const unsigned char unsignedCharacter = static_cast<unsigned char>(character);
+        if (std::isalnum(unsignedCharacter))
+        {
+            normalized.push_back(static_cast<char>(std::tolower(unsignedCharacter)));
+        }
+    }
+
+    return normalized;
+}
+
+struct LayerRecipe
+{
+    uint32_t startColorAbgr = 0xffffffffu;
+    uint32_t endColorAbgr = 0x00ffffffu;
+    uint32_t count = 0;
+    float startOffset = 0.0f;
+    float offsetStep = 0.0f;
+    float lateralSpread = 0.0f;
+    float verticalSpread = 0.0f;
+    float inheritedVelocity = 0.0f;
+    float upwardVelocity = 0.0f;
+    float startSize = 0.0f;
+    float endSize = 0.0f;
+    float lifetimeSeconds = 0.0f;
+    float drag = 0.0f;
+    float rotationJitterRadians = 0.0f;
+    float angularVelocityRadians = 0.0f;
+    float stretch = 1.0f;
+    float fadeInSeconds = 0.0f;
+    FxParticleMotion motion = FxParticleMotion::VelocityTrail;
+    FxParticleBlendMode blendMode = FxParticleBlendMode::Alpha;
+    FxParticleAlignment alignment = FxParticleAlignment::CameraFacing;
+    FxParticleMaterial material = FxParticleMaterial::SoftBlob;
+    FxParticleTag tag = FxParticleTag::Misc;
+};
+
+struct RadialLayerRecipe
+{
+    uint32_t startColorAbgr = 0xffffffffu;
+    uint32_t endColorAbgr = 0x00ffffffu;
+    uint32_t count = 0;
+    float spawnRadius = 0.0f;
+    float verticalSpread = 0.0f;
+    float driftVelocityMin = 0.0f;
+    float driftVelocityMax = 0.0f;
+    float upwardVelocityMin = 0.0f;
+    float upwardVelocityMax = 0.0f;
+    float startSizeMin = 0.0f;
+    float startSizeMax = 0.0f;
+    float endSizeScaleMin = 1.0f;
+    float endSizeScaleMax = 1.0f;
+    float lifetimeSecondsMin = 0.0f;
+    float lifetimeSecondsMax = 0.0f;
+    float drag = 0.0f;
+    float rotationJitterRadians = 0.0f;
+    float angularVelocityRadians = 0.0f;
+    float fadeInSeconds = 0.0f;
+    float fadeOutStartFractionMin = 0.0f;
+    float fadeOutStartFractionMax = 0.0f;
+    FxParticleMotion motion = FxParticleMotion::Drift;
+    FxParticleBlendMode blendMode = FxParticleBlendMode::Alpha;
+    FxParticleAlignment alignment = FxParticleAlignment::CameraFacing;
+    FxParticleMaterial material = FxParticleMaterial::Smoke;
+    FxParticleTag tag = FxParticleTag::DecorationEmitter;
+};
+
+void tuneProjectileTrailLayer(LayerRecipe &layer)
+{
+    layer.count = std::max<uint32_t>(
+        1u,
+        static_cast<uint32_t>(std::lround(static_cast<float>(layer.count) * ProjectileTrailParticleDensityScale)));
+    layer.startSize *= ProjectileTrailParticleSizeScale;
+    layer.endSize *= ProjectileTrailParticleSizeScale;
+    layer.lifetimeSeconds *= ProjectileTrailParticleLifetimeScale;
+}
+
+float projectileTrailParticleSizeMultiplier(ProjectileRecipe recipe)
+{
+    return recipe == ProjectileRecipe::Fireball || recipe == ProjectileRecipe::DragonBreath ? 2.0f : 1.0f;
+}
+
+bool isMonsterBoltRecipe(ProjectileRecipe recipe)
+{
+    return recipe == ProjectileRecipe::MonsterAirBolt
+        || recipe == ProjectileRecipe::MonsterEarthBolt
+        || recipe == ProjectileRecipe::MonsterFireBolt
+        || recipe == ProjectileRecipe::MonsterWaterBolt
+        || recipe == ProjectileRecipe::MonsterBodyBolt
+        || recipe == ProjectileRecipe::MonsterMindBolt
+        || recipe == ProjectileRecipe::MonsterSpiritBolt
+        || recipe == ProjectileRecipe::MonsterLightBolt
+        || recipe == ProjectileRecipe::MonsterDarkBolt;
+}
+
+void scaleLayerParticleSize(LayerRecipe &layer, float multiplier)
+{
+    layer.startSize *= multiplier;
+    layer.endSize *= multiplier;
+}
+
+uint32_t makeAbgr(uint8_t red, uint8_t green, uint8_t blue, uint8_t alpha)
+{
+    return (static_cast<uint32_t>(alpha) << 24)
+        | (static_cast<uint32_t>(blue) << 16)
+        | (static_cast<uint32_t>(green) << 8)
+        | static_cast<uint32_t>(red);
+}
+
+bool containsToken(const std::string &value, const char *pToken)
+{
+    return toLowerCopy(value).find(pToken) != std::string::npos;
+}
+
+bool equalsToken(const std::string &value, const char *pToken)
+{
+    return toLowerCopy(value) == pToken;
+}
+
+// A sprite name is the token itself or the token with a letter suffix ("spell57c"): "spell10" is Inferno's sprite,
+// not MM8's "spell100" breath weapon.
+bool spriteNameIs(const std::string &spriteName, const char *pToken)
+{
+    const std::string name = toLowerCopy(spriteName);
+    const size_t tokenLength = std::strlen(pToken);
+    return name.compare(0, tokenLength, pToken) == 0
+        && (name.size() == tokenLength || std::isdigit(static_cast<unsigned char>(name[tokenLength])) == 0);
+}
+
+uint32_t transparentColor(uint32_t colorAbgr)
+{
+    return colorAbgr & 0x00ffffffu;
+}
+
+ProjectileFxRecipe makeProjectileFxRecipe(
+    ProjectileFxPrimitive trailPrimitive,
+    ProjectileFxPrimitive impactPrimitive,
+    ProjectileFxMaterial trailMaterial,
+    ProjectileFxMaterial impactMaterial,
+    uint32_t colorAbgr,
+    uint32_t impactColorAbgr,
+    uint32_t mobileLightColorAbgr,
+    float mobileLightRadius,
+    bool renderProjectileBillboard);
+
+ProjectileFxRecipe makeProjectileFxRecipe(
+    ProjectileFxPrimitive trailPrimitive,
+    ProjectileFxPrimitive impactPrimitive,
+    ProjectileFxMaterial trailMaterial,
+    ProjectileFxMaterial impactMaterial,
+    uint32_t colorAbgr,
+    float mobileLightRadius,
+    bool renderProjectileBillboard)
+{
+    return makeProjectileFxRecipe(
+        trailPrimitive,
+        impactPrimitive,
+        trailMaterial,
+        impactMaterial,
+        colorAbgr,
+        colorAbgr,
+        colorAbgr,
+        mobileLightRadius,
+        renderProjectileBillboard);
+}
+
+ProjectileFxRecipe makeProjectileFxRecipe(
+    ProjectileFxPrimitive trailPrimitive,
+    ProjectileFxPrimitive impactPrimitive,
+    ProjectileFxMaterial trailMaterial,
+    ProjectileFxMaterial impactMaterial,
+    uint32_t colorAbgr,
+    uint32_t impactColorAbgr,
+    uint32_t mobileLightColorAbgr,
+    float mobileLightRadius,
+    bool renderProjectileBillboard)
+{
+    ProjectileFxRecipe recipe = {};
+    recipe.trailPrimitive = trailPrimitive;
+    recipe.impactPrimitive = impactPrimitive;
+    recipe.trailMaterial = trailMaterial;
+    recipe.impactMaterial = impactMaterial;
+    recipe.colorAbgr = colorAbgr;
+    recipe.impactColorAbgr = impactColorAbgr;
+    recipe.mobileLightColorAbgr = mobileLightColorAbgr;
+    recipe.mobileLightRadius = mobileLightRadius;
+    recipe.renderProjectileBillboard = renderProjectileBillboard;
+    return recipe;
+}
+
+FxParticleMaterial materialForProjectileFxMaterial(ProjectileFxMaterial material)
+{
+    switch (material)
+    {
+    case ProjectileFxMaterial::Effpar02:
+        return FxParticleMaterial::Spark;
+    case ProjectileFxMaterial::Effpar03:
+        return FxParticleMaterial::HardBlob;
+    case ProjectileFxMaterial::Effpar01:
+    case ProjectileFxMaterial::None:
+    default:
+        return FxParticleMaterial::SoftBlob;
+    }
+}
+
+float storedReferenceParticleSize(float particleSizeUnit, FxParticleMaterial material)
+{
+    const bool rendererExpandsRoundAdditive =
+        material == FxParticleMaterial::SoftBlob || material == FxParticleMaterial::HardBlob;
+    const float rendererScale = rendererExpandsRoundAdditive ? RoundAdditiveParticleRendererScale : 1.0f;
+    return particleSizeUnit * ReferenceParticleSizeUnitWorld / rendererScale;
+}
+
+float hashToUnit(uint32_t value)
+{
+    return static_cast<float>(value & 0xffffu) / 65535.0f;
+}
+
+uint32_t varyAlpha(uint32_t colorAbgr, float multiplier)
+{
+    const uint32_t alpha = (colorAbgr >> 24) & 0xffu;
+    const uint32_t scaledAlpha =
+        static_cast<uint32_t>(std::lround(std::clamp(multiplier, 0.0f, 2.0f) * static_cast<float>(alpha)));
+    return (colorAbgr & 0x00ffffffu) | (std::min(scaledAlpha, 255u) << 24);
+}
+
+void emitLayerParticles(
+    ParticleSystem &particleSystem,
+    uint32_t baseSeed,
+    float x,
+    float y,
+    float z,
+    float directionX,
+    float directionY,
+    float directionZ,
+    float velocityX,
+    float velocityY,
+    float velocityZ,
+    const LayerRecipe &layer)
+{
+    for (uint32_t particleIndex = 0; particleIndex < layer.count; ++particleIndex)
+    {
+        const uint32_t seed = baseSeed ^ (particleIndex * 2654435761u);
+        const float lateralJitter = (hashToUnit(seed) * 2.0f - 1.0f) * layer.lateralSpread;
+        const float verticalJitter = (hashToUnit(seed >> 8) * 2.0f - 1.0f) * layer.verticalSpread;
+        const float trailOffset = layer.startOffset + static_cast<float>(particleIndex) * layer.offsetStep;
+        const float swirl = hashToUnit(seed >> 16) * 2.0f - 1.0f;
+
+        FxParticleState particle = {};
+        particle.x = x - directionX * trailOffset + lateralJitter;
+        particle.y = y - directionY * trailOffset - lateralJitter * 0.55f;
+        particle.z = z - directionZ * trailOffset + verticalJitter;
+        particle.velocityX = velocityX * layer.inheritedVelocity + (-directionY) * swirl * 12.0f;
+        particle.velocityY = velocityY * layer.inheritedVelocity + directionX * swirl * 12.0f;
+        particle.velocityZ = velocityZ * layer.inheritedVelocity + layer.upwardVelocity + verticalJitter * 4.0f;
+        particle.size = layer.startSize;
+        particle.endSize = layer.endSize;
+        particle.drag = layer.drag;
+        particle.rotationRadians = swirl * layer.rotationJitterRadians;
+        particle.angularVelocityRadians = swirl * layer.angularVelocityRadians;
+        particle.stretch = layer.stretch;
+        particle.ageSeconds = 0.0f;
+        particle.fadeInSeconds = layer.fadeInSeconds;
+        particle.lifetimeSeconds = layer.lifetimeSeconds * (0.88f + hashToUnit(seed >> 4) * 0.24f);
+        particle.startColorAbgr = varyAlpha(layer.startColorAbgr, 0.9f + hashToUnit(seed >> 12) * 0.25f);
+        particle.endColorAbgr = layer.endColorAbgr;
+        particle.motion = layer.motion;
+        particle.blendMode = layer.blendMode;
+        particle.alignment = layer.alignment;
+        particle.material = layer.material;
+        particle.tag = layer.tag;
+
+        if (!particleSystem.addParticle(particle))
+        {
+            return;
+        }
+    }
+}
+
+float lerpFloat(float minValue, float maxValue, float t)
+{
+    return minValue + (maxValue - minValue) * std::clamp(t, 0.0f, 1.0f);
+}
+
+float lifetimeFromSeed(uint32_t seed, float minSeconds, float maxSeconds)
+{
+    return lerpFloat(minSeconds, maxSeconds, hashToUnit(seed));
+}
+
+void emitRadialLayerParticles(
+    ParticleSystem &particleSystem,
+    uint32_t baseSeed,
+    float x,
+    float y,
+    float z,
+    const RadialLayerRecipe &layer)
+{
+    for (uint32_t particleIndex = 0; particleIndex < layer.count; ++particleIndex)
+    {
+        const uint32_t seed = baseSeed ^ (particleIndex * 2654435761u);
+        const float spawnAngle = hashToUnit(seed) * TwoPi;
+        const float spawnDistance = std::sqrt(hashToUnit(seed >> 5)) * layer.spawnRadius;
+        const float driftAngle = spawnAngle + (hashToUnit(seed >> 11) * 2.0f - 1.0f) * 1.35f;
+        const float driftVelocity = lerpFloat(layer.driftVelocityMin, layer.driftVelocityMax, hashToUnit(seed >> 17));
+        const float upwardVelocity =
+            lerpFloat(layer.upwardVelocityMin, layer.upwardVelocityMax, hashToUnit(seed >> 23));
+        const float startSize = lerpFloat(layer.startSizeMin, layer.startSizeMax, hashToUnit(seed >> 3));
+        const float endSizeScale = lerpFloat(layer.endSizeScaleMin, layer.endSizeScaleMax, hashToUnit(seed >> 9));
+        const float lifetimeSeconds =
+            lerpFloat(layer.lifetimeSecondsMin, layer.lifetimeSecondsMax, hashToUnit(seed >> 15));
+        const float fadeOutStartFraction =
+            lerpFloat(layer.fadeOutStartFractionMin, layer.fadeOutStartFractionMax, hashToUnit(seed >> 25));
+        const float swirl = hashToUnit(seed >> 21) * 2.0f - 1.0f;
+
+        FxParticleState particle = {};
+        particle.x = x + std::cos(spawnAngle) * spawnDistance;
+        particle.y = y + std::sin(spawnAngle) * spawnDistance;
+        particle.z = z + hashToUnit(seed >> 27) * layer.verticalSpread;
+        particle.velocityX = std::cos(driftAngle) * driftVelocity;
+        particle.velocityY = std::sin(driftAngle) * driftVelocity;
+        particle.velocityZ = upwardVelocity;
+        particle.size = startSize;
+        particle.endSize = startSize * endSizeScale;
+        particle.drag = layer.drag;
+        particle.rotationRadians = swirl * layer.rotationJitterRadians;
+        particle.angularVelocityRadians = swirl * layer.angularVelocityRadians;
+        particle.stretch = 1.0f;
+        particle.ageSeconds = 0.0f;
+        particle.fadeInSeconds = layer.fadeInSeconds;
+        particle.lifetimeSeconds = lifetimeSeconds;
+        particle.fadeOutStartSeconds = lifetimeSeconds * fadeOutStartFraction;
+        particle.startColorAbgr = varyAlpha(layer.startColorAbgr, 0.84f + hashToUnit(seed >> 12) * 0.32f);
+        particle.endColorAbgr = layer.endColorAbgr;
+        particle.motion = layer.motion;
+        particle.blendMode = layer.blendMode;
+        particle.alignment = layer.alignment;
+        particle.material = layer.material;
+        particle.tag = layer.tag;
+
+        if (!particleSystem.addParticle(particle))
+        {
+            return;
+        }
+    }
+}
+
+void emitBurstParticle(
+    ParticleSystem &particleSystem,
+    float x,
+    float y,
+    float z,
+    float size,
+    uint32_t startColorAbgr,
+    uint32_t endColorAbgr,
+    float velocityScale,
+    uint32_t seed,
+    FxParticleMaterial material,
+    FxParticleAlignment alignment,
+    float stretch)
+{
+    const float angle = static_cast<float>(seed % 1024u) * (6.28318530717958647692f / 1024.0f);
+    const float radial = 0.35f + static_cast<float>((seed >> 10) & 0xffu) / 255.0f * 0.65f;
+    const float swirl = hashToUnit(seed >> 18) * 2.0f - 1.0f;
+
+    FxParticleState particle = {};
+    particle.x = x;
+    particle.y = y;
+    particle.z = z;
+    const float spreadVelocityScale = velocityScale * ImpactBurstParticleVelocityScale;
+    particle.velocityX = std::cos(angle) * spreadVelocityScale * radial;
+    particle.velocityY = std::sin(angle) * spreadVelocityScale * radial;
+    particle.velocityZ =
+        spreadVelocityScale * (0.2f + static_cast<float>((seed >> 18) & 0xffu) / 255.0f * 0.8f);
+    particle.size = size * ImpactBurstParticleSizeScale;
+    particle.endSize = size * 0.48f * ImpactBurstParticleSizeScale;
+    particle.drag = 2.2f;
+    particle.rotationRadians = swirl * 0.7f;
+    particle.angularVelocityRadians = swirl * 3.2f;
+    particle.stretch = stretch;
+    particle.ageSeconds = 0.0f;
+    particle.lifetimeSeconds =
+        (0.45f + static_cast<float>((seed >> 26) & 0x1fu) / 31.0f * 0.35f)
+        * ImpactBurstParticleLifetimeScale;
+    particle.startColorAbgr = startColorAbgr;
+    particle.endColorAbgr = endColorAbgr;
+    particle.motion = FxParticleMotion::Burst;
+    particle.blendMode = FxParticleBlendMode::Additive;
+    particle.alignment = alignment;
+    particle.material = material;
+    particle.tag = FxParticleTag::Impact;
+    particleSystem.addParticle(particle);
+}
+
+void emitDebuffAuraLayer(
+    ParticleSystem &particleSystem,
+    uint32_t baseSeed,
+    float x,
+    float y,
+    float z,
+    float actorHeight,
+    float frontDirectionX,
+    float frontDirectionY,
+    uint32_t count,
+    float lateralRadius,
+    float minHeightFraction,
+    float maxHeightFraction,
+    float upwardVelocity,
+    float startSize,
+    float endSize,
+    float lifetimeSeconds,
+    float drag,
+    uint32_t startColorAbgr,
+    uint32_t endColorAbgr,
+    FxParticleMaterial material,
+    FxParticleBlendMode blendMode)
+{
+    const float clampedHeight = std::max(72.0f, actorHeight);
+    const float frontLength = std::sqrt(frontDirectionX * frontDirectionX + frontDirectionY * frontDirectionY);
+    const float normalizedFrontX = frontLength > 0.001f ? frontDirectionX / frontLength : 1.0f;
+    const float normalizedFrontY = frontLength > 0.001f ? frontDirectionY / frontLength : 0.0f;
+    const float sideX = -normalizedFrontY;
+    const float sideY = normalizedFrontX;
+    const float forwardExtent = lateralRadius * 0.96f;
+    const float sideExtent = lateralRadius * 0.72f;
+
+    for (uint32_t particleIndex = 0; particleIndex < count; ++particleIndex)
+    {
+        const uint32_t seed = baseSeed ^ (particleIndex * 2654435761u);
+        const float forwardDistance = forwardExtent * (0.08f + hashToUnit(seed) * 0.92f);
+        const float sideDistance = sideExtent * (hashToUnit(seed >> 7) * 2.0f - 1.0f);
+        const float heightFraction =
+            minHeightFraction + (maxHeightFraction - minHeightFraction) * hashToUnit(seed >> 13);
+        const float tangent = hashToUnit(seed >> 19) * 2.0f - 1.0f;
+        const float sizeJitter = 0.72f + hashToUnit(seed >> 23) * 0.56f;
+        const float offsetX = normalizedFrontX * forwardDistance + sideX * sideDistance;
+        const float offsetY = normalizedFrontY * forwardDistance + sideY * sideDistance;
+
+        FxParticleState particle = {};
+        particle.x = x + offsetX;
+        particle.y = y + offsetY;
+        particle.z = z + clampedHeight * heightFraction;
+        particle.velocityX = normalizedFrontX * 3.0f + sideX * tangent * 6.0f;
+        particle.velocityY = normalizedFrontY * 3.0f + sideY * tangent * 6.0f;
+        particle.velocityZ = upwardVelocity * (0.82f + hashToUnit(seed >> 4) * 0.36f);
+        particle.size = startSize * sizeJitter;
+        particle.endSize = endSize * (0.9f + hashToUnit(seed >> 11) * 0.2f);
+        particle.drag = drag;
+        particle.rotationRadians = tangent * 0.9f;
+        particle.angularVelocityRadians = tangent * 1.6f;
+        particle.stretch = 1.0f;
+        particle.ageSeconds = 0.0f;
+        particle.fadeInSeconds = 0.10f;
+        particle.lifetimeSeconds = lifetimeSeconds * (0.94f + hashToUnit(seed >> 17) * 0.12f);
+        particle.fadeOutStartSeconds = particle.lifetimeSeconds * 0.78f;
+        particle.startColorAbgr = varyAlpha(startColorAbgr, 0.9f + hashToUnit(seed >> 21) * 0.2f);
+        particle.endColorAbgr = endColorAbgr;
+        particle.motion = FxParticleMotion::Drift;
+        particle.blendMode = blendMode;
+        particle.alignment = FxParticleAlignment::CameraFacing;
+        particle.material = material;
+        particle.tag = FxParticleTag::Buff;
+        if (!particleSystem.addParticle(particle))
+        {
+            return;
+        }
+    }
+}
+
+uint32_t deriveImpactColorAbgr(const std::string &objectName, const std::string &spriteName)
+{
+    const bool isFire =
+        containsToken(objectName, "fire")
+        || containsToken(objectName, "meteor")
+        || containsToken(objectName, "cannon")
+        || containsToken(spriteName, "fire");
+    const bool isLightning =
+        containsToken(objectName, "lightning")
+        || containsToken(objectName, "spark")
+        || containsToken(spriteName, "spark")
+        || containsToken(objectName, "laser");
+    const bool isPoison =
+        containsToken(objectName, "poison")
+        || containsToken(objectName, "acid")
+        || containsToken(objectName, "toxic");
+    const bool isIce =
+        containsToken(objectName, "ice")
+        || containsToken(objectName, "frost")
+        || containsToken(objectName, "light")
+        || containsToken(objectName, "sunray")
+        || containsToken(spriteName, "ice")
+        || containsToken(spriteName, "sun");
+    const bool isDark =
+        containsToken(objectName, "dark")
+        || containsToken(spriteName, "dark")
+        || containsToken(objectName, "dragon breath");
+
+    if (isFire)
+    {
+        return makeAbgr(255, 96, 32, 220);
+    }
+
+    if (isLightning)
+    {
+        return makeAbgr(240, 220, 64, 220);
+    }
+
+    if (isPoison)
+    {
+        return makeAbgr(64, 220, 128, 220);
+    }
+
+    if (isIce)
+    {
+        return makeAbgr(210, 230, 255, 220);
+    }
+
+    if (isDark)
+    {
+        return makeAbgr(160, 96, 220, 216);
+    }
+
+    return makeAbgr(192, 192, 192, 200);
+}
+
+bool shouldSpawnExpandingFireAreaPulse(ProjectileRecipe recipe)
+{
+    return recipe == ProjectileRecipe::Fireball || recipe == ProjectileRecipe::DragonBreath;
+}
+
+void emitExpandingFireAreaPulse(
+    ParticleSystem &particleSystem,
+    const ImpactSpawnContext &context)
+{
+    FxParticleState particle = {};
+    particle.x = context.x;
+    particle.y = context.y;
+    particle.z = context.z + 28.0f;
+    particle.size = 132.0f;
+    particle.endSize = 132.0f;
+    particle.ageSeconds = 0.0f;
+    particle.fadeOutStartSeconds = 0.001f;
+    particle.lifetimeSeconds = 0.62f;
+    particle.startColorAbgr = makeAbgr(255, 82, 8, 236);
+    particle.endColorAbgr = particle.startColorAbgr;
+    particle.motion = FxParticleMotion::StaticFade;
+    particle.blendMode = FxParticleBlendMode::Additive;
+    particle.alignment = FxParticleAlignment::CameraFacing;
+    particle.material = FxParticleMaterial::SoftBlob;
+    particle.tag = FxParticleTag::Impact;
+    particleSystem.addParticle(particle);
+}
+
+}
+
+ProjectileRecipe classifyProjectileRecipe(
+    int spellId,
+    const std::string &objectName,
+    const std::string &spriteName,
+    uint16_t objectFlags)
+{
+    if (spellId <= 0)
+    {
+        // Chest traps share the monster missiles' sprites, so their names decide first.
+        if (equalsToken(objectName, "firetrap"))
+        {
+            return ProjectileRecipe::FireTrap;
+        }
+
+        if (equalsToken(objectName, "electrap"))
+        {
+            return ProjectileRecipe::ElecTrap;
+        }
+
+        if (equalsToken(objectName, "coldtrap"))
+        {
+            return ProjectileRecipe::ColdTrap;
+        }
+
+        if (equalsToken(objectName, "poisontrap"))
+        {
+            return ProjectileRecipe::PoisonTrap;
+        }
+
+        if (equalsToken(objectName, "air") || equalsToken(spriteName, "spell101"))
+        {
+            return ProjectileRecipe::MonsterAirBolt;
+        }
+
+        if (equalsToken(objectName, "earth") || equalsToken(spriteName, "spell102"))
+        {
+            return ProjectileRecipe::MonsterEarthBolt;
+        }
+
+        if (equalsToken(objectName, "fire") || equalsToken(spriteName, "spell103"))
+        {
+            return ProjectileRecipe::MonsterFireBolt;
+        }
+
+        if (equalsToken(objectName, "water") || equalsToken(spriteName, "spell104"))
+        {
+            return ProjectileRecipe::MonsterWaterBolt;
+        }
+
+        if (equalsToken(objectName, "body"))
+        {
+            return ProjectileRecipe::MonsterBodyBolt;
+        }
+
+        if (equalsToken(objectName, "mind"))
+        {
+            return ProjectileRecipe::MonsterMindBolt;
+        }
+
+        if (equalsToken(objectName, "spirit"))
+        {
+            return ProjectileRecipe::MonsterSpiritBolt;
+        }
+
+        if (equalsToken(objectName, "light") || equalsToken(spriteName, "spell106"))
+        {
+            return ProjectileRecipe::MonsterLightBolt;
+        }
+
+        if (equalsToken(objectName, "dark") || equalsToken(spriteName, "spell107"))
+        {
+            return ProjectileRecipe::MonsterDarkBolt;
+        }
+
+        // Arrows have no classic trail or impact effects; the recipes only let the enhanced style bind them.
+        if (equalsToken(objectName, "arrow") || equalsToken(spriteName, "arrow"))
+        {
+            return ProjectileRecipe::Arrow;
+        }
+
+        if (equalsToken(objectName, "firearrow") || equalsToken(spriteName, "frarw"))
+        {
+            return ProjectileRecipe::FireArrow;
+        }
+    }
+
+    if (spellId == 2
+        || containsToken(objectName, "fire bolt")
+        || spriteNameIs(spriteName, "fire02"))
+    {
+        return ProjectileRecipe::FireBolt;
+    }
+
+    if (spellId == 7
+        || containsToken(objectName, "fire spike")
+        || spriteNameIs(spriteName, "spell07"))
+    {
+        return ProjectileRecipe::FireSpike;
+    }
+
+    if (spellId == 6
+        || containsToken(objectName, "fireball")
+        || spriteNameIs(spriteName, "fire04"))
+    {
+        return ProjectileRecipe::Fireball;
+    }
+
+    if (spellId == 8
+        || containsToken(objectName, "immolation")
+        || spriteNameIs(spriteName, "spell08"))
+    {
+        return ProjectileRecipe::Immolation;
+    }
+
+    if (spellId == 9
+        || containsToken(objectName, "meteor shower")
+        || spriteNameIs(spriteName, "spell09"))
+    {
+        return ProjectileRecipe::MeteorShower;
+    }
+
+    if (spellId == 10
+        || containsToken(objectName, "inferno")
+        || spriteNameIs(spriteName, "spell10"))
+    {
+        return ProjectileRecipe::Inferno;
+    }
+
+    if (spellId == 11
+        || containsToken(objectName, "incinerate")
+        || spriteNameIs(spriteName, "spell11"))
+    {
+        return ProjectileRecipe::Incinerate;
+    }
+
+    if (spellId == 22
+        || containsToken(objectName, "starburst")
+        || spriteNameIs(spriteName, "spell22"))
+    {
+        return ProjectileRecipe::Starburst;
+    }
+
+    if (spellId == 20
+        || containsToken(objectName, "implosion")
+        || spriteNameIs(spriteName, "spell57c"))
+    {
+        return ProjectileRecipe::Implosion;
+    }
+
+    if (spellId == 15
+        || containsToken(objectName, "sparks")
+        || spriteNameIs(spriteName, "spell02"))
+    {
+        return ProjectileRecipe::Sparks;
+    }
+
+    if (containsToken(objectName, "laser")
+        || containsToken(spriteName, "lzrbolt"))
+    {
+        return ProjectileRecipe::Blaster;
+    }
+
+    if (spellId == 18
+        || containsToken(objectName, "lightning bolt")
+        || spriteNameIs(spriteName, "spell18"))
+    {
+        return ProjectileRecipe::LightningBolt;
+    }
+
+    if (spellId == 26
+        || spellId == 32
+        || containsToken(objectName, "ice bolt")
+        || containsToken(objectName, "ice blast")
+        || spriteNameIs(spriteName, "spell26"))
+    {
+        if (spellId == 32 && containsToken(objectName, "shard"))
+        {
+            return ProjectileRecipe::IceBlastFallout;
+        }
+
+        return ProjectileRecipe::IceBolt;
+    }
+
+    if (spellId == 24
+        || containsToken(objectName, "poison spray"))
+    {
+        return ProjectileRecipe::PoisonSpray;
+    }
+
+    if (spellId == 29
+        || containsToken(objectName, "acid burst"))
+    {
+        return ProjectileRecipe::AcidBurst;
+    }
+
+    if (spellId == 87
+        || containsToken(objectName, "sunray")
+        || spriteNameIs(spriteName, "spell87"))
+    {
+        return ProjectileRecipe::Sunray;
+    }
+
+    if (spellId == 59
+        || spellId == 65
+        || containsToken(objectName, "mind blast")
+        || containsToken(objectName, "psychic shock"))
+    {
+        return ProjectileRecipe::MindBlast;
+    }
+
+    if (spellId == 34
+        || containsToken(objectName, "stun")
+        || spriteNameIs(spriteName, "spell34"))
+    {
+        return ProjectileRecipe::Stun;
+    }
+
+    if (spellId == 39
+        || containsToken(objectName, "blades")
+        || spriteNameIs(spriteName, "spell39"))
+    {
+        return ProjectileRecipe::Blades;
+    }
+
+    if (spellId == 41
+        || containsToken(objectName, "rock blast"))
+    {
+        return ProjectileRecipe::RockBlast;
+    }
+
+    if (spellId == 43
+        || containsToken(objectName, "death blossom"))
+    {
+        return ProjectileRecipe::DeathBlossom;
+    }
+
+    if (spellId == 70
+        || equalsToken(objectName, "harm")
+        || spriteNameIs(spriteName, "spell70"))
+    {
+        return ProjectileRecipe::Harm;
+    }
+
+    if (spellId == 76
+        || containsToken(objectName, "flying fist")
+        || spriteNameIs(spriteName, "spell76"))
+    {
+        return ProjectileRecipe::FlyingFist;
+    }
+
+    if (spellId == 78
+        || containsToken(objectName, "light bolt")
+        || spriteNameIs(spriteName, "sp78b"))
+    {
+        return ProjectileRecipe::LightBolt;
+    }
+
+    if (spellId == 79
+        || containsToken(objectName, "destroy undead")
+        || spriteNameIs(spriteName, "spell79"))
+    {
+        return ProjectileRecipe::DestroyUndead;
+    }
+
+    // Flame Blast (MM8 dragon breath) flies and explodes like Dragon Breath.
+    if (spellId == 97
+        || spellId == 123
+        || containsToken(objectName, "dragon breath")
+        || spriteNameIs(spriteName, "spell97"))
+    {
+        return ProjectileRecipe::DragonBreath;
+    }
+
+    if (containsToken(objectName, "darkfire bolt")
+        || spriteNameIs(spriteName, "spell99"))
+    {
+        return ProjectileRecipe::DarkFireBolt;
+    }
+
+    if (spellId == 90
+        || containsToken(objectName, "toxic cloud")
+        || spriteNameIs(spriteName, "spell90"))
+    {
+        return ProjectileRecipe::ToxicCloud;
+    }
+
+    if (spellId == 93
+        || containsToken(objectName, "shrap metal")
+        || containsToken(objectName, "shrapmetal")
+        || containsToken(objectName, "sharpmetal")
+        || spriteNameIs(spriteName, "spell93"))
+    {
+        return ProjectileRecipe::Sharpmetal;
+    }
+
+    if (spellId == 37
+        || containsToken(objectName, "deadly swarm")
+        || spriteNameIs(spriteName, "spell37"))
+    {
+        return ProjectileRecipe::DeadlySwarm;
+    }
+
+    if (spellId == 44 || containsToken(objectName, "mass distortion"))
+    {
+        return ProjectileRecipe::MassDistortion;
+    }
+
+    if (spellId == 52 || containsToken(objectName, "spirit lash"))
+    {
+        return ProjectileRecipe::SpiritLash;
+    }
+
+    if (spellId == 84
+        || containsToken(objectName, "prismatic light")
+        || spriteNameIs(spriteName, "spell84"))
+    {
+        return ProjectileRecipe::PrismaticLight;
+    }
+
+    if (spellId == 99 || containsToken(objectName, "souldrinker"))
+    {
+        return ProjectileRecipe::SoulDrinker;
+    }
+
+    if (spellId == 111 || containsToken(objectName, "lifedrain"))
+    {
+        return ProjectileRecipe::Lifedrain;
+    }
+
+    if (spellId == 92
+        || containsToken(objectName, "shrinking ray")
+        || spriteNameIs(spriteName, "spell92"))
+    {
+        return ProjectileRecipe::ShrinkingRay;
+    }
+
+    if (spellId == 98 || containsToken(objectName, "armageddon"))
+    {
+        return ProjectileRecipe::Armageddon;
+    }
+
+    if (spellId == 60 || spellId == 113 || containsToken(objectName, "charm"))
+    {
+        return ProjectileRecipe::Charm;
+    }
+
+    if (spellId == 102 || equalsToken(objectName, "blind"))
+    {
+        return ProjectileRecipe::Blind;
+    }
+
+    if (spellId == 56 || containsToken(objectName, "telepathy"))
+    {
+        return ProjectileRecipe::Telepathy;
+    }
+
+    if (spellId == 62 || containsToken(objectName, "berzerk") || containsToken(objectName, "berserk"))
+    {
+        return ProjectileRecipe::Berserk;
+    }
+
+    if (spellId == 66 || containsToken(objectName, "enslave"))
+    {
+        return ProjectileRecipe::Enslave;
+    }
+
+    if (spellId == 94 || containsToken(objectName, "control undead"))
+    {
+        return ProjectileRecipe::ControlUndead;
+    }
+
+    if ((objectFlags & ObjectDescTrailFire) != 0)
+    {
+        return ProjectileRecipe::GenericFireTrail;
+    }
+
+    if ((objectFlags & ObjectDescTrailParticle) != 0)
+    {
+        return ProjectileRecipe::GenericParticleTrail;
+    }
+
+    if ((objectFlags & ObjectDescTrailLine) != 0)
+    {
+        return ProjectileRecipe::GenericLineTrail;
+    }
+
+    return ProjectileRecipe::None;
+}
+
+std::string_view projectileRecipeName(ProjectileRecipe recipe)
+{
+    const size_t index = static_cast<size_t>(recipe);
+    return index < ProjectileRecipeNames.size() ? ProjectileRecipeNames[index] : ProjectileRecipeNames[0];
+}
+
+std::optional<ProjectileRecipe> projectileRecipeFromName(std::string_view name)
+{
+    const std::string normalizedName = normalizeRecipeName(name);
+
+    for (size_t index = 0; index < ProjectileRecipeNames.size(); ++index)
+    {
+        if (normalizeRecipeName(ProjectileRecipeNames[index]) == normalizedName)
+        {
+            return static_cast<ProjectileRecipe>(index);
+        }
+    }
+
+    return std::nullopt;
+}
+
+const ProjectileFxRecipe &projectileFxRecipe(ProjectileRecipe recipe)
+{
+    static const ProjectileFxRecipe noneRecipe = makeProjectileFxRecipe(
+        ProjectileFxPrimitive::None,
+        ProjectileFxPrimitive::None,
+        ProjectileFxMaterial::None,
+        ProjectileFxMaterial::None,
+        ProjectileFxWhite,
+        0.0f,
+        true);
+    static const ProjectileFxRecipe fireTrailRecipe = makeProjectileFxRecipe(
+        ProjectileFxPrimitive::HangingTrail,
+        ProjectileFxPrimitive::SingleCollisionBurst,
+        ProjectileFxMaterial::Effpar01,
+        ProjectileFxMaterial::Effpar01,
+        ProjectileFxOrangeyRed,
+        256.0f,
+        false);
+    static const ProjectileFxRecipe fireSpikeRecipe = makeProjectileFxRecipe(
+        ProjectileFxPrimitive::RenderSprite,
+        ProjectileFxPrimitive::RadialCollisionBurst,
+        ProjectileFxMaterial::None,
+        ProjectileFxMaterial::Effpar01,
+        ProjectileFxOrangeyRed,
+        256.0f,
+        true);
+    static const ProjectileFxRecipe fireballRecipe = makeProjectileFxRecipe(
+        ProjectileFxPrimitive::HangingTrail,
+        ProjectileFxPrimitive::FireballSphereBurst,
+        ProjectileFxMaterial::Effpar01,
+        ProjectileFxMaterial::Effpar01,
+        ProjectileFxOrangeyRed,
+        256.0f,
+        false);
+    static const ProjectileFxRecipe immolationRecipe = makeProjectileFxRecipe(
+        ProjectileFxPrimitive::None,
+        ProjectileFxPrimitive::SingleCollisionBurst,
+        ProjectileFxMaterial::None,
+        ProjectileFxMaterial::Effpar01,
+        ProjectileFxOrangeyRed,
+        0.0f,
+        false);
+    static const ProjectileFxRecipe meteorRecipe = makeProjectileFxRecipe(
+        ProjectileFxPrimitive::RenderSprite,
+        ProjectileFxPrimitive::RadialCollisionBurst,
+        ProjectileFxMaterial::None,
+        ProjectileFxMaterial::Effpar01,
+        ProjectileFxOrangeyRed,
+        256.0f,
+        true);
+    static const ProjectileFxRecipe infernoRecipe = makeProjectileFxRecipe(
+        ProjectileFxPrimitive::None,
+        ProjectileFxPrimitive::RadialCollisionBurst,
+        ProjectileFxMaterial::None,
+        ProjectileFxMaterial::Effpar01,
+        ProjectileFxOrangeyRed,
+        0.0f,
+        false);
+    static const ProjectileFxRecipe incinerateRecipe = makeProjectileFxRecipe(
+        ProjectileFxPrimitive::RenderSprite,
+        ProjectileFxPrimitive::SingleCollisionBurst,
+        ProjectileFxMaterial::None,
+        ProjectileFxMaterial::Effpar01,
+        ProjectileFxOrangeyRed,
+        256.0f,
+        true);
+    static const ProjectileFxRecipe monsterAirRecipe = makeProjectileFxRecipe(
+        ProjectileFxPrimitive::HangingTrail,
+        ProjectileFxPrimitive::SingleCollisionBurst,
+        ProjectileFxMaterial::Effpar01,
+        ProjectileFxMaterial::Effpar01,
+        ProjectileFxAzure,
+        128.0f,
+        false);
+    static const ProjectileFxRecipe monsterEarthRecipe = makeProjectileFxRecipe(
+        ProjectileFxPrimitive::HangingTrail,
+        ProjectileFxPrimitive::SingleCollisionBurst,
+        ProjectileFxMaterial::Effpar01,
+        ProjectileFxMaterial::Effpar01,
+        ProjectileFxCarnabyTan,
+        128.0f,
+        false);
+    static const ProjectileFxRecipe monsterWaterRecipe = makeProjectileFxRecipe(
+        ProjectileFxPrimitive::HangingTrail,
+        ProjectileFxPrimitive::SingleCollisionBurst,
+        ProjectileFxMaterial::Effpar01,
+        ProjectileFxMaterial::Effpar01,
+        ProjectileFxScienceBlue,
+        128.0f,
+        false);
+    static const ProjectileFxRecipe monsterBodyRecipe = makeProjectileFxRecipe(
+        ProjectileFxPrimitive::HangingTrail,
+        ProjectileFxPrimitive::SingleCollisionBurst,
+        ProjectileFxMaterial::Effpar01,
+        ProjectileFxMaterial::Effpar01,
+        ProjectileFxGreenTeal,
+        128.0f,
+        false);
+    static const ProjectileFxRecipe monsterMindRecipe = makeProjectileFxRecipe(
+        ProjectileFxPrimitive::HangingTrail,
+        ProjectileFxPrimitive::SingleCollisionBurst,
+        ProjectileFxMaterial::Effpar01,
+        ProjectileFxMaterial::Effpar01,
+        ProjectileFxDirtyYellow,
+        128.0f,
+        false);
+    static const ProjectileFxRecipe monsterLightRecipe = makeProjectileFxRecipe(
+        ProjectileFxPrimitive::HangingTrail,
+        ProjectileFxPrimitive::SingleCollisionBurst,
+        ProjectileFxMaterial::Effpar01,
+        ProjectileFxMaterial::Effpar01,
+        ProjectileFxWhite,
+        128.0f,
+        false);
+    static const ProjectileFxRecipe monsterDarkRecipe = makeProjectileFxRecipe(
+        ProjectileFxPrimitive::HangingTrail,
+        ProjectileFxPrimitive::SingleCollisionBurst,
+        ProjectileFxMaterial::Effpar01,
+        ProjectileFxMaterial::Effpar01,
+        ProjectileFxMediumGrey,
+        128.0f,
+        false);
+    static const ProjectileFxRecipe poisonRecipe = makeProjectileFxRecipe(
+        ProjectileFxPrimitive::HangingTrail,
+        ProjectileFxPrimitive::SingleCollisionBurst,
+        ProjectileFxMaterial::Effpar01,
+        ProjectileFxMaterial::Effpar01,
+        ProjectileFxGreenTeal,
+        256.0f,
+        false);
+    static const ProjectileFxRecipe iceBoltRecipe = makeProjectileFxRecipe(
+        ProjectileFxPrimitive::RenderSprite,
+        ProjectileFxPrimitive::SingleCollisionBurst,
+        ProjectileFxMaterial::None,
+        ProjectileFxMaterial::Effpar01,
+        ProjectileFxCarolinaBlue,
+        256.0f,
+        true);
+    static const ProjectileFxRecipe iceBlastFalloutRecipe = makeProjectileFxRecipe(
+        ProjectileFxPrimitive::HangingTrail,
+        ProjectileFxPrimitive::None,
+        ProjectileFxMaterial::Effpar01,
+        ProjectileFxMaterial::None,
+        ProjectileFxCarolinaBlue,
+        0.0f,
+        false);
+    static const ProjectileFxRecipe acidRecipe = makeProjectileFxRecipe(
+        ProjectileFxPrimitive::HangingTrail,
+        ProjectileFxPrimitive::RenderSprite,
+        ProjectileFxMaterial::Effpar01,
+        ProjectileFxMaterial::None,
+        ProjectileFxGreenTeal,
+        256.0f,
+        false);
+    static const ProjectileFxRecipe lightBoltRecipe = makeProjectileFxRecipe(
+        ProjectileFxPrimitive::HangingTrail,
+        ProjectileFxPrimitive::SingleCollisionBurst,
+        ProjectileFxMaterial::Effpar03,
+        ProjectileFxMaterial::Effpar02,
+        ProjectileFxWhite,
+        128.0f,
+        false);
+    static const ProjectileFxRecipe lightningRecipe = makeProjectileFxRecipe(
+        ProjectileFxPrimitive::SegmentProjectile,
+        ProjectileFxPrimitive::RadialCollisionBurst,
+        ProjectileFxMaterial::None,
+        ProjectileFxMaterial::Effpar02,
+        ProjectileFxMustardYellow,
+        256.0f,
+        false);
+    static const ProjectileFxRecipe sunrayRecipe = makeProjectileFxRecipe(
+        ProjectileFxPrimitive::SegmentProjectile,
+        ProjectileFxPrimitive::SingleCollisionBurst,
+        ProjectileFxMaterial::None,
+        ProjectileFxMaterial::Effpar03,
+        ProjectileFxWhite,
+        128.0f,
+        false);
+    static const ProjectileFxRecipe sparksRecipe = makeProjectileFxRecipe(
+        ProjectileFxPrimitive::RenderSprite,
+        ProjectileFxPrimitive::RadialCollisionBurst,
+        ProjectileFxMaterial::None,
+        ProjectileFxMaterial::Effpar02,
+        ProjectileFxMustardYellow,
+        0.0f,
+        true);
+    static const ProjectileFxRecipe starburstRecipe = makeProjectileFxRecipe(
+        ProjectileFxPrimitive::RenderSprite,
+        ProjectileFxPrimitive::RadialCollisionBurst,
+        ProjectileFxMaterial::None,
+        ProjectileFxMaterial::Effpar01,
+        ProjectileFxMustardYellow,
+        256.0f,
+        true);
+    static const ProjectileFxRecipe implosionRecipe = makeProjectileFxRecipe(
+        ProjectileFxPrimitive::None,
+        ProjectileFxPrimitive::ImplosionSphere,
+        ProjectileFxMaterial::None,
+        ProjectileFxMaterial::None,
+        ProjectileFxMediumGrey,
+        0.0f,
+        false);
+    static const ProjectileFxRecipe stunRecipe = makeProjectileFxRecipe(
+        ProjectileFxPrimitive::Stun,
+        ProjectileFxPrimitive::None,
+        ProjectileFxMaterial::None,
+        ProjectileFxMaterial::None,
+        ProjectileFxWhite,
+        0.0f,
+        false);
+    static const ProjectileFxRecipe rockBlastRecipe = makeProjectileFxRecipe(
+        ProjectileFxPrimitive::RenderSprite,
+        ProjectileFxPrimitive::SingleCollisionBurst,
+        ProjectileFxMaterial::None,
+        ProjectileFxMaterial::Effpar01,
+        ProjectileFxCarnabyTan,
+        0.0f,
+        true);
+    static const ProjectileFxRecipe bladesRecipe = makeProjectileFxRecipe(
+        ProjectileFxPrimitive::RenderSprite,
+        ProjectileFxPrimitive::MindBlastAfterEffect,
+        ProjectileFxMaterial::None,
+        ProjectileFxMaterial::None,
+        ProjectileFxMediumGrey,
+        0.0f,
+        true);
+    static const ProjectileFxRecipe deathBlossomRecipe = makeProjectileFxRecipe(
+        ProjectileFxPrimitive::HangingTrail,
+        ProjectileFxPrimitive::RadialCollisionBurst,
+        ProjectileFxMaterial::Effpar01,
+        ProjectileFxMaterial::Effpar01,
+        ProjectileFxMediumGrey,
+        0.0f,
+        true);
+    static const ProjectileFxRecipe harmRecipe = makeProjectileFxRecipe(
+        ProjectileFxPrimitive::RenderSprite,
+        ProjectileFxPrimitive::SingleCollisionBurst,
+        ProjectileFxMaterial::None,
+        ProjectileFxMaterial::Effpar01,
+        ProjectileFxGreenishBrown,
+        ProjectileFxBloodRed,
+        ProjectileFxGreenishBrown,
+        128.0f,
+        true);
+    static const ProjectileFxRecipe flyingFistRecipe = makeProjectileFxRecipe(
+        ProjectileFxPrimitive::RenderSprite,
+        ProjectileFxPrimitive::SingleCollisionBurst,
+        ProjectileFxMaterial::None,
+        ProjectileFxMaterial::Effpar01,
+        ProjectileFxBloodRed,
+        256.0f,
+        true);
+    static const ProjectileFxRecipe destroyUndeadRecipe = makeProjectileFxRecipe(
+        ProjectileFxPrimitive::None,
+        ProjectileFxPrimitive::None,
+        ProjectileFxMaterial::None,
+        ProjectileFxMaterial::None,
+        ProjectileFxWhite,
+        64.0f,
+        false);
+    static const ProjectileFxRecipe sharpmetalRecipe = makeProjectileFxRecipe(
+        ProjectileFxPrimitive::RenderSprite,
+        ProjectileFxPrimitive::SingleCollisionBurst,
+        ProjectileFxMaterial::None,
+        ProjectileFxMaterial::Effpar01,
+        ProjectileFxMediumGrey,
+        0.0f,
+        true);
+
+    switch (recipe)
+    {
+    case ProjectileRecipe::FireBolt:
+    case ProjectileRecipe::MonsterFireBolt:
+        return fireTrailRecipe;
+    case ProjectileRecipe::FireSpike:
+        return fireSpikeRecipe;
+    case ProjectileRecipe::Fireball:
+        return fireballRecipe;
+    case ProjectileRecipe::Immolation:
+        return immolationRecipe;
+    case ProjectileRecipe::MeteorShower:
+        return meteorRecipe;
+    case ProjectileRecipe::Inferno:
+        return infernoRecipe;
+    case ProjectileRecipe::Incinerate:
+        return incinerateRecipe;
+    case ProjectileRecipe::MonsterAirBolt:
+    case ProjectileRecipe::MonsterSpiritBolt:
+        return monsterAirRecipe;
+    case ProjectileRecipe::MonsterEarthBolt:
+        return monsterEarthRecipe;
+    case ProjectileRecipe::MonsterWaterBolt:
+        return monsterWaterRecipe;
+    case ProjectileRecipe::MonsterBodyBolt:
+        return monsterBodyRecipe;
+    case ProjectileRecipe::MonsterMindBolt:
+        return monsterMindRecipe;
+    case ProjectileRecipe::MonsterLightBolt:
+        return monsterLightRecipe;
+    case ProjectileRecipe::MonsterDarkBolt:
+        return monsterDarkRecipe;
+    case ProjectileRecipe::PoisonSpray:
+        return poisonRecipe;
+    case ProjectileRecipe::AcidBurst:
+        return acidRecipe;
+    case ProjectileRecipe::IceBolt:
+        return iceBoltRecipe;
+    case ProjectileRecipe::IceBlastFallout:
+        return iceBlastFalloutRecipe;
+    case ProjectileRecipe::LightBolt:
+        return lightBoltRecipe;
+    case ProjectileRecipe::Sparks:
+        return sparksRecipe;
+    case ProjectileRecipe::LightningBolt:
+        return lightningRecipe;
+    case ProjectileRecipe::Sunray:
+        return sunrayRecipe;
+    case ProjectileRecipe::Starburst:
+        return starburstRecipe;
+    case ProjectileRecipe::Implosion:
+        return implosionRecipe;
+    case ProjectileRecipe::Stun:
+        return stunRecipe;
+    case ProjectileRecipe::RockBlast:
+        return rockBlastRecipe;
+    case ProjectileRecipe::Blades:
+        return bladesRecipe;
+    case ProjectileRecipe::DeathBlossom:
+        return deathBlossomRecipe;
+    case ProjectileRecipe::Harm:
+        return harmRecipe;
+    case ProjectileRecipe::FlyingFist:
+        return flyingFistRecipe;
+    case ProjectileRecipe::DestroyUndead:
+        return destroyUndeadRecipe;
+    case ProjectileRecipe::Sharpmetal:
+        return sharpmetalRecipe;
+    case ProjectileRecipe::None:
+    case ProjectileRecipe::Cannonball:
+    case ProjectileRecipe::Blaster:
+    case ProjectileRecipe::DragonBreath:
+    case ProjectileRecipe::DarkFireBolt:
+    case ProjectileRecipe::MindBlast:
+    case ProjectileRecipe::ToxicCloud:
+    case ProjectileRecipe::GenericParticleTrail:
+    case ProjectileRecipe::GenericFireTrail:
+    case ProjectileRecipe::GenericLineTrail:
+    default:
+        return noneRecipe;
+    }
+}
+
+bool projectileRecipeUsesHangingProjectileTrail(ProjectileRecipe recipe)
+{
+    return projectileFxRecipe(recipe).trailPrimitive == ProjectileFxPrimitive::HangingTrail;
+}
+
+uint32_t projectileRecipeColorAbgr(ProjectileRecipe recipe)
+{
+    const ProjectileFxRecipe &fxRecipe = projectileFxRecipe(recipe);
+
+    if (fxRecipe.trailPrimitive != ProjectileFxPrimitive::None
+        || fxRecipe.impactPrimitive != ProjectileFxPrimitive::None)
+    {
+        return fxRecipe.colorAbgr;
+    }
+
+    switch (recipe)
+    {
+    case ProjectileRecipe::FireBolt:
+    case ProjectileRecipe::MonsterFireBolt:
+        return ProjectileFxOrangeyRed;
+    case ProjectileRecipe::Fireball:
+    case ProjectileRecipe::MeteorShower:
+    case ProjectileRecipe::Cannonball:
+    case ProjectileRecipe::DragonBreath:
+    case ProjectileRecipe::GenericFireTrail:
+        return makeAbgr(255, 120, 32, 220);
+    case ProjectileRecipe::Starburst:
+        return makeAbgr(255, 244, 180, 220);
+    case ProjectileRecipe::Implosion:
+        return makeAbgr(176, 216, 255, 208);
+    case ProjectileRecipe::Sparks:
+        return makeAbgr(255, 220, 90, 216);
+    case ProjectileRecipe::Blaster:
+        return ProjectileFxRed;
+    case ProjectileRecipe::LightningBolt:
+        return ProjectileFxMustardYellow;
+    case ProjectileRecipe::IceBolt:
+        return ProjectileFxCarolinaBlue;
+    case ProjectileRecipe::PoisonSpray:
+    case ProjectileRecipe::AcidBurst:
+    case ProjectileRecipe::ToxicCloud:
+    case ProjectileRecipe::GenericParticleTrail:
+        return ProjectileFxGreenTeal;
+    case ProjectileRecipe::MonsterAirBolt:
+    case ProjectileRecipe::MonsterSpiritBolt:
+        return ProjectileFxAzure;
+    case ProjectileRecipe::MonsterEarthBolt:
+        return ProjectileFxCarnabyTan;
+    case ProjectileRecipe::MonsterWaterBolt:
+        return ProjectileFxScienceBlue;
+    case ProjectileRecipe::MonsterBodyBolt:
+        return ProjectileFxGreenTeal;
+    case ProjectileRecipe::MonsterMindBolt:
+        return ProjectileFxDirtyYellow;
+    case ProjectileRecipe::LightBolt:
+    case ProjectileRecipe::MonsterLightBolt:
+        return ProjectileFxWhite;
+    case ProjectileRecipe::MonsterDarkBolt:
+        return ProjectileFxMediumGrey;
+    case ProjectileRecipe::DarkFireBolt:
+    case ProjectileRecipe::MindBlast:
+        return makeAbgr(180, 96, 255, 220);
+    case ProjectileRecipe::GenericLineTrail:
+        return makeAbgr(220, 220, 220, 200);
+    case ProjectileRecipe::None:
+    default:
+        return makeAbgr(255, 255, 255, 180);
+    }
+}
+
+uint32_t projectileRecipeImpactColorAbgr(ProjectileRecipe recipe)
+{
+    const ProjectileFxRecipe &fxRecipe = projectileFxRecipe(recipe);
+
+    if (fxRecipe.impactPrimitive != ProjectileFxPrimitive::None)
+    {
+        return fxRecipe.impactColorAbgr;
+    }
+
+    return projectileRecipeColorAbgr(recipe);
+}
+
+uint32_t projectileRecipeLightColorAbgr(ProjectileRecipe recipe)
+{
+    const ProjectileFxRecipe &fxRecipe = projectileFxRecipe(recipe);
+
+    if (fxRecipe.mobileLightRadius > 0.0f)
+    {
+        return fxRecipe.mobileLightColorAbgr;
+    }
+
+    return projectileRecipeColorAbgr(recipe);
+}
+
+float projectileRecipeGlowRadius(ProjectileRecipe recipe)
+{
+    const ProjectileFxRecipe &fxRecipe = projectileFxRecipe(recipe);
+
+    if (fxRecipe.mobileLightRadius > 0.0f)
+    {
+        return fxRecipe.mobileLightRadius;
+    }
+
+    switch (recipe)
+    {
+    case ProjectileRecipe::Fireball:
+    case ProjectileRecipe::DragonBreath:
+        return 224.0f;
+    case ProjectileRecipe::MeteorShower:
+        return 176.0f;
+    case ProjectileRecipe::Cannonball:
+        return 192.0f;
+    case ProjectileRecipe::Starburst:
+        return 192.0f;
+    case ProjectileRecipe::Implosion:
+        return 168.0f;
+    case ProjectileRecipe::Sparks:
+        return 112.0f;
+    case ProjectileRecipe::Blaster:
+        return 0.0f;
+    case ProjectileRecipe::LightBolt:
+    case ProjectileRecipe::LightningBolt:
+    case ProjectileRecipe::Sunray:
+        return 176.0f;
+    case ProjectileRecipe::IceBolt:
+    case ProjectileRecipe::DarkFireBolt:
+    case ProjectileRecipe::MindBlast:
+    case ProjectileRecipe::ToxicCloud:
+        return 152.0f;
+    case ProjectileRecipe::FireBolt:
+    case ProjectileRecipe::MonsterAirBolt:
+    case ProjectileRecipe::MonsterEarthBolt:
+    case ProjectileRecipe::MonsterFireBolt:
+    case ProjectileRecipe::MonsterWaterBolt:
+    case ProjectileRecipe::MonsterBodyBolt:
+    case ProjectileRecipe::MonsterMindBolt:
+    case ProjectileRecipe::MonsterSpiritBolt:
+    case ProjectileRecipe::MonsterLightBolt:
+    case ProjectileRecipe::MonsterDarkBolt:
+    case ProjectileRecipe::PoisonSpray:
+    case ProjectileRecipe::AcidBurst:
+    case ProjectileRecipe::GenericFireTrail:
+    case ProjectileRecipe::GenericParticleTrail:
+    case ProjectileRecipe::GenericLineTrail:
+        return 128.0f;
+    case ProjectileRecipe::None:
+    default:
+        return 0.0f;
+    }
+}
+
+float projectileRecipeAnchorOffset(ProjectileRecipe recipe, uint16_t radius, uint16_t height)
+{
+    const float baselineOffset =
+        std::max(std::max(static_cast<float>(height) * 0.5f, static_cast<float>(radius) * 0.75f), 8.0f);
+
+    switch (recipe)
+    {
+    case ProjectileRecipe::ToxicCloud:
+        return std::max(baselineOffset, 36.0f);
+    case ProjectileRecipe::Cannonball:
+        return std::max(baselineOffset, 28.0f);
+    case ProjectileRecipe::PoisonSpray:
+    case ProjectileRecipe::AcidBurst:
+        return std::max(baselineOffset, 20.0f);
+    case ProjectileRecipe::DragonBreath:
+        return std::max(baselineOffset, 18.0f);
+    case ProjectileRecipe::MeteorShower:
+    case ProjectileRecipe::Starburst:
+        return std::max(baselineOffset, 16.0f);
+    case ProjectileRecipe::Fireball:
+        return std::max(baselineOffset, 14.0f);
+    case ProjectileRecipe::IceBolt:
+    case ProjectileRecipe::LightBolt:
+    case ProjectileRecipe::Sunray:
+    case ProjectileRecipe::Sparks:
+    case ProjectileRecipe::LightningBolt:
+    case ProjectileRecipe::DarkFireBolt:
+    case ProjectileRecipe::MindBlast:
+    case ProjectileRecipe::FireBolt:
+    case ProjectileRecipe::MonsterAirBolt:
+    case ProjectileRecipe::MonsterEarthBolt:
+    case ProjectileRecipe::MonsterFireBolt:
+    case ProjectileRecipe::MonsterWaterBolt:
+    case ProjectileRecipe::MonsterBodyBolt:
+    case ProjectileRecipe::MonsterMindBolt:
+    case ProjectileRecipe::MonsterSpiritBolt:
+    case ProjectileRecipe::MonsterLightBolt:
+    case ProjectileRecipe::MonsterDarkBolt:
+    case ProjectileRecipe::GenericFireTrail:
+    case ProjectileRecipe::GenericParticleTrail:
+    case ProjectileRecipe::GenericLineTrail:
+    case ProjectileRecipe::None:
+    default:
+        return baselineOffset;
+    }
+}
+
+float projectileRecipeBackOffset(ProjectileRecipe recipe, uint16_t radius)
+{
+    const float radiusHalfOffset = std::max(static_cast<float>(radius) * 0.5f, 0.0f);
+
+    switch (recipe)
+    {
+    case ProjectileRecipe::ToxicCloud:
+    case ProjectileRecipe::PoisonSpray:
+    case ProjectileRecipe::AcidBurst:
+        return radiusHalfOffset;
+    case ProjectileRecipe::Cannonball:
+        return 0.0f;
+    case ProjectileRecipe::DragonBreath:
+        return 8.0f;
+    case ProjectileRecipe::MeteorShower:
+    case ProjectileRecipe::Starburst:
+    case ProjectileRecipe::Implosion:
+        return 3.0f;
+    case ProjectileRecipe::Fireball:
+        return 6.0f;
+    case ProjectileRecipe::FireBolt:
+    case ProjectileRecipe::MonsterAirBolt:
+    case ProjectileRecipe::MonsterEarthBolt:
+    case ProjectileRecipe::MonsterFireBolt:
+    case ProjectileRecipe::MonsterWaterBolt:
+    case ProjectileRecipe::MonsterBodyBolt:
+    case ProjectileRecipe::MonsterMindBolt:
+    case ProjectileRecipe::MonsterSpiritBolt:
+    case ProjectileRecipe::MonsterLightBolt:
+    case ProjectileRecipe::MonsterDarkBolt:
+    case ProjectileRecipe::Sparks:
+    case ProjectileRecipe::LightningBolt:
+    case ProjectileRecipe::IceBolt:
+    case ProjectileRecipe::LightBolt:
+    case ProjectileRecipe::Sunray:
+    case ProjectileRecipe::DarkFireBolt:
+    case ProjectileRecipe::MindBlast:
+    case ProjectileRecipe::GenericFireTrail:
+    case ProjectileRecipe::GenericParticleTrail:
+    case ProjectileRecipe::GenericLineTrail:
+    case ProjectileRecipe::None:
+    default:
+        return 0.0f;
+    }
+}
+
+bool projectileRecipeIsBindingOnly(ProjectileRecipe recipe)
+{
+    return recipe >= ProjectileRecipe::Arrow && recipe <= ProjectileRecipe::Armageddon;
+}
+
+bool projectileRecipeUsesDedicatedImpactFx(ProjectileRecipe recipe)
+{
+    if (projectileRecipeIsBindingOnly(recipe))
+    {
+        return false;
+    }
+
+    const ProjectileFxRecipe &fxRecipe = projectileFxRecipe(recipe);
+    const ProjectileFxPrimitive impactPrimitive = fxRecipe.impactPrimitive;
+
+    if (impactPrimitive == ProjectileFxPrimitive::RenderSprite)
+    {
+        return false;
+    }
+
+    if (impactPrimitive != ProjectileFxPrimitive::None)
+    {
+        return true;
+    }
+
+    if (fxRecipe.trailPrimitive != ProjectileFxPrimitive::None
+        || fxRecipe.mobileLightRadius > 0.0f
+        || !fxRecipe.renderProjectileBillboard)
+    {
+        return false;
+    }
+
+    return recipe != ProjectileRecipe::None;
+}
+
+bool projectileRecipeShowsImpactBillboard(ProjectileRecipe recipe)
+{
+    return projectileFxRecipe(recipe).impactPrimitive == ProjectileFxPrimitive::RenderSprite
+        || recipe == ProjectileRecipe::Fireball
+        || recipe == ProjectileRecipe::DragonBreath;
+}
+
+void emitHangingProjectileTrailParticle(
+    ParticleSystem &particleSystem,
+    float x,
+    float y,
+    float z,
+    float xOffset,
+    uint32_t colorAbgr,
+    FxParticleMaterial material,
+    float lifetimeSeconds,
+    uint32_t seed)
+{
+    const float swirl = hashToUnit(seed >> 11) * 2.0f - 1.0f;
+
+    FxParticleState particle = {};
+    particle.x = x + xOffset;
+    particle.y = y;
+    particle.z = z;
+    particle.velocityX = 0.0f;
+    particle.velocityY = 0.0f;
+    particle.velocityZ = 0.0f;
+    particle.size = storedReferenceParticleSize(1.0f, material);
+    particle.endSize = particle.size;
+    particle.drag = 0.0f;
+    particle.rotationRadians = swirl * 0.9f;
+    particle.angularVelocityRadians = swirl * 0.9f;
+    particle.stretch = 1.0f;
+    particle.ageSeconds = 0.0f;
+    particle.lifetimeSeconds = lifetimeSeconds;
+    particle.fadeOutStartSeconds = lifetimeSeconds * 0.70f;
+    particle.startColorAbgr = colorAbgr;
+    particle.endColorAbgr = transparentColor(colorAbgr);
+    particle.motion = FxParticleMotion::Ascend;
+    particle.blendMode = FxParticleBlendMode::Additive;
+    particle.alignment = FxParticleAlignment::CameraFacing;
+    particle.material = material;
+    particle.tag = FxParticleTag::Trail;
+    particleSystem.addParticle(particle);
+}
+
+void spawnHangingProjectileTrailParticles(
+    ParticleSystem &particleSystem,
+    const ProjectileSegmentSpawnContext &context,
+    ProjectileRecipe recipe)
+{
+    const ProjectileFxRecipe &fxRecipe = projectileFxRecipe(recipe);
+
+    if (fxRecipe.trailPrimitive != ProjectileFxPrimitive::HangingTrail)
+    {
+        return;
+    }
+
+    const FxParticleMaterial material = materialForProjectileFxMaterial(fxRecipe.trailMaterial);
+    const uint32_t baseSeed = context.projectileId * 2246822519u;
+
+    if (!context.hasPreviousPosition)
+    {
+        const float lifetimeSeconds = lifetimeFromSeed(
+            baseSeed,
+            HangingProjectileTrailInitialLifetimeMinSeconds,
+            HangingProjectileTrailInitialLifetimeMaxSeconds);
+        emitHangingProjectileTrailParticle(
+            particleSystem,
+            context.currentX,
+            context.currentY,
+            context.currentZ,
+            HangingProjectileTrailLateralOffset,
+            fxRecipe.colorAbgr,
+            material,
+            lifetimeSeconds,
+            baseSeed);
+        emitHangingProjectileTrailParticle(
+            particleSystem,
+            context.currentX,
+            context.currentY,
+            context.currentZ,
+            -HangingProjectileTrailLateralOffset,
+            fxRecipe.colorAbgr,
+            material,
+            lifetimeSeconds,
+            baseSeed ^ 0x9e3779b9u);
+        return;
+    }
+
+    const float midpointX = (context.currentX - context.previousX) * 0.5f + context.previousX;
+    const float midpointY = (context.currentY - context.previousY) * 0.5f + context.previousY;
+    const float midpointZ = (context.currentZ - context.previousZ) * 0.5f + context.previousZ;
+    const float lifetimeSeconds = lifetimeFromSeed(
+        baseSeed,
+        HangingProjectileTrailLifetimeMinSeconds,
+        HangingProjectileTrailLifetimeMaxSeconds);
+
+    emitHangingProjectileTrailParticle(
+        particleSystem,
+        midpointX,
+        midpointY,
+        midpointZ,
+        HangingProjectileTrailLateralOffset,
+        fxRecipe.colorAbgr,
+        material,
+        lifetimeSeconds,
+        baseSeed ^ 0x3c6ef372u);
+    emitHangingProjectileTrailParticle(
+        particleSystem,
+        midpointX,
+        midpointY,
+        midpointZ,
+        -HangingProjectileTrailLateralOffset,
+        fxRecipe.colorAbgr,
+        material,
+        lifetimeSeconds,
+        baseSeed ^ 0xbb67ae85u);
+    emitHangingProjectileTrailParticle(
+        particleSystem,
+        context.currentX,
+        context.currentY,
+        context.currentZ,
+        HangingProjectileTrailLateralOffset,
+        fxRecipe.colorAbgr,
+        material,
+        lifetimeSeconds,
+        baseSeed ^ 0xa54ff53au);
+    emitHangingProjectileTrailParticle(
+        particleSystem,
+        context.currentX,
+        context.currentY,
+        context.currentZ,
+        -HangingProjectileTrailLateralOffset,
+        fxRecipe.colorAbgr,
+        material,
+        lifetimeSeconds,
+        baseSeed ^ 0x510e527fu);
+}
+
+void emitStunTrailParticle(
+    ParticleSystem &particleSystem,
+    float x,
+    float y,
+    float z,
+    float size,
+    float lifetimeSeconds,
+    uint32_t seed)
+{
+    const float swirl = hashToUnit(seed >> 9) * 2.0f - 1.0f;
+
+    FxParticleState particle = {};
+    particle.x = x;
+    particle.y = y;
+    particle.z = z;
+    particle.size = storedReferenceParticleSize(size, FxParticleMaterial::HardBlob);
+    particle.endSize = particle.size;
+    particle.drag = 0.0f;
+    particle.rotationRadians = swirl * 0.7f;
+    particle.angularVelocityRadians = swirl * 1.0f;
+    particle.stretch = 1.0f;
+    particle.ageSeconds = 0.0f;
+    particle.lifetimeSeconds = lifetimeSeconds;
+    particle.fadeOutStartSeconds = lifetimeSeconds * 0.68f;
+    particle.startColorAbgr = ProjectileFxWhite;
+    particle.endColorAbgr = transparentColor(ProjectileFxWhite);
+    particle.motion = FxParticleMotion::StaticFade;
+    particle.blendMode = FxParticleBlendMode::Additive;
+    particle.alignment = FxParticleAlignment::CameraFacing;
+    particle.material = FxParticleMaterial::HardBlob;
+    particle.tag = FxParticleTag::Trail;
+    particleSystem.addParticle(particle);
+}
+
+void spawnStunTrailParticles(
+    ParticleSystem &particleSystem,
+    const ProjectileSegmentSpawnContext &context,
+    ProjectileRecipe recipe)
+{
+    if (projectileFxRecipe(recipe).trailPrimitive != ProjectileFxPrimitive::Stun)
+    {
+        return;
+    }
+
+    const uint32_t baseSeed = context.projectileId * 2246822519u;
+    const float firstLifetime = lifetimeFromSeed(baseSeed, 0.5f, 1.0f);
+
+    if (!context.hasPreviousPosition)
+    {
+        emitStunTrailParticle(
+            particleSystem,
+            context.currentX,
+            context.currentY,
+            context.currentZ,
+            1.0f,
+            firstLifetime,
+            baseSeed);
+        return;
+    }
+
+    const float midpointX = (context.currentX - context.previousX) * 0.5f + context.previousX;
+    const float midpointY = (context.currentY - context.previousY) * 0.5f + context.previousY;
+    const float midpointZ = (context.currentZ - context.previousZ) * 0.5f + context.previousZ;
+    emitStunTrailParticle(
+        particleSystem,
+        midpointX,
+        midpointY,
+        midpointZ,
+        3.0f,
+        firstLifetime,
+        baseSeed ^ 0x3c6ef372u);
+    emitStunTrailParticle(
+        particleSystem,
+        context.currentX,
+        context.currentY,
+        context.currentZ,
+        2.0f,
+        lifetimeFromSeed(baseSeed ^ 0xbb67ae85u, 0.5f, 1.0f),
+        baseSeed ^ 0xbb67ae85u);
+}
+
+void emitCollisionParticle(
+    ParticleSystem &particleSystem,
+    float x,
+    float y,
+    float z,
+    float velocityX,
+    float velocityY,
+    float velocityZ,
+    uint32_t colorAbgr,
+    FxParticleMaterial material,
+    uint32_t seed)
+{
+    const float swirl = hashToUnit(seed >> 9) * 2.0f - 1.0f;
+    const float lifetimeSeconds = lifetimeFromSeed(seed, 1.0f, 2.0f);
+
+    FxParticleState particle = {};
+    particle.x = x;
+    particle.y = y;
+    particle.z = z;
+    particle.velocityX = velocityX;
+    particle.velocityY = velocityY;
+    particle.velocityZ = velocityZ;
+    particle.size = storedReferenceParticleSize(1.0f, material);
+    particle.endSize = particle.size;
+    particle.drag = 1.8f;
+    particle.rotationRadians = swirl * 0.9f;
+    particle.angularVelocityRadians = swirl * 1.4f;
+    particle.stretch = 1.0f;
+    particle.ageSeconds = 0.0f;
+    particle.lifetimeSeconds = lifetimeSeconds;
+    particle.fadeOutStartSeconds = lifetimeSeconds * 0.62f;
+    particle.startColorAbgr = colorAbgr;
+    particle.endColorAbgr = transparentColor(colorAbgr);
+    particle.motion = FxParticleMotion::Burst;
+    particle.blendMode = FxParticleBlendMode::Additive;
+    particle.alignment = FxParticleAlignment::CameraFacing;
+    particle.material = material;
+    particle.tag = FxParticleTag::Impact;
+    particleSystem.addParticle(particle);
+}
+
+void spawnSingleCollisionBurst(
+    ParticleSystem &particleSystem,
+    const ImpactSpawnContext &context,
+    const ProjectileFxRecipe &fxRecipe)
+{
+    const FxParticleMaterial material = materialForProjectileFxMaterial(fxRecipe.impactMaterial);
+    const uint32_t baseSeed = static_cast<uint32_t>(std::hash<std::string>{}(
+        context.objectName + context.spriteName));
+
+    for (uint32_t particleIndex = 0; particleIndex < 10u; ++particleIndex)
+    {
+        const uint32_t seed = baseSeed ^ (particleIndex * 2654435761u);
+        const float velocityX = hashToUnit(seed) * 511.0f - 255.0f;
+        const float velocityY = hashToUnit(seed >> 8) * 511.0f - 255.0f;
+        const float velocityZ = hashToUnit(seed >> 16) * 511.0f - 255.0f;
+        emitCollisionParticle(
+            particleSystem,
+            context.x,
+            context.y,
+            context.z,
+            velocityX,
+            velocityY,
+            velocityZ,
+            fxRecipe.impactColorAbgr,
+            material,
+            seed);
+    }
+}
+
+void spawnRadialCollisionBurst(
+    ParticleSystem &particleSystem,
+    const ImpactSpawnContext &context,
+    const ProjectileFxRecipe &fxRecipe,
+    float radius)
+{
+    const FxParticleMaterial material = materialForProjectileFxMaterial(fxRecipe.impactMaterial);
+    const uint32_t baseSeed = static_cast<uint32_t>(std::hash<std::string>{}(
+        context.objectName + context.spriteName));
+    constexpr float DiagonalScale = 0.70710677f;
+    const float directions[8][2] = {
+        {0.0f, 1.0f},
+        {DiagonalScale, DiagonalScale},
+        {1.0f, 0.0f},
+        {DiagonalScale, -DiagonalScale},
+        {0.0f, -1.0f},
+        {-DiagonalScale, -DiagonalScale},
+        {-1.0f, 0.0f},
+        {-DiagonalScale, DiagonalScale},
+    };
+
+    for (uint32_t particleIndex = 0; particleIndex < 8u; ++particleIndex)
+    {
+        const uint32_t seed = baseSeed ^ (particleIndex * 2654435761u);
+        emitCollisionParticle(
+            particleSystem,
+            context.x,
+            context.y,
+            context.z + 32.0f,
+            directions[particleIndex][0] * radius,
+            directions[particleIndex][1] * radius,
+            radius,
+            fxRecipe.impactColorAbgr,
+            material,
+            seed);
+    }
+}
+
+void spawnFireballSphereBurst(
+    ParticleSystem &particleSystem,
+    const ImpactSpawnContext &context,
+    const ProjectileFxRecipe &fxRecipe)
+{
+    spawnSingleCollisionBurst(particleSystem, context, fxRecipe);
+    emitExpandingFireAreaPulse(particleSystem, context);
+}
+
+void spawnImplosionSphere(ParticleSystem &particleSystem, const ImpactSpawnContext &context)
+{
+    FxParticleState particle = {};
+    particle.x = context.x;
+    particle.y = context.y;
+    particle.z = context.z + 20.0f;
+    particle.size = 132.0f;
+    particle.endSize = 16.0f;
+    particle.ageSeconds = 0.0f;
+    particle.fadeOutStartSeconds = 0.001f;
+    particle.lifetimeSeconds = 0.52f;
+    particle.startColorAbgr = ProjectileFxMediumGrey;
+    particle.endColorAbgr = transparentColor(ProjectileFxMediumGrey);
+    particle.motion = FxParticleMotion::StaticFade;
+    particle.blendMode = FxParticleBlendMode::Additive;
+    particle.alignment = FxParticleAlignment::CameraFacing;
+    particle.material = FxParticleMaterial::Mist;
+    particle.tag = FxParticleTag::Impact;
+    particleSystem.addParticle(particle);
+}
+
+void spawnMindBlastAfterEffect(ParticleSystem &particleSystem, const ImpactSpawnContext &context)
+{
+    ProjectileFxRecipe recipe = makeProjectileFxRecipe(
+        ProjectileFxPrimitive::RenderSprite,
+        ProjectileFxPrimitive::SingleCollisionBurst,
+        ProjectileFxMaterial::None,
+        ProjectileFxMaterial::None,
+        ProjectileFxMediumGrey,
+        0.0f,
+        true);
+    recipe.impactColorAbgr = ProjectileFxMediumGrey;
+    spawnSingleCollisionBurst(particleSystem, context, recipe);
+}
+
+void spawnProjectileTrailParticles(
+    ParticleSystem &particleSystem,
+    const ProjectileSpawnContext &context,
+    ProjectileRecipe recipe)
+{
+    const SpellId spellId = spellIdFromValue(static_cast<uint32_t>(context.spellId));
+
+    if (recipe == ProjectileRecipe::Blaster
+        || recipe == ProjectileRecipe::Sparks
+        || recipe == ProjectileRecipe::Arrow
+        || recipe == ProjectileRecipe::FireArrow)
+    {
+        return;
+    }
+
+    if (spellId == SpellId::MindBlast
+        || spellId == SpellId::PsychicShock
+        || spellId == SpellId::Harm
+        || spellId == SpellId::ToxicCloud
+        || spellId == SpellId::Incinerate)
+    {
+        return;
+    }
+
+    const float velocityLength = std::sqrt(
+        context.velocityX * context.velocityX
+        + context.velocityY * context.velocityY
+        + context.velocityZ * context.velocityZ);
+    float directionX = 0.0f;
+    float directionY = 0.0f;
+    float directionZ = 1.0f;
+
+    if (velocityLength > 0.001f)
+    {
+        directionX = context.velocityX / velocityLength;
+        directionY = context.velocityY / velocityLength;
+        directionZ = context.velocityZ / velocityLength;
+    }
+
+    const bool affectedByGravity = (context.objectFlags & ObjectDescNoGravity) == 0;
+
+    const auto applyGravityTrailTuning =
+        [affectedByGravity](LayerRecipe &layer)
+        {
+            if (!affectedByGravity)
+            {
+                return;
+            }
+
+            layer.startOffset *= 0.72f;
+            layer.offsetStep *= 0.74f;
+            layer.inheritedVelocity *= 0.30f;
+            layer.lifetimeSeconds *= 0.86f;
+            layer.drag = std::max(layer.drag, 0.1f) * 1.35f;
+            layer.motion = FxParticleMotion::BallisticTrail;
+        };
+
+    const uint32_t colorAbgr = projectileRecipeColorAbgr(recipe);
+    const uint32_t baseSeed = context.projectileId * 2246822519u;
+    const float trailParticleSizeMultiplier = projectileTrailParticleSizeMultiplier(recipe);
+
+    if (recipe == ProjectileRecipe::Cannonball)
+    {
+        LayerRecipe emberTrail = {};
+        emberTrail.startColorAbgr = makeAbgr(92, 88, 80, 120);
+        emberTrail.endColorAbgr = makeAbgr(120, 112, 104, 0);
+        emberTrail.count = 2u;
+        emberTrail.startOffset = 0.0f;
+        emberTrail.offsetStep = 0.0f;
+        emberTrail.lateralSpread = 0.9f;
+        emberTrail.verticalSpread = 0.6f;
+        emberTrail.inheritedVelocity = 0.24f;
+        emberTrail.upwardVelocity = 0.0f;
+        emberTrail.startSize = 9.0f;
+        emberTrail.endSize = 12.0f;
+        emberTrail.lifetimeSeconds = 0.28f;
+        emberTrail.drag = 6.0f;
+        emberTrail.rotationJitterRadians = 0.5f;
+        emberTrail.angularVelocityRadians = 0.8f;
+        emberTrail.stretch = 1.0f;
+        emberTrail.fadeInSeconds = 0.06f;
+        emberTrail.motion = FxParticleMotion::BallisticTrail;
+        emberTrail.blendMode = FxParticleBlendMode::Alpha;
+        emberTrail.alignment = FxParticleAlignment::CameraFacing;
+        emberTrail.material = FxParticleMaterial::Smoke;
+        emberTrail.tag = FxParticleTag::Trail;
+        tuneProjectileTrailLayer(emberTrail);
+        emitLayerParticles(
+            particleSystem,
+            baseSeed,
+            context.x,
+            context.y,
+            context.z,
+            directionX,
+            directionY,
+            directionZ,
+            context.velocityX,
+            context.velocityY,
+            context.velocityZ,
+            emberTrail);
+        return;
+    }
+
+    if (recipe == ProjectileRecipe::FireBolt
+        || recipe == ProjectileRecipe::Fireball
+        || recipe == ProjectileRecipe::MeteorShower
+        || recipe == ProjectileRecipe::DragonBreath
+        || recipe == ProjectileRecipe::DarkFireBolt
+        || recipe == ProjectileRecipe::MindBlast
+        || (context.objectFlags & ObjectDescTrailFire) != 0)
+    {
+        const bool isFireBoltTrail = recipe == ProjectileRecipe::FireBolt;
+
+        LayerRecipe emberLayer = {};
+        emberLayer.startColorAbgr = colorAbgr;
+        emberLayer.endColorAbgr = isFireBoltTrail ? makeAbgr(255, 72, 28, 0) : makeAbgr(255, 180, 64, 0);
+        emberLayer.count =
+            recipe == ProjectileRecipe::Fireball || recipe == ProjectileRecipe::DragonBreath ? 10u
+                : (recipe == ProjectileRecipe::MeteorShower ? 5u : (isFireBoltTrail ? 11u : 7u));
+        emberLayer.startOffset = 7.0f;
+        emberLayer.offsetStep = isFireBoltTrail ? 5.2f : 5.8f;
+        emberLayer.lateralSpread = isFireBoltTrail ? 3.0f : 2.6f;
+        emberLayer.verticalSpread = isFireBoltTrail ? 1.8f : 1.4f;
+        emberLayer.inheritedVelocity = 0.18f;
+        emberLayer.upwardVelocity = 10.0f;
+        emberLayer.startSize =
+            recipe == ProjectileRecipe::Fireball || recipe == ProjectileRecipe::DragonBreath ? 9.0f
+                : (recipe == ProjectileRecipe::MeteorShower ? 7.5f : (isFireBoltTrail ? 8.8f : 7.0f));
+        emberLayer.endSize = emberLayer.startSize * 0.38f;
+        emberLayer.lifetimeSeconds =
+            recipe == ProjectileRecipe::Fireball || recipe == ProjectileRecipe::DragonBreath ? 0.36f
+                : (recipe == ProjectileRecipe::MeteorShower ? 0.26f : (isFireBoltTrail ? 0.38f : 0.30f));
+        emberLayer.drag = 4.5f;
+        emberLayer.rotationJitterRadians = 0.5f;
+        emberLayer.angularVelocityRadians = 4.0f;
+        emberLayer.stretch = 1.0f;
+        emberLayer.motion = FxParticleMotion::VelocityTrail;
+        emberLayer.blendMode = FxParticleBlendMode::Additive;
+        emberLayer.alignment = FxParticleAlignment::CameraFacing;
+        emberLayer.material = FxParticleMaterial::HardBlob;
+        emberLayer.tag = FxParticleTag::Trail;
+        applyGravityTrailTuning(emberLayer);
+        scaleLayerParticleSize(emberLayer, trailParticleSizeMultiplier);
+        tuneProjectileTrailLayer(emberLayer);
+        emitLayerParticles(
+            particleSystem,
+            baseSeed,
+            context.x,
+            context.y,
+            context.z,
+            directionX,
+            directionY,
+            directionZ,
+            context.velocityX,
+            context.velocityY,
+            context.velocityZ,
+            emberLayer);
+
+        if (recipe == ProjectileRecipe::Cannonball)
+        {
+            return;
+        }
+
+        LayerRecipe smokeLayer = {};
+        smokeLayer.startColorAbgr =
+            recipe == ProjectileRecipe::DarkFireBolt || recipe == ProjectileRecipe::MindBlast
+                ? makeAbgr(112, 72, 144, 96)
+                : (isFireBoltTrail ? makeAbgr(112, 52, 44, 76) : makeAbgr(84, 84, 84, 88));
+        smokeLayer.endColorAbgr = makeAbgr(84, 84, 84, 0);
+        smokeLayer.count =
+            recipe == ProjectileRecipe::Fireball || recipe == ProjectileRecipe::DragonBreath ? 5u
+                : (recipe == ProjectileRecipe::MeteorShower ? 2u
+                    : (recipe == ProjectileRecipe::Cannonball ? 4u : (isFireBoltTrail ? 4u : 3u)));
+        smokeLayer.startOffset =
+            recipe == ProjectileRecipe::MeteorShower ? 5.0f : (recipe == ProjectileRecipe::Cannonball ? 6.0f : 10.0f);
+        smokeLayer.offsetStep =
+            recipe == ProjectileRecipe::MeteorShower ? 4.5f : (recipe == ProjectileRecipe::Cannonball ? 5.5f : 8.0f);
+        smokeLayer.lateralSpread = 3.4f;
+        smokeLayer.verticalSpread = 2.2f;
+        smokeLayer.inheritedVelocity = recipe == ProjectileRecipe::Cannonball ? 0.03f : 0.06f;
+        smokeLayer.upwardVelocity = recipe == ProjectileRecipe::Cannonball ? 6.0f : 14.0f;
+        smokeLayer.startSize =
+            recipe == ProjectileRecipe::DragonBreath ? 16.0f
+                : (recipe == ProjectileRecipe::MeteorShower ? 10.0f
+                    : (recipe == ProjectileRecipe::Cannonball ? 13.0f : 12.0f));
+        smokeLayer.endSize = smokeLayer.startSize * 1.9f;
+        smokeLayer.lifetimeSeconds =
+            recipe == ProjectileRecipe::MeteorShower ? 0.30f : (recipe == ProjectileRecipe::Cannonball ? 0.42f : 0.48f);
+        smokeLayer.drag = recipe == ProjectileRecipe::Cannonball ? 3.0f : 2.2f;
+        smokeLayer.rotationJitterRadians = 0.9f;
+        smokeLayer.angularVelocityRadians = 1.2f;
+        smokeLayer.motion = FxParticleMotion::Drift;
+        smokeLayer.blendMode = FxParticleBlendMode::Alpha;
+        smokeLayer.alignment = FxParticleAlignment::CameraFacing;
+        smokeLayer.material = FxParticleMaterial::Smoke;
+        smokeLayer.tag = FxParticleTag::Trail;
+        applyGravityTrailTuning(smokeLayer);
+        scaleLayerParticleSize(smokeLayer, trailParticleSizeMultiplier);
+        tuneProjectileTrailLayer(smokeLayer);
+        emitLayerParticles(
+            particleSystem,
+            baseSeed ^ 0x9e3779b9u,
+            context.x,
+            context.y,
+            context.z,
+            directionX,
+            directionY,
+            directionZ,
+            context.velocityX,
+            context.velocityY,
+            context.velocityZ,
+            smokeLayer);
+        return;
+    }
+
+    if (recipe == ProjectileRecipe::Starburst)
+    {
+        LayerRecipe sparkLayer = {};
+        sparkLayer.startColorAbgr = colorAbgr;
+        sparkLayer.endColorAbgr = makeAbgr(255, 255, 255, 0);
+        sparkLayer.count = 6u;
+        sparkLayer.startOffset = 3.5f;
+        sparkLayer.offsetStep = 3.2f;
+        sparkLayer.lateralSpread = 1.2f;
+        sparkLayer.verticalSpread = 1.0f;
+        sparkLayer.inheritedVelocity = 0.14f;
+        sparkLayer.upwardVelocity = 0.0f;
+        sparkLayer.startSize = 5.5f;
+        sparkLayer.endSize = 2.0f;
+        sparkLayer.lifetimeSeconds = 0.22f;
+        sparkLayer.drag = 5.0f;
+        sparkLayer.stretch = 1.0f;
+        sparkLayer.motion = FxParticleMotion::VelocityTrail;
+        sparkLayer.blendMode = FxParticleBlendMode::Additive;
+        sparkLayer.alignment = FxParticleAlignment::CameraFacing;
+        sparkLayer.material = FxParticleMaterial::SoftBlob;
+        sparkLayer.tag = FxParticleTag::Trail;
+        tuneProjectileTrailLayer(sparkLayer);
+        emitLayerParticles(
+            particleSystem,
+            baseSeed,
+            context.x,
+            context.y,
+            context.z,
+            directionX,
+            directionY,
+            directionZ,
+            context.velocityX,
+            context.velocityY,
+            context.velocityZ,
+            sparkLayer);
+
+        LayerRecipe moteLayer = {};
+        moteLayer.startColorAbgr = varyAlpha(colorAbgr, 0.75f);
+        moteLayer.endColorAbgr = makeAbgr(255, 255, 255, 0);
+        moteLayer.count = 3u;
+        moteLayer.startOffset = 4.0f;
+        moteLayer.offsetStep = 3.8f;
+        moteLayer.lateralSpread = 1.6f;
+        moteLayer.verticalSpread = 1.2f;
+        moteLayer.inheritedVelocity = 0.10f;
+        moteLayer.upwardVelocity = 1.0f;
+        moteLayer.startSize = 6.0f;
+        moteLayer.endSize = 2.8f;
+        moteLayer.lifetimeSeconds = 0.24f;
+        moteLayer.drag = 4.4f;
+        moteLayer.motion = FxParticleMotion::VelocityTrail;
+        moteLayer.blendMode = FxParticleBlendMode::Additive;
+        moteLayer.alignment = FxParticleAlignment::CameraFacing;
+        moteLayer.material = FxParticleMaterial::SoftBlob;
+        moteLayer.tag = FxParticleTag::Trail;
+        tuneProjectileTrailLayer(moteLayer);
+        emitLayerParticles(
+            particleSystem,
+            baseSeed ^ 0x3c6ef372u,
+            context.x,
+            context.y,
+            context.z,
+            directionX,
+            directionY,
+            directionZ,
+            context.velocityX,
+            context.velocityY,
+            context.velocityZ,
+            moteLayer);
+        return;
+    }
+
+    if (recipe == ProjectileRecipe::Sparks
+        || recipe == ProjectileRecipe::LightningBolt
+        || recipe == ProjectileRecipe::GenericLineTrail
+        || (context.objectFlags & ObjectDescTrailLine) != 0)
+    {
+        LayerRecipe sparkLayer = {};
+        sparkLayer.startColorAbgr = colorAbgr;
+        sparkLayer.endColorAbgr = makeAbgr(255, 255, 220, 0);
+        sparkLayer.count = recipe == ProjectileRecipe::GenericLineTrail ? 4u
+            : (recipe == ProjectileRecipe::Sparks ? 2u : 8u);
+        sparkLayer.startOffset = 5.0f;
+        sparkLayer.offsetStep = 3.6f;
+        sparkLayer.lateralSpread = 1.2f;
+        sparkLayer.verticalSpread = 1.0f;
+        sparkLayer.inheritedVelocity = 0.28f;
+        sparkLayer.startSize = recipe == ProjectileRecipe::GenericLineTrail ? 4.0f
+            : (recipe == ProjectileRecipe::Sparks ? 4.6f : 5.5f);
+        sparkLayer.endSize = 1.8f;
+        sparkLayer.lifetimeSeconds = recipe == ProjectileRecipe::Sparks ? 0.16f : 0.18f;
+        sparkLayer.startSize *= LightningTrailParticleSizeScale;
+        sparkLayer.endSize *= LightningTrailParticleSizeScale;
+        sparkLayer.lifetimeSeconds *= LightningTrailParticleLifetimeScale;
+        sparkLayer.drag = 8.0f;
+        sparkLayer.stretch = 2.4f;
+        sparkLayer.motion = FxParticleMotion::VelocityTrail;
+        sparkLayer.blendMode = FxParticleBlendMode::Additive;
+        sparkLayer.alignment = FxParticleAlignment::VelocityStretched;
+        sparkLayer.material = FxParticleMaterial::Spark;
+        sparkLayer.tag = FxParticleTag::Trail;
+        applyGravityTrailTuning(sparkLayer);
+        tuneProjectileTrailLayer(sparkLayer);
+        emitLayerParticles(
+            particleSystem,
+            baseSeed,
+            context.x,
+            context.y,
+            context.z,
+            directionX,
+            directionY,
+            directionZ,
+            context.velocityX,
+            context.velocityY,
+            context.velocityZ,
+            sparkLayer);
+        return;
+    }
+
+    if (recipe == ProjectileRecipe::IceBolt || recipe == ProjectileRecipe::LightBolt)
+    {
+        LayerRecipe moteLayer = {};
+        moteLayer.startColorAbgr = colorAbgr;
+        moteLayer.endColorAbgr = makeAbgr(255, 255, 255, 0);
+        moteLayer.count = recipe == ProjectileRecipe::LightBolt ? 6u : 7u;
+        moteLayer.startOffset = 6.0f;
+        moteLayer.offsetStep = 4.6f;
+        moteLayer.lateralSpread = 1.9f;
+        moteLayer.verticalSpread = 1.2f;
+        moteLayer.inheritedVelocity = 0.20f;
+        moteLayer.upwardVelocity = 3.0f;
+        moteLayer.startSize = recipe == ProjectileRecipe::LightBolt ? 6.0f : 6.8f;
+        moteLayer.endSize = 2.6f;
+        moteLayer.lifetimeSeconds = recipe == ProjectileRecipe::LightBolt ? 0.20f : 0.24f;
+        moteLayer.drag = 5.5f;
+        moteLayer.rotationJitterRadians = 0.4f;
+        moteLayer.angularVelocityRadians = 2.0f;
+        moteLayer.motion = FxParticleMotion::VelocityTrail;
+        moteLayer.blendMode = FxParticleBlendMode::Additive;
+        moteLayer.alignment = FxParticleAlignment::CameraFacing;
+        moteLayer.material = recipe == ProjectileRecipe::LightBolt ? FxParticleMaterial::SoftBlob
+            : FxParticleMaterial::HardBlob;
+        moteLayer.tag = FxParticleTag::Trail;
+        applyGravityTrailTuning(moteLayer);
+        tuneProjectileTrailLayer(moteLayer);
+        emitLayerParticles(
+            particleSystem,
+            baseSeed,
+            context.x,
+            context.y,
+            context.z,
+            directionX,
+            directionY,
+            directionZ,
+            context.velocityX,
+            context.velocityY,
+            context.velocityZ,
+            moteLayer);
+
+        if (recipe == ProjectileRecipe::IceBolt)
+        {
+            LayerRecipe mistLayer = {};
+            mistLayer.startColorAbgr = makeAbgr(180, 220, 255, 84);
+            mistLayer.endColorAbgr = makeAbgr(200, 230, 255, 0);
+            mistLayer.count = 3u;
+            mistLayer.startOffset = 8.0f;
+            mistLayer.offsetStep = 6.8f;
+            mistLayer.lateralSpread = 2.8f;
+            mistLayer.verticalSpread = 1.8f;
+            mistLayer.inheritedVelocity = 0.08f;
+            mistLayer.upwardVelocity = 5.0f;
+            mistLayer.startSize = 10.0f;
+            mistLayer.endSize = 16.0f;
+            mistLayer.lifetimeSeconds = 0.34f;
+            mistLayer.drag = 2.6f;
+            mistLayer.rotationJitterRadians = 0.8f;
+            mistLayer.angularVelocityRadians = 0.7f;
+            mistLayer.motion = FxParticleMotion::Drift;
+            mistLayer.blendMode = FxParticleBlendMode::Alpha;
+            mistLayer.alignment = FxParticleAlignment::CameraFacing;
+            mistLayer.material = FxParticleMaterial::Mist;
+            mistLayer.tag = FxParticleTag::Trail;
+            applyGravityTrailTuning(mistLayer);
+            tuneProjectileTrailLayer(mistLayer);
+            emitLayerParticles(
+                particleSystem,
+                baseSeed ^ 0x3c6ef372u,
+                context.x,
+                context.y,
+                context.z,
+                directionX,
+                directionY,
+                directionZ,
+                context.velocityX,
+                context.velocityY,
+                context.velocityZ,
+                mistLayer);
+        }
+
+        return;
+    }
+
+    if (recipe == ProjectileRecipe::PoisonSpray
+        || recipe == ProjectileRecipe::AcidBurst
+        || recipe == ProjectileRecipe::ToxicCloud
+        || recipe == ProjectileRecipe::GenericParticleTrail
+        || isMonsterBoltRecipe(recipe)
+        || (context.objectFlags & ObjectDescTrailParticle) != 0)
+    {
+        LayerRecipe hazeLayer = {};
+        hazeLayer.startColorAbgr = colorAbgr;
+        hazeLayer.endColorAbgr =
+            isMonsterBoltRecipe(recipe) ? transparentColor(colorAbgr) : makeAbgr(96, 220, 128, 0);
+        hazeLayer.count = recipe == ProjectileRecipe::ToxicCloud ? 7u : 5u;
+        hazeLayer.startOffset = recipe == ProjectileRecipe::ToxicCloud ? 4.0f : 8.0f;
+        hazeLayer.offsetStep = recipe == ProjectileRecipe::ToxicCloud ? 7.0f : 6.4f;
+        hazeLayer.lateralSpread = 3.8f;
+        hazeLayer.verticalSpread = 2.4f;
+        hazeLayer.inheritedVelocity = 0.10f;
+        hazeLayer.upwardVelocity = 8.0f;
+        hazeLayer.startSize = recipe == ProjectileRecipe::ToxicCloud ? 12.0f : 9.0f;
+        hazeLayer.endSize = hazeLayer.startSize * 1.8f;
+        hazeLayer.lifetimeSeconds = recipe == ProjectileRecipe::ToxicCloud ? 0.50f : 0.36f;
+        hazeLayer.drag = 2.4f;
+        hazeLayer.rotationJitterRadians = 0.9f;
+        hazeLayer.angularVelocityRadians = 0.9f;
+        hazeLayer.motion = FxParticleMotion::Drift;
+        hazeLayer.blendMode = FxParticleBlendMode::Alpha;
+        hazeLayer.alignment = FxParticleAlignment::CameraFacing;
+        hazeLayer.material = FxParticleMaterial::Mist;
+        hazeLayer.tag = FxParticleTag::Trail;
+        applyGravityTrailTuning(hazeLayer);
+        tuneProjectileTrailLayer(hazeLayer);
+        emitLayerParticles(
+            particleSystem,
+            baseSeed,
+            context.x,
+            context.y,
+            context.z,
+            directionX,
+            directionY,
+            directionZ,
+            context.velocityX,
+            context.velocityY,
+            context.velocityZ,
+            hazeLayer);
+
+        LayerRecipe moteLayer = {};
+        moteLayer.startColorAbgr = varyAlpha(colorAbgr, 0.85f);
+        moteLayer.endColorAbgr =
+            isMonsterBoltRecipe(recipe) ? transparentColor(colorAbgr) : makeAbgr(160, 255, 180, 0);
+        moteLayer.count = 3u;
+        moteLayer.startOffset = recipe == ProjectileRecipe::ToxicCloud ? 3.0f : 6.0f;
+        moteLayer.offsetStep = recipe == ProjectileRecipe::ToxicCloud ? 5.2f : 4.8f;
+        moteLayer.lateralSpread = 2.1f;
+        moteLayer.verticalSpread = 1.2f;
+        moteLayer.inheritedVelocity = 0.16f;
+        moteLayer.upwardVelocity = 3.0f;
+        moteLayer.startSize = recipe == ProjectileRecipe::ToxicCloud ? 6.0f : 5.5f;
+        moteLayer.endSize = 2.2f;
+        moteLayer.lifetimeSeconds = recipe == ProjectileRecipe::ToxicCloud ? 0.28f : 0.24f;
+        moteLayer.drag = 4.8f;
+        moteLayer.stretch = 1.2f;
+        moteLayer.motion = FxParticleMotion::VelocityTrail;
+        moteLayer.blendMode = FxParticleBlendMode::Additive;
+        moteLayer.alignment = FxParticleAlignment::CameraFacing;
+        moteLayer.material = FxParticleMaterial::SoftBlob;
+        moteLayer.tag = FxParticleTag::Trail;
+        applyGravityTrailTuning(moteLayer);
+        tuneProjectileTrailLayer(moteLayer);
+        emitLayerParticles(
+            particleSystem,
+            baseSeed ^ 0xbb67ae85u,
+            context.x,
+            context.y,
+            context.z,
+            directionX,
+            directionY,
+            directionZ,
+            context.velocityX,
+            context.velocityY,
+            context.velocityZ,
+            moteLayer);
+    }
+}
+
+void spawnImpactParticles(ParticleSystem &particleSystem, const ImpactSpawnContext &context)
+{
+    const ProjectileRecipe recipe = context.recipe;
+
+    const ProjectileFxRecipe &fxRecipe = projectileFxRecipe(recipe);
+
+    if (fxRecipe.impactPrimitive == ProjectileFxPrimitive::FireballSphereBurst)
+    {
+        spawnFireballSphereBurst(particleSystem, context, fxRecipe);
+        return;
+    }
+
+    if (fxRecipe.impactPrimitive == ProjectileFxPrimitive::ImplosionSphere)
+    {
+        spawnImplosionSphere(particleSystem, context);
+        return;
+    }
+
+    if (fxRecipe.impactPrimitive == ProjectileFxPrimitive::MindBlastAfterEffect)
+    {
+        spawnMindBlastAfterEffect(particleSystem, context);
+        return;
+    }
+
+    if (fxRecipe.impactPrimitive == ProjectileFxPrimitive::SingleCollisionBurst)
+    {
+        spawnSingleCollisionBurst(particleSystem, context, fxRecipe);
+
+        if (recipe == ProjectileRecipe::Incinerate)
+        {
+            spawnSingleCollisionBurst(particleSystem, context, fxRecipe);
+        }
+
+        return;
+    }
+
+    if (fxRecipe.impactPrimitive == ProjectileFxPrimitive::RadialCollisionBurst)
+    {
+        if (recipe == ProjectileRecipe::MeteorShower)
+        {
+            spawnRadialCollisionBurst(particleSystem, context, fxRecipe, 300.0f);
+            spawnRadialCollisionBurst(particleSystem, context, fxRecipe, 250.0f);
+            spawnRadialCollisionBurst(particleSystem, context, fxRecipe, 200.0f);
+        }
+        else if (recipe == ProjectileRecipe::FireSpike || recipe == ProjectileRecipe::Inferno)
+        {
+            spawnRadialCollisionBurst(particleSystem, context, fxRecipe, 250.0f);
+        }
+        else
+        {
+            spawnRadialCollisionBurst(particleSystem, context, fxRecipe, 200.0f);
+        }
+
+        return;
+    }
+
+    if (fxRecipe.impactPrimitive == ProjectileFxPrimitive::RenderSprite)
+    {
+        return;
+    }
+
+    const uint32_t colorAbgr =
+        recipe != ProjectileRecipe::None ? projectileRecipeColorAbgr(recipe)
+            : deriveImpactColorAbgr(context.objectName, context.spriteName);
+    const bool isFire =
+        recipe == ProjectileRecipe::FireBolt
+        || recipe == ProjectileRecipe::Fireball
+        || recipe == ProjectileRecipe::MeteorShower
+        || recipe == ProjectileRecipe::Cannonball
+        || recipe == ProjectileRecipe::DragonBreath
+        || recipe == ProjectileRecipe::DarkFireBolt
+        || recipe == ProjectileRecipe::MindBlast
+        || recipe == ProjectileRecipe::GenericFireTrail
+        || (recipe == ProjectileRecipe::None
+            && (containsToken(context.objectName, "fire")
+                || containsToken(context.objectName, "dragon breath")
+                || containsToken(context.spriteName, "fire")));
+    const bool isFireBolt = recipe == ProjectileRecipe::FireBolt;
+    const bool isFireballFamily =
+        recipe == ProjectileRecipe::Fireball
+        || recipe == ProjectileRecipe::MeteorShower
+        || recipe == ProjectileRecipe::DragonBreath
+        || recipe == ProjectileRecipe::DarkFireBolt
+        || recipe == ProjectileRecipe::MindBlast;
+    const bool isLightning =
+        recipe == ProjectileRecipe::Sparks
+        || recipe == ProjectileRecipe::LightningBolt
+        || recipe == ProjectileRecipe::GenericLineTrail
+        || (recipe == ProjectileRecipe::None
+            && (containsToken(context.objectName, "lightning")
+                || containsToken(context.spriteName, "spark")
+                || containsToken(context.objectName, "laser")));
+    const bool isPoison =
+        recipe == ProjectileRecipe::PoisonSpray
+        || recipe == ProjectileRecipe::AcidBurst
+        || recipe == ProjectileRecipe::ToxicCloud
+        || recipe == ProjectileRecipe::GenericParticleTrail
+        || (recipe == ProjectileRecipe::None
+            && (containsToken(context.objectName, "poison")
+                || containsToken(context.objectName, "acid")
+                || containsToken(context.objectName, "toxic")));
+    const bool isLight =
+        recipe == ProjectileRecipe::LightBolt
+        || recipe == ProjectileRecipe::Starburst
+        || (recipe == ProjectileRecipe::None
+            && (containsToken(context.objectName, "light bolt")
+                || containsToken(context.objectName, "sunray")
+                || containsToken(context.objectName, "prismatic")));
+    const bool isImplosion = recipe == ProjectileRecipe::Implosion;
+    const bool isIce =
+        recipe == ProjectileRecipe::IceBolt
+        || (recipe == ProjectileRecipe::None
+            && (containsToken(context.objectName, "ice")
+                || containsToken(context.objectName, "frost")
+                || containsToken(context.spriteName, "ice")));
+    const bool isIceBolt = recipe == ProjectileRecipe::IceBolt;
+    const bool isCannonball = recipe == ProjectileRecipe::Cannonball;
+    const uint32_t baseSeed = static_cast<uint32_t>(std::hash<std::string>{}(context.objectName + context.spriteName));
+
+    if (recipe == ProjectileRecipe::Blaster)
+    {
+        return;
+    }
+
+    const auto emitCoreFlash =
+        [&](uint32_t count, float startSize, float velocityScale, float stretch)
+        {
+            for (uint32_t particleIndex = 0; particleIndex < count; ++particleIndex)
+            {
+                emitBurstParticle(
+                    particleSystem,
+                    context.x,
+                    context.y,
+                    context.z + 10.0f,
+                    startSize + static_cast<float>(particleIndex % 3u) * 1.5f,
+                    colorAbgr,
+                    varyAlpha(colorAbgr, 0.0f),
+                    velocityScale + static_cast<float>(particleIndex % 5u) * 8.0f,
+                    baseSeed ^ (particleIndex * 2654435761u),
+                    FxParticleMaterial::SoftBlob,
+                    FxParticleAlignment::CameraFacing,
+                    stretch);
+            }
+        };
+
+    const auto emitSparkSplash =
+        [&](uint32_t count, float startSize, float velocityScale, uint32_t startSeed)
+        {
+            for (uint32_t particleIndex = 0; particleIndex < count; ++particleIndex)
+            {
+                emitBurstParticle(
+                    particleSystem,
+                    context.x,
+                    context.y,
+                    context.z + 12.0f,
+                    startSize + static_cast<float>(particleIndex % 2u) * 1.5f,
+                    colorAbgr,
+                    varyAlpha(colorAbgr, 0.0f),
+                    velocityScale + static_cast<float>(particleIndex % 4u) * 12.0f,
+                    startSeed ^ (particleIndex * 2246822519u),
+                    FxParticleMaterial::Spark,
+                    FxParticleAlignment::VelocityStretched,
+                    2.1f);
+            }
+        };
+
+    const auto emitRoundSplash =
+        [&](uint32_t count, float startSize, float velocityScale, uint32_t startSeed)
+        {
+            for (uint32_t particleIndex = 0; particleIndex < count; ++particleIndex)
+            {
+                emitBurstParticle(
+                    particleSystem,
+                    context.x,
+                    context.y,
+                    context.z + 12.0f,
+                    startSize + static_cast<float>(particleIndex % 2u) * 1.5f,
+                    colorAbgr,
+                    varyAlpha(colorAbgr, 0.0f),
+                    velocityScale + static_cast<float>(particleIndex % 4u) * 12.0f,
+                    startSeed ^ (particleIndex * 2246822519u),
+                    FxParticleMaterial::HardBlob,
+                    FxParticleAlignment::CameraFacing,
+                    1.0f);
+            }
+        };
+
+    const auto emitSoftCloud =
+        [&](uint32_t startColor,
+            uint32_t endColor,
+            uint32_t count,
+            float startSize,
+            float endSize,
+            float lifetimeSeconds,
+            float upwardVelocity,
+            FxParticleMaterial material)
+        {
+            LayerRecipe cloudLayer = {};
+            cloudLayer.startColorAbgr = startColor;
+            cloudLayer.endColorAbgr = endColor;
+            cloudLayer.count = count;
+            cloudLayer.startOffset = 0.0f;
+            cloudLayer.offsetStep = 2.5f * ImpactCloudSpreadScale;
+            cloudLayer.lateralSpread = 9.0f * ImpactCloudSpreadScale;
+            cloudLayer.verticalSpread = 5.0f * ImpactCloudSpreadScale;
+            cloudLayer.inheritedVelocity = 0.0f;
+            cloudLayer.upwardVelocity = upwardVelocity * 1.12f;
+            cloudLayer.startSize = startSize * ImpactCloudSizeScale;
+            cloudLayer.endSize = endSize * ImpactCloudSizeScale;
+            cloudLayer.lifetimeSeconds = lifetimeSeconds * ImpactBurstParticleLifetimeScale;
+            cloudLayer.drag = 2.2f;
+            cloudLayer.rotationJitterRadians = 0.9f;
+            cloudLayer.angularVelocityRadians = 0.8f;
+            cloudLayer.motion = FxParticleMotion::Drift;
+            cloudLayer.blendMode = FxParticleBlendMode::Alpha;
+            cloudLayer.alignment = FxParticleAlignment::CameraFacing;
+            cloudLayer.material = material;
+            cloudLayer.tag = FxParticleTag::Impact;
+            emitLayerParticles(
+                particleSystem,
+                baseSeed ^ 0x9e3779b9u,
+                context.x,
+                context.y,
+                context.z + 6.0f,
+                0.0f,
+                0.0f,
+                1.0f,
+                0.0f,
+                0.0f,
+                0.0f,
+                cloudLayer);
+        };
+
+    const auto emitEmberSplash =
+        [&](uint32_t count, float startSize, float velocityScale)
+        {
+            for (uint32_t particleIndex = 0; particleIndex < count; ++particleIndex)
+            {
+                emitBurstParticle(
+                    particleSystem,
+                    context.x,
+                    context.y,
+                    context.z + 10.0f,
+                    startSize + static_cast<float>(particleIndex % 3u) * 1.8f,
+                    colorAbgr,
+                    varyAlpha(colorAbgr, 0.0f),
+                    velocityScale + static_cast<float>(particleIndex % 4u) * 14.0f,
+                    baseSeed ^ 0x7f4a7c15u ^ (particleIndex * 3266489917u),
+                    FxParticleMaterial::HardBlob,
+                    FxParticleAlignment::CameraFacing,
+                    1.0f);
+            }
+        };
+
+    if (isLightning)
+    {
+        emitCoreFlash(14u, 8.0f, 72.0f, 1.0f);
+        emitSparkSplash(18u, 6.0f, 128.0f, baseSeed ^ 0x51ed270bu);
+        return;
+    }
+
+    if (isLight)
+    {
+        const bool isStarburst = recipe == ProjectileRecipe::Starburst;
+        emitCoreFlash(
+            isStarburst ? 22u : 16u,
+            isStarburst ? 11.0f : 9.0f,
+            isStarburst ? 96.0f : 78.0f,
+            1.0f);
+        emitRoundSplash(
+            isStarburst ? 16u : 10u,
+            isStarburst ? 6.5f : 5.0f,
+            isStarburst ? 116.0f : 92.0f,
+            baseSeed ^ 0xa24baed4u);
+        if (isStarburst)
+        {
+            emitCoreFlash(8u, 7.5f, 74.0f, 1.0f);
+        }
+        return;
+    }
+
+    if (isImplosion)
+    {
+        emitCoreFlash(18u, 14.0f, 42.0f, 1.0f);
+        emitCoreFlash(10u, 10.0f, 26.0f, 1.0f);
+
+        emitSoftCloud(
+            makeAbgr(176, 216, 255, 104),
+            makeAbgr(216, 236, 255, 0),
+            10u,
+            18.0f,
+            46.0f,
+            0.52f,
+            12.0f,
+            FxParticleMaterial::Mist);
+
+        LayerRecipe moteLayer = {};
+        moteLayer.startColorAbgr = makeAbgr(192, 224, 255, 132);
+        moteLayer.endColorAbgr = makeAbgr(224, 240, 255, 0);
+        moteLayer.count = 8u;
+        moteLayer.startOffset = 0.0f;
+        moteLayer.offsetStep = 1.4f;
+        moteLayer.lateralSpread = 10.0f;
+        moteLayer.verticalSpread = 10.0f;
+        moteLayer.inheritedVelocity = 0.0f;
+        moteLayer.upwardVelocity = 4.0f;
+        moteLayer.startSize = 9.0f;
+        moteLayer.endSize = 3.0f;
+        moteLayer.lifetimeSeconds = 0.36f;
+        moteLayer.drag = 4.2f;
+        moteLayer.rotationJitterRadians = 0.8f;
+        moteLayer.angularVelocityRadians = 1.2f;
+        moteLayer.motion = FxParticleMotion::Burst;
+        moteLayer.blendMode = FxParticleBlendMode::Additive;
+        moteLayer.alignment = FxParticleAlignment::CameraFacing;
+        moteLayer.material = FxParticleMaterial::SoftBlob;
+        moteLayer.tag = FxParticleTag::Impact;
+        emitLayerParticles(
+            particleSystem,
+            baseSeed ^ 0x1f83d9abu,
+            context.x,
+            context.y,
+            context.z + 12.0f,
+            0.0f,
+            0.0f,
+            1.0f,
+            0.0f,
+            0.0f,
+            0.0f,
+            moteLayer);
+        return;
+    }
+
+    if (isFire || isCannonball)
+    {
+        const bool isMeteorShower = recipe == ProjectileRecipe::MeteorShower;
+        const uint32_t coreCount = isCannonball ? 16u : (isFireBolt ? 20u : (isMeteorShower ? 18u : 18u));
+        const float coreSize = isCannonball ? 10.0f : (isFireBolt ? 10.5f : (isMeteorShower ? 10.5f : 11.0f));
+        const float coreVelocity = isCannonball ? 68.0f : (isFireBolt ? 92.0f : (isMeteorShower ? 94.0f : 84.0f));
+        const uint32_t emberCount = isCannonball ? 16u : (isFireBolt ? 24u : (isMeteorShower ? 22u : 22u));
+        const float emberSize = isCannonball ? 9.0f : (isFireBolt ? 7.2f : (isMeteorShower ? 7.4f : 8.0f));
+        const float emberVelocity = isCannonball ? 92.0f : (isFireBolt ? 120.0f : (isMeteorShower ? 106.0f : 104.0f));
+        const uint32_t sparkCount = isCannonball ? 6u : (isFireBolt ? 12u : (isMeteorShower ? 10u : 8u));
+        const float sparkVelocity = isCannonball ? 74.0f : (isFireBolt ? 98.0f : (isMeteorShower ? 90.0f : 86.0f));
+
+        emitCoreFlash(coreCount, coreSize, coreVelocity, 1.0f);
+        emitEmberSplash(emberCount, emberSize, emberVelocity);
+        emitRoundSplash(sparkCount, isFireBolt ? 4.0f : 4.5f, sparkVelocity, baseSeed ^ 0x3c6ef372u);
+        emitSoftCloud(
+            isCannonball ? makeAbgr(96, 88, 72, 96) : makeAbgr(96, 84, 84, 92),
+            makeAbgr(255, 255, 255, 0),
+            isCannonball ? 7u : (isFireBolt ? 5u : (isMeteorShower ? 7u : 6u)),
+            isCannonball ? 17.0f : (isFireBolt ? 13.0f : (isMeteorShower ? 14.0f : 15.0f)),
+            isCannonball ? 34.0f : (isFireBolt ? 24.0f : (isMeteorShower ? 28.0f : 28.0f)),
+            isCannonball ? 0.48f : (isFireBolt ? 0.28f : (isMeteorShower ? 0.34f : 0.38f)),
+            isCannonball ? 12.0f : (isFireBolt ? 12.0f : (isMeteorShower ? 14.0f : 16.0f)),
+            FxParticleMaterial::Smoke);
+
+        if (shouldSpawnExpandingFireAreaPulse(recipe))
+        {
+            emitExpandingFireAreaPulse(particleSystem, context);
+        }
+
+        if (isFireBolt)
+        {
+            emitCoreFlash(10u, 6.0f, 74.0f, 1.0f);
+        }
+
+        if (isMeteorShower)
+        {
+            emitCoreFlash(8u, 7.0f, 70.0f, 1.0f);
+        }
+
+        return;
+    }
+
+    if (isIce)
+    {
+        emitCoreFlash(isIceBolt ? 18u : 13u, isIceBolt ? 9.5f : 8.5f, isIceBolt ? 82.0f : 66.0f, 1.0f);
+        emitRoundSplash(
+            isIceBolt ? 12u : 8u,
+            isIceBolt ? 5.8f : 5.0f,
+            isIceBolt ? 90.0f : 78.0f,
+            baseSeed ^ 0xbb67ae85u);
+        emitSoftCloud(
+            makeAbgr(200, 228, 255, isIceBolt ? 96 : 88),
+            makeAbgr(255, 255, 255, 0),
+            isIceBolt ? 6u : 5u,
+            isIceBolt ? 14.0f : 13.0f,
+            isIceBolt ? 28.0f : 24.0f,
+            isIceBolt ? 0.34f : 0.30f,
+            isIceBolt ? 10.0f : 8.0f,
+            FxParticleMaterial::Mist);
+        return;
+    }
+
+    if (isPoison)
+    {
+        emitCoreFlash(10u, 7.5f, 54.0f, 1.0f);
+        emitSoftCloud(
+            makeAbgr(96, 180, 96, 92),
+            makeAbgr(160, 255, 180, 0),
+            7u,
+            14.0f,
+            30.0f,
+            0.42f,
+            10.0f,
+            FxParticleMaterial::Mist);
+
+        LayerRecipe moteLayer = {};
+        moteLayer.startColorAbgr = varyAlpha(colorAbgr, 0.95f);
+        moteLayer.endColorAbgr = makeAbgr(160, 255, 180, 0);
+        moteLayer.count = 8u;
+        moteLayer.startOffset = 0.0f;
+        moteLayer.offsetStep = 1.8f;
+        moteLayer.lateralSpread = 6.5f;
+        moteLayer.verticalSpread = 3.0f;
+        moteLayer.inheritedVelocity = 0.0f;
+        moteLayer.upwardVelocity = 6.0f;
+        moteLayer.startSize = 6.0f;
+        moteLayer.endSize = 2.0f;
+        moteLayer.lifetimeSeconds = 0.24f;
+        moteLayer.drag = 4.6f;
+        moteLayer.rotationJitterRadians = 0.5f;
+        moteLayer.angularVelocityRadians = 1.6f;
+        moteLayer.motion = FxParticleMotion::Burst;
+        moteLayer.blendMode = FxParticleBlendMode::Additive;
+        moteLayer.alignment = FxParticleAlignment::CameraFacing;
+        moteLayer.material = FxParticleMaterial::SoftBlob;
+        moteLayer.tag = FxParticleTag::Impact;
+        emitLayerParticles(
+            particleSystem,
+            baseSeed ^ 0x6a09e667u,
+            context.x,
+            context.y,
+            context.z + 10.0f,
+            0.0f,
+            0.0f,
+            1.0f,
+            0.0f,
+            0.0f,
+            0.0f,
+            moteLayer);
+        return;
+    }
+
+    emitCoreFlash(12u, 8.0f, 68.0f, 1.0f);
+    emitRoundSplash(6u, 4.5f, 72.0f, baseSeed ^ 0x243f6a88u);
+}
+
+void spawnDecorationFireParticles(
+    ParticleSystem &particleSystem,
+    uint32_t seed,
+    float x,
+    float y,
+    float z,
+    float emitterRadius)
+{
+    LayerRecipe emberLayer = {};
+    emberLayer.startColorAbgr = makeAbgr(255, 128, 40, 232);
+    emberLayer.endColorAbgr = makeAbgr(255, 188, 108, 0);
+    emberLayer.count = 4u;
+    emberLayer.startOffset = 0.0f;
+    emberLayer.offsetStep = 1.4f;
+    emberLayer.lateralSpread = std::max(5.5f, emitterRadius * 0.12f);
+    emberLayer.verticalSpread = 2.5f;
+    emberLayer.upwardVelocity = 28.0f;
+    emberLayer.startSize = std::max(12.0f, emitterRadius * 0.16f);
+    emberLayer.endSize = emberLayer.startSize * 0.45f;
+    emberLayer.lifetimeSeconds = 0.30f;
+    emberLayer.drag = 3.4f;
+    emberLayer.rotationJitterRadians = 0.65f;
+    emberLayer.angularVelocityRadians = 4.8f;
+    emberLayer.motion = FxParticleMotion::Ascend;
+    emberLayer.blendMode = FxParticleBlendMode::Additive;
+    emberLayer.alignment = FxParticleAlignment::CameraFacing;
+    emberLayer.material = FxParticleMaterial::Ember;
+    emberLayer.tag = FxParticleTag::DecorationEmitter;
+    emitLayerParticles(
+        particleSystem,
+        seed,
+        x,
+        y,
+        z,
+        0.0f,
+        0.0f,
+        1.0f,
+        0.0f,
+        0.0f,
+        0.0f,
+        emberLayer);
+
+    LayerRecipe glowLayer = {};
+    glowLayer.startColorAbgr = makeAbgr(255, 168, 72, 104);
+    glowLayer.endColorAbgr = makeAbgr(255, 210, 132, 0);
+    glowLayer.count = 2u;
+    glowLayer.lateralSpread = std::max(4.0f, emitterRadius * 0.10f);
+    glowLayer.verticalSpread = 2.0f;
+    glowLayer.upwardVelocity = 10.0f;
+    glowLayer.startSize = std::max(14.0f, emitterRadius * 0.20f);
+    glowLayer.endSize = glowLayer.startSize * 1.55f;
+    glowLayer.lifetimeSeconds = 0.22f;
+    glowLayer.drag = 2.2f;
+    glowLayer.rotationJitterRadians = 0.35f;
+    glowLayer.angularVelocityRadians = 1.2f;
+    glowLayer.motion = FxParticleMotion::Ascend;
+    glowLayer.blendMode = FxParticleBlendMode::Additive;
+    glowLayer.alignment = FxParticleAlignment::CameraFacing;
+    glowLayer.material = FxParticleMaterial::SoftBlob;
+    glowLayer.tag = FxParticleTag::DecorationEmitter;
+    emitLayerParticles(
+        particleSystem,
+        seed ^ 0x51ed270bu,
+        x,
+        y,
+        z,
+        0.0f,
+        0.0f,
+        1.0f,
+        0.0f,
+        0.0f,
+        0.0f,
+        glowLayer);
+
+    LayerRecipe smokeLayer = {};
+    smokeLayer.startColorAbgr = makeAbgr(96, 96, 96, 78);
+    smokeLayer.endColorAbgr = makeAbgr(88, 88, 88, 0);
+    smokeLayer.count = 2u;
+    smokeLayer.lateralSpread = std::max(4.0f, emitterRadius * 0.09f);
+    smokeLayer.verticalSpread = 3.0f;
+    smokeLayer.upwardVelocity = 18.0f;
+    smokeLayer.startSize = std::max(14.0f, emitterRadius * 0.20f);
+    smokeLayer.endSize = smokeLayer.startSize * 1.8f;
+    smokeLayer.lifetimeSeconds = 0.68f;
+    smokeLayer.drag = 1.4f;
+    smokeLayer.rotationJitterRadians = 1.0f;
+    smokeLayer.angularVelocityRadians = 1.2f;
+    smokeLayer.motion = FxParticleMotion::Drift;
+    smokeLayer.blendMode = FxParticleBlendMode::Alpha;
+    smokeLayer.alignment = FxParticleAlignment::CameraFacing;
+    smokeLayer.material = FxParticleMaterial::Smoke;
+    smokeLayer.tag = FxParticleTag::DecorationEmitter;
+    emitLayerParticles(
+        particleSystem,
+        seed ^ 0x9e3779b9u,
+        x,
+        y,
+        z,
+        0.0f,
+        0.0f,
+        1.0f,
+        0.0f,
+        0.0f,
+        0.0f,
+        smokeLayer);
+}
+
+void spawnDecorationSmokeParticles(
+    ParticleSystem &particleSystem,
+    uint32_t seed,
+    float x,
+    float y,
+    float z,
+    float emitterRadius)
+{
+    const float plumeRadius = std::max(84.0f, emitterRadius * 2.65f);
+    const float puffSize = std::max(36.0f, emitterRadius * 0.84f);
+
+    RadialLayerRecipe puffLayer = {};
+    puffLayer.startColorAbgr = makeAbgr(246, 246, 242, 142);
+    puffLayer.endColorAbgr = makeAbgr(224, 224, 220, 0);
+    puffLayer.count = 1u;
+    puffLayer.spawnRadius = plumeRadius;
+    puffLayer.verticalSpread = std::max(10.0f, emitterRadius * 0.20f);
+    puffLayer.driftVelocityMin = 4.0f;
+    puffLayer.driftVelocityMax = 18.0f;
+    puffLayer.upwardVelocityMin = 52.0f;
+    puffLayer.upwardVelocityMax = 94.0f;
+    puffLayer.startSizeMin = puffSize * 0.75f;
+    puffLayer.startSizeMax = puffSize * 1.25f;
+    puffLayer.endSizeScaleMin = 0.95f;
+    puffLayer.endSizeScaleMax = 1.45f;
+    puffLayer.lifetimeSecondsMin = 5.2f;
+    puffLayer.lifetimeSecondsMax = 8.2f;
+    puffLayer.drag = 0.035f;
+    puffLayer.rotationJitterRadians = 0.4f;
+    puffLayer.angularVelocityRadians = 0.18f;
+    puffLayer.fadeInSeconds = 0.30f;
+    puffLayer.fadeOutStartFractionMin = 0.56f;
+    puffLayer.fadeOutStartFractionMax = 0.82f;
+    puffLayer.motion = FxParticleMotion::Drift;
+    puffLayer.blendMode = FxParticleBlendMode::Alpha;
+    puffLayer.alignment = FxParticleAlignment::CameraFacing;
+    puffLayer.material = FxParticleMaterial::SoftBlob;
+    puffLayer.tag = FxParticleTag::DecorationEmitter;
+    emitRadialLayerParticles(particleSystem, seed, x, y, z, puffLayer);
+}
+
+void spawnBuffSparkles(
+    ParticleSystem &particleSystem,
+    uint32_t seed,
+    float x,
+    float y,
+    float z,
+    float radius,
+    uint32_t colorAbgr)
+{
+    LayerRecipe sparkleLayer = {};
+    sparkleLayer.startColorAbgr = colorAbgr;
+    sparkleLayer.endColorAbgr = makeAbgr(255, 255, 255, 0);
+    sparkleLayer.count = 12u;
+    sparkleLayer.lateralSpread = radius;
+    sparkleLayer.verticalSpread = radius * 0.7f;
+    sparkleLayer.upwardVelocity = 10.0f;
+    sparkleLayer.startSize = 6.0f;
+    sparkleLayer.endSize = 2.0f;
+    sparkleLayer.lifetimeSeconds = 0.32f;
+    sparkleLayer.drag = 4.0f;
+    sparkleLayer.rotationJitterRadians = 0.6f;
+    sparkleLayer.angularVelocityRadians = 2.8f;
+    sparkleLayer.motion = FxParticleMotion::Drift;
+    sparkleLayer.blendMode = FxParticleBlendMode::Additive;
+    sparkleLayer.alignment = FxParticleAlignment::CameraFacing;
+    sparkleLayer.material = FxParticleMaterial::Spark;
+    sparkleLayer.tag = FxParticleTag::Buff;
+    emitLayerParticles(
+        particleSystem,
+        seed,
+        x,
+        y,
+        z,
+        0.0f,
+        0.0f,
+        1.0f,
+        0.0f,
+        0.0f,
+        0.0f,
+        sparkleLayer);
+}
+
+void spawnActorDisintegrationParticles(ParticleSystem &particleSystem, uint32_t seed,
+    float x, float y, float z, float actorHeight, float elapsedSeconds, float durationSeconds)
+{
+    if (actorHeight <= 0 || durationSeconds <= 0 || elapsedSeconds >= durationSeconds)
+    {
+        return;
+    }
+    // One bounded burst: two existing billboard batches, no mesh morphs, lights or shadow submissions.
+    for (uint32_t i = 0; i < 80; ++i)
+    {
+        const uint32_t hash = (seed ^ (i * 2654435761u)) * 1664525u + 1013904223u;
+        const float angle = hashToUnit(hash) * TwoPi;
+        const float spread = actorHeight * (0.04f + hashToUnit(hash >> 8) * 0.18f);
+        const bool smoke = i >= 64;
+        FxParticleState particle;
+        particle.lifetimeSeconds = durationSeconds * (0.65f + hashToUnit(hash >> 4) * 0.35f);
+        if (elapsedSeconds >= particle.lifetimeSeconds)
+        {
+            continue;
+        }
+        particle.velocityX = std::cos(angle) * spread * 0.6f;
+        particle.velocityY = std::sin(angle) * spread * 0.6f;
+        particle.velocityZ = actorHeight * (smoke ? 0.14f : 0.45f);
+        particle.x = x + std::cos(angle) * spread + particle.velocityX * elapsedSeconds;
+        particle.y = y + std::sin(angle) * spread + particle.velocityY * elapsedSeconds;
+        particle.z = z + actorHeight * hashToUnit(hash >> 12) + particle.velocityZ * elapsedSeconds;
+        particle.size = actorHeight * (smoke ? 0.16f : 0.12f);
+        particle.endSize = particle.size * (smoke ? 1.6f : 0.5f);
+        particle.ageSeconds = elapsedSeconds;
+        particle.fadeInSeconds = smoke ? 0.3f : 0.04f;
+        particle.fadeOutStartSeconds = particle.lifetimeSeconds * 0.55f;
+        particle.startColorAbgr = smoke ? 0xb0211928u : 0xff829eeau;
+        particle.endColorAbgr = particle.startColorAbgr;
+        particle.motion = FxParticleMotion::VelocityTrail;
+        particle.material = smoke ? FxParticleMaterial::Smoke : FxParticleMaterial::Mist;
+        particle.tag = FxParticleTag::Impact;
+        if (!particleSystem.addParticle(particle))
+        {
+            break;
+        }
+    }
+}
+
+void spawnActorBurnFlame(ParticleSystem &particleSystem, uint32_t seed, float x, float y, float z, float size,
+    const std::optional<std::array<uint8_t, 3>> &tint)
+{
+    if (size <= 0.0f)
+    {
+        return;
+    }
+    uint32_t flameStart = makeAbgr(255, 120, 34, 96);
+    uint32_t flameEnd = makeAbgr(190, 40, 12, 0);
+    uint32_t emberStart = makeAbgr(255, 196, 96, 255);
+    uint32_t emberEnd = makeAbgr(255, 90, 24, 0);
+    if (tint)
+    {
+        // The tint's flame darkens as it fades; its embers are lifted toward white.
+        const auto shade = [&](float gain, float lift, uint8_t alpha)
+        {
+            const auto channel = [&](uint8_t value)
+            {
+                return uint8_t(std::min(255.0f, float(value) * gain + (255.0f - float(value)) * lift));
+            };
+            return makeAbgr(channel((*tint)[0]), channel((*tint)[1]), channel((*tint)[2]), alpha);
+        };
+        flameStart = shade(1.0f, 0.0f, 96);
+        flameEnd = shade(0.6f, 0.0f, 0);
+        emberStart = shade(1.0f, 0.45f, 255);
+        emberEnd = shade(0.9f, 0.0f, 0);
+    }
+    const uint32_t hash = seed * 2654435761u + 1013904223u;
+    const float angle = hashToUnit(hash) * TwoPi;
+    const float drift = size * (0.2f + 0.5f * hashToUnit(hash >> 7));
+    FxParticleState flame;
+    flame.x = x;
+    flame.y = y;
+    flame.z = z;
+    flame.velocityX = std::cos(angle) * drift;
+    flame.velocityY = std::sin(angle) * drift;
+    flame.velocityZ = size * (2.2f + 1.6f * hashToUnit(hash >> 11));
+    flame.size = size * (0.75f + 0.5f * hashToUnit(hash >> 15));
+    flame.endSize = flame.size * 0.35f;
+    flame.drag = 1.5f;
+    flame.rotationRadians = hashToUnit(hash >> 3) * TwoPi;
+    flame.angularVelocityRadians = (hashToUnit(hash >> 19) - 0.5f) * 3.0f;
+    flame.lifetimeSeconds = 0.32f + 0.26f * hashToUnit(hash >> 23);
+    flame.fadeInSeconds = 0.04f;
+    flame.fadeOutStartSeconds = flame.lifetimeSeconds * 0.45f;
+    // Additive and dense along the burning band: low alpha keeps overlapping tongues orange instead of white.
+    flame.startColorAbgr = flameStart;
+    flame.endColorAbgr = flameEnd;
+    flame.motion = FxParticleMotion::VelocityTrail;
+    flame.blendMode = FxParticleBlendMode::Additive;
+    flame.material = FxParticleMaterial::SoftBlob;
+    flame.tag = FxParticleTag::Impact;
+    if (!particleSystem.addParticle(flame))
+    {
+        return;
+    }
+    const uint32_t extra = (hash >> 27) & 7u;
+    if (extra < 3)
+    {
+        FxParticleState ember = flame;
+        ember.velocityX *= 2.5f;
+        ember.velocityY *= 2.5f;
+        ember.velocityZ *= 1.6f;
+        ember.size = std::max(3.0f, size * 0.14f);
+        ember.endSize = ember.size * 0.5f;
+        ember.drag = 0.6f;
+        ember.lifetimeSeconds = 0.7f + 0.5f * hashToUnit(hash >> 5);
+        ember.fadeOutStartSeconds = ember.lifetimeSeconds * 0.5f;
+        ember.startColorAbgr = emberStart;
+        ember.endColorAbgr = emberEnd;
+        ember.motion = FxParticleMotion::Drift;
+        ember.material = FxParticleMaterial::Ember;
+        particleSystem.addParticle(ember);
+    }
+    else if (extra == 3)
+    {
+        FxParticleState smoke = flame;
+        smoke.z += size * 0.6f;
+        smoke.velocityZ *= 0.6f;
+        smoke.size = size * 1.1f;
+        smoke.endSize = size * 2.2f;
+        smoke.lifetimeSeconds = 1.1f;
+        smoke.fadeInSeconds = 0.25f;
+        smoke.fadeOutStartSeconds = 0.5f;
+        smoke.startColorAbgr = makeAbgr(40, 34, 30, 110);
+        smoke.endColorAbgr = makeAbgr(30, 28, 26, 0);
+        smoke.motion = FxParticleMotion::Drift;
+        smoke.blendMode = FxParticleBlendMode::Alpha;
+        smoke.material = FxParticleMaterial::Smoke;
+        particleSystem.addParticle(smoke);
+    }
+}
+
+void spawnActorDebuffParticles(
+    ParticleSystem &particleSystem,
+    uint32_t spellId,
+    uint32_t seed,
+    float x,
+    float y,
+    float z,
+    float actorHeight,
+    float frontDirectionX,
+    float frontDirectionY)
+{
+    const SpellId resolvedSpellId = spellIdFromValue(spellId);
+
+    uint32_t primaryStart = makeAbgr(182, 126, 228, 208);
+    uint32_t primaryEnd = makeAbgr(216, 172, 244, 0);
+    uint32_t secondaryStart = makeAbgr(150, 132, 240, 196);
+    uint32_t secondaryEnd = makeAbgr(190, 174, 248, 0);
+    float lateralRadius = std::max(58.0f, actorHeight * 0.38f);
+    float upwardVelocity = 24.0f;
+    float primaryStartSize = 56.0f;
+    float primaryEndSize = 28.0f;
+    float secondaryStartSize = 40.0f;
+    float secondaryEndSize = 17.0f;
+    float primaryLifetime = 2.5f;
+    float secondaryLifetime = 2.5f;
+    uint32_t primaryCount = 40u;
+    uint32_t secondaryCount = 28u;
+
+    switch (resolvedSpellId)
+    {
+        case SpellId::Slow:
+        case SpellId::Stun:
+            primaryStart = makeAbgr(176, 128, 220, 204);
+            primaryEnd = makeAbgr(210, 172, 236, 0);
+            secondaryStart = makeAbgr(146, 132, 236, 188);
+            secondaryEnd = makeAbgr(186, 174, 242, 0);
+            upwardVelocity = 20.0f;
+            lateralRadius = std::max(54.0f, actorHeight * 0.36f);
+            primaryLifetime = 2.5f;
+            secondaryLifetime = 2.5f;
+            break;
+
+        case SpellId::Paralyze:
+        case SpellId::TurnUndead:
+            primaryStart = makeAbgr(190, 172, 238, 208);
+            primaryEnd = makeAbgr(222, 204, 248, 0);
+            secondaryStart = makeAbgr(160, 154, 242, 192);
+            secondaryEnd = makeAbgr(198, 190, 248, 0);
+            upwardVelocity = 22.0f;
+            lateralRadius = std::max(52.0f, actorHeight * 0.35f);
+            primaryStartSize = 54.0f;
+            primaryEndSize = 27.0f;
+            secondaryStartSize = 38.0f;
+            secondaryEndSize = 16.0f;
+            primaryLifetime = 2.5f;
+            secondaryLifetime = 2.5f;
+            break;
+
+        case SpellId::Blind:
+        case SpellId::DarkGrasp:
+        case SpellId::ShrinkingRay:
+            primaryStart = makeAbgr(176, 110, 230, 210);
+            primaryEnd = makeAbgr(216, 156, 244, 0);
+            secondaryStart = makeAbgr(144, 122, 238, 194);
+            secondaryEnd = makeAbgr(184, 164, 246, 0);
+            upwardVelocity = 26.0f;
+            lateralRadius = std::max(56.0f, actorHeight * 0.37f);
+            primaryLifetime = 2.5f;
+            secondaryLifetime = 2.5f;
+            break;
+
+        default:
+            break;
+    }
+
+    emitDebuffAuraLayer(
+        particleSystem,
+        seed,
+        x,
+        y,
+        z,
+        actorHeight,
+        frontDirectionX,
+        frontDirectionY,
+        primaryCount,
+        lateralRadius,
+        0.10f,
+        0.90f,
+        upwardVelocity,
+        primaryStartSize,
+        primaryEndSize,
+        primaryLifetime,
+        0.55f,
+        primaryStart,
+        primaryEnd,
+        FxParticleMaterial::HardBlob,
+        FxParticleBlendMode::Alpha);
+
+    emitDebuffAuraLayer(
+        particleSystem,
+        seed ^ 0x9e3779b9u,
+        x,
+        y,
+        z,
+        actorHeight,
+        frontDirectionX,
+        frontDirectionY,
+        secondaryCount,
+        lateralRadius * 0.88f,
+        0.18f,
+        0.94f,
+        upwardVelocity + 4.0f,
+        secondaryStartSize,
+        secondaryEndSize,
+        secondaryLifetime,
+        0.42f,
+        varyAlpha(secondaryStart, 1.2f),
+        secondaryEnd,
+        FxParticleMaterial::HardBlob,
+        FxParticleBlendMode::Alpha);
+}
+
+void spawnActorBuffParticles(
+    ParticleSystem &particleSystem,
+    uint32_t spellId,
+    uint32_t seed,
+    float x,
+    float y,
+    float z,
+    float actorHeight,
+    float frontDirectionX,
+    float frontDirectionY)
+{
+    const SpellId resolvedSpellId = spellIdFromValue(spellId);
+
+    uint32_t primaryStart = makeAbgr(94, 230, 142, 206);
+    uint32_t primaryEnd = makeAbgr(166, 255, 188, 0);
+    uint32_t secondaryStart = makeAbgr(210, 255, 118, 184);
+    uint32_t secondaryEnd = makeAbgr(232, 255, 170, 0);
+    float lateralRadius = std::max(58.0f, actorHeight * 0.38f);
+    float upwardVelocity = 28.0f;
+    float primaryStartSize = 54.0f;
+    float primaryEndSize = 26.0f;
+    float secondaryStartSize = 34.0f;
+    float secondaryEndSize = 14.0f;
+    float primaryLifetime = 2.35f;
+    float secondaryLifetime = 2.15f;
+    uint32_t primaryCount = 38u;
+    uint32_t secondaryCount = 30u;
+
+    switch (resolvedSpellId)
+    {
+        case SpellId::Haste:
+        case SpellId::Heroism:
+        case SpellId::Bless:
+            primaryStart = makeAbgr(124, 244, 104, 208);
+            primaryEnd = makeAbgr(210, 255, 154, 0);
+            secondaryStart = makeAbgr(238, 255, 116, 190);
+            secondaryEnd = makeAbgr(250, 255, 174, 0);
+            upwardVelocity = 32.0f;
+            primaryStartSize = 50.0f;
+            secondaryStartSize = 32.0f;
+            primaryLifetime = 2.2f;
+            secondaryLifetime = 2.05f;
+            break;
+
+        case SpellId::Shield:
+        case SpellId::StoneSkin:
+        case SpellId::DayOfProtection:
+        case SpellId::HourOfPower:
+            primaryStart = makeAbgr(104, 224, 176, 206);
+            primaryEnd = makeAbgr(176, 255, 216, 0);
+            secondaryStart = makeAbgr(154, 248, 132, 186);
+            secondaryEnd = makeAbgr(210, 255, 178, 0);
+            lateralRadius = std::max(62.0f, actorHeight * 0.40f);
+            upwardVelocity = 24.0f;
+            primaryStartSize = 60.0f;
+            primaryEndSize = 30.0f;
+            primaryLifetime = 2.55f;
+            secondaryLifetime = 2.35f;
+            break;
+
+        case SpellId::Hammerhands:
+        case SpellId::PainReflection:
+        case SpellId::Fate:
+            primaryStart = makeAbgr(116, 232, 126, 204);
+            primaryEnd = makeAbgr(196, 255, 176, 0);
+            secondaryStart = makeAbgr(178, 244, 96, 184);
+            secondaryEnd = makeAbgr(230, 255, 156, 0);
+            upwardVelocity = 30.0f;
+            primaryLifetime = 2.35f;
+            secondaryLifetime = 2.2f;
+            break;
+
+        default:
+            break;
+    }
+
+    emitDebuffAuraLayer(
+        particleSystem,
+        seed,
+        x,
+        y,
+        z,
+        actorHeight,
+        frontDirectionX,
+        frontDirectionY,
+        primaryCount,
+        lateralRadius,
+        0.08f,
+        0.92f,
+        upwardVelocity,
+        primaryStartSize,
+        primaryEndSize,
+        primaryLifetime,
+        0.50f,
+        primaryStart,
+        primaryEnd,
+        FxParticleMaterial::HardBlob,
+        FxParticleBlendMode::Alpha);
+
+    emitDebuffAuraLayer(
+        particleSystem,
+        seed ^ 0x85ebca6bu,
+        x,
+        y,
+        z,
+        actorHeight,
+        frontDirectionX,
+        frontDirectionY,
+        secondaryCount,
+        lateralRadius * 0.82f,
+        0.14f,
+        0.98f,
+        upwardVelocity + 6.0f,
+        secondaryStartSize,
+        secondaryEndSize,
+        secondaryLifetime,
+        0.36f,
+        varyAlpha(secondaryStart, 1.16f),
+        secondaryEnd,
+        FxParticleMaterial::HardBlob,
+        FxParticleBlendMode::Alpha);
+}
+}
+}

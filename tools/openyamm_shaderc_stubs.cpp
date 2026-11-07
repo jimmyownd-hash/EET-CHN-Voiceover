@@ -1,0 +1,88 @@
+#include "shaderc.h"
+
+static bool writeUnsupportedBackendMessage(const char *pMessage, bx::WriterI *pMessageWriter)
+{
+    bx::Error messageError;
+    bx::write(pMessageWriter, &messageError, pMessage);
+    return false;
+}
+
+namespace bgfx
+{
+#if !defined(OPENYAMM_SHADERC_ENABLE_HLSL)
+bool compileHLSLShader(
+    const Options &options,
+    uint32_t version,
+    const std::string &code,
+    bx::WriterI *pShaderWriter,
+    bx::WriterI *pMessageWriter)
+{
+    BX_UNUSED(options, version, code, pShaderWriter);
+    return writeUnsupportedBackendMessage("HLSL shader compilation is not enabled.\n", pMessageWriter);
+}
+#endif
+
+bool compileDxilShader(
+    const Options &options,
+    uint32_t version,
+    const std::string &code,
+    bx::WriterI *pShaderWriter,
+    bx::WriterI *pMessageWriter)
+{
+    BX_UNUSED(options, version, code, pShaderWriter);
+    return writeUnsupportedBackendMessage("DXIL shader compilation is not enabled.\n", pMessageWriter);
+}
+
+#if !defined(OPENYAMM_SHADERC_ENABLE_METAL)
+bool compileMetalShader(
+    const Options &options,
+    uint32_t version,
+    const std::string &code,
+    bx::WriterI *pShaderWriter,
+    bx::WriterI *pMessageWriter)
+{
+    BX_UNUSED(options, version, code, pShaderWriter);
+    return writeUnsupportedBackendMessage("Metal shader compilation is not enabled.\n", pMessageWriter);
+}
+#endif
+
+bool compilePSSLShader(
+    const Options &options,
+    uint32_t version,
+    const std::string &code,
+    bx::WriterI *pShaderWriter,
+    bx::WriterI *pMessageWriter)
+{
+    BX_UNUSED(options, version, code, pShaderWriter);
+    return writeUnsupportedBackendMessage("PSSL shader compilation is not enabled.\n", pMessageWriter);
+}
+
+#if !defined(OPENYAMM_SHADERC_ENABLE_SPIRV)
+bool compileSPIRVShader(
+    const Options &options,
+    uint32_t version,
+    const std::string &code,
+    bx::WriterI *pShaderWriter,
+    bx::WriterI *pMessageWriter)
+{
+    BX_UNUSED(options, version, code, pShaderWriter);
+    return writeUnsupportedBackendMessage("SPIR-V shader compilation is not enabled.\n", pMessageWriter);
+}
+#endif
+
+bool compileWgslShader(
+    const Options &options,
+    uint32_t version,
+    const std::string &code,
+    bx::WriterI *pShaderWriter,
+    bx::WriterI *pMessageWriter)
+{
+    BX_UNUSED(options, version, code, pShaderWriter);
+    return writeUnsupportedBackendMessage("WGSL shader compilation is not enabled.\n", pMessageWriter);
+}
+
+const char *getPsslPreamble()
+{
+    return "";
+}
+} // namespace bgfx

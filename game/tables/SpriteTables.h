@@ -1,0 +1,152 @@
+#pragma once
+
+#include <cstddef>
+#include <cstdint>
+#include <optional>
+#include <string>
+#include <unordered_map>
+#include <vector>
+
+namespace OpenYAMM::Game
+{
+enum class SpriteFrameFlag : uint32_t
+{
+    HasMore = 0x1,
+    Lit = 0x2,
+    First = 0x4,
+    Image1 = 0x10,
+    Center = 0x20,
+    Fidget = 0x40,
+    Loaded = 0x80,
+    Mirror0 = 0x100,
+    Mirror1 = 0x200,
+    Mirror2 = 0x400,
+    Mirror3 = 0x800,
+    Mirror4 = 0x1000,
+    Mirror5 = 0x2000,
+    Mirror6 = 0x4000,
+    Mirror7 = 0x8000,
+    Images3 = 0x10000,
+    Glowing = 0x20000,
+    Transparent = 0x40000
+};
+
+enum class DecorationDescFlag : uint16_t
+{
+    MoveThrough = 0x0001,
+    DontDraw = 0x0002,
+    FlickerSlow = 0x0004,
+    FlickerAverage = 0x0008,
+    FlickerFast = 0x0010,
+    Marker = 0x0020,
+    SlowLoop = 0x0040,
+    EmitFire = 0x0080,
+    SoundOnDawn = 0x0100,
+    SoundOnDusk = 0x0200,
+    EmitSmoke = 0x0400,
+};
+
+inline bool hasDecorationFlag(uint16_t flags, DecorationDescFlag flag)
+{
+    return (flags & static_cast<uint16_t>(flag)) != 0;
+}
+
+struct DecorationEntry
+{
+    std::string internalName;
+    std::string hint;
+    int16_t type = 0;
+    uint16_t height = 0;
+    int16_t radius = 0;
+    int16_t lightRadius = 0;
+    uint8_t lightRed = 255;
+    uint8_t lightGreen = 255;
+    uint8_t lightBlue = 255;
+    uint16_t spriteId = 0;
+    uint16_t flags = 0;
+    int16_t soundId = 0;
+};
+
+struct DecorationLookupResult
+{
+    uint16_t decorationId = 0;
+    const DecorationEntry *pEntry = nullptr;
+};
+
+class DecorationTable
+{
+public:
+    // Rows in increasing '#' order (decoration id = '#' - 1). Numbers may skip (a world's rows start in its own range
+    // past the engine's): a skipped id is no decoration, get() returns null for it. Fails on a repeated or decreasing
+    // number.
+    bool loadRows(const std::vector<std::vector<std::string>> &rows);
+    // Null for an id past the table or skipped by its rows.
+    const DecorationEntry *get(uint16_t decorationId) const;
+    const DecorationEntry *findByInternalName(const std::string &internalName) const;
+    std::optional<uint16_t> findIdByInternalName(const std::string &internalName) const;
+    DecorationLookupResult resolveMapDecoration(uint16_t decorationId, const std::string &internalName) const;
+
+private:
+    std::vector<DecorationEntry> m_entries;
+    // False for the ids the rows skip.
+    std::vector<bool> m_entryPresent;
+    std::unordered_map<std::string, uint16_t> m_entryIndexByInternalName;
+    std::unordered_map<std::string, uint16_t> m_entryIndexByMapAlias;
+};
+
+struct SpriteFrameEntry
+{
+    std::string spriteName;
+    std::string textureName;
+    float scale = 1.0f;
+    uint32_t flags = 0;
+    int16_t glowRadius = 0;
+    int16_t paletteId = 0;
+    int32_t frameLengthTicks = 0;
+    int32_t animationLengthTicks = 0;
+};
+
+struct ResolvedSpriteTexture
+{
+    std::string textureName;
+    bool mirrored = false;
+};
+
+class SpriteFrameTable
+{
+public:
+    bool loadFromBytes(const std::vector<uint8_t> &bytes);
+    bool loadFromYaml(const std::string &yamlText, std::string &errorMessage, bool append = false);
+    const SpriteFrameEntry *getFrame(uint16_t spriteId, uint32_t timeTicks) const;
+    std::vector<std::string> collectTextureNames(uint16_t spriteId) const;
+    std::optional<uint16_t> findFrameIndexBySpriteName(const std::string &spriteName) const;
+    // Authored timing of monster attack sprites (rendering/sprite_attack_timing.yml).
+    bool loadAttackTimingFromYaml(const std::string &yamlText, std::string &errorMessage);
+    // Ticks from the start of an attack sprite's animation to its contact frame, when one is authored.
+    std::optional<int32_t> attackImpactTicks(uint16_t spriteId) const;
+    // Delay of the attack sound after the attack starts; 0 plays it as the attack starts.
+    float attackSoundDelaySeconds(uint16_t spriteId) const;
+    static ResolvedSpriteTexture resolveTexture(const SpriteFrameEntry &frame, int octant);
+    static bool hasFlag(uint32_t flags, SpriteFrameFlag flag);
+
+private:
+    static uint32_t mirrorFlagForOctant(int octant);
+    static std::string buildTextureName(const std::string &baseName, int suffixIndex);
+    void rebuildSpriteNameIndex();
+
+private:
+    std::vector<SpriteFrameEntry> m_frames;
+    std::vector<bool> m_framePresent;
+    std::vector<uint16_t> m_eFrames;
+    std::unordered_map<std::string, uint16_t> m_spriteNameIndex;
+    struct AttackTiming
+    {
+        uint32_t contactFrame = 0;
+        float soundDelaySeconds = 0.0f;
+    };
+
+    const AttackTiming *findAttackTiming(uint16_t spriteId) const;
+
+    std::unordered_map<std::string, AttackTiming> m_attackTimings;
+};
+}

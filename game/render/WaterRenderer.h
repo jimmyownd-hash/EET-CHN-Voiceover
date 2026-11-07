@@ -1,0 +1,193 @@
+#pragma once
+
+#include "game/indoor/IndoorFog.h"
+#include "game/render/LiquidKind.h"
+#include "game/render/WaterMath.h"
+#include "game/fx/WaterRippleRuntime.h"
+#include "game/render/WaterReflectionUpdate.h"
+
+#include <bgfx/bgfx.h>
+#include <bx/math.h>
+
+#include <array>
+#include <map>
+#include <span>
+#include <string>
+#include <vector>
+
+namespace OpenYAMM::Engine
+{
+class AssetFileSystem;
+}
+
+namespace OpenYAMM::Game
+{
+class ViewFrustum;
+struct IndoorLightingFrame;
+struct BillboardQuad;
+
+struct WaterVertex
+{
+    float x, y, z;
+    float normalX, normalY, normalZ;
+    float u, v;
+    float layer;
+    float shoreline;
+    uint32_t colorAbgr;
+    // liquidShaderValue: 0 water, 1 tar, 2 lava.
+    float liquid = 0.0f;
+};
+
+struct WaterSurfaceGeometry
+{
+    std::vector<WaterVertex> vertices;
+    // Bounds of individual patches prevent a whole-map ocean bounding box from defeating culling.
+    std::vector<std::array<bx::Vec3, 2>> patches;
+    float height = 0.0f;
+    bool planar = true;
+    LiquidKind liquid = LiquidKind::Water;
+    // False for a liquid that never takes a planar reflection (liquids.yml reflections: false).
+    bool reflects = true;
+    // A see-through liquid (liquids.yml opacity below 1, in its vertices' tint alpha): blended over the bed.
+    bool seeThrough = false;
+    int16_t sectorId = -1;
+    int16_t backSectorId = -1;
+};
+
+// Which liquid surfaces a draw takes: the opaque ones (with the solid scene), the see-through ones (blended after it,
+// so the bed and whatever stands in the liquid show through them) or both (reflection captures).
+enum class WaterSurfaceSet : uint8_t
+{
+    All,
+    Opaque,
+    SeeThrough,
+};
+
+class WaterRenderer
+{
+public:
+    struct Reflection
+    {
+        bgfx::FrameBufferHandle frameBuffer = BGFX_INVALID_HANDLE;
+        bgfx::TextureHandle texture = BGFX_INVALID_HANDLE;
+        std::array<float, 16> view = {};
+        std::array<float, 16> projection = {};
+        std::array<float, 16> sourceProjection = {};
+        std::array<float, 16> viewProjection = {};
+        bx::Vec3 camera = {0.0f, 0.0f, 0.0f};
+        float height = 0.0f;
+        float projectionScale = 1.0f;
+        uint16_t skyView = FirstWaterReflectionView;
+        uint16_t worldView = FirstWaterReflectionView + 1;
+        bool update = true;
+        int16_t sectorId = -1;
+        uint16_t size = 0;
+    };
+
+    bool initialize(const Engine::AssetFileSystem &assets, std::vector<WaterSurfaceGeometry> geometry,
+        std::span<const std::vector<uint8_t>> coverageMasks = {}, bool indoor = false);
+    // The map's scene fog (devdocs/INDOOR_FOG.md), before an indoor initialize; a map without it never calls this.
+    void setIndoorFog(const IndoorFog &fog);
+    bool updateGeometry(std::vector<WaterSurfaceGeometry> geometry, bool buildings = false);
+    void shutdown();
+    bool isReady() const;
+    void prepare(const ViewFrustum &frustum, const bx::Vec3 &camera, const float *pView, const float *pProjection,
+        bool reflections, uint16_t size, float seconds, uint64_t visualRevision, bool buildings,
+        std::span<const uint8_t> visibleSectors = {}, int16_t reflectionSectorId = -1, bool billboards = false);
+    std::span<const Reflection> reflections() const;
+    void bindCoverage(uint8_t stage) const;
+    // Rendered terrain heights for shore water (shoreline 2 vertices): opacity and foam follow the depth to the
+    // seabed. mapping: world-to-texture (west x, north y, scale, offset); an invalid texture disables it. The water
+    // turns opaque at opaqueDepth over the seabed.
+    void setSeabed(bgfx::TextureHandle heights, const std::array<float, 4> &mapping, float opaqueDepth);
+    void render(uint16_t viewId, float seconds,
+        const std::array<float, 4> &sunDirection, const std::array<float, 4> &sunColor,
+        const std::array<float, 4> &skyColor, float rainIntensity, const WaterRippleRuntime *pRipples = nullptr,
+        const Reflection *pReflection = nullptr);
+    void renderIndoor(uint16_t viewId, float seconds, const IndoorLightingFrame &lighting,
+        const bx::Vec3 &camera, const bx::Vec3 &forward, const WaterRippleRuntime *pRipples = nullptr,
+        const Reflection *pReflection = nullptr, std::span<const uint8_t> visibleSectors = {},
+        WaterSurfaceSet surfaceSet = WaterSurfaceSet::All);
+    void renderBillboard(uint16_t viewId, std::span<const WaterVertex> vertices,
+        bgfx::TextureHandle sprite, float seconds,
+        const std::array<float, 4> &sunDirection, const std::array<float, 4> &sunColor,
+        const std::array<float, 4> &skyColor, float rainIntensity);
+    void appendBillboardGeometry(std::vector<WaterVertex> &vertices, const std::string &textureName,
+        const BillboardQuad &quad, bool mirrored) const;
+    // Outdoor raindrop rings on still water: 0-1 share of drop cells, and 0-2 overlapping ring layers.
+    void setRainRings(float amount, int layers);
+
+private:
+    struct Surface
+    {
+        bgfx::VertexBufferHandle buffer = BGFX_INVALID_HANDLE;
+        std::vector<std::array<bx::Vec3, 2>> patches;
+        uint32_t vertexCount = 0;
+        float height = 0.0f;
+        float distanceSquared = 0.0f;
+        bool planar = true;
+        LiquidKind liquid = LiquidKind::Water;
+        bool reflects = true;
+        bool seeThrough = false;
+        bool visible = false;
+        bool building = false;
+        int reflection = -1;
+        int16_t sectorId = -1;
+        int16_t backSectorId = -1;
+        // Occlusion query on the surface's main-view draw: a reflection whose water is entirely hidden behind
+        // geometry keeps its last capture instead of rendering. Unknown or pending results count as visible.
+        bgfx::OcclusionQueryHandle occlusionQuery = BGFX_INVALID_HANDLE;
+        bool queried = false;
+        bool occluded = false;
+    };
+
+    bool resizeReflection(size_t index, uint16_t size);
+    void setFogUniforms();
+    void prepareRippleResources(const WaterRippleRuntime *pRipples);
+    void submitSurface(Surface &surface, uint16_t viewId, float seconds, float rainIntensity,
+        const WaterRippleRuntime *pRipples, bool mainView);
+    void destroySurface(Surface &surface, bool rendererAvailable);
+    std::vector<Surface> m_surfaces;
+    std::array<Reflection, MaxWaterReflections> m_reflections;
+    std::array<uint16_t, MaxWaterReflections> m_reflectionSizes = {};
+    std::array<WaterReflectionUpdate, MaxWaterReflections> m_reflectionUpdates;
+    size_t m_reflectionCount = 0;
+    bgfx::ProgramHandle m_program = BGFX_INVALID_HANDLE;
+    bgfx::ProgramHandle m_rippleProgram = BGFX_INVALID_HANDLE;
+    bgfx::UniformHandle m_rippleRings = BGFX_INVALID_HANDLE;
+    bgfx::UniformHandle m_rippleParams = BGFX_INVALID_HANDLE;
+    bx::Vec3 m_camera = {0.0f, 0.0f, 0.0f};
+    bgfx::TextureHandle m_normalTexture = BGFX_INVALID_HANDLE;
+    bgfx::TextureHandle m_lavaPatternTexture = BGFX_INVALID_HANDLE;
+    bgfx::UniformHandle m_liquidPatternSampler = BGFX_INVALID_HANDLE;
+    bgfx::TextureHandle m_emptyReflection = BGFX_INVALID_HANDLE;
+    bgfx::TextureHandle m_coverageTexture = BGFX_INVALID_HANDLE;
+    bgfx::UniformHandle m_coverageSampler = BGFX_INVALID_HANDLE;
+    bgfx::UniformHandle m_normalSampler = BGFX_INVALID_HANDLE;
+    bgfx::UniformHandle m_spriteSampler = BGFX_INVALID_HANDLE;
+    bgfx::UniformHandle m_reflectionSampler = BGFX_INVALID_HANDLE;
+    bgfx::UniformHandle m_seabedSampler = BGFX_INVALID_HANDLE;
+    bgfx::UniformHandle m_seabedUniform = BGFX_INVALID_HANDLE;
+    bgfx::UniformHandle m_seabedDepthUniform = BGFX_INVALID_HANDLE;
+    // Not owned: the terrain's seabed heights while the materials terrain provides them.
+    bgfx::TextureHandle m_seabedTexture = BGFX_INVALID_HANDLE;
+    std::array<float, 4> m_seabedMapping = {};
+    std::array<float, 4> m_seabedDepth = {};
+    bgfx::UniformHandle m_params = BGFX_INVALID_HANDLE;
+    bgfx::UniformHandle m_rain = BGFX_INVALID_HANDLE;
+    std::array<float, 4> m_rainRings = {};
+    bgfx::UniformHandle m_sunDirection = BGFX_INVALID_HANDLE;
+    bgfx::UniformHandle m_sunColor = BGFX_INVALID_HANDLE;
+    bgfx::UniformHandle m_skyColor = BGFX_INVALID_HANDLE;
+    bgfx::UniformHandle m_reflectionMatrix = BGFX_INVALID_HANDLE;
+    bgfx::UniformHandle m_cameraPosition = BGFX_INVALID_HANDLE;
+    IndoorFog m_indoorFog;
+    bgfx::UniformHandle m_fogColor = BGFX_INVALID_HANDLE;
+    bgfx::UniformHandle m_fogDistances = BGFX_INVALID_HANDLE;
+    bgfx::UniformHandle m_indoorLightPositions = BGFX_INVALID_HANDLE;
+    bgfx::UniformHandle m_indoorLightColors = BGFX_INVALID_HANDLE;
+    bgfx::UniformHandle m_indoorLightParams = BGFX_INVALID_HANDLE;
+    bool m_indoor = false;
+    std::map<std::string, std::vector<std::vector<std::array<float, 3>>>> m_spriteWaterStrips;
+};
+}

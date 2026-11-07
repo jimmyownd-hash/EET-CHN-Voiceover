@@ -1,0 +1,1009 @@
+#pragma once
+
+#include "game/render/SurfaceReflectionBinding.h"
+#include "game/render/SpriteAtlasCache.h"
+#include "game/render/NativeSpriteTextureCache.h"
+#include "game/render/TextureFiltering.h"
+#include "game/render/SkyRenderer.h"
+#include "game/render/WaterRenderer.h"
+#include "game/render/WeatherRenderer.h"
+
+#include "game/app/GameSettings.h"
+#include "game/fx/WorldFxRenderResources.h"
+#include "game/fx/WorldFxSystem.h"
+#include "game/fx/EffectRenderer.h"
+#include "game/render/ShieldDomeRenderer.h"
+#include "game/outdoor/OutdoorCollisionData.h"
+#include "game/outdoor/OutdoorDistantSea.h"
+#include "game/outdoor/OutdoorLightingRuntime.h"
+#include "game/outdoor/OutdoorSpatialFxRuntime.h"
+#include "game/outdoor/OutdoorTerrainMaterials.h"
+#include "game/outdoor/TerrainBushSet.h"
+#include "game/outdoor/TerrainDecorationRenderer.h"
+#include "game/outdoor/WeatherAudio.h"
+#include "game/outdoor/WeatherPresentation.h"
+#include "game/maps/DecorationModelSet.h"
+#include "game/maps/MapAssetLoader.h"
+#include "game/tables/MapStats.h"
+#include "game/tables/MonsterTable.h"
+#include "game/outdoor/OutdoorMapData.h"
+#include "game/party/Party.h"
+#include "game/outdoor/OutdoorWorldRuntime.h"
+#include "game/tables/CharacterDollTable.h"
+#include "game/tables/ChestTable.h"
+#include "game/tables/ClassSkillTable.h"
+#include "game/tables/CharacterInspectTable.h"
+#include "game/events/EventRuntime.h"
+#include "game/audio/GameAudioSystem.h"
+#include "game/tables/HouseTable.h"
+#include "game/tables/JournalAutonoteTable.h"
+#include "game/tables/JournalHistoryTable.h"
+#include "game/tables/JournalQuestTable.h"
+#include "game/gameplay/GameplayScreenState.h"
+#include "game/gameplay/GameplayTalkCamera.h"
+#include "game/items/ItemEnchantTables.h"
+#include "game/tables/NpcDialogTable.h"
+#include "game/tables/ObjectTable.h"
+#include "game/party/PartySpellSystem.h"
+#include "game/render/lighting/LightingStats.h"
+#include "game/render/BillboardOpacityMask.h"
+#include "game/gameplay/GameplaySpellActionController.h"
+#include "game/tables/ReadableScrollTable.h"
+#include "game/tables/RosterTable.h"
+#include "game/tables/SpellTable.h"
+#include "game/gameplay/GameplayDialogController.h"
+#include "game/ui/EnemyHealthBarRenderer.h"
+#include "game/ui/GameplayHudCommon.h"
+#include "game/ui/GameplayUiController.h"
+#include "game/ui/GameplayOverlayTypes.h"
+#include "game/ui/GameplayOverlayAdapters.h"
+#include "game/ui/UiLayoutManager.h"
+#include "engine/AssetFileSystem.h"
+#include "engine/render/ModelRenderer.h"
+
+#include <bgfx/bgfx.h>
+#include <bx/math.h>
+
+#include <array>
+#include <map>
+#include <cstdint>
+#include <deque>
+#include <filesystem>
+#include <functional>
+#include <limits>
+#include <memory>
+#include <optional>
+#include <string>
+#include <unordered_map>
+#include <unordered_set>
+#include <vector>
+
+struct SDL_Window;
+
+namespace OpenYAMM::Game
+{
+class CinematicGrading;
+class GameDataRepository;
+class GameSession;
+class OutdoorPartyRuntime;
+class OutdoorSceneRuntime;
+class OutdoorWorldRuntime;
+class OutdoorBillboardRenderer;
+class OutdoorGameplayInputController;
+struct GameplayInputFrame;
+class OutdoorInteractionController;
+class OutdoorRenderer;
+class OutdoorPresentationController;
+class GameplayDialogueRenderer;
+class GameplayHudRenderer;
+class GameplayPartyOverlayRenderer;
+class GameplayHudOverlayRenderer;
+class GameplayPartyOverlayInputController;
+class GameplayOverlayInputController;
+class GameplayScreenRuntime;
+struct ArcomageLibrary;
+class ItemTable;
+struct GameApplicationTestAccess;
+struct ItemDefinition;
+
+class OutdoorGameView
+    : public IGameplayOverlaySceneAdapter
+{
+public:
+    // Runtime-only debug switches for the console `render` command (profiling); everything draws by default.
+    struct RenderLayers
+    {
+        bool terrain = true;
+        bool bmodels = true;
+        bool sky = true;
+        bool water = true;
+        bool grass = true;
+        bool decorationModels = true;
+        bool decorationSprites = true;
+        bool actors = true;
+        bool creatureModels = true;
+        bool effects = true;
+    };
+    void setRenderLayers(const RenderLayers &layers);
+    // Debug `sky preset`: forces an Enhanced sky preset by name; empty restores automatic selection.
+    void setDebugSkyPreset(const std::string &presetName);
+    // Rebuilds the materials terrain on its next frame (style or subdivision changed); returns a status line.
+    void reloadTerrainMaterials();
+    std::string terrainMaterialsStatus() const;
+    void setDebugSkyTheme(const std::optional<std::string> &themeName);
+    // The next Enhanced sky update jumps to its target instead of cross-fading.
+    void snapSky();
+    // The Enhanced sky for the current frame, or nullptr while the Classic sky is drawn.
+    const SkyFrameState *enhancedSkyFrame() const;
+    // Weather as shown this frame: faded precipitation, gusting wind and lightning.
+    const WeatherPresentation &weatherPresentation() const;
+    // The next weather update jumps to the current weather instead of fading (debug `weather` commands).
+    void snapWeather();
+    void forceLightningStrike(LightningDistance distance);
+    const SkyPresetLibrary *skyPresetLibrary() const;
+    // Terrain square for the Enhanced map-edge fog and the sea past it, for the current camera height.
+    SkySurroundings skySurroundings() const;
+    // Baked sun/sky light colours (u_bakedLighting), hue-tinted by the Enhanced sky when it is active.
+    std::array<std::array<float, 4>, 2> bakedLightingColors(
+        const OutdoorWorldRuntime::AtmosphereState &atmosphere) const;
+    void setStaticFoliageVisible(bool visible)
+    {
+        m_modelRenderer.setStaticFoliageVisible(visible);
+    }
+    void setSkinnedInstancing(bool enabled)
+    {
+        m_modelRenderer.setSkinnedInstancing(enabled);
+    }
+    const RenderLayers &renderLayers() const
+    {
+        return m_renderLayers;
+    }
+
+    OutdoorGameView(GameSession &gameSession, SpriteAtlasCache &spriteAtlasCache,
+        NativeSpriteTextureCache &nativeSpriteCache);
+    ~OutdoorGameView();
+
+    bool hasPendingSpriteWarmups() const
+    {
+        return m_nextPendingSpriteFrameWarmupIndex < m_pendingSpriteFrameWarmups.size();
+    }
+
+    OutdoorGameView(const OutdoorGameView &) = delete;
+    OutdoorGameView &operator=(const OutdoorGameView &) = delete;
+
+    bool initialize(
+        const Engine::AssetFileSystem &assetFileSystem,
+        const MapStatsEntry &map,
+        const OutdoorMapData &outdoorMapData,
+        const std::optional<std::vector<uint8_t>> &outdoorLandMask,
+        const std::optional<std::vector<uint32_t>> &outdoorTileColors,
+        const std::optional<OutdoorTerrainTiles> &outdoorTerrainTiles,
+        const std::optional<OutdoorBModelTextureSet> &outdoorBModelTextureSet,
+        const std::optional<OutdoorDecorationCollisionSet> &outdoorDecorationCollisionSet,
+        const std::optional<OutdoorActorCollisionSet> &outdoorActorCollisionSet,
+        const std::optional<OutdoorSpriteObjectCollisionSet> &outdoorSpriteObjectCollisionSet,
+        const std::optional<DecorationBillboardSet> &outdoorDecorationBillboardSet,
+        const std::optional<ActorPreviewBillboardSet> &outdoorActorPreviewBillboardSet,
+        const std::optional<SpriteObjectBillboardSet> &outdoorSpriteObjectBillboardSet,
+        const std::optional<MapDeltaData> &outdoorMapDeltaData,
+        GameAudioSystem *pGameAudioSystem,
+        OutdoorSceneRuntime &sceneRuntime,
+        const GameSettings &settings);
+    void render(int width, int height, const GameplayInputFrame &input, float deltaSeconds,
+        bool preparingResources = false);
+    void setWorldPostProcessing(CinematicGrading *pPostProcessing) { m_pPostProcessing = pPostProcessing; }
+    void shutdown();
+    float cameraYawRadians() const;
+    float cameraPitchRadians() const;
+    // Width over height of the last drawn view; 4:3 before the first frame.
+    float viewAspectRatio() const;
+    void setCameraAngles(float yawRadians, float pitchRadians);
+    // Places the party on the map's named start decoration ("north start", ...); false when the map has none.
+    bool movePartyToStartPoint(std::string_view startPointName);
+    void syncCameraToParty();
+    void setCameraEyeHeight(float eyeHeight);
+    void reopenMenuScreen();
+    bool requestQuickSave();
+    bool requestTravelAutosave();
+    bool savePreviewCapturePending() const;
+    void setSettingsSnapshot(const GameSettings &settings);
+    bool executeEventHooks(EventRuntimeHookKind kind);
+    bool ensureMonsterVisualResources(int16_t monsterId);
+    const SpriteFrameTable *actorSpriteFrameTable() const;
+
+private:
+    friend struct GameApplicationTestAccess;
+    friend class GameplayScreenRuntime;
+    friend class GameplayHudRenderer;
+    friend class GameplayPartyOverlayRenderer;
+    friend class GameplayPartyOverlayInputController;
+    friend class OutdoorBillboardRenderer;
+    friend class OutdoorSpatialFxRuntime;
+    friend class OutdoorGameplayInputController;
+    friend class OutdoorInteractionController;
+    friend class OutdoorRenderer;
+    friend class OutdoorPresentationController;
+
+    struct TerrainVertex
+    {
+        float x;
+        float y;
+        float z;
+        uint32_t abgr;
+
+        static void init();
+
+        static bgfx::VertexLayout ms_layout;
+    };
+
+    struct TexturedTerrainVertex
+    {
+        float x;
+        float y;
+        float z;
+        float u;
+        float v;
+        float secretPulse;
+        float flowUPerSecond;
+        float flowVPerSecond;
+        float lavaFlow;
+        float fluidFlow;
+
+        // Unit world-space normal; zero leaves overlays unshaded.
+        float normalX = 0.0f;
+        float normalY = 0.0f;
+        float normalZ = 0.0f;
+
+        static void init();
+
+        static bgfx::VertexLayout ms_layout;
+    };
+
+    struct LitBillboardVertex
+    {
+        float x;
+        float y;
+        float z;
+        float u;
+        float v;
+        uint32_t abgr;
+        // Actor hit flash (GameplayActorHitFeedback): fraction of the flash colour mixed over the lit texel.
+        float hitFlash = 0.0f;
+
+        static void init();
+
+        static bgfx::VertexLayout ms_layout;
+    };
+
+    struct LightmappedBModelVertex
+    {
+        float x;
+        float y;
+        float z;
+        float u;
+        float v;
+        float secretPulse;
+        // Layer of the face's texture in its size array (BModelTextureArray); 0 when the texture is not arrayed.
+        float textureLayer;
+        // Layer of its surface material maps in the array's material arrays; -1 when the texture has none.
+        float materialLayer = -1.0f;
+        float flowUPerSecond;
+        float flowVPerSecond;
+        float lavaFlow;
+        float fluidFlow;
+        float lightmapU;
+        float lightmapV;
+        uint32_t staticColorAbgr;
+        // The face's texture gradients per world unit (surface materials; SurfaceTextureGradients.h).
+        std::array<float, 3> gradientU = {};
+        std::array<float, 3> gradientV = {};
+
+        static void init();
+
+        static bgfx::VertexLayout ms_layout;
+    };
+
+
+    struct TexturedBModelBatch
+    {
+        std::vector<TexturedTerrainVertex> vertices;
+        std::vector<LightmappedBModelVertex> lightmappedVertices;
+        uint32_t faceId = 0;
+        uint32_t cogNumber = 0;
+        uint32_t baseAttributes = 0;
+        size_t bModelIndex = 0;
+        size_t faceIndex = 0;
+        int textureWidth = 0;
+        int textureHeight = 0;
+        std::string textureName;
+        size_t defaultAnimationIndex = static_cast<size_t>(-1);
+        bx::Vec3 boundsMin = {0.0f, 0.0f, 0.0f};
+        bx::Vec3 boundsMax = {0.0f, 0.0f, 0.0f};
+        bool hasBounds = false;
+        bool translucent = false;
+        uint16_t lightmapPageIndex = 0xffff;
+    };
+
+    struct BModelTextureAnimationHandle
+    {
+        std::string textureName;
+        LiquidKind liquid = LiquidKind::None;
+        uint32_t waterColorAbgr = 0;
+        // Animated textures keep one 2D texture per frame. A single-frame texture of a lightmapped map lives in a
+        // size array instead (arrayIndex into m_bmodelTextureArrays, arrayLayer) and has no 2D texture.
+        std::vector<bgfx::TextureHandle> frameTextureHandles;
+        int32_t arrayIndex = -1;
+        uint16_t arrayLayer = 0;
+        // Surface material maps of a single-frame texture (devdocs/SURFACE_MATERIALS_PLAN.md): a layer of the size
+        // array's material arrays (-1: none), or 2D textures beside a 2D frame.
+        int32_t materialLayer = -1;
+        bgfx::TextureHandle materialNormal = BGFX_INVALID_HANDLE;
+        bgfx::TextureHandle materialDetail = BGFX_INVALID_HANDLE;
+        // Physical size of the first frame's texture.
+        uint16_t width = 0;
+        uint16_t height = 0;
+        std::vector<uint32_t> frameLengthTicks;
+        std::vector<bool> frameHasPartialAlphaPixels;
+        uint32_t animationLengthTicks = 0;
+    };
+
+    // All single-frame bmodel textures of one size, as layers with their own mip chains.
+    struct BModelTextureArray
+    {
+        bgfx::TextureHandle handle = BGFX_INVALID_HANDLE;
+        uint16_t width = 0;
+        uint16_t height = 0;
+        uint16_t layers = 0;
+        // The material maps of its layers that have them, in their own arrays (invalid when none has maps).
+        bgfx::TextureHandle materialNormal = BGFX_INVALID_HANDLE;
+        bgfx::TextureHandle materialDetail = BGFX_INVALID_HANDLE;
+    };
+
+    struct ResolvedBModelDrawGroup
+    {
+        bgfx::VertexBufferHandle vertexBufferHandle = BGFX_INVALID_HANDLE;
+        uint32_t vertexCount = 0;
+        // A lightmapped group of every arrayed material of one size (arrayIndex >= 0; layers per vertex), or the faces
+        // of one material (animationIndex).
+        int32_t arrayIndex = -1;
+        size_t animationIndex = static_cast<size_t>(-1);
+        bx::Vec3 boundsMin = {0.0f, 0.0f, 0.0f};
+        bx::Vec3 boundsMax = {0.0f, 0.0f, 0.0f};
+        bool hasBounds = false;
+        uint16_t lightmapPageIndex = 0xffff;
+        bool usesStaticLighting = false;
+        bool waterSurface = false;
+    };
+
+    struct BModelWorldRenderFace
+    {
+        uint32_t faceId = 0;
+        uint32_t cogNumber = 0;
+        uint32_t baseAttributes = 0;
+        uint32_t bModelIndex = 0;
+        uint32_t faceIndex = 0;
+        int textureWidth = 0;
+        int textureHeight = 0;
+        size_t defaultAnimationIndex = static_cast<size_t>(-1);
+        uint64_t visualSignature = std::numeric_limits<uint64_t>::max();
+        bool translucent = false;
+        uint16_t lightmapPageIndex = 0xffff;
+        bool usesStaticLighting = false;
+    };
+
+    struct BModelWorldRenderGroup
+    {
+        bgfx::VertexBufferHandle vertexBufferHandle = BGFX_INVALID_HANDLE;
+        uint32_t vertexCount = 0;
+        size_t animationIndex = static_cast<size_t>(-1);
+        bx::Vec3 boundsMin = {0.0f, 0.0f, 0.0f};
+        bx::Vec3 boundsMax = {0.0f, 0.0f, 0.0f};
+        bool hasBounds = false;
+        bool translucent = false;
+        uint16_t lightmapPageIndex = 0xffff;
+        bool usesStaticLighting = false;
+    };
+
+    struct BModelWorldRenderChunk
+    {
+        std::vector<BModelWorldRenderFace> faces;
+        std::vector<BModelWorldRenderGroup> groups;
+        bx::Vec3 boundsMin = {0.0f, 0.0f, 0.0f};
+        bx::Vec3 boundsMax = {0.0f, 0.0f, 0.0f};
+        int32_t cellX = 0;
+        int32_t cellY = 0;
+        bool hasBounds = false;
+    };
+
+    static constexpr size_t OutdoorFxUniformLightCount = 8;
+
+    using BillboardTextureHandle = SpriteBillboardTexture;
+
+
+    using HudTextureHandle = GameplayHudTextureData;
+
+    struct ViewDistanceCache
+    {
+        std::string sourceValue;
+        float sourceScale = 0.0f;
+        float farClipDistance = 18000.0f;
+        float runtimeProjectileDistance = 12288.0f;
+        float runtimeProjectileDistanceSquared = 12288.0f * 12288.0f;
+        float decorationBillboardDistance = 18000.0f;
+        float decorationBillboardDistanceSquared = 18000.0f * 18000.0f;
+        float actorBillboardDistance = 18000.0f;
+        float actorBillboardDistanceSquared = 18000.0f * 18000.0f;
+    };
+
+    using HudFontGlyphMetrics = GameplayHudFontGlyphMetricsData;
+    using HudFontHandle = GameplayHudFontData;
+    using HudTextureColorTextureHandle = GameplayHudTextureColorTextureData;
+
+    using HudLayoutAnchor = UiLayoutManager::LayoutAnchor;
+    using HudLayoutAttachMode = UiLayoutManager::LayoutAttachMode;
+    using HudTextAlignX = UiLayoutManager::TextAlignX;
+    using HudTextAlignY = UiLayoutManager::TextAlignY;
+
+    using HudScreenState = GameplayHudScreenState;
+
+    using CharacterPage = GameplayUiController::CharacterPage;
+    using CharacterScreenSource = GameplayUiController::CharacterScreenSource;
+
+    using CharacterPointerTargetType = GameplayCharacterPointerTargetType;
+
+public:
+    using SpellbookSchool = GameplayUiController::SpellbookSchool;
+    using HouseShopMode = GameplayUiController::HouseShopMode;
+    using InventoryNestedOverlayMode = GameplayUiController::InventoryNestedOverlayMode;
+    using HouseBankInputMode = GameplayUiController::HouseBankInputMode;
+    using UtilitySpellOverlayMode = GameplayUiController::UtilitySpellOverlayMode;
+    using DialoguePointerTargetType = GameplayDialoguePointerTargetType;
+    using DialoguePointerTarget = GameplayDialoguePointerTarget;
+    using ChestPointerTargetType = GameplayChestPointerTargetType;
+    using ChestPointerTarget = GameplayChestPointerTarget;
+    using RenderedInspectableHudItem = GameplayRenderedInspectableHudItem;
+
+    struct InspectHit
+    {
+        bool hasHit = false;
+        size_t bModelIndex = 0;
+        size_t faceIndex = 0;
+        std::string textureName;
+        float distance = 0.0f;
+        uint32_t attributes = 0;
+        int16_t bitmapIndex = 0;
+        uint16_t cogNumber = 0;
+        uint16_t cogTriggeredNumber = 0;
+        uint16_t cogTrigger = 0;
+        uint8_t polygonType = 0;
+        uint8_t shade = 0;
+        uint8_t visibility = 0;
+        std::string kind;
+        std::string name;
+        bool isFriendly = false;
+        int16_t npcId = 0;
+        uint32_t actorGroup = 0;
+        uint16_t decorationListId = 0;
+        uint16_t eventIdPrimary = 0;
+        uint16_t eventIdSecondary = 0;
+        uint16_t variablePrimary = 0;
+        uint16_t variableSecondary = 0;
+        uint16_t specialTrigger = 0;
+        uint16_t spawnTypeId = 0;
+        std::string spawnSummary;
+        std::string spawnDetail;
+        uint16_t decorationId = 0;
+        uint16_t objectDescriptionId = 0;
+        uint16_t objectSpriteId = 0;
+        int32_t spellId = 0;
+        size_t runtimeActorIndex = static_cast<size_t>(-1);
+        float hitX = 0.0f;
+        float hitY = 0.0f;
+        float hitZ = 0.0f;
+    };
+
+    struct KeyboardInteractionSamplePoint {
+        float x = 0.0f;
+        float y = 0.0f;
+    };
+
+    struct KeyboardInteractionBillboardCandidate
+    {
+        InspectHit inspectHit;
+        float cameraDepth = 0.0f;
+        std::array<KeyboardInteractionSamplePoint, 6> samplePoints = {{}};
+        size_t samplePointCount = 0;
+    };
+
+    struct KeyboardInteractionFaceCandidate
+    {
+        size_t bModelIndex = static_cast<size_t>(-1);
+        size_t faceIndex = static_cast<size_t>(-1);
+        uint16_t eventId = 0;
+    };
+
+    enum class DecorationPickMode
+    {
+        HoverInfo,
+        Interaction,
+    };
+
+    using SpellbookPointerTargetType = GameplaySpellbookPointerTargetType;
+
+  private:
+    using ItemInspectSourceType = GameplayUiController::ItemInspectSourceType;
+
+    using CharacterPointerTarget = GameplayCharacterPointerTarget;
+    using PendingSpellCastState = GameplayScreenState::PendingSpellTargetState;
+    using QuickSpellState = GameplayScreenState::QuickSpellState;
+    using AttackActionState = GameplayScreenState::AttackActionState;
+    using WorldInteractionInputState = GameplayScreenState::WorldInteractionInputState;
+    using GameplayMouseLookState = GameplayScreenState::GameplayMouseLookState;
+
+    using HeldInventoryItemState = GameplayUiController::HeldInventoryItemState;
+
+    struct SpellAreaPreviewCacheState
+    {
+        bool valid = false;
+        uint32_t spellId = 0;
+        float targetX = 0.0f;
+        float targetY = 0.0f;
+        float targetZ = 0.0f;
+        float radius = 0.0f;
+        float lastRefreshElapsedTime = -1000.0f;
+        std::vector<TexturedTerrainVertex> vertices;
+    };
+
+    using SpellbookPointerTarget = GameplaySpellbookPointerTarget;
+
+    using SpellbookState = GameplayUiController::SpellbookState;
+    using UtilitySpellOverlayState = GameplayUiController::UtilitySpellOverlayState;
+    using RestScreenState = GameplayUiController::RestScreenState;
+    using RestPointerTargetType = GameplayRestPointerTargetType;
+    using RestPointerTarget = GameplayRestPointerTarget;
+    using MenuScreenState = GameplayUiController::MenuScreenState;
+    using ControlsScreenState = GameplayUiController::ControlsScreenState;
+    using ControlsPointerTargetType = GameplayControlsPointerTargetType;
+    using ControlsPointerTarget = GameplayControlsPointerTarget;
+    using KeyboardScreenState = GameplayUiController::KeyboardScreenState;
+    using KeyboardPointerTargetType = GameplayKeyboardPointerTargetType;
+    using KeyboardPointerTarget = GameplayKeyboardPointerTarget;
+    using VideoOptionsScreenState = GameplayUiController::VideoOptionsScreenState;
+    using VideoOptionsPointerTargetType = GameplayVideoOptionsPointerTargetType;
+    using VideoOptionsPointerTarget = GameplayVideoOptionsPointerTarget;
+    using SaveSlotSummary = GameplayUiController::SaveSlotSummary;
+    using JournalScreenState = GameplayUiController::JournalScreenState;
+    using JournalView = GameplayUiController::JournalView;
+    using JournalNotesCategory = GameplayUiController::JournalNotesCategory;
+
+    using MenuPointerTargetType = GameplayMenuPointerTargetType;
+    using SaveLoadPointerTargetType = GameplaySaveLoadPointerTargetType;
+    using MenuPointerTarget = GameplayMenuPointerTarget;
+    using SaveLoadPointerTarget = GameplaySaveLoadPointerTarget;
+
+    struct PendingSavePreviewCaptureState
+    {
+        bool active = false;
+        bool screenshotRequested = false;
+        std::filesystem::path savePath;
+        std::string requestId;
+        std::string saveName;
+        bool closeUiOnSuccess = false;
+        uint64_t startedTicks = 0;
+    };
+
+    HeldInventoryItemState &heldInventoryItem();
+    const HeldInventoryItemState &heldInventoryItem() const;
+
+    GameplayUiController::UtilitySpellOverlayState &utilitySpellOverlay();
+    const GameplayUiController::UtilitySpellOverlayState &utilitySpellOverlay() const;
+    GameplayUiController::HouseShopOverlayState &houseShopOverlay();
+    const GameplayUiController::HouseShopOverlayState &houseShopOverlay() const;
+
+    using HudLayoutElement = UiLayoutManager::LayoutElement;
+
+    using ResolvedHudLayoutElement = GameplayResolvedHudLayoutElement;
+
+public:
+    using OverlayResolvedHudLayoutElement = ResolvedHudLayoutElement;
+    using OverlayHudScreenState = HudScreenState;
+
+private:
+
+    using SpriteLoadCache = GameplayAssetLoadCache;
+
+public:
+    struct InteractiveDecorationBinding
+    {
+        bool active = false;
+        uint8_t decorVarIndex = 0;
+        uint16_t entityIndex = 0;
+        uint16_t baseEventId = 0;
+        uint8_t eventCount = 0;
+        bool hideWhenCleared = false;
+        bool fixedEvent = false;
+    };
+
+    void showStatusBarEvent(const std::string &text, float durationSeconds = 2.0f);
+    void showCombatStatusBarEvent(const std::string &text, float durationSeconds = 2.0f);
+    void setMouseRotateSpeed(float speed);
+    void setWalkSoundEnabled(bool active);
+    void setShowHitStatusMessages(bool active);
+    void setFlipOnExitEnabled(bool active);
+    OutdoorPartyRuntime *partyRuntime() const;
+    IGameplayWorldRuntime *worldRuntime() const;
+    GameAudioSystem *audioSystem() const;
+    const GameDataRepository &data() const;
+    float gameplayCameraYawRadians() const override;
+    void setStatusBarEvent(
+        const std::string &text,
+        float durationSeconds = 2.0f,
+        GameplayUiController::StatusBarEventPriority priority =
+            GameplayUiController::StatusBarEventPriority::Normal);
+    void executeActiveDialogAction() override;
+    GameSettings &mutableSettings();
+    std::array<uint8_t, SDL_SCANCODE_COUNT> &previousKeyboardState();
+    const std::array<uint8_t, SDL_SCANCODE_COUNT> &previousKeyboardState() const;
+    bool trySaveToSelectedGameSlot() override;
+    const GameSettings &settingsSnapshot() const;
+    GameplayWorldUiRenderState gameplayUiRenderState(int width, int height) const;
+    WorldFxSystem &worldFxSystem();
+    Engine::ModelRenderer &modelRenderer() { return m_modelRenderer; }
+    EffectRenderer &effectRenderer() { return m_effectRenderer; }
+    const EffectRenderer::Diagnostics &effectRenderDiagnostics() const;
+private:
+    float effectiveCameraYawRadians() const;
+    float effectiveCameraPitchRadians() const;
+    void preloadSpriteFrameTextures(
+        const SpriteFrameTable &spriteFrameTable,
+        uint16_t spriteFrameIndex,
+        const char *pLoadPhase = "warmup");
+    void queueSpriteFrameWarmup(uint16_t spriteFrameIndex);
+    const GameplayWorldHit &rightMouseInspectWorldHit(
+        int width,
+        int height,
+        const GameplayInputFrame &input);
+    std::optional<std::string> findCachedAssetPath(const std::string &directoryPath, const std::string &fileName);
+    std::optional<std::vector<uint8_t>> readCachedBinaryFile(const std::string &assetPath);
+    std::optional<std::array<uint8_t, 256 * 3>> loadCachedActPalette(int16_t paletteId);
+    std::optional<std::vector<uint8_t>> loadSpriteBitmapPixelsBgraCached(
+        const std::string &textureName,
+        int16_t paletteId,
+        int &width,
+        int &height);
+    bool hasActiveEventDialog() const;
+    void updateItemInspectOverlayState(int width, int height, const GameplayInputFrame &input);
+    void updateActorInspectOverlayState(int width, int height, const GameplayInputFrame &input);
+    void updateCombatFeedback(float deltaSeconds);
+    void renderCombatFeedbackOverlay(
+        int width,
+        int height,
+        const float *pViewProjectionMatrix);
+    const AdventurersInnMember *selectedAdventurersInnMember() const;
+    AdventurersInnMember *selectedAdventurersInnMember();
+    void consumePendingWorldAudioEvents();
+    void updateFootstepAudio(float deltaSeconds);
+    bool activeMemberKnowsSpell(uint32_t spellId) const;
+    bool activeMemberHasSpellbookSchool(SpellbookSchool school) const;
+    bool tryCastSpellRequest(const PartySpellCastRequest &request, const std::string &spellName) override;
+    bool beginSaveWithPreview(const std::filesystem::path &path, const std::string &saveName, bool closeUiOnSuccess);
+    void clearWorldInteractionInputLatches();
+    void syncGameplayMouseLookMode(SDL_Window *pWindow, bool enabled);
+    void syncCursorToGameplayCrosshair(SDL_Window *pWindow = nullptr);
+    void refreshViewDistanceCache();
+    const BillboardTextureHandle *findBillboardTexture(const std::string &textureName, int16_t paletteId) const;
+
+    struct CombatFloatingText
+    {
+        size_t actorIndex = 0;
+        int amount = 0;
+        std::string text;
+        float x = 0.0f;
+        float y = 0.0f;
+        float z = 0.0f;
+        float remainingSeconds = 0.0f;
+        float durationSeconds = 0.0f;
+        uint32_t colorAbgr = 0xffffffffu;
+        float fontScale = 1.0f;
+    };
+
+
+
+    bool m_isInitialized;
+    bool m_isRenderable;
+    std::optional<MapStatsEntry> m_map;
+    const OutdoorMapData *m_pOutdoorMapData;
+    std::optional<DecorationBillboardSet> m_outdoorDecorationBillboardSet;
+    std::optional<ActorPreviewBillboardSet> m_outdoorActorPreviewBillboardSet;
+    std::optional<SpriteObjectBillboardSet> m_outdoorSpriteObjectBillboardSet;
+    std::optional<MapDeltaData> m_outdoorMapDeltaData;
+    GameAudioSystem *m_pGameAudioSystem;
+    OutdoorSceneRuntime *m_pOutdoorSceneRuntime;
+    OutdoorWorldRuntime *m_pOutdoorWorldRuntime;
+    OutdoorSpatialFxRuntime m_outdoorSpatialFxRuntime;
+    OutdoorLightingRuntime m_outdoorLightingRuntime;
+    // Fixed geometry only. Time weights and runtime point lights are applied after this cached lookup.
+    std::map<std::array<float, 3>, std::optional<OutdoorLightingData::Probe>> m_bakedProbeCache;
+    OutdoorLightingRuntime m_outdoorBModelLightingRuntime;
+    std::vector<WorldFxLightEmitter> m_cachedOutdoorDynamicLightEmitters;
+    const OutdoorLightingData *m_pCachedOutdoorLightingData = nullptr;
+    bool m_outdoorLightingRuntimesInitialized = false;
+    bgfx::VertexBufferHandle m_vertexBufferHandle;
+    bgfx::IndexBufferHandle m_indexBufferHandle;
+    bgfx::DynamicVertexBufferHandle m_skyVertexBufferHandle;
+    bgfx::VertexBufferHandle m_bloodSplatVertexBufferHandle;
+    bgfx::VertexBufferHandle m_filledTerrainVertexBufferHandle;
+    bgfx::VertexBufferHandle m_bmodelVertexBufferHandle;
+    bgfx::VertexBufferHandle m_bmodelCollisionVertexBufferHandle;
+    bgfx::VertexBufferHandle m_entityMarkerVertexBufferHandle;
+    bgfx::VertexBufferHandle m_spawnMarkerVertexBufferHandle;
+    bgfx::ProgramHandle m_programHandle;
+    bgfx::ProgramHandle m_screenTintProgramHandle;
+    bgfx::ProgramHandle m_texturedTerrainProgramHandle;
+    // HUD quads multiplied by a colour, such as tinted text.
+    bgfx::ProgramHandle m_hudTintedProgramHandle = BGFX_INVALID_HANDLE;
+    bgfx::ProgramHandle m_spellAreaPreviewProgramHandle;
+    bgfx::ProgramHandle m_outdoorLitBillboardProgramHandle;
+    bgfx::ProgramHandle m_outdoorTexturedFogProgramHandle;
+    bgfx::ProgramHandle m_outdoorTexturedFogShadowProgramHandle = BGFX_INVALID_HANDLE;
+    bgfx::ProgramHandle m_outdoorBModelShadowProgramHandle = BGFX_INVALID_HANDLE;
+    // The same programs sampling arrayed bmodel textures (per-vertex layer, or u_bmodelTextureLayer for one face).
+    bgfx::ProgramHandle m_outdoorBModelLightmapArrayProgramHandle = BGFX_INVALID_HANDLE;
+    // Baked bmodel faces with surface material maps: 2D and array, without and with mesh-shadow receivers. Loaded
+    // only for a map whose textures came with their maps (m_surfaceMaterialMaps).
+    bool m_surfaceMaterialMaps = false;
+    bgfx::ProgramHandle m_outdoorBModelMaterialProgramHandle = BGFX_INVALID_HANDLE;
+    bgfx::ProgramHandle m_outdoorBModelMaterialArrayProgramHandle = BGFX_INVALID_HANDLE;
+    bgfx::ProgramHandle m_outdoorBModelMaterialShadowProgramHandle = BGFX_INVALID_HANDLE;
+    bgfx::ProgramHandle m_outdoorBModelMaterialShadowArrayProgramHandle = BGFX_INVALID_HANDLE;
+    bgfx::UniformHandle m_surfaceNormalSamplerHandle = BGFX_INVALID_HANDLE;
+    bgfx::UniformHandle m_surfaceDetailSamplerHandle = BGFX_INVALID_HANDLE;
+    bgfx::UniformHandle m_surfaceMaterialUniformHandle = BGFX_INVALID_HANDLE;
+    bgfx::UniformHandle m_surfaceSunUniformHandle = BGFX_INVALID_HANDLE;
+    // How lit the windows are from inside (0 by day, 1 at night), from the game clock.
+    float m_surfaceNightGlow = 0.0f;
+    SurfaceReflectionBinding m_surfaceReflectionBinding;
+    bgfx::ProgramHandle m_outdoorBModelShadowArrayProgramHandle = BGFX_INVALID_HANDLE;
+    bgfx::ProgramHandle m_outdoorTexturedFogArrayProgramHandle = BGFX_INVALID_HANDLE;
+    bgfx::ProgramHandle m_outdoorTexturedFogShadowArrayProgramHandle = BGFX_INVALID_HANDLE;
+    // The terrain as a sun shadow caster.
+    bgfx::ProgramHandle m_terrainShadowProgramHandle = BGFX_INVALID_HANDLE;
+    bgfx::UniformHandle m_bmodelTextureLayerUniformHandle = BGFX_INVALID_HANDLE;
+    TerrainDecorationRenderer m_terrainDecorations;
+    TerrainBushSet m_terrainBushes;
+    WaterRenderer m_waterRenderer;
+    SkyRenderer m_skyRenderer;
+    bool m_skyRendererInitializeAttempted = false;
+    bool m_enhancedSkyActive = false;
+    float m_lastSkyStateElapsedTime = -1.0f;
+    WeatherPresentation m_weatherPresentation;
+    WeatherRenderer m_weatherRenderer;
+    bool m_weatherRendererInitializeAttempted = false;
+    float m_lastWeatherElapsedTime = -1.0f;
+    float m_weatherFrameSeconds = 0.0f;
+    double m_lastWeatherGameMinutes = 0.0;
+    WeatherAudio m_weatherAudio;
+    std::string m_debugSkyPreset;
+    std::optional<std::string> m_debugSkyTheme;
+    OutdoorDistantSea m_distantSea;
+    // Eye position of the frame being rendered, for the distant sea.
+    std::array<float, 3> m_skyCameraPosition = {};
+    bgfx::UniformHandle m_worldClipPlaneUniformHandle = BGFX_INVALID_HANDLE;
+    bgfx::UniformHandle m_waterSurfaceControlUniformHandle = BGFX_INVALID_HANDLE;
+    bgfx::UniformHandle m_wetnessUniformHandle = BGFX_INVALID_HANDLE;
+    struct TerrainDecorationBatch
+    {
+        TerrainDecorationPatch range;
+        OutdoorSelectedFxLights lights;
+    };
+    std::vector<TerrainDecorationBatch> m_terrainDecorationBatches;
+    // The decorations' visible instance ranges, reused between refreshes.
+    std::vector<TerrainDecorationPatch> m_terrainDecorationDraws;
+    uint64_t m_terrainDecorationRefreshTick = 0;
+    uint32_t m_terrainDecorationLightCount = 0;
+    std::optional<std::array<std::string, 256>> m_terrainDecorationTileNames;
+    bool m_terrainDecorationsInitializationAttempted = false;
+    OutdoorTerrainMaterials m_terrainMaterials;
+    // How each raw tile id takes part in the terrain, kept so the materials can be rebuilt without a reload.
+    std::optional<std::array<OutdoorTerrainTile, 256>> m_terrainMaterialTiles;
+    bool m_terrainMaterialsInitializationAttempted = false;
+    // The water renderer's per-cell terrain liquids (restored while the materials are rebuilt; with a seabed the
+    // materials replace the water among them).
+    std::vector<WaterSurfaceGeometry> m_terrainLiquidGeometry;
+    bgfx::ProgramHandle m_outdoorBModelLightmapProgramHandle;
+    bgfx::TextureHandle m_bloodSplatTextureHandle;
+    std::vector<bgfx::TextureHandle> m_bmodelLightmapTextureHandles;
+    std::vector<bgfx::TextureHandle> m_directSunTextureHandles;
+    bgfx::TextureHandle m_bmodelWhiteLightmapTextureHandle;
+    bgfx::UniformHandle m_terrainTextureSamplerHandle;
+    bgfx::UniformHandle m_hudTintUniformHandle = BGFX_INVALID_HANDLE;
+    bgfx::UniformHandle m_bmodelLightmapSamplerHandle;
+    bgfx::UniformHandle m_bakedSkySamplerHandle = BGFX_INVALID_HANDLE;
+    bgfx::UniformHandle m_bakedSunDirectSamplerHandle = BGFX_INVALID_HANDLE;
+    bgfx::UniformHandle m_bakedLightingUniformHandle = BGFX_INVALID_HANDLE;
+    bgfx::UniformHandle m_bakedTerrainBoundsUniformHandle = BGFX_INVALID_HANDLE;
+    bgfx::UniformHandle m_outdoorBillboardAmbientUniformHandle;
+    bgfx::UniformHandle m_outdoorBillboardOverrideColorUniformHandle;
+    bgfx::UniformHandle m_outdoorBillboardOutlineParamsUniformHandle;
+    bgfx::UniformHandle m_outdoorFxLightPositionsUniformHandle;
+    bgfx::UniformHandle m_outdoorFxLightColorsUniformHandle;
+    bgfx::UniformHandle m_outdoorFxLightParamsUniformHandle;
+    bgfx::UniformHandle m_outdoorSunlightUniformHandle;
+    std::array<float, 4> m_outdoorSunlight = {0.0f, 0.0f, 0.0f, 1.0f};
+    bgfx::UniformHandle m_outdoorFogColorUniformHandle;
+    bgfx::UniformHandle m_skyFogUniformHandle = BGFX_INVALID_HANDLE;
+    bgfx::UniformHandle m_outdoorFogDensitiesUniformHandle;
+    bgfx::UniformHandle m_outdoorFogDistancesUniformHandle;
+    bgfx::UniformHandle m_outdoorCameraPositionUniformHandle;
+    bgfx::UniformHandle m_secretPulseParamsUniformHandle;
+    bgfx::UniformHandle m_spellAreaPreviewParams0UniformHandle;
+    bgfx::UniformHandle m_spellAreaPreviewParams1UniformHandle;
+    bgfx::UniformHandle m_spellAreaPreviewColorAUniformHandle;
+    bgfx::UniformHandle m_spellAreaPreviewColorBUniformHandle;
+    float m_elapsedTime;
+    float m_framesPerSecond;
+    float m_lastOutdoorFxLightUniformUpdateElapsedTime = -1.0f;
+    uint32_t m_bmodelLineVertexCount;
+    uint32_t m_bloodSplatVertexCount;
+    uint32_t m_bmodelCollisionVertexCount;
+    uint32_t m_bmodelFaceCount;
+    uint32_t m_entityMarkerVertexCount;
+    uint32_t m_spawnMarkerVertexCount;
+    std::vector<TexturedBModelBatch> m_texturedBModelBatches;
+    std::vector<BModelTextureAnimationHandle> m_bmodelTextureAnimations;
+    // Textures an event swapped in (evt.SetTexture) that could not be loaded; not tried again.
+    std::unordered_set<std::string> m_missingSwapTextureNames;
+    std::vector<BModelTextureArray> m_bmodelTextureArrays;
+    std::vector<ResolvedBModelDrawGroup> m_resolvedBModelDrawGroups;
+    uint64_t m_resolvedBModelDrawGroupRevision = std::numeric_limits<uint64_t>::max();
+    std::vector<BModelWorldRenderChunk> m_bmodelWorldRenderChunks;
+    uint64_t m_bmodelWorldRenderRevision = std::numeric_limits<uint64_t>::max();
+    uint64_t m_bloodSplatVertexBufferRevision = std::numeric_limits<uint64_t>::max();
+    SpriteAtlasCache &m_spriteAtlasCache;
+    NativeSpriteTextureCache &m_nativeSpriteCache;
+    std::deque<BillboardTextureHandle> m_billboardTextureHandles;
+    WorldFxRenderResources m_worldFxRenderResources;
+    EffectRenderer m_effectRenderer;
+    ShieldDomeRenderer m_shieldDomeRenderer;
+    Engine::ModelRenderer m_modelRenderer;
+    // The main view's clustered light grid: the object lights (authored and dynamic) for 3D models; buildings take
+    // its dynamic lights.
+    Engine::LightGridTextures m_lightGrid;
+    Engine::LightGridBinding m_lightGridBinding;
+    // Baked sunlight probes per 3D model instance. A probe depends only on position (line of sight to the baked
+    // probe grid), so it is re-sampled after the model moves; time-of-day colour is still applied every frame.
+    struct ModelProbeCacheEntry
+    {
+        uint32_t generation = 0;
+        const void *pLightingData = nullptr;
+        std::array<float, 3> center = {};
+        std::optional<OutdoorLightingData::Probe> probe;
+    };
+    std::unordered_map<uint32_t, ModelProbeCacheEntry> m_modelProbeCache;
+    // Decorations drawn as static 3D models, and the baked probe of each modelled decoration (by billboard index),
+    // sampled once since decorations never move.
+    DecorationModelSet m_decorationModels;
+    std::vector<std::optional<OutdoorLightingData::Probe>> m_decorationModelProbes;
+    std::vector<uint8_t> m_decorationModelProbeSampled;
+    const void *m_pDecorationModelProbeSource = nullptr;
+    bool m_decorationModelsInitializationAttempted = false;
+    CinematicGrading *m_pPostProcessing = nullptr;
+    std::array<float, OutdoorFxUniformLightCount * 4> m_cachedOutdoorFxLightPositions = {};
+    std::array<float, OutdoorFxUniformLightCount * 4> m_cachedOutdoorFxLightColors = {};
+    std::array<float, 4> m_cachedOutdoorFxLightParams = {};
+    LightingStats m_outdoorLightingStats = {};
+    float m_lastOutdoorLightingStatsLogElapsedTime = 0.0f;
+    uint64_t m_performanceTraceLogNanosecondsThisFrame = 0;
+    struct OutdoorSpriteRenderDiagnostics
+    {
+        uint64_t decorationItems = 0;
+        uint64_t decorationBatchSubmits = 0;
+        uint64_t decorationBatchedItems = 0;
+        uint64_t decorationTextureGroups = 0;
+        uint64_t decorationSubmits = 0;
+        uint64_t decorationOutlineSubmits = 0;
+        uint64_t decorationTextureSwitches = 0;
+        uint64_t actorItems = 0;
+        uint64_t actorBatchSubmits = 0;
+        uint64_t actorBatchedItems = 0;
+        uint64_t actorSubmits = 0;
+        uint64_t actorOutlineSubmits = 0;
+        uint64_t actorTextureSwitches = 0;
+        uint64_t combinedDepthSlices = 0;
+        uint64_t combinedDepthSliceTextureGroups = 0;
+        uint64_t combinedDepthSliceItems = 0;
+        uint64_t runtimeProjectileItems = 0;
+        uint64_t runtimeProjectileBatchSubmits = 0;
+        uint64_t runtimeProjectileBatchedItems = 0;
+        uint64_t runtimeProjectileTextureGroups = 0;
+        uint64_t staticSpriteObjectItems = 0;
+        uint64_t staticSpriteObjectBatchSubmits = 0;
+        uint64_t staticSpriteObjectBatchedItems = 0;
+        uint64_t staticSpriteObjectSubmits = 0;
+        uint64_t staticSpriteObjectTextureSwitches = 0;
+        uint64_t fxGlowItems = 0;
+        uint64_t fxGlowSubmits = 0;
+        uint64_t fxContactShadowItems = 0;
+        uint64_t fxContactShadowSubmits = 0;
+    };
+    OutdoorSpriteRenderDiagnostics m_outdoorSpriteRenderDiagnostics = {};
+    std::unordered_map<int16_t, std::unordered_map<std::string, size_t>> m_billboardTextureIndexByPalette;
+    SpriteLoadCache m_spriteLoadCache;
+    std::unordered_set<std::string> m_runtimeBillboardLoadWarningKeys;
+    std::vector<uint16_t> m_pendingSpriteFrameWarmups;
+    std::vector<bool> m_queuedSpriteFrameWarmups;
+    size_t m_nextPendingSpriteFrameWarmupIndex;
+    uint64_t m_renderableStartTickNanoseconds = 0;
+    uint64_t m_renderFrameIndex = 0;
+    WorldFxSystem m_worldFxSystem;
+    std::vector<std::vector<size_t>> m_decorationBillboardGridCells;
+    std::vector<InteractiveDecorationBinding> m_interactiveDecorationBindings;
+    std::vector<KeyboardInteractionBillboardCandidate> m_keyboardInteractionBillboardCandidates;
+    std::vector<KeyboardInteractionFaceCandidate> m_keyboardInteractionFaceCandidates;
+    uint64_t m_keyboardInteractionFaceCandidateRevision = std::numeric_limits<uint64_t>::max();
+    float m_decorationBillboardGridMinX = 0.0f;
+    float m_decorationBillboardGridMinY = 0.0f;
+    size_t m_decorationBillboardGridWidth = 0;
+    size_t m_decorationBillboardGridHeight = 0;
+    float m_cameraTargetX;
+    float m_cameraTargetY;
+    float m_cameraTargetZ;
+    float m_cameraYawRadians;
+    float m_cameraPitchRadians;
+    GameplayTalkCamera m_talkCamera;
+    float m_cameraEyeHeight;
+    float m_cameraDistance;
+    float m_cameraOrthoScale;
+    float m_mouseRotateSpeed = 0.0045f;
+    RenderLayers m_renderLayers;
+    bool m_showFilledTerrain;
+    float m_lastFootstepX;
+    float m_lastFootstepY;
+    bool m_hasLastFootstepPosition;
+    float m_walkingMotionHoldSeconds = 0.0f;
+    std::optional<SoundId> m_activeWalkingSoundId;
+    bool m_showTerrainWireframe;
+    bool m_showBModels;
+    bool m_showBModelWireframe;
+    bool m_showBModelCollisionFaces;
+    bool m_showActorCollisionBoxes;
+    bool m_showDecorationBillboards;
+    bool m_showActors;
+    bool m_showSpriteObjects;
+    bool m_showEntities;
+    bool m_showSpawns;
+    bool m_showGameplayHud;
+    bool m_renderGameplayUiThisFrame;
+    bool m_walkSoundEnabled = true;
+    bool m_showHitStatusMessages = true;
+    bool m_flipOnExitEnabled = false;
+    bool m_isRotatingCamera;
+    float m_lastMouseX;
+    float m_lastMouseY;
+    uint64_t m_lastGameplayMouseLookCursorSyncTicks = 0;
+    GameSession &m_gameSession;
+    uint64_t m_lastAdventurersInnPortraitClickTicks;
+    std::optional<size_t> m_lastAdventurersInnPortraitClickedIndex;
+    uint64_t m_lastMeteorShowerImpactSoundTicks = 0;
+    uint64_t m_lastStarburstImpactSoundTicks = 0;
+    SpellAreaPreviewCacheState m_spellAreaPreviewCache;
+    bool m_cachedHoverInspectHitValid;
+    uint64_t m_lastHoverInspectUpdateNanoseconds;
+    InspectHit m_cachedHoverInspectHit;
+    bool m_cachedRightMouseInspectHitValid = false;
+    uint64_t m_lastRightMouseInspectUpdateNanoseconds = 0;
+    GameplayWorldPickRequest m_cachedRightMouseInspectPickRequest = {};
+    GameplayWorldHit m_cachedRightMouseInspectHit = {};
+    OutdoorPartyRuntime *m_pOutdoorPartyRuntime;
+    const Engine::AssetFileSystem *m_pAssetFileSystem;
+    GameSettings m_gameSettings = GameSettings::createDefault();
+    ViewDistanceCache m_viewDistanceCache;
+    std::filesystem::path m_autosavePath =
+        std::filesystem::path("saves") / "autosave.oysav";
+    PendingSavePreviewCaptureState m_pendingSavePreviewCapture;
+    int m_lastRenderWidth = 0;
+    int m_lastRenderHeight = 0;
+    std::vector<EnemyHealthBarRenderer::Draw> m_pendingEnemyHealthBars;
+    std::vector<CombatFloatingText> m_combatFloatingTexts;
+};
+}

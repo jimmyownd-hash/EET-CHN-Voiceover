@@ -1,0 +1,929 @@
+#include "engine/BgfxContext.h"
+#include "engine/EngineApplication.h"
+#include "engine/ImageAssetLoader.h"
+
+#include <SDL3/SDL.h>
+
+#include <algorithm>
+#include <atomic>
+#include <cstdlib>
+#include <filesystem>
+#include <iostream>
+#include <memory>
+#include <optional>
+#include <string>
+#include <string_view>
+#include <vector>
+
+namespace OpenYAMM::Engine
+{
+namespace
+{
+constexpr int MinimumWindowAspectWidth = 4;
+constexpr int MinimumWindowAspectHeight = 3;
+
+int64_t framePercentileMicroseconds(std::vector<uint64_t> &values, size_t percentile)
+{
+    if (values.empty())
+    {
+        return -1;
+    }
+    const size_t index = (values.size() - 1) * percentile / 100;
+    std::nth_element(values.begin(), values.begin() + index, values.end());
+    return int64_t(values[index] / 1000);
+}
+
+#if defined(__ANDROID__)
+constexpr Sint64 AndroidInputTypeClassText = 0x00000001;
+constexpr Sint64 AndroidInputTypeTextVariationVisiblePassword = 0x00000090;
+constexpr Sint64 AndroidInputTypeTextFlagNoSuggestions = 0x00080000;
+
+#endif
+
+bool startManagedTextInput(SDL_Window *pWindow)
+{
+#if defined(__ANDROID__) || defined(OPENYAMM_IOS)
+    SDL_PropertiesID properties = SDL_CreateProperties();
+
+    if (properties == 0)
+    {
+        return SDL_StartTextInput(pWindow);
+    }
+
+#if defined(__ANDROID__)
+    const Sint64 inputType =
+        AndroidInputTypeClassText
+        | AndroidInputTypeTextVariationVisiblePassword
+        | AndroidInputTypeTextFlagNoSuggestions;
+
+    SDL_SetNumberProperty(properties, SDL_PROP_TEXTINPUT_ANDROID_INPUTTYPE_NUMBER, inputType);
+#else
+    // Answers and names are typed as entered, without automatic capitals.
+    SDL_SetNumberProperty(properties, SDL_PROP_TEXTINPUT_CAPITALIZATION_NUMBER, SDL_CAPITALIZE_NONE);
+#endif
+    SDL_SetBooleanProperty(properties, SDL_PROP_TEXTINPUT_AUTOCORRECT_BOOLEAN, false);
+    SDL_SetBooleanProperty(properties, SDL_PROP_TEXTINPUT_MULTILINE_BOOLEAN, false);
+
+    const bool started = SDL_StartTextInputWithProperties(pWindow, properties);
+    SDL_DestroyProperties(properties);
+    return started;
+#else
+    return SDL_StartTextInput(pWindow);
+#endif
+}
+
+uint64_t averageNanoseconds(uint64_t totalNanoseconds, uint64_t count)
+{
+    return count != 0 ? totalNanoseconds / count : 0;
+}
+
+uint64_t nanosecondsToMicroseconds(uint64_t nanoseconds)
+{
+    return nanoseconds / 1000ULL;
+}
+
+class SdlSubsystemGuard
+{
+public:
+    explicit SdlSubsystemGuard(bool isInitialized)
+        : m_isInitialized(isInitialized)
+    {
+    }
+
+    SdlSubsystemGuard(const SdlSubsystemGuard &) = delete;
+    SdlSubsystemGuard &operator=(const SdlSubsystemGuard &) = delete;
+
+    ~SdlSubsystemGuard()
+    {
+        if (m_isInitialized)
+        {
+            SDL_Quit();
+        }
+    }
+
+private:
+    bool m_isInitialized;
+};
+
+class SdlForegroundWatch
+{
+public:
+    SdlForegroundWatch() = default;
+    SdlForegroundWatch(const SdlForegroundWatch &) = delete;
+    SdlForegroundWatch &operator=(const SdlForegroundWatch &) = delete;
+
+    ~SdlForegroundWatch()
+    {
+        SDL_RemoveEventWatch(onEvent, this);
+    }
+
+    bool initialize()
+    {
+        return SDL_AddEventWatch(onEvent, this);
+    }
+
+    bool consumeForegroundTransition()
+    {
+        return m_enteredForeground.exchange(false);
+    }
+
+private:
+    static bool SDLCALL onEvent(void *pUserData, SDL_Event *pEvent)
+    {
+        if (pEvent->type == SDL_EVENT_DID_ENTER_FOREGROUND)
+        {
+            SdlForegroundWatch *pWatch = static_cast<SdlForegroundWatch *>(pUserData);
+            pWatch->m_enteredForeground.store(true);
+        }
+
+        return true;
+    }
+
+    // SDL lifecycle events bypass the queue and watchers may run on another thread.
+    // Only signal here; the application thread owns the bgfx reset.
+    std::atomic<bool> m_enteredForeground = false;
+};
+
+struct SdlWindowDeleter
+{
+    void operator()(SDL_Window *pWindow) const
+    {
+        if (pWindow != nullptr)
+        {
+            SDL_DestroyWindow(pWindow);
+        }
+    }
+};
+
+void enforceMinimumWindowAspect(SDL_Window *pWindow)
+{
+    if (pWindow == nullptr)
+    {
+        return;
+    }
+
+    int windowWidth = 0;
+    int windowHeight = 0;
+    SDL_GetWindowSize(pWindow, &windowWidth, &windowHeight);
+
+    if (windowWidth <= 0 || windowHeight <= 0)
+    {
+        return;
+    }
+
+    if (windowWidth * MinimumWindowAspectHeight >= windowHeight * MinimumWindowAspectWidth)
+    {
+        return;
+    }
+
+    const int correctedWidth =
+        (windowHeight * MinimumWindowAspectWidth + MinimumWindowAspectHeight - 1) / MinimumWindowAspectHeight;
+
+    if (correctedWidth != windowWidth)
+    {
+        SDL_SetWindowSize(pWindow, correctedWidth, windowHeight);
+    }
+}
+
+// Agent test runs set OPENYAMM_START_MINIMIZED=1 so the window renders without covering the desktop.
+bool startMinimizedRequested()
+{
+#if defined(__ANDROID__)
+    return false;
+#else
+    const char *pValue = std::getenv("OPENYAMM_START_MINIMIZED");
+    return pValue != nullptr && std::string_view(pValue) != "0" && std::string_view(pValue) != "false";
+#endif
+}
+
+uint64_t initialWindowFlagsForMode(WindowMode mode)
+{
+    uint64_t flags = 0;
+
+    if (mode == WindowMode::Windowed)
+    {
+        flags |= SDL_WINDOW_RESIZABLE;
+    }
+
+#if defined(OPENYAMM_IOS)
+    // Render in device pixels, as on Android. In UIKit points an iPhone screen is only about 400 high, too small for
+    // the 480-unit HUD canvases and their bitmap fonts.
+    flags |= SDL_WINDOW_HIGH_PIXEL_DENSITY;
+#endif
+
+    return flags;
+}
+
+SDL_Window *createApplicationWindow(const ApplicationConfig &config)
+{
+    uint64_t flags = initialWindowFlagsForMode(config.windowMode);
+
+    if (startMinimizedRequested())
+    {
+        flags |= SDL_WINDOW_MINIMIZED;
+    }
+
+#if defined(__ANDROID__)
+    const SDL_PropertiesID properties = SDL_CreateProperties();
+
+    if (properties == 0)
+    {
+        return nullptr;
+    }
+
+    SDL_SetStringProperty(properties, SDL_PROP_WINDOW_CREATE_TITLE_STRING, config.appName.c_str());
+    SDL_SetNumberProperty(properties, SDL_PROP_WINDOW_CREATE_WIDTH_NUMBER, config.windowWidth);
+    SDL_SetNumberProperty(properties, SDL_PROP_WINDOW_CREATE_HEIGHT_NUMBER, config.windowHeight);
+    SDL_SetNumberProperty(properties, SDL_PROP_WINDOW_CREATE_FLAGS_NUMBER, static_cast<Sint64>(flags));
+    SDL_SetBooleanProperty(properties, SDL_PROP_WINDOW_CREATE_EXTERNAL_GRAPHICS_CONTEXT_BOOLEAN, true);
+
+    SDL_Window *pWindow = SDL_CreateWindowWithProperties(properties);
+    SDL_DestroyProperties(properties);
+    return pWindow;
+#else
+    return SDL_CreateWindow(
+        config.appName.c_str(),
+        config.windowWidth,
+        config.windowHeight,
+        flags);
+#endif
+}
+
+// Exclusive fullscreen accepts only a mode the display lists, so a saved size picks the display's closest mode.
+bool setExclusiveFullscreenMode(SDL_Window *pWindow, int width, int height)
+{
+    SDL_DisplayMode displayMode = {};
+
+    return SDL_GetClosestFullscreenDisplayMode(
+               SDL_GetDisplayForWindow(pWindow), width, height, 0.0f, true, &displayMode)
+        && SDL_SetWindowFullscreenMode(pWindow, &displayMode);
+}
+
+bool applyWindowMode(SDL_Window *pWindow, const ApplicationConfig &config)
+{
+    if (pWindow == nullptr)
+    {
+        return false;
+    }
+
+    switch (config.windowMode)
+    {
+    case WindowMode::Windowed:
+        return true;
+
+    case WindowMode::WindowedFullscreen:
+        if (!SDL_SetWindowBordered(pWindow, false))
+        {
+            std::cerr << "SDL_SetWindowBordered failed: " << SDL_GetError() << '\n';
+            return false;
+        }
+
+        if (!SDL_SetWindowFullscreen(pWindow, true))
+        {
+            std::cerr << "SDL_SetWindowFullscreen failed: " << SDL_GetError() << '\n';
+            return false;
+        }
+
+        return true;
+
+    case WindowMode::Fullscreen:
+    {
+#if !defined(OPENYAMM_IOS)
+        // iOS owns its display mode; a desktop resolution is not a valid UIKit mode.
+        // A display without that mode (another monitor, Gamescope) starts at desktop resolution instead of quitting.
+        if (!setExclusiveFullscreenMode(pWindow, config.windowWidth, config.windowHeight))
+        {
+            std::cerr << "No " << config.windowWidth << "x" << config.windowHeight
+                      << " fullscreen mode (" << SDL_GetError() << "), using the desktop resolution\n";
+        }
+#endif
+
+        if (!SDL_SetWindowFullscreen(pWindow, true))
+        {
+            std::cerr << "SDL_SetWindowFullscreen failed: " << SDL_GetError() << '\n';
+            return false;
+        }
+
+        return true;
+    }
+    }
+
+    return true;
+}
+
+const char *windowModeName(WindowMode mode)
+{
+    switch (mode)
+    {
+    case WindowMode::Windowed:
+        return "windowed";
+
+    case WindowMode::WindowedFullscreen:
+        return "windowed_fullscreen";
+
+    case WindowMode::Fullscreen:
+        return "fullscreen";
+    }
+
+    return "windowed";
+}
+
+void invokeShutdownCallback(const EngineApplication::ShutdownCallback &shutdownCallback)
+{
+    if (shutdownCallback)
+    {
+        shutdownCallback();
+    }
+}
+}
+
+EngineApplication::EngineApplication(
+    const ApplicationConfig &config,
+    StartupCallback startupCallback,
+    RenderSetupCallback renderSetupCallback,
+    EventCallback eventCallback,
+    RenderFrameCallback renderFrameCallback,
+    ShutdownCallback shutdownCallback,
+    TextInputActiveCallback textInputActiveCallback
+)
+    : m_config(config)
+    , m_startupCallback(std::move(startupCallback))
+    , m_renderSetupCallback(std::move(renderSetupCallback))
+    , m_eventCallback(std::move(eventCallback))
+    , m_renderFrameCallback(std::move(renderFrameCallback))
+    , m_shutdownCallback(std::move(shutdownCallback))
+    , m_textInputActiveCallback(std::move(textInputActiveCallback))
+{
+}
+
+int EngineApplication::run() const
+{
+    if (!validateConfiguration())
+    {
+        return 1;
+    }
+
+#if defined(__ANDROID__) || defined(OPENYAMM_IOS)
+    SDL_SetHint(SDL_HINT_ORIENTATIONS, "LandscapeLeft LandscapeRight");
+#endif
+
+    if (!SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS))
+    {
+        std::cerr << "SDL_Init failed: " << SDL_GetError() << '\n';
+        return 1;
+    }
+
+    const SdlSubsystemGuard sdlGuard(true);
+    SdlForegroundWatch foregroundWatch;
+
+    if (!foregroundWatch.initialize())
+    {
+        std::cerr << "SDL_AddEventWatch failed: " << SDL_GetError() << '\n';
+        return 1;
+    }
+
+    AssetFileSystem assetFileSystem;
+
+    if (!initializeAssetFileSystem(assetFileSystem))
+    {
+        return 1;
+    }
+
+    if (m_startupCallback && !m_startupCallback(assetFileSystem))
+    {
+        return 1;
+    }
+
+    SDL_Window *pRawWindow = createApplicationWindow(m_config);
+
+    if (pRawWindow == nullptr)
+    {
+        std::cerr << "SDL_CreateWindow failed: " << SDL_GetError() << '\n';
+        invokeShutdownCallback(m_shutdownCallback);
+        return 1;
+    }
+
+    std::unique_ptr<SDL_Window, SdlWindowDeleter> pWindow(pRawWindow);
+#if !defined(__ANDROID__) && !defined(__APPLE__)
+    // Apple app bundles carry their own icon; a window icon would replace it in the Dock.
+    const std::optional<std::vector<uint8_t>> iconBytes =
+        assetFileSystem.readBinaryFile("engine/branding/app_icon.png");
+    std::optional<ImagePixelsBgra> icon = iconBytes
+        ? decodeImagePixelsBgra(*iconBytes, "engine/branding/app_icon.png") : std::nullopt;
+    if (icon)
+    {
+        SDL_Surface *pIcon = SDL_CreateSurfaceFrom(
+            icon->width, icon->height, SDL_PIXELFORMAT_BGRA32, icon->pixels.data(), icon->width * 4);
+        if (pIcon != nullptr)
+        {
+            // Compositors that use the desktop app ID may not support window icons.
+            SDL_SetWindowIcon(pWindow.get(), pIcon);
+            SDL_DestroySurface(pIcon);
+        }
+    }
+#endif
+    if (!applyWindowMode(pWindow.get(), m_config))
+    {
+        invokeShutdownCallback(m_shutdownCallback);
+        return 1;
+    }
+
+    if (m_config.windowMode == WindowMode::Windowed)
+    {
+        enforceMinimumWindowAspect(pWindow.get());
+    }
+    else if (startMinimizedRequested())
+    {
+        // Entering fullscreen can restore a window created minimized.
+        SDL_MinimizeWindow(pWindow.get());
+    }
+
+    BgfxContext bgfxContext;
+    int drawableWidth = 0;
+    int drawableHeight = 0;
+    SDL_GetWindowSizeInPixels(pWindow.get(), &drawableWidth, &drawableHeight);
+
+    if (!bgfxContext.initialize(
+            pWindow.get(), drawableWidth, drawableHeight, m_config.verticalSync, m_config.maxAnisotropy))
+    {
+        invokeShutdownCallback(m_shutdownCallback);
+        return 1;
+    }
+
+    if (m_renderSetupCallback && !m_renderSetupCallback())
+    {
+        invokeShutdownCallback(m_shutdownCallback);
+        return 1;
+    }
+
+    std::cout << m_config.appName << '\n';
+    std::cout << "Development assets: " << m_config.assetRoot << '\n';
+    const AssetScaleProfile &assetScaleProfile = m_config.assetScaleProfile;
+    std::cout << "Asset scale: default=" << assetScaleTierToString(m_config.assetScaleTier)
+              << " texture=" << assetScaleTierToString(assetScaleProfile.textures)
+              << " sky=" << assetScaleTierToString(assetScaleProfile.sky)
+              << " decorations=" << assetScaleTierToString(assetScaleProfile.decorations)
+              << " icons=" << assetScaleTierToString(assetScaleTierForCategory(assetScaleProfile, AssetScaleCategory::Icons))
+              << '\n';
+    std::cout << "Window mode: " << windowModeName(m_config.windowMode) << '\n';
+    std::cout << "Window requested: " << m_config.windowWidth << "x" << m_config.windowHeight << '\n';
+    std::cout << "Window drawable: " << drawableWidth << "x" << drawableHeight << '\n';
+    m_pRunningWindow = pWindow.get();
+    m_pRunningContext = &bgfxContext;
+    std::cout << "VSync: " << (m_config.verticalSync ? "on" : "off") << '\n';
+    std::cout << "Renderer: " << bgfx::getRendererName(bgfxContext.getRendererType()) << '\n';
+    if (const bgfx::Caps *pCaps = bgfx::getCaps())
+    {
+        std::cout << "GPU: vendor=0x" << std::hex << pCaps->vendorId << " device=0x" << pCaps->deviceId << std::dec
+                  << " SDL=" << SDL_GetCurrentVideoDriver() << '\n';
+    }
+    std::cout << "Mounted search paths:\n";
+
+    const std::vector<std::string> searchPaths = assetFileSystem.getSearchPaths();
+
+    for (const std::string &searchPath : searchPaths)
+    {
+        std::cout << "  " << searchPath << '\n';
+    }
+
+    const bool hasDataDirectory = assetFileSystem.exists("Data");
+    std::cout << "Data directory available: " << (hasDataDirectory ? "yes" : "no") << '\n';
+    std::cout << "Close the window to exit.\n";
+
+    bool isRunning = true;
+    bool refreshRenderWindow = false;
+    uint64_t lastFrameTickCount = SDL_GetTicksNS();
+    const bool logFps = m_config.fpsTrace;
+    const bool collectPerformanceDiagnostics = m_config.performanceTrace;
+    const bool logFrameHitches = m_config.hitchTrace;
+    const bool collectFrameTimings = collectPerformanceDiagnostics || logFrameHitches;
+    const bool sampleFrames = logFps || collectPerformanceDiagnostics;
+    const uint64_t hitchThresholdNanoseconds =
+        static_cast<uint64_t>(std::max(0.1f, m_config.hitchThresholdMilliseconds) * 1000000.0f);
+    float fpsSampleSeconds = 0.0f;
+    uint32_t fpsSampleFrameCount = 0;
+    uint64_t fpsSampleEventCount = 0;
+    uint64_t fpsLoopNanoseconds = 0;
+    uint64_t fpsEventNanoseconds = 0;
+    uint64_t fpsWindowSizeNanoseconds = 0;
+    uint64_t fpsRenderCallbackNanoseconds = 0;
+    uint64_t fpsBgfxFrameNanoseconds = 0;
+    std::vector<uint64_t> cpuFrameTimes;
+    std::vector<uint64_t> gpuFrameTimes;
+    int64_t lastGpuTimeBegin = -1;
+    int64_t lastGpuTimeEnd = -1;
+    const auto syncManagedTextInput = [this, &pWindow]()
+    {
+        if (!m_textInputActiveCallback)
+        {
+            return;
+        }
+        const bool textInputRequested = m_textInputActiveCallback();
+        const bool textInputActive = SDL_TextInputActive(pWindow.get());
+
+        if (textInputRequested && !textInputActive)
+        {
+            startManagedTextInput(pWindow.get());
+        }
+        else if (!textInputRequested && textInputActive)
+        {
+            SDL_StopTextInput(pWindow.get());
+        }
+    };
+
+    while (isRunning)
+    {
+        const uint64_t currentFrameTickCount = SDL_GetTicksNS();
+        const uint64_t loopBeginTickCount = collectFrameTimings ? currentFrameTickCount : 0;
+        uint64_t frameDeltaNanoseconds = 16666667ULL;
+        float deltaSeconds = 1.0f / 60.0f;
+
+        if (currentFrameTickCount > lastFrameTickCount)
+        {
+            frameDeltaNanoseconds = currentFrameTickCount - lastFrameTickCount;
+            deltaSeconds = static_cast<float>(frameDeltaNanoseconds) / 1000000000.0f;
+        }
+
+        lastFrameTickCount = currentFrameTickCount;
+        float mouseWheelDelta = 0.0f;
+        SDL_Event event;
+        const uint64_t eventBeginTickCount = collectFrameTimings ? SDL_GetTicksNS() : 0;
+        uint64_t frameEventCount = 0;
+
+        while (SDL_PollEvent(&event))
+        {
+            ++frameEventCount;
+
+            if (event.type == SDL_EVENT_QUIT)
+            {
+                isRunning = false;
+            }
+
+            if (event.type == SDL_EVENT_WINDOW_CLOSE_REQUESTED)
+            {
+                isRunning = false;
+            }
+
+            if (event.type == SDL_EVENT_WINDOW_PIXEL_SIZE_CHANGED)
+            {
+                enforceMinimumWindowAspect(pWindow.get());
+                refreshRenderWindow = true;
+            }
+
+            if (event.type == SDL_EVENT_MOUSE_WHEEL)
+            {
+                mouseWheelDelta += event.wheel.direction == SDL_MOUSEWHEEL_FLIPPED ? -event.wheel.y : event.wheel.y;
+            }
+
+            if (m_eventCallback)
+            {
+                m_eventCallback(event);
+            }
+        }
+
+        if (!isRunning)
+        {
+            break;
+        }
+
+        if (foregroundWatch.consumeForegroundTransition())
+        {
+            frameDeltaNanoseconds = 16666667ULL;
+            deltaSeconds = 1.0f / 60.0f;
+            lastFrameTickCount = SDL_GetTicksNS();
+            refreshRenderWindow = true;
+        }
+
+        uint64_t frameEventNanoseconds = 0;
+
+        if (collectFrameTimings)
+        {
+            frameEventNanoseconds = SDL_GetTicksNS() - eventBeginTickCount;
+
+            if (collectPerformanceDiagnostics)
+            {
+                fpsEventNanoseconds += frameEventNanoseconds;
+                fpsSampleEventCount += frameEventCount;
+            }
+        }
+
+        syncManagedTextInput();
+
+        const uint64_t windowSizeBeginTickCount = collectFrameTimings ? SDL_GetTicksNS() : 0;
+        int drawableWidth = 0;
+        int drawableHeight = 0;
+        SDL_GetWindowSizeInPixels(pWindow.get(), &drawableWidth, &drawableHeight);
+
+        uint64_t frameWindowSizeNanoseconds = 0;
+
+        if (collectFrameTimings)
+        {
+            frameWindowSizeNanoseconds = SDL_GetTicksNS() - windowSizeBeginTickCount;
+
+            if (collectPerformanceDiagnostics)
+            {
+                fpsWindowSizeNanoseconds += frameWindowSizeNanoseconds;
+            }
+        }
+
+        const uint64_t renderCallbackBeginTickCount = collectFrameTimings ? SDL_GetTicksNS() : 0;
+
+        if (drawableWidth <= 0 || drawableHeight <= 0)
+        {
+            // Retain the pending surface refresh until Android has a valid drawable.
+            refreshRenderWindow = true;
+            SDL_Delay(10);
+            continue;
+        }
+
+        if (refreshRenderWindow)
+        {
+            bgfxContext.resize(pWindow.get(), drawableWidth, drawableHeight);
+            refreshRenderWindow = false;
+        }
+
+        if (m_renderFrameCallback)
+        {
+            m_renderFrameCallback(drawableWidth, drawableHeight, mouseWheelDelta, deltaSeconds);
+        }
+        else
+        {
+            bgfx::setViewRect(0, 0, 0, static_cast<uint16_t>(drawableWidth), static_cast<uint16_t>(drawableHeight));
+            bgfx::touch(0);
+        }
+
+        syncManagedTextInput();
+
+        uint64_t frameRenderCallbackNanoseconds = 0;
+
+        if (collectFrameTimings)
+        {
+            frameRenderCallbackNanoseconds = SDL_GetTicksNS() - renderCallbackBeginTickCount;
+
+            if (collectPerformanceDiagnostics)
+            {
+                fpsRenderCallbackNanoseconds += frameRenderCallbackNanoseconds;
+            }
+        }
+
+        const uint64_t bgfxFrameBeginTickCount = collectFrameTimings ? SDL_GetTicksNS() : 0;
+        bgfx::frame();
+
+        if (collectFrameTimings)
+        {
+            const uint64_t frameBgfxFrameNanoseconds = SDL_GetTicksNS() - bgfxFrameBeginTickCount;
+            const uint64_t frameLoopNanoseconds = SDL_GetTicksNS() - loopBeginTickCount;
+
+            if (collectPerformanceDiagnostics)
+            {
+                fpsBgfxFrameNanoseconds += frameBgfxFrameNanoseconds;
+                fpsLoopNanoseconds += frameLoopNanoseconds;
+                cpuFrameTimes.push_back(frameLoopNanoseconds);
+                const bgfx::Stats *pStats = bgfx::getStats();
+                // GPU results arrive asynchronously. Metal leaves gpuFrameNum at zero, so count each completed
+                // timestamp pair once.
+                if (pStats != nullptr && pStats->gpuTimerFreq > 0 && pStats->gpuTimeEnd > pStats->gpuTimeBegin
+                    && (pStats->gpuTimeBegin != lastGpuTimeBegin || pStats->gpuTimeEnd != lastGpuTimeEnd))
+                {
+                    gpuFrameTimes.push_back(uint64_t(double(pStats->gpuTimeEnd - pStats->gpuTimeBegin)
+                        / double(pStats->gpuTimerFreq) * 1000000000.0));
+                    lastGpuTimeBegin = pStats->gpuTimeBegin;
+                    lastGpuTimeEnd = pStats->gpuTimeEnd;
+                }
+            }
+
+            if (logFrameHitches && frameLoopNanoseconds >= hitchThresholdNanoseconds)
+            {
+                const uint64_t measuredNanoseconds =
+                    frameEventNanoseconds
+                    + frameWindowSizeNanoseconds
+                    + frameRenderCallbackNanoseconds
+                    + frameBgfxFrameNanoseconds;
+                const uint64_t untrackedNanoseconds =
+                    frameLoopNanoseconds > measuredNanoseconds
+                        ? frameLoopNanoseconds - measuredNanoseconds
+                        : 0;
+                std::cout << "[FrameHitch]"
+                          << " frame_us=" << nanosecondsToMicroseconds(frameLoopNanoseconds)
+                          << " delta_us=" << nanosecondsToMicroseconds(frameDeltaNanoseconds)
+                          << " threshold_us=" << nanosecondsToMicroseconds(hitchThresholdNanoseconds)
+                          << " events=" << frameEventCount
+                          << " events_us=" << nanosecondsToMicroseconds(frameEventNanoseconds)
+                          << " window_size_us=" << nanosecondsToMicroseconds(frameWindowSizeNanoseconds)
+                          << " render_callback_us=" << nanosecondsToMicroseconds(frameRenderCallbackNanoseconds)
+                          << " bgfx_frame_us=" << nanosecondsToMicroseconds(frameBgfxFrameNanoseconds)
+                          << " untracked_us=" << nanosecondsToMicroseconds(untrackedNanoseconds)
+                          << '\n';
+            }
+        }
+
+        if (sampleFrames)
+        {
+            fpsSampleSeconds += deltaSeconds;
+            ++fpsSampleFrameCount;
+
+            if (fpsSampleSeconds >= 1.0f)
+            {
+                const float averageFps = fpsSampleSeconds > 0.0f
+                    ? static_cast<float>(fpsSampleFrameCount) / fpsSampleSeconds
+                    : 0.0f;
+
+                if (logFps)
+                {
+                    std::cout << "Average FPS (last second): " << averageFps << '\n';
+                }
+
+                if (collectPerformanceDiagnostics)
+                {
+                    const uint64_t measuredNanoseconds =
+                        fpsEventNanoseconds
+                        + fpsWindowSizeNanoseconds
+                        + fpsRenderCallbackNanoseconds
+                        + fpsBgfxFrameNanoseconds;
+                    const uint64_t untrackedNanoseconds =
+                        fpsLoopNanoseconds > measuredNanoseconds
+                            ? fpsLoopNanoseconds - measuredNanoseconds
+                            : 0;
+                    std::cout << "[FramePerf]"
+                              << " frames=" << fpsSampleFrameCount
+                              << " events=" << fpsSampleEventCount
+                              << " avg_loop_us=" << nanosecondsToMicroseconds(averageNanoseconds(
+                                  fpsLoopNanoseconds,
+                                  fpsSampleFrameCount))
+                              << " avg_untracked_us=" << nanosecondsToMicroseconds(averageNanoseconds(
+                                  untrackedNanoseconds,
+                                  fpsSampleFrameCount))
+                              << " avg_events_us=" << nanosecondsToMicroseconds(averageNanoseconds(
+                                  fpsEventNanoseconds,
+                                  fpsSampleFrameCount))
+                              << " avg_window_size_us=" << nanosecondsToMicroseconds(averageNanoseconds(
+                                  fpsWindowSizeNanoseconds,
+                                  fpsSampleFrameCount))
+                              << " avg_render_callback_us=" << nanosecondsToMicroseconds(averageNanoseconds(
+                                  fpsRenderCallbackNanoseconds,
+                                  fpsSampleFrameCount))
+                              << " avg_bgfx_frame_us=" << nanosecondsToMicroseconds(averageNanoseconds(
+                                  fpsBgfxFrameNanoseconds,
+                                  fpsSampleFrameCount))
+                              << " cpu_p50_us=" << framePercentileMicroseconds(cpuFrameTimes, 50)
+                              << " cpu_p95_us=" << framePercentileMicroseconds(cpuFrameTimes, 95)
+                              << " gpu_samples=" << gpuFrameTimes.size()
+                              << " gpu_p50_us=" << framePercentileMicroseconds(gpuFrameTimes, 50)
+                              << " gpu_p95_us=" << framePercentileMicroseconds(gpuFrameTimes, 95)
+                              << '\n';
+                    const bgfx::Stats *pStats = bgfx::getStats();
+                    if (pStats != nullptr)
+                    {
+                        std::cout << "[GpuFrameResources] draws=" << pStats->numDraw
+                                  << " triangles=" << pStats->numPrims[bgfx::Topology::TriList]
+                                  << " texture_bytes=" << pStats->textureMemoryUsed
+                                  << " target_bytes=" << pStats->rtMemoryUsed
+                                  << " transient_vb_bytes=" << pStats->transientVbUsed << '\n';
+                    }
+                    cpuFrameTimes.clear();
+                    gpuFrameTimes.clear();
+                }
+
+                fpsSampleSeconds = 0.0f;
+                fpsSampleFrameCount = 0;
+                fpsSampleEventCount = 0;
+                fpsLoopNanoseconds = 0;
+                fpsEventNanoseconds = 0;
+                fpsWindowSizeNanoseconds = 0;
+                fpsRenderCallbackNanoseconds = 0;
+                fpsBgfxFrameNanoseconds = 0;
+            }
+        }
+    }
+
+    if (m_textInputActiveCallback && SDL_TextInputActive(pWindow.get()))
+    {
+        SDL_StopTextInput(pWindow.get());
+    }
+
+    invokeShutdownCallback(m_shutdownCallback);
+
+    m_pRunningWindow = nullptr;
+    m_pRunningContext = nullptr;
+    return 0;
+}
+
+bool EngineApplication::applyDisplaySettings(WindowMode mode, int width, int height, bool verticalSync,
+                                             std::string &error)
+{
+    if (m_pRunningWindow == nullptr || m_pRunningContext == nullptr)
+    {
+        error = "The display is not initialized.";
+        return false;
+    }
+#if defined(OPENYAMM_IOS)
+    // iOS windows always fill the screen; only the presentation settings apply.
+    static_cast<void>(mode);
+    static_cast<void>(width);
+    static_cast<void>(height);
+    m_config.verticalSync = verticalSync;
+    int pixelWidth = 0;
+    int pixelHeight = 0;
+    SDL_GetWindowSizeInPixels(m_pRunningWindow, &pixelWidth, &pixelHeight);
+    m_pRunningContext->setVerticalSync(verticalSync);
+    m_pRunningContext->resize(m_pRunningWindow, pixelWidth, pixelHeight);
+    return true;
+#else
+    if (!SDL_SetWindowFullscreen(m_pRunningWindow, false) || !SDL_SetWindowFullscreenMode(m_pRunningWindow, nullptr) ||
+        !SDL_SetWindowBordered(m_pRunningWindow, mode != WindowMode::WindowedFullscreen))
+    {
+        error = SDL_GetError();
+        return false;
+    }
+    bool success = true;
+    if (mode == WindowMode::Windowed)
+    {
+        success = SDL_SetWindowSize(m_pRunningWindow, width, height);
+    }
+    else if (mode == WindowMode::Fullscreen)
+    {
+        success = setExclusiveFullscreenMode(m_pRunningWindow, width, height) &&
+                  SDL_SetWindowFullscreen(m_pRunningWindow, true);
+    }
+    else
+    {
+        success = SDL_SetWindowFullscreen(m_pRunningWindow, true);
+    }
+    if (!success)
+    {
+        error = SDL_GetError();
+        return false;
+    }
+    m_config.windowMode = mode;
+    m_config.windowWidth = width;
+    m_config.windowHeight = height;
+    m_config.verticalSync = verticalSync;
+    int pixelWidth = 0, pixelHeight = 0;
+    SDL_GetWindowSizeInPixels(m_pRunningWindow, &pixelWidth, &pixelHeight);
+    m_pRunningContext->setVerticalSync(verticalSync);
+    m_pRunningContext->resize(m_pRunningWindow, pixelWidth, pixelHeight);
+    return true;
+#endif
+}
+
+void EngineApplication::setMaxAnisotropy(uint8_t level)
+{
+    m_config.maxAnisotropy = level;
+    if (m_pRunningWindow == nullptr || m_pRunningContext == nullptr)
+    {
+        return;
+    }
+    int pixelWidth = 0, pixelHeight = 0;
+    SDL_GetWindowSizeInPixels(m_pRunningWindow, &pixelWidth, &pixelHeight);
+    m_pRunningContext->setMaxAnisotropy(level);
+    m_pRunningContext->resize(m_pRunningWindow, pixelWidth, pixelHeight);
+}
+
+void EngineApplication::setConfiguration(const ApplicationConfig &config)
+{
+    m_config = config;
+}
+
+bool EngineApplication::validateConfiguration() const
+{
+#if defined(__ANDROID__)
+    const bool androidApkAssetRoot = m_config.assetRoot == "assets"
+        || std::filesystem::path(m_config.assetRoot).filename() == "assets";
+
+    if (!androidApkAssetRoot && !std::filesystem::exists(m_config.assetRoot))
+#else
+    if (!std::filesystem::exists(m_config.assetRoot))
+#endif
+    {
+        std::cerr << "Asset root does not exist: " << m_config.assetRoot << '\n';
+        return false;
+    }
+
+    if (m_config.windowWidth <= 0 || m_config.windowHeight <= 0)
+    {
+        std::cerr << "Invalid window size: " << m_config.windowWidth << "x" << m_config.windowHeight << '\n';
+        return false;
+    }
+
+    return true;
+}
+
+bool EngineApplication::initializeAssetFileSystem(AssetFileSystem &assetFileSystem) const
+{
+    const char *pBasePathChars = SDL_GetBasePath();
+    std::filesystem::path basePath = std::filesystem::current_path();
+
+    if (pBasePathChars != nullptr)
+    {
+        basePath = pBasePathChars;
+    }
+
+    return assetFileSystem.initialize(
+        basePath,
+        m_config.assetRoot,
+        m_config.assetScaleTier,
+        m_config.assetScaleProfile,
+        m_config.activeWorldId,
+        m_config.installedContent);
+}
+}

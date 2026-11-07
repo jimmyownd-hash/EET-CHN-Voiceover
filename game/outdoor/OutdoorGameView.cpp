@@ -1,0 +1,5248 @@
+#include "game/render/RuntimeShader.h"
+#include "game/outdoor/OutdoorGameView.h"
+#include "game/debug/AiArena.h"
+#include "game/outdoor/OutdoorSunlight.h"
+
+#include "game/app/GameSession.h"
+#include "game/content/WorldDecorations.h"
+#include "engine/BgfxContext.h"
+#include "game/debug/GameplayDebugTrace.h"
+#include "game/FaceEnums.h"
+#include "game/gameplay/GenericActorDialog.h"
+#include "game/fx/ParticleRenderer.h"
+#include "game/gameplay/GameMechanics.h"
+#include "game/gameplay/GameplayCombatController.h"
+#include "game/gameplay/GameplayHeldItemController.h"
+#include "game/gameplay/GameplayInputFrame.h"
+#include "game/gameplay/GameplaySpellActionController.h"
+#include "game/gameplay/GameplaySpellService.h"
+#include "game/gameplay/HouseInteraction.h"
+#include "game/gameplay/HouseServiceRuntime.h"
+#include "game/items/ItemGenerator.h"
+#include "game/items/ItemRuntime.h"
+#include "game/tables/ItemTable.h"
+#include "game/outdoor/OutdoorBillboardRenderer.h"
+#include "game/outdoor/OutdoorSpatialFxRuntime.h"
+#include "game/outdoor/OutdoorInteractionController.h"
+#include "game/outdoor/OutdoorGeometryUtils.h"
+#include "game/outdoor/OutdoorPartyRuntime.h"
+#include "game/outdoor/OutdoorPresentationController.h"
+#include "game/outdoor/OutdoorRenderer.h"
+#include "game/outdoor/OutdoorWorldRuntime.h"
+#include "game/items/PriceCalculator.h"
+#include "game/maps/MapIdentity.h"
+#include "game/maps/SaveGame.h"
+#include "game/scene/OutdoorSceneRuntime.h"
+#include "game/SpawnPreview.h"
+#include "game/gameplay/GameplayScreenController.h"
+#include "game/ui/SpellbookUiLayout.h"
+#include "game/gameplay/SavePreviewImage.h"
+#include "game/party/SpellSchool.h"
+#include "game/party/SpellIds.h"
+#include "game/SpriteObjectDefs.h"
+#include "game/tables/SpriteTables.h"
+#include "game/StringUtils.h"
+#include "game/gameplay/GameplayOverlayInputController.h"
+#include "game/ui/GameplayDialogueRenderer.h"
+#include "game/ui/GameplayHudCommon.h"
+#include "game/ui/GameplayHudOverlaySupport.h"
+#include "game/ui/GameplayUiSkin.h"
+#include "game/gameplay/GameplayScreenRuntime.h"
+#include "engine/ImageAssetLoader.h"
+
+#include <bx/math.h>
+
+#include <bgfx/bgfx.h>
+#include <SDL3/SDL.h>
+#include <algorithm>
+#include <array>
+#include <cctype>
+#include <cmath>
+#include <cstring>
+#include <cstdlib>
+#include <cstdint>
+#include <iostream>
+#include <filesystem>
+#include <fstream>
+#include <functional>
+#include <future>
+#include <iostream>
+#include <iterator>
+#include <limits>
+#include <sstream>
+#include <string>
+#include <string_view>
+#include <vector>
+
+namespace OpenYAMM::Game
+{
+namespace
+{
+constexpr uint64_t RightMouseInspectRefreshNanoseconds = 33333333ULL;
+
+uint32_t makeCombatHudColor(uint8_t red, uint8_t green, uint8_t blue, uint8_t alpha)
+{
+    return (static_cast<uint32_t>(alpha) << 24)
+        | (static_cast<uint32_t>(blue) << 16)
+        | (static_cast<uint32_t>(green) << 8)
+        | static_cast<uint32_t>(red);
+}
+
+float combatDamageFontScale(int damage)
+{
+    const float damageMagnitude = std::sqrt(static_cast<float>(std::max(1, damage)));
+    return 1.55f + std::clamp(damageMagnitude / 22.0f, 0.0f, 0.75f);
+}
+
+bool isAutosavePath(const std::filesystem::path &path)
+{
+    return toLowerCopy(path.stem().string()) == "autosave";
+}
+
+double millisecondsFromNanoseconds(uint64_t nanoseconds)
+{
+    return static_cast<double>(nanoseconds) / 1000000.0;
+}
+
+bool mapLoadTimingEnabled()
+{
+    const char *pValue = std::getenv("OPENYAMM_MAP_LOAD_TIMING");
+    return pValue != nullptr && std::string_view(pValue) != "0" && std::string_view(pValue) != "false";
+}
+
+bool windowHasInputFocus(SDL_Window *pWindow)
+{
+    return pWindow != nullptr && (SDL_GetWindowFlags(pWindow) & SDL_WINDOW_INPUT_FOCUS) != 0;
+}
+
+class OutdoorViewLoadTimingLogger
+{
+public:
+    explicit OutdoorViewLoadTimingLogger(const std::string &mapFileName)
+        : m_enabled(mapLoadTimingEnabled())
+        , m_mapFileName(mapFileName)
+        , m_startTickNanoseconds(SDL_GetTicksNS())
+        , m_lastTickNanoseconds(m_startTickNanoseconds)
+    {
+        if (m_enabled)
+        {
+            std::cerr
+                << "[MapLoadTiming] map=" << m_mapFileName
+                << " begin=outdoor_view_initialize\n";
+        }
+    }
+
+    void beginStage(const std::string &stageName) const
+    {
+        if (!m_enabled)
+        {
+            return;
+        }
+
+        const uint64_t totalNanoseconds = SDL_GetTicksNS() - m_startTickNanoseconds;
+        std::cerr
+            << "[MapLoadTiming] map=" << m_mapFileName
+            << " scope=outdoor_view_initialize"
+            << " stage=\"" << stageName << "\""
+            << " event=begin"
+            << " total_ms=" << millisecondsFromNanoseconds(totalNanoseconds)
+            << '\n';
+    }
+
+    void stage(const std::string &stageName)
+    {
+        if (!m_enabled)
+        {
+            return;
+        }
+
+        const uint64_t nowNanoseconds = SDL_GetTicksNS();
+        const uint64_t stageNanoseconds = nowNanoseconds - m_lastTickNanoseconds;
+        const uint64_t totalNanoseconds = nowNanoseconds - m_startTickNanoseconds;
+        m_lastTickNanoseconds = nowNanoseconds;
+
+        std::cerr
+            << "[MapLoadTiming] map=" << m_mapFileName
+            << " scope=outdoor_view_initialize"
+            << " stage=\"" << stageName << "\""
+            << " delta_ms=" << millisecondsFromNanoseconds(stageNanoseconds)
+            << " total_ms=" << millisecondsFromNanoseconds(totalNanoseconds)
+            << '\n';
+    }
+
+private:
+    bool m_enabled = false;
+    std::string m_mapFileName;
+    uint64_t m_startTickNanoseconds = 0;
+    uint64_t m_lastTickNanoseconds = 0;
+};
+
+bool usesBlackTransparencyKey(std::string_view textureName)
+{
+    const std::string normalizedName = toLowerCopy(std::string(textureName));
+
+    return normalizedName.rfind("mapdir", 0) == 0 || normalizedName.rfind("micon", 0) == 0;
+}
+
+bool outdoorActorIsPartyControlled(OutdoorWorldRuntime::ActorControlMode mode)
+{
+    switch (mode)
+    {
+        case OutdoorWorldRuntime::ActorControlMode::Charm:
+        case OutdoorWorldRuntime::ActorControlMode::Enslaved:
+        case OutdoorWorldRuntime::ActorControlMode::ControlUndead:
+        case OutdoorWorldRuntime::ActorControlMode::Reanimated:
+            return true;
+
+        default:
+            return false;
+    }
+}
+
+using SpellbookSchool = OutdoorGameView::SpellbookSchool;
+using SpellbookPointerTargetType = OutdoorGameView::SpellbookPointerTargetType;
+constexpr uint64_t GameplayMouseLookCursorSyncIntervalTicks = 100;
+constexpr std::array<int, 3> JournalMapZoomLevels = {384, 768, 1536};
+constexpr int JournalRevealWidth = 88;
+constexpr int JournalRevealHeight = 88;
+constexpr int JournalRevealBytesPerRow = 11;
+constexpr float JournalMapWorldHalfExtent = 32768.0f;
+
+bool decodeBmpBytesToBgra(
+    const std::vector<uint8_t> &bmpBytes,
+    int &width,
+    int &height,
+    std::vector<uint8_t> &pixels)
+{
+    SDL_IOStream *pIoStream = SDL_IOFromConstMem(bmpBytes.data(), bmpBytes.size());
+
+    if (pIoStream == nullptr)
+    {
+        return false;
+    }
+
+    SDL_Surface *pLoadedSurface = SDL_LoadBMP_IO(pIoStream, true);
+
+    if (pLoadedSurface == nullptr)
+    {
+        return false;
+    }
+
+    SDL_Surface *pConvertedSurface = SDL_ConvertSurface(pLoadedSurface, SDL_PIXELFORMAT_BGRA32);
+    SDL_DestroySurface(pLoadedSurface);
+
+    if (pConvertedSurface == nullptr)
+    {
+        return false;
+    }
+
+    width = pConvertedSurface->w;
+    height = pConvertedSurface->h;
+    const size_t pixelCount = static_cast<size_t>(width) * static_cast<size_t>(height) * 4;
+    pixels.resize(pixelCount);
+    std::memcpy(pixels.data(), pConvertedSurface->pixels, pixelCount);
+    SDL_DestroySurface(pConvertedSurface);
+    return true;
+}
+
+void clampJournalMapState(GameplayUiController::JournalScreenState &journalScreen)
+{
+    journalScreen.mapZoomStep = std::clamp(
+        journalScreen.mapZoomStep,
+        0,
+        static_cast<int>(JournalMapZoomLevels.size()) - 1);
+
+    const int zoom = JournalMapZoomLevels[journalScreen.mapZoomStep];
+    const float zoomFactor = static_cast<float>(zoom) / 384.0f;
+    const float visibleWorldHalfExtent = JournalMapWorldHalfExtent / zoomFactor;
+    const float maxOffset = std::max(0.0f, JournalMapWorldHalfExtent - visibleWorldHalfExtent);
+    journalScreen.mapCenterX = std::clamp(
+        journalScreen.mapCenterX,
+        -maxOffset,
+        maxOffset);
+    journalScreen.mapCenterY = std::clamp(
+        journalScreen.mapCenterY,
+        -maxOffset,
+        maxOffset);
+}
+
+bool tryParseScrollSpellId(const InventoryItem &item, const ItemTable *pItemTable, uint32_t &spellId)
+{
+    if (pItemTable == nullptr)
+    {
+        return false;
+    }
+
+    const ItemDefinition *pItemDefinition = pItemTable->get(item.objectDescriptionId);
+
+    if (pItemDefinition == nullptr || pItemDefinition->equipStat != "Sscroll")
+    {
+        return false;
+    }
+
+    const std::string &token = pItemDefinition->mod1;
+
+    if (token.size() < 2 || (token[0] != 'S' && token[0] != 's'))
+    {
+        return false;
+    }
+
+    for (size_t index = 1; index < token.size(); ++index)
+    {
+        if (!std::isdigit(static_cast<unsigned char>(token[index])))
+        {
+            return false;
+        }
+    }
+
+    try
+    {
+        spellId = static_cast<uint32_t>(std::stoul(token.substr(1)));
+    }
+    catch (...)
+    {
+        return false;
+    }
+
+    return spellId > 0;
+}
+
+bool shouldSkipSpriteObjectInspectTarget(const SpriteObjectBillboard &object, const ObjectEntry *pObjectEntry)
+{
+    if (pObjectEntry == nullptr || object.objectDescriptionId == 0)
+    {
+        return true;
+    }
+
+    if ((object.attributes & (SpriteAttrTemporary | SpriteAttrMissile | SpriteAttrRemoved)) != 0)
+    {
+        return true;
+    }
+
+    if ((pObjectEntry->flags & (ObjectDescNoSprite
+                                | ObjectDescNoCollision
+                                | ObjectDescTemporary
+                                | ObjectDescUnpickable
+                                | ObjectDescTrailParticle
+                                | ObjectDescTrailFire
+                                | ObjectDescTrailLine)) != 0)
+    {
+        return true;
+    }
+
+    if (object.spellId != 0)
+    {
+        return true;
+    }
+
+    return false;
+}
+
+constexpr uint16_t SkyViewId = 0;
+constexpr uint16_t MainViewId = 1;
+constexpr uint16_t HudViewId = 2;
+constexpr float OutdoorCameraNearClip = 4.0f;
+constexpr float DefaultOutdoorFarClip = 16192.0f;
+constexpr float RuntimeProjectileRenderDistance = 12288.0f;
+constexpr float DecorationBillboardRenderDistance = 18000.0f;
+constexpr float ActorBillboardRenderDistance = 18000.0f;
+constexpr float Pi = 3.14159265358979323846f;
+constexpr float CameraVerticalFovDegrees = 60.0f;
+constexpr float BillboardSpatialCellSize = 2048.0f;
+constexpr float CameraVerticalFovRadians = CameraVerticalFovDegrees * (Pi / 180.0f);
+constexpr int DebugTextCellWidthPixels = 8;
+constexpr int DebugTextCellHeightPixels = 16;
+constexpr float BillboardNearDepth = 0.1f;
+constexpr bool DebugProjectileDrawLogging = false;
+constexpr float DebugProjectileTrailSeconds = 0.05f;
+constexpr float InspectRayEpsilon = 0.0001f;
+constexpr float OeMeleeAlertDistance = 307.2f;
+constexpr float OeYellowAlertDistance = 5120.0f;
+constexpr float OutdoorWalkableNormalZ = 0.70710678f;
+constexpr float OutdoorMaxStepHeight = 128.0f;
+constexpr uint64_t BillboardAlphaRenderState =
+    BGFX_STATE_WRITE_RGB
+    | BGFX_STATE_WRITE_A
+    | BGFX_STATE_DEPTH_TEST_LEQUAL
+    | BGFX_STATE_BLEND_ALPHA;
+constexpr bool DebugSpritePreloadLogging = false;
+constexpr std::string_view PartyStartDecorationName = "party start";
+constexpr float HudReferenceWidth = 640.0f;
+constexpr float HudReferenceHeight = 480.0f;
+constexpr float HudFontIntegerSnapThreshold = 0.1f;
+constexpr float MaxUiViewportAspect = 4.0f / 3.0f;
+constexpr uint64_t OutdoorFrameTimingWindowNanoseconds = 3ULL * 1000ULL * 1000ULL * 1000ULL;
+constexpr uint64_t OutdoorFrameTimingLogThresholdNanoseconds = 8ULL * 1000ULL * 1000ULL;
+
+std::string actPaletteCacheKey(int16_t paletteId, const std::string &worldId)
+{
+    const std::string normalizedWorldId = worldId.empty() ? std::string() : normalizeWorldId(worldId);
+    return normalizedWorldId + "|" + std::to_string(static_cast<int>(paletteId));
+}
+
+std::vector<std::string> actPaletteCandidatePaths(int16_t paletteId, const std::string &worldId)
+{
+    char paletteFileName[32] = {};
+    std::snprintf(paletteFileName, sizeof(paletteFileName), "pal%03d.act", static_cast<int>(paletteId));
+
+    std::vector<std::string> paths;
+
+    if (!worldId.empty())
+    {
+        paths.push_back("worlds/" + normalizeWorldId(worldId) + "/textures/" + paletteFileName);
+    }
+
+    paths.push_back(std::string("Data/bitmaps/") + paletteFileName);
+    return paths;
+}
+constexpr uint32_t SkyDomeHorizontalSegmentCount = 24;
+constexpr uint32_t SkyDomeVerticalSegmentCount = 8;
+constexpr uint64_t PartyPortraitDoubleClickWindowMs = 500;
+constexpr uint32_t SpeechReactionCooldownMs = 900;
+constexpr uint32_t CombatSpeechReactionCooldownMs = 2500;
+constexpr float WalkingSoundMovementSpeedThreshold = 20.0f;
+constexpr float WalkingMotionHoldSeconds = 0.125f;
+constexpr uint32_t BrokenItemTintColorAbgr = 0x800000ffu;
+constexpr uint32_t UnidentifiedItemTintColorAbgr = 0x80ff0000u;
+
+enum class ItemTintContext
+{
+    None,
+    Held,
+    Equipped,
+    ShopIdentify,
+    ShopRepair,
+};
+
+bool bypassSpeechCooldown(SpeechId speechId)
+{
+    switch (speechId)
+    {
+        case SpeechId::IdentifyWeakItem:
+        case SpeechId::IdentifyGreatItem:
+        case SpeechId::IdentifyFailItem:
+        case SpeechId::RepairSuccess:
+        case SpeechId::RepairFail:
+        case SpeechId::CantLearnSpell:
+        case SpeechId::LearnSpell:
+            return true;
+
+        default:
+            return false;
+    }
+}
+
+uint32_t itemTintColorAbgr(
+    const InventoryItem *pItemState,
+    const ItemDefinition *pItemDefinition,
+    ItemTintContext context)
+{
+    if (pItemState == nullptr || pItemDefinition == nullptr)
+    {
+        return 0xffffffffu;
+    }
+
+    const bool isBroken = pItemState->broken;
+    const bool isUnidentified = !pItemState->identified && ItemRuntime::requiresIdentification(*pItemDefinition);
+
+    switch (context)
+    {
+        case ItemTintContext::Held:
+        case ItemTintContext::Equipped:
+            if (isBroken)
+            {
+                return BrokenItemTintColorAbgr;
+            }
+
+            if (isUnidentified)
+            {
+                return UnidentifiedItemTintColorAbgr;
+            }
+
+            break;
+
+        case ItemTintContext::ShopIdentify:
+            if (isUnidentified)
+            {
+                return UnidentifiedItemTintColorAbgr;
+            }
+
+            break;
+
+        case ItemTintContext::ShopRepair:
+            if (isBroken)
+            {
+                return BrokenItemTintColorAbgr;
+            }
+
+            break;
+
+        case ItemTintContext::None:
+            break;
+    }
+
+    return 0xffffffffu;
+}
+
+struct GoldHeapVisual
+{
+    const char *pTextureName = "item204";
+    uint8_t width = 1;
+    uint8_t height = 1;
+    uint32_t objectDescriptionId = 187;
+};
+
+GoldHeapVisual classifyGoldHeapVisual(uint32_t goldAmount)
+{
+    // OE stores small/medium/large gold piles as distinct items at generation time.
+    // We infer the same visual tier from the generated amount ranges.
+    if (goldAmount <= 200)
+    {
+        return {"item204", 1, 1, 187};
+    }
+
+    if (goldAmount <= 1000)
+    {
+        return {"item205", 2, 1, 188};
+    }
+
+    return {"item206", 2, 1, 189};
+}
+
+enum class PortraitAggroIndicator
+{
+    Hidden,
+    Black,
+    Green,
+    Yellow,
+    Red,
+};
+
+PortraitAggroIndicator classifyPortraitAggroIndicator(
+    const Character &member,
+    const OutdoorPartyRuntime *pPartyRuntime,
+    const OutdoorWorldRuntime *pWorldRuntime)
+{
+    if (!GameMechanics::canAct(member))
+    {
+        return PortraitAggroIndicator::Hidden;
+    }
+
+    if (member.recoverySecondsRemaining > 0.0f)
+    {
+        return PortraitAggroIndicator::Hidden;
+    }
+
+    if (pPartyRuntime == nullptr || pWorldRuntime == nullptr)
+    {
+        return PortraitAggroIndicator::Hidden;
+    }
+
+    const OutdoorMoveState &partyMoveState = pPartyRuntime->movementState();
+    float nearestHostileDistance = std::numeric_limits<float>::max();
+
+    for (size_t actorIndex = 0; actorIndex < pWorldRuntime->mapActorCount(); ++actorIndex)
+    {
+        const OutdoorWorldRuntime::MapActorState *pActor = pWorldRuntime->mapActorState(actorIndex);
+
+        if (pActor == nullptr
+            || pActor->isDead
+            || pActor->isInvisible
+            || !pActor->hostileToParty
+            || outdoorActorIsPartyControlled(pActor->controlMode))
+        {
+            continue;
+        }
+
+        const float actorX = pActor->preciseX != 0.0f ? pActor->preciseX : static_cast<float>(pActor->x);
+        const float actorY = pActor->preciseY != 0.0f ? pActor->preciseY : static_cast<float>(pActor->y);
+        const float actorZ = pActor->movementStateInitialized
+            ? pActor->movementState.footZ
+            : (pActor->preciseZ != 0.0f ? pActor->preciseZ : static_cast<float>(pActor->z));
+        const float deltaX = actorX - partyMoveState.x;
+        const float deltaY = actorY - partyMoveState.y;
+        const float deltaZ = actorZ - partyMoveState.footZ;
+        const float centerDistance = std::sqrt(deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ);
+        const float edgeDistance = std::max(0.0f, centerDistance - static_cast<float>(pActor->radius));
+        nearestHostileDistance = std::min(nearestHostileDistance, edgeDistance);
+    }
+
+    if (nearestHostileDistance < OeMeleeAlertDistance)
+    {
+        return PortraitAggroIndicator::Red;
+    }
+
+    if (nearestHostileDistance < OeYellowAlertDistance)
+    {
+        return PortraitAggroIndicator::Yellow;
+    }
+
+    return PortraitAggroIndicator::Green;
+}
+
+float resolveActorAabbBaseZ(
+    const OutdoorMapData &outdoorMapData,
+    const OutdoorWorldRuntime::MapActorState *pActorState,
+    int actorX,
+    int actorY,
+    int actorZ,
+    bool clampDeadActorToGround)
+{
+    if (!clampDeadActorToGround)
+    {
+        return static_cast<float>(actorZ);
+    }
+
+    if (pActorState != nullptr && pActorState->movementStateInitialized)
+    {
+        const OutdoorMoveState &movementState = pActorState->movementState;
+
+        if (movementState.supportKind == OutdoorSupportKind::Terrain
+            || movementState.supportKind == OutdoorSupportKind::BModelFace)
+        {
+            return movementState.footZ - 1.0f;
+        }
+    }
+
+    return sampleOutdoorSupportFloorHeight(
+        outdoorMapData,
+        static_cast<float>(actorX),
+        static_cast<float>(actorY),
+        static_cast<float>(actorZ));
+}
+
+struct UiViewportRect
+{
+    float x = 0.0f;
+    float y = 0.0f;
+    float width = 0.0f;
+    float height = 0.0f;
+};
+
+struct HudPointerState
+{
+    float x = 0.0f;
+    float y = 0.0f;
+    bool leftButtonPressed = false;
+};
+
+struct InventoryGridMetrics
+{
+    float x = 0.0f;
+    float y = 0.0f;
+    float cellWidth = 0.0f;
+    float cellHeight = 0.0f;
+    float scale = 1.0f;
+};
+
+struct InventoryItemScreenRect
+{
+    float x = 0.0f;
+    float y = 0.0f;
+    float width = 0.0f;
+    float height = 0.0f;
+};
+
+bool tryParseInteger(const std::string &value, int &parsedValue)
+{
+    if (value.empty())
+    {
+        return false;
+    }
+
+    size_t parsedCharacters = 0;
+
+    try
+    {
+        parsedValue = std::stoi(value, &parsedCharacters);
+    }
+    catch (...)
+    {
+        return false;
+    }
+
+    return parsedCharacters == value.size();
+}
+
+bool isBodyEquipmentVisualSlot(EquipmentSlot slot)
+{
+    switch (slot)
+    {
+        case EquipmentSlot::Armor:
+        case EquipmentSlot::Helm:
+        case EquipmentSlot::Belt:
+        case EquipmentSlot::Cloak:
+        case EquipmentSlot::Boots:
+            return true;
+
+        case EquipmentSlot::OffHand:
+        case EquipmentSlot::MainHand:
+        case EquipmentSlot::Bow:
+        case EquipmentSlot::Gauntlets:
+        case EquipmentSlot::Amulet:
+        case EquipmentSlot::Ring1:
+        case EquipmentSlot::Ring2:
+        case EquipmentSlot::Ring3:
+        case EquipmentSlot::Ring4:
+        case EquipmentSlot::Ring5:
+        case EquipmentSlot::Ring6:
+            return false;
+    }
+
+    return false;
+}
+
+bool isJewelryOverlayEquipmentSlot(EquipmentSlot slot)
+{
+    switch (slot)
+    {
+        case EquipmentSlot::Gauntlets:
+        case EquipmentSlot::Amulet:
+        case EquipmentSlot::Ring1:
+        case EquipmentSlot::Ring2:
+        case EquipmentSlot::Ring3:
+        case EquipmentSlot::Ring4:
+        case EquipmentSlot::Ring5:
+        case EquipmentSlot::Ring6:
+            return true;
+
+        case EquipmentSlot::OffHand:
+        case EquipmentSlot::MainHand:
+        case EquipmentSlot::Bow:
+        case EquipmentSlot::Armor:
+        case EquipmentSlot::Helm:
+        case EquipmentSlot::Belt:
+        case EquipmentSlot::Cloak:
+        case EquipmentSlot::Boots:
+            return false;
+    }
+
+    return false;
+}
+
+bool isVisibleInCharacterDollOverlay(EquipmentSlot slot, bool jewelryOverlayOpen)
+{
+    return jewelryOverlayOpen
+        ? isBodyEquipmentVisualSlot(slot) || isJewelryOverlayEquipmentSlot(slot)
+        : !isJewelryOverlayEquipmentSlot(slot);
+}
+
+bool usesAlternateCloakBeltEquippedVariant(EquipmentSlot slot)
+{
+    return slot == EquipmentSlot::Cloak || slot == EquipmentSlot::Belt;
+}
+
+std::string resolveItemInspectTypeText(const InventoryItem *pItemState, const ItemDefinition &itemDefinition)
+{
+    if (pItemState != nullptr && !pItemState->identified && ItemRuntime::requiresIdentification(itemDefinition))
+    {
+        return "Not identified";
+    }
+
+    if (!itemDefinition.skillGroup.empty()
+        && itemDefinition.skillGroup != "0"
+        && itemDefinition.skillGroup != "Misc")
+    {
+        return itemDefinition.skillGroup;
+    }
+
+    if (!itemDefinition.equipStat.empty()
+        && itemDefinition.equipStat != "0"
+        && itemDefinition.equipStat != "N / A")
+    {
+        return itemDefinition.equipStat;
+    }
+
+    return "Misc";
+}
+
+std::string formatItemInspectDamageText(const std::string &damageDice, int bonus)
+{
+    if (damageDice.empty() || damageDice == "0")
+    {
+        if (bonus <= 0)
+        {
+            return {};
+        }
+
+        return std::to_string(bonus);
+    }
+
+    if (bonus <= 0)
+    {
+        return damageDice;
+    }
+
+    return damageDice + "+" + std::to_string(bonus);
+}
+
+std::string formatMonsterDamageText(const MonsterTable::MonsterStatsEntry::DamageProfile &damage)
+{
+    if (damage.diceRolls <= 0 || damage.diceSides <= 0)
+    {
+        return "-";
+    }
+
+    std::string text = std::to_string(damage.diceRolls) + "D" + std::to_string(damage.diceSides);
+
+    if (damage.bonus > 0)
+    {
+        text += "+" + std::to_string(damage.bonus);
+    }
+    else if (damage.bonus < 0)
+    {
+        text += std::to_string(damage.bonus);
+    }
+
+    return text;
+}
+
+std::string joinNonEmptyTexts(const std::vector<std::string> &parts)
+{
+    std::string result;
+
+    for (const std::string &part : parts)
+    {
+        if (part.empty() || part == "-" || part == "0")
+        {
+            continue;
+        }
+
+        if (!result.empty())
+        {
+            result += ", ";
+        }
+
+        result += part;
+    }
+
+    return result.empty() ? "-" : result;
+}
+
+std::string formatMonsterResistanceText(int value)
+{
+    return value >= 200 ? "Imm" : std::to_string(value);
+}
+
+std::string resolveItemInspectDetailText(const InventoryItem *pItemState, const ItemDefinition &itemDefinition)
+{
+    const bool isBroken = pItemState != nullptr && pItemState->broken;
+    const std::string &equipStat = itemDefinition.equipStat;
+    int mod1Value = 0;
+    int mod2Value = 0;
+    const bool hasMod1Int = tryParseInteger(itemDefinition.mod1, mod1Value);
+    const bool hasMod2Int = tryParseInteger(itemDefinition.mod2, mod2Value);
+
+    if (equipStat == "Weapon" || equipStat == "Weapon2" || equipStat == "Weapon1or2")
+    {
+        const int attackBonus = hasMod2Int ? mod2Value : 0;
+        const std::string damageText = formatItemInspectDamageText(itemDefinition.mod1, attackBonus);
+
+        if (damageText.empty())
+        {
+            return isBroken ? "Broken" : std::string {};
+        }
+
+        const std::string detail = "Attack: +" + std::to_string(attackBonus) + "   Damage: " + damageText;
+        return isBroken ? "Broken   " + detail : detail;
+    }
+
+    if (equipStat == "Missile")
+    {
+        const int shootBonus = hasMod2Int ? mod2Value : 0;
+        const std::string damageText = formatItemInspectDamageText(itemDefinition.mod1, shootBonus);
+
+        if (damageText.empty())
+        {
+            return isBroken ? "Broken" : std::string {};
+        }
+
+        const std::string detail = "Shoot: +" + std::to_string(shootBonus) + "   Damage: " + damageText;
+        return isBroken ? "Broken   " + detail : detail;
+    }
+
+    if (equipStat == "WeaponW")
+    {
+        if (hasMod2Int && mod2Value > 0)
+        {
+            const std::string detail = "Charges: " + std::to_string(mod2Value);
+            return isBroken ? "Broken   " + detail : detail;
+        }
+
+        return isBroken ? "Broken" : std::string {};
+    }
+
+    if (equipStat == "Armor"
+        || equipStat == "Shield"
+        || equipStat == "Helm"
+        || equipStat == "Belt"
+        || equipStat == "Cloak"
+        || equipStat == "Gauntlets"
+        || equipStat == "Boots"
+        || equipStat == "Ring"
+        || equipStat == "Amulet")
+    {
+        const int armorValue = (hasMod1Int ? mod1Value : 0) + (hasMod2Int ? mod2Value : 0);
+
+        if (armorValue > 0)
+        {
+            const std::string detail = "Armor: +" + std::to_string(armorValue);
+            return isBroken ? "Broken   " + detail : detail;
+        }
+
+        return isBroken ? "Broken" : std::string {};
+    }
+
+    return isBroken ? "Broken" : std::string {};
+}
+
+constexpr const char *WeaponSkillNames[] = {
+    "Axe",
+    "Bow",
+    "Throwing",
+    "Dagger",
+    "Mace",
+    "Spear",
+    "Staff",
+    "Sword",
+    "Unarmed",
+    "Blaster",
+};
+
+constexpr const char *MagicSkillNames[] = {
+    "FireMagic",
+    "AirMagic",
+    "WaterMagic",
+    "EarthMagic",
+    "SpiritMagic",
+    "MindMagic",
+    "BodyMagic",
+    "LightMagic",
+    "DarkMagic",
+};
+
+constexpr const char *ArmorSkillNames[] = {
+    "LeatherArmor",
+    "ChainArmor",
+    "PlateArmor",
+    "Shield",
+    "Dodging",
+};
+
+constexpr const char *MiscSkillNames[] = {
+    "Alchemy",
+    "Armsmaster",
+    "Bodybuilding",
+    "IdentifyItem",
+    "IdentifyMonster",
+    "Learning",
+    "DisarmTraps",
+    "Meditation",
+    "Merchant",
+    "Perception",
+    "RepairItem",
+    "Stealing",
+};
+
+InventoryGridMetrics computeInventoryGridMetrics(
+    float x,
+    float y,
+    float width,
+    float height,
+    float scale,
+    int columns,
+    int rows)
+{
+    InventoryGridMetrics metrics = {};
+    metrics.x = x;
+    metrics.y = y;
+    metrics.cellWidth = width / static_cast<float>(std::max(1, columns));
+    metrics.cellHeight = height / static_cast<float>(std::max(1, rows));
+    metrics.scale = scale;
+    return metrics;
+}
+
+InventoryGridMetrics computeInventoryGridMetrics(
+    float x,
+    float y,
+    float width,
+    float height,
+    float scale)
+{
+    return computeInventoryGridMetrics(x, y, width, height, scale, Character::InventoryWidth, Character::InventoryHeight);
+}
+
+InventoryItemScreenRect computeInventoryItemScreenRect(
+    const InventoryGridMetrics &gridMetrics,
+    const InventoryItem &item,
+    float textureWidth,
+    float textureHeight)
+{
+    const float slotSpanWidth = static_cast<float>(item.width) * gridMetrics.cellWidth;
+    const float slotSpanHeight = static_cast<float>(item.height) * gridMetrics.cellHeight;
+    const float offsetX = (slotSpanWidth - textureWidth) * 0.5f;
+    const float offsetY = (slotSpanHeight - textureHeight) * 0.5f;
+
+    InventoryItemScreenRect rect = {};
+    rect.x = std::round(
+        gridMetrics.x + static_cast<float>(item.gridX) * gridMetrics.cellWidth
+        + offsetX);
+    rect.y = std::round(
+        gridMetrics.y + static_cast<float>(item.gridY) * gridMetrics.cellHeight
+        + offsetY);
+    rect.width = textureWidth;
+    rect.height = textureHeight;
+    return rect;
+}
+
+std::optional<std::pair<int, int>> computeHeldInventoryPlacement(
+    const InventoryGridMetrics &gridMetrics,
+    uint8_t itemWidthCells,
+    uint8_t itemHeightCells,
+    float textureWidth,
+    float textureHeight,
+    float drawX,
+    float drawY)
+{
+    if (gridMetrics.cellWidth <= 0.0f || gridMetrics.cellHeight <= 0.0f)
+    {
+        return std::nullopt;
+    }
+
+    const float slotSpanWidth = static_cast<float>(itemWidthCells) * gridMetrics.cellWidth;
+    const float slotSpanHeight = static_cast<float>(itemHeightCells) * gridMetrics.cellHeight;
+    const float itemCenterX = drawX + textureWidth * 0.5f;
+    const float itemCenterY = drawY + textureHeight * 0.5f;
+    const int gridX = static_cast<int>(std::floor(
+        (itemCenterX - gridMetrics.x - slotSpanWidth * 0.5f + gridMetrics.cellWidth * 0.5f)
+        / gridMetrics.cellWidth));
+    const int gridY = static_cast<int>(std::floor(
+        (itemCenterY - gridMetrics.y - slotSpanHeight * 0.5f + gridMetrics.cellHeight * 0.5f)
+        / gridMetrics.cellHeight));
+    return std::pair<int, int>(gridX, gridY);
+}
+
+uint32_t equippedItemId(const CharacterEquipment &equipment, EquipmentSlot slot)
+{
+    switch (slot)
+    {
+        case EquipmentSlot::OffHand:
+            return equipment.offHand;
+
+        case EquipmentSlot::MainHand:
+            return equipment.mainHand;
+
+        case EquipmentSlot::Bow:
+            return equipment.bow;
+
+        case EquipmentSlot::Armor:
+            return equipment.armor;
+
+        case EquipmentSlot::Helm:
+            return equipment.helm;
+
+        case EquipmentSlot::Belt:
+            return equipment.belt;
+
+        case EquipmentSlot::Cloak:
+            return equipment.cloak;
+
+        case EquipmentSlot::Gauntlets:
+            return equipment.gauntlets;
+
+        case EquipmentSlot::Boots:
+            return equipment.boots;
+
+        case EquipmentSlot::Amulet:
+            return equipment.amulet;
+
+        case EquipmentSlot::Ring1:
+            return equipment.ring1;
+
+        case EquipmentSlot::Ring2:
+            return equipment.ring2;
+
+        case EquipmentSlot::Ring3:
+            return equipment.ring3;
+
+        case EquipmentSlot::Ring4:
+            return equipment.ring4;
+
+        case EquipmentSlot::Ring5:
+            return equipment.ring5;
+
+        case EquipmentSlot::Ring6:
+            return equipment.ring6;
+    }
+
+    return 0;
+}
+
+std::optional<EquipmentSlot> characterEquipmentSlotForLayoutId(const std::string &layoutId)
+{
+    const std::string normalized = toLowerCopy(layoutId);
+
+    if (normalized == "characterdollbowslot")
+    {
+        return EquipmentSlot::Bow;
+    }
+
+    if (normalized == "characterdollrighthandslot")
+    {
+        return EquipmentSlot::MainHand;
+    }
+
+    if (normalized == "characterdolllefthandslot")
+    {
+        return EquipmentSlot::OffHand;
+    }
+
+    if (normalized == "characterdollarmorslot")
+    {
+        return EquipmentSlot::Armor;
+    }
+
+    if (normalized == "characterdollhelmetslot")
+    {
+        return EquipmentSlot::Helm;
+    }
+
+    if (normalized == "characterdollbeltslot")
+    {
+        return EquipmentSlot::Belt;
+    }
+
+    if (normalized == "characterdollcloakslot")
+    {
+        return EquipmentSlot::Cloak;
+    }
+
+    if (normalized == "characterdollbootsslot")
+    {
+        return EquipmentSlot::Boots;
+    }
+
+    if (normalized == "characterdollamuletslot")
+    {
+        return EquipmentSlot::Amulet;
+    }
+
+    if (normalized == "characterdollgauntletsslot")
+    {
+        return EquipmentSlot::Gauntlets;
+    }
+
+    if (normalized == "characterdollring1slot")
+    {
+        return EquipmentSlot::Ring1;
+    }
+
+    if (normalized == "characterdollring2slot")
+    {
+        return EquipmentSlot::Ring2;
+    }
+
+    if (normalized == "characterdollring3slot")
+    {
+        return EquipmentSlot::Ring3;
+    }
+
+    if (normalized == "characterdollring4slot")
+    {
+        return EquipmentSlot::Ring4;
+    }
+
+    if (normalized == "characterdollring5slot")
+    {
+        return EquipmentSlot::Ring5;
+    }
+
+    if (normalized == "characterdollring6slot")
+    {
+        return EquipmentSlot::Ring6;
+    }
+
+    return std::nullopt;
+}
+
+const char *equipmentSlotName(EquipmentSlot slot)
+{
+    switch (slot)
+    {
+        case EquipmentSlot::OffHand:
+            return "OffHand";
+
+        case EquipmentSlot::MainHand:
+            return "MainHand";
+
+        case EquipmentSlot::Bow:
+            return "Bow";
+
+        case EquipmentSlot::Armor:
+            return "Armor";
+
+        case EquipmentSlot::Helm:
+            return "Helm";
+
+        case EquipmentSlot::Belt:
+            return "Belt";
+
+        case EquipmentSlot::Cloak:
+            return "Cloak";
+
+        case EquipmentSlot::Gauntlets:
+            return "Gauntlets";
+
+        case EquipmentSlot::Boots:
+            return "Boots";
+
+        case EquipmentSlot::Amulet:
+            return "Amulet";
+
+        case EquipmentSlot::Ring1:
+            return "Ring1";
+
+        case EquipmentSlot::Ring2:
+            return "Ring2";
+
+        case EquipmentSlot::Ring3:
+            return "Ring3";
+
+        case EquipmentSlot::Ring4:
+            return "Ring4";
+
+        case EquipmentSlot::Ring5:
+            return "Ring5";
+
+        case EquipmentSlot::Ring6:
+            return "Ring6";
+    }
+
+    return "Unknown";
+}
+
+std::optional<uint32_t> parseCharacterDataIdFromPortraitTextureName(const std::string &portraitTextureName)
+{
+    const std::string normalized = toLowerCopy(portraitTextureName);
+
+    if (normalized.size() < 4 || !normalized.starts_with("pc"))
+    {
+        return std::nullopt;
+    }
+
+    std::string digits;
+
+    for (size_t index = 2; index < normalized.size(); ++index)
+    {
+        const unsigned char character = static_cast<unsigned char>(normalized[index]);
+
+        if (!std::isdigit(character))
+        {
+            break;
+        }
+
+        digits.push_back(normalized[index]);
+    }
+
+    if (digits.empty())
+    {
+        return std::nullopt;
+    }
+
+    char *pEnd = nullptr;
+    const unsigned long parsed = std::strtoul(digits.c_str(), &pEnd, 10);
+
+    if (pEnd == digits.c_str() || *pEnd != '\0')
+    {
+        return std::nullopt;
+    }
+
+    return static_cast<uint32_t>(parsed);
+}
+
+const CharacterDollEntry *resolveCharacterDollEntry(
+    const CharacterDollTable *pCharacterDollTable,
+    const Character *pCharacter)
+{
+    if (pCharacterDollTable == nullptr || pCharacter == nullptr)
+    {
+        return nullptr;
+    }
+
+    if (pCharacter->characterDataId != 0)
+    {
+        const CharacterDollEntry *pEntry = pCharacterDollTable->getCharacter(pCharacter->characterDataId);
+
+        if (pEntry != nullptr)
+        {
+            return pEntry;
+        }
+    }
+
+    const std::optional<uint32_t> portraitCharacterDataId =
+        parseCharacterDataIdFromPortraitTextureName(pCharacter->portraitTextureName);
+
+    if (portraitCharacterDataId)
+    {
+        const CharacterDollEntry *pEntry = pCharacterDollTable->getCharacter(*portraitCharacterDataId);
+
+        if (pEntry != nullptr)
+        {
+            return pEntry;
+        }
+    }
+
+    return pCharacterDollTable->getCharacter(1);
+}
+
+uint32_t packHudColorAbgr(uint8_t red, uint8_t green, uint8_t blue)
+{
+    return static_cast<uint32_t>(red)
+        | (static_cast<uint32_t>(green) << 8)
+        | (static_cast<uint32_t>(blue) << 16)
+        | 0xff000000u;
+}
+
+void setCharacterSkillRegionHeight(
+    std::unordered_map<std::string, float> &runtimeHeightOverrides,
+    float skillRowHeight,
+    const char *pLayoutId,
+    size_t rowCount)
+{
+    runtimeHeightOverrides[toLowerCopy(pLayoutId)] =
+        skillRowHeight * static_cast<float>(std::max<size_t>(1, rowCount));
+}
+
+template <typename Target, typename ResolveTargetFn, typename ActivateTargetFn>
+void handlePointerClickRelease(
+    const HudPointerState &pointerState,
+    bool &clickLatch,
+    Target &pressedTarget,
+    const Target &noneTarget,
+    ResolveTargetFn resolveTargetFn,
+    ActivateTargetFn activateTargetFn)
+{
+    if (pointerState.leftButtonPressed)
+    {
+        if (!clickLatch)
+        {
+            pressedTarget = resolveTargetFn(pointerState.x, pointerState.y);
+            clickLatch = true;
+        }
+    }
+    else if (clickLatch)
+    {
+        const Target currentTarget = resolveTargetFn(pointerState.x, pointerState.y);
+
+        if (currentTarget == pressedTarget)
+        {
+            activateTargetFn(currentTarget);
+        }
+
+        clickLatch = false;
+        pressedTarget = noneTarget;
+    }
+    else
+    {
+        pressedTarget = noneTarget;
+    }
+}
+
+float snappedHudFontScale(float scale)
+{
+    const float roundedScale = std::round(scale);
+
+    if (std::abs(scale - roundedScale) <= HudFontIntegerSnapThreshold)
+    {
+        return std::max(1.0f, roundedScale);
+    }
+
+    return std::max(1.0f, scale);
+}
+
+UiViewportRect computeUiViewportRect(int screenWidth, int screenHeight)
+{
+    UiViewportRect viewport = {};
+    viewport.x = 0.0f;
+    viewport.y = 0.0f;
+    viewport.width = static_cast<float>(screenWidth);
+    viewport.height = static_cast<float>(screenHeight);
+
+    if (screenHeight > 0)
+    {
+        const float maxWidthForHeight = viewport.height * MaxUiViewportAspect;
+
+        if (viewport.width > maxWidthForHeight)
+        {
+            viewport.width = maxWidthForHeight;
+            viewport.x = (static_cast<float>(screenWidth) - viewport.width) * 0.5f;
+        }
+    }
+
+    return viewport;
+}
+
+uint32_t makeAbgrColor(uint8_t red, uint8_t green, uint8_t blue, uint8_t alpha = 255)
+{
+    return static_cast<uint32_t>(alpha) << 24
+        | static_cast<uint32_t>(blue) << 16
+        | static_cast<uint32_t>(green) << 8
+        | static_cast<uint32_t>(red);
+}
+
+constexpr float OutdoorMinimapZoom = 512.0f;
+
+struct SpriteTexturePreloadRequest
+{
+    std::string textureName;
+    int16_t paletteId = 0;
+    std::vector<uint8_t> bitmapBytes;
+    std::optional<std::array<uint8_t, 256 * 3>> overridePalette;
+};
+
+struct DecodedSpriteTexture
+{
+    std::string textureName;
+    int16_t paletteId = 0;
+    int width = 0;
+    int height = 0;
+    std::vector<uint8_t> pixels;
+};
+constexpr uint8_t OutdoorPolygonFloor = 0x3;
+constexpr uint8_t OutdoorPolygonInBetweenFloorAndWall = 0x4;
+constexpr int DwiMapId = 1;
+constexpr uint16_t DwiMeteorShowerEventId = 456;
+
+struct OutdoorPartyStartPoint
+{
+    float x = 0.0f;
+    float y = 0.0f;
+    float z = 0.0f;
+    std::optional<float> yawRadians;
+};
+
+struct ParsedHudFontGlyphMetrics
+{
+    int leftSpacing = 0;
+    int width = 0;
+    int rightSpacing = 0;
+};
+
+struct ParsedHudBitmapFont
+{
+    int firstChar = 0;
+    int lastChar = 0;
+    int fontHeight = 0;
+    std::array<ParsedHudFontGlyphMetrics, 256> glyphMetrics = {{}};
+    std::array<uint32_t, 256> glyphOffsets = {{}};
+    std::vector<uint8_t> pixels;
+};
+
+int32_t readInt32Le(const uint8_t *pBytes)
+{
+    return static_cast<int32_t>(
+        static_cast<uint32_t>(pBytes[0])
+        | (static_cast<uint32_t>(pBytes[1]) << 8)
+        | (static_cast<uint32_t>(pBytes[2]) << 16)
+        | (static_cast<uint32_t>(pBytes[3]) << 24));
+}
+
+uint32_t readUint32Le(const uint8_t *pBytes)
+{
+    return static_cast<uint32_t>(
+        static_cast<uint32_t>(pBytes[0])
+        | (static_cast<uint32_t>(pBytes[1]) << 8)
+        | (static_cast<uint32_t>(pBytes[2]) << 16)
+        | (static_cast<uint32_t>(pBytes[3]) << 24));
+}
+
+bool validateParsedHudBitmapFont(
+    const ParsedHudBitmapFont &font,
+    const std::vector<uint8_t> &pixels)
+{
+    if (font.firstChar < 0 || font.firstChar > 255 || font.lastChar < 0 || font.lastChar > 255
+        || font.firstChar > font.lastChar || font.fontHeight <= 0)
+    {
+        return false;
+    }
+
+    for (int glyphIndex = 0; glyphIndex < 256; ++glyphIndex)
+    {
+        const ParsedHudFontGlyphMetrics &metrics = font.glyphMetrics[glyphIndex];
+
+        if (glyphIndex < font.firstChar || glyphIndex > font.lastChar)
+        {
+            continue;
+        }
+
+        if (metrics.width < 0 || metrics.width > 1024 || metrics.leftSpacing < -512 || metrics.leftSpacing > 512
+            || metrics.rightSpacing < -512 || metrics.rightSpacing > 512)
+        {
+            return false;
+        }
+
+        const uint64_t glyphSize = static_cast<uint64_t>(font.fontHeight) * static_cast<uint64_t>(metrics.width);
+        const uint64_t glyphEnd = static_cast<uint64_t>(font.glyphOffsets[glyphIndex]) + glyphSize;
+
+        if (glyphEnd > pixels.size())
+        {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+std::optional<ParsedHudBitmapFont> parseHudBitmapFont(const std::vector<uint8_t> &bytes)
+{
+    constexpr size_t fontHeaderSize = 32;
+    constexpr size_t mm7AtlasSize = 4096;
+    constexpr size_t mmxAtlasSize = 1280;
+
+    if (bytes.size() < fontHeaderSize + mmxAtlasSize)
+    {
+        return std::nullopt;
+    }
+
+    const uint8_t *pBytes = bytes.data();
+
+    if (pBytes[2] != 8 || pBytes[3] != 0 || pBytes[4] != 0 || pBytes[6] != 0 || pBytes[7] != 0)
+    {
+        return std::nullopt;
+    }
+
+    ParsedHudBitmapFont mm7Font = {};
+    mm7Font.firstChar = pBytes[0];
+    mm7Font.lastChar = pBytes[1];
+    mm7Font.fontHeight = pBytes[5];
+
+    if (bytes.size() >= fontHeaderSize + mm7AtlasSize)
+    {
+        for (int glyphIndex = 0; glyphIndex < 256; ++glyphIndex)
+        {
+            const size_t metricOffset = fontHeaderSize + static_cast<size_t>(glyphIndex) * 12;
+            mm7Font.glyphMetrics[glyphIndex].leftSpacing = readInt32Le(&pBytes[metricOffset]);
+            mm7Font.glyphMetrics[glyphIndex].width = readInt32Le(&pBytes[metricOffset + 4]);
+            mm7Font.glyphMetrics[glyphIndex].rightSpacing = readInt32Le(&pBytes[metricOffset + 8]);
+        }
+
+        for (int glyphIndex = 0; glyphIndex < 256; ++glyphIndex)
+        {
+            const size_t offsetPosition = fontHeaderSize + 256 * 12 + static_cast<size_t>(glyphIndex) * 4;
+            mm7Font.glyphOffsets[glyphIndex] = readUint32Le(&pBytes[offsetPosition]);
+        }
+
+        mm7Font.pixels.assign(bytes.begin() + static_cast<ptrdiff_t>(fontHeaderSize + mm7AtlasSize), bytes.end());
+
+        if (validateParsedHudBitmapFont(mm7Font, mm7Font.pixels))
+        {
+            return mm7Font;
+        }
+    }
+
+    ParsedHudBitmapFont mmxFont = {};
+    mmxFont.firstChar = pBytes[0];
+    mmxFont.lastChar = pBytes[1];
+    mmxFont.fontHeight = pBytes[5];
+    for (int glyphIndex = 0; glyphIndex < 256; ++glyphIndex)
+    {
+        mmxFont.glyphMetrics[glyphIndex].leftSpacing = 0;
+        mmxFont.glyphMetrics[glyphIndex].width = pBytes[fontHeaderSize + glyphIndex];
+        mmxFont.glyphMetrics[glyphIndex].rightSpacing = 0;
+    }
+
+    for (int glyphIndex = 0; glyphIndex < 256; ++glyphIndex)
+    {
+        const size_t offsetPosition = fontHeaderSize + 256 + static_cast<size_t>(glyphIndex) * 4;
+        mmxFont.glyphOffsets[glyphIndex] = readUint32Le(&pBytes[offsetPosition]);
+    }
+
+    mmxFont.pixels.assign(bytes.begin() + static_cast<ptrdiff_t>(fontHeaderSize + mmxAtlasSize), bytes.end());
+
+    if (!validateParsedHudBitmapFont(mmxFont, mmxFont.pixels))
+    {
+        return std::nullopt;
+    }
+
+    return mmxFont;
+}
+
+std::optional<float> parseHudLayoutFloat(const std::string &value)
+{
+    char *pEnd = nullptr;
+    const float result = std::strtof(value.c_str(), &pEnd);
+
+    if (pEnd == value.c_str() || *pEnd != '\0')
+    {
+        return std::nullopt;
+    }
+
+    return result;
+}
+
+std::optional<bool> parseHudLayoutBool(const std::string &value)
+{
+    const std::string lowerValue = toLowerCopy(value);
+
+    if (lowerValue == "1" || lowerValue == "true" || lowerValue == "yes")
+    {
+        return true;
+    }
+
+    if (lowerValue == "0" || lowerValue == "false" || lowerValue == "no")
+    {
+        return false;
+    }
+
+    return std::nullopt;
+}
+
+std::optional<OutdoorPartyStartPoint> resolveOutdoorPartyStartPoint(
+    const Engine::AssetFileSystem &assetFileSystem,
+    const OutdoorMapData &outdoorMapData,
+    std::string_view startPointName)
+{
+    std::vector<std::vector<std::string>> decorationRows;
+    std::string decorationError;
+
+    if (!loadDecorationTableRows(assetFileSystem, decorationRows, decorationError))
+    {
+        std::cerr << "Failed to load the decoration table: " << decorationError << '\n';
+        return std::nullopt;
+    }
+
+    DecorationTable decorationTable;
+
+    if (!decorationTable.loadRows(decorationRows))
+    {
+        return std::nullopt;
+    }
+
+    for (const OutdoorEntity &entity : outdoorMapData.entities)
+    {
+        std::string decorationName = toLowerCopy(entity.name);
+
+        if (decorationName.empty())
+        {
+            if (const DecorationEntry *pDecoration = decorationTable.get(entity.decorationListId))
+            {
+                decorationName = pDecoration->internalName;
+            }
+        }
+
+        if (decorationName != startPointName)
+        {
+            continue;
+        }
+
+        OutdoorPartyStartPoint startPoint = {};
+        startPoint.x = static_cast<float>(entity.x);
+        startPoint.y = static_cast<float>(entity.y);
+        startPoint.z = static_cast<float>(entity.z);
+        // Start decorations store the party's view yaw in the original 2048-step angle units, not degrees.
+        const int facingSteps = ((entity.facing % 2048) + 2048) % 2048;
+        startPoint.yawRadians = static_cast<float>(facingSteps) * Pi / 1024.0f;
+        return startPoint;
+    }
+
+    return std::nullopt;
+}
+
+uint32_t currentAnimationTicks()
+{
+    return static_cast<uint32_t>((static_cast<uint64_t>(SDL_GetTicks()) * 128ULL) / 1000ULL);
+}
+
+uint32_t secondsToAnimationTicks(float deltaSeconds)
+{
+    if (deltaSeconds <= 0.0f)
+    {
+        return 0;
+    }
+
+    return static_cast<uint32_t>(std::max(0.0f, std::round(deltaSeconds * 128.0f)));
+}
+
+std::string portraitTextureNameForPictureFrame(uint32_t pictureId, uint16_t frameIndex)
+{
+    char buffer[16] = {};
+    std::snprintf(buffer, sizeof(buffer), "PC%02u-%02u", pictureId + 1, std::max<uint16_t>(1, frameIndex));
+    return buffer;
+}
+
+uint32_t mixPortraitSequenceValue(uint32_t value)
+{
+    value ^= value >> 16;
+    value *= 0x7feb352du;
+    value ^= value >> 15;
+    value *= 0x846ca68bu;
+    value ^= value >> 16;
+    return value;
+}
+
+PortraitId pickIdlePortrait(uint32_t sequenceValue)
+{
+    const uint32_t randomValue = sequenceValue % 100u;
+
+    if (randomValue < 25u)
+    {
+        return PortraitId::Blink;
+    }
+
+    if (randomValue < 31u)
+    {
+        return PortraitId::Wink;
+    }
+
+    if (randomValue < 37u)
+    {
+        return PortraitId::MouthOpenRandom;
+    }
+
+    if (randomValue < 43u)
+    {
+        return PortraitId::PurseLipsRandom;
+    }
+
+    if (randomValue < 46u)
+    {
+        return PortraitId::LookUp;
+    }
+
+    if (randomValue < 52u)
+    {
+        return PortraitId::LookRight;
+    }
+
+    if (randomValue < 58u)
+    {
+        return PortraitId::LookLeft;
+    }
+
+    if (randomValue < 64u)
+    {
+        return PortraitId::LookDown;
+    }
+
+    if (randomValue < 70u)
+    {
+        return PortraitId::Portrait54;
+    }
+
+    if (randomValue < 76u)
+    {
+        return PortraitId::Portrait55;
+    }
+
+    if (randomValue < 82u)
+    {
+        return PortraitId::Portrait56;
+    }
+
+    if (randomValue < 88u)
+    {
+        return PortraitId::Portrait57;
+    }
+
+    if (randomValue < 94u)
+    {
+        return PortraitId::PurseLips1;
+    }
+
+    return PortraitId::PurseLips2;
+}
+
+uint32_t pickNormalPortraitDurationTicks(uint32_t sequenceValue)
+{
+    return 32u + (sequenceValue % 257u);
+}
+
+bool portraitExpressionAllowedForCondition(
+    const std::optional<CharacterCondition> &displayedCondition,
+    PortraitId newPortrait)
+{
+    if (!displayedCondition)
+    {
+        return true;
+    }
+
+    const std::optional<PortraitId> currentPortrait = portraitIdForCondition(*displayedCondition);
+
+    if (!currentPortrait)
+    {
+        return true;
+    }
+
+    if (*currentPortrait == PortraitId::Dead || *currentPortrait == PortraitId::Eradicated)
+    {
+        return false;
+    }
+
+    if (*currentPortrait == PortraitId::Petrified)
+    {
+        return newPortrait == PortraitId::WakeUp;
+    }
+
+    if (*currentPortrait == PortraitId::Sleep && newPortrait == PortraitId::WakeUp)
+    {
+        return true;
+    }
+
+    if ((*currentPortrait >= PortraitId::Cursed && *currentPortrait <= PortraitId::Unconscious)
+        && *currentPortrait != PortraitId::Poisoned)
+    {
+        return isDamagePortrait(newPortrait);
+    }
+
+    return true;
+}
+
+using OutdoorFaceGeometry = OutdoorFaceGeometryData;
+
+const char *outdoorSupportKindName(OutdoorSupportKind supportKind)
+{
+    switch (supportKind)
+    {
+        case OutdoorSupportKind::Terrain:
+            return "terrain";
+        case OutdoorSupportKind::BModelFace:
+            return "bmodel";
+        case OutdoorSupportKind::None:
+        default:
+            return "none";
+    }
+}
+
+std::vector<std::string> wrapDebugText(const std::string &text, size_t width)
+{
+    std::vector<std::string> lines;
+
+    if (text.empty())
+    {
+        lines.push_back({});
+        return lines;
+    }
+
+    if (width == 0)
+    {
+        lines.push_back(text);
+        return lines;
+    }
+
+    size_t lineStart = 0;
+
+    while (lineStart < text.size())
+    {
+        while (lineStart < text.size() && (text[lineStart] == '\r' || text[lineStart] == '\n'))
+        {
+            ++lineStart;
+        }
+
+        if (lineStart >= text.size())
+        {
+            break;
+        }
+
+        const size_t remaining = text.size() - lineStart;
+
+        if (remaining <= width)
+        {
+            lines.push_back(text.substr(lineStart));
+            break;
+        }
+
+        size_t breakPosition = text.rfind(' ', lineStart + width);
+
+        if (breakPosition == std::string::npos || breakPosition < lineStart)
+        {
+            breakPosition = lineStart + width;
+        }
+
+        lines.push_back(text.substr(lineStart, breakPosition - lineStart));
+        lineStart = breakPosition;
+
+        while (lineStart < text.size() && text[lineStart] == ' ')
+        {
+            ++lineStart;
+        }
+    }
+
+    if (lines.empty())
+    {
+        lines.push_back(text);
+    }
+
+    return lines;
+}
+
+std::string buildGameplayHudCharacterLine(const Character &character, bool isLeader)
+{
+    std::ostringstream stream;
+    stream << (isLeader ? "*" : " ")
+           << character.name
+           << " Lv"
+           << character.level
+           << " "
+           << character.role;
+    return stream.str();
+}
+
+bool isOutdoorFaceSlopeTooSteep(const OutdoorFaceGeometry &geometry)
+{
+    if (!geometry.hasPlane)
+    {
+        return false;
+    }
+
+    const float normalZ = std::fabs(geometry.normal.z);
+
+    if (normalZ <= InspectRayEpsilon || normalZ >= OutdoorWalkableNormalZ)
+    {
+        return false;
+    }
+
+    return (geometry.maxZ - geometry.minZ) >= OutdoorMaxStepHeight;
+}
+
+bx::Vec3 vecSubtract(const bx::Vec3 &left, const bx::Vec3 &right)
+{
+    return {left.x - right.x, left.y - right.y, left.z - right.z};
+}
+
+bx::Vec3 vecAdd(const bx::Vec3 &left, const bx::Vec3 &right)
+{
+    return {left.x + right.x, left.y + right.y, left.z + right.z};
+}
+
+bx::Vec3 vecScale(const bx::Vec3 &vector, float scalar)
+{
+    return {vector.x * scalar, vector.y * scalar, vector.z * scalar};
+}
+
+bx::Vec3 vecCross(const bx::Vec3 &left, const bx::Vec3 &right)
+{
+    return {
+        left.y * right.z - left.z * right.y,
+        left.z * right.x - left.x * right.z,
+        left.x * right.y - left.y * right.x
+    };
+}
+
+float vecDot(const bx::Vec3 &left, const bx::Vec3 &right)
+{
+    return left.x * right.x + left.y * right.y + left.z * right.z;
+}
+
+float vecLength(const bx::Vec3 &vector)
+{
+    return std::sqrt(vecDot(vector, vector));
+}
+
+uint32_t makeAbgr(uint8_t red, uint8_t green, uint8_t blue)
+{
+    const uint8_t alpha = 255;
+
+    return static_cast<uint32_t>(alpha) << 24
+        | static_cast<uint32_t>(blue) << 16
+        | static_cast<uint32_t>(green) << 8
+        | static_cast<uint32_t>(red);
+}
+
+bx::Vec3 vecNormalize(const bx::Vec3 &vector)
+{
+    const float vectorLength = vecLength(vector);
+
+    if (vectorLength <= InspectRayEpsilon)
+    {
+        return {0.0f, 0.0f, 0.0f};
+    }
+
+    return {vector.x / vectorLength, vector.y / vectorLength, vector.z / vectorLength};
+}
+
+std::optional<std::vector<uint8_t>> loadSpriteBitmapPixelsBgra(
+    const std::vector<uint8_t> &bitmapBytes,
+    const std::string &virtualPath,
+    const std::optional<std::array<uint8_t, 256 * 3>> &overridePalette,
+    int &width,
+    int &height
+)
+{
+    Engine::ImageDecodeOptions decodeOptions = {};
+    decodeOptions.overridePalette = overridePalette;
+    decodeOptions.applyPaletteZeroTransparencyKey = true;
+
+    const std::optional<Engine::ImagePixelsBgra> image =
+        Engine::decodeImagePixelsBgra(bitmapBytes, virtualPath, decodeOptions);
+
+    if (!image)
+    {
+        return std::nullopt;
+    }
+
+    width = image->width;
+    height = image->height;
+    return image->pixels;
+}
+float pointSegmentDistanceSquared2d(
+    float pointX,
+    float pointY,
+    float segmentStartX,
+    float segmentStartY,
+    float segmentEndX,
+    float segmentEndY
+);
+
+float cross2d(float ax, float ay, float bx, float by)
+{
+    return ax * by - ay * bx;
+}
+
+bool rangesOverlap(float a0, float a1, float b0, float b1)
+{
+    const float minA = std::min(a0, a1);
+    const float maxA = std::max(a0, a1);
+    const float minB = std::min(b0, b1);
+    const float maxB = std::max(b0, b1);
+    return maxA + InspectRayEpsilon >= minB && maxB + InspectRayEpsilon >= minA;
+}
+
+bool segmentsIntersect2d(
+    float ax,
+    float ay,
+    float bx,
+    float by,
+    float cx,
+    float cy,
+    float dx,
+    float dy
+)
+{
+    if (!rangesOverlap(ax, bx, cx, dx) || !rangesOverlap(ay, by, cy, dy))
+    {
+        return false;
+    }
+
+    const float abx = bx - ax;
+    const float aby = by - ay;
+    const float acx = cx - ax;
+    const float acy = cy - ay;
+    const float adx = dx - ax;
+    const float ady = dy - ay;
+    const float cdx = dx - cx;
+    const float cdy = dy - cy;
+    const float cax = ax - cx;
+    const float cay = ay - cy;
+    const float cbx = bx - cx;
+    const float cby = by - cy;
+    const float cross1 = cross2d(abx, aby, acx, acy);
+    const float cross2 = cross2d(abx, aby, adx, ady);
+    const float cross3 = cross2d(cdx, cdy, cax, cay);
+    const float cross4 = cross2d(cdx, cdy, cbx, cby);
+
+    if (((cross1 > InspectRayEpsilon && cross2 < -InspectRayEpsilon)
+            || (cross1 < -InspectRayEpsilon && cross2 > InspectRayEpsilon))
+        && ((cross3 > InspectRayEpsilon && cross4 < -InspectRayEpsilon)
+            || (cross3 < -InspectRayEpsilon && cross4 > InspectRayEpsilon)))
+    {
+        return true;
+    }
+
+    return std::fabs(cross1) <= InspectRayEpsilon
+        || std::fabs(cross2) <= InspectRayEpsilon
+        || std::fabs(cross3) <= InspectRayEpsilon
+        || std::fabs(cross4) <= InspectRayEpsilon;
+}
+
+float pointSegmentDistanceSquared2d(
+    float pointX,
+    float pointY,
+    float segmentStartX,
+    float segmentStartY,
+    float segmentEndX,
+    float segmentEndY
+)
+{
+    const float segmentX = segmentEndX - segmentStartX;
+    const float segmentY = segmentEndY - segmentStartY;
+    const float segmentLengthSquared = segmentX * segmentX + segmentY * segmentY;
+
+    if (segmentLengthSquared <= InspectRayEpsilon)
+    {
+        const float dx = pointX - segmentStartX;
+        const float dy = pointY - segmentStartY;
+        return dx * dx + dy * dy;
+    }
+
+    const float pointProjection =
+        ((pointX - segmentStartX) * segmentX + (pointY - segmentStartY) * segmentY) / segmentLengthSquared;
+    const float clampedProjection = std::clamp(pointProjection, 0.0f, 1.0f);
+    const float closestX = segmentStartX + segmentX * clampedProjection;
+    const float closestY = segmentStartY + segmentY * clampedProjection;
+    const float dx = pointX - closestX;
+    const float dy = pointY - closestY;
+    return dx * dx + dy * dy;
+}
+
+bool intersectRayTriangle(
+    const bx::Vec3 &rayOrigin,
+    const bx::Vec3 &rayDirection,
+    const bx::Vec3 &vertex0,
+    const bx::Vec3 &vertex1,
+    const bx::Vec3 &vertex2,
+    float &distance
+)
+{
+    const bx::Vec3 edge1 = vecSubtract(vertex1, vertex0);
+    const bx::Vec3 edge2 = vecSubtract(vertex2, vertex0);
+    const bx::Vec3 pVector = vecCross(rayDirection, edge2);
+    const float determinant = vecDot(edge1, pVector);
+
+    if (std::fabs(determinant) <= InspectRayEpsilon)
+    {
+        return false;
+    }
+
+    const float inverseDeterminant = 1.0f / determinant;
+    const bx::Vec3 tVector = vecSubtract(rayOrigin, vertex0);
+    const float barycentricU = vecDot(tVector, pVector) * inverseDeterminant;
+
+    if (barycentricU < 0.0f || barycentricU > 1.0f)
+    {
+        return false;
+    }
+
+    const bx::Vec3 qVector = vecCross(tVector, edge1);
+    const float barycentricV = vecDot(rayDirection, qVector) * inverseDeterminant;
+
+    if (barycentricV < 0.0f || barycentricU + barycentricV > 1.0f)
+    {
+        return false;
+    }
+
+    distance = vecDot(edge2, qVector) * inverseDeterminant;
+    return distance > InspectRayEpsilon;
+}
+
+bool intersectRayAabb(
+    const bx::Vec3 &rayOrigin,
+    const bx::Vec3 &rayDirection,
+    const bx::Vec3 &minBounds,
+    const bx::Vec3 &maxBounds,
+    float &distance
+)
+{
+    float tMin = 0.0f;
+    float tMax = std::numeric_limits<float>::max();
+
+    const float rayOriginValues[3] = {rayOrigin.x, rayOrigin.y, rayOrigin.z};
+    const float rayDirectionValues[3] = {rayDirection.x, rayDirection.y, rayDirection.z};
+    const float minValues[3] = {minBounds.x, minBounds.y, minBounds.z};
+    const float maxValues[3] = {maxBounds.x, maxBounds.y, maxBounds.z};
+
+    for (int axis = 0; axis < 3; ++axis)
+    {
+        if (std::fabs(rayDirectionValues[axis]) <= InspectRayEpsilon)
+        {
+            if (rayOriginValues[axis] < minValues[axis] || rayOriginValues[axis] > maxValues[axis])
+            {
+                return false;
+            }
+
+            continue;
+        }
+
+        const float inverseDirection = 1.0f / rayDirectionValues[axis];
+        float t1 = (minValues[axis] - rayOriginValues[axis]) * inverseDirection;
+        float t2 = (maxValues[axis] - rayOriginValues[axis]) * inverseDirection;
+
+        if (t1 > t2)
+        {
+            std::swap(t1, t2);
+        }
+
+        tMin = std::max(tMin, t1);
+        tMax = std::min(tMax, t2);
+
+        if (tMin > tMax)
+        {
+            return false;
+        }
+    }
+
+    distance = tMin;
+    return true;
+}
+
+std::optional<float> intersectOutdoorTerrainRay(
+    const OutdoorMapData &outdoorMapData,
+    const bx::Vec3 &rayOrigin,
+    const bx::Vec3 &rayDirection)
+{
+    float closestDistance = std::numeric_limits<float>::max();
+    bool hasIntersection = false;
+
+    for (int gridY = 0; gridY < OutdoorMapData::TerrainHeight - 1; ++gridY)
+    {
+        for (int gridX = 0; gridX < OutdoorMapData::TerrainWidth - 1; ++gridX)
+        {
+            const size_t topLeftIndex = static_cast<size_t>(gridY * OutdoorMapData::TerrainWidth + gridX);
+            const size_t topRightIndex = static_cast<size_t>(gridY * OutdoorMapData::TerrainWidth + (gridX + 1));
+            const size_t bottomLeftIndex = static_cast<size_t>((gridY + 1) * OutdoorMapData::TerrainWidth + gridX);
+            const size_t bottomRightIndex =
+                static_cast<size_t>((gridY + 1) * OutdoorMapData::TerrainWidth + (gridX + 1));
+
+            const bx::Vec3 topLeft = {
+                outdoorGridCornerWorldX(gridX),
+                outdoorGridCornerWorldY(gridY),
+                static_cast<float>(outdoorMapData.heightMap[topLeftIndex] * OutdoorMapData::TerrainHeightScale)
+            };
+            const bx::Vec3 topRight = {
+                outdoorGridCornerWorldX(gridX + 1),
+                outdoorGridCornerWorldY(gridY),
+                static_cast<float>(outdoorMapData.heightMap[topRightIndex] * OutdoorMapData::TerrainHeightScale)
+            };
+            const bx::Vec3 bottomLeft = {
+                outdoorGridCornerWorldX(gridX),
+                outdoorGridCornerWorldY(gridY + 1),
+                static_cast<float>(outdoorMapData.heightMap[bottomLeftIndex] * OutdoorMapData::TerrainHeightScale)
+            };
+            const bx::Vec3 bottomRight = {
+                outdoorGridCornerWorldX(gridX + 1),
+                outdoorGridCornerWorldY(gridY + 1),
+                static_cast<float>(outdoorMapData.heightMap[bottomRightIndex] * OutdoorMapData::TerrainHeightScale)
+            };
+
+            float distance = 0.0f;
+
+            if (intersectRayTriangle(rayOrigin, rayDirection, topLeft, bottomRight, topRight, distance)
+                && distance < closestDistance)
+            {
+                closestDistance = distance;
+                hasIntersection = true;
+            }
+
+            if (intersectRayTriangle(rayOrigin, rayDirection, topLeft, bottomLeft, bottomRight, distance)
+                && distance < closestDistance)
+            {
+                closestDistance = distance;
+                hasIntersection = true;
+            }
+        }
+    }
+
+    if (!hasIntersection)
+    {
+        return std::nullopt;
+    }
+
+    return closestDistance;
+}
+
+struct ProjectedPoint
+{
+    float x = 0.0f;
+    float y = 0.0f;
+};
+
+bool projectWorldPointToScreen(
+    const bx::Vec3 &point,
+    int viewWidth,
+    int viewHeight,
+    const float *pViewProjectionMatrix,
+    ProjectedPoint &projectedPoint)
+{
+    const float x = point.x;
+    const float y = point.y;
+    const float z = point.z;
+    const float clipX =
+        x * pViewProjectionMatrix[0] + y * pViewProjectionMatrix[4] + z * pViewProjectionMatrix[8]
+        + pViewProjectionMatrix[12];
+    const float clipY =
+        x * pViewProjectionMatrix[1] + y * pViewProjectionMatrix[5] + z * pViewProjectionMatrix[9]
+        + pViewProjectionMatrix[13];
+    const float clipW =
+        x * pViewProjectionMatrix[3] + y * pViewProjectionMatrix[7] + z * pViewProjectionMatrix[11]
+        + pViewProjectionMatrix[15];
+
+    if (clipW <= InspectRayEpsilon)
+    {
+        return false;
+    }
+
+    const float inverseW = 1.0f / clipW;
+    const float ndcX = clipX * inverseW;
+    const float ndcY = clipY * inverseW;
+
+    projectedPoint.x = ((ndcX + 1.0f) * 0.5f) * static_cast<float>(viewWidth);
+    projectedPoint.y = ((1.0f - ndcY) * 0.5f) * static_cast<float>(viewHeight);
+    return true;
+}
+
+
+bool hasOutdoorCameraMotionInput(const GameplayInputFrame &input)
+{
+    return input.relativeMouseX != 0.0f
+        || input.relativeMouseY != 0.0f
+        || input.action(KeyboardAction::Forward).held
+        || input.action(KeyboardAction::Backward).held
+        || input.action(KeyboardAction::Left).held
+        || input.action(KeyboardAction::Right).held
+        || input.action(KeyboardAction::Jump).held
+        || input.action(KeyboardAction::LookUp).held
+        || input.action(KeyboardAction::LookDown).held
+        || input.action(KeyboardAction::FlyUp).held
+        || input.action(KeyboardAction::FlyDown).held;
+}
+
+std::vector<uint8_t> readBinaryFile(const std::filesystem::path &path)
+{
+    std::ifstream inputStream(path, std::ios::binary);
+
+    if (!inputStream)
+    {
+        return {};
+    }
+
+    return std::vector<uint8_t>(std::istreambuf_iterator<char>(inputStream), std::istreambuf_iterator<char>());
+}
+
+}
+
+bgfx::VertexLayout OutdoorGameView::TerrainVertex::ms_layout;
+bgfx::VertexLayout OutdoorGameView::TexturedTerrainVertex::ms_layout;
+bgfx::VertexLayout OutdoorGameView::LitBillboardVertex::ms_layout;
+bgfx::VertexLayout OutdoorGameView::LightmappedBModelVertex::ms_layout;
+
+OutdoorGameView::OutdoorGameView(GameSession &gameSession, SpriteAtlasCache &spriteAtlasCache,
+    NativeSpriteTextureCache &nativeSpriteCache)
+    : m_isInitialized(false)
+    , m_spriteAtlasCache(spriteAtlasCache)
+    , m_nativeSpriteCache(nativeSpriteCache)
+    , m_isRenderable(false)
+    , m_pOutdoorMapData(nullptr)
+    , m_vertexBufferHandle(BGFX_INVALID_HANDLE)
+    , m_indexBufferHandle(BGFX_INVALID_HANDLE)
+    , m_skyVertexBufferHandle(BGFX_INVALID_HANDLE)
+    , m_bloodSplatVertexBufferHandle(BGFX_INVALID_HANDLE)
+    , m_filledTerrainVertexBufferHandle(BGFX_INVALID_HANDLE)
+    , m_bmodelVertexBufferHandle(BGFX_INVALID_HANDLE)
+    , m_bmodelCollisionVertexBufferHandle(BGFX_INVALID_HANDLE)
+    , m_entityMarkerVertexBufferHandle(BGFX_INVALID_HANDLE)
+    , m_spawnMarkerVertexBufferHandle(BGFX_INVALID_HANDLE)
+    , m_programHandle(BGFX_INVALID_HANDLE)
+    , m_screenTintProgramHandle(BGFX_INVALID_HANDLE)
+    , m_texturedTerrainProgramHandle(BGFX_INVALID_HANDLE)
+    , m_spellAreaPreviewProgramHandle(BGFX_INVALID_HANDLE)
+    , m_outdoorLitBillboardProgramHandle(BGFX_INVALID_HANDLE)
+    , m_outdoorTexturedFogProgramHandle(BGFX_INVALID_HANDLE)
+    , m_outdoorBModelLightmapProgramHandle(BGFX_INVALID_HANDLE)
+    , m_bloodSplatTextureHandle(BGFX_INVALID_HANDLE)
+    , m_bmodelWhiteLightmapTextureHandle(BGFX_INVALID_HANDLE)
+    , m_terrainTextureSamplerHandle(BGFX_INVALID_HANDLE)
+    , m_bmodelLightmapSamplerHandle(BGFX_INVALID_HANDLE)
+    , m_outdoorBillboardAmbientUniformHandle(BGFX_INVALID_HANDLE)
+    , m_outdoorBillboardOverrideColorUniformHandle(BGFX_INVALID_HANDLE)
+    , m_outdoorBillboardOutlineParamsUniformHandle(BGFX_INVALID_HANDLE)
+    , m_outdoorFxLightPositionsUniformHandle(BGFX_INVALID_HANDLE)
+    , m_outdoorFxLightColorsUniformHandle(BGFX_INVALID_HANDLE)
+    , m_outdoorFxLightParamsUniformHandle(BGFX_INVALID_HANDLE)
+    , m_outdoorSunlightUniformHandle(BGFX_INVALID_HANDLE)
+    , m_outdoorFogColorUniformHandle(BGFX_INVALID_HANDLE)
+    , m_outdoorFogDensitiesUniformHandle(BGFX_INVALID_HANDLE)
+    , m_outdoorFogDistancesUniformHandle(BGFX_INVALID_HANDLE)
+    , m_outdoorCameraPositionUniformHandle(BGFX_INVALID_HANDLE)
+    , m_secretPulseParamsUniformHandle(BGFX_INVALID_HANDLE)
+    , m_spellAreaPreviewParams0UniformHandle(BGFX_INVALID_HANDLE)
+    , m_spellAreaPreviewParams1UniformHandle(BGFX_INVALID_HANDLE)
+    , m_spellAreaPreviewColorAUniformHandle(BGFX_INVALID_HANDLE)
+    , m_spellAreaPreviewColorBUniformHandle(BGFX_INVALID_HANDLE)
+    , m_elapsedTime(0.0f)
+    , m_framesPerSecond(0.0f)
+    , m_bmodelLineVertexCount(0)
+    , m_bloodSplatVertexCount(0)
+    , m_bmodelCollisionVertexCount(0)
+    , m_bmodelFaceCount(0)
+    , m_entityMarkerVertexCount(0)
+    , m_spawnMarkerVertexCount(0)
+    , m_cameraTargetX(-80000.0f)
+    , m_cameraTargetY(0.0f)
+    , m_cameraTargetZ(28000.0f)
+    , m_cameraYawRadians(0.0f)
+    , m_cameraPitchRadians(0.30f)
+    , m_cameraEyeHeight(176.0f)
+    , m_cameraDistance(0.0f)
+    , m_cameraOrthoScale(1.2f)
+    , m_showFilledTerrain(true)
+    , m_showTerrainWireframe(false)
+    , m_showBModels(true)
+    , m_showBModelWireframe(false)
+    , m_showBModelCollisionFaces(false)
+    , m_showActorCollisionBoxes(false)
+    , m_showDecorationBillboards(true)
+    , m_showActors(true)
+    , m_showSpriteObjects(true)
+    , m_showEntities(false)
+    , m_showSpawns(false)
+    , m_showGameplayHud(true)
+    , m_renderGameplayUiThisFrame(false)
+    , m_isRotatingCamera(false)
+    , m_lastMouseX(0.0f)
+    , m_lastMouseY(0.0f)
+    , m_gameSession(gameSession)
+    , m_lastAdventurersInnPortraitClickTicks(0)
+    , m_lastAdventurersInnPortraitClickedIndex(std::nullopt)
+    , m_spellAreaPreviewCache({})
+    , m_cachedHoverInspectHitValid(false)
+    , m_lastHoverInspectUpdateNanoseconds(0)
+    , m_cachedHoverInspectHit({})
+    , m_pOutdoorPartyRuntime(nullptr)
+    , m_pAssetFileSystem(nullptr)
+    , m_pOutdoorSceneRuntime(nullptr)
+    , m_pOutdoorWorldRuntime(nullptr)
+    , m_pGameAudioSystem(nullptr)
+    , m_nextPendingSpriteFrameWarmupIndex(0)
+    , m_renderableStartTickNanoseconds(0)
+    , m_renderFrameIndex(0)
+    , m_lastFootstepX(0.0f)
+    , m_lastFootstepY(0.0f)
+    , m_hasLastFootstepPosition(false)
+    , m_walkingMotionHoldSeconds(0.0f)
+    , m_activeWalkingSoundId(std::nullopt)
+{
+    GameplayOverlayInteractionState &overlayInteractionState = m_gameSession.overlayInteractionState();
+    overlayInteractionState.eventDialogPartySelectLatches.fill(false);
+    overlayInteractionState.houseBankDigitLatches.fill(false);
+}
+
+OutdoorGameView::~OutdoorGameView()
+{
+    shutdown();
+}
+
+void OutdoorGameView::setCameraEyeHeight(float eyeHeight)
+{
+    m_cameraEyeHeight = eyeHeight;
+}
+
+bool OutdoorGameView::initialize(
+    const Engine::AssetFileSystem &assetFileSystem,
+    const MapStatsEntry &map,
+    const OutdoorMapData &outdoorMapData,
+    const std::optional<std::vector<uint8_t>> &outdoorLandMask,
+    const std::optional<std::vector<uint32_t>> &outdoorTileColors,
+    const std::optional<OutdoorTerrainTiles> &outdoorTerrainTiles,
+    const std::optional<OutdoorBModelTextureSet> &outdoorBModelTextureSet,
+    const std::optional<OutdoorDecorationCollisionSet> &outdoorDecorationCollisionSet,
+    const std::optional<OutdoorActorCollisionSet> &outdoorActorCollisionSet,
+    const std::optional<OutdoorSpriteObjectCollisionSet> &outdoorSpriteObjectCollisionSet,
+    const std::optional<DecorationBillboardSet> &outdoorDecorationBillboardSet,
+    const std::optional<ActorPreviewBillboardSet> &outdoorActorPreviewBillboardSet,
+    const std::optional<SpriteObjectBillboardSet> &outdoorSpriteObjectBillboardSet,
+        const std::optional<MapDeltaData> &outdoorMapDeltaData,
+        GameAudioSystem *pGameAudioSystem,
+        OutdoorSceneRuntime &sceneRuntime,
+        const GameSettings &settings)
+{
+    shutdown();
+    OutdoorViewLoadTimingLogger timingLogger(map.fileName);
+    const GameDataRepository &data = m_gameSession.data();
+
+    m_isInitialized = true;
+    m_pAssetFileSystem = &assetFileSystem;
+    std::string effectLibraryError;
+    if (!m_worldFxSystem.loadNamedEffectLibrary(
+            assetFileSystem,
+            "engine/effects/library.yml",
+            "engine/effects/resource_bindings.yml",
+            effectLibraryError))
+    {
+        std::cerr << "Failed to load shared effect library: " << effectLibraryError << '\n';
+        return false;
+    }
+    if (!m_worldFxSystem.loadProjectileModels(assetFileSystem, effectLibraryError)
+        || !m_worldFxSystem.loadItemModels(assetFileSystem, effectLibraryError))
+    {
+        std::cerr << "Failed to load projectile or item models: " << effectLibraryError << '\n';
+        return false;
+    }
+    m_map = map;
+    m_pOutdoorMapData = &outdoorMapData;
+    m_distantSea = outdoorLandMask
+        ? measureOutdoorDistantSea(outdoorMapData, *outdoorLandMask,
+            outdoorTerrainTiles ? &*outdoorTerrainTiles : nullptr)
+        : OutdoorDistantSea{};
+    m_outdoorDecorationBillboardSet = outdoorDecorationBillboardSet;
+    m_outdoorActorPreviewBillboardSet = outdoorActorPreviewBillboardSet;
+    m_outdoorSpriteObjectBillboardSet = outdoorSpriteObjectBillboardSet;
+    m_outdoorMapDeltaData = outdoorMapDeltaData;
+    m_pGameAudioSystem = pGameAudioSystem;
+    m_worldFxSystem.bindNamedEffectAudio(m_pGameAudioSystem);
+    // A resting item model lies on the drawn ground: on the terrain, the materials terrain's smoothed surface rather
+    // than the native triangles the item rests on; elsewhere the BModel floor (a building, a table). A footprint point
+    // whose ground is far from the item's height (past a ledge) does not support it.
+    m_worldFxSystem.setItemGroundSampler(
+        [this](float x, float y, float z) -> std::optional<float>
+        {
+            constexpr float SupportBand = 24.0f;
+            if (m_pOutdoorMapData == nullptr || m_pOutdoorWorldRuntime == nullptr)
+            {
+                return std::nullopt;
+            }
+            const float nativeTerrain = sampleOutdoorTerrainHeight(*m_pOutdoorMapData, x, y);
+            float ground = m_pOutdoorWorldRuntime->sampleSupportFloorHeight(x, y, z, SupportBand, 0.0f);
+            if (std::abs(ground - nativeTerrain) <= 0.01f)
+            {
+                ground = m_terrainMaterials.ready() ? m_terrainMaterials.renderedHeight(x, y)
+                    : outdoorNativeTerrainHeight(*m_pOutdoorMapData, outdoorWorldToGridXFloat(x),
+                        outdoorWorldToGridYFloat(y));
+            }
+            if (std::abs(ground - z) > SupportBand)
+            {
+                return std::nullopt;
+            }
+            return ground;
+        });
+    m_pOutdoorSceneRuntime = &sceneRuntime;
+    m_pOutdoorPartyRuntime = &sceneRuntime.partyRuntime();
+    m_pOutdoorWorldRuntime = &sceneRuntime.worldRuntime();
+    m_pOutdoorWorldRuntime->bindInteractionView(this);
+    m_pOutdoorWorldRuntime->bindGlobalEventProgram(&sceneRuntime.globalEventProgram());
+    m_pOutdoorWorldRuntime->setWorldFxSystem(&m_worldFxSystem);
+    m_gameSettings = settings;
+    refreshViewDistanceCache();
+    m_gameSession.gameplayScreenRuntime().bindSceneAdapter(this);
+    m_gameSession.gameplayScreenRuntime().bindAudioSystem(m_pGameAudioSystem);
+    m_gameSession.gameplayScreenRuntime().bindSettings(&m_gameSettings);
+    GameplayScreenRuntime &screenRuntime = m_gameSession.gameplayScreenRuntime();
+    EventRuntimeState *pMutableEventRuntimeState = m_pOutdoorWorldRuntime->eventRuntimeState();
+    timingLogger.stage("view state assigned");
+
+    const EventRuntimeState *pEventRuntimeState = pMutableEventRuntimeState;
+    screenRuntime.resetOverlayInteractionState(
+        pEventRuntimeState != nullptr && !pEventRuntimeState->hiredNpcFollowers.empty());
+    const GameplayScreenRuntime::SharedUiBootstrapResult sharedUiBootstrap =
+        screenRuntime.initializeSharedUiRuntime(
+            GameplayScreenRuntime::SharedUiBootstrapConfig{
+                .pAssetFileSystem = &assetFileSystem,
+                .portraitMemberCount =
+                    m_pOutdoorPartyRuntime != nullptr
+                        ? m_pOutdoorPartyRuntime->party().members().size()
+                        : 0,
+                .initializeHouseVideoPlayer = true,
+            });
+    timingLogger.stage("shared ui runtime initialized");
+
+    OutdoorInteractionController::rebuildInteractiveDecorationBindings(*this);
+    timingLogger.stage("interactive decoration bindings rebuilt");
+    timingLogger.stage("interactive decoration runtime seeded");
+    OutdoorInteractionController::buildDecorationBillboardSpatialIndex(*this);
+    timingLogger.stage("decoration billboard spatial index built");
+
+    const int centerGridX = OutdoorMapData::TerrainWidth / 2;
+    const int centerGridY = OutdoorMapData::TerrainHeight / 2;
+    const size_t centerSampleIndex =
+        static_cast<size_t>(centerGridY * OutdoorMapData::TerrainWidth + centerGridX);
+    const float centerHeightWorld =
+        static_cast<float>(outdoorMapData.heightMap[centerSampleIndex] * OutdoorMapData::TerrainHeightScale);
+    float initialX = 0.0f;
+    float initialY = 0.0f;
+    float initialFootZ = centerHeightWorld;
+    std::optional<float> initialYawRadians;
+
+    if (const std::optional<OutdoorPartyStartPoint> startPoint =
+            resolveOutdoorPartyStartPoint(assetFileSystem, outdoorMapData, PartyStartDecorationName))
+    {
+        initialX = startPoint->x;
+        initialY = startPoint->y;
+        initialFootZ = startPoint->z;
+        initialYawRadians = startPoint->yawRadians;
+    }
+
+    m_cameraTargetX = initialX;
+    m_cameraTargetY = initialY;
+    if (m_pOutdoorPartyRuntime)
+    {
+        m_pOutdoorPartyRuntime->initialize(m_cameraTargetX, m_cameraTargetY, initialFootZ, false);
+        m_cameraTargetZ = m_pOutdoorPartyRuntime->movementState().footZ + m_cameraEyeHeight;
+        m_lastFootstepX = m_pOutdoorPartyRuntime->movementState().x;
+        m_lastFootstepY = m_pOutdoorPartyRuntime->movementState().y;
+        m_hasLastFootstepPosition = true;
+    }
+    else
+    {
+        m_cameraTargetZ = initialFootZ + m_cameraEyeHeight;
+    }
+    m_cameraYawRadians = initialYawRadians.value_or(-Pi * 0.5f);
+    m_cameraPitchRadians = -0.15f;
+    m_cameraDistance = 0.0f;
+    m_cameraOrthoScale = 1.2f;
+    timingLogger.stage("party start resolved");
+
+    if (bgfx::getRendererType() == bgfx::RendererType::Noop)
+    {
+        timingLogger.stage("noop renderer view initialized");
+        return true;
+    }
+
+    timingLogger.beginStage("world render resources initialization");
+    if (!OutdoorRenderer::initializeWorldRenderResources(
+            *this,
+            outdoorMapData,
+            outdoorTileColors,
+            outdoorTerrainTiles,
+            outdoorBModelTextureSet))
+    {
+        return false;
+    }
+    timingLogger.stage("world render resources initialized");
+
+    timingLogger.beginStage("billboard resources initialization");
+    OutdoorBillboardRenderer::initializeBillboardResources(*this);
+    timingLogger.stage("billboard resources initialized");
+
+    if (m_gameSettings.waitForLevelSprites)
+    {
+        timingLogger.beginStage("level sprite resource preload");
+        OutdoorBillboardRenderer::preloadPendingLevelSpriteTextures(*this);
+        timingLogger.stage("level sprite resources preloaded");
+    }
+
+    ParticleRenderer::initializeResources(m_worldFxRenderResources);
+    timingLogger.stage("particle resources initialized");
+
+    if (!sharedUiBootstrap.layoutsLoaded)
+    {
+        std::cerr << "OutdoorGameView failed to load HUD layout data from Data/ui/gameplay/*.yml\n";
+    }
+
+    m_terrainTextureSamplerHandle = bgfx::createUniform("s_texColor", bgfx::UniformType::Sampler);
+    m_hudTintUniformHandle = bgfx::createUniform("u_menuTint", bgfx::UniformType::Vec4);
+    if (m_gameSettings.lightmaps && m_pOutdoorMapData->lightingData)
+    {
+        m_bmodelLightmapSamplerHandle = bgfx::createUniform("s_texLightmap", bgfx::UniformType::Sampler);
+        if (m_pOutdoorMapData->lightingData->hasBakedSources())
+        {
+            m_bakedSkySamplerHandle = bgfx::createUniform("s_texBakedSky", bgfx::UniformType::Sampler);
+            m_bakedSunDirectSamplerHandle = bgfx::createUniform("s_texBakedSunDirect", bgfx::UniformType::Sampler);
+            m_bakedLightingUniformHandle = bgfx::createUniform("u_bakedLighting", bgfx::UniformType::Vec4, 2);
+            m_bakedTerrainBoundsUniformHandle = bgfx::createUniform("u_bakedTerrainBounds", bgfx::UniformType::Vec4);
+            m_surfaceNormalSamplerHandle = bgfx::createUniform("s_surfaceNormal", bgfx::UniformType::Sampler);
+            m_surfaceDetailSamplerHandle = bgfx::createUniform("s_surfaceDetail", bgfx::UniformType::Sampler);
+            m_surfaceMaterialUniformHandle = bgfx::createUniform("u_surfaceMaterial", bgfx::UniformType::Vec4);
+            m_surfaceSunUniformHandle = bgfx::createUniform("u_surfaceSun", bgfx::UniformType::Vec4);
+            if (!m_surfaceReflectionBinding.create())
+            {
+                std::cerr << "OutdoorGameView: failed to create the surface reflection binding\n";
+            }
+        }
+    }
+    m_outdoorBillboardAmbientUniformHandle = bgfx::createUniform("u_billboardAmbient", bgfx::UniformType::Vec4);
+    m_outdoorBillboardOverrideColorUniformHandle =
+        bgfx::createUniform("u_billboardOverrideColor", bgfx::UniformType::Vec4);
+    m_outdoorBillboardOutlineParamsUniformHandle =
+        bgfx::createUniform("u_billboardOutlineParams", bgfx::UniformType::Vec4);
+    m_outdoorFxLightPositionsUniformHandle = bgfx::createUniform("u_fxLightPositions", bgfx::UniformType::Vec4, 8);
+    m_outdoorFxLightColorsUniformHandle = bgfx::createUniform("u_fxLightColors", bgfx::UniformType::Vec4, 8);
+    m_outdoorFxLightParamsUniformHandle = bgfx::createUniform("u_fxLightParams", bgfx::UniformType::Vec4);
+    if (!m_lightGridBinding.create())
+    {
+        std::cerr << "OutdoorGameView: failed to create the light grid binding\n";
+    }
+    m_outdoorSunlightUniformHandle = bgfx::createUniform("u_outdoorSunlight", bgfx::UniformType::Vec4);
+    m_worldClipPlaneUniformHandle = bgfx::createUniform("u_worldClipPlane", bgfx::UniformType::Vec4);
+    m_waterSurfaceControlUniformHandle = bgfx::createUniform("u_waterSurfaceControl", bgfx::UniformType::Vec4);
+    m_wetnessUniformHandle = bgfx::createUniform("u_wetness", bgfx::UniformType::Vec4);
+    m_outdoorFogColorUniformHandle = bgfx::createUniform("u_fogColor", bgfx::UniformType::Vec4);
+    m_skyFogUniformHandle = bgfx::createUniform("u_skyFog", bgfx::UniformType::Vec4, SkyFogUniformVectors);
+    m_outdoorFogDensitiesUniformHandle = bgfx::createUniform("u_fogDensities", bgfx::UniformType::Vec4);
+    m_outdoorFogDistancesUniformHandle = bgfx::createUniform("u_fogDistances", bgfx::UniformType::Vec4);
+    m_outdoorCameraPositionUniformHandle = bgfx::createUniform("u_cameraPosition", bgfx::UniformType::Vec4);
+    m_secretPulseParamsUniformHandle = bgfx::createUniform("u_secretPulseParams", bgfx::UniformType::Vec4);
+    m_bmodelTextureLayerUniformHandle = bgfx::createUniform("u_bmodelTextureLayer", bgfx::UniformType::Vec4);
+    m_spellAreaPreviewParams0UniformHandle = bgfx::createUniform("u_spellAreaParams0", bgfx::UniformType::Vec4);
+    m_spellAreaPreviewParams1UniformHandle = bgfx::createUniform("u_spellAreaParams1", bgfx::UniformType::Vec4);
+    m_spellAreaPreviewColorAUniformHandle = bgfx::createUniform("u_spellAreaColorA", bgfx::UniformType::Vec4);
+    m_spellAreaPreviewColorBUniformHandle = bgfx::createUniform("u_spellAreaColorB", bgfx::UniformType::Vec4);
+    timingLogger.stage("outdoor uniforms created");
+
+    constexpr bool requireTerrainResources = true;
+
+    if ((requireTerrainResources && !bgfx::isValid(m_vertexBufferHandle))
+        || (requireTerrainResources && !bgfx::isValid(m_indexBufferHandle))
+        || !bgfx::isValid(m_programHandle)
+        || !bgfx::isValid(m_screenTintProgramHandle)
+        || !bgfx::isValid(m_outdoorLitBillboardProgramHandle)
+        || !m_worldFxRenderResources.isReady()
+        || !bgfx::isValid(m_outdoorTexturedFogProgramHandle)
+        || (m_gameSettings.lightmaps && m_pOutdoorMapData->lightingData
+            && !bgfx::isValid(m_outdoorBModelLightmapProgramHandle))
+        || !bgfx::isValid(m_outdoorBillboardAmbientUniformHandle)
+        || !bgfx::isValid(m_outdoorBillboardOverrideColorUniformHandle)
+        || !bgfx::isValid(m_outdoorBillboardOutlineParamsUniformHandle)
+        || !bgfx::isValid(m_outdoorFxLightPositionsUniformHandle)
+        || !bgfx::isValid(m_outdoorFxLightColorsUniformHandle)
+        || !bgfx::isValid(m_outdoorFxLightParamsUniformHandle)
+        || !bgfx::isValid(m_outdoorSunlightUniformHandle)
+        || !bgfx::isValid(m_worldClipPlaneUniformHandle)
+        || !bgfx::isValid(m_waterSurfaceControlUniformHandle)
+        || !bgfx::isValid(m_wetnessUniformHandle)
+        || !bgfx::isValid(m_outdoorFogColorUniformHandle)
+        || !bgfx::isValid(m_outdoorFogDensitiesUniformHandle)
+        || !bgfx::isValid(m_outdoorFogDistancesUniformHandle)
+        || !bgfx::isValid(m_outdoorCameraPositionUniformHandle)
+        || !bgfx::isValid(m_secretPulseParamsUniformHandle)
+        || !bgfx::isValid(m_bmodelTextureLayerUniformHandle)
+        || (m_gameSettings.lightmaps && m_pOutdoorMapData->lightingData
+            && !bgfx::isValid(m_bmodelLightmapSamplerHandle))
+        || (m_gameSettings.lightmaps && m_pOutdoorMapData->lightingData
+            && m_pOutdoorMapData->lightingData->hasBakedSources()
+            && (!bgfx::isValid(m_bakedSkySamplerHandle) || !bgfx::isValid(m_bakedSunDirectSamplerHandle)
+                || !bgfx::isValid(m_bakedLightingUniformHandle)
+                || !bgfx::isValid(m_bakedTerrainBoundsUniformHandle))))
+    {
+        std::cerr << "OutdoorGameView failed to create bgfx resources.\n";
+        shutdown();
+        return false;
+    }
+
+    // The decoration models load with the map, before anything asks whether a model draws a decoration: the touch
+    // controls' context action target is picked from the first gameplay frame, before its world passes.
+    OutdoorRenderer::ensureDecorationModels(*this);
+    m_isRenderable = true;
+    m_renderableStartTickNanoseconds = SDL_GetTicksNS();
+    m_renderFrameIndex = 0;
+    timingLogger.stage("outdoor view initialize complete");
+    return true;
+}
+
+void OutdoorGameView::render(int width, int height, const GameplayInputFrame &input, float deltaSeconds,
+    bool preparingResources)
+{
+    m_renderGameplayUiThisFrame = false;
+
+    if (!m_isInitialized)
+    {
+        return;
+    }
+
+    GameplayScreenState &gameplayScreenState = m_gameSession.gameplayScreenState();
+    GameplayMouseLookState &gameplayMouseLookState = gameplayScreenState.gameplayMouseLookState();
+
+    GameplayHudRenderBackend hudRenderBackend = {};
+    hudRenderBackend.texturedProgramHandle = m_texturedTerrainProgramHandle;
+    hudRenderBackend.tintedProgramHandle = m_hudTintedProgramHandle;
+    hudRenderBackend.tintUniformHandle = m_hudTintUniformHandle;
+    hudRenderBackend.textureSamplerHandle = m_terrainTextureSamplerHandle;
+    hudRenderBackend.viewId = HudViewId;
+    m_gameSession.gameplayScreenRuntime().bindHudRenderBackend(hudRenderBackend);
+
+    if (deltaSeconds > 0.0f)
+    {
+        m_elapsedTime += deltaSeconds;
+    }
+
+    GameplayScreenRuntime &overlayContext = m_gameSession.gameplayScreenRuntime();
+    m_talkCamera.update(overlayContext, m_cameraTargetX, m_cameraTargetY, m_cameraTargetZ, CameraVerticalFovDegrees,
+        deltaSeconds, m_cameraYawRadians, m_cameraPitchRadians);
+
+    if (!preparingResources && m_pendingSavePreviewCapture.active
+        && m_pendingSavePreviewCapture.screenshotRequested
+        && m_gameSession.canSaveGameToPath())
+    {
+        const std::optional<Engine::BgfxContext::ScreenshotCapture> screenshot =
+            Engine::BgfxContext::consumeScreenshot(m_pendingSavePreviewCapture.requestId);
+
+        if (screenshot)
+        {
+            const std::vector<uint8_t> previewPixels =
+                SavePreviewImage::cropAndScaleBgraPreview(
+                    screenshot->bgraPixels,
+                    static_cast<int>(screenshot->width),
+                    static_cast<int>(screenshot->height),
+                    410,
+                    253);
+            const std::vector<uint8_t> previewBmp = SavePreviewImage::encodeBgraToBmp(410, 253, previewPixels);
+            std::string error;
+
+            if (!previewBmp.empty()
+                && m_gameSession.saveGameToPath(
+                    m_pendingSavePreviewCapture.savePath,
+                    m_pendingSavePreviewCapture.saveName,
+                    previewBmp,
+                    error))
+            {
+                GameplayScreenRuntime &screenRuntime = m_gameSession.gameplayScreenRuntime();
+                screenRuntime.refreshSaveGameOverlaySlots();
+
+                if (m_pendingSavePreviewCapture.closeUiOnSuccess)
+                {
+                    screenRuntime.saveGameScreenState() = {};
+                    m_gameSession.gameplayScreenRuntime().closeMenuOverlay();
+                }
+            }
+
+            m_pendingSavePreviewCapture = {};
+        }
+        else if (SDL_GetTicks() - m_pendingSavePreviewCapture.startedTicks > 3000u)
+        {
+            m_pendingSavePreviewCapture = {};
+        }
+    }
+
+    GameplayUiController::UtilitySpellOverlayState &utilityOverlay = overlayContext.utilitySpellOverlay();
+
+    if (!preparingResources && utilityOverlay.lloydSetPreviewCapturePending
+        && utilityOverlay.lloydSetPreviewScreenshotRequested)
+    {
+        const std::optional<Engine::BgfxContext::ScreenshotCapture> screenshot =
+            Engine::BgfxContext::consumeScreenshot(utilityOverlay.lloydSetPreviewRequestId);
+        const bool timedOut = SDL_GetTicks() - utilityOverlay.lloydSetPreviewStartedTicks > 3000u;
+
+        if (screenshot || timedOut)
+        {
+            PartySpellCastRequest request = utilityOverlay.lloydSetPreviewRequest;
+            const std::string spellName = utilityOverlay.lloydSetPreviewSpellName;
+
+            if (screenshot)
+            {
+                request.utilityPreviewPixelsBgra =
+                    SavePreviewImage::cropAndScaleBgraPreview(
+                        screenshot->bgraPixels,
+                        static_cast<int>(screenshot->width),
+                        static_cast<int>(screenshot->height),
+                        92,
+                        68);
+
+                if (!request.utilityPreviewPixelsBgra.empty())
+                {
+                    request.utilityPreviewWidth = 92;
+                    request.utilityPreviewHeight = 68;
+                }
+            }
+
+            utilityOverlay.lloydSetPreviewCapturePending = false;
+            utilityOverlay.lloydSetPreviewScreenshotRequested = false;
+            utilityOverlay.lloydSetPreviewStartedTicks = 0;
+            utilityOverlay.lloydSetPreviewRequestId.clear();
+            utilityOverlay.lloydSetPreviewSpellName.clear();
+            utilityOverlay.lloydSetPreviewRequest = {};
+            overlayContext.tryCastSpellRequest(request, spellName);
+        }
+    }
+
+    const uint16_t viewWidth = static_cast<uint16_t>(std::max(width, 1));
+    const uint16_t viewHeight = static_cast<uint16_t>(std::max(height, 1));
+    m_lastRenderWidth = width;
+    m_lastRenderHeight = height;
+    const OutdoorWorldRuntime::AtmosphereState *pAtmosphereState =
+        m_pOutdoorWorldRuntime != nullptr ? &m_pOutdoorWorldRuntime->atmosphereState() : nullptr;
+    const uint32_t clearColorAbgr = pAtmosphereState != nullptr ? pAtmosphereState->clearColorAbgr : 0x000000ffu;
+    float farClipDistance = m_viewDistanceCache.farClipDistance;
+    if (m_pOutdoorMapData != nullptr
+        && m_pOutdoorMapData->locationType == OutdoorLocationType::Enclosed
+        && pAtmosphereState != nullptr
+        && pAtmosphereState->fogStrongDistance > 0)
+    {
+        farClipDistance = std::min(farClipDistance, static_cast<float>(pAtmosphereState->fogStrongDistance));
+    }
+    const bool captureSavePreviewThisFrame =
+        !preparingResources && m_pendingSavePreviewCapture.active && !m_pendingSavePreviewCapture.screenshotRequested;
+    const bool captureLloydsBeaconPreviewThisFrame =
+        !preparingResources && !captureSavePreviewThisFrame
+        && utilityOverlay.lloydSetPreviewCapturePending
+        && !utilityOverlay.lloydSetPreviewScreenshotRequested;
+    // Save previews capture the presented gameplay frame. Hiding the HUD here
+    // exposes a HUD-less frame after every travel autosave and quick save.
+    m_renderGameplayUiThisFrame = !captureLloydsBeaconPreviewThisFrame;
+
+    bgfx::setViewRect(SkyViewId, 0, 0, viewWidth, viewHeight);
+    // bgfx clears with 0xRRGGBBAA; the atmosphere keeps 0xAABBGGRR. The clear is the visible background wherever no
+    // sky is drawn (underwater: the flat fog colour).
+    const uint32_t clearColorRgba = ((clearColorAbgr & 0xffu) << 24) | (((clearColorAbgr >> 8) & 0xffu) << 16)
+        | (((clearColorAbgr >> 16) & 0xffu) << 8) | (clearColorAbgr >> 24);
+    bgfx::setViewClear(SkyViewId, BGFX_CLEAR_COLOR | BGFX_CLEAR_DEPTH, clearColorRgba, 1.0f, 0);
+    bgfx::setViewRect(MainViewId, 0, 0, viewWidth, viewHeight);
+    bgfx::setViewClear(MainViewId, BGFX_CLEAR_DEPTH, 0, 1.0f, 0);
+    bgfx::setViewMode(MainViewId, bgfx::ViewMode::Sequential);
+
+    if (!m_isRenderable)
+    {
+        if (captureLloydsBeaconPreviewThisFrame)
+        {
+            PartySpellCastRequest request = utilityOverlay.lloydSetPreviewRequest;
+            const std::string spellName = utilityOverlay.lloydSetPreviewSpellName;
+            utilityOverlay.lloydSetPreviewCapturePending = false;
+            utilityOverlay.lloydSetPreviewScreenshotRequested = false;
+            utilityOverlay.lloydSetPreviewStartedTicks = 0;
+            utilityOverlay.lloydSetPreviewRequestId.clear();
+            utilityOverlay.lloydSetPreviewSpellName.clear();
+            utilityOverlay.lloydSetPreviewRequest = {};
+            overlayContext.tryCastSpellRequest(request, spellName);
+        }
+
+        m_renderGameplayUiThisFrame = false;
+        bgfx::touch(SkyViewId);
+        bgfx::touch(MainViewId);
+        bgfx::dbgTextClear();
+        bgfx::dbgTextPrintf(0, 1, 0x0f, "bgfx noop renderer active");
+        return;
+    }
+
+    const GameplayUiController::SaveGameScreenState &saveGameScreen = overlayContext.saveGameScreenState();
+    const GameplayUiController::LoadGameScreenState &loadGameScreen = overlayContext.loadGameScreenState();
+    const uint64_t frameIndex = ++m_renderFrameIndex;
+    const bool mapLoadFrameTimingEnabled =
+        mapLoadTimingEnabled()
+        && m_renderableStartTickNanoseconds != 0
+        && SDL_GetTicksNS() - m_renderableStartTickNanoseconds <= OutdoorFrameTimingWindowNanoseconds;
+    const bool performanceFrameTimingEnabled = m_gameSettings.performanceTrace;
+    const bool frameTimingEnabled = mapLoadFrameTimingEnabled || performanceFrameTimingEnabled;
+    const uint64_t frameStartTickNanoseconds = frameTimingEnabled ? SDL_GetTicksNS() : 0;
+    uint64_t stageStartTickNanoseconds = frameStartTickNanoseconds;
+    uint64_t overlayStageNanoseconds = 0;
+    uint64_t spriteWarmupStageNanoseconds = 0;
+    uint64_t matrixStageNanoseconds = 0;
+    uint64_t fxStageNanoseconds = 0;
+    uint64_t worldRenderStageNanoseconds = 0;
+    uint64_t audioStageNanoseconds = 0;
+    if (performanceFrameTimingEnabled)
+    {
+        m_performanceTraceLogNanosecondsThisFrame = 0;
+    }
+    const auto captureFrameTimingStage =
+        [&](uint64_t &stageNanoseconds)
+        {
+            if (!frameTimingEnabled)
+            {
+                return;
+            }
+
+            const uint64_t nowNanoseconds = SDL_GetTicksNS();
+            stageNanoseconds += nowNanoseconds - stageStartTickNanoseconds;
+            stageStartTickNanoseconds = nowNanoseconds;
+        };
+
+    if (!preparingResources)
+    {
+        m_gameSession.gameplayScreenRuntime().updateHouseDialoguePresentation(deltaSeconds);
+        updateItemInspectOverlayState(width, height, input);
+        updateActorInspectOverlayState(width, height, input);
+    }
+    captureFrameTimingStage(overlayStageNanoseconds);
+
+    const bool worldCaptureRequired = captureSavePreviewThisFrame || captureLloydsBeaconPreviewThisFrame;
+
+    if (!preparingResources && !worldCaptureRequired
+        && gameplayHudScreenFullyOccludesWorld(
+            overlayContext.currentHudScreenState(),
+            overlayContext.activeEventDialog()))
+    {
+        bgfx::touch(SkyViewId);
+        bgfx::touch(MainViewId);
+        updateFootstepAudio(deltaSeconds);
+        consumePendingWorldAudioEvents();
+        updateCombatFeedback(deltaSeconds);
+        return;
+    }
+
+    const bool cameraMotionInput = hasOutdoorCameraMotionInput(input);
+    const size_t pendingSpriteWarmupsBefore =
+        m_nextPendingSpriteFrameWarmupIndex < m_pendingSpriteFrameWarmups.size()
+            ? m_pendingSpriteFrameWarmups.size() - m_nextPendingSpriteFrameWarmupIndex
+            : 0;
+    const bool processSpriteWarmupsThisFrame = !cameraMotionInput;
+
+    if (preparingResources)
+    {
+        OutdoorBillboardRenderer::preloadPendingLevelSpriteTextures(*this);
+    }
+    else if (processSpriteWarmupsThisFrame)
+    {
+        OutdoorBillboardRenderer::processPendingSpriteFrameWarmups(*this, 1);
+    }
+
+    const size_t pendingSpriteWarmupsAfter =
+        m_nextPendingSpriteFrameWarmupIndex < m_pendingSpriteFrameWarmups.size()
+            ? m_pendingSpriteFrameWarmups.size() - m_nextPendingSpriteFrameWarmupIndex
+            : 0;
+    captureFrameTimingStage(spriteWarmupStageNanoseconds);
+
+    const float wireframeAspectRatio = static_cast<float>(viewWidth) / static_cast<float>(viewHeight);
+
+    float wireframeViewMatrix[16] = {};
+    float wireframeProjectionMatrix[16] = {};
+
+    const float cameraYawRadians = effectiveCameraYawRadians();
+    const float cameraPitchRadians = effectiveCameraPitchRadians();
+    const float cosPitch = std::cos(cameraPitchRadians);
+    const float sinPitch = std::sin(cameraPitchRadians);
+    const float cosYaw = std::cos(cameraYawRadians);
+    const float sinYaw = std::sin(cameraYawRadians);
+    const bx::Vec3 wireframeEye = {
+        m_cameraTargetX,
+        m_cameraTargetY,
+        m_cameraTargetZ
+    };
+    const bx::Vec3 wireframeAt = {
+        m_cameraTargetX + cosYaw * cosPitch,
+        m_cameraTargetY + sinYaw * cosPitch,
+        m_cameraTargetZ + sinPitch
+    };
+    const bx::Vec3 wireframeUp = {0.0f, 0.0f, 1.0f};
+    bx::mtxLookAt(
+        wireframeViewMatrix,
+        wireframeEye,
+        wireframeAt,
+        wireframeUp,
+        bx::Handedness::Right);
+    bx::mtxProj(
+        wireframeProjectionMatrix,
+        CameraVerticalFovDegrees,
+        wireframeAspectRatio,
+        OutdoorCameraNearClip,
+        farClipDistance,
+        bgfx::getCaps()->homogeneousDepth,
+        bx::Handedness::Right
+    );
+
+    const bx::Vec3 cameraForward = vecNormalize(vecSubtract(wireframeAt, wireframeEye));
+    const bx::Vec3 cameraRight = vecNormalize(bx::cross(cameraForward, wireframeUp));
+    const bx::Vec3 cameraUp = vecNormalize(bx::cross(cameraRight, cameraForward));
+
+    bgfx::setViewTransform(SkyViewId, wireframeViewMatrix, wireframeProjectionMatrix);
+    bgfx::touch(SkyViewId);
+    bgfx::setViewTransform(MainViewId, wireframeViewMatrix, wireframeProjectionMatrix);
+    bgfx::touch(MainViewId);
+    captureFrameTimingStage(matrixStageNanoseconds);
+
+    const bool rightMouseInspectPauseActive = input.rightMouseButton.held;
+    const bool worldFxPaused = gameplayMouseLookState.cursorModeActive || rightMouseInspectPauseActive;
+    m_worldFxSystem.waterRipples().setEnabled(
+        m_gameSettings.waterMovementRipples && m_waterRenderer.isReady());
+    m_worldFxSystem.setShadowsEnabled(m_gameSettings.shadows);
+    m_worldFxSystem.updateParticles(deltaSeconds, worldFxPaused);
+
+    if (!gameplayMouseLookState.cursorModeActive)
+    {
+        const bool refreshSpatialFx = m_outdoorSpatialFxRuntime.beginFrame(*this, deltaSeconds);
+        m_worldFxSystem.syncProjectileFx(
+            m_gameSession,
+            rightMouseInspectPauseActive ? 0.0f : deltaSeconds,
+            refreshSpatialFx);
+        m_outdoorSpatialFxRuntime.syncSpatialFx(*this, refreshSpatialFx);
+    }
+    captureFrameTimingStage(fxStageNanoseconds);
+
+    if (preparingResources && m_pAssetFileSystem != nullptr)
+    {
+        m_modelRenderer.preload(m_worldFxSystem.models());
+        m_effectRenderer.preload(m_worldFxSystem.namedEffects(), m_worldFxSystem.namedEffectResources(),
+            *m_pAssetFileSystem, m_worldFxSystem.projectileEffectSpriteResources());
+    }
+
+    OutdoorRenderer::renderWorldPasses(
+        *this,
+        viewWidth,
+        viewHeight,
+        wireframeAspectRatio,
+        farClipDistance,
+        pAtmosphereState,
+        wireframeEye,
+        cameraForward,
+        cameraRight,
+        cameraUp,
+        wireframeViewMatrix,
+        wireframeProjectionMatrix);
+    captureFrameTimingStage(worldRenderStageNanoseconds);
+
+    if (captureSavePreviewThisFrame)
+    {
+        bgfx::requestScreenShot(BGFX_INVALID_HANDLE, m_pendingSavePreviewCapture.requestId.c_str());
+        m_pendingSavePreviewCapture.screenshotRequested = true;
+    }
+    else if (captureLloydsBeaconPreviewThisFrame)
+    {
+        bgfx::requestScreenShot(BGFX_INVALID_HANDLE, utilityOverlay.lloydSetPreviewRequestId.c_str());
+        utilityOverlay.lloydSetPreviewScreenshotRequested = true;
+    }
+
+    if (!preparingResources)
+    {
+        updateFootstepAudio(deltaSeconds);
+        consumePendingWorldAudioEvents();
+        updateCombatFeedback(deltaSeconds);
+    }
+
+    float gameplayViewProjectionMatrix[16] = {};
+    bx::mtxMul(gameplayViewProjectionMatrix, wireframeViewMatrix, wireframeProjectionMatrix);
+    renderCombatFeedbackOverlay(width, height, gameplayViewProjectionMatrix);
+    captureFrameTimingStage(audioStageNanoseconds);
+
+    if (frameTimingEnabled)
+    {
+        const uint64_t frameTotalNanoseconds = SDL_GetTicksNS() - frameStartTickNanoseconds;
+
+        if (mapLoadFrameTimingEnabled && frameTotalNanoseconds >= OutdoorFrameTimingLogThresholdNanoseconds)
+        {
+            const std::string mapFileName = m_map.has_value() ? m_map->fileName : std::string();
+            std::cerr
+                << "[MapLoadTiming] map=" << mapFileName
+                << " scope=outdoor_frame"
+                << " frame=" << frameIndex
+                << " since_renderable_ms="
+                << millisecondsFromNanoseconds(frameStartTickNanoseconds - m_renderableStartTickNanoseconds)
+                << " total_ms=" << millisecondsFromNanoseconds(frameTotalNanoseconds)
+                << " overlay_ms=" << millisecondsFromNanoseconds(overlayStageNanoseconds)
+                << " sprite_warmup_ms=" << millisecondsFromNanoseconds(spriteWarmupStageNanoseconds)
+                << " matrix_ms=" << millisecondsFromNanoseconds(matrixStageNanoseconds)
+                << " fx_ms=" << millisecondsFromNanoseconds(fxStageNanoseconds)
+                << " world_render_ms=" << millisecondsFromNanoseconds(worldRenderStageNanoseconds)
+                << " audio_ms=" << millisecondsFromNanoseconds(audioStageNanoseconds)
+                << " camera_input=" << (cameraMotionInput ? 1 : 0)
+                << " sprite_warmup_processed=" << (processSpriteWarmupsThisFrame ? 1 : 0)
+                << " pending_warmups_before=" << pendingSpriteWarmupsBefore
+                << " pending_warmups_after=" << pendingSpriteWarmupsAfter
+                << '\n';
+        }
+
+        const uint64_t performanceHitchThresholdNanoseconds = static_cast<uint64_t>(
+            std::max(0.1f, m_gameSettings.hitchThresholdMilliseconds) * 1000000.0f);
+
+        if (performanceFrameTimingEnabled && frameTotalNanoseconds >= performanceHitchThresholdNanoseconds)
+        {
+            const std::string mapFileName = m_map.has_value() ? m_map->fileName : std::string();
+            std::cout
+                << "[OutdoorRenderHitchDetail]"
+                << " map=\"" << mapFileName << "\""
+                << " frame=" << frameIndex
+                << " total_us=" << frameTotalNanoseconds / 1000ULL
+                << " overlay_us=" << overlayStageNanoseconds / 1000ULL
+                << " sprite_warmup_us=" << spriteWarmupStageNanoseconds / 1000ULL
+                << " matrix_us=" << matrixStageNanoseconds / 1000ULL
+                << " fx_us=" << fxStageNanoseconds / 1000ULL
+                << " world_render_us=" << worldRenderStageNanoseconds / 1000ULL
+                << " audio_us=" << audioStageNanoseconds / 1000ULL
+                << " performance_trace_log_us="
+                << m_performanceTraceLogNanosecondsThisFrame / 1000ULL
+                << " camera_input=" << (cameraMotionInput ? 1 : 0)
+                << " sprite_warmup_processed=" << (processSpriteWarmupsThisFrame ? 1 : 0)
+                << " pending_warmups_before=" << pendingSpriteWarmupsBefore
+                << " pending_warmups_after=" << pendingSpriteWarmupsAfter
+                << '\n';
+        }
+    }
+
+}
+
+bool OutdoorGameView::executeEventHooks(EventRuntimeHookKind kind)
+{
+    return m_pOutdoorSceneRuntime != nullptr
+        && m_pOutdoorSceneRuntime->executeEventHooks(kind);
+}
+
+bool OutdoorGameView::ensureMonsterVisualResources(int16_t monsterId)
+{
+    if (m_pAssetFileSystem == nullptr || monsterId <= 0)
+    {
+        return false;
+    }
+
+    if (!m_outdoorActorPreviewBillboardSet)
+    {
+        m_outdoorActorPreviewBillboardSet.emplace();
+    }
+
+    const MonsterTable &monsterTable = m_gameSession.data().monsterTable();
+    return ensureMonsterSpriteFramesLoaded(
+        *m_pAssetFileSystem,
+        monsterTable,
+        monsterId,
+        m_outdoorActorPreviewBillboardSet->spriteFrameTable,
+        m_outdoorActorPreviewBillboardSet->actorModels.get());
+}
+
+const SpriteFrameTable *OutdoorGameView::actorSpriteFrameTable() const
+{
+    return m_outdoorActorPreviewBillboardSet
+        ? &m_outdoorActorPreviewBillboardSet->spriteFrameTable
+        : nullptr;
+}
+
+WorldFxSystem &OutdoorGameView::worldFxSystem()
+{
+    return m_worldFxSystem;
+}
+
+const EffectRenderer::Diagnostics &OutdoorGameView::effectRenderDiagnostics() const
+{
+    return m_effectRenderer.diagnostics();
+}
+
+GameplayWorldUiRenderState OutdoorGameView::gameplayUiRenderState(int width, int height) const
+{
+    return GameplayWorldUiRenderState{
+        .canRenderHudOverlays = m_renderGameplayUiThisFrame && width > 0 && height > 0,
+        .renderGameplayHud = m_renderGameplayUiThisFrame && m_showGameplayHud,
+    };
+}
+
+void OutdoorGameView::shutdown()
+{
+    m_effectRenderer.shutdown(Engine::BgfxContext::isBgfxInitialized());
+    m_shieldDomeRenderer.shutdown(Engine::BgfxContext::isBgfxInitialized());
+    m_modelRenderer.shutdown(Engine::BgfxContext::isBgfxInitialized());
+    if (Engine::BgfxContext::isBgfxInitialized())
+    {
+        m_lightGrid.destroy();
+    }
+    m_lightGridBinding.destroy(Engine::BgfxContext::isBgfxInitialized());
+    syncGameplayMouseLookMode(SDL_GetMouseFocus(), false);
+    GameplayScreenRuntime &screenRuntime = m_gameSession.gameplayScreenRuntime();
+    GameplayScreenState &gameplayScreenState = m_gameSession.gameplayScreenState();
+    PendingSpellCastState &pendingSpellCast = gameplayScreenState.pendingSpellTarget();
+    QuickSpellState &quickSpellState = gameplayScreenState.quickSpellState();
+    AttackActionState &attackActionState = gameplayScreenState.attackActionState();
+    WorldInteractionInputState &worldInteractionInputState = gameplayScreenState.worldInteractionInputState();
+    GameplayMouseLookState &gameplayMouseLookState = gameplayScreenState.gameplayMouseLookState();
+    screenRuntime.clearHudRenderBackend();
+    screenRuntime.clearSceneAdapter(this);
+    screenRuntime.bindAudioSystem(nullptr);
+
+    if (!m_isInitialized)
+    {
+        return;
+    }
+
+    auto resetRuntimeState = [this]()
+    {
+        m_isRenderable = false;
+        m_isInitialized = false;
+        m_map.reset();
+        m_pOutdoorMapData = nullptr;
+        m_pOutdoorPartyRuntime = nullptr;
+        m_pAssetFileSystem = nullptr;
+        m_pOutdoorSceneRuntime = nullptr;
+        if (m_pOutdoorWorldRuntime != nullptr)
+        {
+            m_pOutdoorWorldRuntime->bindInteractionView(nullptr);
+            m_pOutdoorWorldRuntime->bindGlobalEventProgram(nullptr);
+            m_pOutdoorWorldRuntime->setWorldFxSystem(nullptr);
+        }
+        m_pOutdoorWorldRuntime = nullptr;
+        resetLightingStats(m_outdoorLightingStats);
+        m_outdoorSpriteRenderDiagnostics = {};
+        m_lastOutdoorLightingStatsLogElapsedTime = 0.0f;
+    };
+
+    screenRuntime.clearUiControllerRuntimeState();
+    screenRuntime.shutdownHouseVideoPlayer();
+    m_terrainDecorations.shutdown(Engine::BgfxContext::isBgfxInitialized());
+    m_terrainBushes.clear();
+    m_terrainDecorationBatches.clear();
+    m_terrainDecorationRefreshTick = 0;
+    m_terrainDecorationLightCount = 0;
+    m_terrainDecorationTileNames.reset();
+    m_terrainDecorationsInitializationAttempted = false;
+    m_terrainMaterials.shutdown(Engine::BgfxContext::isBgfxInitialized());
+    m_terrainMaterialTiles.reset();
+    m_terrainMaterialsInitializationAttempted = false;
+    m_terrainLiquidGeometry.clear();
+    m_decorationModels.clear();
+    m_decorationModelProbes.clear();
+    m_decorationModelProbeSampled.clear();
+    m_pDecorationModelProbeSource = nullptr;
+    m_decorationModelsInitializationAttempted = false;
+    m_outdoorSpatialFxRuntime.reset();
+    m_outdoorLightingRuntime.reset();
+    m_bakedProbeCache.clear();
+    m_outdoorBModelLightingRuntime.reset();
+    m_cachedOutdoorDynamicLightEmitters.clear();
+    m_pCachedOutdoorLightingData = nullptr;
+    m_outdoorLightingRuntimesInitialized = false;
+    m_worldFxSystem.reset();
+
+    if (!Engine::BgfxContext::isBgfxInitialized())
+    {
+        m_waterRenderer.shutdown();
+        m_worldClipPlaneUniformHandle = BGFX_INVALID_HANDLE;
+        m_waterSurfaceControlUniformHandle = BGFX_INVALID_HANDLE;
+        m_wetnessUniformHandle = BGFX_INVALID_HANDLE;
+        m_programHandle = BGFX_INVALID_HANDLE;
+        m_screenTintProgramHandle = BGFX_INVALID_HANDLE;
+        m_texturedTerrainProgramHandle = BGFX_INVALID_HANDLE;
+        m_hudTintedProgramHandle = BGFX_INVALID_HANDLE;
+        m_spellAreaPreviewProgramHandle = BGFX_INVALID_HANDLE;
+        m_outdoorLitBillboardProgramHandle = BGFX_INVALID_HANDLE;
+        m_worldFxRenderResources.reset();
+        m_outdoorTexturedFogProgramHandle = BGFX_INVALID_HANDLE;
+        m_outdoorTexturedFogShadowProgramHandle = BGFX_INVALID_HANDLE;
+        m_outdoorBModelShadowProgramHandle = BGFX_INVALID_HANDLE;
+        m_outdoorBModelLightmapProgramHandle = BGFX_INVALID_HANDLE;
+        m_outdoorBModelLightmapArrayProgramHandle = BGFX_INVALID_HANDLE;
+        m_outdoorBModelShadowArrayProgramHandle = BGFX_INVALID_HANDLE;
+        m_outdoorBModelMaterialProgramHandle = BGFX_INVALID_HANDLE;
+        m_outdoorBModelMaterialArrayProgramHandle = BGFX_INVALID_HANDLE;
+        m_outdoorBModelMaterialShadowProgramHandle = BGFX_INVALID_HANDLE;
+        m_outdoorBModelMaterialShadowArrayProgramHandle = BGFX_INVALID_HANDLE;
+        m_surfaceNormalSamplerHandle = BGFX_INVALID_HANDLE;
+        m_surfaceDetailSamplerHandle = BGFX_INVALID_HANDLE;
+        m_surfaceMaterialUniformHandle = BGFX_INVALID_HANDLE;
+        m_surfaceSunUniformHandle = BGFX_INVALID_HANDLE;
+        m_surfaceReflectionBinding.destroy(false);
+        m_outdoorTexturedFogArrayProgramHandle = BGFX_INVALID_HANDLE;
+        m_outdoorTexturedFogShadowArrayProgramHandle = BGFX_INVALID_HANDLE;
+        m_terrainShadowProgramHandle = BGFX_INVALID_HANDLE;
+        m_bmodelTextureLayerUniformHandle = BGFX_INVALID_HANDLE;
+        m_bmodelTextureArrays.clear();
+        m_bloodSplatVertexBufferHandle = BGFX_INVALID_HANDLE;
+        m_bloodSplatTextureHandle = BGFX_INVALID_HANDLE;
+        m_bmodelLightmapTextureHandles.clear();
+        m_directSunTextureHandles.clear();
+        m_bmodelWhiteLightmapTextureHandle = BGFX_INVALID_HANDLE;
+        m_terrainTextureSamplerHandle = BGFX_INVALID_HANDLE;
+        m_hudTintUniformHandle = BGFX_INVALID_HANDLE;
+        m_bmodelLightmapSamplerHandle = BGFX_INVALID_HANDLE;
+        m_bakedSkySamplerHandle = BGFX_INVALID_HANDLE;
+        m_bakedSunDirectSamplerHandle = BGFX_INVALID_HANDLE;
+        m_bakedLightingUniformHandle = BGFX_INVALID_HANDLE;
+        m_bakedTerrainBoundsUniformHandle = BGFX_INVALID_HANDLE;
+        m_outdoorBillboardAmbientUniformHandle = BGFX_INVALID_HANDLE;
+        m_outdoorBillboardOverrideColorUniformHandle = BGFX_INVALID_HANDLE;
+        m_outdoorBillboardOutlineParamsUniformHandle = BGFX_INVALID_HANDLE;
+        m_outdoorFxLightPositionsUniformHandle = BGFX_INVALID_HANDLE;
+        m_outdoorFxLightColorsUniformHandle = BGFX_INVALID_HANDLE;
+        m_outdoorFxLightParamsUniformHandle = BGFX_INVALID_HANDLE;
+        m_outdoorSunlightUniformHandle = BGFX_INVALID_HANDLE;
+        m_bloodSplatVertexCount = 0;
+        m_bloodSplatVertexBufferRevision = std::numeric_limits<uint64_t>::max();
+        m_outdoorFogColorUniformHandle = BGFX_INVALID_HANDLE;
+        m_skyFogUniformHandle = BGFX_INVALID_HANDLE;
+        m_outdoorFogDensitiesUniformHandle = BGFX_INVALID_HANDLE;
+        m_outdoorFogDistancesUniformHandle = BGFX_INVALID_HANDLE;
+        m_outdoorCameraPositionUniformHandle = BGFX_INVALID_HANDLE;
+        m_secretPulseParamsUniformHandle = BGFX_INVALID_HANDLE;
+        m_spellAreaPreviewParams0UniformHandle = BGFX_INVALID_HANDLE;
+        m_spellAreaPreviewParams1UniformHandle = BGFX_INVALID_HANDLE;
+        m_spellAreaPreviewColorAUniformHandle = BGFX_INVALID_HANDLE;
+        m_spellAreaPreviewColorBUniformHandle = BGFX_INVALID_HANDLE;
+        m_indexBufferHandle = BGFX_INVALID_HANDLE;
+        m_filledTerrainVertexBufferHandle = BGFX_INVALID_HANDLE;
+        m_skyVertexBufferHandle = BGFX_INVALID_HANDLE;
+        m_bmodelVertexBufferHandle = BGFX_INVALID_HANDLE;
+        m_bmodelCollisionVertexBufferHandle = BGFX_INVALID_HANDLE;
+        m_entityMarkerVertexBufferHandle = BGFX_INVALID_HANDLE;
+        m_spawnMarkerVertexBufferHandle = BGFX_INVALID_HANDLE;
+        m_vertexBufferHandle = BGFX_INVALID_HANDLE;
+
+        m_bmodelTextureAnimations.clear();
+        m_resolvedBModelDrawGroups.clear();
+        m_resolvedBModelDrawGroupRevision = std::numeric_limits<uint64_t>::max();
+        m_bmodelWorldRenderChunks.clear();
+        m_bmodelWorldRenderRevision = std::numeric_limits<uint64_t>::max();
+
+        m_texturedBModelBatches.clear();
+        OutdoorBillboardRenderer::invalidateRenderAssets(*this);
+        OutdoorRenderer::invalidateSkyResources(*this);
+        screenRuntime.releaseHudGpuResources(false);
+        m_interactiveDecorationBindings.clear();
+        screenRuntime.clearSharedUiRuntime();
+        resetRuntimeState();
+        return;
+    }
+
+    m_waterRenderer.shutdown();
+    for (bgfx::UniformHandle *pUniform :
+        {&m_worldClipPlaneUniformHandle, &m_waterSurfaceControlUniformHandle, &m_wetnessUniformHandle})
+    {
+        if (bgfx::isValid(*pUniform))
+        {
+            bgfx::destroy(*pUniform);
+            *pUniform = BGFX_INVALID_HANDLE;
+        }
+    }
+
+    if (bgfx::isValid(m_screenTintProgramHandle))
+    {
+        bgfx::destroy(m_screenTintProgramHandle);
+        m_screenTintProgramHandle = BGFX_INVALID_HANDLE;
+    }
+
+    if (bgfx::isValid(m_programHandle))
+    {
+        bgfx::destroy(m_programHandle);
+        m_programHandle = BGFX_INVALID_HANDLE;
+    }
+
+    if (bgfx::isValid(m_texturedTerrainProgramHandle))
+    {
+        bgfx::destroy(m_texturedTerrainProgramHandle);
+        m_texturedTerrainProgramHandle = BGFX_INVALID_HANDLE;
+    }
+
+    if (bgfx::isValid(m_hudTintedProgramHandle))
+    {
+        bgfx::destroy(m_hudTintedProgramHandle);
+        m_hudTintedProgramHandle = BGFX_INVALID_HANDLE;
+    }
+
+    if (bgfx::isValid(m_spellAreaPreviewProgramHandle))
+    {
+        bgfx::destroy(m_spellAreaPreviewProgramHandle);
+        m_spellAreaPreviewProgramHandle = BGFX_INVALID_HANDLE;
+    }
+
+    if (bgfx::isValid(m_outdoorLitBillboardProgramHandle))
+    {
+        bgfx::destroy(m_outdoorLitBillboardProgramHandle);
+        m_outdoorLitBillboardProgramHandle = BGFX_INVALID_HANDLE;
+    }
+
+    ParticleRenderer::shutdownResources(m_worldFxRenderResources);
+
+    for (bgfx::ProgramHandle *pProgram : {&m_outdoorTexturedFogShadowProgramHandle, &m_outdoorBModelShadowProgramHandle,
+        &m_outdoorBModelLightmapArrayProgramHandle, &m_outdoorBModelShadowArrayProgramHandle,
+        &m_outdoorTexturedFogArrayProgramHandle, &m_outdoorTexturedFogShadowArrayProgramHandle,
+        &m_terrainShadowProgramHandle, &m_outdoorBModelMaterialProgramHandle, &m_outdoorBModelMaterialArrayProgramHandle,
+        &m_outdoorBModelMaterialShadowProgramHandle, &m_outdoorBModelMaterialShadowArrayProgramHandle})
+    {
+        if (bgfx::isValid(*pProgram))
+        {
+            bgfx::destroy(*pProgram);
+            *pProgram = BGFX_INVALID_HANDLE;
+        }
+    }
+    if (bgfx::isValid(m_outdoorTexturedFogProgramHandle))
+    {
+        bgfx::destroy(m_outdoorTexturedFogProgramHandle);
+        m_outdoorTexturedFogProgramHandle = BGFX_INVALID_HANDLE;
+    }
+
+    if (bgfx::isValid(m_outdoorBModelLightmapProgramHandle))
+    {
+        bgfx::destroy(m_outdoorBModelLightmapProgramHandle);
+        m_outdoorBModelLightmapProgramHandle = BGFX_INVALID_HANDLE;
+    }
+
+    OutdoorRenderer::destroySunReceiverResources(*this);
+    for (bgfx::TextureHandle textureHandle : m_bmodelLightmapTextureHandles)
+    {
+        if (bgfx::isValid(textureHandle))
+        {
+            bgfx::destroy(textureHandle);
+        }
+    }
+    m_bmodelLightmapTextureHandles.clear();
+
+    if (bgfx::isValid(m_bmodelWhiteLightmapTextureHandle))
+    {
+        bgfx::destroy(m_bmodelWhiteLightmapTextureHandle);
+        m_bmodelWhiteLightmapTextureHandle = BGFX_INVALID_HANDLE;
+    }
+
+    if (bgfx::isValid(m_bloodSplatTextureHandle))
+    {
+        bgfx::destroy(m_bloodSplatTextureHandle);
+        m_bloodSplatTextureHandle = BGFX_INVALID_HANDLE;
+    }
+
+    if (bgfx::isValid(m_terrainTextureSamplerHandle))
+    {
+        bgfx::destroy(m_terrainTextureSamplerHandle);
+        m_terrainTextureSamplerHandle = BGFX_INVALID_HANDLE;
+    }
+
+    if (bgfx::isValid(m_hudTintUniformHandle))
+    {
+        bgfx::destroy(m_hudTintUniformHandle);
+        m_hudTintUniformHandle = BGFX_INVALID_HANDLE;
+    }
+
+    for (bgfx::UniformHandle *pHandle :
+        {&m_bakedSkySamplerHandle, &m_bakedSunDirectSamplerHandle,
+            &m_bakedLightingUniformHandle, &m_bakedTerrainBoundsUniformHandle, &m_surfaceNormalSamplerHandle,
+            &m_surfaceDetailSamplerHandle, &m_surfaceMaterialUniformHandle, &m_surfaceSunUniformHandle})
+    {
+        if (bgfx::isValid(*pHandle))
+        {
+            bgfx::destroy(*pHandle);
+            *pHandle = BGFX_INVALID_HANDLE;
+        }
+    }
+    m_surfaceReflectionBinding.destroy();
+
+    if (bgfx::isValid(m_bmodelLightmapSamplerHandle))
+    {
+        bgfx::destroy(m_bmodelLightmapSamplerHandle);
+        m_bmodelLightmapSamplerHandle = BGFX_INVALID_HANDLE;
+    }
+
+    if (bgfx::isValid(m_outdoorBillboardAmbientUniformHandle))
+    {
+        bgfx::destroy(m_outdoorBillboardAmbientUniformHandle);
+        m_outdoorBillboardAmbientUniformHandle = BGFX_INVALID_HANDLE;
+    }
+
+    if (bgfx::isValid(m_outdoorBillboardOverrideColorUniformHandle))
+    {
+        bgfx::destroy(m_outdoorBillboardOverrideColorUniformHandle);
+        m_outdoorBillboardOverrideColorUniformHandle = BGFX_INVALID_HANDLE;
+    }
+
+    if (bgfx::isValid(m_outdoorBillboardOutlineParamsUniformHandle))
+    {
+        bgfx::destroy(m_outdoorBillboardOutlineParamsUniformHandle);
+        m_outdoorBillboardOutlineParamsUniformHandle = BGFX_INVALID_HANDLE;
+    }
+
+    if (bgfx::isValid(m_outdoorFxLightPositionsUniformHandle))
+    {
+        bgfx::destroy(m_outdoorFxLightPositionsUniformHandle);
+        m_outdoorFxLightPositionsUniformHandle = BGFX_INVALID_HANDLE;
+    }
+
+    if (bgfx::isValid(m_outdoorFxLightColorsUniformHandle))
+    {
+        bgfx::destroy(m_outdoorFxLightColorsUniformHandle);
+        m_outdoorFxLightColorsUniformHandle = BGFX_INVALID_HANDLE;
+    }
+
+    if (bgfx::isValid(m_outdoorSunlightUniformHandle))
+    {
+        bgfx::destroy(m_outdoorSunlightUniformHandle);
+        m_outdoorSunlightUniformHandle = BGFX_INVALID_HANDLE;
+    }
+
+    if (bgfx::isValid(m_outdoorFxLightParamsUniformHandle))
+    {
+        bgfx::destroy(m_outdoorFxLightParamsUniformHandle);
+        m_outdoorFxLightParamsUniformHandle = BGFX_INVALID_HANDLE;
+    }
+
+    if (bgfx::isValid(m_outdoorFogColorUniformHandle))
+    {
+        bgfx::destroy(m_outdoorFogColorUniformHandle);
+        m_outdoorFogColorUniformHandle = BGFX_INVALID_HANDLE;
+    }
+
+    if (bgfx::isValid(m_skyFogUniformHandle))
+    {
+        bgfx::destroy(m_skyFogUniformHandle);
+        m_skyFogUniformHandle = BGFX_INVALID_HANDLE;
+    }
+
+    if (bgfx::isValid(m_outdoorFogDensitiesUniformHandle))
+    {
+        bgfx::destroy(m_outdoorFogDensitiesUniformHandle);
+        m_outdoorFogDensitiesUniformHandle = BGFX_INVALID_HANDLE;
+    }
+
+    if (bgfx::isValid(m_outdoorFogDistancesUniformHandle))
+    {
+        bgfx::destroy(m_outdoorFogDistancesUniformHandle);
+        m_outdoorFogDistancesUniformHandle = BGFX_INVALID_HANDLE;
+    }
+
+    if (bgfx::isValid(m_outdoorCameraPositionUniformHandle))
+    {
+        bgfx::destroy(m_outdoorCameraPositionUniformHandle);
+        m_outdoorCameraPositionUniformHandle = BGFX_INVALID_HANDLE;
+    }
+
+    if (bgfx::isValid(m_bmodelTextureLayerUniformHandle))
+    {
+        bgfx::destroy(m_bmodelTextureLayerUniformHandle);
+        m_bmodelTextureLayerUniformHandle = BGFX_INVALID_HANDLE;
+    }
+
+    if (bgfx::isValid(m_secretPulseParamsUniformHandle))
+    {
+        bgfx::destroy(m_secretPulseParamsUniformHandle);
+        m_secretPulseParamsUniformHandle = BGFX_INVALID_HANDLE;
+    }
+
+    if (bgfx::isValid(m_spellAreaPreviewParams0UniformHandle))
+    {
+        bgfx::destroy(m_spellAreaPreviewParams0UniformHandle);
+        m_spellAreaPreviewParams0UniformHandle = BGFX_INVALID_HANDLE;
+    }
+
+    if (bgfx::isValid(m_spellAreaPreviewParams1UniformHandle))
+    {
+        bgfx::destroy(m_spellAreaPreviewParams1UniformHandle);
+        m_spellAreaPreviewParams1UniformHandle = BGFX_INVALID_HANDLE;
+    }
+
+    if (bgfx::isValid(m_spellAreaPreviewColorAUniformHandle))
+    {
+        bgfx::destroy(m_spellAreaPreviewColorAUniformHandle);
+        m_spellAreaPreviewColorAUniformHandle = BGFX_INVALID_HANDLE;
+    }
+
+    if (bgfx::isValid(m_spellAreaPreviewColorBUniformHandle))
+    {
+        bgfx::destroy(m_spellAreaPreviewColorBUniformHandle);
+        m_spellAreaPreviewColorBUniformHandle = BGFX_INVALID_HANDLE;
+    }
+
+    if (bgfx::isValid(m_indexBufferHandle))
+    {
+        bgfx::destroy(m_indexBufferHandle);
+        m_indexBufferHandle = BGFX_INVALID_HANDLE;
+    }
+
+    if (bgfx::isValid(m_filledTerrainVertexBufferHandle))
+    {
+        bgfx::destroy(m_filledTerrainVertexBufferHandle);
+        m_filledTerrainVertexBufferHandle = BGFX_INVALID_HANDLE;
+    }
+
+    for (BModelTextureAnimationHandle &animation : m_bmodelTextureAnimations)
+    {
+        for (bgfx::TextureHandle textureHandle : animation.frameTextureHandles)
+        {
+            if (bgfx::isValid(textureHandle))
+            {
+                bgfx::destroy(textureHandle);
+            }
+        }
+
+        for (bgfx::TextureHandle textureHandle : {animation.materialNormal, animation.materialDetail})
+        {
+            if (bgfx::isValid(textureHandle))
+            {
+                bgfx::destroy(textureHandle);
+            }
+        }
+
+        animation.frameTextureHandles.clear();
+        animation.frameLengthTicks.clear();
+        animation.animationLengthTicks = 0;
+        animation.materialNormal = BGFX_INVALID_HANDLE;
+        animation.materialDetail = BGFX_INVALID_HANDLE;
+    }
+
+    for (const BModelTextureArray &array : m_bmodelTextureArrays)
+    {
+        for (bgfx::TextureHandle textureHandle : {array.handle, array.materialNormal, array.materialDetail})
+        {
+            if (bgfx::isValid(textureHandle))
+            {
+                bgfx::destroy(textureHandle);
+            }
+        }
+    }
+    m_bmodelTextureArrays.clear();
+    m_texturedBModelBatches.clear();
+    m_bmodelTextureAnimations.clear();
+    for (ResolvedBModelDrawGroup &group : m_resolvedBModelDrawGroups)
+    {
+        if (bgfx::isValid(group.vertexBufferHandle))
+        {
+            bgfx::destroy(group.vertexBufferHandle);
+            group.vertexBufferHandle = BGFX_INVALID_HANDLE;
+        }
+
+        group.vertexCount = 0;
+        group.animationIndex = static_cast<size_t>(-1);
+    }
+    m_resolvedBModelDrawGroups.clear();
+    m_resolvedBModelDrawGroupRevision = std::numeric_limits<uint64_t>::max();
+    for (BModelWorldRenderChunk &chunk : m_bmodelWorldRenderChunks)
+    {
+        for (BModelWorldRenderGroup &group : chunk.groups)
+        {
+            if (bgfx::isValid(group.vertexBufferHandle))
+            {
+                bgfx::destroy(group.vertexBufferHandle);
+                group.vertexBufferHandle = BGFX_INVALID_HANDLE;
+            }
+        }
+    }
+    m_bmodelWorldRenderChunks.clear();
+    m_bmodelWorldRenderRevision = std::numeric_limits<uint64_t>::max();
+    OutdoorBillboardRenderer::destroyRenderAssets(*this);
+    OutdoorRenderer::destroySkyResources(*this);
+
+    m_interactiveDecorationBindings.clear();
+    m_keyboardInteractionFaceCandidates.clear();
+    m_keyboardInteractionFaceCandidateRevision = std::numeric_limits<uint64_t>::max();
+
+    if (bgfx::isValid(m_skyVertexBufferHandle))
+    {
+        bgfx::destroy(m_skyVertexBufferHandle);
+        m_skyVertexBufferHandle = BGFX_INVALID_HANDLE;
+    }
+
+    if (bgfx::isValid(m_bloodSplatVertexBufferHandle))
+    {
+        bgfx::destroy(m_bloodSplatVertexBufferHandle);
+        m_bloodSplatVertexBufferHandle = BGFX_INVALID_HANDLE;
+    }
+
+    if (bgfx::isValid(m_bmodelVertexBufferHandle))
+    {
+        bgfx::destroy(m_bmodelVertexBufferHandle);
+        m_bmodelVertexBufferHandle = BGFX_INVALID_HANDLE;
+    }
+
+    if (bgfx::isValid(m_bmodelCollisionVertexBufferHandle))
+    {
+        bgfx::destroy(m_bmodelCollisionVertexBufferHandle);
+        m_bmodelCollisionVertexBufferHandle = BGFX_INVALID_HANDLE;
+    }
+
+    if (bgfx::isValid(m_entityMarkerVertexBufferHandle))
+    {
+        bgfx::destroy(m_entityMarkerVertexBufferHandle);
+        m_entityMarkerVertexBufferHandle = BGFX_INVALID_HANDLE;
+    }
+
+    if (bgfx::isValid(m_spawnMarkerVertexBufferHandle))
+    {
+        bgfx::destroy(m_spawnMarkerVertexBufferHandle);
+        m_spawnMarkerVertexBufferHandle = BGFX_INVALID_HANDLE;
+    }
+
+    if (bgfx::isValid(m_vertexBufferHandle))
+    {
+        bgfx::destroy(m_vertexBufferHandle);
+        m_vertexBufferHandle = BGFX_INVALID_HANDLE;
+    }
+
+    resetRuntimeState();
+    m_worldFxSystem.bindNamedEffectAudio(nullptr);
+    m_pGameAudioSystem = nullptr;
+    m_outdoorDecorationBillboardSet.reset();
+    m_outdoorActorPreviewBillboardSet.reset();
+    m_outdoorSpriteObjectBillboardSet.reset();
+    m_elapsedTime = 0.0f;
+    m_framesPerSecond = 0.0f;
+    m_lastOutdoorFxLightUniformUpdateElapsedTime = -1.0f;
+    resetLightingStats(m_outdoorLightingStats);
+    m_outdoorSpriteRenderDiagnostics = {};
+    m_lastOutdoorLightingStatsLogElapsedTime = 0.0f;
+    m_skyRenderer.state().snap();
+    m_enhancedSkyActive = false;
+    m_lastSkyStateElapsedTime = -1.0f;
+    m_weatherPresentation.snap();
+    m_lastWeatherElapsedTime = -1.0f;
+
+    if (m_pGameAudioSystem != nullptr)
+    {
+        m_weatherAudio.stop(*m_pGameAudioSystem);
+    }
+    else
+    {
+        m_weatherAudio.forget();
+    }
+    m_bmodelLineVertexCount = 0;
+    m_bmodelCollisionVertexCount = 0;
+    m_bmodelFaceCount = 0;
+    m_entityMarkerVertexCount = 0;
+    m_spawnMarkerVertexCount = 0;
+    worldInteractionInputState.keyboardUseLatch = false;
+    worldInteractionInputState.inspectKeyboardActivateLatch = false;
+    worldInteractionInputState.keyboardUseNextRepeatTickNanoseconds = 0;
+    worldInteractionInputState.inspectKeyboardActivateNextRepeatTickNanoseconds = 0;
+    screenRuntime.resetOverlayInteractionState();
+    worldInteractionInputState.inspectMouseActivateLatch = false;
+    attackActionState.clear();
+    pendingSpellCast.clickLatch = false;
+    GameplayUiController::CharacterScreenState &characterScreen = screenRuntime.characterScreen();
+    characterScreen.open = false;
+    characterScreen.dollJewelryOverlayOpen = false;
+    characterScreen.adventurersInnRosterOverlayOpen = false;
+    characterScreen.page = CharacterPage::Inventory;
+    characterScreen.source = CharacterScreenSource::Party;
+    characterScreen.sourceIndex = 0;
+    characterScreen.adventurersInnScrollOffset = 0;
+    m_lastAdventurersInnPortraitClickTicks = 0;
+    m_lastAdventurersInnPortraitClickedIndex = std::nullopt;
+    GameplayHeldItemController::clearHeldInventoryItem(heldInventoryItem());
+    screenRuntime.actorInspectOverlay() = {};
+    screenRuntime.spellInspectOverlay() = {};
+    screenRuntime.readableScrollOverlay() = {};
+    screenRuntime.lootSummaryOverlay() = {};
+    screenRuntime.spellbook() = {};
+    utilitySpellOverlay() = {};
+    pendingSpellCast = {};
+    quickSpellState.clear();
+    m_spellAreaPreviewCache = {};
+    worldInteractionInputState.heldInventoryDropLatch = false;
+    worldInteractionInputState.pressedWorldHit = {};
+    m_cachedHoverInspectHitValid = false;
+    m_lastHoverInspectUpdateNanoseconds = 0;
+    m_cachedHoverInspectHit = {};
+    m_cachedRightMouseInspectHitValid = false;
+    m_lastRightMouseInspectUpdateNanoseconds = 0;
+    m_cachedRightMouseInspectPickRequest = {};
+    m_cachedRightMouseInspectHit = {};
+    screenRuntime.eventDialogSelectionIndex() = 0;
+    screenRuntime.activeEventDialog() = {};
+    gameplayMouseLookState.clear();
+    m_isRotatingCamera = false;
+    m_lastMouseX = 0.0f;
+    m_lastMouseY = 0.0f;
+    m_lastFootstepX = 0.0f;
+    m_lastFootstepY = 0.0f;
+    m_hasLastFootstepPosition = false;
+    m_walkingMotionHoldSeconds = 0.0f;
+    m_activeWalkingSoundId = std::nullopt;
+    m_gameSession.gameplayScreenRuntime().resetHouseEntryAudio();
+}
+
+float OutdoorGameView::cameraYawRadians() const
+{
+    return m_cameraYawRadians;
+}
+
+float OutdoorGameView::cameraPitchRadians() const
+{
+    return m_cameraPitchRadians;
+}
+
+float OutdoorGameView::viewAspectRatio() const
+{
+    return m_lastRenderWidth > 0 && m_lastRenderHeight > 0
+        ? static_cast<float>(m_lastRenderWidth) / static_cast<float>(m_lastRenderHeight)
+        : 4.0f / 3.0f;
+}
+
+void OutdoorGameView::syncGameplayMouseLookMode(SDL_Window *pWindow, bool enabled)
+{
+    const bool windowFocused = windowHasInputFocus(pWindow);
+    const bool effectiveEnabled = enabled && windowFocused;
+
+    if (pWindow != nullptr && SDL_GetWindowRelativeMouseMode(pWindow) != effectiveEnabled)
+    {
+        if (effectiveEnabled)
+        {
+            syncCursorToGameplayCrosshair(pWindow);
+            m_lastGameplayMouseLookCursorSyncTicks = SDL_GetTicks();
+        }
+        else if (windowFocused)
+        {
+            int windowWidth = 0;
+            int windowHeight = 0;
+            SDL_GetWindowSizeInPixels(pWindow, &windowWidth, &windowHeight);
+
+            if (windowWidth > 0 && windowHeight > 0)
+            {
+                SDL_WarpMouseInWindow(
+                    pWindow,
+                    static_cast<float>(windowWidth) * 0.5f,
+                    static_cast<float>(windowHeight) * 0.5f);
+            }
+
+            m_lastGameplayMouseLookCursorSyncTicks = 0;
+        }
+
+        SDL_SetWindowRelativeMouseMode(pWindow, effectiveEnabled);
+        m_gameSession.requestRelativeMouseMotionReset();
+    }
+    else if (effectiveEnabled)
+    {
+        const uint64_t nowTicks = SDL_GetTicks();
+
+        if (m_lastGameplayMouseLookCursorSyncTicks == 0
+            || nowTicks < m_lastGameplayMouseLookCursorSyncTicks
+            || nowTicks - m_lastGameplayMouseLookCursorSyncTicks >= GameplayMouseLookCursorSyncIntervalTicks)
+        {
+            syncCursorToGameplayCrosshair(pWindow);
+            m_lastGameplayMouseLookCursorSyncTicks = nowTicks;
+        }
+    }
+    else
+    {
+        m_lastGameplayMouseLookCursorSyncTicks = 0;
+    }
+
+    if (effectiveEnabled)
+    {
+        SDL_HideCursor();
+    }
+    else
+    {
+        SDL_ShowCursor();
+    }
+}
+
+void OutdoorGameView::syncCursorToGameplayCrosshair(SDL_Window *pWindow)
+{
+    const GameplayScreenState::GameplayMouseLookState &mouseLookState =
+        m_gameSession.gameplayScreenState().gameplayMouseLookState();
+
+    if (!mouseLookState.mouseLookActive || mouseLookState.cursorModeActive)
+    {
+        return;
+    }
+
+    if (pWindow == nullptr)
+    {
+        pWindow = SDL_GetMouseFocus();
+
+        if (pWindow == nullptr)
+        {
+            pWindow = SDL_GetKeyboardFocus();
+        }
+    }
+
+    if (pWindow == nullptr)
+    {
+        return;
+    }
+
+    if (!windowHasInputFocus(pWindow))
+    {
+        return;
+    }
+
+    int windowWidth = 0;
+    int windowHeight = 0;
+    SDL_GetWindowSizeInPixels(pWindow, &windowWidth, &windowHeight);
+
+    if (windowWidth <= 0 || windowHeight <= 0)
+    {
+        const GameplayInputFrame *pInputFrame = m_gameSession.currentGameplayInputFrame();
+
+        if (pInputFrame == nullptr || pInputFrame->screenWidth <= 0 || pInputFrame->screenHeight <= 0)
+        {
+            return;
+        }
+
+        windowWidth = pInputFrame->screenWidth;
+        windowHeight = pInputFrame->screenHeight;
+    }
+
+    const float cursorX = static_cast<float>(windowWidth) * 0.5f;
+    const float cursorY = static_cast<float>(windowHeight) * 0.5f;
+    SDL_WarpMouseInWindow(pWindow, cursorX, cursorY);
+    m_lastMouseX = cursorX;
+    m_lastMouseY = cursorY;
+    m_gameSession.requestRelativeMouseMotionReset();
+}
+
+float OutdoorGameView::effectiveCameraYawRadians() const
+{
+    if (m_pOutdoorWorldRuntime == nullptr)
+    {
+        return m_cameraYawRadians;
+    }
+
+    return m_cameraYawRadians + m_pOutdoorWorldRuntime->armageddonCameraShakeYawRadians()
+        + m_pOutdoorWorldRuntime->actorHitFeedback().cameraKickYawRadians();
+}
+
+float OutdoorGameView::effectiveCameraPitchRadians() const
+{
+    if (m_pOutdoorWorldRuntime == nullptr)
+    {
+        return m_cameraPitchRadians;
+    }
+
+    return m_cameraPitchRadians + m_pOutdoorWorldRuntime->armageddonCameraShakePitchRadians()
+        + m_pOutdoorWorldRuntime->actorHitFeedback().cameraKickPitchRadians();
+}
+
+void OutdoorGameView::syncCameraToParty()
+{
+    if (m_pOutdoorPartyRuntime != nullptr)
+    {
+        const OutdoorMoveState &state = m_pOutdoorPartyRuntime->movementState();
+        m_cameraTargetX = state.x;
+        m_cameraTargetY = state.y;
+        m_cameraTargetZ = state.footZ + m_cameraEyeHeight;
+    }
+}
+
+bool OutdoorGameView::movePartyToStartPoint(std::string_view startPointName)
+{
+    if (m_pAssetFileSystem == nullptr || m_pOutdoorMapData == nullptr || m_pOutdoorPartyRuntime == nullptr)
+    {
+        return false;
+    }
+
+    const std::optional<OutdoorPartyStartPoint> startPoint =
+        resolveOutdoorPartyStartPoint(*m_pAssetFileSystem, *m_pOutdoorMapData, startPointName);
+
+    if (!startPoint)
+    {
+        return false;
+    }
+
+    m_pOutdoorPartyRuntime->teleportTo(startPoint->x, startPoint->y, startPoint->z);
+
+    if (startPoint->yawRadians)
+    {
+        setCameraAngles(*startPoint->yawRadians, m_cameraPitchRadians);
+    }
+
+    syncCameraToParty();
+    return true;
+}
+
+void OutdoorGameView::setCameraAngles(float yawRadians, float pitchRadians)
+{
+    m_cameraYawRadians = yawRadians;
+    m_cameraPitchRadians = pitchRadians;
+
+    if (m_cameraYawRadians > Pi)
+    {
+        m_cameraYawRadians -= Pi * 2.0f;
+    }
+    else if (m_cameraYawRadians < -Pi)
+    {
+        m_cameraYawRadians += Pi * 2.0f;
+    }
+
+    m_cameraPitchRadians = std::clamp(m_cameraPitchRadians, -1.55f, 1.55f);
+}
+
+void OutdoorGameView::reopenMenuScreen()
+{
+    m_gameSession.gameplayScreenRuntime().openMenuOverlay();
+}
+
+bool OutdoorGameView::hasActiveEventDialog() const
+{
+    return m_gameSession.gameplayScreenRuntime().activeEventDialog().isActive;
+}
+
+const GameplayWorldHit &OutdoorGameView::rightMouseInspectWorldHit(
+    int width,
+    int height,
+    const GameplayInputFrame &input)
+{
+    if (!input.rightMouseButton.held
+        || m_pOutdoorWorldRuntime == nullptr
+        || m_pOutdoorMapData == nullptr
+        || width <= 0
+        || height <= 0)
+    {
+        m_cachedRightMouseInspectHitValid = false;
+        m_lastRightMouseInspectUpdateNanoseconds = 0;
+        m_cachedRightMouseInspectPickRequest = {};
+        m_cachedRightMouseInspectHit = {};
+        return m_cachedRightMouseInspectHit;
+    }
+
+    const uint64_t nowNanoseconds = SDL_GetTicksNS();
+    const bool refresh =
+        !m_cachedRightMouseInspectHitValid
+        || m_lastRightMouseInspectUpdateNanoseconds == 0
+        || nowNanoseconds < m_lastRightMouseInspectUpdateNanoseconds
+        || nowNanoseconds - m_lastRightMouseInspectUpdateNanoseconds >= RightMouseInspectRefreshNanoseconds;
+
+    if (refresh)
+    {
+        m_cachedRightMouseInspectPickRequest =
+            m_pOutdoorWorldRuntime->buildWorldPickRequest(
+                GameplayWorldPickRequestInput{
+                    .screenX = input.pointerX,
+                    .screenY = input.pointerY,
+                    .screenWidth = width,
+                    .screenHeight = height,
+                    .includeRay = true,
+                });
+        m_cachedRightMouseInspectHit =
+            m_pOutdoorWorldRuntime->pickMouseInteractionTarget(m_cachedRightMouseInspectPickRequest);
+        m_cachedRightMouseInspectHitValid = true;
+        m_lastRightMouseInspectUpdateNanoseconds = nowNanoseconds;
+    }
+
+    return m_cachedRightMouseInspectHit;
+}
+
+void OutdoorGameView::updateItemInspectOverlayState(int width, int height, const GameplayInputFrame &input)
+{
+    GameplayScreenRuntime &overlayContext = m_gameSession.gameplayScreenRuntime();
+    GameplayUiController::ItemInspectOverlayState &itemInspectOverlay = overlayContext.itemInspectOverlay();
+
+    itemInspectOverlay = {};
+
+    if (!GameplayScreenController::canUpdateStandardHudItemInspectOverlayFromMouse(
+            overlayContext,
+            width,
+            height,
+            m_gameSession.gameplayScreenState().pendingSpellTarget().active))
+    {
+        return;
+    }
+
+    GameplayScreenController::updateStandardHudItemInspectOverlayFromMouse(
+        overlayContext,
+        input,
+        width,
+        height,
+        true,
+        true);
+
+    if (overlayContext.itemInspectOverlayReadOnly().active)
+    {
+        return;
+    }
+
+    const float mouseX = input.pointerX;
+    const float mouseY = input.pointerY;
+
+    if (!input.rightMouseButton.held)
+    {
+        return;
+    }
+
+    const bool hasActiveLootView =
+        m_pOutdoorWorldRuntime != nullptr
+        && (m_pOutdoorWorldRuntime->activeChestView() != nullptr
+            || m_pOutdoorWorldRuntime->activeCorpseView() != nullptr);
+
+    if (!GameplayScreenController::canUpdateStandardWorldInspectOverlayFromMouse(
+            overlayContext,
+            GameplayStandardWorldInspectOverlayConfig{
+                .width = width,
+                .height = height,
+                .worldReady = m_pOutdoorWorldRuntime != nullptr && m_pOutdoorMapData != nullptr,
+                .hasHeldItem = heldInventoryItem().active,
+                .hasPendingSpellTarget = m_gameSession.gameplayScreenState().pendingSpellTarget().active,
+                .hasActiveLootView = hasActiveLootView,
+            }))
+    {
+        return;
+    }
+
+    const GameplayWorldHit &worldHit = rightMouseInspectWorldHit(width, height, input);
+
+    if (worldHit.kind == GameplayWorldHitKind::WorldItem && worldHit.worldItem)
+    {
+        const OutdoorWorldRuntime::WorldItemState *pWorldItem =
+            m_pOutdoorWorldRuntime->worldItemState(worldHit.worldItem->worldItemIndex);
+
+        if (pWorldItem != nullptr)
+        {
+            itemInspectOverlay.active = true;
+            itemInspectOverlay.objectDescriptionId = pWorldItem->item.objectDescriptionId;
+            itemInspectOverlay.hasItemState = !pWorldItem->isGold;
+            itemInspectOverlay.itemState = pWorldItem->item;
+            itemInspectOverlay.sourceType = ItemInspectSourceType::WorldItem;
+            itemInspectOverlay.sourceWorldItemIndex = worldHit.worldItem->worldItemIndex;
+            itemInspectOverlay.hasValueOverride = pWorldItem->isGold;
+            itemInspectOverlay.valueOverride = static_cast<int>(pWorldItem->goldAmount);
+            itemInspectOverlay.sourceX = mouseX;
+            itemInspectOverlay.sourceY = mouseY;
+            itemInspectOverlay.sourceWidth = 1.0f;
+            itemInspectOverlay.sourceHeight = 1.0f;
+            GameplayScreenController::applySharedItemInspectSkillInteraction(overlayContext);
+            return;
+        }
+    }
+}
+
+bool OutdoorGameView::trySaveToSelectedGameSlot()
+{
+    return m_gameSession.gameplayScreenRuntime().trySaveToSelectedGameSlot(
+        [this](const GameplayScreenRuntime::PreparedSaveGameRequest &request)
+        {
+            return beginSaveWithPreview(request.path, request.saveName, true);
+        });
+}
+
+bool OutdoorGameView::requestQuickSave()
+{
+    return beginSaveWithPreview(std::filesystem::path("saves") / "quicksave.oysav", "", false);
+}
+
+bool OutdoorGameView::requestTravelAutosave()
+{
+    return beginSaveWithPreview(m_autosavePath, "", false);
+}
+
+bool OutdoorGameView::savePreviewCapturePending() const
+{
+    return m_pendingSavePreviewCapture.active;
+}
+
+bool OutdoorGameView::beginSaveWithPreview(
+    const std::filesystem::path &path,
+    const std::string &saveName,
+    bool closeUiOnSuccess)
+{
+    if (!m_gameSession.canSaveGameToPath()
+        || (m_map && !m_map->runtimeRestrictions.allowSaveGame && !isAutosavePath(path)))
+    {
+        return false;
+    }
+
+    m_pendingSavePreviewCapture = {};
+    m_pendingSavePreviewCapture.active = true;
+    m_pendingSavePreviewCapture.screenshotRequested = false;
+    m_pendingSavePreviewCapture.savePath = path;
+    m_pendingSavePreviewCapture.requestId =
+        "save_preview_" + std::to_string(SDL_GetTicks()) + "_" + std::to_string(path.generic_string().size());
+    m_pendingSavePreviewCapture.saveName = saveName;
+    m_pendingSavePreviewCapture.closeUiOnSuccess = closeUiOnSuccess;
+    m_pendingSavePreviewCapture.startedTicks = SDL_GetTicks();
+    return true;
+}
+
+void OutdoorGameView::clearWorldInteractionInputLatches()
+{
+    GameplayScreenRuntime &screenRuntime = m_gameSession.gameplayScreenRuntime();
+    GameplayScreenState &gameplayScreenState = m_gameSession.gameplayScreenState();
+    PendingSpellCastState &pendingSpellCast = gameplayScreenState.pendingSpellTarget();
+    QuickSpellState &quickSpellState = gameplayScreenState.quickSpellState();
+    AttackActionState &attackActionState = gameplayScreenState.attackActionState();
+    WorldInteractionInputState &worldInteractionInputState = gameplayScreenState.worldInteractionInputState();
+
+    worldInteractionInputState.keyboardUseLatch = false;
+    worldInteractionInputState.inspectKeyboardActivateLatch = false;
+    worldInteractionInputState.keyboardUseNextRepeatTickNanoseconds = 0;
+    worldInteractionInputState.inspectKeyboardActivateNextRepeatTickNanoseconds = 0;
+    pendingSpellCast.clickLatch = false;
+    worldInteractionInputState.heldInventoryDropLatch = false;
+    m_gameSession.overlayInteractionState().activateInspectLatch = false;
+    worldInteractionInputState.inspectMouseActivateLatch = false;
+    worldInteractionInputState.pressedWorldHit = {};
+    attackActionState.clear();
+    quickSpellState.clear();
+    m_cachedHoverInspectHitValid = false;
+    m_lastHoverInspectUpdateNanoseconds = 0;
+    m_cachedHoverInspectHit = {};
+    m_cachedRightMouseInspectHitValid = false;
+    m_lastRightMouseInspectUpdateNanoseconds = 0;
+    m_cachedRightMouseInspectPickRequest = {};
+    m_cachedRightMouseInspectHit = {};
+    screenRuntime.clearWorldStatusBarHoverText();
+}
+
+bool OutdoorGameView::activeMemberKnowsSpell(uint32_t spellId) const
+{
+    if (m_pOutdoorPartyRuntime == nullptr)
+    {
+        return false;
+    }
+
+    const Character *pMember = m_pOutdoorPartyRuntime->party().activeMember();
+    return pMember != nullptr && pMember->knowsSpell(spellId);
+}
+
+bool OutdoorGameView::activeMemberHasSpellbookSchool(SpellbookSchool school) const
+{
+    if (m_pOutdoorPartyRuntime == nullptr)
+    {
+        return false;
+    }
+
+    const SpellbookSchoolUiDefinition *pDefinition = findSpellbookSchoolUiDefinition(school);
+    const Character *pMember = m_pOutdoorPartyRuntime->party().activeMember();
+
+    if (pDefinition == nullptr || pMember == nullptr)
+    {
+        return false;
+    }
+
+    const std::optional<std::string> skillName = resolveMagicSkillName(pDefinition->firstSpellId);
+
+    if (!skillName)
+    {
+        return false;
+    }
+
+    const CharacterSkill *pSkill = pMember->findSkill(*skillName);
+    return pSkill != nullptr && pSkill->level > 0 && pSkill->mastery != SkillMastery::None;
+}
+
+const AdventurersInnMember *OutdoorGameView::selectedAdventurersInnMember() const
+{
+    const GameplayUiController::CharacterScreenState &characterScreen =
+        m_gameSession.gameplayScreenRuntime().characterScreenReadOnly();
+
+    if (m_pOutdoorPartyRuntime == nullptr || characterScreen.source != CharacterScreenSource::AdventurersInn)
+    {
+        return nullptr;
+    }
+
+    return m_pOutdoorPartyRuntime->party().adventurersInnMember(characterScreen.sourceIndex);
+}
+
+AdventurersInnMember *OutdoorGameView::selectedAdventurersInnMember()
+{
+    const GameplayUiController::CharacterScreenState &characterScreen =
+        m_gameSession.gameplayScreenRuntime().characterScreenReadOnly();
+
+    if (m_pOutdoorPartyRuntime == nullptr || characterScreen.source != CharacterScreenSource::AdventurersInn)
+    {
+        return nullptr;
+    }
+
+    return m_pOutdoorPartyRuntime->party().adventurersInnMember(characterScreen.sourceIndex);
+}
+
+void OutdoorGameView::consumePendingWorldAudioEvents()
+{
+    OutdoorPresentationController::consumePendingWorldAudioEvents(*this);
+}
+
+void OutdoorGameView::updateFootstepAudio(float deltaSeconds)
+{
+    OutdoorPresentationController::updateFootstepAudio(*this, deltaSeconds);
+}
+
+bool OutdoorGameView::tryCastSpellRequest(const PartySpellCastRequest &request, const std::string &spellName)
+{
+    if (m_pOutdoorPartyRuntime == nullptr || m_pOutdoorWorldRuntime == nullptr)
+    {
+        return false;
+    }
+
+    PartySpellCastRequest resolvedRequest = request;
+    resolvedRequest.hasViewTransform = true;
+    resolvedRequest.viewX = m_cameraTargetX;
+    resolvedRequest.viewY = m_cameraTargetY;
+    resolvedRequest.viewZ = m_cameraTargetZ;
+    resolvedRequest.viewYawRadians = effectiveCameraYawRadians();
+    resolvedRequest.viewPitchRadians = effectiveCameraPitchRadians();
+    resolvedRequest.viewAspectRatio =
+        static_cast<float>(std::max(m_lastRenderWidth, 1)) / static_cast<float>(std::max(m_lastRenderHeight, 1));
+
+    GameplayScreenRuntime &screenRuntime = m_gameSession.gameplayScreenRuntime();
+    const GameplaySpellService::SpellRequestResolution resolution =
+        m_gameSession.gameplaySpellService().resolveSpellRequest(screenRuntime, resolvedRequest, spellName);
+
+    if (resolution.disposition == GameplaySpellService::SpellRequestDisposition::CastSucceeded)
+    {
+        m_worldFxSystem.triggerPartySpellFx(resolution.castResult);
+        m_gameSession.gameplaySpellService().clearPendingTargetSelection(
+            screenRuntime,
+            GameplaySpellService::successStatusText(spellName, resolution.castResult));
+        return true;
+    }
+
+    if (resolution.disposition == GameplaySpellService::SpellRequestDisposition::NeedsTargetSelection)
+    {
+        m_gameSession.gameplaySpellService().armPendingTargetSelection(
+            screenRuntime,
+            request,
+            resolution.castResult.targetKind,
+            spellName);
+        m_cachedHoverInspectHitValid = false;
+        m_cachedRightMouseInspectHitValid = false;
+        return true;
+    }
+
+    if (resolution.disposition == GameplaySpellService::SpellRequestDisposition::OpenedSelectionUi)
+    {
+        return true;
+    }
+
+    return false;
+}
+
+OutdoorGameView::HeldInventoryItemState &OutdoorGameView::heldInventoryItem()
+{
+    return m_gameSession.gameplayScreenRuntime().heldInventoryItem();
+}
+
+const OutdoorGameView::HeldInventoryItemState &OutdoorGameView::heldInventoryItem() const
+{
+    return m_gameSession.gameplayScreenRuntime().heldInventoryItem();
+}
+
+OutdoorGameView::UtilitySpellOverlayState &OutdoorGameView::utilitySpellOverlay()
+{
+    return m_gameSession.gameplayScreenRuntime().utilitySpellOverlay();
+}
+
+const OutdoorGameView::UtilitySpellOverlayState &OutdoorGameView::utilitySpellOverlay() const
+{
+    return m_gameSession.gameplayScreenRuntime().utilitySpellOverlayReadOnly();
+}
+
+GameplayUiController::HouseShopOverlayState &OutdoorGameView::houseShopOverlay()
+{
+    return m_gameSession.gameplayScreenRuntime().houseShopOverlay();
+}
+
+const GameplayUiController::HouseShopOverlayState &OutdoorGameView::houseShopOverlay() const
+{
+    return m_gameSession.gameplayScreenRuntime().houseShopOverlay();
+}
+
+void OutdoorGameView::showStatusBarEvent(const std::string &text, float durationSeconds)
+{
+    setStatusBarEvent(text, durationSeconds);
+}
+
+void OutdoorGameView::setRenderLayers(const RenderLayers &layers)
+{
+    m_renderLayers = layers;
+    m_showFilledTerrain = layers.terrain;
+    m_showBModels = layers.bmodels;
+    m_showDecorationBillboards = layers.decorationSprites;
+    m_showActors = layers.actors;
+    m_showSpriteObjects = layers.effects;
+}
+
+void OutdoorGameView::setDebugSkyPreset(const std::string &presetName)
+{
+    m_debugSkyPreset = presetName;
+}
+
+void OutdoorGameView::setDebugSkyTheme(const std::optional<std::string> &themeName)
+{
+    m_debugSkyTheme = themeName;
+}
+
+void OutdoorGameView::reloadTerrainMaterials()
+{
+    if (m_terrainMaterials.seabed() && m_waterRenderer.isReady())
+    {
+        m_waterRenderer.setSeabed(BGFX_INVALID_HANDLE, {}, 0.0f);
+        m_waterRenderer.updateGeometry(m_terrainLiquidGeometry);
+    }
+    m_terrainMaterials.shutdown(Engine::BgfxContext::isBgfxInitialized());
+    m_terrainMaterialsInitializationAttempted = false;
+    // Plants are placed on the drawn ground; scatter them again for the new surface.
+    m_terrainDecorations.shutdown(Engine::BgfxContext::isBgfxInitialized());
+    m_terrainBushes.clear();
+    m_terrainDecorationBatches.clear();
+    m_terrainDecorationsInitializationAttempted = false;
+}
+
+std::string OutdoorGameView::terrainMaterialsStatus() const
+{
+    std::ostringstream out;
+    out << "subdivision=" << m_gameSettings.terrainSubdivision;
+    if (!m_terrainMaterials.ready())
+    {
+        out << (m_terrainMaterialsInitializationAttempted ? " active=no (failed)" : " active=no");
+        return out.str();
+    }
+    const OutdoorTerrainMaterials::Stats &stats = m_terrainMaterials.stats();
+    out << " active=yes triangles=" << stats.triangles << " single_material=" << stats.singleTriangles << " chunks=" << m_terrainMaterials.chunks().size()
+        << " deviation_max=" << stats.maximumDeviation << " deviation_mean=" << stats.meanLandDeviation
+        << " gpu_mb=" << double(stats.gpuBytes) / (1024.0 * 1024.0);
+    return out.str();
+}
+
+void OutdoorGameView::snapSky()
+{
+    m_skyRenderer.state().snap();
+}
+
+const WeatherPresentation &OutdoorGameView::weatherPresentation() const
+{
+    return m_weatherPresentation;
+}
+
+void OutdoorGameView::snapWeather()
+{
+    m_weatherPresentation.snap();
+}
+
+void OutdoorGameView::forceLightningStrike(LightningDistance distance)
+{
+    m_weatherPresentation.forceStrike(distance);
+}
+
+const SkyFrameState *OutdoorGameView::enhancedSkyFrame() const
+{
+    return m_enhancedSkyActive ? &m_skyRenderer.frame() : nullptr;
+}
+
+std::array<std::array<float, 4>, 2> OutdoorGameView::bakedLightingColors(
+    const OutdoorWorldRuntime::AtmosphereState &atmosphere) const
+{
+    std::array<std::array<float, 4>, 2> colors = outdoorBakedLightingColors(atmosphere, m_gameSettings);
+
+    if (const SkyFrameState *pSky = enhancedSkyFrame(); pSky != nullptr)
+    {
+        // Half the sun disc's colour: warm low sun without turning noon terrain yellow.
+        const SkyColor &disc = pSky->value(SkyValue::SunDisc);
+        const std::array<float, 3> sunTint = {
+            0.5f + 0.5f * disc[0], 0.5f + 0.5f * disc[1], 0.5f + 0.5f * disc[2]};
+        applyOutdoorBakedLightingTint(colors, sunTint, pSky->value(SkyValue::AmbientTint));
+    }
+
+    applyOutdoorWeatherLighting(colors, m_weatherPresentation.cloudCover(), m_weatherPresentation.lightningFlash());
+    return colors;
+}
+
+SkySurroundings OutdoorGameView::skySurroundings() const
+{
+    if (m_pOutdoorMapData == nullptr || m_pOutdoorMapData->noTerrain)
+    {
+        return {};
+    }
+
+    constexpr float HalfSize = 0.5f * OutdoorMapData::TerrainWidth * OutdoorMapData::TerrainTileSize;
+    SkySurroundings surroundings = {};
+    surroundings.mapEdge = {HalfSize, 0.0f, 0.0f};
+    surroundings.seaSideWeights = m_distantSea.sideWeights;
+    surroundings.camera = {m_skyCameraPosition[2] - m_distantSea.seaLevel, m_skyCameraPosition[0],
+        m_skyCameraPosition[1]};
+    // The water shader's base colour: the tile's water colour under the ambient light.
+    const float brightness = m_pOutdoorWorldRuntime != nullptr
+        ? m_pOutdoorWorldRuntime->atmosphereState().ambientBrightness : 1.0f;
+
+    for (size_t channel = 0; channel < 3; ++channel)
+    {
+        surroundings.seaColorDisplay[channel] = m_distantSea.waterColorDisplay[channel] * brightness;
+    }
+
+    return surroundings;
+}
+
+const SkyPresetLibrary *OutdoorGameView::skyPresetLibrary() const
+{
+    return m_skyRenderer.isReady() ? &m_skyRenderer.library() : nullptr;
+}
+
+void OutdoorGameView::setSettingsSnapshot(const GameSettings &settings)
+{
+    m_gameSettings = settings;
+    refreshViewDistanceCache();
+
+    if (!m_gameSettings.combatText)
+    {
+        m_combatFloatingTexts.clear();
+    }
+
+
+
+    if (m_pOutdoorPartyRuntime != nullptr)
+    {
+        Party &party = m_pOutdoorPartyRuntime->party();
+        party.setDebugDamageImmune(settings.immortal);
+        party.setDebugUnlimitedMana(settings.unlimitedMana);
+    }
+}
+
+void OutdoorGameView::refreshViewDistanceCache()
+{
+    const float viewDistanceScale = m_pOutdoorMapData != nullptr
+        ? m_pOutdoorMapData->viewDistanceScale
+        : 1.0f;
+    if (m_viewDistanceCache.sourceValue == m_gameSettings.viewDistance
+        && m_viewDistanceCache.sourceScale == viewDistanceScale)
+    {
+        return;
+    }
+
+    m_viewDistanceCache.sourceValue = m_gameSettings.viewDistance;
+    m_viewDistanceCache.sourceScale = viewDistanceScale;
+    m_viewDistanceCache.farClipDistance =
+        resolveViewDistanceSetting(m_gameSettings.viewDistance, DefaultOutdoorFarClip) * viewDistanceScale;
+    m_viewDistanceCache.runtimeProjectileDistance =
+        resolveViewDistanceSetting(m_gameSettings.viewDistance, RuntimeProjectileRenderDistance) * viewDistanceScale;
+    m_viewDistanceCache.runtimeProjectileDistanceSquared =
+        m_viewDistanceCache.runtimeProjectileDistance * m_viewDistanceCache.runtimeProjectileDistance;
+    m_viewDistanceCache.decorationBillboardDistance =
+        resolveViewDistanceSetting(m_gameSettings.viewDistance, DecorationBillboardRenderDistance) * viewDistanceScale;
+    m_viewDistanceCache.decorationBillboardDistanceSquared =
+        m_viewDistanceCache.decorationBillboardDistance * m_viewDistanceCache.decorationBillboardDistance;
+    m_viewDistanceCache.actorBillboardDistance =
+        resolveViewDistanceSetting(m_gameSettings.viewDistance, ActorBillboardRenderDistance) * viewDistanceScale;
+    m_viewDistanceCache.actorBillboardDistanceSquared =
+        m_viewDistanceCache.actorBillboardDistance * m_viewDistanceCache.actorBillboardDistance;
+}
+
+const GameSettings &OutdoorGameView::settingsSnapshot() const
+{
+    return m_gameSettings;
+}
+
+void OutdoorGameView::updateCombatFeedback(float deltaSeconds)
+{
+    if (m_pOutdoorSceneRuntime != nullptr)
+    {
+        m_pOutdoorSceneRuntime->processMonsterKilledEvents();
+    }
+
+    const float elapsedSeconds = std::max(0.0f, deltaSeconds);
+
+    for (CombatFloatingText &floatingText : m_combatFloatingTexts)
+    {
+        floatingText.remainingSeconds = std::max(0.0f, floatingText.remainingSeconds - elapsedSeconds);
+    }
+
+
+    m_combatFloatingTexts.erase(
+        std::remove_if(
+            m_combatFloatingTexts.begin(),
+            m_combatFloatingTexts.end(),
+            [](const CombatFloatingText &floatingText)
+            {
+                return floatingText.remainingSeconds <= 0.0f;
+            }),
+        m_combatFloatingTexts.end());
+
+    if (m_pOutdoorWorldRuntime == nullptr)
+    {
+        return;
+    }
+
+    const std::vector<GameplayCombatFeedbackEvent> events = m_pOutdoorWorldRuntime->drainCombatFeedbackEvents();
+    m_gameSession.gameplayScreenRuntime().updateEnemyHealthBars(elapsedSeconds, events);
+
+    for (const GameplayCombatFeedbackEvent &event : events)
+    {
+        if (event.actorIndex < m_pOutdoorWorldRuntime->mapActorCount())
+        {
+            if (event.damage > 0 && m_gameSettings.combatText)
+            {
+                m_combatFloatingTexts.push_back(
+                    CombatFloatingText{
+                        .actorIndex = event.actorIndex,
+                        .amount = event.damage,
+                        .text = std::to_string(event.damage),
+                        .x = event.x,
+                        .y = event.y,
+                        .z = GameplayUiSkin::combatDamageTextOriginZ(event.z, event.height),
+                        .remainingSeconds = 0.6f,
+                        .durationSeconds = 0.6f,
+                        .colorAbgr = event.damage >= 100
+                            ? makeCombatHudColor(255, 225, 106, 255)
+                            : makeCombatHudColor(238, 235, 216, 255),
+                        .fontScale = combatDamageFontScale(event.damage),
+                    });
+            }
+            else if (event.shieldDamage > 0 && m_gameSettings.combatText)
+            {
+                // A hit a raised energy shield took whole: its number in shield blue, apart from body damage.
+                m_combatFloatingTexts.push_back(
+                    CombatFloatingText{
+                        .actorIndex = event.actorIndex,
+                        .amount = event.shieldDamage,
+                        .text = std::to_string(event.shieldDamage),
+                        .x = event.x,
+                        .y = event.y,
+                        .z = GameplayUiSkin::combatDamageTextOriginZ(event.z, event.height),
+                        .remainingSeconds = 0.6f,
+                        .durationSeconds = 0.6f,
+                        .colorAbgr = makeCombatHudColor(150, 220, 255, 255),
+                        .fontScale = combatDamageFontScale(event.shieldDamage),
+                    });
+            }
+        }
+    }
+}
+
+void OutdoorGameView::renderCombatFeedbackOverlay(
+    int width,
+    int height,
+    const float *pViewProjectionMatrix)
+{
+    if (m_pOutdoorWorldRuntime == nullptr || width <= 0 || height <= 0 || pViewProjectionMatrix == nullptr)
+    {
+        return;
+    }
+
+    GameplayScreenRuntime &screenRuntime = m_gameSession.gameplayScreenRuntime();
+    screenRuntime.prepareHudView(width, height);
+
+    constexpr const char *FontName = GameplayUiSkin::CombatFontName;
+    constexpr float CombatFontScale = GameplayUiSkin::CombatDamageFontScale;
+    constexpr float DamageRisePixels = 29.0f;
+
+    if (m_gameSettings.combatText)
+    {
+        for (const CombatFloatingText &floatingText : m_combatFloatingTexts)
+        {
+            if (floatingText.remainingSeconds <= 0.0f || floatingText.durationSeconds <= 0.0f)
+            {
+                continue;
+            }
+
+            const float progress =
+                1.0f - std::clamp(floatingText.remainingSeconds / floatingText.durationSeconds, 0.0f, 1.0f);
+            ProjectedPoint projected = {};
+
+            if (!projectWorldPointToScreen(
+                    bx::Vec3{floatingText.x, floatingText.y, floatingText.z + progress * DamageRisePixels},
+                    width,
+                    height,
+                    pViewProjectionMatrix,
+                    projected))
+            {
+                continue;
+            }
+
+            const float fadeStartSeconds = 0.225f;
+            const float alpha = std::clamp(floatingText.remainingSeconds / fadeStartSeconds, 0.0f, 1.0f);
+            const uint8_t alphaByte = static_cast<uint8_t>(std::round(255.0f * alpha));
+            const uint32_t textColor = (floatingText.colorAbgr & 0x00ffffffu)
+                | (static_cast<uint32_t>(alphaByte) << 24);
+            const float fontScale = CombatFontScale * std::max(0.5f, floatingText.fontScale);
+            const float textWidth = screenRuntime.measureHudTextWidth(FontName, floatingText.text) * fontScale;
+            screenRuntime.renderHudTextLine(
+                FontName,
+                textColor,
+                floatingText.text,
+                projected.x - textWidth * 0.5f,
+                projected.y,
+                fontScale);
+        }
+    }
+
+    const ActorAiTrace *pAiTrace = m_pOutdoorWorldRuntime->actorAiTrace();
+
+    if (pAiTrace != nullptr && pAiTrace->overlayVisible())
+    {
+        renderAiTraceOverlay(screenRuntime, *pAiTrace,
+            [width, height, pViewProjectionMatrix](const bx::Vec3 &point, float &screenX, float &screenY)
+            {
+                ProjectedPoint projected = {};
+
+                if (!projectWorldPointToScreen(point, width, height, pViewProjectionMatrix, projected))
+                {
+                    return false;
+                }
+
+                screenX = projected.x;
+                screenY = projected.y;
+                return true;
+            });
+    }
+}
+
+void OutdoorGameView::showCombatStatusBarEvent(const std::string &text, float durationSeconds)
+{
+    if (!m_showHitStatusMessages)
+    {
+        return;
+    }
+
+    setStatusBarEvent(text, durationSeconds);
+}
+
+void OutdoorGameView::setMouseRotateSpeed(float speed)
+{
+    m_mouseRotateSpeed = std::clamp(speed, 0.0005f, 0.05f);
+}
+
+void OutdoorGameView::setWalkSoundEnabled(bool active)
+{
+    m_walkSoundEnabled = active;
+}
+
+void OutdoorGameView::setShowHitStatusMessages(bool active)
+{
+    m_showHitStatusMessages = active;
+}
+
+void OutdoorGameView::setFlipOnExitEnabled(bool active)
+{
+    m_flipOnExitEnabled = active;
+}
+
+OutdoorPartyRuntime *OutdoorGameView::partyRuntime() const
+{
+    return m_pOutdoorPartyRuntime;
+}
+
+IGameplayWorldRuntime *OutdoorGameView::worldRuntime() const
+{
+    return m_pOutdoorWorldRuntime;
+}
+
+GameAudioSystem *OutdoorGameView::audioSystem() const
+{
+    return m_pGameAudioSystem;
+}
+
+const GameDataRepository &OutdoorGameView::data() const
+{
+    return m_gameSession.data();
+}
+
+float OutdoorGameView::gameplayCameraYawRadians() const
+{
+    return effectiveCameraYawRadians();
+}
+
+void OutdoorGameView::executeActiveDialogAction()
+{
+    if (m_pOutdoorWorldRuntime != nullptr)
+    {
+        m_pOutdoorWorldRuntime->executeActiveDialogAction();
+    }
+}
+
+GameSettings &OutdoorGameView::mutableSettings()
+{
+    return m_gameSettings;
+}
+
+std::array<uint8_t, SDL_SCANCODE_COUNT> &OutdoorGameView::previousKeyboardState()
+{
+    return m_gameSession.previousKeyboardState();
+}
+
+const std::array<uint8_t, SDL_SCANCODE_COUNT> &OutdoorGameView::previousKeyboardState() const
+{
+    return m_gameSession.previousKeyboardState();
+}
+
+void OutdoorGameView::setStatusBarEvent(
+    const std::string &text,
+    float durationSeconds,
+    GameplayUiController::StatusBarEventPriority priority)
+{
+    m_gameSession.gameplayScreenRuntime().setStatusBarEvent(text, durationSeconds, priority);
+}
+
+void OutdoorGameView::updateActorInspectOverlayState(int width, int height, const GameplayInputFrame &input)
+{
+    GameplayScreenRuntime &overlayContext = m_gameSession.gameplayScreenRuntime();
+    GameplayUiController::ActorInspectOverlayState &actorInspectOverlay = overlayContext.actorInspectOverlay();
+
+    actorInspectOverlay = {};
+
+    const bool hasActiveLootView =
+        m_pOutdoorWorldRuntime != nullptr
+        && (m_pOutdoorWorldRuntime->activeChestView() != nullptr
+            || m_pOutdoorWorldRuntime->activeCorpseView() != nullptr);
+
+    if (!GameplayScreenController::canUpdateStandardWorldInspectOverlayFromMouse(
+            overlayContext,
+            GameplayStandardWorldInspectOverlayConfig{
+                .width = width,
+                .height = height,
+                .worldReady = m_pOutdoorWorldRuntime != nullptr && m_pOutdoorMapData != nullptr,
+                .hasHeldItem = heldInventoryItem().active,
+                .hasPendingSpellTarget = m_gameSession.gameplayScreenState().pendingSpellTarget().active,
+                .hasActiveLootView = hasActiveLootView,
+            }))
+    {
+        return;
+    }
+
+    if (!input.rightMouseButton.held)
+    {
+        return;
+    }
+
+    const GameplayWorldHit &worldHit = rightMouseInspectWorldHit(width, height, input);
+
+    if (worldHit.kind != GameplayWorldHitKind::Actor || !worldHit.actor)
+    {
+        return;
+    }
+
+    const size_t runtimeActorIndex = worldHit.actor->actorIndex;
+
+    if (runtimeActorIndex == GameplayInvalidWorldIndex)
+    {
+        return;
+    }
+
+    const OutdoorWorldRuntime::MapActorState *pActorState = m_pOutdoorWorldRuntime->mapActorState(runtimeActorIndex);
+
+    if (pActorState == nullptr)
+    {
+        return;
+    }
+
+    const GameplayActorTargetHit &actorHit = *worldHit.actor;
+    OutdoorGameView::InspectHit inspectHit = {};
+    inspectHit.hasHit = true;
+    inspectHit.kind = "actor";
+    inspectHit.name = actorHit.displayName;
+    inspectHit.isFriendly = actorHit.isFriendly;
+    inspectHit.npcId = actorHit.npcId;
+    inspectHit.actorGroup = actorHit.actorGroup;
+    inspectHit.distance = actorHit.distance;
+    inspectHit.runtimeActorIndex = runtimeActorIndex;
+    inspectHit.bModelIndex = runtimeActorIndex;
+    inspectHit.hitX = actorHit.hitPoint.x;
+    inspectHit.hitY = actorHit.hitPoint.y;
+    inspectHit.hitZ = actorHit.hitPoint.z;
+
+    if (input.rightMouseButton.pressed)
+    {
+        GameplayActorInspectState inspectState = {};
+        Party *pParty = m_gameSession.gameplayScreenRuntime().party();
+        const Character *pMember = pParty != nullptr ? pParty->activeMember() : nullptr;
+
+        if (m_pOutdoorWorldRuntime->actorInspectState(runtimeActorIndex, 0, inspectState))
+        {
+            const OutdoorMoveState *pMoveState =
+                m_pOutdoorPartyRuntime != nullptr ? &m_pOutdoorPartyRuntime->movementState() : nullptr;
+            GAMEPLAY_DEBUG_TRACE(
+                "actor_inspect world=outdoor map=\"" + m_pOutdoorWorldRuntime->mapName() + "\""
+                + " actor_index=" + std::to_string(runtimeActorIndex)
+                + " unique_actor=" + std::to_string(inspectState.uniqueActorIndex)
+                + " name=\"" + inspectState.displayName + "\""
+                + " monster_id=" + std::to_string(inspectState.monsterId)
+                + " current_hp=" + std::to_string(inspectState.currentHp)
+                + " max_hp=" + std::to_string(inspectState.maxHp)
+                + " group=" + std::to_string(pActorState->group)
+                + " dead=" + (inspectState.isDead ? "true" : "false")
+                + (pMoveState != nullptr
+                    ? " party=(" + std::to_string(pMoveState->x)
+                        + "," + std::to_string(pMoveState->y)
+                        + "," + std::to_string(pMoveState->footZ) + ")"
+                    : "")
+                + " yaw=" + std::to_string(m_cameraYawRadians)
+                + " pitch=" + std::to_string(m_cameraPitchRadians)
+                + " actor_pos=(" + std::to_string(pActorState->preciseX)
+                + "," + std::to_string(pActorState->preciseY)
+                + "," + std::to_string(pActorState->preciseZ) + ")");
+
+            std::cout << "[ActorInspect] world=outdoor map=\"" << m_pOutdoorWorldRuntime->mapName() << "\""
+                << " actor_index=" << runtimeActorIndex
+                << " unique_actor=" << inspectState.uniqueActorIndex
+                << " name=\"" << inspectState.displayName << "\"\n";
+            if (!pActorState->isDead)
+            {
+                const MonsterTable::MonsterStatsEntry *pStats =
+                    m_gameSession.data().monsterTable().findStatsById(inspectState.monsterId);
+
+                const std::optional<size_t> speakerMemberIndex =
+                    pParty != nullptr ? pParty->bestPartyWideUtilitySkillMemberIndex("IdentifyMonster") : std::nullopt;
+                const Character *pIdentifier = speakerMemberIndex ? pParty->member(*speakerMemberIndex) : nullptr;
+
+                if (pParty != nullptr && pIdentifier != nullptr && pStats != nullptr)
+                {
+                    const int monsterLevel =
+                        pActorState->rulesetFacts.level > 0 ? pActorState->rulesetFacts.level : pStats->level;
+                    const SpeechId speechId = GameMechanics::resolveIdentifyMonsterSpeech(
+                        pParty->rules().skills.identifyMonsterReveal(*pParty, monsterLevel),
+                        *pIdentifier,
+                        monsterLevel);
+
+                    if (speechId != SpeechId::None)
+                    {
+                        m_gameSession.gameplayScreenRuntime().playSpeechReaction(
+                            *speakerMemberIndex,
+                            speechId,
+                            true);
+                    }
+                }
+            }
+        }
+    }
+
+    float viewProjectionMatrix[16] = {};
+    bx::mtxMul(
+        viewProjectionMatrix,
+        m_cachedRightMouseInspectPickRequest.viewMatrix.data(),
+        m_cachedRightMouseInspectPickRequest.projectionMatrix.data());
+
+    const float halfExtent = static_cast<float>(std::max<uint16_t>(pActorState->radius, 64));
+    const float actorHeight = static_cast<float>(std::max<uint16_t>(pActorState->height, 128));
+    const float minX = static_cast<float>(pActorState->x) - halfExtent;
+    const float maxX = static_cast<float>(pActorState->x) + halfExtent;
+    const float minY = static_cast<float>(pActorState->y) - halfExtent;
+    const float maxY = static_cast<float>(pActorState->y) + halfExtent;
+    const float minZ = static_cast<float>(pActorState->z);
+    const float maxZ = static_cast<float>(pActorState->z) + actorHeight;
+    const std::array<bx::Vec3, 8> corners = {{
+        {minX, minY, minZ},
+        {maxX, minY, minZ},
+        {minX, maxY, minZ},
+        {maxX, maxY, minZ},
+        {minX, minY, maxZ},
+        {maxX, minY, maxZ},
+        {minX, maxY, maxZ},
+        {maxX, maxY, maxZ},
+    }};
+
+    bool hasProjectedPoint = false;
+    float rectMinX = 0.0f;
+    float rectMinY = 0.0f;
+    float rectMaxX = 0.0f;
+    float rectMaxY = 0.0f;
+
+    for (const bx::Vec3 &corner : corners)
+    {
+        ProjectedPoint projected = {};
+
+        if (!projectWorldPointToScreen(corner, width, height, viewProjectionMatrix, projected))
+        {
+            continue;
+        }
+
+        if (!hasProjectedPoint)
+        {
+            rectMinX = projected.x;
+            rectMinY = projected.y;
+            rectMaxX = projected.x;
+            rectMaxY = projected.y;
+            hasProjectedPoint = true;
+            continue;
+        }
+
+        rectMinX = std::min(rectMinX, projected.x);
+        rectMinY = std::min(rectMinY, projected.y);
+        rectMaxX = std::max(rectMaxX, projected.x);
+        rectMaxY = std::max(rectMaxY, projected.y);
+    }
+
+    if (!hasProjectedPoint)
+    {
+        return;
+    }
+
+    actorInspectOverlay.active = true;
+    actorInspectOverlay.runtimeActorIndex = runtimeActorIndex;
+    actorInspectOverlay.rawNumbers = input.altHeld();
+    actorInspectOverlay.displayNameOverride =
+        OutdoorInteractionController::resolveActorInspectDisplayName(*this, inspectHit);
+    actorInspectOverlay.sourceX = rectMinX;
+    actorInspectOverlay.sourceY = rectMinY;
+    actorInspectOverlay.sourceWidth = std::max(1.0f, rectMaxX - rectMinX);
+    actorInspectOverlay.sourceHeight = std::max(1.0f, rectMaxY - rectMinY);
+}
+
+void OutdoorGameView::TerrainVertex::init()
+{
+    ms_layout.begin()
+        .add(bgfx::Attrib::Position, 3, bgfx::AttribType::Float)
+        .add(bgfx::Attrib::Color0, 4, bgfx::AttribType::Uint8, true)
+        .end();
+}
+
+void OutdoorGameView::TexturedTerrainVertex::init()
+{
+    ms_layout.begin()
+        .add(bgfx::Attrib::Position, 3, bgfx::AttribType::Float)
+        .add(bgfx::Attrib::TexCoord0, 2, bgfx::AttribType::Float)
+        .add(bgfx::Attrib::TexCoord1, 1, bgfx::AttribType::Float)
+        .add(bgfx::Attrib::TexCoord3, 4, bgfx::AttribType::Float)
+        .add(bgfx::Attrib::Normal, 3, bgfx::AttribType::Float)
+        .end();
+}
+
+void OutdoorGameView::LitBillboardVertex::init()
+{
+    ms_layout.begin()
+        .add(bgfx::Attrib::Position, 3, bgfx::AttribType::Float)
+        .add(bgfx::Attrib::TexCoord0, 2, bgfx::AttribType::Float)
+        .add(bgfx::Attrib::Color0, 4, bgfx::AttribType::Uint8, true)
+        .add(bgfx::Attrib::TexCoord2, 1, bgfx::AttribType::Float)
+        .end();
+}
+
+void OutdoorGameView::LightmappedBModelVertex::init()
+{
+    ms_layout.begin()
+        .add(bgfx::Attrib::Position, 3, bgfx::AttribType::Float)
+        .add(bgfx::Attrib::TexCoord0, 2, bgfx::AttribType::Float)
+        .add(bgfx::Attrib::TexCoord1, 3, bgfx::AttribType::Float)
+        .add(bgfx::Attrib::TexCoord3, 4, bgfx::AttribType::Float)
+        .add(bgfx::Attrib::TexCoord4, 2, bgfx::AttribType::Float)
+        .add(bgfx::Attrib::Color0, 4, bgfx::AttribType::Uint8, true)
+        .add(bgfx::Attrib::Tangent, 3, bgfx::AttribType::Float)
+        .add(bgfx::Attrib::Bitangent, 3, bgfx::AttribType::Float)
+        .end();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const OutdoorGameView::BillboardTextureHandle *OutdoorGameView::findBillboardTexture(
+    const std::string &textureName,
+    int16_t paletteId
+) const
+{
+    const auto paletteIterator = m_billboardTextureIndexByPalette.find(paletteId);
+
+    if (paletteIterator == m_billboardTextureIndexByPalette.end())
+    {
+        return nullptr;
+    }
+
+    const auto exactIterator = paletteIterator->second.find(textureName);
+
+    if (exactIterator != paletteIterator->second.end())
+    {
+        if (exactIterator->second >= m_billboardTextureHandles.size())
+        {
+            return nullptr;
+        }
+
+        return &m_billboardTextureHandles[exactIterator->second];
+    }
+
+    const std::string normalizedTextureName = toLowerCopy(textureName);
+    const auto normalizedIterator = paletteIterator->second.find(normalizedTextureName);
+
+    if (normalizedIterator == paletteIterator->second.end())
+    {
+        return nullptr;
+    }
+
+    if (normalizedIterator->second >= m_billboardTextureHandles.size())
+    {
+        return nullptr;
+    }
+
+    return &m_billboardTextureHandles[normalizedIterator->second];
+}
+
+void OutdoorGameView::preloadSpriteFrameTextures(
+    const SpriteFrameTable &spriteFrameTable,
+    uint16_t spriteFrameIndex,
+    const char *pLoadPhase)
+{
+    if (spriteFrameIndex == 0)
+    {
+        return;
+    }
+
+    size_t frameIndex = spriteFrameIndex;
+
+    while (frameIndex <= std::numeric_limits<uint16_t>::max())
+    {
+        const SpriteFrameEntry *pFrame = spriteFrameTable.getFrame(static_cast<uint16_t>(frameIndex), 0);
+
+        if (pFrame == nullptr)
+        {
+            return;
+        }
+
+        for (int octant = 0; octant < 8; ++octant)
+        {
+            const ResolvedSpriteTexture resolvedTexture = SpriteFrameTable::resolveTexture(*pFrame, octant);
+
+            if (resolvedTexture.textureName.empty())
+            {
+                continue;
+            }
+
+            OutdoorBillboardRenderer::ensureSpriteBillboardTexture(
+                *this,
+                resolvedTexture.textureName,
+                pFrame->paletteId,
+                pLoadPhase);
+        }
+
+        if (!SpriteFrameTable::hasFlag(pFrame->flags, SpriteFrameFlag::HasMore))
+        {
+            return;
+        }
+
+        ++frameIndex;
+    }
+}
+
+void OutdoorGameView::queueSpriteFrameWarmup(uint16_t spriteFrameIndex)
+{
+    if (spriteFrameIndex == 0)
+    {
+        return;
+    }
+
+    if (m_queuedSpriteFrameWarmups.empty())
+    {
+        m_queuedSpriteFrameWarmups.resize(static_cast<size_t>(std::numeric_limits<uint16_t>::max()) + 1, false);
+    }
+
+    if (m_queuedSpriteFrameWarmups[spriteFrameIndex])
+    {
+        return;
+    }
+
+    m_queuedSpriteFrameWarmups[spriteFrameIndex] = true;
+    m_pendingSpriteFrameWarmups.push_back(spriteFrameIndex);
+}
+
+std::optional<std::string> OutdoorGameView::findCachedAssetPath(
+    const std::string &directoryPath,
+    const std::string &fileName)
+{
+    return GameplayHudCommon::findCachedAssetPath(
+        m_pAssetFileSystem,
+        m_spriteLoadCache,
+        directoryPath,
+        fileName);
+}
+
+std::optional<std::vector<uint8_t>> OutdoorGameView::readCachedBinaryFile(const std::string &assetPath)
+{
+    return GameplayHudCommon::readCachedBinaryFile(
+        m_pAssetFileSystem,
+        m_spriteLoadCache,
+        assetPath);
+}
+
+std::optional<std::array<uint8_t, 256 * 3>> OutdoorGameView::loadCachedActPalette(int16_t paletteId)
+{
+    if (paletteId <= 0)
+    {
+        return std::nullopt;
+    }
+
+    const std::string worldId = m_map.has_value() ? m_map->worldId : std::string();
+    const std::string cacheKey = actPaletteCacheKey(paletteId, worldId);
+    const auto cachedPaletteIt = m_spriteLoadCache.actPalettesByKey.find(cacheKey);
+
+    if (cachedPaletteIt != m_spriteLoadCache.actPalettesByKey.end())
+    {
+        return cachedPaletteIt->second;
+    }
+
+    for (const std::string &palettePath : actPaletteCandidatePaths(paletteId, worldId))
+    {
+        const std::optional<std::vector<uint8_t>> paletteBytes = readCachedBinaryFile(palettePath);
+
+        if (!paletteBytes || paletteBytes->size() < 256 * 3)
+        {
+            continue;
+        }
+
+        std::array<uint8_t, 256 * 3> palette = {};
+        std::memcpy(palette.data(), paletteBytes->data(), palette.size());
+        m_spriteLoadCache.actPalettesByKey[cacheKey] = palette;
+        return palette;
+    }
+
+    m_spriteLoadCache.actPalettesByKey[cacheKey] = std::nullopt;
+    return std::nullopt;
+}
+
+std::optional<std::vector<uint8_t>> OutdoorGameView::loadSpriteBitmapPixelsBgraCached(
+    const std::string &textureName,
+    int16_t paletteId,
+    int &width,
+    int &height)
+{
+    const std::optional<std::string> spritePath =
+        Engine::findImageAssetPath(
+            *m_pAssetFileSystem,
+            "Data/sprites",
+            textureName,
+            m_spriteLoadCache.directoryAssetPathsByPath,
+            m_spriteLoadCache.assetPathByKey);
+
+    if (!spritePath)
+    {
+        return std::nullopt;
+    }
+
+    const std::optional<std::vector<uint8_t>> bitmapBytes = readCachedBinaryFile(*spritePath);
+
+    if (!bitmapBytes || bitmapBytes->empty())
+    {
+        return std::nullopt;
+    }
+
+    return loadSpriteBitmapPixelsBgra(*bitmapBytes, *spritePath, loadCachedActPalette(paletteId), width, height);
+}
+
+}

@@ -1,0 +1,8 @@
+# Both prebuilt runtime profiles must work without Git LFS.
+/assets_dev/** -filter !diff !merge !text
+/assets_cooked/** -filter !diff !merge !text
+# Cooked sprite atlas test fixtures: their pages hash the manifest bytes.
+/tests/fixtures/sprite_atlas/** -filter !diff !merge !text
+
+# Unified patch context prefixes precede the upstream file's indentation.
+*.patch whitespace=-space-before-tab

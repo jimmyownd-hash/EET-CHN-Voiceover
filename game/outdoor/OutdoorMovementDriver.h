@@ -1,0 +1,208 @@
+#pragma once
+
+#include "game/outdoor/OutdoorCollisionData.h"
+#include "game/outdoor/OutdoorMovementController.h"
+
+#include <optional>
+#include <string>
+
+namespace OpenYAMM::Game
+{
+struct GameplayWorldMovementFrameDiagnostics;
+
+struct OutdoorMovementInput
+{
+    bool forward = false;
+    bool backward = false;
+    bool left = false;
+    bool right = false;
+    bool jump = false;
+    bool flyUp = false;
+    bool flyDown = false;
+    bool runWalkModifier = false;
+    bool turbo = false;
+    float yawRadians = 0.0f;
+    float pitchRadians = 0.0f;
+    bool usePitchForFlyingMovement = true;
+    bool turnBasedMovementStep = false;
+    bool turnBasedPhysicsStep = false;
+    float movementSpeedScale = 1.0f;
+    float flyHeightDelta = 0.0f;
+};
+
+struct OutdoorPartyMovementState
+{
+    bool running = true;
+    bool flying = false;
+    bool activelyFlying = false;
+    bool featherFall = false;
+    bool waterWalk = false;
+};
+
+struct OutdoorMovementConsequences
+{
+    bool applyWaterDamage = false;
+    bool applyBurningDamage = false;
+    bool applyFallDamage = false;
+    float fallDamageDistance = 0.0f;
+    bool playSplashSound = false;
+    bool playLandingSound = false;
+    bool playHardLandingSound = false;
+};
+
+struct OutdoorMovementEffects
+{
+    uint32_t waterDamageTicks = 0;
+    uint32_t burningDamageTicks = 0;
+    float maxFallDamageDistance = 0.0f;
+    bool playSplashSound = false;
+    bool playLandingSound = false;
+    bool playHardLandingSound = false;
+    // Taken inside a dungeon (rules size such damage by where it happens).
+    bool indoor = false;
+};
+
+struct OutdoorMovementTuning
+{
+    float walkSpeed = 384.0f;
+    float runForwardMultiplier = 2.0f;
+    float flyingRunMultiplier = 4.0f;
+    float backwardWalkMultiplier = 1.0f;
+    // Half the walking speed, as indoors (IndoorRenderer) and MAW: running strafes at walking speed (user, 2026-10-25).
+    float strafeMultiplier = 0.5f;
+    float turboMultiplier = 12.0f;
+    float flyingRunTurboMultiplier = 24.0f;
+    float jumpVelocity = 480.0f;
+    float flyVerticalSpeed = 1536.0f;
+    float maxFlightHeight = 4000.0f;
+};
+
+struct OutdoorMovementEvents
+{
+    bool startedFalling = false;
+    bool landed = false;
+    bool enteredWater = false;
+    bool leftWater = false;
+    bool enteredBurning = false;
+    bool leftBurning = false;
+    float landingFallDistance = 0.0f;
+    bool hardLanding = false;
+    std::optional<MapBoundaryEdge> blockedBoundaryEdge;
+    std::vector<size_t> contactedActorIndices;
+};
+
+class OutdoorMovementDriver
+{
+public:
+    OutdoorMovementDriver(
+        const OutdoorMapData &outdoorMapData,
+        const std::optional<std::vector<uint8_t>> &outdoorLandMask,
+        const std::optional<OutdoorDecorationCollisionSet> &outdoorDecorationCollisionSet,
+        const std::optional<OutdoorActorCollisionSet> &outdoorActorCollisionSet,
+        const std::optional<OutdoorSpriteObjectCollisionSet> &outdoorSpriteObjectCollisionSet
+    );
+    OutdoorMovementDriver(
+        const OutdoorMapData &outdoorMapData,
+        const std::optional<MapBounds> &mapBounds,
+        const std::optional<std::vector<uint8_t>> &outdoorLandMask,
+        const std::optional<OutdoorDecorationCollisionSet> &outdoorDecorationCollisionSet,
+        const std::optional<OutdoorActorCollisionSet> &outdoorActorCollisionSet,
+        const std::optional<OutdoorSpriteObjectCollisionSet> &outdoorSpriteObjectCollisionSet
+    );
+
+    void initialize(float x, float y, float footZHint);
+    void restoreState(const OutdoorMoveState &state, const OutdoorPartyMovementState &partyMovementState);
+    void update(
+        const OutdoorMovementInput &input,
+        float deltaSeconds,
+        GameplayWorldMovementFrameDiagnostics *pPerformanceDiagnostics = nullptr);
+    void setActorColliders(const std::vector<OutdoorActorCollision> &actorColliders);
+    void setHiddenDecorationEntities(const std::vector<bool> &hiddenEntities);
+    void setFaceAttributes(size_t bModelIndex, size_t faceIndex, uint32_t attributes);
+    void updateFaceGeometries(const std::vector<OutdoorFaceGeometryData> &geometries);
+    bool translateWithSupportedBModel(size_t bModelIndex, float deltaX, float deltaY, float deltaZ);
+    // Raises the party in place; it falls back from there (MAW's unstuck key).
+    void lift(float height);
+    const OutdoorMoveState &state() const;
+    const OutdoorMovementEvents &lastEvents() const;
+    const OutdoorMovementConsequences &lastConsequences() const;
+    const OutdoorPartyMovementState &partyMovementState() const;
+    bool isRunningMovement(const OutdoorMovementInput &input) const;
+    const OutdoorMovementTuning &tuning() const;
+    const OutdoorMovementEffects &pendingEffects() const;
+    OutdoorMovementEffects consumePendingEffects();
+    void toggleRunning();
+    void toggleFlying();
+    // Descends at fly-down speed until the party touches down, then ends flight; no fall damage.
+    void requestLanding();
+    void toggleWaterWalk();
+    void toggleFeatherFall();
+    void setFlying(bool active);
+    void setFlyingAvailable(bool active);
+    void setRunning(bool active);
+    void setWaterWalkActive(bool active);
+    void setFeatherFallActive(bool active);
+    // Levitate keeps the party off water and lava damage.
+    void setLevitateActive(bool active);
+    void setSpeedMultiplier(float multiplier);
+    void setBodyDimensions(float radius, float height, float maxStepHeight = 128.0f);
+    void setCollisionTraceEnabled(bool enabled, std::string mapName);
+    void requestJump(std::optional<float> verticalVelocity = std::nullopt, float lift = 1.0f);
+    void requestSpecialJump(float velocityX, float velocityY, float velocityZ);
+    // Adds this horizontal velocity to every movement step for `seconds`, with the world's collision (a charge).
+    void requestDash(float velocityX, float velocityY, float seconds);
+
+private:
+    bool canActivateFlying() const;
+    bool isEffectiveRunning(const OutdoorMovementInput &input) const;
+
+    OutdoorMovementController m_movementController;
+    OutdoorMoveState m_state;
+    OutdoorPartyMovementState m_partyMovementState;
+    OutdoorMovementTuning m_tuning;
+    // The map's flight ceiling (its scene's movement.flight_ceiling), restored into m_tuning whenever it resets.
+    float m_flightCeiling = 0.0f;
+    OutdoorBodyDimensions m_bodyDimensions;
+    OutdoorMovementEvents m_lastEvents;
+    OutdoorMovementConsequences m_lastConsequences;
+    OutdoorMovementEffects m_pendingEffects;
+    bool m_jumpHeld = false;
+    bool m_flyUpHeld = false;
+    bool m_landingRequested = false;
+    float m_pendingFlyHeightDelta = 0.0f;
+    bool m_pendingJumpPress = false;
+    std::optional<float> m_pendingJumpVelocity;
+    float m_pendingJumpLift = 1.0f;
+    float m_pendingImpulseVelocityX = 0.0f;
+    float m_pendingImpulseVelocityY = 0.0f;
+    float m_pendingImpulseVelocityZ = 0.0f;
+    // A special jump's horizontal speed, kept until the party is back on the ground.
+    float m_jumpCarryVelocityX = 0.0f;
+    float m_jumpCarryVelocityY = 0.0f;
+    float m_dashVelocityX = 0.0f;
+    float m_dashVelocityY = 0.0f;
+    float m_dashSeconds = 0.0f;
+    bool m_flyingAvailable = false;
+    bool m_levitateActive = false;
+    float m_movementAccumulatorSeconds = 0.0f;
+    float m_startedFallingEventSeconds = 0.0f;
+    float m_landedEventSeconds = 0.0f;
+    float m_enteredWaterEventSeconds = 0.0f;
+    float m_leftWaterEventSeconds = 0.0f;
+    float m_enteredBurningEventSeconds = 0.0f;
+    float m_leftBurningEventSeconds = 0.0f;
+    float m_waterDamageConsequenceSeconds = 0.0f;
+    float m_burningDamageConsequenceSeconds = 0.0f;
+    float m_fallDamageConsequenceSeconds = 0.0f;
+    float m_splashSoundConsequenceSeconds = 0.0f;
+    float m_landingSoundConsequenceSeconds = 0.0f;
+    float m_hardLandingSoundConsequenceSeconds = 0.0f;
+    float m_waterDamageTimerSeconds = 0.0f;
+    float m_burningDamageTimerSeconds = 0.0f;
+    float m_speedMultiplier = 1.0f;
+    bool m_collisionTraceEnabled = false;
+    std::string m_collisionTraceMapName;
+    float m_collisionTraceClockSeconds = 0.0f;
+    float m_nextCollisionTraceSeconds = 0.0f;
+};
+}

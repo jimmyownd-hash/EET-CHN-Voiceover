@@ -1,0 +1,35 @@
+#pragma once
+
+#include <cstdint>
+#include <optional>
+#include <string>
+#include <string_view>
+#include <vector>
+
+namespace OpenYAMM::Game
+{
+struct ChestEntry
+{
+    std::string name;
+    uint8_t width = 0;
+    uint8_t height = 0;
+    int16_t textureId = 0;
+    std::string textureName;
+    int16_t gridOffsetX = 0;
+    int16_t gridOffsetY = 0;
+    uint8_t gridWidth = 0;
+    uint8_t gridHeight = 0;
+};
+
+class ChestTable
+{
+public:
+    bool loadRows(const std::vector<std::vector<std::string>> &rows);
+    const ChestEntry *get(uint16_t chestTypeId) const;
+    std::optional<uint16_t> findIdByName(std::string_view name) const;
+    const std::vector<ChestEntry> &getEntries() const;
+
+private:
+    std::vector<ChestEntry> m_entries;
+};
+}

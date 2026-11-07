@@ -1,0 +1,735 @@
+#include "game/ui/GameplayUiController.h"
+
+#include <algorithm>
+#include <iostream>
+#include <optional>
+#include <vector>
+
+namespace OpenYAMM::Game
+{
+namespace
+{
+const std::vector<std::string> GameplayLayoutFiles = {
+    "Data/ui/gameplay/gameplay.yml",
+#if defined(__ANDROID__) || defined(OPENYAMM_IOS)
+    "Data/ui/gameplay/touch_controls.yml",
+#endif
+    "Data/ui/gameplay/chest.yml",
+    "Data/ui/gameplay/dialogue.yml",
+    "Data/ui/gameplay/character.yml",
+    "Data/ui/gameplay/adventurers_inn.yml",
+    "Data/ui/gameplay/spellbook.yml",
+    "Data/ui/gameplay/rest.yml",
+    "Data/ui/gameplay/menu.yml",
+    "Data/ui/gameplay/controls.yml",
+    "Data/ui/gameplay/keyboard.yml",
+    "Data/ui/gameplay/video_options.yml",
+    "Data/ui/gameplay/save_game.yml",
+    "Data/ui/gameplay/load_game.yml",
+    "Data/ui/gameplay/journal.yml",
+    "Data/ui/gameplay/quick_reference.yml",
+    "Data/ui/gameplay/alchemy_bench.yml",
+    "Data/ui/gameplay/town_portal.yml",
+    "Data/ui/gameplay/lloyds_beacon.yml",
+    "Data/ui/gameplay/context_actions.yml",
+    "Data/ui/gameplay/item_inspect.yml",
+    "Data/ui/gameplay/character_inspect.yml",
+    "Data/ui/gameplay/buff_inspect.yml",
+    "Data/ui/gameplay/character_detail.yml",
+    "Data/ui/gameplay/actor_inspect.yml",
+    "Data/ui/gameplay/spell_inspect.yml",
+    "Data/ui/gameplay/loot_summary.yml"
+};
+}
+
+bool GameplayUiController::characterScreenSearchActive(const CharacterScreenState &screen)
+{
+    if (!screen.open)
+    {
+        return false;
+    }
+
+    if (screen.alchemyBench.active)
+    {
+        return screen.alchemyBench.craftingTab ? screen.alchemyBench.crafting.searchActive
+                                               : screen.alchemyBench.recipeSearchActive;
+    }
+
+    return screen.page == CharacterPage::Inventory && screen.inventorySearchActive;
+}
+
+bool GameplayUiController::journalSearchActive(const JournalScreenState &screen)
+{
+    return screen.active
+        && ((screen.view == JournalView::Notes && screen.notesSearchActive)
+            || (screen.view == JournalView::Map && screen.mapNoteEditing));
+}
+
+bool GameplayUiController::characterScreenSupportsInspection(const CharacterScreenState &screen)
+{
+    return screen.open;
+}
+
+bool GameplayUiController::houseShopModeSupportsItemInspection(HouseShopMode mode)
+{
+    switch (mode)
+    {
+        case HouseShopMode::BuyStandard:
+        case HouseShopMode::BuySpecial:
+        case HouseShopMode::BuySpellbooks:
+            return true;
+
+        case HouseShopMode::None:
+        default:
+            return false;
+    }
+}
+
+bool GameplayUiController::loadGameplayLayouts(
+    const Engine::AssetFileSystem &assetFileSystem,
+    const LayoutLoader &loader) const
+{
+    bool loadedAnyLayout = false;
+
+    for (const std::string &layoutFile : GameplayLayoutFiles)
+    {
+        const std::optional<std::string> fileContents = assetFileSystem.readTextFile(layoutFile);
+
+        if (!fileContents)
+        {
+            if (layoutFile == GameplayLayoutFiles.front())
+            {
+                return false;
+            }
+
+            continue;
+        }
+
+        if (!loader(layoutFile))
+        {
+            return false;
+        }
+
+        loadedAnyLayout = true;
+    }
+
+    return loadedAnyLayout;
+}
+
+void GameplayUiController::clearRuntimeState()
+{
+    resolvedState() = {};
+}
+
+GameplayUiController::State &GameplayUiController::state()
+{
+    return resolvedState();
+}
+
+const GameplayUiController::State &GameplayUiController::state() const
+{
+    return resolvedState();
+}
+
+void GameplayUiController::bindExternalState(State *pState)
+{
+    m_pExternalState = pState;
+}
+
+void GameplayUiController::clearExternalStateBinding()
+{
+    m_pExternalState = nullptr;
+}
+
+GameplayUiController::State &GameplayUiController::resolvedState()
+{
+    return m_pExternalState != nullptr ? *m_pExternalState : m_state;
+}
+
+const GameplayUiController::State &GameplayUiController::resolvedState() const
+{
+    return m_pExternalState != nullptr ? *m_pExternalState : m_state;
+}
+
+GameplayUiController::CharacterScreenState &GameplayUiController::characterScreen()
+{
+    return resolvedState().characterScreen;
+}
+
+const GameplayUiController::CharacterScreenState &GameplayUiController::characterScreen() const
+{
+    return resolvedState().characterScreen;
+}
+
+GameplayUiController::HeldInventoryItemState &GameplayUiController::heldInventoryItem()
+{
+    return resolvedState().heldInventoryItem;
+}
+
+const GameplayUiController::HeldInventoryItemState &GameplayUiController::heldInventoryItem() const
+{
+    return resolvedState().heldInventoryItem;
+}
+
+GameplayUiController::ItemInspectOverlayState &GameplayUiController::itemInspectOverlay()
+{
+    return resolvedState().itemInspectOverlay;
+}
+
+const GameplayUiController::ItemInspectOverlayState &GameplayUiController::itemInspectOverlay() const
+{
+    return resolvedState().itemInspectOverlay;
+}
+
+GameplayUiController::CharacterInspectOverlayState &GameplayUiController::characterInspectOverlay()
+{
+    return resolvedState().characterInspectOverlay;
+}
+
+const GameplayUiController::CharacterInspectOverlayState &GameplayUiController::characterInspectOverlay() const
+{
+    return resolvedState().characterInspectOverlay;
+}
+
+GameplayUiController::BuffInspectOverlayState &GameplayUiController::buffInspectOverlay()
+{
+    return resolvedState().buffInspectOverlay;
+}
+
+const GameplayUiController::BuffInspectOverlayState &GameplayUiController::buffInspectOverlay() const
+{
+    return resolvedState().buffInspectOverlay;
+}
+
+GameplayUiController::CharacterDetailOverlayState &GameplayUiController::characterDetailOverlay()
+{
+    return resolvedState().characterDetailOverlay;
+}
+
+const GameplayUiController::CharacterDetailOverlayState &GameplayUiController::characterDetailOverlay() const
+{
+    return resolvedState().characterDetailOverlay;
+}
+
+GameplayUiController::ActorInspectOverlayState &GameplayUiController::actorInspectOverlay()
+{
+    return resolvedState().actorInspectOverlay;
+}
+
+const GameplayUiController::ActorInspectOverlayState &GameplayUiController::actorInspectOverlay() const
+{
+    return resolvedState().actorInspectOverlay;
+}
+
+GameplayUiController::SpellInspectOverlayState &GameplayUiController::spellInspectOverlay()
+{
+    return resolvedState().spellInspectOverlay;
+}
+
+const GameplayUiController::SpellInspectOverlayState &GameplayUiController::spellInspectOverlay() const
+{
+    return resolvedState().spellInspectOverlay;
+}
+
+GameplayUiController::ReadableScrollOverlayState &GameplayUiController::readableScrollOverlay()
+{
+    return resolvedState().readableScrollOverlay;
+}
+
+const GameplayUiController::ReadableScrollOverlayState &GameplayUiController::readableScrollOverlay() const
+{
+    return resolvedState().readableScrollOverlay;
+}
+
+GameplayUiController::LootSummaryOverlayState &GameplayUiController::lootSummaryOverlay()
+{
+    return resolvedState().lootSummaryOverlay;
+}
+
+const GameplayUiController::LootSummaryOverlayState &GameplayUiController::lootSummaryOverlay() const
+{
+    return resolvedState().lootSummaryOverlay;
+}
+
+GameplayUiController::SpellbookState &GameplayUiController::spellbook()
+{
+    return resolvedState().spellbook;
+}
+
+const GameplayUiController::SpellbookState &GameplayUiController::spellbook() const
+{
+    return resolvedState().spellbook;
+}
+
+GameplayUiController::RestScreenState &GameplayUiController::restScreen()
+{
+    return resolvedState().restScreen;
+}
+
+const GameplayUiController::RestScreenState &GameplayUiController::restScreen() const
+{
+    return resolvedState().restScreen;
+}
+
+GameplayUiController::MenuScreenState &GameplayUiController::menuScreen()
+{
+    return resolvedState().menuScreen;
+}
+
+const GameplayUiController::MenuScreenState &GameplayUiController::menuScreen() const
+{
+    return resolvedState().menuScreen;
+}
+
+GameplayUiController::ControlsScreenState &GameplayUiController::controlsScreen()
+{
+    return resolvedState().controlsScreen;
+}
+
+const GameplayUiController::ControlsScreenState &GameplayUiController::controlsScreen() const
+{
+    return resolvedState().controlsScreen;
+}
+
+GameplayUiController::KeyboardScreenState &GameplayUiController::keyboardScreen()
+{
+    return resolvedState().keyboardScreen;
+}
+
+const GameplayUiController::KeyboardScreenState &GameplayUiController::keyboardScreen() const
+{
+    return resolvedState().keyboardScreen;
+}
+
+GameplayUiController::VideoOptionsScreenState &GameplayUiController::videoOptionsScreen()
+{
+    return resolvedState().videoOptionsScreen;
+}
+
+const GameplayUiController::VideoOptionsScreenState &GameplayUiController::videoOptionsScreen() const
+{
+    return resolvedState().videoOptionsScreen;
+}
+
+GameplayUiController::SaveGameScreenState &GameplayUiController::saveGameScreen()
+{
+    return resolvedState().saveGameScreen;
+}
+
+const GameplayUiController::SaveGameScreenState &GameplayUiController::saveGameScreen() const
+{
+    return resolvedState().saveGameScreen;
+}
+
+GameplayUiController::LoadGameScreenState &GameplayUiController::loadGameScreen()
+{
+    return resolvedState().loadGameScreen;
+}
+
+const GameplayUiController::LoadGameScreenState &GameplayUiController::loadGameScreen() const
+{
+    return resolvedState().loadGameScreen;
+}
+
+GameplayUiController::JournalScreenState &GameplayUiController::journalScreen()
+{
+    return resolvedState().journalScreen;
+}
+
+const GameplayUiController::JournalScreenState &GameplayUiController::journalScreen() const
+{
+    return resolvedState().journalScreen;
+}
+
+GameplayUiController::QuickReferenceScreenState &GameplayUiController::quickReferenceScreen()
+{
+    return resolvedState().quickReferenceScreen;
+}
+
+const GameplayUiController::QuickReferenceScreenState &GameplayUiController::quickReferenceScreen() const
+{
+    return resolvedState().quickReferenceScreen;
+}
+
+GameplayUiController::InventoryNestedOverlayState &GameplayUiController::inventoryNestedOverlay()
+{
+    return resolvedState().inventoryNestedOverlay;
+}
+
+const GameplayUiController::InventoryNestedOverlayState &GameplayUiController::inventoryNestedOverlay() const
+{
+    return resolvedState().inventoryNestedOverlay;
+}
+
+GameplayUiController::HouseShopOverlayState &GameplayUiController::houseShopOverlay()
+{
+    return resolvedState().houseShopOverlay;
+}
+
+const GameplayUiController::HouseShopOverlayState &GameplayUiController::houseShopOverlay() const
+{
+    return resolvedState().houseShopOverlay;
+}
+
+GameplayUiController::HouseShopVisitState &GameplayUiController::houseShopVisit()
+{
+    return resolvedState().houseShopVisit;
+}
+
+const GameplayUiController::HouseShopVisitState &GameplayUiController::houseShopVisit() const
+{
+    return resolvedState().houseShopVisit;
+}
+
+GameplayUiController::HouseBankState &GameplayUiController::houseBankState()
+{
+    return resolvedState().houseBankState;
+}
+
+const GameplayUiController::HouseBankState &GameplayUiController::houseBankState() const
+{
+    return resolvedState().houseBankState;
+}
+
+PartySpellCastRequest GameplayUiController::UtilitySpellOverlayState::castRequest() const
+{
+    PartySpellCastRequest request = {};
+    request.casterMemberIndex = casterMemberIndex;
+    request.spellId = spellId;
+    request.skillLevelOverride = skillLevelOverride;
+    request.skillMasteryOverride = skillMasteryOverride;
+    request.spendMana = spendMana;
+    request.applyRecovery = applyRecovery;
+    request.bypassRequiredMastery = bypassRequiredMastery;
+    request.bypassGameplayCasterValidation = bypassGameplayCasterValidation;
+    return request;
+}
+
+GameplayUiController::UtilitySpellOverlayState &GameplayUiController::utilitySpellOverlay()
+{
+    return resolvedState().utilitySpellOverlay;
+}
+
+const GameplayUiController::UtilitySpellOverlayState &GameplayUiController::utilitySpellOverlay() const
+{
+    return resolvedState().utilitySpellOverlay;
+}
+
+GameplayUiController::StatusBarState &GameplayUiController::statusBar()
+{
+    return resolvedState().statusBar;
+}
+
+const GameplayUiController::StatusBarState &GameplayUiController::statusBar() const
+{
+    return resolvedState().statusBar;
+}
+
+GameplayContextActionState &GameplayUiController::contextActionState()
+{
+    return resolvedState().contextAction;
+}
+
+const GameplayContextActionState &GameplayUiController::contextActionState() const
+{
+    return resolvedState().contextAction;
+}
+
+GameplayUiController::EventDialogState &GameplayUiController::eventDialog()
+{
+    return resolvedState().eventDialog;
+}
+
+const GameplayUiController::EventDialogState &GameplayUiController::eventDialog() const
+{
+    return resolvedState().eventDialog;
+}
+
+void GameplayUiController::openSpellbook(SpellbookSchool school)
+{
+    State &state = resolvedState();
+    state.spellbook = {};
+    state.spellInspectOverlay = {};
+    state.spellbook.active = true;
+    state.spellbook.school = school;
+}
+
+void GameplayUiController::closeSpellbook()
+{
+    State &state = resolvedState();
+    state.spellbook.active = false;
+    state.spellbook.selectedSpellId = 0;
+    state.spellInspectOverlay = {};
+}
+
+void GameplayUiController::closeReadableScrollOverlay()
+{
+    resolvedState().readableScrollOverlay = {};
+}
+
+void GameplayUiController::openInventoryNestedOverlay(InventoryNestedOverlayMode mode, uint32_t houseId)
+{
+    if (mode == InventoryNestedOverlayMode::None)
+    {
+        closeInventoryNestedOverlay();
+        return;
+    }
+
+    State &state = resolvedState();
+    closeHouseShopOverlay();
+    if (mode == InventoryNestedOverlayMode::ShopDisplay
+        || mode == InventoryNestedOverlayMode::ShopSell
+        || mode == InventoryNestedOverlayMode::ShopIdentify
+        || mode == InventoryNestedOverlayMode::ShopRepair)
+    {
+        beginHouseShopVisit(houseId);
+    }
+    state.inventoryNestedOverlay.active = true;
+    state.inventoryNestedOverlay.mode = mode;
+    state.inventoryNestedOverlay.houseId = houseId;
+    state.inventoryNestedOverlay.bagZoomed = false;
+}
+
+void GameplayUiController::closeInventoryNestedOverlay()
+{
+    resolvedState().inventoryNestedOverlay = {};
+}
+
+void GameplayUiController::openHouseShopOverlay(uint32_t houseId, HouseShopMode mode, uint32_t spellbookShelf)
+{
+    if (mode == HouseShopMode::None || houseId == 0)
+    {
+        closeHouseShopOverlay();
+        return;
+    }
+
+    State &state = resolvedState();
+    closeInventoryNestedOverlay();
+    beginHouseShopVisit(houseId);
+    state.houseShopOverlay.active = true;
+    state.houseShopOverlay.houseId = houseId;
+    state.houseShopOverlay.mode = mode;
+    state.houseShopOverlay.spellbookShelf = spellbookShelf;
+}
+
+void GameplayUiController::closeHouseShopOverlay()
+{
+    resolvedState().houseShopOverlay = {};
+}
+
+GameplayUiController::TransportScheduleState &GameplayUiController::transportSchedule()
+{
+    return resolvedState().transportSchedule;
+}
+
+const GameplayUiController::TransportScheduleState &GameplayUiController::transportSchedule() const
+{
+    return resolvedState().transportSchedule;
+}
+
+void GameplayUiController::openTransportSchedule(uint32_t houseId)
+{
+    closeInventoryNestedOverlay();
+    closeHouseShopOverlay();
+    TransportScheduleState &schedule = resolvedState().transportSchedule;
+    schedule = {};
+    schedule.active = houseId != 0;
+    schedule.houseId = houseId;
+}
+
+void GameplayUiController::closeTransportSchedule()
+{
+    resolvedState().transportSchedule = {};
+}
+
+void GameplayUiController::beginHouseShopVisit(uint32_t houseId)
+{
+    if (houseId == 0)
+    {
+        clearHouseShopVisitState();
+        return;
+    }
+
+    HouseShopVisitState &visit = resolvedState().houseShopVisit;
+
+    if (visit.houseId != houseId)
+    {
+        visit.houseId = houseId;
+        visit.transactionPerformed = false;
+    }
+}
+
+void GameplayUiController::markHouseShopTransactionPerformed(uint32_t houseId)
+{
+    beginHouseShopVisit(houseId);
+
+    if (houseId != 0)
+    {
+        resolvedState().houseShopVisit.transactionPerformed = true;
+    }
+}
+
+bool GameplayUiController::houseShopTransactionPerformed(uint32_t houseId) const
+{
+    const HouseShopVisitState &visit = resolvedState().houseShopVisit;
+    return houseId != 0 && visit.houseId == houseId && visit.transactionPerformed;
+}
+
+void GameplayUiController::clearHouseShopVisitState()
+{
+    resolvedState().houseShopVisit = {};
+}
+
+void GameplayUiController::openUtilitySpellOverlay(
+    UtilitySpellOverlayMode mode,
+    uint32_t spellId,
+    size_t casterMemberIndex,
+    bool lloydRecallMode)
+{
+    State &state = resolvedState();
+    state.utilitySpellOverlay.active = true;
+    state.utilitySpellOverlay.mode = mode;
+    state.utilitySpellOverlay.spellId = spellId;
+    state.utilitySpellOverlay.casterMemberIndex = casterMemberIndex;
+    state.utilitySpellOverlay.skillLevelOverride = 0;
+    state.utilitySpellOverlay.skillMasteryOverride = SkillMastery::None;
+    state.utilitySpellOverlay.spendMana = true;
+    state.utilitySpellOverlay.applyRecovery = true;
+    state.utilitySpellOverlay.bypassRequiredMastery = false;
+    state.utilitySpellOverlay.bypassGameplayCasterValidation = false;
+    state.utilitySpellOverlay.lloydRecallMode = lloydRecallMode;
+}
+
+void GameplayUiController::closeUtilitySpellOverlay()
+{
+    State &state = resolvedState();
+
+    // The overlay's hover text (a Town Portal town, a beacon slot) goes with it (audit STD2-3).
+    if (state.utilitySpellOverlay.active && !state.statusBar.hoverTextFromWorld)
+    {
+        clearStatusBarHoverText();
+    }
+
+    state.utilitySpellOverlay = {};
+}
+
+void GameplayUiController::beginHouseBankInput(uint32_t houseId, HouseBankInputMode mode)
+{
+    if (houseId == 0 || mode == HouseBankInputMode::None)
+    {
+        clearHouseBankState();
+        return;
+    }
+
+    State &state = resolvedState();
+    closeHouseShopOverlay();
+    closeInventoryNestedOverlay();
+    state.houseBankState.houseId = houseId;
+    state.houseBankState.inputMode = mode;
+    state.houseBankState.inputText.clear();
+}
+
+void GameplayUiController::clearHouseBankState()
+{
+    resolvedState().houseBankState = {};
+}
+
+void GameplayUiController::setStatusBarEvent(
+    const std::string &text,
+    float durationSeconds,
+    StatusBarEventPriority priority)
+{
+    if (text.empty())
+    {
+        return;
+    }
+
+    State &state = resolvedState();
+
+    if (statusBarEventActive() && priority < state.statusBar.eventPriority)
+    {
+        return;
+    }
+
+    state.statusBar.eventText = text;
+    state.statusBar.eventRemainingSeconds = std::max(0.0f, durationSeconds);
+    state.statusBar.eventPriority = priority;
+}
+
+bool GameplayUiController::statusBarEventActive() const
+{
+    const State &state = resolvedState();
+    return state.statusBar.eventRemainingSeconds > 0.0f && !state.statusBar.eventText.empty();
+}
+
+void GameplayUiController::setStatusBarHoverText(const std::string &text, bool fromWorld)
+{
+    if (text.empty())
+    {
+        clearStatusBarHoverText();
+        return;
+    }
+
+    State &state = resolvedState();
+
+    if (statusBarEventActive())
+    {
+        return;
+    }
+
+    state.statusBar.hoverText = text;
+    state.statusBar.hoverTextFromWorld = fromWorld;
+}
+
+void GameplayUiController::clearStatusBarHoverText()
+{
+    resolvedState().statusBar.hoverText.clear();
+    resolvedState().statusBar.worldItemLabel.clear();
+}
+
+void GameplayUiController::clearWorldStatusBarHoverText()
+{
+    StatusBarState &statusBar = resolvedState().statusBar;
+
+    if (statusBar.hoverTextFromWorld)
+    {
+        statusBar.hoverText.clear();
+    }
+
+    statusBar.worldItemLabel.clear();
+}
+
+void GameplayUiController::updateStatusBarEvent(float deltaSeconds)
+{
+    State &state = resolvedState();
+
+    if (state.statusBar.eventRemainingSeconds <= 0.0f)
+    {
+        return;
+    }
+
+    state.statusBar.eventRemainingSeconds =
+        std::max(0.0f, state.statusBar.eventRemainingSeconds - deltaSeconds);
+
+    if (state.statusBar.eventRemainingSeconds <= 0.0f)
+    {
+        if (!state.statusBar.eventText.empty())
+        {
+            std::cout << "Status text clear previous=\"" << state.statusBar.eventText << "\" reason=expired\n";
+        }
+
+        state.statusBar.eventText.clear();
+        state.statusBar.eventPriority = StatusBarEventPriority::Normal;
+    }
+}
+
+void GameplayUiController::clearEventDialog()
+{
+    resolvedState().eventDialog = {};
+}
+
+void GameplayUiController::setEventDialogContent(const EventDialogContent &content)
+{
+    resolvedState().eventDialog.content = content;
+}
+}

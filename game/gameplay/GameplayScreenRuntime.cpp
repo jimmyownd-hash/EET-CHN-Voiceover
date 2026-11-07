@@ -1,0 +1,4888 @@
+#include "game/gameplay/GameplayScreenRuntime.h"
+#include "game/ui/GameplayHudCommon.h"
+
+#include "game/app/GameSession.h"
+#include "game/audio/SoundIds.h"
+#include "game/debug/GameplayDebugTrace.h"
+#include "game/gameplay/GameplayItemService.h"
+#include "game/gameplay/GameplayInputFrame.h"
+#include "game/gameplay/NpcFollowerRuntime.h"
+#include "game/gameplay/GameplaySpeechRules.h"
+#include "game/gameplay/GameplayDialogContextBuilder.h"
+#include "game/gameplay/GameplayDialogUiFlow.h"
+#include "game/gameplay/GameMechanics.h"
+#include "game/gameplay/GameplayFxService.h"
+#include "game/gameplay/GameplayHeldItemController.h"
+#include "game/gameplay/HouseInteraction.h"
+#include "game/gameplay/GameplaySaveLoadUiSupport.h"
+#include "game/gameplay/GameplaySpellService.h"
+#include "game/items/InventoryItemUseRuntime.h"
+#include "game/party/SpellIds.h"
+#include "game/party/SpellSchool.h"
+#include "game/StringUtils.h"
+#include "game/tables/MergedBaseTables.h"
+#include "game/ui/EnemyHealthBarRenderer.h"
+#include "game/ui/GameplayJournalMapUi.h"
+#include "game/ui/SpellbookUiLayout.h"
+#include "game/ui/GameplayUiSkin.h"
+
+#include <SDL3/SDL.h>
+
+#include <algorithm>
+#include <array>
+#include <cassert>
+#include <cmath>
+#include <optional>
+
+namespace OpenYAMM::Game
+{
+namespace
+{
+constexpr uint32_t MinimapFactRefreshMilliseconds = 100;
+constexpr int GameplayMinimapMinZoomStep = 0;
+constexpr int GameplayMinimapDefaultZoomStep = 1;
+constexpr int GameplayMinimapMaxZoomStep = 2;
+constexpr int DefaultJournalMapZoomStep = 0;
+constexpr float OeRestHostileAlertDistance = 5120.0f;
+constexpr float DimensionDoorTileSize = 512.0f;
+
+struct DimensionDoorRadiusTrigger
+{
+    const char *pMapName = nullptr;
+    float x = 0.0f;
+    float y = 0.0f;
+    float radius = 0.0f;
+};
+
+struct DimensionDoorTileTrigger
+{
+    const char *pMapName = nullptr;
+    int tileX = 0;
+    int tileY = 0;
+};
+
+constexpr std::array<DimensionDoorRadiusTrigger, 2> DimensionDoorRadiusTriggers = {{
+    {"out09.odm", -5121.0f, 98.0f, 1500.0f},
+    {"outb3.odm", -8384.0f, -13040.0f, 1500.0f},
+}};
+
+constexpr std::array<DimensionDoorTileTrigger, 4> DimensionDoorTileTriggers = {{
+    {"out01.odm", 63, 59},
+    {"out07.odm", 43, 98},
+    {"outb3.odm", 89, 47},
+    {"7out04.odm", 84, 94},
+}};
+
+const char *restModeTraceName(GameplayUiController::RestMode mode)
+{
+    switch (mode)
+    {
+        case GameplayUiController::RestMode::None:
+            return "none";
+        case GameplayUiController::RestMode::Wait:
+            return "wait";
+        case GameplayUiController::RestMode::Heal:
+            return "heal";
+    }
+
+    return "unknown";
+}
+
+bool isHouseInventoryOverlay(const GameplayUiController::InventoryNestedOverlayState &overlay)
+{
+    return overlay.active
+        && (overlay.mode == GameplayUiController::InventoryNestedOverlayMode::ShopDisplay
+            || overlay.mode == GameplayUiController::InventoryNestedOverlayMode::ShopSell
+            || overlay.mode == GameplayUiController::InventoryNestedOverlayMode::ShopIdentify
+            || overlay.mode == GameplayUiController::InventoryNestedOverlayMode::ShopRepair);
+}
+
+std::string normalizedMapFileName(std::string mapName)
+{
+    std::replace(mapName.begin(), mapName.end(), '\\', '/');
+
+    const size_t slashIndex = mapName.find_last_of('/');
+
+    if (slashIndex != std::string::npos)
+    {
+        mapName = mapName.substr(slashIndex + 1);
+    }
+
+    return toLowerCopy(mapName);
+}
+
+bool mapNameMatches(const std::string &currentMapName, const char *pExpectedMapName)
+{
+    return normalizedMapFileName(currentMapName) == normalizedMapFileName(pExpectedMapName != nullptr ? pExpectedMapName : "");
+}
+
+bool partyIsOnDimensionDoorTile(float partyX, float partyY, const DimensionDoorTileTrigger &trigger)
+{
+    const int tileX = static_cast<int>(std::floor(partyX / DimensionDoorTileSize + 64.0f));
+    const int tileY = static_cast<int>(std::floor(64.0f - partyY / DimensionDoorTileSize));
+    return tileX == trigger.tileX && tileY == trigger.tileY;
+}
+
+bool isBodyEquipmentVisualSlot(EquipmentSlot slot)
+{
+    switch (slot)
+    {
+        case EquipmentSlot::Armor:
+        case EquipmentSlot::Helm:
+        case EquipmentSlot::Belt:
+        case EquipmentSlot::Cloak:
+        case EquipmentSlot::Gauntlets:
+        case EquipmentSlot::Boots:
+            return true;
+        default:
+            return false;
+    }
+}
+
+bool usesAlternateCloakEquippedVariant(EquipmentSlot slot)
+{
+    return slot == EquipmentSlot::Cloak;
+}
+
+uint32_t currentAnimationTicks()
+{
+    return (static_cast<uint64_t>(SDL_GetTicks()) * 128ULL) / 1000ULL;
+}
+
+uint32_t currentMilliseconds()
+{
+    return SDL_GetTicks();
+}
+
+bool partyHasHostileActorInRestRange(const IGameplayWorldRuntime *pWorldRuntime)
+{
+    if (pWorldRuntime == nullptr)
+    {
+        return false;
+    }
+
+    const float partyX = pWorldRuntime->partyX();
+    const float partyY = pWorldRuntime->partyY();
+    const float partyFootZ = pWorldRuntime->partyFootZ();
+
+    for (size_t actorIndex = 0; actorIndex < pWorldRuntime->mapActorCount(); ++actorIndex)
+    {
+        GameplayRuntimeActorState actorState = {};
+
+        if (!pWorldRuntime->actorRuntimeState(actorIndex, actorState)
+            || actorState.isDead
+            || actorState.isInvisible
+            || !actorState.hostileToParty)
+        {
+            continue;
+        }
+
+        const float deltaX = actorState.preciseX - partyX;
+        const float deltaY = actorState.preciseY - partyY;
+        const float deltaZ = actorState.preciseZ - partyFootZ;
+        const float centerDistance = std::sqrt(deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ);
+        const float edgeDistance = std::max(0.0f, centerDistance - static_cast<float>(actorState.radius));
+
+        if (edgeDistance < OeRestHostileAlertDistance)
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+std::optional<std::string> restWorldRestrictionStatusText(const IGameplayWorldRuntime *pWorldRuntime)
+{
+    if (pWorldRuntime != nullptr && !pWorldRuntime->allowsRest())
+    {
+        return "You can't rest here!";
+    }
+
+    if (pWorldRuntime != nullptr && pWorldRuntime->partyIsAirborneForRest())
+    {
+        return "You can't rest here!";
+    }
+
+    if (partyHasHostileActorInRestRange(pWorldRuntime))
+    {
+        return "There are hostile enemies near!";
+    }
+
+    return std::nullopt;
+}
+
+uint32_t mixPortraitSequenceValue(uint32_t value)
+{
+    value ^= value >> 16;
+    value *= 0x7feb352du;
+    value ^= value >> 15;
+    value *= 0x846ca68bu;
+    value ^= value >> 16;
+    return value;
+}
+
+PortraitId pickIdlePortrait(uint32_t sequenceValue)
+{
+    const uint32_t randomValue = sequenceValue % 100u;
+
+    if (randomValue < 25u)
+    {
+        return PortraitId::Blink;
+    }
+
+    if (randomValue < 31u)
+    {
+        return PortraitId::Wink;
+    }
+
+    if (randomValue < 37u)
+    {
+        return PortraitId::MouthOpenRandom;
+    }
+
+    if (randomValue < 43u)
+    {
+        return PortraitId::PurseLipsRandom;
+    }
+
+    if (randomValue < 46u)
+    {
+        return PortraitId::LookUp;
+    }
+
+    if (randomValue < 52u)
+    {
+        return PortraitId::LookRight;
+    }
+
+    if (randomValue < 58u)
+    {
+        return PortraitId::LookLeft;
+    }
+
+    if (randomValue < 64u)
+    {
+        return PortraitId::LookDown;
+    }
+
+    if (randomValue < 70u)
+    {
+        return PortraitId::Portrait54;
+    }
+
+    if (randomValue < 76u)
+    {
+        return PortraitId::Portrait55;
+    }
+
+    if (randomValue < 82u)
+    {
+        return PortraitId::Portrait56;
+    }
+
+    if (randomValue < 88u)
+    {
+        return PortraitId::Portrait57;
+    }
+
+    if (randomValue < 94u)
+    {
+        return PortraitId::PurseLips1;
+    }
+
+    return PortraitId::PurseLips2;
+}
+
+uint32_t pickNormalPortraitDurationTicks(uint32_t sequenceValue)
+{
+    return 32u + (sequenceValue % 257u);
+}
+
+bool portraitExpressionAllowedForCondition(
+    const std::optional<CharacterCondition> &displayedCondition,
+    PortraitId newPortrait)
+{
+    if (!displayedCondition)
+    {
+        return true;
+    }
+
+    const std::optional<PortraitId> currentPortrait = portraitIdForCondition(*displayedCondition);
+
+    if (!currentPortrait)
+    {
+        return true;
+    }
+
+    if (*currentPortrait == PortraitId::Dead || *currentPortrait == PortraitId::Eradicated)
+    {
+        return false;
+    }
+
+    if (*currentPortrait == PortraitId::Petrified)
+    {
+        return newPortrait == PortraitId::WakeUp;
+    }
+
+    if (*currentPortrait == PortraitId::Sleep && newPortrait == PortraitId::WakeUp)
+    {
+        return true;
+    }
+
+    if ((*currentPortrait >= PortraitId::Cursed && *currentPortrait <= PortraitId::Unconscious)
+        && *currentPortrait != PortraitId::Poisoned)
+    {
+        return isDamagePortrait(newPortrait);
+    }
+
+    return true;
+}
+
+bool applyDisplayedConditionPortrait(Character &member)
+{
+    const std::optional<CharacterCondition> displayedCondition = GameMechanics::displayedCondition(member);
+
+    if (!displayedCondition)
+    {
+        return false;
+    }
+
+    const std::optional<PortraitId> conditionPortrait = portraitIdForCondition(*displayedCondition);
+
+    if (!conditionPortrait)
+    {
+        return false;
+    }
+
+    const bool terminalCondition =
+        *conditionPortrait == PortraitId::Dead || *conditionPortrait == PortraitId::Eradicated;
+
+    if (!terminalCondition
+        && isDamagePortrait(member.portraitState)
+        && member.portraitDurationTicks > 0
+        && member.portraitElapsedTicks < member.portraitDurationTicks)
+    {
+        return true;
+    }
+
+    if (member.portraitState != *conditionPortrait || member.portraitDurationTicks != 0)
+    {
+        member.portraitState = *conditionPortrait;
+        member.portraitElapsedTicks = 0;
+        member.portraitDurationTicks = 0;
+    }
+
+    return true;
+}
+
+bool bypassSpeechCooldown(SpeechId speechId)
+{
+    switch (speechId)
+    {
+        case SpeechId::HelloDay:
+        case SpeechId::HelloEvening:
+        case SpeechId::DamageMajor:
+        case SpeechId::IdentifyWeakItem:
+        case SpeechId::IdentifyGreatItem:
+        case SpeechId::IdentifyFailItem:
+        case SpeechId::RepairSuccess:
+        case SpeechId::RepairFail:
+        case SpeechId::CantLearnSpell:
+        case SpeechId::LearnSpell:
+        case SpeechId::LeaveDungeon:
+        case SpeechId::EnterDungeon:
+            return true;
+
+        default:
+            return false;
+    }
+}
+
+uint32_t speechSpeakerKey(size_t memberIndex, SpeechId speechId)
+{
+    switch (speechId)
+    {
+        case SpeechId::HelloDay:
+        case SpeechId::HelloEvening:
+            return 0x80000000u;
+
+        default:
+            return memberIndex + 1;
+    }
+}
+
+constexpr uint32_t SpeechReactionCooldownMs = 900;
+constexpr uint32_t CombatSpeechReactionCooldownMs = 2500;
+constexpr uint64_t SpellFailSoundCooldownMs = 250;
+} // namespace
+
+GameplayScreenRuntime::GameplayScreenRuntime(GameSession &session)
+    : m_session(session)
+{
+    bindCombatLog(&m_combatLog);
+}
+
+GameplayScreenRuntime::~GameplayScreenRuntime()
+{
+    if (boundCombatLog() == &m_combatLog)
+    {
+        bindCombatLog(nullptr);
+    }
+}
+
+CombatActorHealthBarRuntime &GameplayScreenRuntime::enemyHealthBars() const
+{
+    return m_enemyHealthBars;
+}
+
+void GameplayScreenRuntime::updateEnemyHealthBars(
+    float seconds, std::span<const GameplayCombatFeedbackEvent> events) const
+{
+    if (settingsSnapshot().enemyHealthBarMode == "off" || worldRuntime() == nullptr)
+    {
+        m_enemyHealthBars.clear();
+        return;
+    }
+    m_enemyHealthBars.advance(seconds);
+    for (const GameplayCombatFeedbackEvent &event : events)
+    {
+        GameplayActorInspectState state;
+        if (worldRuntime()->actorInspectState(event.actorIndex, 0, state))
+        {
+            m_enemyHealthBars.recordCombatEvent(event.actorIndex, state.currentHp, state.maxHp, event.damage);
+        }
+    }
+}
+
+void GameplayScreenRuntime::bindAudioSystem(GameAudioSystem *pAudioSystem)
+{
+    m_pAudioSystem = pAudioSystem;
+}
+
+void GameplayScreenRuntime::bindSettings(GameSettings *pSettings)
+{
+    m_pSettings = pSettings;
+    // The session's update keeps it in step with later changes.
+    m_combatLog.setRecording(pSettings != nullptr && pSettings->combatLog);
+}
+
+void GameplayScreenRuntime::bindSceneAdapter(IGameplayOverlaySceneAdapter *pSceneAdapter)
+{
+    m_enemyHealthBars.clear();
+    m_pSceneAdapter = pSceneAdapter;
+}
+
+void GameplayScreenRuntime::clearSceneAdapter(IGameplayOverlaySceneAdapter *pSceneAdapter)
+{
+    if (m_pSceneAdapter == pSceneAdapter)
+    {
+        if (m_pAudioSystem != nullptr)
+        {
+            m_pAudioSystem->stopActorVoices();
+        }
+        m_enemyHealthBars.clear();
+        m_pSceneAdapter = nullptr;
+    }
+}
+
+void GameplayScreenRuntime::clearTransientBindings()
+{
+    if (m_pAudioSystem != nullptr)
+    {
+        m_pAudioSystem->stopActorVoices();
+    }
+    m_enemyHealthBars.clear();
+    m_pendingMapMoveDialogClose = {};
+    m_pAudioSystem = nullptr;
+    m_pSettings = nullptr;
+    m_pSceneAdapter = nullptr;
+}
+
+IGameplayOverlaySceneAdapter &GameplayScreenRuntime::sceneAdapter() const
+{
+    assert(m_pSceneAdapter != nullptr);
+    return *m_pSceneAdapter;
+}
+
+GameplayUiController &GameplayScreenRuntime::uiController() const
+{
+    return m_session.gameplayUiController();
+}
+
+GameplayUiRuntime &GameplayScreenRuntime::uiRuntime() const
+{
+    return m_session.gameplayUiRuntime();
+}
+
+GameplayUiRuntime &GameplayScreenRuntime::gameplayUiRuntime() const
+{
+    return uiRuntime();
+}
+
+GameplayOverlayInteractionState &GameplayScreenRuntime::interactionState() const
+{
+    return m_session.overlayInteractionState();
+}
+
+const GameplayInputFrame *GameplayScreenRuntime::currentGameplayInputFrame() const
+{
+    return m_session.currentGameplayInputFrame();
+}
+
+GameplayDialogUiFlowState GameplayScreenRuntime::dialogUiFlowState()
+{
+    return {
+        uiController(),
+        interactionState(),
+        m_session.gameplayDialogController(),
+        eventDialogSelectionIndex()
+    };
+}
+
+GameplayDialogController::Context GameplayScreenRuntime::buildDialogContext(EventRuntimeState &eventRuntimeState)
+{
+    const MapStatsEntry *pCurrentMap = m_session.hasCurrentMapFileName()
+        ? m_session.data().mapStats().findByFileName(m_session.currentMapFileName())
+        : nullptr;
+
+    IGameplayWorldRuntime *pWorldRuntime = worldRuntime();
+
+    return buildGameplayDialogContext(
+        uiController(),
+        eventRuntimeState,
+        activeEventDialog(),
+        eventDialogSelectionIndex(),
+        party(),
+        pWorldRuntime,
+        pWorldRuntime != nullptr ? pWorldRuntime->globalEventProgram() : nullptr,
+        houseTable(),
+        classSkillTable(),
+        npcDialogTable(),
+        &m_session.data().mm9RudeDialogueTable(),
+        &m_session.data().mm9MapTransitionTable(),
+        &m_session.data().mm9SkillTrainerTable(),
+        &m_session.data().mm9TransportRouteTable(),
+        &m_session.data().transitionTable(),
+        pCurrentMap,
+        &m_session.data().mapEntries(),
+        rosterTable(),
+        &m_session.data().arcomageLibrary(),
+        currentHudScreenState() == GameplayHudScreenState::Dialogue,
+        this,
+        &m_session.data().mergedNpcProfessionTable(),
+        &m_session.data().mergedNewsProfessionTopicTable(),
+        &m_session.data().mergedNpcBtbTable(),
+        &m_session.data().mergedBolsterMapTable(),
+        &m_session.data().mergedContinentSettingTable(),
+        &m_session.data().mergedTeacherTopicTable(),
+        &m_session.data().mergedTeacherAutonoteTable(),
+        &m_session.data().spellTable());
+}
+
+void GameplayScreenRuntime::presentActiveEventDialog()
+{
+    GameplayDialogUiFlowState state = dialogUiFlowState();
+    GameplayDialogUiFlowPresentOptions options = {};
+    options.pInputFrame = m_session.currentGameplayInputFrame();
+    options.suppressInitialAcceptIfActivationKeysHeld = true;
+    ::OpenYAMM::Game::presentActiveEventDialog(state, options);
+}
+
+void GameplayScreenRuntime::presentPendingEventDialog(
+    size_t previousMessageCount,
+    bool allowNpcFallbackContent,
+    const DialogContextBuilder &contextBuilder,
+    const PendingEventDialogOpenedCallback &onOpened)
+{
+    GameplayDialogUiFlowState state = dialogUiFlowState();
+    GameplayDialogUiFlowPresentOptions options = {};
+    options.pInputFrame = m_session.currentGameplayInputFrame();
+    options.suppressInitialAcceptIfActivationKeysHeld = true;
+    EventRuntimeState *pEventRuntimeState = worldRuntime() != nullptr ? worldRuntime()->eventRuntimeState() : nullptr;
+
+    if (pEventRuntimeState == nullptr)
+    {
+        return;
+    }
+
+    GameplayDialogController::Context context = contextBuilder
+        ? contextBuilder(*pEventRuntimeState)
+        : buildDialogContext(*pEventRuntimeState);
+
+    ::OpenYAMM::Game::presentPendingEventDialog(
+        state,
+        pEventRuntimeState,
+        context,
+        previousMessageCount,
+        allowNpcFallbackContent,
+        options,
+        onOpened);
+}
+
+uint32_t GameplayScreenRuntime::closeActiveEventDialog()
+{
+    EventRuntimeState *pEventRuntimeState =
+        worldRuntime() != nullptr ? worldRuntime()->eventRuntimeState() : nullptr;
+    const uint32_t hostHouseId = pEventRuntimeState != nullptr ? pEventRuntimeState->dialogueState.hostHouseId : 0;
+    GameplayDialogUiFlowState state = dialogUiFlowState();
+    ::OpenYAMM::Game::closeActiveEventDialog(
+        state,
+        pEventRuntimeState);
+    return hostHouseId;
+}
+
+void GameplayScreenRuntime::closeActiveDialogForMapMove()
+{
+    DialogueCloseCallback closeDialog = std::move(m_pendingMapMoveDialogClose);
+    m_pendingMapMoveDialogClose = {};
+    if (closeDialog)
+    {
+        closeDialog();
+    }
+    else
+    {
+        closeActiveEventDialog();
+    }
+}
+
+void GameplayScreenRuntime::returnToHouseBankMainDialogShared()
+{
+    GameplayDialogUiFlowState state = dialogUiFlowState();
+    EventRuntimeState *pEventRuntimeState = worldRuntime() != nullptr ? worldRuntime()->eventRuntimeState() : nullptr;
+
+    if (pEventRuntimeState == nullptr)
+    {
+        return;
+    }
+
+    GameplayDialogController::Context context = buildDialogContext(*pEventRuntimeState);
+    const GameplayDialogController::Result result = ::OpenYAMM::Game::returnToHouseBankMainDialog(
+        state,
+        pEventRuntimeState,
+        context);
+
+    if (result.shouldOpenPendingEventDialog)
+    {
+        presentPendingEventDialog(result.previousMessageCount, result.allowNpcFallbackContent);
+    }
+}
+
+void GameplayScreenRuntime::showHouseServiceMessage(uint32_t houseId, const std::string &message)
+{
+    EventRuntimeState *pEventRuntimeState = worldRuntime() != nullptr ? worldRuntime()->eventRuntimeState() : nullptr;
+
+    if (pEventRuntimeState == nullptr)
+    {
+        return;
+    }
+
+    GameplayDialogController::Context context = buildDialogContext(*pEventRuntimeState);
+    const GameplayDialogController::Result result =
+        m_session.gameplayDialogController().showHouseServiceMessage(context, houseId, message);
+
+    if (result.shouldOpenPendingEventDialog)
+    {
+        presentPendingEventDialog(result.previousMessageCount, result.allowNpcFallbackContent);
+    }
+}
+
+IGameplayWorldRuntime *GameplayScreenRuntime::worldRuntime() const
+{
+    return m_session.activeWorldRuntime();
+}
+
+Party *GameplayScreenRuntime::party() const
+{
+    IGameplayWorldRuntime *pWorldRuntime = worldRuntime();
+    return pWorldRuntime != nullptr ? pWorldRuntime->party() : nullptr;
+}
+
+const Party *GameplayScreenRuntime::partyReadOnly() const
+{
+    const IGameplayWorldRuntime *pWorldRuntime = worldRuntime();
+    return pWorldRuntime != nullptr ? pWorldRuntime->party() : nullptr;
+}
+
+bool GameplayScreenRuntime::mobileFlightControlsAvailable() const
+{
+    const IGameplayWorldRuntime *pWorldRuntime = worldRuntime();
+    const Party *pParty = pWorldRuntime != nullptr ? pWorldRuntime->party() : nullptr;
+
+    // On a ladder, or swimming in deep water (devdocs/mm9_rework/MM9_WATER_SWIMMING_DESIGN.md "Controls").
+    if (pWorldRuntime != nullptr && (pWorldRuntime->partyClimbingLadder() || pWorldRuntime->partySwimming()))
+    {
+        return true;
+    }
+
+    return pWorldRuntime != nullptr
+        && !pWorldRuntime->isIndoorMap()
+        && pParty != nullptr
+        && pParty->hasPartyBuff(PartyBuffId::Fly);
+}
+
+bool GameplayScreenRuntime::passTurnBasedTurn()
+{
+    Party *pParty = party();
+
+    if (pParty == nullptr)
+    {
+        return false;
+    }
+
+    // As in the original, passing costs the active member's melee attack recovery.
+    const Character *pMember = pParty->activeMember();
+    const float recoverySeconds = pMember != nullptr
+        ? GameMechanics::buildCharacterAttackProfile(
+            *pMember,
+            itemTable(),
+            spellTable(),
+            characterAttackTuningFromSettings(settingsSnapshot())).meleeRecoverySeconds
+        : 0.0f;
+    return turnBasedCombatRuntime().passTurn(*pParty, recoverySeconds);
+}
+
+bool GameplayScreenRuntime::contextActionButtonVisible() const
+{
+    const GameplayContextActionState &actions = contextActionStateReadOnly();
+    return actions.visible && actions.primaryIndex < actions.actions.size()
+        && (settingsSnapshot().contextActionPopup
+            || actions.actions[actions.primaryIndex].kind == GameplayContextActionKind::DropHeldItem);
+}
+
+std::optional<GameplayScreenRuntime::ResolvedHudLayoutElement> GameplayScreenRuntime::resolvePassTurnButton(
+    int width,
+    int height) const
+{
+    const Party *pParty = partyReadOnly();
+
+    if (pParty == nullptr
+        || currentHudScreenState() != GameplayHudScreenState::Gameplay
+        || pendingSpellTargetActive()
+        || !turnBasedCombatRuntime().canPassTurn(*pParty))
+    {
+        return std::nullopt;
+    }
+
+    // Attached to the turn indicator dock on desktop and Android alike.
+    return resolveHudLayoutElement("ObsidianTurnPassButton", width, height, 0, 0);
+}
+
+const char *GameplayScreenRuntime::mobileInspectLayoutId() const
+{
+    return currentHudScreenState() == GameplayHudScreenState::Gameplay
+        ? "OutdoorMobileInspectButton" : "OutdoorMobileOverlayInspectButton";
+}
+
+std::vector<GameplayTouchControl> GameplayScreenRuntime::mobileTouchControls(int width, int height) const
+{
+    std::vector<GameplayTouchControl> controls;
+    controls.reserve(18);
+    const auto append = [&](const char *pId, GameplayTouchRole role = GameplayTouchRole::Hud)
+    {
+        const HudLayoutElement *pLayout = findHudLayoutElement(pId);
+        if (pLayout == nullptr || !pLayout->visible)
+        {
+            return;
+        }
+        const std::optional<ResolvedHudLayoutElement> rect = resolveHudLayoutElement(pId, width, height, 0, 0);
+        if (rect)
+        {
+            controls.push_back({role, rect->x, rect->y, rect->width, rect->height});
+        }
+    };
+    if (mobileInspectControlAvailable())
+    {
+        append(mobileInspectLayoutId(), GameplayTouchRole::Inspect);
+    }
+    if (currentHudScreenState() != GameplayHudScreenState::Gameplay)
+    {
+        return controls;
+    }
+    if (interactionState().partyBuffPopupOpen || interactionState().personalBuffPopupMember)
+    {
+        // A tap outside an open buff popup dismisses it, rather than beginning camera or movement input.
+        controls.push_back({GameplayTouchRole::Hud, 0, 0, static_cast<float>(width), static_cast<float>(height)});
+    }
+    for (const char *pId : {"OutdoorTopBar", "ObsidianHeroBuffPanel", "ObsidianSkullBuffPanel",
+        "OutdoorMinimapFrame", "OutdoorFollowerToggle", "OutdoorGameplayBasebar",
+        "OutdoorMobileSystemPanel", "OutdoorMobileActionPanel", "OutdoorMobileButtonQuickCast"})
+    {
+        append(pId);
+    }
+    if (interactionState().followerPanelOpen)
+    {
+        append("OutdoorFollowerPanel");
+    }
+    if (turnBasedCombatRuntime().active())
+    {
+        append("ObsidianTurnPlate");
+    }
+    if (contextActionButtonVisible())
+    {
+        append("OutdoorMobileContextActionButton");
+    }
+    if (const std::optional<ResolvedHudLayoutElement> passRect = resolvePassTurnButton(width, height))
+    {
+        controls.push_back({GameplayTouchRole::Hud, passRect->x, passRect->y, passRect->width, passRect->height});
+    }
+    if (mobileFlightControlsAvailable())
+    {
+        append("OutdoorMobileButtonFlyUp", GameplayTouchRole::FlyUp);
+        append("OutdoorMobileButtonFlyDown", GameplayTouchRole::FlyDown);
+    }
+    return controls;
+}
+
+bool GameplayScreenRuntime::mobileInspectControlAvailable() const
+{
+    if (utilitySpellOverlayReadOnly().active)
+    {
+        return false;
+    }
+    const GameplayHudScreenState hudScreenState = currentHudScreenState();
+
+    if (hudScreenState == GameplayHudScreenState::Gameplay
+        || hudScreenState == GameplayHudScreenState::Chest
+        || hudScreenState == GameplayHudScreenState::Spellbook)
+    {
+        return true;
+    }
+
+    if (hudScreenState == GameplayHudScreenState::Character)
+    {
+        return GameplayUiController::characterScreenSupportsInspection(characterScreenReadOnly());
+    }
+
+    if (hudScreenState != GameplayHudScreenState::Dialogue)
+    {
+        return false;
+    }
+
+    const GameplayUiController::HouseShopOverlayState &shopOverlay = houseShopOverlay();
+
+    if (shopOverlay.active
+        && GameplayUiController::houseShopModeSupportsItemInspection(shopOverlay.mode))
+    {
+        return true;
+    }
+
+    const GameplayUiController::InventoryNestedOverlayState &inventoryOverlay = inventoryNestedOverlay();
+    return inventoryOverlay.active
+        && (inventoryOverlay.mode == GameplayUiController::InventoryNestedOverlayMode::ShopDisplay
+            || inventoryOverlay.mode == GameplayUiController::InventoryNestedOverlayMode::ShopSell
+            || inventoryOverlay.mode == GameplayUiController::InventoryNestedOverlayMode::ShopIdentify
+            || inventoryOverlay.mode == GameplayUiController::InventoryNestedOverlayMode::ShopRepair);
+}
+
+float GameplayScreenRuntime::partyX() const
+{
+    const IGameplayWorldRuntime *pWorldRuntime = worldRuntime();
+    return pWorldRuntime != nullptr ? pWorldRuntime->partyX() : 0.0f;
+}
+
+float GameplayScreenRuntime::partyY() const
+{
+    const IGameplayWorldRuntime *pWorldRuntime = worldRuntime();
+    return pWorldRuntime != nullptr ? pWorldRuntime->partyY() : 0.0f;
+}
+
+float GameplayScreenRuntime::partyFootZ() const
+{
+    const IGameplayWorldRuntime *pWorldRuntime = worldRuntime();
+    return pWorldRuntime != nullptr ? pWorldRuntime->partyFootZ() : 0.0f;
+}
+
+GameAudioSystem *GameplayScreenRuntime::audioSystem() const
+{
+    return m_pAudioSystem;
+}
+
+const ItemTable *GameplayScreenRuntime::itemTable() const
+{
+    return &m_session.data().itemTable();
+}
+
+const std::string &GameplayScreenRuntime::rulesetGuideUrl() const
+{
+    return m_session.data().rulesetGuideUrl();
+}
+
+const StandardItemEnchantTable *GameplayScreenRuntime::standardItemEnchantTable() const
+{
+    return &m_session.data().standardItemEnchantTable();
+}
+
+const SpecialItemEnchantTable *GameplayScreenRuntime::specialItemEnchantTable() const
+{
+    return &m_session.data().specialItemEnchantTable();
+}
+
+const ClassSkillTable *GameplayScreenRuntime::classSkillTable() const
+{
+    return &m_session.data().classSkillTable();
+}
+
+const CharacterDollTable *GameplayScreenRuntime::characterDollTable() const
+{
+    return &m_session.data().characterDollTable();
+}
+
+const CharacterInspectTable *GameplayScreenRuntime::characterInspectTable() const
+{
+    return &m_session.data().characterInspectTable();
+}
+
+const RosterTable *GameplayScreenRuntime::rosterTable() const
+{
+    return &m_session.data().rosterTable();
+}
+
+const ReadableScrollTable *GameplayScreenRuntime::readableScrollTable() const
+{
+    return &m_session.data().readableScrollTable();
+}
+
+const PotionMixingTable *GameplayScreenRuntime::potionMixingTable() const
+{
+    return &m_session.data().potionMixingTable();
+}
+
+const PotionNoteTable *GameplayScreenRuntime::potionNoteTable() const
+{
+    return &m_session.data().potionNoteTable();
+}
+
+const MergedPotionSettingTable *GameplayScreenRuntime::mergedPotionSettingTable() const
+{
+    return &m_session.data().mergedPotionSettingTable();
+}
+
+const MergedReagentSettingTable *GameplayScreenRuntime::mergedReagentSettingTable() const
+{
+    return &m_session.data().mergedReagentSettingTable();
+}
+
+const MergedNpcProfessionTable *GameplayScreenRuntime::mergedNpcProfessionTable() const
+{
+    return &m_session.data().mergedNpcProfessionTable();
+}
+
+const MergedComplexItemPictureTable *GameplayScreenRuntime::mergedComplexItemPictureTable() const
+{
+    return &m_session.data().mergedComplexItemPictureTable();
+}
+
+const SpellTable *GameplayScreenRuntime::spellTable() const
+{
+    return &m_session.data().spellTable();
+}
+
+const HouseTable *GameplayScreenRuntime::houseTable() const
+{
+    return &m_session.data().houseTable();
+}
+
+const MapStats &GameplayScreenRuntime::mapStats() const
+{
+    return m_session.data().mapStats();
+}
+
+const ChestTable *GameplayScreenRuntime::chestTable() const
+{
+    return &m_session.data().chestTable();
+}
+
+const NpcDialogTable *GameplayScreenRuntime::npcDialogTable() const
+{
+    return &m_session.data().npcDialogTable();
+}
+
+const MonsterTable *GameplayScreenRuntime::monsterTable() const
+{
+    return &m_session.data().monsterTable();
+}
+
+const MonsterProjectileTable *GameplayScreenRuntime::monsterProjectileTable() const
+{
+    return &m_session.data().monsterProjectileTable();
+}
+
+GameplayUiController::CharacterScreenState &GameplayScreenRuntime::characterScreen() const
+{
+    return m_session.gameplayScreenState().characterScreen();
+}
+
+GameplayUiController::HeldInventoryItemState &GameplayScreenRuntime::heldInventoryItem() const
+{
+    return uiController().heldInventoryItem();
+}
+
+GameplayUiController::ItemInspectOverlayState &GameplayScreenRuntime::itemInspectOverlay() const
+{
+    return uiController().itemInspectOverlay();
+}
+
+GameplayUiController::CharacterInspectOverlayState &GameplayScreenRuntime::characterInspectOverlay() const
+{
+    return uiController().characterInspectOverlay();
+}
+
+GameplayUiController::BuffInspectOverlayState &GameplayScreenRuntime::buffInspectOverlay() const
+{
+    return uiController().buffInspectOverlay();
+}
+
+GameplayUiController::CharacterDetailOverlayState &GameplayScreenRuntime::characterDetailOverlay() const
+{
+    return uiController().characterDetailOverlay();
+}
+
+GameplayUiController::ActorInspectOverlayState &GameplayScreenRuntime::actorInspectOverlay() const
+{
+    return uiController().actorInspectOverlay();
+}
+
+GameplayUiController::SpellInspectOverlayState &GameplayScreenRuntime::spellInspectOverlay() const
+{
+    return uiController().spellInspectOverlay();
+}
+
+GameplayUiController::ReadableScrollOverlayState &GameplayScreenRuntime::readableScrollOverlay() const
+{
+    return uiController().readableScrollOverlay();
+}
+
+GameplayUiController::LootSummaryOverlayState &GameplayScreenRuntime::lootSummaryOverlay() const
+{
+    return uiController().lootSummaryOverlay();
+}
+
+GameplayUiController::SpellbookState &GameplayScreenRuntime::spellbook() const
+{
+    return m_session.gameplayScreenState().spellbook();
+}
+
+GameplayUiController::UtilitySpellOverlayState &GameplayScreenRuntime::utilitySpellOverlay() const
+{
+    return uiController().utilitySpellOverlay();
+}
+
+GameplayUiController::InventoryNestedOverlayState &GameplayScreenRuntime::inventoryNestedOverlay() const
+{
+    return m_session.gameplayScreenState().inventoryNestedOverlay();
+}
+
+GameplayUiController::HouseShopOverlayState &GameplayScreenRuntime::houseShopOverlay() const
+{
+    return m_session.gameplayScreenState().houseShopOverlay();
+}
+
+GameplayUiController::TransportScheduleState &GameplayScreenRuntime::transportSchedule() const
+{
+    return uiController().transportSchedule();
+}
+
+GameplayUiController::HouseShopVisitState &GameplayScreenRuntime::houseShopVisit() const
+{
+    return m_session.gameplayScreenState().houseShopVisit();
+}
+
+GameplayUiController::HouseBankState &GameplayScreenRuntime::houseBankState() const
+{
+    return m_session.gameplayScreenState().houseBankState();
+}
+
+GameplayUiController::JournalScreenState &GameplayScreenRuntime::journalScreenState() const
+{
+    return m_session.gameplayScreenState().journalScreen();
+}
+
+GameplayUiController::RestScreenState &GameplayScreenRuntime::restScreenState() const
+{
+    return m_session.gameplayScreenState().restScreen();
+}
+
+GameplayUiController::MenuScreenState &GameplayScreenRuntime::menuScreenState() const
+{
+    return m_session.gameplayScreenState().menuScreen();
+}
+
+GameplayUiController::ControlsScreenState &GameplayScreenRuntime::controlsScreenState() const
+{
+    return m_session.gameplayScreenState().controlsScreen();
+}
+
+GameplayUiController::KeyboardScreenState &GameplayScreenRuntime::keyboardScreenState() const
+{
+    return m_session.gameplayScreenState().keyboardScreen();
+}
+
+GameplayUiController::VideoOptionsScreenState &GameplayScreenRuntime::videoOptionsScreenState() const
+{
+    return m_session.gameplayScreenState().videoOptionsScreen();
+}
+
+GameplayUiController::SaveGameScreenState &GameplayScreenRuntime::saveGameScreenState() const
+{
+    return m_session.gameplayScreenState().saveGameScreen();
+}
+
+GameplayUiController::LoadGameScreenState &GameplayScreenRuntime::loadGameScreenState() const
+{
+    return m_session.gameplayScreenState().loadGameScreen();
+}
+
+GameplayUiController::QuickReferenceScreenState &GameplayScreenRuntime::quickReferenceScreenState() const
+{
+    return m_session.gameplayScreenState().quickReferenceScreen();
+}
+
+const GameplayUiController::CharacterScreenState &GameplayScreenRuntime::characterScreenReadOnly() const
+{
+    return m_session.gameplayScreenState().characterScreen();
+}
+
+const GameplayUiController::ItemInspectOverlayState &GameplayScreenRuntime::itemInspectOverlayReadOnly() const
+{
+    return uiController().itemInspectOverlay();
+}
+
+const GameplayUiController::CharacterInspectOverlayState &GameplayScreenRuntime::characterInspectOverlayReadOnly() const
+{
+    return uiController().characterInspectOverlay();
+}
+
+const GameplayUiController::BuffInspectOverlayState &GameplayScreenRuntime::buffInspectOverlayReadOnly() const
+{
+    return uiController().buffInspectOverlay();
+}
+
+const GameplayUiController::CharacterDetailOverlayState &GameplayScreenRuntime::characterDetailOverlayReadOnly() const
+{
+    return uiController().characterDetailOverlay();
+}
+
+const GameplayUiController::ActorInspectOverlayState &GameplayScreenRuntime::actorInspectOverlayReadOnly() const
+{
+    return uiController().actorInspectOverlay();
+}
+
+const GameplayUiController::SpellInspectOverlayState &GameplayScreenRuntime::spellInspectOverlayReadOnly() const
+{
+    return uiController().spellInspectOverlay();
+}
+
+const GameplayUiController::ReadableScrollOverlayState &GameplayScreenRuntime::readableScrollOverlayReadOnly() const
+{
+    return uiController().readableScrollOverlay();
+}
+
+const GameplayUiController::LootSummaryOverlayState &GameplayScreenRuntime::lootSummaryOverlayReadOnly() const
+{
+    return uiController().lootSummaryOverlay();
+}
+
+const GameplayUiController::SpellbookState &GameplayScreenRuntime::spellbookReadOnly() const
+{
+    return m_session.gameplayScreenState().spellbook();
+}
+
+const GameplayUiController::UtilitySpellOverlayState &GameplayScreenRuntime::utilitySpellOverlayReadOnly() const
+{
+    return uiController().utilitySpellOverlay();
+}
+
+const GameplayUiController::JournalScreenState &GameplayScreenRuntime::journalScreenStateReadOnly() const
+{
+    return m_session.gameplayScreenState().journalScreen();
+}
+
+const GameplayUiController::QuickReferenceScreenState &GameplayScreenRuntime::quickReferenceScreenStateReadOnly() const
+{
+    return m_session.gameplayScreenState().quickReferenceScreen();
+}
+
+const AwardTable *GameplayScreenRuntime::awardTable() const
+{
+    return &m_session.data().awardTable();
+}
+
+bool GameplayScreenRuntime::isAutonoteUnlocked(uint32_t autonoteId) const
+{
+    const Party *pParty = partyReadOnly();
+    return pParty != nullptr && pParty->hasAutonote(autonoteId);
+}
+
+const JournalQuestTable *GameplayScreenRuntime::journalQuestTable() const
+{
+    return &m_session.data().journalQuestTable();
+}
+
+const JournalHistoryTable *GameplayScreenRuntime::journalHistoryTable() const
+{
+    return &m_session.data().journalHistoryTable();
+}
+
+std::string GameplayScreenRuntime::mapDisplayName(const std::string &mapFileName) const
+{
+    const MapStatsEntry *pMap = m_session.data().mapStats().findByFileName(mapFileName);
+    return pMap != nullptr && !pMap->name.empty() ? pMap->name : mapFileName;
+}
+
+uint32_t GameplayScreenRuntime::activeHistoryContinentId() const
+{
+    const MapStatsEntry *pCurrentMap = m_session.hasCurrentMapFileName()
+        ? m_session.data().mapStats().findByFileName(m_session.currentMapFileName())
+        : nullptr;
+
+    return pCurrentMap != nullptr ? pCurrentMap->mergedContinentId : 1u;
+}
+
+const JournalAutonoteTable *GameplayScreenRuntime::journalAutonoteTable() const
+{
+    return &m_session.data().journalAutonoteTable();
+}
+
+const std::string &GameplayScreenRuntime::currentMapFileName() const
+{
+    return m_session.currentMapFileName();
+}
+
+float GameplayScreenRuntime::gameplayCameraYawRadians() const
+{
+    return sceneAdapter().gameplayCameraYawRadians();
+}
+
+const std::vector<uint8_t> *GameplayScreenRuntime::journalMapFullyRevealedCells() const
+{
+    const IGameplayWorldRuntime *pWorldRuntime = worldRuntime();
+    return pWorldRuntime != nullptr ? pWorldRuntime->journalMapFullyRevealedCells() : nullptr;
+}
+
+const std::vector<uint8_t> *GameplayScreenRuntime::journalMapPartiallyRevealedCells() const
+{
+    const IGameplayWorldRuntime *pWorldRuntime = worldRuntime();
+    return pWorldRuntime != nullptr ? pWorldRuntime->journalMapPartiallyRevealedCells() : nullptr;
+}
+
+EventDialogContent &GameplayScreenRuntime::activeEventDialog() const
+{
+    return uiController().eventDialog().content;
+}
+
+bool GameplayScreenRuntime::pendingSpellTargetActive() const
+{
+    return m_session.gameplayScreenState().pendingSpellTarget().active;
+}
+
+PartySpellCastTargetKind GameplayScreenRuntime::pendingSpellTargetKind() const
+{
+    return m_session.gameplayScreenState().pendingSpellTarget().targetKind;
+}
+
+std::string &GameplayScreenRuntime::statusBarEventText() const
+{
+    return uiController().statusBar().eventText;
+}
+
+float &GameplayScreenRuntime::statusBarEventRemainingSeconds() const
+{
+    return uiController().statusBar().eventRemainingSeconds;
+}
+
+const std::string &GameplayScreenRuntime::statusBarHoverText() const
+{
+    return uiController().statusBar().hoverText;
+}
+
+void GameplayScreenRuntime::updateStatusBarEvent(float deltaSeconds) const
+{
+    uiController().updateStatusBarEvent(deltaSeconds);
+}
+
+GameplayContextActionState &GameplayScreenRuntime::contextActionState() const
+{
+    return uiController().contextActionState();
+}
+
+const GameplayContextActionState &GameplayScreenRuntime::contextActionStateReadOnly() const
+{
+    return uiController().contextActionState();
+}
+
+void GameplayScreenRuntime::clearContextActionState() const
+{
+    uiController().contextActionState() = {};
+}
+
+void GameplayScreenRuntime::setStatusBarHoverText(const std::string &text) const
+{
+    uiController().setStatusBarHoverText(text);
+}
+
+void GameplayScreenRuntime::clearStatusBarHoverText() const
+{
+    uiController().clearStatusBarHoverText();
+}
+
+void GameplayScreenRuntime::setWorldStatusBarHoverText(const std::string &text) const
+{
+    if (text.empty())
+    {
+        uiController().clearWorldStatusBarHoverText();
+        return;
+    }
+
+    uiController().setStatusBarHoverText(text, true);
+}
+
+void GameplayScreenRuntime::clearWorldStatusBarHoverText() const
+{
+    uiController().clearWorldStatusBarHoverText();
+}
+
+void GameplayScreenRuntime::setWorldItemHoverLabel(
+    const std::string &text,
+    uint32_t colorAbgr,
+    float screenX,
+    float screenY) const
+{
+    GameplayUiController::StatusBarState &statusBar = uiController().statusBar();
+    statusBar.worldItemLabel = text;
+    statusBar.worldItemLabelColorAbgr = colorAbgr;
+    statusBar.worldItemLabelX = screenX;
+    statusBar.worldItemLabelY = screenY;
+}
+
+const GameplayUiController::StatusBarState &GameplayScreenRuntime::statusBarState() const
+{
+    return uiController().statusBar();
+}
+
+size_t &GameplayScreenRuntime::eventDialogSelectionIndex() const
+{
+    return uiController().eventDialog().selectionIndex;
+}
+
+bool GameplayScreenRuntime::trySelectPartyMember(size_t memberIndex, bool requireGameplayReady)
+{
+    Party *pParty = party();
+
+    if (pParty == nullptr)
+    {
+        return false;
+    }
+
+    if (requireGameplayReady && !pParty->canSelectMemberInGameplay(memberIndex))
+    {
+        return false;
+    }
+
+    if (turnBasedCombatRuntime().active())
+    {
+        const Character *pActiveMember = pParty->activeMember();
+        if (pActiveMember != nullptr
+            && GameMechanics::canTakeGameplayAction(*pActiveMember)
+            && turnBasedCombatRuntime().canBeginPlayerAction(*pParty)
+            && memberIndex != pParty->activeMemberIndex())
+        {
+            return false;
+        }
+    }
+
+    if (!pParty->setActiveMemberIndex(memberIndex))
+    {
+        return false;
+    }
+
+    GameplayUiController::CharacterScreenState &screen = characterScreen();
+    if (screen.open && screen.source == GameplayUiController::CharacterScreenSource::Party)
+    {
+        screen.sourceIndex = memberIndex;
+    }
+
+    EventRuntimeState *pEventRuntimeState = worldRuntime() != nullptr ? worldRuntime()->eventRuntimeState() : nullptr;
+
+    if (pEventRuntimeState != nullptr
+        && activeEventDialog().isActive
+        && !houseShopOverlay().active
+        && !isHouseInventoryOverlay(inventoryNestedOverlay()))
+    {
+        presentPendingEventDialog(pEventRuntimeState->messages.size(), true);
+    }
+
+    return true;
+}
+
+size_t GameplayScreenRuntime::selectedCharacterScreenSourceIndex() const
+{
+    const Party *pParty = partyReadOnly();
+
+    if (pParty == nullptr)
+    {
+        return 0;
+    }
+
+    if (pParty->members().empty())
+    {
+        return 0;
+    }
+
+    const GameplayUiController::CharacterScreenState &screen = characterScreenReadOnly();
+
+    if (isAdventurersInnCharacterSourceActive())
+    {
+        return screen.sourceIndex;
+    }
+
+    if (screen.open && screen.source == GameplayUiController::CharacterScreenSource::Party)
+    {
+        return std::min(screen.sourceIndex, pParty->members().size() - 1);
+    }
+
+    return pParty->activeMemberIndex();
+}
+
+const Character *GameplayScreenRuntime::selectedCharacterScreenCharacter() const
+{
+    const Party *pParty = partyReadOnly();
+
+    if (pParty == nullptr)
+    {
+        return nullptr;
+    }
+
+    if (isAdventurersInnCharacterSourceActive())
+    {
+        return pParty->adventurersInnCharacter(characterScreenReadOnly().sourceIndex);
+    }
+
+    return pParty->member(selectedCharacterScreenSourceIndex());
+}
+
+bool GameplayScreenRuntime::isAdventurersInnCharacterSourceActive() const
+{
+    const GameplayUiController::CharacterScreenState &screen = characterScreenReadOnly();
+    return screen.open && screen.source == GameplayUiController::CharacterScreenSource::AdventurersInn;
+}
+
+bool GameplayScreenRuntime::isAdventurersInnScreenActive() const
+{
+    const GameplayUiController::CharacterScreenState &screen = characterScreenReadOnly();
+    return isAdventurersInnCharacterSourceActive() && screen.adventurersInnRosterOverlayOpen;
+}
+
+bool GameplayScreenRuntime::isReadOnlyAdventurersInnCharacterViewActive() const
+{
+    return isAdventurersInnCharacterSourceActive() && !characterScreenReadOnly().adventurersInnRosterOverlayOpen;
+}
+
+bool GameplayScreenRuntime::activeMemberKnowsSpell(uint32_t spellId) const
+{
+    const Character *pMember = partyReadOnly() != nullptr ? partyReadOnly()->activeMember() : nullptr;
+    return pMember != nullptr && pMember->knowsSpell(spellId);
+}
+
+bool GameplayScreenRuntime::activeMemberHasSpellbookSchool(GameplayUiController::SpellbookSchool school) const
+{
+    const SpellbookSchoolUiDefinition *pDefinition = findSpellbookSchoolUiDefinition(school);
+    const Character *pMember = partyReadOnly() != nullptr ? partyReadOnly()->activeMember() : nullptr;
+
+    if (pDefinition == nullptr || pMember == nullptr)
+    {
+        return false;
+    }
+
+    const std::optional<std::string> skillName = resolveMagicSkillName(pDefinition->firstSpellId);
+
+    if (!skillName)
+    {
+        return false;
+    }
+
+    const CharacterSkill *pSkill = pMember->findSkill(*skillName);
+    return pSkill != nullptr && pSkill->level > 0 && pSkill->mastery != SkillMastery::None;
+}
+
+void GameplayScreenRuntime::setStatusBarEvent(
+    const std::string &text,
+    float durationSeconds,
+    GameplayUiController::StatusBarEventPriority priority)
+{
+    uiController().setStatusBarEvent(text, durationSeconds, priority);
+}
+
+void GameplayScreenRuntime::openRestOverlay(bool enforceWorldRestrictions)
+{
+    if (party() == nullptr || worldRuntime() == nullptr)
+    {
+        return;
+    }
+
+    if (turnBasedCombatRuntime().active())
+    {
+        setStatusBarEvent("You can't rest in turn-based mode!");
+        playCantRestHereReaction();
+        return;
+    }
+
+    if (enforceWorldRestrictions)
+    {
+        const std::optional<std::string> restrictionStatus =
+            restWorldRestrictionStatusText(worldRuntime());
+
+        if (restrictionStatus.has_value())
+        {
+            setStatusBarEvent(*restrictionStatus);
+            playCantRestHereReaction();
+            return;
+        }
+    }
+
+    closeSpellbookOverlay();
+    closeMenuOverlay();
+    itemService().closeReadableScrollOverlay();
+    closeInventoryNestedOverlay();
+    closeQuickReferenceOverlay();
+    uiController().characterScreen() = {};
+    uiController().restScreen() = {};
+    uiController().restScreen().active = true;
+    interactionState().restClickLatch = false;
+    interactionState().restPressedTarget = {};
+}
+
+void GameplayScreenRuntime::beginRestAction(
+    GameplayUiController::RestMode mode,
+    float minutes,
+    bool consumeFood,
+    bool innRest)
+{
+    GameplayUiController::RestScreenState &restScreen = restScreenState();
+
+    if (!restScreen.active || party() == nullptr || worldRuntime() == nullptr)
+    {
+        return;
+    }
+
+    // A new action during a running one would restart the full duration on top of the minutes already passed.
+    if (restScreen.mode != GameplayUiController::RestMode::None)
+    {
+        setStatusBarEvent("You are already resting.");
+        return;
+    }
+
+    if (consumeFood)
+    {
+        const std::optional<std::string> restrictionStatus =
+            restWorldRestrictionStatusText(worldRuntime());
+
+        if (restrictionStatus.has_value())
+        {
+            setStatusBarEvent(*restrictionStatus);
+            playCantRestHereReaction();
+            return;
+        }
+    }
+
+    if (mode == GameplayUiController::RestMode::Heal && consumeFood)
+    {
+        const int foodRequired = restFoodRequired();
+        Party &currentParty = *party();
+
+        if (currentParty.food() < foodRequired)
+        {
+            setStatusBarEvent("You don't have enough food to rest.");
+            playSpeechReaction(currentParty.activeMemberIndex(), SpeechId::Hungry, true);
+            return;
+        }
+
+        currentParty.addFood(-foodRequired);
+    }
+
+    // The party sleeps from the start of a heal, so dawns passed during it do not count as days without rest.
+    // Sleeping members show their sleep portraits until restAndHealAll wakes them when the rest completes.
+    if (mode == GameplayUiController::RestMode::Heal)
+    {
+        Party &currentParty = *party();
+        currentParty.clearDaysWithoutRest();
+
+        for (size_t memberIndex = 0; memberIndex < currentParty.members().size(); ++memberIndex)
+        {
+            Character *pMember = currentParty.member(memberIndex);
+
+            if (pMember == nullptr
+                || pMember->conditions.test(static_cast<size_t>(CharacterCondition::Dead))
+                || pMember->conditions.test(static_cast<size_t>(CharacterCondition::Petrified))
+                || pMember->conditions.test(static_cast<size_t>(CharacterCondition::Eradicated)))
+            {
+                continue;
+            }
+
+            pMember->conditions.set(static_cast<size_t>(CharacterCondition::Asleep));
+            pMember->conditionStartGameMinutes[static_cast<size_t>(CharacterCondition::Asleep)] =
+                worldRuntime()->gameMinutes();
+        }
+    }
+
+    restScreen.mode = mode;
+    restScreen.innRest = innRest;
+    restScreen.totalMinutes = std::max(0.0f, minutes);
+    restScreen.remainingMinutes = restScreen.totalMinutes;
+
+    GAMEPLAY_DEBUG_TRACE(
+        "rest_action_started mode=\"" + std::string(restModeTraceName(mode)) + "\""
+        + " minutes=" + std::to_string(restScreen.totalMinutes)
+        + " consume_food=" + (consumeFood ? "true" : "false")
+        + " game_minutes=" + std::to_string(worldRuntime()->gameMinutes()));
+
+    if (restScreen.remainingMinutes <= 0.0f)
+    {
+        restScreen.mode = GameplayUiController::RestMode::None;
+        restScreen.innRest = false;
+    }
+}
+
+void GameplayScreenRuntime::startRestAction(GameplayUiController::RestMode mode, float minutes)
+{
+    beginRestAction(mode, minutes, true, false);
+}
+
+void GameplayScreenRuntime::startInnRest(uint32_t houseId)
+{
+    if (worldRuntime() == nullptr)
+    {
+        return;
+    }
+
+    openRestOverlay(false);
+    beginRestAction(
+        GameplayUiController::RestMode::Heal,
+        innRestDurationMinutes(houseId, worldRuntime()->gameMinutes()),
+        false,
+        true);
+}
+
+void GameplayScreenRuntime::openSpellbookOverlay()
+{
+    std::optional<GameplayUiController::SpellbookSchool> school;
+    const Character *pMember = partyReadOnly() != nullptr ? partyReadOnly()->activeMember() : nullptr;
+
+    if (pMember != nullptr && pMember->spellbookSchool >= 0
+        && activeMemberHasSpellbookSchool(GameplayUiController::SpellbookSchool(pMember->spellbookSchool)))
+    {
+        school = GameplayUiController::SpellbookSchool(pMember->spellbookSchool);
+    }
+
+    if (!school)
+    {
+        for (const SpellbookSchoolUiDefinition &definition : spellbookSchoolUiDefinitions())
+        {
+            if (activeMemberHasSpellbookSchool(definition.school))
+            {
+                school = definition.school;
+                break;
+            }
+        }
+
+        const Character *pCaster = partyReadOnly() != nullptr ? partyReadOnly()->activeMember() : nullptr;
+
+        if (pCaster != nullptr && !pCaster->quickSpellName.empty() && spellTable() != nullptr)
+        {
+            const SpellEntry *pSpellEntry = spellTable()->findByName(pCaster->quickSpellName);
+
+            if (pSpellEntry != nullptr)
+            {
+                const SpellbookSchoolUiDefinition *pDefinition =
+                    findSpellbookSchoolUiDefinitionForSpellId(uint32_t(pSpellEntry->id));
+
+                if (pDefinition != nullptr && activeMemberHasSpellbookSchool(pDefinition->school))
+                {
+                    school = pDefinition->school;
+                }
+            }
+        }
+    }
+
+    closeQuickReferenceOverlay();
+    uiController().openSpellbook(school.value_or(GameplayUiController::SpellbookSchool::Fire));
+    setSpellbookSchool(uiController().spellbook().school);
+    uiController().spellbook().selectedSpellId = 0;
+    interactionState().spellbookClickLatch = false;
+    interactionState().spellbookPressedTarget = {};
+    interactionState().lastSpellbookSpellClickTicks = 0;
+    interactionState().lastSpellbookClickedSpellId = 0;
+
+    if (m_pAudioSystem != nullptr)
+    {
+        m_pAudioSystem->playCommonSound(SoundId::OpenBook, GameAudioSystem::PlaybackGroup::Ui);
+    }
+}
+
+void GameplayScreenRuntime::openChestTransferInventoryOverlay()
+{
+    uiController().openInventoryNestedOverlay(GameplayUiController::InventoryNestedOverlayMode::ChestTransfer);
+    interactionState().inventoryNestedOverlayItemClickLatch = false;
+}
+
+void GameplayScreenRuntime::toggleCharacterInventoryScreen()
+{
+    GameplayUiController::CharacterScreenState &characterScreen = uiController().characterScreen();
+    if (characterScreen.open)
+    {
+        closeCharacterScreen();
+        return;
+    }
+
+    characterScreen.open = true;
+    closeQuickReferenceOverlay();
+    characterScreen.page = GameplayUiController::CharacterPage::Inventory;
+    characterScreen.source = GameplayUiController::CharacterScreenSource::Party;
+    characterScreen.sourceIndex = partyReadOnly() != nullptr ? partyReadOnly()->activeMemberIndex() : 0;
+    characterScreen.dollJewelryOverlayOpen = false;
+    characterScreen.adventurersInnRosterOverlayOpen = false;
+    closeSpellbookOverlay();
+}
+
+void GameplayScreenRuntime::closeCharacterScreen()
+{
+    GameplayUiController::CharacterScreenState &characterScreen = uiController().characterScreen();
+#if defined(__ANDROID__) || defined(OPENYAMM_IOS)
+    GameplayUiController::HeldInventoryItemState &heldItem = heldInventoryItem();
+    Party *pParty = party();
+    if (characterScreen.open && heldItem.active && pParty != nullptr)
+    {
+        const size_t firstMemberIndex = characterScreen.source == GameplayUiController::CharacterScreenSource::Party
+            ? characterScreen.sourceIndex : pParty->activeMemberIndex();
+        if (pParty->tryGrantInventoryItemStartingAt(firstMemberIndex, heldItem.item))
+        {
+            GameplayHeldItemController::clearHeldInventoryItem(heldItem);
+            pParty->clearHeldItemForQueries();
+        }
+        else
+        {
+            setStatusBarEvent("Pack is Full!");
+        }
+    }
+#endif
+    characterScreen.open = false;
+    characterScreen.dollJewelryOverlayOpen = false;
+    characterScreen.adventurersInnRosterOverlayOpen = false;
+    resetCharacterOverlayInteractionState();
+}
+
+void GameplayScreenRuntime::handleDialogueCloseRequest()
+{
+    if (transportSchedule().active)
+    {
+        closeTransportSchedule();
+        return;
+    }
+
+    if (houseBankState().inputActive())
+    {
+        returnToHouseBankMainDialogShared();
+        return;
+    }
+
+    const bool shopInventoryOverlayActive =
+        currentHudScreenState() == GameplayHudScreenState::Dialogue
+        && isHouseInventoryOverlay(inventoryNestedOverlay());
+
+    if (inventoryNestedOverlay().active
+        && currentHudScreenState() == GameplayHudScreenState::Dialogue
+        && !shopInventoryOverlayActive)
+    {
+        closeInventoryNestedOverlay();
+        return;
+    }
+
+    if (houseShopOverlay().active)
+    {
+        closeHouseShopOverlay();
+        return;
+    }
+
+    EventDialogContent &dialog = activeEventDialog();
+
+    if (!shopInventoryOverlayActive
+        && dialog.isActive
+        && dialog.presentation != EventDialogPresentation::Transition
+        && !dialog.videoName.empty())
+    {
+        stopHouseVideoPlayback();
+        dialog.videoName.clear();
+        dialog.videoDirectory.clear();
+        return;
+    }
+
+    EventRuntimeState *pEventRuntimeState = worldRuntime() != nullptr ? worldRuntime()->eventRuntimeState() : nullptr;
+
+    if (pEventRuntimeState == nullptr)
+    {
+        closeActiveEventDialog();
+        interactionState().activateInspectLatch = true;
+        return;
+    }
+
+    if (pEventRuntimeState->pendingInputPrompt
+        && pEventRuntimeState->pendingInputPrompt->kind == EventRuntimeState::PendingInputPrompt::Kind::PressAnyKey
+        && pEventRuntimeState->pendingDialogueContext
+        && pEventRuntimeState->pendingDialogueContext->kind == DialogueContextKind::MapEvent)
+    {
+        IGameplayWorldRuntime *pWorldRuntime = worldRuntime();
+        const EventRuntimeState::PendingInputPrompt prompt = *pEventRuntimeState->pendingInputPrompt;
+        pEventRuntimeState->pendingInputPrompt.reset();
+
+        size_t previousMessageCount = pEventRuntimeState->messages.size();
+        const bool executed =
+            pWorldRuntime != nullptr
+            && pWorldRuntime->executeMapEvent(prompt.eventId, previousMessageCount, prompt.continueStep);
+
+        if (executed
+            && (pEventRuntimeState->pendingInputPrompt || pEventRuntimeState->messages.size() > previousMessageCount))
+        {
+            presentPendingEventDialog(previousMessageCount, true);
+            return;
+        }
+
+        closeActiveEventDialog();
+
+        if (pEventRuntimeState->pendingMapMove.has_value())
+        {
+            m_session.setPendingMapMove(std::move(*pEventRuntimeState->pendingMapMove));
+            pEventRuntimeState->pendingMapMove.reset();
+        }
+
+        interactionState().activateInspectLatch = true;
+        return;
+    }
+
+    GameplayDialogController::Context context = buildDialogContext(*pEventRuntimeState);
+    const GameplayDialogController::CloseDialogRequestResult result =
+        m_session.gameplayDialogController().handleDialogueCloseRequest(context);
+
+    if (result.shouldOpenPendingEventDialog)
+    {
+        presentPendingEventDialog(result.previousMessageCount, result.allowNpcFallbackContent);
+    }
+    else if (result.shouldCloseActiveDialog)
+    {
+        closeActiveEventDialog();
+        interactionState().activateInspectLatch = true;
+    }
+}
+
+void GameplayScreenRuntime::closeTransportSchedule()
+{
+    uiController().closeTransportSchedule();
+}
+
+void GameplayScreenRuntime::closeHouseShopOverlay()
+{
+    uiController().closeHouseShopOverlay();
+    interactionState().houseShopClickLatch = false;
+    interactionState().houseShopPressedSlotIndex = static_cast<size_t>(-1);
+}
+
+void GameplayScreenRuntime::markHouseShopTransactionPerformed(uint32_t houseId)
+{
+    uiController().markHouseShopTransactionPerformed(houseId);
+}
+
+void GameplayScreenRuntime::openFollowerNpcDialogue(size_t followerSlotIndex)
+{
+    openFollowerNpcDialogueByIndex(interactionState().followerPanelScrollOffset + followerSlotIndex);
+}
+
+void GameplayScreenRuntime::openFollowerNpcDialogueByIndex(size_t followerIndex)
+{
+    IGameplayWorldRuntime *pWorldRuntime = worldRuntime();
+    EventRuntimeState *pEventRuntimeState = pWorldRuntime != nullptr ? pWorldRuntime->eventRuntimeState() : nullptr;
+    const NpcDialogTable *pNpcDialogTable = npcDialogTable();
+    const MergedNpcProfessionTable *pNpcProfessionTable = mergedNpcProfessionTable();
+    const Party *pParty = partyReadOnly();
+
+    if (pEventRuntimeState == nullptr || pNpcDialogTable == nullptr || pNpcProfessionTable == nullptr)
+    {
+        return;
+    }
+
+    const std::vector<HiredNpcFollowerView> followerViews =
+        buildHiredNpcFollowerViews(
+            *pEventRuntimeState,
+            pParty,
+            *pNpcDialogTable,
+            *pNpcProfessionTable);
+
+    if (followerIndex >= followerViews.size())
+    {
+        return;
+    }
+
+    if (activeEventDialog().isActive)
+    {
+        closeActiveEventDialog();
+    }
+
+    GameplayDialogController::Context context = buildDialogContext(*pEventRuntimeState);
+    const GameplayDialogController::Result result =
+        m_session.gameplayDialogController().openNpcDialogue(context, followerViews[followerIndex].npcId);
+    presentPendingDialogActionResult(result);
+}
+
+void GameplayScreenRuntime::closeRestOverlay()
+{
+    uiController().restScreen() = {};
+    interactionState().closeOverlayLatch = false;
+    interactionState().restClickLatch = false;
+    interactionState().restPressedTarget = {};
+}
+
+void GameplayScreenRuntime::completeRestAction(bool closeRestScreenAfterCompletion)
+{
+    GameplayUiController::RestScreenState &restScreen = restScreenState();
+
+    if (!restScreen.active)
+    {
+        return;
+    }
+
+    const GameplayUiController::RestMode completedMode = restScreen.mode;
+    const bool completedInnRest = restScreen.innRest;
+    const float remainingMinutes = std::max(0.0f, restScreen.remainingMinutes);
+    const float beforeGameMinutes = worldRuntime() != nullptr ? worldRuntime()->gameMinutes() : 0.0f;
+
+    if (remainingMinutes > 0.0f && worldRuntime() != nullptr)
+    {
+        IGameplayWorldRuntime *pWorldRuntime = worldRuntime();
+        pWorldRuntime->advanceGameMinutes(remainingMinutes);
+        EventRuntimeState *pEventRuntimeState = pWorldRuntime->eventRuntimeState();
+        Party *pParty = party();
+        if (pParty != nullptr)
+        {
+            pParty->advanceTimedStates(remainingMinutes * 60.0f);
+        }
+        if (pEventRuntimeState != nullptr && pParty != nullptr)
+        {
+            itemService().updateConnectorStoneRecharge(*pParty, *pEventRuntimeState, pWorldRuntime->gameMinutes());
+        }
+    }
+    const float afterGameMinutes = worldRuntime() != nullptr ? worldRuntime()->gameMinutes() : beforeGameMinutes;
+
+    if (remainingMinutes > 0.0f)
+    {
+        GAMEPLAY_DEBUG_TRACE(
+            "game_time_advanced source=rest"
+            " mode=\"" + std::string(restModeTraceName(completedMode)) + "\""
+            + " minutes=" + std::to_string(remainingMinutes)
+            + " before_game_minutes=" + std::to_string(beforeGameMinutes)
+            + " after_game_minutes=" + std::to_string(afterGameMinutes)
+            + " game_minutes=" + std::to_string(afterGameMinutes));
+    }
+
+    restScreen.mode = GameplayUiController::RestMode::None;
+    restScreen.innRest = false;
+    restScreen.totalMinutes = 0.0f;
+    restScreen.remainingMinutes = 0.0f;
+
+    if (completedMode == GameplayUiController::RestMode::Heal && completedInnRest && worldRuntime() != nullptr)
+    {
+        worldRuntime()->applyMapReentryReset();
+    }
+
+    if (completedMode == GameplayUiController::RestMode::Heal && party() != nullptr)
+    {
+        party()->restAndHealAll();
+    }
+
+    if (closeRestScreenAfterCompletion || completedMode == GameplayUiController::RestMode::Heal)
+    {
+        closeRestOverlay();
+    }
+}
+
+void GameplayScreenRuntime::openMenuOverlay()
+{
+    closeSpellbookOverlay();
+    closeQuickReferenceOverlay();
+    itemService().closeReadableScrollOverlay();
+    closeInventoryNestedOverlay();
+    uiController().characterScreen() = {};
+    uiController().restScreen() = {};
+    uiController().controlsScreen() = {};
+    uiController().keyboardScreen() = {};
+    uiController().videoOptionsScreen() = {};
+    uiController().saveGameScreen() = {};
+    uiController().loadGameScreen() = {};
+    uiController().journalScreen().active = false;
+    uiController().menuScreen() = {};
+    uiController().menuScreen().active = true;
+    interactionState().menuToggleLatch = false;
+    interactionState().menuClickLatch = false;
+    interactionState().menuPressedTarget = {};
+    interactionState().controlsToggleLatch = false;
+    interactionState().controlsClickLatch = false;
+    interactionState().controlsPressedTarget = {};
+    interactionState().controlsSliderDragActive = false;
+    interactionState().controlsDraggedSlider = GameplayControlsPointerTargetType::None;
+    interactionState().keyboardToggleLatch = false;
+    interactionState().keyboardClickLatch = false;
+    interactionState().keyboardPressedTarget = {};
+    interactionState().videoOptionsToggleLatch = false;
+    interactionState().videoOptionsClickLatch = false;
+    interactionState().videoOptionsPressedTarget = {};
+    interactionState().saveGameToggleLatch = false;
+    interactionState().saveGameClickLatch = false;
+    interactionState().saveGamePressedTarget = {};
+    interactionState().closeOverlayLatch = false;
+}
+
+void GameplayScreenRuntime::closeMenuOverlay()
+{
+    uiController().menuScreen() = {};
+    interactionState().menuToggleLatch = false;
+    interactionState().menuClickLatch = false;
+    interactionState().menuPressedTarget = {};
+    interactionState().closeOverlayLatch = false;
+}
+
+void GameplayScreenRuntime::openControlsOverlay()
+{
+    uiController().menuScreen().active = false;
+    interactionState().menuToggleLatch = false;
+    interactionState().menuClickLatch = false;
+    interactionState().menuPressedTarget = {};
+    uiController().controlsScreen() = {};
+    uiController().controlsScreen().active = true;
+    interactionState().controlsToggleLatch = false;
+    interactionState().controlsClickLatch = false;
+    interactionState().controlsPressedTarget = {};
+    interactionState().controlsSliderDragActive = false;
+    interactionState().controlsDraggedSlider = GameplayControlsPointerTargetType::None;
+    uiController().keyboardScreen() = {};
+    interactionState().keyboardToggleLatch = false;
+    interactionState().keyboardClickLatch = false;
+    interactionState().keyboardPressedTarget = {};
+    uiController().videoOptionsScreen() = {};
+    interactionState().videoOptionsToggleLatch = false;
+    interactionState().videoOptionsClickLatch = false;
+    interactionState().videoOptionsPressedTarget = {};
+    interactionState().closeOverlayLatch = false;
+}
+
+void GameplayScreenRuntime::closeControlsOverlay()
+{
+    uiController().controlsScreen() = {};
+    interactionState().controlsToggleLatch = false;
+    interactionState().controlsClickLatch = false;
+    interactionState().controlsPressedTarget = {};
+    interactionState().controlsSliderDragActive = false;
+    interactionState().controlsDraggedSlider = GameplayControlsPointerTargetType::None;
+    uiController().keyboardScreen() = {};
+    interactionState().keyboardToggleLatch = false;
+    interactionState().keyboardClickLatch = false;
+    interactionState().keyboardPressedTarget = {};
+    uiController().videoOptionsScreen() = {};
+    interactionState().videoOptionsToggleLatch = false;
+    interactionState().videoOptionsClickLatch = false;
+    interactionState().videoOptionsPressedTarget = {};
+    uiController().menuScreen() = {};
+    uiController().menuScreen().active = true;
+    interactionState().closeOverlayLatch = false;
+}
+
+void GameplayScreenRuntime::openKeyboardOverlay()
+{
+    uiController().controlsScreen() = {};
+    interactionState().controlsToggleLatch = false;
+    interactionState().controlsClickLatch = false;
+    interactionState().controlsPressedTarget = {};
+    interactionState().controlsSliderDragActive = false;
+    interactionState().controlsDraggedSlider = GameplayControlsPointerTargetType::None;
+    uiController().keyboardScreen() = {};
+    uiController().keyboardScreen().active = true;
+    interactionState().keyboardToggleLatch = false;
+    interactionState().keyboardClickLatch = false;
+    interactionState().keyboardPressedTarget = {};
+    uiController().videoOptionsScreen() = {};
+    interactionState().videoOptionsToggleLatch = false;
+    interactionState().videoOptionsClickLatch = false;
+    interactionState().videoOptionsPressedTarget = {};
+    interactionState().closeOverlayLatch = false;
+}
+
+void GameplayScreenRuntime::closeKeyboardOverlayToControls()
+{
+    uiController().keyboardScreen() = {};
+    interactionState().keyboardToggleLatch = false;
+    interactionState().keyboardClickLatch = false;
+    interactionState().keyboardPressedTarget = {};
+    uiController().controlsScreen() = {};
+    uiController().controlsScreen().active = true;
+    interactionState().controlsToggleLatch = false;
+    interactionState().controlsClickLatch = false;
+    interactionState().controlsPressedTarget = {};
+    interactionState().controlsSliderDragActive = false;
+    interactionState().controlsDraggedSlider = GameplayControlsPointerTargetType::None;
+    interactionState().closeOverlayLatch = false;
+}
+
+void GameplayScreenRuntime::closeKeyboardOverlayToMenu()
+{
+    uiController().keyboardScreen() = {};
+    interactionState().keyboardToggleLatch = false;
+    interactionState().keyboardClickLatch = false;
+    interactionState().keyboardPressedTarget = {};
+    uiController().controlsScreen() = {};
+    interactionState().controlsToggleLatch = false;
+    interactionState().controlsClickLatch = false;
+    interactionState().controlsPressedTarget = {};
+    interactionState().controlsSliderDragActive = false;
+    interactionState().controlsDraggedSlider = GameplayControlsPointerTargetType::None;
+    uiController().menuScreen() = {};
+    uiController().menuScreen().active = true;
+    interactionState().menuToggleLatch = false;
+    interactionState().menuClickLatch = false;
+    interactionState().menuPressedTarget = {};
+    interactionState().closeOverlayLatch = false;
+}
+
+void GameplayScreenRuntime::openVideoOptionsOverlay()
+{
+    uiController().controlsScreen().active = false;
+    interactionState().controlsToggleLatch = false;
+    interactionState().controlsClickLatch = false;
+    interactionState().controlsPressedTarget = {};
+    uiController().keyboardScreen() = {};
+    interactionState().keyboardToggleLatch = false;
+    interactionState().keyboardClickLatch = false;
+    interactionState().keyboardPressedTarget = {};
+    interactionState().controlsSliderDragActive = false;
+    interactionState().controlsDraggedSlider = GameplayControlsPointerTargetType::None;
+    uiController().videoOptionsScreen() = {};
+    uiController().videoOptionsScreen().active = true;
+    interactionState().videoOptionsToggleLatch = false;
+    interactionState().videoOptionsClickLatch = false;
+    interactionState().videoOptionsPressedTarget = {};
+    interactionState().closeOverlayLatch = false;
+}
+
+void GameplayScreenRuntime::closeVideoOptionsOverlay()
+{
+    uiController().videoOptionsScreen() = {};
+    interactionState().videoOptionsToggleLatch = false;
+    interactionState().videoOptionsClickLatch = false;
+    interactionState().videoOptionsPressedTarget = {};
+    uiController().keyboardScreen() = {};
+    interactionState().keyboardToggleLatch = false;
+    interactionState().keyboardClickLatch = false;
+    interactionState().keyboardPressedTarget = {};
+    uiController().controlsScreen() = {};
+    uiController().controlsScreen().active = true;
+    interactionState().controlsToggleLatch = false;
+    interactionState().controlsClickLatch = false;
+    interactionState().controlsPressedTarget = {};
+    interactionState().controlsSliderDragActive = false;
+    interactionState().controlsDraggedSlider = GameplayControlsPointerTargetType::None;
+    interactionState().closeOverlayLatch = false;
+}
+
+void GameplayScreenRuntime::openSaveGameOverlay()
+{
+    uiController().menuScreen().active = false;
+    interactionState().menuToggleLatch = false;
+    interactionState().menuClickLatch = false;
+    interactionState().menuPressedTarget = {};
+    uiController().controlsScreen() = {};
+    interactionState().controlsToggleLatch = false;
+    interactionState().controlsClickLatch = false;
+    interactionState().controlsPressedTarget = {};
+    interactionState().controlsSliderDragActive = false;
+    interactionState().controlsDraggedSlider = GameplayControlsPointerTargetType::None;
+    uiController().videoOptionsScreen() = {};
+    interactionState().videoOptionsToggleLatch = false;
+    interactionState().videoOptionsClickLatch = false;
+    interactionState().videoOptionsPressedTarget = {};
+    uiController().loadGameScreen() = {};
+    uiController().saveGameScreen() = {};
+    uiController().saveGameScreen().active = true;
+    refreshSaveGameOverlaySlots();
+    interactionState().saveGameToggleLatch = false;
+    interactionState().saveGameClickLatch = false;
+    interactionState().saveGamePressedTarget = {};
+    interactionState().closeOverlayLatch = false;
+}
+
+void GameplayScreenRuntime::refreshSaveGameOverlaySlots()
+{
+    refreshSaveGameSlots(uiController().saveGameScreen(), m_session.data().mapEntries());
+}
+
+void GameplayScreenRuntime::closeSaveGameOverlay()
+{
+    uiController().saveGameScreen() = {};
+    interactionState().saveGameToggleLatch = false;
+    interactionState().saveGameClickLatch = false;
+    interactionState().saveGamePressedTarget = {};
+    uiController().menuScreen() = {};
+    uiController().menuScreen().active = true;
+    interactionState().closeOverlayLatch = false;
+}
+
+void GameplayScreenRuntime::requestOpenNewGameScreen()
+{
+    m_session.requestOpenNewGameScreen();
+}
+
+void GameplayScreenRuntime::requestOpenLoadGameScreen()
+{
+    m_session.requestOpenLoadGameScreen();
+}
+
+void GameplayScreenRuntime::openJournalOverlay()
+{
+    closeSpellbookOverlay();
+    closeMenuOverlay();
+    itemService().closeReadableScrollOverlay();
+    closeInventoryNestedOverlay();
+    closeQuickReferenceOverlay();
+    uiController().characterScreen() = {};
+    uiController().restScreen() = {};
+
+    GameplayUiController::JournalScreenState &journalScreen = uiController().journalScreen();
+    journalScreen.active = true;
+    journalScreen.view = GameplayUiController::JournalView::Map;
+    journalScreen.notesCategory = GameplayUiController::JournalNotesCategory::Potion;
+    journalScreen.questPage = 0;
+    journalScreen.storyPage = 0;
+    journalScreen.notesPage = 0;
+    journalScreen.progress.reset();
+    journalScreen.progressScroll = 0;
+    journalScreen.hoverAnimationElapsedSeconds = 0.0f;
+    journalScreen.mapDragActive = false;
+    journalScreen.mapDragStartMouseX = 0.0f;
+    journalScreen.mapDragStartMouseY = 0.0f;
+    journalScreen.mapDragStartCenterX = 0.0f;
+    journalScreen.mapDragStartCenterY = 0.0f;
+    journalScreen.cachedMapValid = false;
+    journalScreen.mapZoomStep =
+        m_session.currentSceneKind() == SceneKind::Indoor
+            ? static_cast<int>(GameplayJournalMapZoomLevels.size()) - 1
+            : DefaultJournalMapZoomStep;
+    journalScreen.mapCenterX = partyX();
+    journalScreen.mapCenterY = partyY();
+    GameplayMinimapState minimapState = {};
+    const bool hasMinimapState = tryGetGameplayMinimapState(minimapState);
+
+    if (hasMinimapState && minimapState.revealEntireMap)
+    {
+        journalScreen.mapZoomStep = DefaultJournalMapZoomStep;
+    }
+
+    clampGameplayJournalMapState(journalScreen, hasMinimapState ? &minimapState : nullptr);
+    interactionState().journalToggleLatch = false;
+    interactionState().journalClickLatch = false;
+    interactionState().journalPressedTarget = {};
+    interactionState().journalMapKeyZoomLatch = false;
+    interactionState().closeOverlayLatch = false;
+
+    if (m_pAudioSystem != nullptr)
+    {
+        m_pAudioSystem->playCommonSound(SoundId::OpenBook, GameAudioSystem::PlaybackGroup::Ui);
+    }
+}
+
+void GameplayScreenRuntime::closeJournalOverlay()
+{
+    GameplayUiController::JournalScreenState &journalScreen = uiController().journalScreen();
+    const bool wasActive = journalScreen.active;
+    journalScreen.active = false;
+    journalScreen.notesSearchActive = false;
+    journalScreen.progress.reset();
+    journalScreen.hoverAnimationElapsedSeconds = 0.0f;
+    journalScreen.mapDragActive = false;
+    journalScreen.mapDragStartMouseX = 0.0f;
+    journalScreen.mapDragStartMouseY = 0.0f;
+    journalScreen.mapDragStartCenterX = 0.0f;
+    journalScreen.mapDragStartCenterY = 0.0f;
+    journalScreen.cachedMapValid = false;
+    interactionState().journalToggleLatch = false;
+    interactionState().journalClickLatch = false;
+    interactionState().journalPressedTarget = {};
+    interactionState().journalMapKeyZoomLatch = false;
+    interactionState().closeOverlayLatch = false;
+
+    if (wasActive && m_pAudioSystem != nullptr)
+    {
+        m_pAudioSystem->playCommonSound(SoundId::CloseBook, GameAudioSystem::PlaybackGroup::Ui);
+    }
+}
+
+void GameplayScreenRuntime::openQuickReferenceOverlay()
+{
+    closeSpellbookOverlay();
+    closeMenuOverlay();
+    itemService().closeReadableScrollOverlay();
+    closeInventoryNestedOverlay();
+    closeJournalOverlay();
+    uiController().characterScreen() = {};
+    uiController().restScreen() = {};
+
+    GameplayUiController::QuickReferenceScreenState &quickReferenceScreen = quickReferenceScreenState();
+    quickReferenceScreen = {};
+    quickReferenceScreen.active = true;
+    interactionState().quickReferenceToggleLatch = false;
+    interactionState().quickReferenceClickLatch = false;
+    interactionState().quickReferencePressedTarget = {};
+    interactionState().closeOverlayLatch = false;
+}
+
+void GameplayScreenRuntime::closeQuickReferenceOverlay()
+{
+    quickReferenceScreenState() = {};
+    interactionState().quickReferenceToggleLatch = false;
+    interactionState().quickReferenceClickLatch = false;
+    interactionState().quickReferencePressedTarget = {};
+    interactionState().closeOverlayLatch = false;
+}
+
+void GameplayScreenRuntime::ensurePendingEventDialogPresented(bool allowNpcFallbackContent)
+{
+    ensurePendingEventDialogPresented(allowNpcFallbackContent, {}, {});
+}
+
+bool GameplayScreenRuntime::hasPendingEventDialog() const
+{
+    const EventRuntimeState *pEventRuntimeState =
+        worldRuntime() != nullptr ? worldRuntime()->eventRuntimeState() : nullptr;
+
+    return pEventRuntimeState != nullptr
+        && pEventRuntimeState->pendingDialogueContext
+        && pEventRuntimeState->pendingDialogueContext->kind != DialogueContextKind::None;
+}
+
+void GameplayScreenRuntime::ensurePendingEventDialogPresented(
+    bool allowNpcFallbackContent,
+    const DialogContextBuilder &contextBuilder,
+    const PendingEventDialogOpenedCallback &onOpened)
+{
+    if (activeEventDialog().isActive)
+    {
+        return;
+    }
+
+    EventRuntimeState *pEventRuntimeState = worldRuntime() != nullptr ? worldRuntime()->eventRuntimeState() : nullptr;
+
+    if (pEventRuntimeState == nullptr
+        || !pEventRuntimeState->pendingDialogueContext
+        || pEventRuntimeState->pendingDialogueContext->kind == DialogueContextKind::None)
+    {
+        return;
+    }
+
+    const size_t previousMessageCount =
+        pEventRuntimeState->pendingDialogueContext->kind == DialogueContextKind::MapEvent
+            ? 0u
+            : pEventRuntimeState->messages.size();
+
+    presentPendingEventDialog(
+        previousMessageCount,
+        allowNpcFallbackContent,
+        contextBuilder,
+        onOpened);
+}
+
+void GameplayScreenRuntime::closeActiveDialogActionResult(
+    const GameplayDialogController::Result &result,
+    const DialogueCloseCallback &closeActiveDialog)
+{
+    if (result.shouldCloseActiveDialog)
+    {
+        if (closeActiveDialog)
+        {
+            closeActiveDialog();
+        }
+        else
+        {
+            closeActiveEventDialog();
+        }
+    }
+}
+
+void GameplayScreenRuntime::presentPendingDialogActionResult(
+    const GameplayDialogController::Result &result,
+    const PendingEventDialogPresenter &presentPendingEventDialogCallback)
+{
+    if (!result.shouldOpenPendingEventDialog)
+    {
+        return;
+    }
+
+    if (presentPendingEventDialogCallback)
+    {
+        presentPendingEventDialogCallback(result.previousMessageCount, result.allowNpcFallbackContent);
+    }
+    else
+    {
+        presentPendingEventDialog(result.previousMessageCount, result.allowNpcFallbackContent);
+    }
+}
+
+void GameplayScreenRuntime::executeActiveDialogAction()
+{
+    sceneAdapter().executeActiveDialogAction();
+}
+
+void GameplayScreenRuntime::executeDialogAction(const EventDialogAction &action)
+{
+    m_dialogActionOverride = action;
+    sceneAdapter().executeActiveDialogAction();
+    m_dialogActionOverride.reset();
+}
+
+void GameplayScreenRuntime::executeActiveDialogAction(
+    const ActiveDialogContextBuilder &contextBuilder,
+    const ActiveDialogActionCallback &beforeCloseContinuation,
+    const DialogueCloseCallback &closeActiveDialog,
+    const ActiveDialogActionCallback &afterCloseContinuation,
+    const PendingEventDialogPresenter &presentPendingEventDialogCallback)
+{
+    if (!contextBuilder)
+    {
+        return;
+    }
+
+    EventRuntimeState *pEventRuntimeState = worldRuntime() != nullptr ? worldRuntime()->eventRuntimeState() : nullptr;
+
+    if (pEventRuntimeState == nullptr)
+    {
+        return;
+    }
+
+    GameplayDialogController::Context context = contextBuilder(*pEventRuntimeState);
+    context.actionOverride = m_dialogActionOverride;
+    const GameplayDialogController::Result result =
+        m_session.gameplayDialogController().executeActiveDialogAction(context);
+
+    if (beforeCloseContinuation)
+    {
+        beforeCloseContinuation(result);
+    }
+
+    const bool mapMovePending = pEventRuntimeState->pendingMapMove.has_value();
+    if (mapMovePending)
+    {
+        // Present the departure dialogue for the transition's final frame.
+        // The map-move handler closes it after retaining the loading background.
+        m_pendingMapMoveDialogClose = result.shouldCloseActiveDialog ? closeActiveDialog : DialogueCloseCallback{};
+        m_session.setPendingMapMove(std::move(*pEventRuntimeState->pendingMapMove));
+        pEventRuntimeState->pendingMapMove.reset();
+    }
+    else
+    {
+        closeActiveDialogActionResult(result, closeActiveDialog);
+
+        if (result.pendingInnRest.has_value())
+        {
+            startInnRest(result.pendingInnRest->houseId);
+        }
+    }
+
+    if (afterCloseContinuation)
+    {
+        afterCloseContinuation(result);
+    }
+
+    if (!mapMovePending)
+    {
+        // Travel advances the date, which can change the available routes. Keep
+        // the departure screen intact instead of rebuilding it for the new day.
+        presentPendingDialogActionResult(result, presentPendingEventDialogCallback);
+    }
+}
+
+void GameplayScreenRuntime::refreshHouseBankInputDialog()
+{
+    GameplayDialogUiFlowState state = dialogUiFlowState();
+    EventRuntimeState *pEventRuntimeState = worldRuntime() != nullptr ? worldRuntime()->eventRuntimeState() : nullptr;
+
+    if (pEventRuntimeState == nullptr)
+    {
+        return;
+    }
+
+    GameplayDialogController::Context context = buildDialogContext(*pEventRuntimeState);
+    ::OpenYAMM::Game::refreshHouseBankInputDialog(
+        state,
+        pEventRuntimeState,
+        context,
+        (SDL_GetTicks() / 500u) % 2u == 0u);
+}
+
+void GameplayScreenRuntime::confirmHouseBankInput()
+{
+    GameplayDialogUiFlowState state = dialogUiFlowState();
+    EventRuntimeState *pEventRuntimeState = worldRuntime() != nullptr ? worldRuntime()->eventRuntimeState() : nullptr;
+
+    if (pEventRuntimeState == nullptr)
+    {
+        return;
+    }
+
+    GameplayDialogController::Context context = buildDialogContext(*pEventRuntimeState);
+    const GameplayDialogController::Result result = ::OpenYAMM::Game::confirmHouseBankInput(
+        state,
+        pEventRuntimeState,
+        context);
+
+    if (result.shouldOpenPendingEventDialog)
+    {
+        presentPendingEventDialog(result.previousMessageCount, result.allowNpcFallbackContent);
+    }
+}
+
+void GameplayScreenRuntime::closeInventoryNestedOverlay()
+{
+    uiController().closeInventoryNestedOverlay();
+    interactionState().inventoryNestedOverlayItemClickLatch = false;
+}
+
+bool GameplayScreenRuntime::tryAutoPlaceHeldInventoryItemOnPartyMember(size_t memberIndex, bool showFailureStatus)
+{
+    GameplayUiController::HeldInventoryItemState &heldItem = uiController().heldInventoryItem();
+    Party *pParty = party();
+
+    if (!heldItem.active || pParty == nullptr)
+    {
+        return false;
+    }
+
+    std::string failureStatus;
+    if (!GameplayHeldItemController::tryAutoPlaceHeldInventoryItemOnPartyMember(
+            heldItem,
+            *pParty,
+            memberIndex,
+            failureStatus))
+    {
+        if (showFailureStatus)
+        {
+            setStatusBarEvent(failureStatus.empty() ? "Pack is Full!" : failureStatus);
+        }
+
+        playSpeechReaction(memberIndex, SpeechId::InventoryRoom, true);
+
+        return false;
+    }
+
+    return true;
+}
+
+bool GameplayScreenRuntime::tryStowHeldInventoryItemInParty()
+{
+    GameplayUiController::HeldInventoryItemState &heldItem = uiController().heldInventoryItem();
+    Party *pParty = party();
+
+    if (!heldItem.active || pParty == nullptr || pParty->members().empty())
+    {
+        return false;
+    }
+
+    const size_t memberCount = pParty->members().size();
+    const size_t firstIndex = std::min(pParty->activeMemberIndex(), memberCount - 1);
+    std::string failureStatus;
+
+    for (size_t offset = 0; offset < memberCount; ++offset)
+    {
+        if (GameplayHeldItemController::tryAutoPlaceHeldInventoryItemOnPartyMember(
+                heldItem, *pParty, (firstIndex + offset) % memberCount, failureStatus))
+        {
+            return true;
+        }
+    }
+
+    setStatusBarEvent(failureStatus.empty() ? "Pack is Full!" : failureStatus);
+    playSpeechReaction(firstIndex, SpeechId::InventoryRoom, true);
+    return false;
+}
+
+void GameplayScreenRuntime::setSpellbookSchool(GameplayUiController::SpellbookSchool school)
+{
+    uiController().spellbook().school = school;
+    uiController().spellbook().selectedSpellId = 0;
+
+    if (Character *pMember = party() != nullptr ? party()->activeMember() : nullptr)
+    {
+        pMember->spellbookSchool = int32_t(school);
+    }
+}
+
+void GameplayScreenRuntime::closeSpellbookOverlay(const std::string &statusText)
+{
+    const bool wasActive = uiController().spellbook().active;
+    uiController().closeSpellbook();
+    interactionState().spellbookClickLatch = false;
+    interactionState().spellbookPressedTarget = {};
+    interactionState().lastSpellbookSpellClickTicks = 0;
+    interactionState().lastSpellbookClickedSpellId = 0;
+
+    if (wasActive && m_pAudioSystem != nullptr)
+    {
+        m_pAudioSystem->playCommonSound(SoundId::CloseBook, GameAudioSystem::PlaybackGroup::Ui);
+    }
+
+    if (!statusText.empty())
+    {
+        setStatusBarEvent(statusText);
+    }
+}
+
+void GameplayScreenRuntime::openUtilitySpellOverlay(
+    GameplayUiController::UtilitySpellOverlayMode mode,
+    uint32_t spellId,
+    size_t casterMemberIndex,
+    bool lloydRecallMode)
+{
+    uiController().openUtilitySpellOverlay(mode, spellId, casterMemberIndex, lloydRecallMode);
+}
+
+void GameplayScreenRuntime::closeUtilitySpellOverlayAfterSpellResolution(uint32_t spellId)
+{
+    if (!utilitySpellOverlay().active)
+    {
+        return;
+    }
+
+    const GameplayUiController::UtilitySpellOverlayMode mode = utilitySpellOverlay().mode;
+    uiController().closeUtilitySpellOverlay();
+
+    if (mode == GameplayUiController::UtilitySpellOverlayMode::InventoryTarget)
+    {
+        characterScreen().open = false;
+        characterScreen().dollJewelryOverlayOpen = false;
+        characterScreen().adventurersInnRosterOverlayOpen = false;
+    }
+
+    if (isSpellId(spellId, SpellId::LloydsBeacon) || isSpellId(spellId, SpellId::TownPortal))
+    {
+        resetUtilitySpellOverlayInteractionState();
+    }
+}
+
+GameplayItemService &GameplayScreenRuntime::itemService() const
+{
+    return m_session.gameplayItemService();
+}
+
+GameplayFxService &GameplayScreenRuntime::fxService() const
+{
+    return m_session.gameplayFxService();
+}
+
+GameplaySpellService &GameplayScreenRuntime::spellService() const
+{
+    return m_session.gameplaySpellService();
+}
+
+TurnBasedCombatRuntime &GameplayScreenRuntime::turnBasedCombatRuntime() const
+{
+    return m_session.turnBasedCombatRuntime();
+}
+
+bool GameplayScreenRuntime::toggleTurnBasedMode()
+{
+    Party *pParty = party();
+
+    if (pParty == nullptr)
+    {
+        return false;
+    }
+
+    const bool wasTurnBasedActive = turnBasedCombatRuntime().active();
+
+    if (!turnBasedCombatRuntime().toggle(*pParty, worldRuntime()))
+    {
+        setStatusBarEvent("Cannot leave turn-based mode now.");
+        return false;
+    }
+
+    playCommonUiSound(wasTurnBasedActive ? SoundId::EndTurnBasedMode : SoundId::StartTurnBasedMode);
+    setStatusBarEvent(turnBasedCombatRuntime().active() ? "Turn-based mode" : "Realtime mode");
+    return true;
+}
+
+void GameplayScreenRuntime::resetDialogueOverlayInteractionState()
+{
+    interactionState().eventDialogSelectUpLatch = false;
+    interactionState().eventDialogSelectDownLatch = false;
+    interactionState().eventDialogAcceptLatch = false;
+    interactionState().eventDialogPartySelectLatches.fill(false);
+    // Armed while no dialogue is open, like the loot latches: the press that opens a house or NPC dialogue must not
+    // select the topic under the cursor when it is released.
+    interactionState().dialogueClickLatch = true;
+    interactionState().dialoguePressedTarget = {};
+}
+
+void GameplayScreenRuntime::resetSpellbookOverlayInteractionState()
+{
+    interactionState().spellbookClickLatch = false;
+    interactionState().spellbookPressedTarget = {};
+}
+
+void GameplayScreenRuntime::resetCharacterOverlayInteractionState()
+{
+    interactionState().characterClickLatch = false;
+    interactionState().characterMemberCycleLatch = false;
+    interactionState().characterPressedTarget = {};
+    interactionState().characterTouchItemDragActive = false;
+    interactionState().alchemyBenchClickLatch = false;
+    interactionState().alchemyBenchPressedTarget = {};
+    interactionState().alchemyBenchDragging = false;
+    interactionState().alchemyBenchScrollDrag = 0;
+    // The bench lives inside the character screen and never outlasts it.
+    characterScreen().alchemyBench.active = false;
+    characterScreen().alchemyBench.recipeSearchActive = false;
+    // So does the inventory's item search.
+    characterScreen().inventorySearch.clear();
+    characterScreen().inventorySearchActive = false;
+}
+
+void GameplayScreenRuntime::syncPartyConditionPortraits()
+{
+    Party *pParty = party();
+
+    if (pParty == nullptr)
+    {
+        return;
+    }
+
+    for (size_t memberIndex = 0; memberIndex < pParty->members().size(); ++memberIndex)
+    {
+        Character *pMember = pParty->member(memberIndex);
+
+        if (pMember == nullptr)
+        {
+            continue;
+        }
+
+        applyDisplayedConditionPortrait(*pMember);
+    }
+}
+
+void GameplayScreenRuntime::updatePartyPortraitAnimations(float deltaSeconds)
+{
+    (void)deltaSeconds;
+    Party *pParty = party();
+
+    if (pParty == nullptr)
+    {
+        return;
+    }
+
+    GameplayPortraitPresentationState &presentationState = uiRuntime().portraitPresentationState();
+    const uint32_t nowTicks = currentAnimationTicks();
+
+    if (presentationState.lastAnimationUpdateTicks == 0)
+    {
+        presentationState.lastAnimationUpdateTicks = nowTicks;
+    }
+
+    const uint32_t deltaTicks = nowTicks - presentationState.lastAnimationUpdateTicks;
+    presentationState.lastAnimationUpdateTicks = nowTicks;
+
+    if (deltaTicks == 0)
+    {
+        syncPartyConditionPortraits();
+        return;
+    }
+
+    for (size_t memberIndex = 0; memberIndex < pParty->members().size(); ++memberIndex)
+    {
+        Character *pMember = pParty->member(memberIndex);
+
+        if (pMember == nullptr)
+        {
+            continue;
+        }
+
+        updatePortraitAnimation(*pMember, memberIndex, deltaTicks);
+    }
+}
+
+void GameplayScreenRuntime::updatePortraitAnimation(Character &member, size_t memberIndex, uint32_t deltaTicks)
+{
+    member.portraitElapsedTicks += deltaTicks;
+
+    if (applyDisplayedConditionPortrait(member))
+    {
+        return;
+    }
+
+    if (member.portraitDurationTicks > 0 && member.portraitElapsedTicks < member.portraitDurationTicks)
+    {
+        return;
+    }
+
+    member.portraitElapsedTicks = 0;
+    const uint32_t sequenceValue =
+        mixPortraitSequenceValue(static_cast<uint32_t>(memberIndex + 1u) * 2654435761u + member.portraitSequenceCounter++);
+
+    if (member.portraitState != PortraitId::Normal || (sequenceValue % 5u) != 0u)
+    {
+        member.portraitState = PortraitId::Normal;
+        member.portraitDurationTicks = pickNormalPortraitDurationTicks(sequenceValue);
+        return;
+    }
+
+    member.portraitState = pickIdlePortrait(sequenceValue);
+    member.portraitDurationTicks = defaultPortraitAnimationLengthTicks(member.portraitState);
+}
+
+void GameplayScreenRuntime::playPortraitExpression(
+    size_t memberIndex,
+    PortraitId portraitId,
+    std::optional<uint32_t> durationTicks)
+{
+    Party *pParty = party();
+
+    if (pParty == nullptr)
+    {
+        return;
+    }
+
+    Character *pMember = pParty->member(memberIndex);
+
+    if (pMember == nullptr)
+    {
+        return;
+    }
+
+    const std::optional<CharacterCondition> displayedCondition = GameMechanics::displayedCondition(*pMember);
+
+    if (!portraitExpressionAllowedForCondition(displayedCondition, portraitId))
+    {
+        return;
+    }
+
+    pMember->portraitState = portraitId;
+    pMember->portraitElapsedTicks = 0;
+    pMember->portraitDurationTicks = durationTicks.value_or(defaultPortraitAnimationLengthTicks(portraitId));
+    pMember->portraitSequenceCounter += 1;
+}
+
+void GameplayScreenRuntime::triggerPortraitFaceAnimation(size_t memberIndex, FaceAnimationId animationId)
+{
+    const FaceAnimationEntry *pEntry = uiRuntime().findFaceAnimation(animationId);
+
+    if (pEntry == nullptr || pEntry->portraitIds.empty())
+    {
+        return;
+    }
+
+    const uint32_t sequenceValue =
+        mixPortraitSequenceValue(currentAnimationTicks() ^ static_cast<uint32_t>(memberIndex + 1u) ^ pEntry->portraitIds.size());
+    const size_t choiceIndex = sequenceValue % pEntry->portraitIds.size();
+    playPortraitExpression(memberIndex, pEntry->portraitIds[choiceIndex], std::nullopt);
+}
+
+void GameplayScreenRuntime::triggerPortraitEventFxWithoutSpeech(size_t memberIndex, PortraitFxEventKind eventKind)
+{
+    fxService().triggerPortraitEventFxWithoutSpeech(*this, memberIndex, eventKind);
+}
+
+uint32_t GameplayScreenRuntime::animationTicks() const
+{
+    return currentAnimationTicks();
+}
+
+void GameplayScreenRuntime::triggerPortraitFaceAnimationForAllLivingMembers(FaceAnimationId animationId)
+{
+    const Party *pParty = partyReadOnly();
+
+    if (pParty == nullptr)
+    {
+        return;
+    }
+
+    for (size_t memberIndex = 0; memberIndex < pParty->members().size(); ++memberIndex)
+    {
+        if (pParty->members()[memberIndex].health <= 0)
+        {
+            continue;
+        }
+
+        triggerPortraitFaceAnimation(memberIndex, animationId);
+    }
+}
+
+bool GameplayScreenRuntime::canPlaySpeechReaction(size_t memberIndex, SpeechId speechId, uint32_t nowTicks)
+{
+    return canPlaySpeechReactionForPresentationState(
+        uiRuntime().portraitPresentationState(),
+        memberIndex,
+        speechId,
+        nowTicks);
+}
+
+void GameplayScreenRuntime::playSpeechReaction(size_t memberIndex, SpeechId speechId, bool triggerFaceAnimation)
+{
+    Party *pParty = party();
+
+    if (pParty == nullptr)
+    {
+        return;
+    }
+
+    const Character *pMember = pParty->member(memberIndex);
+
+    // An incapacitated member neither speaks nor animates; the portrait shows the condition.
+    if (pMember == nullptr || !canMemberSpeak(*pMember, speechId))
+    {
+        return;
+    }
+
+    const uint32_t nowTicks = currentAnimationTicks();
+
+    if (!canPlaySpeechReaction(memberIndex, speechId, nowTicks))
+    {
+        return;
+    }
+
+    const uint32_t repeatIntervalMs =
+        m_pSettings != nullptr ? uint32_t(std::max(m_pSettings->repeatedVoiceLineIntervalMs, 0)) : 0;
+
+    if (isRepeatedSpeechReaction(
+            uiRuntime().portraitPresentationState(),
+            memberIndex,
+            speechId,
+            nowTicks,
+            repeatIntervalMs))
+    {
+        return;
+    }
+
+    const SpeechReactionEntry *pReaction = m_pAudioSystem != nullptr ? m_pAudioSystem->findSpeechReaction(speechId) : nullptr;
+    bool speechPlayed = false;
+
+    if (m_pAudioSystem != nullptr)
+    {
+        speechPlayed = m_pAudioSystem->playSpeech(
+            *pMember,
+            speechId,
+            nowTicks ^ memberIndex,
+            speechSpeakerKey(memberIndex, speechId));
+    }
+
+    if (speechPlayed)
+    {
+        GameplayPortraitPresentationState &presentationState = uiRuntime().portraitPresentationState();
+
+        if (memberIndex >= presentationState.memberSpeechCooldownUntilTicks.size())
+        {
+            presentationState.memberSpeechCooldownUntilTicks.resize(memberIndex + 1, 0);
+            presentationState.memberCombatSpeechCooldownUntilTicks.resize(memberIndex + 1, 0);
+        }
+
+        if (memberIndex >= presentationState.memberSpeechLastPlayedTicks.size())
+        {
+            presentationState.memberSpeechLastPlayedTicks.resize(memberIndex + 1);
+        }
+
+        presentationState.memberSpeechLastPlayedTicks[memberIndex][speechId] = nowTicks;
+
+        if (!bypassSpeechCooldown(speechId))
+        {
+            presentationState.memberSpeechCooldownUntilTicks[memberIndex] = nowTicks + SpeechReactionCooldownMs;
+        }
+
+        switch (speechId)
+        {
+            case SpeechId::AttackHit:
+            case SpeechId::AttackMiss:
+            case SpeechId::Shoot:
+            case SpeechId::CastSpell:
+            case SpeechId::DamagedParty:
+            case SpeechId::KillWeakEnemy:
+            case SpeechId::KillStrongEnemy:
+                presentationState.memberCombatSpeechCooldownUntilTicks[memberIndex] =
+                    nowTicks + CombatSpeechReactionCooldownMs;
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    if (!triggerFaceAnimation)
+    {
+        return;
+    }
+
+    if (pReaction != nullptr && pReaction->faceAnimationId.has_value())
+    {
+        triggerPortraitFaceAnimation(memberIndex, *pReaction->faceAnimationId);
+    }
+}
+
+bool GameplayScreenRuntime::isMemberSpeechPlaying(size_t memberIndex, SpeechId speechId) const
+{
+    return m_pAudioSystem != nullptr
+        && m_pAudioSystem->isSpeechPlaying(speechSpeakerKey(memberIndex, speechId), speechId);
+}
+
+void GameplayScreenRuntime::playCantRestHereReaction()
+{
+    const Party *pParty = partyReadOnly();
+
+    if (pParty == nullptr || pParty->activeMember() == nullptr)
+    {
+        return;
+    }
+
+    const size_t activeMemberIndex = pParty->activeMemberIndex();
+    triggerPortraitFaceAnimation(activeMemberIndex, FaceAnimationId::CantRestHere);
+    playSpeechReaction(activeMemberIndex, SpeechId::CantRestHere, false);
+}
+
+void GameplayScreenRuntime::queueDelayedSpeechReaction(size_t memberIndex, SpeechId speechId, float delaySeconds)
+{
+    if (speechId == SpeechId::None)
+    {
+        return;
+    }
+
+    Party *pParty = party();
+
+    if (pParty == nullptr || pParty->member(memberIndex) == nullptr)
+    {
+        return;
+    }
+
+    m_delayedSpeechReaction = DelayedSpeechReaction{
+        memberIndex,
+        speechId,
+        std::max(0.0f, delaySeconds)
+    };
+}
+
+void GameplayScreenRuntime::updateDelayedSpeechReactions(float deltaSeconds)
+{
+    if (!m_delayedSpeechReaction.has_value())
+    {
+        return;
+    }
+
+    DelayedSpeechReaction &reaction = *m_delayedSpeechReaction;
+    reaction.remainingSeconds = std::max(0.0f, reaction.remainingSeconds - std::max(0.0f, deltaSeconds));
+
+    if (reaction.remainingSeconds > 0.0f)
+    {
+        return;
+    }
+
+    Party *pParty = party();
+    const Character *pMember = pParty != nullptr ? pParty->member(reaction.memberIndex) : nullptr;
+
+    if (pMember != nullptr && GameMechanics::canAct(*pMember))
+    {
+        pParty->requestSpeech(reaction.memberIndex, reaction.speechId);
+    }
+
+    m_delayedSpeechReaction.reset();
+}
+
+void GameplayScreenRuntime::playHouseSound(uint32_t soundId)
+{
+    if (m_pAudioSystem != nullptr)
+    {
+        m_pAudioSystem->playSound(worldSound(soundId), GameAudioSystem::PlaybackGroup::HouseSpeech);
+    }
+}
+
+void GameplayScreenRuntime::playCommonUiSound(SoundId soundId)
+{
+    if (m_pAudioSystem != nullptr)
+    {
+        m_pAudioSystem->playCommonSound(soundId, GameAudioSystem::PlaybackGroup::Ui);
+    }
+}
+
+void GameplayScreenRuntime::stopAllAudioPlayback()
+{
+    if (m_pAudioSystem != nullptr)
+    {
+        m_pAudioSystem->stopAllPlayback();
+    }
+}
+
+void GameplayScreenRuntime::consumePendingPartyAudioRequests()
+{
+    if (m_pAudioSystem == nullptr)
+    {
+        return;
+    }
+
+    Party *pParty = party();
+
+    if (pParty == nullptr)
+    {
+        return;
+    }
+
+    const std::vector<Party::PendingAudioRequest> requests = pParty->pendingAudioRequests();
+
+    if (requests.empty())
+    {
+        return;
+    }
+
+    const GameAudioSystem::WorldPosition listenerPosition = {
+        partyX(),
+        partyY(),
+        partyFootZ(),
+    };
+
+    for (const Party::PendingAudioRequest &request : requests)
+    {
+        if (request.kind == Party::PendingAudioRequest::Kind::Speech)
+        {
+            playSpeechReaction(request.memberIndex, request.speechId, true);
+            continue;
+        }
+
+        GameAudioSystem::PlaybackGroup group = GameAudioSystem::PlaybackGroup::Ui;
+        std::optional<GameAudioSystem::WorldPosition> position = std::nullopt;
+
+        if (request.soundId == SoundId::Splash)
+        {
+            group = GameAudioSystem::PlaybackGroup::World;
+            position = listenerPosition;
+        }
+
+        const bool played = request.soundId == SoundId::DullStrike
+            || request.soundId == SoundId::MetalVsMetal01
+            || request.soundId == SoundId::MetalArmorStrike01
+            || request.soundId == SoundId::MetalArmorStrike02
+            || request.soundId == SoundId::MetalArmorStrike03
+            || request.soundId == SoundId::DullArmorStrike01
+            || request.soundId == SoundId::DullArmorStrike02
+            || request.soundId == SoundId::DullArmorStrike03
+            ? m_pAudioSystem->playCommonSoundNonResettable(request.soundId, group, position)
+            : m_pAudioSystem->playCommonSound(request.soundId, group, position);
+
+        if (!played)
+        {
+            continue;
+        }
+    }
+
+    pParty->clearPendingAudioRequests();
+}
+
+void GameplayScreenRuntime::consumePendingEventRuntimeAudioRequests()
+{
+    if (m_pAudioSystem == nullptr)
+    {
+        return;
+    }
+
+    IGameplayWorldRuntime *pWorldRuntime = worldRuntime();
+    if (pWorldRuntime != nullptr)
+    {
+        m_pAudioSystem->updateActorVoices(
+            {pWorldRuntime->partyX(), pWorldRuntime->partyY(), pWorldRuntime->partyFootZ()},
+            [pWorldRuntime](size_t actorIndex) -> std::optional<GameAudioSystem::WorldPosition>
+            {
+                GameplayRuntimeActorState actor = {};
+                // A corpseless actor turns invisible when its death timer ends; its death voice plays out.
+                if (!pWorldRuntime->actorRuntimeState(actorIndex, actor) || (actor.isInvisible && !actor.isDead))
+                {
+                    return std::nullopt;
+                }
+                return GameAudioSystem::WorldPosition{actor.preciseX, actor.preciseY, actor.preciseZ};
+            });
+    }
+    EventRuntimeState *pEventRuntimeState = pWorldRuntime != nullptr ? pWorldRuntime->eventRuntimeState() : nullptr;
+
+    if (pEventRuntimeState == nullptr || pEventRuntimeState->pendingSounds.empty())
+    {
+        return;
+    }
+
+    for (const EventRuntimeState::PendingSound &request : pEventRuntimeState->pendingSounds)
+    {
+        if (request.actorIndex)
+        {
+            m_pAudioSystem->playActorSound(
+                *request.actorIndex,
+                SoundRef{request.soundScope, request.soundId},
+                {float(request.x), float(request.y), float(request.z)},
+                request.pitch);
+            continue;
+        }
+        if (request.kind == EventRuntimeState::PendingSound::Kind::StopKeyed)
+        {
+            const std::unordered_map<uint64_t, uint64_t>::iterator iterator =
+                m_keyedAudioInstances.find(request.key);
+
+            if (iterator != m_keyedAudioInstances.end())
+            {
+                m_pAudioSystem->stopSoundInstance(iterator->second);
+                m_keyedAudioInstances.erase(iterator);
+            }
+
+            continue;
+        }
+
+        std::optional<GameAudioSystem::WorldPosition> position = std::nullopt;
+
+        if (request.positional)
+        {
+            position = GameAudioSystem::WorldPosition{
+                static_cast<float>(request.x),
+                static_cast<float>(request.y),
+                request.hasExplicitZ ? static_cast<float>(request.z) : partyFootZ() + 96.0f
+            };
+        }
+
+        const GameAudioSystem::PlaybackGroup group =
+            request.positional ? GameAudioSystem::PlaybackGroup::World : GameAudioSystem::PlaybackGroup::Ui;
+
+        if (request.kind == EventRuntimeState::PendingSound::Kind::PlayLoopingKeyed)
+        {
+            if (m_keyedAudioInstances.find(request.key) == m_keyedAudioInstances.end())
+            {
+                const uint64_t instanceId = !request.soundName.empty()
+                    ? m_pAudioSystem->playSoundInstanceByName(
+                        request.soundName,
+                        group,
+                        request.soundScope,
+                        position,
+                        true)
+                    : m_pAudioSystem->playSoundInstance(
+                        SoundRef{request.soundScope, request.soundId},
+                        group,
+                        position,
+                        true);
+
+                if (instanceId != 0)
+                {
+                    m_keyedAudioInstances[request.key] = instanceId;
+                }
+            }
+
+            continue;
+        }
+
+        if (!request.soundName.empty())
+        {
+            if (!m_pAudioSystem->playSoundByName(request.soundName, group, request.soundScope, position)
+                && !request.fallbackSoundName.empty())
+            {
+                m_pAudioSystem->playSoundByName(request.fallbackSoundName, group, request.soundScope, position);
+            }
+        }
+        else
+        {
+            m_pAudioSystem->playSound(SoundRef{request.soundScope, request.soundId}, group, position);
+        }
+    }
+
+    pEventRuntimeState->pendingSounds.clear();
+}
+
+bool GameplayScreenRuntime::tryCastSpellFromMember(
+    size_t casterMemberIndex,
+    uint32_t spellId,
+    const std::string &spellName)
+{
+    return spellService().tryCastSpellFromMember(*this, casterMemberIndex, spellId, spellName);
+}
+
+bool GameplayScreenRuntime::tryCastSpellRequest(
+    const PartySpellCastRequest &request,
+    const std::string &spellName)
+{
+    if (turnBasedCombatRuntime().active())
+    {
+        Party *pParty = party();
+
+        if (pParty == nullptr || !turnBasedCombatRuntime().beginPlayerActionOrFinishMovement(*pParty))
+        {
+            return false;
+        }
+    }
+
+    return sceneAdapter().tryCastSpellRequest(request, spellName);
+}
+
+void GameplayScreenRuntime::triggerSpellFailureFeedback(size_t casterMemberIndex, const std::string &statusText)
+{
+    triggerPortraitFaceAnimation(casterMemberIndex, FaceAnimationId::SpellFailed);
+
+    if (audioSystem() != nullptr)
+    {
+        const uint64_t nowTicks = SDL_GetTicks();
+
+        if (nowTicks >= m_lastSpellFailSoundTicks
+            && nowTicks - m_lastSpellFailSoundTicks >= SpellFailSoundCooldownMs)
+        {
+            audioSystem()->playCommonSound(SoundId::SpellFail, GameAudioSystem::PlaybackGroup::Ui);
+            m_lastSpellFailSoundTicks = nowTicks;
+        }
+    }
+
+    setStatusBarEvent(statusText.empty() ? "Spell failed" : statusText);
+}
+
+void GameplayScreenRuntime::resetUtilitySpellOverlayInteractionState()
+{
+    interactionState().utilitySpellClickLatch = false;
+    interactionState().utilitySpellPressedTarget = {};
+}
+
+void GameplayScreenRuntime::resetInventoryNestedOverlayInteractionState()
+{
+    interactionState().inventoryNestedOverlayClickLatch = false;
+    interactionState().inventoryNestedOverlayPressedTarget = {};
+    interactionState().inventoryNestedOverlayItemClickLatch = false;
+}
+
+void GameplayScreenRuntime::resetLootOverlayInteractionState()
+{
+    // closeOverlayLatch is shared by every overlay's Escape handling; clearing it here every frame without a loot
+    // view would let the dialogue overlay handle the same Escape press twice and skip a menu level.
+    // The click and loot latches stay armed while no loot view is open: the press that opens a chest (mouse-bound
+    // Use, Telekinesis, a touch tap) is still held on its first frame and must not grab or loot the item under the
+    // cursor. Each latch clears once its button is up, so the loot view only reacts to a fresh press.
+    interactionState().chestClickLatch = true;
+    interactionState().chestItemClickLatch = true;
+    interactionState().chestPressedTarget = {};
+
+    if (inventoryNestedOverlay().active
+        && inventoryNestedOverlay().mode == GameplayUiController::InventoryNestedOverlayMode::ChestTransfer)
+    {
+        closeInventoryNestedOverlay();
+        resetInventoryNestedOverlayInteractionState();
+    }
+
+    interactionState().lootChestItemLatch = true;
+    interactionState().chestSelectUpLatch = false;
+    interactionState().chestSelectDownLatch = false;
+    interactionState().chestSelectionIndex = 0;
+}
+
+GameSettings &GameplayScreenRuntime::mutableSettings() const
+{
+    return *m_pSettings;
+}
+
+const std::array<uint8_t, SDL_SCANCODE_COUNT> &GameplayScreenRuntime::previousKeyboardState() const
+{
+    return m_session.previousKeyboardState();
+}
+
+void GameplayScreenRuntime::updatePreviousKeyboardStateSnapshot(const bool *pKeyboardState)
+{
+    std::array<uint8_t, SDL_SCANCODE_COUNT> &previousKeyboardState = m_session.previousKeyboardState();
+
+    if (pKeyboardState == nullptr)
+    {
+        previousKeyboardState.fill(0);
+        return;
+    }
+
+    for (size_t scancode = 0; scancode < SDL_SCANCODE_COUNT; ++scancode)
+    {
+        previousKeyboardState[scancode] = pKeyboardState[scancode] ? 1u : 0u;
+    }
+}
+
+void GameplayScreenRuntime::commitSettingsChange()
+{
+    if (m_pSettings != nullptr)
+    {
+        m_session.notifySettingsChanged(*m_pSettings);
+    }
+}
+
+std::optional<GameplayScreenRuntime::PreparedSaveGameRequest> GameplayScreenRuntime::prepareSelectedSaveGameRequest() const
+{
+    const GameplayUiController::SaveGameScreenState &saveGameScreen = saveGameScreenState();
+
+    if (!saveGameScreen.active
+        || saveGameScreen.slots.empty()
+        || saveGameScreen.selectedIndex >= saveGameScreen.slots.size()
+        || !m_session.canSaveGameToPath())
+    {
+        return std::nullopt;
+    }
+
+    PreparedSaveGameRequest request = {};
+    request.path = saveGameScreen.slots[saveGameScreen.selectedIndex].path;
+
+    if (saveGameScreen.editActive)
+    {
+        request.saveName = saveGameScreen.editBuffer;
+    }
+    else
+    {
+        const GameplayUiController::SaveSlotSummary &slot = saveGameScreen.slots[saveGameScreen.selectedIndex];
+        request.saveName = slot.fileLabel == "Empty" ? std::string() : slot.fileLabel;
+    }
+
+    if (request.saveName.empty())
+    {
+        const MapStatsEntry *pCurrentMap = m_session.hasCurrentMapFileName()
+            ? m_session.data().mapStats().findByFileName(m_session.currentMapFileName())
+            : nullptr;
+        request.saveName = pCurrentMap != nullptr && !pCurrentMap->name.empty()
+            ? pCurrentMap->name
+            : "Save Game";
+    }
+
+    return request;
+}
+
+bool GameplayScreenRuntime::trySaveToSelectedGameSlot(const SaveGameExecutor &executor)
+{
+    if (!executor)
+    {
+        return false;
+    }
+
+    const std::optional<PreparedSaveGameRequest> request = prepareSelectedSaveGameRequest();
+
+    if (!request.has_value())
+    {
+        return false;
+    }
+
+    return executor(*request);
+}
+
+bool GameplayScreenRuntime::trySaveToSelectedGameSlot()
+{
+    return sceneAdapter().trySaveToSelectedGameSlot();
+}
+
+int GameplayScreenRuntime::restFoodRequired() const
+{
+    IGameplayWorldRuntime *pWorldRuntime = worldRuntime();
+    const int baseFoodRequired = pWorldRuntime != nullptr ? pWorldRuntime->restFoodRequired() : 2;
+    EventRuntimeState *pEventRuntimeState = pWorldRuntime != nullptr ? pWorldRuntime->eventRuntimeState() : nullptr;
+
+    if (pWorldRuntime == nullptr || pEventRuntimeState == nullptr)
+    {
+        return baseFoodRequired;
+    }
+
+    EventRuntimeState::ActiveHookContext hookContext = {};
+    hookContext.kind = EventRuntimeHookKind::RestFoodCost;
+    hookContext.baseRestFoodCost = baseFoodRequired;
+    hookContext.heldItemId = party() != nullptr ? party()->heldItemIdForQueries() : 0;
+    pEventRuntimeState->activeHookContext = std::move(hookContext);
+    pWorldRuntime->executeEventHooks(EventRuntimeHookKind::RestFoodCost);
+
+    const std::optional<int32_t> overrideFoodCost = pEventRuntimeState->activeHookContext
+        ? pEventRuntimeState->activeHookContext->restFoodCostOverride
+        : std::nullopt;
+    pEventRuntimeState->activeHookContext.reset();
+    return hiredNpcCampingFoodCost(overrideFoodCost.value_or(baseFoodRequired), *pEventRuntimeState);
+}
+
+const GameSettings &GameplayScreenRuntime::settingsSnapshot() const
+{
+    return *m_pSettings;
+}
+
+GameplayScreenRuntime::SharedUiBootstrapResult GameplayScreenRuntime::initializeSharedUiRuntime(
+    const SharedUiBootstrapConfig &config)
+{
+    SharedUiBootstrapResult result = {};
+
+    bindAssetFileSystem(config.pAssetFileSystem);
+    clearUiControllerRuntimeState();
+    uiController().state().gameplayMinimapZoomStep =
+        std::clamp(settingsSnapshot().minimapZoom, GameplayMinimapMinZoomStep, GameplayMinimapMaxZoomStep);
+    resetPortraitFxStates(config.portraitMemberCount);
+
+    if (config.initializeHouseVideoPlayer)
+    {
+        result.houseVideoPlayerInitialized = initializeHouseVideoPlayer();
+    }
+
+    result.layoutsLoaded = ensureGameplayLayoutsLoaded();
+    result.portraitRuntimeLoaded = ensurePortraitRuntimeLoaded();
+
+    if (result.layoutsLoaded)
+    {
+        preloadReferencedAssets();
+    }
+
+    return result;
+}
+
+void GameplayScreenRuntime::bindAssetFileSystem(const Engine::AssetFileSystem *pAssetFileSystem)
+{
+    uiRuntime().bindAssetFileSystem(pAssetFileSystem);
+}
+
+void GameplayScreenRuntime::clearUiControllerRuntimeState()
+{
+    uiController().clearRuntimeState();
+}
+
+bool GameplayScreenRuntime::ensureGameplayLayoutsLoaded()
+{
+    return uiRuntime().ensureGameplayLayoutsLoaded(uiController());
+}
+
+void GameplayScreenRuntime::preloadReferencedAssets()
+{
+    uiRuntime().preloadReferencedAssets();
+    if (settingsSnapshot().enemyHealthBarMode != "off")
+    {
+        EnemyHealthBarRenderer::preload(*this);
+    }
+}
+
+bool GameplayScreenRuntime::ensurePortraitRuntimeLoaded()
+{
+    return uiRuntime().ensurePortraitRuntimeLoaded();
+}
+
+void GameplayScreenRuntime::resetPortraitFxStates(size_t memberCount)
+{
+    uiRuntime().resetPortraitFxStates(memberCount);
+    uiRuntime().resetPortraitPresentationState(memberCount);
+}
+
+void GameplayScreenRuntime::resetOverlayInteractionState(bool hasFollowers)
+{
+    interactionState() = {};
+    interactionState().followerPanelOpen = hasFollowers && settingsSnapshot().followerPanel;
+}
+
+void GameplayScreenRuntime::toggleFollowerPanel()
+{
+    const bool open = !interactionState().followerPanelOpen;
+    interactionState().followerPanelOpen = open;
+
+    if (m_pSettings != nullptr && m_pSettings->followerPanel != open)
+    {
+        m_pSettings->followerPanel = open;
+        commitSettingsChange();
+    }
+}
+
+bool GameplayScreenRuntime::initializeHouseVideoPlayer()
+{
+    return uiRuntime().initializeHouseVideoPlayer();
+}
+
+void GameplayScreenRuntime::shutdownHouseVideoPlayer()
+{
+    uiRuntime().shutdownHouseVideoPlayer();
+}
+
+void GameplayScreenRuntime::stopHouseVideoPlayback()
+{
+    uiRuntime().stopHouseVideoPlayback();
+}
+
+bool GameplayScreenRuntime::playHouseVideo(const std::string &videoStem)
+{
+    return uiRuntime().playHouseVideo(videoStem);
+}
+
+bool GameplayScreenRuntime::playHouseVideo(const std::string &videoStem, const std::string &videoDirectory)
+{
+    return uiRuntime().playHouseVideo(videoStem, videoDirectory);
+}
+
+void GameplayScreenRuntime::updateHouseVideoPlayback(float deltaSeconds)
+{
+    if (m_pAudioSystem != nullptr)
+    {
+        uiRuntime().setHouseVideoAudioVolume(m_pAudioSystem->soundVolume());
+    }
+
+    uiRuntime().updateHouseVideoPlayback(deltaSeconds);
+}
+
+void GameplayScreenRuntime::updateHouseDialoguePresentation(float deltaSeconds)
+{
+    const EventDialogContent &activeDialog = activeEventDialog();
+
+    if (!activeDialog.isActive
+        || currentHudScreenState() != GameplayHudScreenState::Dialogue
+        || !activeEventDialogAllowsHouseVideoPlayback(activeDialog))
+    {
+        leaveHouseEntryAudio(true);
+        stopHouseVideoPlayback();
+        return;
+    }
+
+    if (!activeDialog.videoName.empty())
+    {
+        // A dialogue with its own video carries its own audio: no door sound or greeting.
+        leaveHouseEntryAudio(false);
+
+        if (activeDialog.videoDirectory.empty())
+        {
+            playHouseVideo(activeDialog.videoName);
+        }
+        else
+        {
+            playHouseVideo(activeDialog.videoName, activeDialog.videoDirectory);
+        }
+
+        updateHouseVideoPlayback(deltaSeconds);
+        return;
+    }
+
+    const EventRuntimeState *pEventRuntimeState =
+        worldRuntime() != nullptr ? worldRuntime()->eventRuntimeState() : nullptr;
+    const uint32_t hostHouseId = pEventRuntimeState != nullptr ? pEventRuntimeState->dialogueState.hostHouseId : 0;
+    const HouseEntry *pHostHouseEntry = hostHouseId != 0 ? m_session.data().houseTable().get(hostHouseId) : nullptr;
+
+    if (pHostHouseEntry == nullptr || pHostHouseEntry->videoName.empty())
+    {
+        leaveHouseEntryAudio(true);
+        stopHouseVideoPlayback();
+        return;
+    }
+
+    if (m_activeHouseAudioHostId != pHostHouseEntry->id)
+    {
+        m_activeHouseAudioHostId = pHostHouseEntry->id;
+
+        if (m_pAudioSystem != nullptr)
+        {
+            m_pAudioSystem->pauseBackgroundMusic();
+            m_pAudioSystem->playCommonSound(SoundId::Enter, GameAudioSystem::PlaybackGroup::HouseDoor);
+            const std::optional<uint32_t> greetingSoundId =
+                deriveHouseSoundId(
+                    *pHostHouseEntry,
+                    houseEntrySoundType(*pHostHouseEntry, partyReadOnly(), worldRuntime()));
+
+            if (greetingSoundId.has_value())
+            {
+                playHouseSound(*greetingSoundId);
+            }
+        }
+    }
+
+    playHouseVideo(pHostHouseEntry->videoName);
+    updateHouseVideoPlayback(deltaSeconds);
+}
+
+void GameplayScreenRuntime::resetHouseEntryAudio()
+{
+    m_activeHouseAudioHostId = 0;
+}
+
+void GameplayScreenRuntime::leaveHouseEntryAudio(bool playDoorSound)
+{
+    if (m_activeHouseAudioHostId != 0 && m_pAudioSystem != nullptr)
+    {
+        if (playDoorSound)
+        {
+            m_pAudioSystem->playCommonSound(SoundId::WoodDoorClosing, GameAudioSystem::PlaybackGroup::HouseDoor);
+        }
+
+        m_pAudioSystem->resumeBackgroundMusic();
+    }
+
+    m_activeHouseAudioHostId = 0;
+}
+
+bool GameplayScreenRuntime::isControlsRenderButtonPressed(GameplayControlsRenderButton button) const
+{
+    if (!interactionState().controlsClickLatch)
+    {
+        return false;
+    }
+
+    switch (button)
+    {
+        case GameplayControlsRenderButton::TurnRate16:
+            return interactionState().controlsPressedTarget.type == GameplayControlsPointerTargetType::TurnRate16Button;
+        case GameplayControlsRenderButton::TurnRate32:
+            return interactionState().controlsPressedTarget.type == GameplayControlsPointerTargetType::TurnRate32Button;
+        case GameplayControlsRenderButton::TurnRateSmooth:
+            return interactionState().controlsPressedTarget.type == GameplayControlsPointerTargetType::TurnRateSmoothButton;
+        case GameplayControlsRenderButton::WalkSound:
+            return interactionState().controlsPressedTarget.type == GameplayControlsPointerTargetType::WalkSoundButton;
+        case GameplayControlsRenderButton::ShowHits:
+            return interactionState().controlsPressedTarget.type == GameplayControlsPointerTargetType::ShowHitsButton;
+        case GameplayControlsRenderButton::AlwaysRun:
+            return interactionState().controlsPressedTarget.type == GameplayControlsPointerTargetType::AlwaysRunButton;
+        case GameplayControlsRenderButton::FlipOnExit:
+            return interactionState().controlsPressedTarget.type == GameplayControlsPointerTargetType::FlipOnExitButton;
+    }
+
+    return false;
+}
+
+bool GameplayScreenRuntime::isVideoOptionsRenderButtonPressed(GameplayVideoOptionsRenderButton button) const
+{
+    if (!interactionState().videoOptionsClickLatch)
+    {
+        return false;
+    }
+
+    switch (button)
+    {
+        case GameplayVideoOptionsRenderButton::BloodSplats:
+            return interactionState().videoOptionsPressedTarget.type == GameplayVideoOptionsPointerTargetType::BloodSplatsButton;
+        case GameplayVideoOptionsRenderButton::ColoredLights:
+            return interactionState().videoOptionsPressedTarget.type == GameplayVideoOptionsPointerTargetType::ColoredLightsButton;
+        case GameplayVideoOptionsRenderButton::Tinting:
+            return interactionState().videoOptionsPressedTarget.type == GameplayVideoOptionsPointerTargetType::TintingButton;
+    }
+
+    return false;
+}
+
+void GameplayScreenRuntime::clearHudLayoutRuntimeHeightOverrides()
+{
+    uiRuntime().clearHudLayoutRuntimeHeightOverrides();
+}
+
+void GameplayScreenRuntime::setHudLayoutRuntimeWidthOverride(const std::string &layoutId, float width)
+{
+    uiRuntime().setHudLayoutRuntimeWidthOverride(layoutId, width);
+}
+
+void GameplayScreenRuntime::setHudLayoutRuntimeHeightOverride(const std::string &layoutId, float height)
+{
+    uiRuntime().setHudLayoutRuntimeHeightOverride(layoutId, height);
+}
+
+const HouseEntry *GameplayScreenRuntime::findHouseEntry(uint32_t houseId) const
+{
+    return houseTable() != nullptr ? houseTable()->get(houseId) : nullptr;
+}
+
+const GameplayScreenRuntime::HudLayoutElement *GameplayScreenRuntime::findHudLayoutElement(
+    const std::string &layoutId) const
+{
+    return uiRuntime().findHudLayoutElement(layoutId);
+}
+
+int GameplayScreenRuntime::defaultHudLayoutZIndexForScreen(const std::string &screen) const
+{
+    return uiRuntime().defaultHudLayoutZIndexForScreen(screen);
+}
+
+GameplayHudScreenState GameplayScreenRuntime::currentHudScreenState() const
+{
+    return resolveGameplayHudScreenState(uiController(), activeEventDialog(), worldRuntime());
+}
+
+const std::vector<std::string> &GameplayScreenRuntime::sortedHudLayoutIdsForScreen(const std::string &screen) const
+{
+    return uiRuntime().sortedHudLayoutIdsForScreen(screen);
+}
+
+std::optional<GameplayScreenRuntime::ResolvedHudLayoutElement> GameplayScreenRuntime::resolveHudLayoutElement(
+    const std::string &layoutId,
+    int screenWidth,
+    int screenHeight,
+    float fallbackWidth,
+    float fallbackHeight) const
+{
+    std::optional<ResolvedHudLayoutElement> rect =
+        uiRuntime().resolveHudLayoutElement(layoutId, screenWidth, screenHeight, fallbackWidth, fallbackHeight);
+    if (!rect)
+    {
+        return rect;
+    }
+    const Party *pParty = partyReadOnly();
+    const size_t count = pParty != nullptr ? std::clamp(pParty->members().size(), size_t{1}, size_t{5}) : 5;
+    // The map progress channel spans the frame as the frame does.
+    if (layoutId.starts_with("ObsidianPc") || layoutId == "OutdoorGameplayBasebar"
+        || layoutId == "MapProgressChannel")
+    {
+        const HudLayoutElement *pFirst = findHudLayoutElement("ObsidianPc1");
+        const HudLayoutElement *pSecond = findHudLayoutElement("ObsidianPc2");
+        if (pFirst != nullptr && pSecond != nullptr)
+        {
+            const float unusedWidth = (5 - count) * (pSecond->gapX - pFirst->gapX) * rect->scale;
+            rect->x += unusedWidth * 0.5f;
+            if (layoutId == "OutdoorGameplayBasebar" || layoutId == "MapProgressChannel")
+            {
+                rect->width -= unusedWidth;
+            }
+        }
+    }
+    if (layoutId == "ObsidianHeroBuffPanel" || layoutId == "ObsidianSkullBuffPanel")
+    {
+        const std::optional<ResolvedHudLayoutElement> bar =
+            uiRuntime().resolveHudLayoutElement("OutdoorTopBar", screenWidth, screenHeight, 0, 0);
+        if (bar)
+        {
+            rect->x = bar->x + 3 * bar->scale;
+            rect->y = bar->y + bar->height + 6 * bar->scale;
+            if (layoutId == "ObsidianSkullBuffPanel")
+            {
+                rect->x += rect->width + 7 * rect->scale;
+            }
+        }
+    }
+    if (layoutId == "OutdoorFlyBuffIcon" || layoutId == "OutdoorWaterWalkBuffIcon")
+    {
+        const std::optional<ResolvedHudLayoutElement> skull =
+            resolveHudLayoutElement("ObsidianSkullBuffPanel", screenWidth, screenHeight, 0, 0);
+        if (skull)
+        {
+            rect->x = skull->x + skull->width + 7 * skull->scale;
+            rect->y = skull->y + (skull->height - rect->height) * 0.5f;
+            if (layoutId == "OutdoorWaterWalkBuffIcon")
+            {
+                rect->x += rect->width + 4 * rect->scale;
+            }
+        }
+    }
+    const HudLayoutElement *pElement = findHudLayoutElement(layoutId);
+    while (pElement != nullptr)
+    {
+        if (pElement->id == "OutdoorMobileActionPanel" || pElement->id == "OutdoorMobileSystemPanel")
+        {
+            const std::optional<ResolvedHudLayoutElement> panel = uiRuntime().resolveHudLayoutElement(
+                pElement->id, screenWidth, screenHeight, 0, 0);
+            const std::optional<ResolvedHudLayoutElement> basebar = resolveHudLayoutElement(
+                "OutdoorGameplayBasebar", screenWidth, screenHeight, 0, 0);
+            if (panel && basebar)
+            {
+                rect->y += GameplayHudCommon::touchPanelVerticalOffset(*panel, *basebar);
+            }
+            break;
+        }
+        if (pElement->parentId == "CharacterSkillsViewport")
+        {
+            rect->y -= characterScreenReadOnly().skillScrollOffset * rect->scale;
+            break;
+        }
+        pElement = pElement->parentId.empty() ? nullptr : findHudLayoutElement(pElement->parentId);
+    }
+    return rect;
+}
+
+std::optional<GameplayScreenRuntime::ResolvedHudLayoutElement> GameplayScreenRuntime::resolvePartyPortraitRect(
+    int width,
+    int height,
+    size_t memberIndex) const
+{
+    const Party *pParty = partyReadOnly();
+
+    if (pParty == nullptr || width <= 0 || height <= 0)
+    {
+        return std::nullopt;
+    }
+
+    const GameplayHudScreenState hudScreenState = currentHudScreenState();
+    const bool isLimitedOverlayHud =
+        (hudScreenState == GameplayHudScreenState::Dialogue
+            && !activeEventDialogPreservesGameplayHud(activeEventDialog()))
+        || hudScreenState == GameplayHudScreenState::Character
+        || hudScreenState == GameplayHudScreenState::Chest
+        || hudScreenState == GameplayHudScreenState::Spellbook
+        || hudScreenState == GameplayHudScreenState::Rest
+        || hudScreenState == GameplayHudScreenState::Menu
+        || hudScreenState == GameplayHudScreenState::SaveGame
+        || hudScreenState == GameplayHudScreenState::LoadGame
+        || hudScreenState == GameplayHudScreenState::Journal
+        || hudScreenState == GameplayHudScreenState::QuickReference;
+    if (memberIndex >= pParty->members().size())
+    {
+        return std::nullopt;
+    }
+    return resolveHudLayoutElement(
+        std::string(isLimitedOverlayHud ? "ObsidianOverlayPc" : "ObsidianPc")
+            + std::to_string(memberIndex + 1) + "Face", width, height, 0.0f, 0.0f);
+
+}
+
+std::optional<size_t> GameplayScreenRuntime::resolvePartyPortraitIndexAtPoint(
+    int width,
+    int height,
+    float x,
+    float y) const
+{
+    const Party *pParty = partyReadOnly();
+
+    if (pParty == nullptr || width <= 0 || height <= 0)
+    {
+        return std::nullopt;
+    }
+
+    for (size_t memberIndex = 0; memberIndex < pParty->members().size(); ++memberIndex)
+    {
+        const std::optional<ResolvedHudLayoutElement> portraitRect = resolvePartyPortraitRect(width, height, memberIndex);
+
+        if (!portraitRect)
+        {
+            continue;
+        }
+
+        if (x >= portraitRect->x
+            && x < portraitRect->x + portraitRect->width
+            && y >= portraitRect->y
+            && y < portraitRect->y + portraitRect->height)
+        {
+            return memberIndex;
+        }
+    }
+
+    return std::nullopt;
+}
+
+std::optional<GameplayScreenRuntime::ResolvedHudLayoutElement> GameplayScreenRuntime::resolveChestGridArea(
+    int width,
+    int height) const
+{
+    if (width <= 0 || height <= 0 || chestTable() == nullptr)
+    {
+        return std::nullopt;
+    }
+
+    const IGameplayWorldRuntime *pRuntime = worldRuntime();
+    const GameplayChestViewState *pChestView = pRuntime != nullptr ? pRuntime->activeChestView() : nullptr;
+
+    if (pChestView == nullptr || pChestView->gridWidth == 0 || pChestView->gridHeight == 0)
+    {
+        return std::nullopt;
+    }
+
+    const ChestEntry *pChestEntry = chestTable()->get(pChestView->chestTypeId);
+    const HudLayoutElement *pChestBackgroundLayout = findHudLayoutElement("ChestBackground");
+
+    if (pChestEntry == nullptr || pChestBackgroundLayout == nullptr)
+    {
+        return std::nullopt;
+    }
+
+    const std::optional<ResolvedHudLayoutElement> resolvedBackground = resolveHudLayoutElement(
+        "ChestBackground",
+        width,
+        height,
+        pChestBackgroundLayout->width,
+        pChestBackgroundLayout->height);
+
+    if (!resolvedBackground)
+    {
+        return std::nullopt;
+    }
+
+    ResolvedHudLayoutElement resolved = {};
+    resolved.x = std::round(
+        resolvedBackground->x + static_cast<float>(pChestEntry->gridOffsetX) * resolvedBackground->scale);
+    resolved.y = std::round(
+        resolvedBackground->y + static_cast<float>(pChestEntry->gridOffsetY) * resolvedBackground->scale);
+    resolved.width = 32.0f * static_cast<float>(pChestView->gridWidth) * resolvedBackground->scale;
+    resolved.height = 32.0f * static_cast<float>(pChestView->gridHeight) * resolvedBackground->scale;
+    resolved.scale = resolvedBackground->scale;
+    return resolved;
+}
+
+std::optional<GameplayScreenRuntime::ResolvedHudLayoutElement>
+GameplayScreenRuntime::resolveInventoryNestedOverlayGridArea(
+    int width,
+    int height) const
+{
+    if (!inventoryNestedOverlay().active || width <= 0 || height <= 0)
+    {
+        return std::nullopt;
+    }
+
+    const HudLayoutElement *pGridLayout = findHudLayoutElement("ChestNestedInventoryGrid");
+
+    if (pGridLayout == nullptr)
+    {
+        return std::nullopt;
+    }
+
+    return resolveHudLayoutElement(
+        "ChestNestedInventoryGrid",
+        width,
+        height,
+        pGridLayout->width,
+        pGridLayout->height);
+}
+
+std::optional<GameplayScreenRuntime::ResolvedHudLayoutElement> GameplayScreenRuntime::resolveHouseShopOverlayFrame(
+    int width,
+    int height) const
+{
+    if (!houseShopOverlay().active || width <= 0 || height <= 0)
+    {
+        return std::nullopt;
+    }
+
+    const HudLayoutElement *pFrameLayout = findHudLayoutElement("DialogueShopOverlayFrame");
+
+    if (pFrameLayout == nullptr)
+    {
+        return std::nullopt;
+    }
+
+    return resolveHudLayoutElement(
+        "DialogueShopOverlayFrame",
+        width,
+        height,
+        pFrameLayout->width,
+        pFrameLayout->height);
+}
+
+bool GameplayScreenRuntime::isPointerInsideResolvedElement(
+    const ResolvedHudLayoutElement &resolved,
+    float pointerX,
+    float pointerY) const
+{
+    return GameplayHudCommon::isPointerInsideResolvedElement(resolved, pointerX, pointerY);
+}
+
+const std::string *GameplayScreenRuntime::resolveInteractiveAssetName(
+    const HudLayoutElement &layout,
+    const ResolvedHudLayoutElement &resolved,
+    float pointerX,
+    float pointerY,
+    bool isLeftMousePressed) const
+{
+    const std::string *pAssetName = GameplayHudCommon::resolveInteractiveAssetName(
+        layout,
+        resolved,
+        pointerX,
+        pointerY,
+        isLeftMousePressed);
+
+    if (pAssetName == nullptr)
+    {
+        return nullptr;
+    }
+
+    m_resolvedInteractiveAssetName = *pAssetName;
+    return &*m_resolvedInteractiveAssetName;
+}
+
+void GameplayScreenRuntime::submitHudTexturedQuad(
+    const HudTextureHandle &texture,
+    float x,
+    float y,
+    float quadWidth,
+    float quadHeight) const
+{
+    uiRuntime().submitHudTexturedQuad(texture.textureHandle, x, y, quadWidth, quadHeight);
+}
+
+void GameplayScreenRuntime::submitHudTexturedQuadRotatedCounterClockwise(
+    const HudTextureHandle &texture,
+    float x,
+    float y,
+    float quadWidth,
+    float quadHeight) const
+{
+    uiRuntime().submitHudTexturedQuadRotatedCounterClockwise(texture.textureHandle, x, y, quadWidth, quadHeight);
+}
+
+float GameplayScreenRuntime::characterSkillRowHeight() const
+{
+    return 18.0f;
+}
+
+float GameplayScreenRuntime::characterSkillsContentHeight(int width, int height) const
+{
+    const std::optional<ResolvedHudLayoutElement> viewport =
+        resolveHudLayoutElement("CharacterSkillsViewport", width, height, 0, 0);
+    if (!viewport)
+    {
+        return 0;
+    }
+    float contentHeight = 0;
+    const Character *pCharacter = selectedCharacterScreenCharacter();
+    const bool showTechnologySkills = pCharacter != nullptr && pCharacter->hasTechnologySkill();
+    for (const char *pId : {"CharacterSkillsMagicListRegion", "CharacterSkillsMiscListRegion",
+             "CharacterSkillsTechListRegion"})
+    {
+        if (!showTechnologySkills && std::string_view(pId) == "CharacterSkillsTechListRegion")
+        {
+            continue;
+        }
+
+        const std::optional<ResolvedHudLayoutElement> rect = resolveHudLayoutElement(pId, width, height, 0, 0);
+        if (rect)
+        {
+            contentHeight = std::max(contentHeight,
+                (rect->y + rect->height - viewport->y) / viewport->scale + characterScreenReadOnly().skillScrollOffset);
+        }
+    }
+    return contentHeight;
+}
+
+void GameplayScreenRuntime::renderLayoutLabel(
+    const HudLayoutElement &layout,
+    const ResolvedHudLayoutElement &resolved,
+    const std::string &label,
+    bool applyButtonState,
+    const ResolvedHudLayoutElement *pClip) const
+{
+    HudLayoutElement renderedLayout = layout;
+    ResolvedHudLayoutElement renderedRect = resolved;
+    const GameplayInputFrame *pInput = currentGameplayInputFrame();
+    const HudLayoutElement *pButton = &layout;
+    while (pButton != nullptr && !pButton->interactive)
+    {
+        pButton = pButton->parentId.empty() ? nullptr : findHudLayoutElement(pButton->parentId);
+    }
+    if (applyButtonState && toLowerCopy(layout.fontName) == "fondamento" && pInput != nullptr && pButton != nullptr
+        && GameplayHudCommon::isPointerInsideResolvedElement(resolved, pInput->pointerX, pInput->pointerY))
+    {
+        renderedLayout.textColorAbgr = 0xffd4efffu;
+        if (pInput->leftMouseButton.held)
+        {
+            renderedRect.y += resolved.scale;
+        }
+    }
+    GameplayHudCommon::renderLayoutLabel(
+        renderedLayout,
+        renderedRect,
+        label,
+        [this](const std::string &fontName) -> const GameplayHudFontData *
+        {
+            const std::optional<HudFontHandle> font = uiRuntime().findHudFont(fontName);
+
+            if (!font)
+            {
+                return nullptr;
+            }
+
+            return GameplayHudCommon::findHudFont(uiRuntime().hudFontHandles(), font->fontName);
+        },
+        [this, pClip](const GameplayHudFontData &font,
+               const GameplayHudFontLayer &layer,
+               const std::string &text,
+               float textX,
+               float textY,
+               float fontScale)
+        {
+            HudFontHandle gameplayFont = {};
+            gameplayFont.fontName = font.fontName;
+            gameplayFont.fontHeight = font.fontHeight;
+            gameplayFont.mainTextureHandle = font.mainTextureHandle;
+            gameplayFont.shadowTextureHandle = font.shadowTextureHandle;
+            renderHudFontLayer(gameplayFont, layer, text, textX, textY, fontScale, pClip);
+        });
+}
+
+std::optional<GameplayScreenRuntime::HudFontHandle> GameplayScreenRuntime::findHudFont(const std::string &fontName) const
+{
+    return uiRuntime().findHudFont(fontName);
+}
+
+float GameplayScreenRuntime::measureHudTextWidth(const HudFontHandle &font, const std::string &text) const
+{
+    return uiRuntime().measureHudTextWidth(font, text);
+}
+
+std::vector<std::string> GameplayScreenRuntime::wrapHudTextToWidth(
+    const HudFontHandle &font,
+    const std::string &text,
+    float maxWidth) const
+{
+    return uiRuntime().wrapHudTextToWidth(font, text, maxWidth);
+}
+
+GameplayHudFontLayer GameplayScreenRuntime::hudFontMainLayer(const HudFontHandle &font, uint32_t colorAbgr) const
+{
+    return uiRuntime().hudFontMainLayer(font, colorAbgr);
+}
+
+void GameplayScreenRuntime::renderHudFontLayer(
+    const HudFontHandle &font,
+    const GameplayHudFontLayer &layer,
+    const std::string &text,
+    float textX,
+    float textY,
+    float fontScale,
+    const GameplayResolvedHudLayoutElement *pClip) const
+{
+    uiRuntime().renderHudFontLayer(font, layer, text, textX, textY, fontScale, pClip);
+}
+
+void GameplayScreenRuntime::bindHudRenderBackend(const GameplayHudRenderBackend &backend)
+{
+    uiRuntime().bindHudRenderBackend(backend);
+}
+
+void GameplayScreenRuntime::clearHudRenderBackend()
+{
+    uiRuntime().clearHudRenderBackend();
+}
+
+void GameplayScreenRuntime::releaseHudGpuResources(bool destroyBgfxResources)
+{
+    uiRuntime().releaseHudGpuResources(destroyBgfxResources);
+}
+
+void GameplayScreenRuntime::clearSharedUiRuntime()
+{
+    uiRuntime().clear();
+    m_combatLog.clear();
+}
+
+CombatLog &GameplayScreenRuntime::combatLog()
+{
+    return m_combatLog;
+}
+
+const CombatLog &GameplayScreenRuntime::combatLog() const
+{
+    return m_combatLog;
+}
+
+GameplayCombatLogPanel &GameplayScreenRuntime::combatLogPanel()
+{
+    return m_combatLogPanel;
+}
+
+bool GameplayScreenRuntime::hasHudRenderResources() const
+{
+    return uiRuntime().hasHudRenderResources();
+}
+
+void GameplayScreenRuntime::prepareHudView(int width, int height) const
+{
+    uiRuntime().prepareHudView(width, height);
+}
+
+void GameplayScreenRuntime::submitHudQuadBatch(const std::vector<GameplayHudBatchQuad> &quads) const
+{
+    uiRuntime().submitHudQuadBatch(quads);
+}
+
+void GameplayScreenRuntime::renderViewportSidePanels(
+    int screenWidth,
+    int screenHeight,
+    const std::string &textureName)
+{
+    if (screenWidth <= 0 || screenHeight <= 0)
+    {
+        return;
+    }
+
+    const GameplayUiViewportRect viewport = GameplayHudCommon::computeUiViewportRect(screenWidth, screenHeight);
+
+    if (viewport.x <= 0.5f)
+    {
+        return;
+    }
+
+    if (textureName == "obsidian_reading_surface")
+    {
+        const float scale = static_cast<float>(screenHeight) / 480.0f;
+        GameplayUiSkin::renderSurface(*this, {0, 0, viewport.x, float(screenHeight), scale});
+        const float right = viewport.x + viewport.width;
+        GameplayUiSkin::renderSurface(*this, {right, 0, screenWidth - right, float(screenHeight), scale});
+        return;
+    }
+    const std::optional<HudTextureHandle> texture = gameplayUiRuntime().ensureHudTextureLoaded(textureName);
+
+    if (!texture)
+    {
+        return;
+    }
+
+    submitHudTexturedQuad(*texture, 0.0f, 0.0f, viewport.x, static_cast<float>(screenHeight));
+
+    const float rightX = viewport.x + viewport.width;
+    const float rightWidth = static_cast<float>(screenWidth) - rightX;
+
+    if (rightWidth > 0.5f)
+    {
+        submitHudTexturedQuad(*texture, rightX, 0.0f, rightWidth, static_cast<float>(screenHeight));
+    }
+}
+
+std::string GameplayScreenRuntime::resolvePortraitTextureName(const Character &character) const
+{
+    return uiRuntime().resolvePortraitTextureName(character);
+}
+
+void GameplayScreenRuntime::renderPortraitFx(
+    size_t memberIndex,
+    float portraitX,
+    float portraitY,
+    float portraitWidth,
+    float portraitHeight) const
+{
+    uiRuntime().renderPortraitFx(memberIndex, portraitX, portraitY, portraitWidth, portraitHeight);
+}
+
+bool GameplayScreenRuntime::tryGetGameplayMinimapState(GameplayMinimapState &state) const
+{
+    IGameplayWorldRuntime *pWorldRuntime = worldRuntime();
+    state = {};
+
+    if (pWorldRuntime == nullptr || !pWorldRuntime->tryGetGameplayMinimapState(state))
+    {
+        return false;
+    }
+
+    const float zoomScale = gameplayMinimapZoomScale();
+    state.zoom *= zoomScale;
+    state.zoomWidth *= zoomScale;
+    state.zoomHeight *= zoomScale;
+    return true;
+}
+
+float GameplayScreenRuntime::gameplayMinimapZoomScale() const
+{
+    const int zoomStep = std::clamp(
+        uiController().state().gameplayMinimapZoomStep,
+        GameplayMinimapMinZoomStep,
+        GameplayMinimapMaxZoomStep);
+
+    if (zoomStep < GameplayMinimapDefaultZoomStep)
+    {
+        return 0.5f;
+    }
+
+    if (zoomStep > GameplayMinimapDefaultZoomStep)
+    {
+        return 2.0f;
+    }
+
+    return 1.0f;
+}
+
+void GameplayScreenRuntime::zoomGameplayMinimapIn()
+{
+    GameplayUiController::State &state = uiController().state();
+    state.gameplayMinimapZoomStep = std::min(state.gameplayMinimapZoomStep + 1, GameplayMinimapMaxZoomStep);
+    rememberGameplayMinimapZoom();
+}
+
+void GameplayScreenRuntime::zoomGameplayMinimapOut()
+{
+    GameplayUiController::State &state = uiController().state();
+    state.gameplayMinimapZoomStep = std::max(state.gameplayMinimapZoomStep - 1, GameplayMinimapMinZoomStep);
+    rememberGameplayMinimapZoom();
+}
+
+void GameplayScreenRuntime::rememberGameplayMinimapZoom()
+{
+    const int zoomStep = uiController().state().gameplayMinimapZoomStep;
+
+    if (m_pSettings != nullptr && m_pSettings->minimapZoom != zoomStep)
+    {
+        m_pSettings->minimapZoom = zoomStep;
+        commitSettingsChange();
+    }
+}
+
+void GameplayScreenRuntime::collectGameplayMinimapLines(std::vector<GameplayMinimapLineState> &lines)
+{
+    IGameplayWorldRuntime *pWorldRuntime = worldRuntime();
+
+    if (pWorldRuntime == nullptr)
+    {
+        lines.clear();
+        return;
+    }
+
+    const uint32_t nowMilliseconds = currentMilliseconds();
+
+    if (m_pCachedMinimapWorldRuntime != pWorldRuntime)
+    {
+        m_pCachedMinimapWorldRuntime = pWorldRuntime;
+        m_cachedMinimapLinesValid = false;
+        m_cachedMinimapMarkersValid = false;
+    }
+
+    if (!m_cachedMinimapLinesValid
+        || nowMilliseconds - m_cachedMinimapLineMilliseconds >= MinimapFactRefreshMilliseconds)
+    {
+        pWorldRuntime->collectGameplayMinimapLines(m_cachedMinimapLines);
+        m_cachedMinimapLineMilliseconds = nowMilliseconds;
+        m_cachedMinimapLinesValid = true;
+    }
+
+    lines = m_cachedMinimapLines;
+}
+
+void GameplayScreenRuntime::collectGameplayMinimapMarkers(std::vector<GameplayMinimapMarkerState> &markers) const
+{
+    IGameplayWorldRuntime *pWorldRuntime = worldRuntime();
+
+    if (pWorldRuntime == nullptr)
+    {
+        markers.clear();
+        return;
+    }
+
+    const uint32_t nowMilliseconds = currentMilliseconds();
+
+    if (m_pCachedMinimapWorldRuntime != pWorldRuntime)
+    {
+        m_pCachedMinimapWorldRuntime = pWorldRuntime;
+        m_cachedMinimapLinesValid = false;
+        m_cachedMinimapMarkersValid = false;
+    }
+
+    if (!m_cachedMinimapMarkersValid
+        || nowMilliseconds - m_cachedMinimapMarkerMilliseconds >= MinimapFactRefreshMilliseconds)
+    {
+        pWorldRuntime->collectGameplayMinimapMarkers(m_cachedMinimapMarkers);
+        m_cachedMinimapMarkerMilliseconds = nowMilliseconds;
+        m_cachedMinimapMarkersValid = true;
+    }
+
+    markers = m_cachedMinimapMarkers;
+}
+
+bool GameplayScreenRuntime::ensureTownPortalDestinationsLoaded()
+{
+    if (utilitySpellOverlayReadOnly().mode == GameplayUiController::UtilitySpellOverlayMode::DimensionDoor)
+    {
+        return ensureDimensionDoorDestinationsLoaded();
+    }
+
+    return uiRuntime().ensureTownPortalDestinationsLoaded(m_session.currentMapFileName());
+}
+
+bool GameplayScreenRuntime::ensureDimensionDoorDestinationsLoaded()
+{
+    constexpr const char *CrossContinentsGotMainQuestVar = "MMerge.CrossContinents.GotMainQuest";
+    constexpr float MinutesPerDay = 24.0f * 60.0f;
+
+    const IGameplayWorldRuntime *pWorldRuntime = worldRuntime();
+    const float gameMinutes = pWorldRuntime != nullptr ? std::max(0.0f, pWorldRuntime->gameMinutes()) : 0.0f;
+    const uint32_t dayIndex = static_cast<uint32_t>(std::floor(gameMinutes / MinutesPerDay));
+    const EventRuntimeState *pEventRuntimeState =
+        pWorldRuntime != nullptr ? pWorldRuntime->eventRuntimeState() : nullptr;
+    bool crossContinentsUnlocked = m_dimensionDoorWithoutQuest;
+
+    if (!crossContinentsUnlocked && pEventRuntimeState != nullptr)
+    {
+        const auto iterator = pEventRuntimeState->namedGlobalVars.find(CrossContinentsGotMainQuestVar);
+        crossContinentsUnlocked = iterator != pEventRuntimeState->namedGlobalVars.end() && iterator->second != 0;
+    }
+
+    return uiRuntime().ensureDimensionDoorDestinationsLoaded(dayIndex, crossContinentsUnlocked);
+}
+
+bool GameplayScreenRuntime::shouldTownPortalCastOpenDimensionDoor() const
+{
+    const IGameplayWorldRuntime *pWorldRuntime = worldRuntime();
+
+    if (pWorldRuntime == nullptr)
+    {
+        return false;
+    }
+
+    const std::string &mapName = pWorldRuntime->mapName();
+    const float x = pWorldRuntime->partyX();
+    const float y = pWorldRuntime->partyY();
+
+    for (const DimensionDoorRadiusTrigger &trigger : DimensionDoorRadiusTriggers)
+    {
+        if (!mapNameMatches(mapName, trigger.pMapName))
+        {
+            continue;
+        }
+
+        const float dx = x - trigger.x;
+        const float dy = y - trigger.y;
+
+        if (dx * dx + dy * dy <= trigger.radius * trigger.radius)
+        {
+            return true;
+        }
+    }
+
+    for (const DimensionDoorTileTrigger &trigger : DimensionDoorTileTriggers)
+    {
+        if (mapNameMatches(mapName, trigger.pMapName) && partyIsOnDimensionDoorTile(x, y, trigger))
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+void GameplayScreenRuntime::setDimensionDoorWithoutQuest(bool withoutQuest)
+{
+    m_dimensionDoorWithoutQuest = withoutQuest;
+}
+
+bool GameplayScreenRuntime::openDimensionDoorOverlay(
+    size_t casterMemberIndex,
+    uint32_t spellId,
+    const std::string &statusText)
+{
+    m_dimensionDoorWithoutQuest = false;
+
+    if (!ensureDimensionDoorDestinationsLoaded())
+    {
+        setStatusBarEvent("Dimension Door destinations unavailable");
+        return false;
+    }
+
+    openUtilitySpellOverlay(
+        GameplayUiController::UtilitySpellOverlayMode::DimensionDoor,
+        spellId,
+        casterMemberIndex);
+    resetUtilitySpellOverlayInteractionState();
+    setStatusBarEvent(statusText, 4.0f);
+    return true;
+}
+
+const std::string &GameplayScreenRuntime::townPortalBackgroundTextureName() const
+{
+    return uiRuntime().townPortalBackgroundTextureName();
+}
+
+const std::vector<GameplayTownPortalDestination> &GameplayScreenRuntime::townPortalDestinations() const
+{
+    return uiRuntime().townPortalDestinations();
+}
+
+std::string GameplayScreenRuntime::resolveMapLocationName(const std::string &mapFileName) const
+{
+    for (const MapStatsEntry &entry : m_session.data().mapEntries())
+    {
+        if (toLowerCopy(entry.fileName) == toLowerCopy(mapFileName))
+        {
+            return entry.name;
+        }
+    }
+
+    return mapFileName;
+}
+
+float GameplayScreenRuntime::measureHudTextWidth(const std::string &fontName, const std::string &text) const
+{
+    const std::optional<HudFontHandle> font = findHudFont(fontName);
+    return font ? measureHudTextWidth(*font, text) : 0.0f;
+}
+
+int GameplayScreenRuntime::hudFontHeight(const std::string &fontName) const
+{
+    const std::optional<HudFontHandle> font = findHudFont(fontName);
+    return font ? font->fontHeight : 0;
+}
+
+std::vector<std::string> GameplayScreenRuntime::wrapHudTextToWidth(
+    const std::string &fontName,
+    const std::string &text,
+    float maxWidth) const
+{
+    const std::optional<HudFontHandle> font = findHudFont(fontName);
+    return font ? wrapHudTextToWidth(*font, text, maxWidth) : std::vector<std::string>{text};
+}
+
+void GameplayScreenRuntime::renderHudTextLine(
+    const std::string &fontName,
+    uint32_t colorAbgr,
+    const std::string &text,
+    float textX,
+    float textY,
+    float fontScale) const
+{
+    const std::optional<HudFontHandle> font = findHudFont(fontName);
+
+    if (!font)
+    {
+        return;
+    }
+
+    renderHudFontLayer(*font, font->shadowTextureHandle, text, textX, textY, fontScale);
+    renderHudFontLayer(*font, hudFontMainLayer(*font, colorAbgr), text, textX, textY, fontScale);
+}
+
+void GameplayScreenRuntime::resetHudTransientState() const
+{
+    uiRuntime().clearRenderedInspectableHudItems();
+    uiRuntime().clearHudLayoutRuntimeHeightOverrides();
+}
+
+void GameplayScreenRuntime::addRenderedInspectableHudItem(const GameplayRenderedInspectableHudItem &item) const
+{
+    uiRuntime().addRenderedInspectableHudItem(item);
+}
+
+const std::vector<GameplayRenderedInspectableHudItem> &GameplayScreenRuntime::renderedInspectableHudItems() const
+{
+    return uiRuntime().renderedInspectableHudItems();
+}
+
+void GameplayScreenRuntime::beginRenderedInspectableHudFrame() const
+{
+    uiRuntime().clearRenderedInspectableHudItems();
+    uiRuntime().setRenderedInspectableHudScreenState(currentHudScreenState());
+}
+
+GameplayHudScreenState GameplayScreenRuntime::renderedInspectableHudScreenState() const
+{
+    return uiRuntime().renderedInspectableHudScreenState();
+}
+
+bool GameplayScreenRuntime::isOpaqueHudPixelAtPoint(
+    const GameplayRenderedInspectableHudItem &item,
+    float x,
+    float y) const
+{
+    return uiRuntime().isOpaqueHudPixelAtPoint(item, x, y);
+}
+
+const PortraitFxEventEntry *GameplayScreenRuntime::findPortraitFxEvent(PortraitFxEventKind kind) const
+{
+    return uiRuntime().findPortraitFxEvent(kind);
+}
+
+uint32_t GameplayScreenRuntime::defaultPortraitAnimationLengthTicks(PortraitId portraitId) const
+{
+    return uiRuntime().defaultPortraitAnimationLengthTicks(portraitId);
+}
+
+std::string GameplayScreenRuntime::resolveEquippedItemHudTextureName(
+    const ItemDefinition &itemDefinition,
+    uint32_t dollTypeId,
+    bool hasRightHandWeapon,
+    EquipmentSlot slot)
+{
+    if (!isBodyEquipmentVisualSlot(slot))
+    {
+        return itemDefinition.iconName;
+    }
+
+    std::vector<std::string> candidateSuffixes;
+
+    if (dollTypeId >= 5)
+    {
+        return itemDefinition.iconName;
+    }
+
+    uint32_t variantNumber = dollTypeId + 1;
+
+    if (usesAlternateCloakEquippedVariant(slot) && (dollTypeId == 2 || dollTypeId == 3))
+    {
+        variantNumber = 1;
+    }
+
+    const std::string primarySuffix = "v" + std::to_string(variantNumber);
+
+    if (slot == EquipmentSlot::Armor)
+    {
+        const std::string alternateSuffix = primarySuffix + "a";
+        candidateSuffixes = hasRightHandWeapon
+            ? std::vector<std::string>{primarySuffix, alternateSuffix}
+            : std::vector<std::string>{alternateSuffix, primarySuffix};
+    }
+    else if (slot == EquipmentSlot::Cloak)
+    {
+        candidateSuffixes = {primarySuffix + "a"};
+    }
+    else
+    {
+        candidateSuffixes = {primarySuffix};
+    }
+
+    for (const std::string &suffix : candidateSuffixes)
+    {
+        const std::string candidateName = itemDefinition.iconName + suffix;
+        int width = 0;
+        int height = 0;
+
+        if (gameplayUiRuntime().ensureItemIconTextureDimensions(candidateName, width, height))
+        {
+            return candidateName;
+        }
+    }
+
+    return itemDefinition.iconName;
+}
+
+std::optional<GameplayResolvedHudLayoutElement> GameplayScreenRuntime::resolveCharacterEquipmentRenderRect(
+    const UiLayoutManager::LayoutElement &layout,
+    const ItemDefinition &itemDefinition,
+    const GameplayHudTextureHandle &texture,
+    const CharacterDollEntry *pCharacterDollEntry,
+    const CharacterDollTypeEntry *pCharacterDollType,
+    EquipmentSlot slot,
+    int screenWidth,
+    int screenHeight) const
+{
+    const float fallbackWidth = layout.width > 0.0f ? layout.width : static_cast<float>(texture.width);
+    const float fallbackHeight = layout.height > 0.0f ? layout.height : static_cast<float>(texture.height);
+    const std::optional<GameplayResolvedHudLayoutElement> resolved =
+        resolveHudLayoutElement(layout.id, screenWidth, screenHeight, fallbackWidth, fallbackHeight);
+
+    if (!resolved.has_value())
+    {
+        return std::nullopt;
+    }
+
+    const auto applyVisualPlacement = [&](GameplayResolvedHudLayoutElement rect)
+    {
+        const uint32_t dollType = pCharacterDollType != nullptr ? pCharacterDollType->id : 0;
+        for (const ItemEquipmentPlacement &placement : itemDefinition.equipmentPlacements)
+        {
+            if (placement.dollType == dollType && placement.slot == slot)
+            {
+                rect.x += static_cast<float>(placement.x) * resolved->scale;
+                rect.y += static_cast<float>(placement.y) * resolved->scale;
+                break;
+            }
+        }
+        if (slot == EquipmentSlot::Gauntlets || slot == EquipmentSlot::Amulet || slot >= EquipmentSlot::Ring1)
+        {
+            const float drawScale = itemDefinition.jewelryDrawScale;
+            rect.x += rect.width * (1.0f - drawScale) * 0.5f;
+            rect.y += rect.height * (1.0f - drawScale) * 0.5f;
+            rect.width *= drawScale;
+            rect.height *= drawScale;
+        }
+        return rect;
+    };
+
+    const float iconWidth = static_cast<float>(texture.width) * resolved->scale;
+    const float iconHeight = static_cast<float>(texture.height) * resolved->scale;
+
+    if (isBodyEquipmentVisualSlot(slot))
+    {
+        const MergedComplexItemPictureEntry *pEntry =
+            mergedComplexItemPictureTable() != nullptr
+                ? mergedComplexItemPictureTable()->get(itemDefinition.itemId)
+                : nullptr;
+        const uint32_t dollTypeId = pCharacterDollType != nullptr ? pCharacterDollType->id : 0;
+        int offsetX = 0;
+        int offsetY = 0;
+
+        if (pEntry != nullptr && dollTypeId < pEntry->points.size())
+        {
+            const MergedPoint &point = pEntry->points[dollTypeId];
+            offsetX = point.x;
+            offsetY = point.y;
+        }
+
+        GameplayResolvedHudLayoutElement rect = {};
+        rect.x = std::round(resolved->x + static_cast<float>(offsetX) * resolved->scale);
+        rect.y = std::round(resolved->y + static_cast<float>(offsetY) * resolved->scale);
+        rect.width = iconWidth;
+        rect.height = iconHeight;
+        rect.scale = resolved->scale;
+        return applyVisualPlacement(rect);
+    }
+
+    if (slot == EquipmentSlot::Bow)
+    {
+        GameplayResolvedHudLayoutElement rect = {};
+        rect.x = std::round(
+            resolved->x + static_cast<float>(pCharacterDollType != nullptr ? pCharacterDollType->bowOffsetX : 0)
+            * resolved->scale - iconWidth * 0.5f);
+        rect.y = std::round(
+            resolved->y + static_cast<float>(pCharacterDollType != nullptr ? pCharacterDollType->bowOffsetY : 0)
+            * resolved->scale - iconHeight * 0.5f);
+        rect.width = iconWidth;
+        rect.height = iconHeight;
+        rect.scale = resolved->scale;
+        return applyVisualPlacement(rect);
+    }
+
+    if (slot == EquipmentSlot::MainHand || slot == EquipmentSlot::OffHand)
+    {
+        int offsetX = 0;
+        int offsetY = 0;
+
+        if (pCharacterDollType != nullptr)
+        {
+            if (slot == EquipmentSlot::MainHand)
+            {
+                int mainHandAnchorX = pCharacterDollType->mainHandWeaponAnchorX();
+                int mainHandAnchorY = pCharacterDollType->mainHandWeaponAnchorY();
+
+                if (pCharacterDollEntry != nullptr)
+                {
+                    int rightHandFingersWidth = 0;
+                    int rightHandFingersHeight = 0;
+                    const bool hasRightHandFingersDimensions = gameplayUiRuntime().ensureHudTextureDimensions(
+                        pCharacterDollEntry->rightHandFingersAsset,
+                        rightHandFingersWidth,
+                        rightHandFingersHeight);
+
+                    if (hasRightHandFingersDimensions)
+                    {
+                        mainHandAnchorX = pCharacterDollType->rightHandFingersX
+                            + static_cast<int>(std::lround(static_cast<float>(rightHandFingersWidth) * 0.5f));
+                    }
+                }
+
+                offsetX = mainHandAnchorX - itemDefinition.equipX;
+                offsetY = mainHandAnchorY - itemDefinition.equipY;
+            }
+            else if (itemDefinition.equipStat == "Shield")
+            {
+                offsetX += pCharacterDollType->leftHandClosedX + pCharacterDollType->shieldX - itemDefinition.equipX;
+                offsetY += pCharacterDollType->leftHandClosedY + pCharacterDollType->shieldY - itemDefinition.equipY;
+            }
+            else
+            {
+                const int offHandGripAnchorX = pCharacterDollType->offHandWeaponAnchorX()
+                    + pCharacterDollType->shieldX;
+                const int offHandGripAnchorY = pCharacterDollType->offHandWeaponAnchorY()
+                    + pCharacterDollType->shieldY;
+                offsetX = offHandGripAnchorX - itemDefinition.equipY;
+                offsetY = offHandGripAnchorY - (texture.width - itemDefinition.equipX);
+            }
+        }
+
+        GameplayResolvedHudLayoutElement rect = {};
+        rect.x = std::round(resolved->x + static_cast<float>(offsetX) * resolved->scale);
+        rect.y = std::round(resolved->y + static_cast<float>(offsetY) * resolved->scale);
+        if (slot == EquipmentSlot::OffHand && itemDefinition.equipStat != "Shield")
+        {
+            rect.width = iconHeight;
+            rect.height = iconWidth;
+        }
+        else
+        {
+            rect.width = iconWidth;
+            rect.height = iconHeight;
+        }
+        rect.scale = resolved->scale;
+        return applyVisualPlacement(rect);
+    }
+
+    GameplayResolvedHudLayoutElement rect = {};
+    rect.x = std::round(resolved->x + (resolved->width - iconWidth) * 0.5f);
+    rect.y = std::round(resolved->y + (resolved->height - iconHeight) * 0.5f);
+    rect.width = iconWidth;
+    rect.height = iconHeight;
+    rect.scale = resolved->scale;
+    return applyVisualPlacement(rect);
+}
+
+void GameplayScreenRuntime::submitWorldTextureQuad(
+    bgfx::TextureHandle textureHandle,
+    float x,
+    float y,
+    float quadWidth,
+    float quadHeight,
+    float u0,
+    float v0,
+    float u1,
+    float v1) const
+{
+    uiRuntime().submitHudTexturedQuad(textureHandle, x, y, quadWidth, quadHeight, u0, v0, u1, v1);
+}
+
+bool GameplayScreenRuntime::renderHouseVideoFrame(float x, float y, float quadWidth, float quadHeight) const
+{
+    return uiRuntime().renderHouseVideoFrame(x, y, quadWidth, quadHeight);
+}
+} // namespace OpenYAMM::Game

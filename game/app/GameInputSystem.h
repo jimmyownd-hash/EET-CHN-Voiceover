@@ -1,0 +1,115 @@
+#pragma once
+
+#include "game/app/GameSettings.h"
+#include "game/app/MobileJumpDoubleTapGesture.h"
+#include "game/gameplay/GameplayInputFrame.h"
+#include "game/gameplay/GameplayTouchControl.h"
+
+#include <array>
+#include <cstdint>
+#include <deque>
+#include <optional>
+#include <span>
+#include <string>
+
+namespace OpenYAMM::Game
+{
+class GameInputSystem
+{
+public:
+    void handleSdlEvent(const SDL_Event &event);
+
+    void updateFromEngineInput(
+        int screenWidth,
+        int screenHeight,
+        float mouseWheelDelta,
+        const GameSettings &settings,
+        bool blockGameplayInput = false,
+        bool mobileGameplayTouchControlsEnabled = true,
+        bool mobileJumpGestureEnabled = true,
+        bool mobileFlightControlsEnabled = false,
+        bool mobileInspectControlEnabled = true,
+        bool mobileLongPressInspectEnabled = false,
+        std::span<const GameplayTouchControl> touchControls = {});
+
+    const GameplayInputFrame &frame() const;
+    GameplayInputFrame &frame();
+    bool consumeMobileDebugConsoleToggleRequested();
+    void resetRelativeMouseMotion();
+    void suppressMouseButtonsUntilReleased();
+
+private:
+    enum class MobileTouchRole
+    {
+        None,
+        Movement,
+        Camera,
+        FlyUp,
+        FlyDown,
+        InspectModifier,
+        InspectTarget,
+        LongPressInspect,
+        Hud,
+        DebugConsoleGesture
+    };
+
+    struct MobileTouchPoint
+    {
+        bool active = false;
+        SDL_FingerID fingerId = 0;
+        MobileTouchRole role = MobileTouchRole::None;
+        float startX = 0.0f;
+        float startY = 0.0f;
+        uint64_t startTimestampNanoseconds = 0;
+        float x = 0.0f;
+        float y = 0.0f;
+        float deltaX = 0.0f;
+        float deltaY = 0.0f;
+        bool dragThresholdExceeded = false;
+        bool dragStartDelivered = false;
+        bool longPressCandidate = false;
+        bool debugConsoleGestureCandidate = false;
+        bool debugConsoleGestureTriggered = false;
+    };
+
+    GameplayInputFrame m_frame = {};
+    std::optional<std::array<float, 2>> m_mobilePointerPosition;
+    std::string m_pendingTextInput;
+    std::array<uint16_t, SDL_SCANCODE_COUNT> m_pendingKeyboardPressCounts = {};
+    std::array<bool, SDL_SCANCODE_COUNT> m_previousKeyboardHeld = {};
+    // Left, middle and right button events not yet applied to a frame.
+    std::array<std::deque<SDL_MouseButtonEvent>, 3> m_pendingMouseButtonEvents = {};
+    // Mouse motion not yet applied to a frame, summed from motion events. SDL's own relative state also counts the
+    // pointer position a compositor reports after a warp it did not make (Wayland), which turned the camera.
+    float m_pendingRelativeMouseX = 0.0f;
+    float m_pendingRelativeMouseY = 0.0f;
+    std::array<bool, KeyboardActionCount> m_previousActionHeld = {};
+    std::array<MobileTouchPoint, 8> m_mobileTouches = {};
+    bool m_mobilePendingHudTap = false;
+    float m_mobilePendingHudTapStartX = 0.0f;
+    float m_mobilePendingHudTapStartY = 0.0f;
+    float m_mobilePendingHudTapX = 0.0f;
+    float m_mobilePendingHudTapY = 0.0f;
+    bool m_mobilePendingHudRelease = false;
+    float m_mobilePendingHudReleaseX = 0.0f;
+    float m_mobilePendingHudReleaseY = 0.0f;
+    bool m_mobilePendingHudDragRelease = false;
+    bool m_mobilePendingHudDragStartDelivered = false;
+    float m_mobilePendingHudDragStartX = 0.0f;
+    float m_mobilePendingHudDragStartY = 0.0f;
+    float m_mobilePendingHudDragReleaseX = 0.0f;
+    float m_mobilePendingHudDragReleaseY = 0.0f;
+    bool m_mobilePendingCameraTap = false;
+    uint64_t m_mobilePendingCameraTapTimestampNanoseconds = 0;
+    float m_mobilePendingCameraTapX = 0.0f;
+    float m_mobilePendingCameraTapY = 0.0f;
+    MobileJumpDoubleTapGesture m_mobileJumpDoubleTapGesture;
+    bool m_mobileDebugConsoleToggleRequested = false;
+    bool m_previousLeftMouseButtonHeld = false;
+    bool m_previousRightMouseButtonHeld = false;
+    bool m_previousMiddleMouseButtonHeld = false;
+    bool m_suppressLeftMouseButtonUntilReleased = false;
+    bool m_suppressRightMouseButtonUntilReleased = false;
+    bool m_suppressMiddleMouseButtonUntilReleased = false;
+};
+} // namespace OpenYAMM::Game

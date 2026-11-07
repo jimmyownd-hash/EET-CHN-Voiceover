@@ -1,0 +1,57 @@
+# 在 Ubuntu 上交叉编译 OpenYAMM 1.21 的 Windows 版（带中文界面译文覆盖层）。
+# 产物：Actions 页面里的 openyamm-windows-exe，里面是 app/1.21/openyamm.exe。
+name: Build Windows exe
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  windows:
+    name: Windows x64
+    runs-on: ubuntu-24.04
+    timeout-minutes: 240
+    env:
+      CMAKE_BUILD_PARALLEL_LEVEL: 4
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install the MinGW-w64 toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y ninja-build g++-mingw-w64-x86-64-posix \
+            gcc-mingw-w64-x86-64-posix binutils-mingw-w64-x86-64 libgl1-mesa-dev libx11-dev libxext-dev
+
+      - name: Build the host shader compiler
+        run: |
+          cmake -S . -B build-host -G Ninja -DCMAKE_BUILD_TYPE=Release \
+            -DOPENYAMM_BUILD_DESKTOP_EXECUTABLE=OFF -DOPENYAMM_BUILD_TESTS=OFF -DOPENYAMM_BUILD_EDITOR=OFF \
+            -DOPENYAMM_BUILD_TOOLS=OFF -DSDL_ALSA=OFF -DSDL_JACK=OFF -DSDL_KMSDRM=OFF -DSDL_PIPEWIRE=OFF \
+            -DSDL_PULSEAUDIO=OFF -DSDL_SNDIO=OFF -DSDL_UNIX_CONSOLE_BUILD=ON -DSDL_WAYLAND=OFF -DSDL_X11=OFF
+          cmake --build build-host --target openyamm_shaderc
+
+      - name: Build the Windows package
+        run: |
+          cmake -S . -B build-windows -G Ninja -DCMAKE_BUILD_TYPE=Release \
+            -DCMAKE_TOOLCHAIN_FILE=cmake/toolchains/mingw-w64-x86_64.cmake \
+            -DOPENYAMM_BUILD_DESKTOP_EXECUTABLE=ON -DOPENYAMM_BUILD_TESTS=OFF -DOPENYAMM_BUILD_EDITOR=OFF \
+            -DOPENYAMM_BUILD_TOOLS=OFF -DOPENYAMM_HOST_SHADERC="$PWD/build-host/openyamm_shaderc" \
+            -DOPENYAMM_RELEASE_THIN=ON -DOPENYAMM_RELEASE_VERSION="1.21"
+          cmake --build build-windows --target openyamm_release_package
+
+      - name: Collect the exe
+        run: |
+          mkdir -p out/app/1.21
+          cp build-windows/release/Release/OpenYAMM/app/1.21/openyamm.exe out/app/1.21/openyamm.exe
+          ls -la out/app/1.21
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: openyamm-windows-exe
+          path: out/
+          if-no-files-found: error
+          retention-days: 14

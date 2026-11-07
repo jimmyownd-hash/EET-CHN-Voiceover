@@ -1,0 +1,159 @@
+#pragma once
+
+#include "game/outdoor/OutdoorMapData.h"
+
+#include <bx/math.h>
+
+#include <cstddef>
+#include <cstdint>
+#include <string>
+#include <vector>
+
+namespace OpenYAMM::Game
+{
+inline float outdoorGridCornerWorldX(int gridX)
+{
+    return static_cast<float>((gridX - 64) * OutdoorMapData::TerrainTileSize);
+}
+
+inline float outdoorGridCornerWorldY(int gridY)
+{
+    return static_cast<float>((64 - gridY) * OutdoorMapData::TerrainTileSize);
+}
+
+inline float outdoorWorldToGridXFloat(float x)
+{
+    return x / static_cast<float>(OutdoorMapData::TerrainTileSize) + 64.0f;
+}
+
+inline float outdoorWorldToGridYFloat(float y)
+{
+    return 64.0f - (y / static_cast<float>(OutdoorMapData::TerrainTileSize));
+}
+
+struct OutdoorFaceGeometryData
+{
+    size_t bModelIndex = 0;
+    size_t faceIndex = 0;
+    std::string modelName;
+    uint8_t polygonType = 0;
+    uint32_t attributes = 0;
+    bool isWalkable = false;
+    bool notAStep = false;
+    bool hasPlane = false;
+    float minX = 0.0f;
+    float maxX = 0.0f;
+    float minY = 0.0f;
+    float maxY = 0.0f;
+    float minZ = 0.0f;
+    float maxZ = 0.0f;
+    bx::Vec3 normal = {0.0f, 0.0f, 0.0f};
+    std::vector<bx::Vec3> vertices;
+};
+
+struct OutdoorSupportFloorSample
+{
+    float height = 0.0f;
+    bool fromBModel = false;
+    size_t bModelIndex = 0;
+    size_t faceIndex = 0;
+    bool hasFloor = true;
+};
+
+struct OutdoorBModelTransform
+{
+    float translationX = 0.0f;
+    float translationY = 0.0f;
+    float translationZ = 0.0f;
+    float pivotX = 0.0f;
+    float pivotY = 0.0f;
+    float pivotZ = 0.0f;
+    float rotationDegreesX = 0.0f;
+    float rotationDegreesY = 0.0f;
+    float rotationDegreesZ = 0.0f;
+};
+
+bool outdoorFaceOccupiesSameGridCells(
+    const OutdoorFaceGeometryData &before,
+    const OutdoorFaceGeometryData &after,
+    float gridMinX,
+    float gridMinY,
+    size_t gridWidth,
+    size_t gridHeight,
+    float cellSize);
+bool isOutdoorWalkablePolygonType(uint8_t polygonType);
+bool outdoorMapUsesBModelGround(const OutdoorMapData &outdoorMapData);
+bx::Vec3 outdoorBModelPointToWorld(int x, int y, int z);
+bx::Vec3 outdoorBModelVertexToWorld(const OutdoorBModelVertex &vertex);
+bx::Vec3 transformOutdoorBModelPoint(
+    const bx::Vec3 &point,
+    const OutdoorBModelTransform &transform,
+    float fraction);
+OutdoorBModel transformOutdoorBModel(
+    const OutdoorBModel &bmodel,
+    const OutdoorBModelTransform &transform,
+    float fraction);
+float sampleOutdoorTerrainHeight(const OutdoorMapData &outdoorMapData, float x, float y);
+float sampleOutdoorRenderedTerrainHeight(const OutdoorMapData &outdoorMapData, float x, float y);
+// Terrain heights at fractional grid coordinates: the native triangles, and the materials-style smoothed surface
+// (bicubic through every native vertex, departing at most a few dozen units from the native triangles).
+float outdoorNativeTerrainHeight(const OutdoorMapData &map, float gridX, float gridY);
+float outdoorSmoothedTerrainHeight(const OutdoorMapData &map, float gridX, float gridY, float smoothing);
+// Keeps a rendered terrain grid (side x side vertices, steps per native cell) under the BModels' upward-facing faces:
+// the smoothed surface may rise above the native one the BModels were fitted to, through pools, channels and floors.
+void capRenderedTerrainUnderBModels(const OutdoorMapData &map, std::vector<float> &heights, int side, int steps);
+bx::Vec3 sampleOutdoorRenderedTerrainNormal(const OutdoorMapData &outdoorMapData, float x, float y);
+float sampleOutdoorTerrainNormalZ(const OutdoorMapData &outdoorMapData, float x, float y);
+bool outdoorTerrainSlopeTooHigh(const OutdoorMapData &outdoorMapData, float x, float y);
+uint8_t sampleOutdoorTerrainTileAttributes(const OutdoorMapData &outdoorMapData, float x, float y);
+bool isOutdoorTerrainWater(const OutdoorMapData &outdoorMapData, float x, float y);
+bool isOutdoorTerrainBurning(const OutdoorMapData &outdoorMapData, float x, float y);
+bool buildOutdoorFaceGeometry(
+    const OutdoorBModel &bModel,
+    size_t bModelIndex,
+    const OutdoorBModelFace &face,
+    size_t faceIndex,
+    OutdoorFaceGeometryData &geometry,
+    bool includeEtherealFaces = false
+);
+bool isPointInsideOutdoorPolygon(float x, float y, const std::vector<bx::Vec3> &vertices);
+bool isPointInsideOrNearOutdoorPolygon(float x, float y, const std::vector<bx::Vec3> &vertices, float slack);
+bool isPointInsideOutdoorPolygonProjected(
+    const bx::Vec3 &point,
+    const std::vector<bx::Vec3> &vertices,
+    const bx::Vec3 &normal
+);
+float calculateOutdoorFaceHeight(const OutdoorFaceGeometryData &geometry, float x, float y);
+bool intersectOutdoorSegmentWithFace(
+    const OutdoorFaceGeometryData &geometry,
+    const bx::Vec3 &segmentStart,
+    const bx::Vec3 &segmentEnd,
+    float &intersectionFactor,
+    bx::Vec3 &intersectionPoint
+);
+bool isOutdoorCylinderBlockedByFace(
+    const OutdoorFaceGeometryData &geometry,
+    float x,
+    float y,
+    float z,
+    float radius,
+    float height
+);
+OutdoorSupportFloorSample sampleOutdoorSupportFloor(
+    const OutdoorMapData &outdoorMapData,
+    float x,
+    float y,
+    float z,
+    float maxRise,
+    float xySlack
+);
+float sampleOutdoorSupportFloorHeight(const OutdoorMapData &outdoorMapData, float x, float y, float z);
+float sampleOutdoorPlacementFloorHeight(const OutdoorMapData &outdoorMapData, float x, float y, float z);
+float sampleOutdoorActorPlacementFloorHeight(const OutdoorMapData &outdoorMapData, float x, float y, float z);
+float sampleOutdoorActorPlacementFloorHeight(
+    const OutdoorMapData &outdoorMapData,
+    float x,
+    float y,
+    float z,
+    float xySlack);
+}
