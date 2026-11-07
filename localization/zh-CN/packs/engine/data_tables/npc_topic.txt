@@ -70,7 +70,7 @@
 69	如何晋升为牛头领主			92. Tessalar	Tessalar	
 70	黑暗矮人			93. Tessalar	Tessalar	
 71	任务				Tessalar	
-72	"残破镇的巴尔萨煞"
+72	"残破镇的巴尔萨煞
 野蛮漫游"			96	Dadeross
 73	巴尔萨煞之斧			97. Dadeross	Dadeross	
 74	多谢你的帮助！			99. Tessalar	Tessalar	
@@ -78,7 +78,7 @@
 76	太阳预言			103. Verish	Verish	
 77	线索			104. Verish	Verish	
 78	升职为光明主教			105. Verish	Verish	
-79	"羽蛇之巢穴"
+79	"羽蛇之巢穴
 羽蛇"			106. Verish	Verish	
 80	太阳预言			107. Verish	Cleric of the Sun	
 81	任务			108. Verish	Verish	
@@ -209,7 +209,7 @@
 206	生存！		Info for deliver Fire Resistance potions quest	651. James		James
 207	任务		Begin deliver Fires Resistance Scrolls quest	652. James		James
 208	没有足够的药剂吗？		Scroll's not delivered to all huts	653. James		James
-209	"这个村庄应该可以挡的住了。"
+209	"这个村庄应该可以挡的住了。
 它自己的。"		End deliver Fire Resistance Scrolls quest	654. James		James
 210	纯粹耐力药剂		Recipe and Indgredient quest	655. James		James
 211	配料		missing ingredients	747. "Black Potions are m		James

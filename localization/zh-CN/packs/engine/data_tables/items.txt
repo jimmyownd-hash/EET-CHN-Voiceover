@@ -1,6 +1,6 @@
 																
 Item #	Pic File	Name	Value	Equip Stat	Skill Group	Mod1	Mod2	material	ID/Rep/St	Not identified name	Sprite Index	VarA	VarB	Equip X	Equip Y	Notes	package_id	canonical_id	source_item_id	content_flags
-0		杂物						0	0		0	0	0	0	0	
+0		0						0	0		0	0	0	0	0	
 1	item001	铁长剑	20	Weapon	Sword	2d3	0	8	1	长剑	1	0	0	14	131	这些大量制造，却又有些微不平衡的兵器是大陆上的旅人常用的武器。
 2	item002	巨魔战斗剑	200	Weapon	Sword	3d3	3	8	5	长剑	1	0	0	16	132	虽然做工相当的原始，但这柄武器厚重的刀刃给予它强大的杀伤力。
 3	item003	黑暗精灵长剑	450	Weapon	Sword	3d2	9	8	9	长剑	1	0	0	14	136	这是黑暗精灵城市阿尔瓦来的商旅通常爱用的武器。它单薄的刀刃十分的锋利。

@@ -481,120 +481,120 @@ classes:
     26:
       description: >-
         死亡骑士专属：对单一目标造成 <good>{percent}</> % 武器伤害并减速。
-        normal: "造成 <good>{percent}</> % 武器伤害"
-        expert: "怪物减速至 1/2 速度"
-        master: "造成 <good>{percent}</> % 武器伤害"
-        grandmaster: "怪物减速至 1/4 速度"
+      normal: "造成 <good>{percent}</> % 武器伤害"
+      expert: "怪物减速至 1/2 速度"
+      master: "造成 <good>{percent}</> % 武器伤害"
+      grandmaster: "怪物减速至 1/4 速度"
     29:
       description: >-
         死亡骑士最强的单体法术：造成 <good>{percent}</> % 武器伤害。
-        normal: ""
-        expert: ""
-        master: "造成 <good>{percent}</> % 武器伤害"
-        grandmaster: "造成 <good>{percent}</> % 武器伤害"
+      normal: ""
+      expert: ""
+      master: "造成 <good>{percent}</> % 武器伤害"
+      grandmaster: "造成 <good>{percent}</> % 武器伤害"
     32:
       description: >-
         投掷冰弹，命中时碎裂，最适合大型目标或群体。每次命中造成 <good>{percent}</> % 武器伤害。
-        normal: ""
-        expert: ""
-        master: ""
-        grandmaster: "每次命中造成 <good>{percent}</> % 武器伤害"
+      normal: ""
+      expert: ""
+      master: ""
+      grandmaster: "每次命中造成 <good>{percent}</> % 武器伤害"
     68:
       description: >-
         开关：开启时，你的攻击吸取生命，每次命中消耗 6 点魔力。
-        normal: "吸取 <good>{blood_leech}</> 点生命"
-        expert: "吸取 <good>{blood_leech}</> 点生命"
-        master: "吸取 <good>{blood_leech}</> 点生命"
-        grandmaster: "吸取 <good>{blood_leech}</> 点生命"
+      normal: "吸取 <good>{blood_leech}</> 点生命"
+      expert: "吸取 <good>{blood_leech}</> 点生命"
+      master: "吸取 <good>{blood_leech}</> 点生命"
+      grandmaster: "吸取 <good>{blood_leech}</> 点生命"
     74:
       description: >-
         开关：开启时，你的攻击吸取的生命是吸血之触的两倍，每次命中消耗 12 点魔力。
-        normal: ""
-        expert: ""
-        master: ""
-        grandmaster: "吸取 <good>{blood_leech*2}</> 点生命"
+      normal: ""
+      expert: ""
+      master: ""
+      grandmaster: "吸取 <good>{blood_leech*2}</> 点生命"
     76:
       description: >-
         令目标窒息，造成 <good>{percent}</> % 武器伤害并使其一时无法行动。
-        normal: ""
-        expert: ""
-        master: "造成 <good>{percent}</> % 武器伤害"
-        grandmaster: "造成 <good>{percent}</> % 武器伤害"
+      normal: ""
+      expert: ""
+      master: "造成 <good>{percent}</> % 武器伤害"
+      grandmaster: "造成 <good>{percent}</> % 武器伤害"
     90:
       description: >-
         致命的飞弹，造成 <good>{percent}</> % 武器伤害，命中时以两倍吸血量治疗你。
-        normal: ""
-        expert: "造成 <good>{percent}</> % 武器伤害"
-        master: "造成 <good>{percent}</> % 武器伤害"
-        grandmaster: "造成 <good>{percent}</> % 武器伤害"
+      normal: ""
+      expert: "造成 <good>{percent}</> % 武器伤害"
+      master: "造成 <good>{percent}</> % 武器伤害"
+      grandmaster: "造成 <good>{percent}</> % 武器伤害"
     96:
       description: >-
         开关：开启时，你的攻击削弱命中的怪物，每次命中消耗 15 点魔力。
-        normal: ""
-        expert: ""
-        master: ""
-        grandmaster: ""
+      normal: ""
+      expert: ""
+      master: ""
+      grandmaster: ""
     97:
       description: >-
         致命的爆炸，对范围内每个怪物造成 <good>{percent}</> % 武器伤害。可安全用于近身战斗。
-        normal: ""
-        expert: ""
-        master: ""
-        grandmaster: "造成 <good>{percent}</> % 武器伤害"
+      normal: ""
+      expert: ""
+      master: ""
+      grandmaster: "造成 <good>{percent}</> % 武器伤害"
   # Assassins spend energy and combo points; their damage spells deal a share of a melee blow.
   assassin:
     6:
       description: >-
         向单一目标发射火球。命中时爆炸伤害附近所有敌人。火球造成近战一击 <good>{percent}</> % 的伤害。
-        normal: ""
-        expert: ""
-        master: ""
-        grandmaster: ""
+      normal: ""
+      expert: ""
+      master: ""
+      grandmaster: ""
     7:
       description: >-
         在地面放置火焰尖刺，等待生物靠近后爆炸。火焰尖刺造成近战一击 <good>{percent}</> % 的伤害。
-        normal: ""
-        expert: ""
-        master: ""
-        grandmaster: ""
+      normal: ""
+      expert: ""
+      master: ""
+      grandmaster: ""
     18:
       description: >-
         从施法者手中向单一目标放电。必定命中，造成近战一击 <good>{percent}</> % 的伤害，随后跳跃到范围内最近的怪物。
     24:
       description: >-
         向正前方的怪物喷射毒液。每次喷射造成近战一击 <good>{percent}</> % 的伤害。
-        normal: ""
-        expert: ""
-        master: ""
-        grandmaster: ""
+      normal: ""
+      expert: ""
+      master: ""
+      grandmaster: ""
     29:
       description: >-
         向单一目标喷射极度腐蚀的酸液。必定命中，造成近战一击 <good>{percent}</> % 的伤害。
-        normal: ""
-        expert: ""
-        master: ""
-        grandmaster: ""
+      normal: ""
+      expert: ""
+      master: ""
+      grandmaster: ""
     34:
       description: >-
         用魔法之力拍击怪物，将其击晕并击退少许。眩晕造成近战一击 <good>{percent}</> % 的伤害。
-        normal: ""
-        expert: ""
-        master: ""
-        grandmaster: ""
+      normal: ""
+      expert: ""
+      master: ""
+      grandmaster: ""
     39:
       description: >-
         向单一怪物发射旋转的剃刀般金属利刃，造成近战一击 <good>{percent}</> % 的物理伤害。
-        normal: ""
-        expert: ""
-        master: ""
-        grandmaster: ""
+      normal: ""
+      expert: ""
+      master: ""
+      grandmaster: ""
     44:
       description: >-
         瞬间将单一目标的重量提升到极致，造成近战一击 <good>{percent}</> % 的伤害。
-        normal: ""
-        expert: ""
-        master: ""
-        grandmaster: ""
+      normal: ""
+      expert: ""
+      master: ""
+      grandmaster: ""
 
 # Skill popups (TRAINERS_SKILLS.md §7, zzMAW-Skills.lua and SkillTooltip.lua), keyed by canonical skill name. `append`
 # adds a paragraph to the skill table's description, `description` replaces it; mastery lines replace the table's, and
@@ -711,10 +711,10 @@ skills:
   Armsmaster:
     description: >-
       武器精通代表战士使用除杖类外所有武器的战斗技巧：更快更流畅的攻击与更强力的打击。其伤害随武器技能增长。骑士在高技能时自行达到至高武器精通：宗师级 <value>{supreme_level}</> 点达成至高武器精通，此后每 10 点武器精通使每种近战武器技能 +1，最高翻倍基础值。至高武器精通每点 +2 伤害。
-      normal: "每点 +1 攻击"
-      expert: "每点 +1 伤害、+1 攻击"
-      master: "每点 +1 伤害、+1 攻击、+1 % 速度"
-      grandmaster: "每点 +1.5 伤害、+1 攻击、+1 % 速度"
+    normal: "每点 +1 攻击"
+    expert: "每点 +1 伤害、+1 攻击"
+    master: "每点 +1 伤害、+1 攻击、+1 % 速度"
+    grandmaster: "每点 +1.5 伤害、+1 攻击、+1 % 速度"
   Bodybuilding:
     append: >-
       生命值还按掌握等级每点额外增长 0.5 %、1 %、1.5 % 或 2 %。
@@ -769,68 +769,68 @@ class_skills:
     WaterMagic:
       description: >-
         寒冰，仅限死亡骑士：每点近战伤害 +0.5、+0.75 或 +1（新手、专家、大师；宗师不再追加）且攻击速度每点 +1 %。其掌握度解锁寒冰之触、水上行走、霜咬与冰弹。
-        normal: "效果随法术而异"
-        expert: "效果随法术而异"
-        master: "效果随法术而异"
-        grandmaster: "效果随法术而异"
+      normal: "效果随法术而异"
+      expert: "效果随法术而异"
+      master: "效果随法术而异"
+      grandmaster: "效果随法术而异"
     BodyMagic:
       description: >-
         鲜血，仅限死亡骑士：所受物理伤害降低 <good>{school_cut:1}</> %，你的攻击吸取生命。其掌握度解锁吸血之触、再生、窒息与高级吸血之触。
-        normal: "效果随法术而异"
-        expert: "效果随法术而异"
-        master: "效果随法术而异"
-        grandmaster: "效果随法术而异"
+      normal: "效果随法术而异"
+      expert: "效果随法术而异"
+      master: "效果随法术而异"
+      grandmaster: "效果随法术而异"
     DarkMagic:
       description: >-
         邪恶，仅限死亡骑士：每点近战伤害 +0.5、+0.75 或 +1（新手、专家、大师）且所受魔法伤害降低 <good>{school_cut:1}</> %。其掌握度解锁吸血光环、死亡缠绕、死亡之握与死亡吐息。
-        normal: "效果随法术而异"
-        expert: "效果随法术而异"
-        master: "效果随法术而异"
-        grandmaster: "效果随法术而异"
+      normal: "效果随法术而异"
+      expert: "效果随法术而异"
+      master: "效果随法术而异"
+      grandmaster: "效果随法术而异"
   assassin:
     FireMagic:
       description: >-
         战斗让刺客能撑过漫长的战斗：每次攻击有 10 % 几率（每点 +1 %）恢复 15 点能量。
-        normal: "近战攻击消耗 45 能量"
-        expert: "近战攻击消耗 40 能量"
-        master: "近战攻击消耗 35 能量"
-        grandmaster: "近战攻击消耗 30 能量"
+      normal: "近战攻击消耗 45 能量"
+      expert: "近战攻击消耗 40 能量"
+      master: "近战攻击消耗 35 能量"
+      grandmaster: "近战攻击消耗 30 能量"
     AirMagic:
       description: >-
         潜行：每次消耗能量的攻击获得一层（最多 5 层）增益，每点提升攻击速度 0.5 %，击杀恢复能量。
-        normal: "击杀怪物恢复 10 能量"
-        expert: "击杀怪物恢复 15 能量"
-        master: "击杀怪物恢复 20 能量"
-        grandmaster: "击杀怪物恢复 25 能量"
+      normal: "击杀怪物恢复 10 能量"
+      expert: "击杀怪物恢复 15 能量"
+      master: "击杀怪物恢复 20 能量"
+      grandmaster: "击杀怪物恢复 25 能量"
     WaterMagic:
       description: >-
         毒术：每次攻击额外造成目标生命值 0.1 %（每点）的水系伤害，能量恢复更快。
-        normal: "每秒恢复 8 能量"
-        expert: "每秒恢复 10 能量"
-        master: "每秒恢复 12 能量"
-        grandmaster: "每秒恢复 14 能量"
+      normal: "每秒恢复 8 能量"
+      expert: "每秒恢复 10 能量"
+      master: "每秒恢复 12 能量"
+      grandmaster: "每秒恢复 14 能量"
     EarthMagic:
       description: >-
         刺杀：消耗能量的攻击与法术按掌握度每点额外造成 2、3、4 或 5 点伤害，目标附近每多一个怪物（最多 4 个）伤害降低 20 %。此类攻击为攻击法术积攒连击点；箭矢触发频率减半。更高等级还提供更多能量。
-        normal: "最大能量 +10"
-        expert: "最大能量 +20"
-        master: "最大能量 +30"
-        grandmaster: "最大能量 +40"
+      normal: "最大能量 +10"
+      expert: "最大能量 +20"
+      master: "最大能量 +30"
+      grandmaster: "最大能量 +40"
   dragon:
     Unarmed:
       description: >-
         龙用尖牙对敌人造成可怕伤害。伤害为 30 + 每级 2（最高 {dragon_level_cap} 级）；尖牙技能按掌握度与技能等级的百分比提升伤害。每点还使撕咬慢 1.5 % 但强 1.5 %，因此更少、更重的撕咬在相同时间内造成同等伤害。
-        normal: "每点 +2 攻击、+4 % 伤害"
-        expert: "每点 +3 攻击、+6 % 伤害"
-        master: "每点 +4 攻击、+8 % 伤害"
-        grandmaster: "每点 +5 攻击、+10 % 伤害"
+      normal: "每点 +2 攻击、+4 % 伤害"
+      expert: "每点 +3 攻击、+6 % 伤害"
+      master: "每点 +4 攻击、+8 % 伤害"
+      grandmaster: "每点 +5 攻击、+10 % 伤害"
     Dodging:
       description: >-
         龙鳞坚硬得足以充当天然护甲：40 + 每级 1 点护甲等级（最高 {dragon_level_cap} 级）。鳞甲技能按百分比提升该坚韧度与魔法抗性（每点）。龙无法闪避。
-        normal: "每点 +2 % 护甲等级、+1 % 抗性"
-        expert: "每点 +3 % 护甲等级、+1 % 抗性"
-        master: "每点 +3 % 护甲等级、+2 % 抗性"
-        grandmaster: "每点 +4 % 护甲等级、+3 % 抗性"
+      normal: "每点 +2 % 护甲等级、+1 % 抗性"
+      expert: "每点 +3 % 护甲等级、+1 % 抗性"
+      master: "每点 +3 % 护甲等级、+2 % 抗性"
+      grandmaster: "每点 +4 % 护甲等级、+3 % 抗性"
   shaman:
     FireMagic:
       append: >-
@@ -911,11 +911,11 @@ stats:
   Intellect:
     description: >-
       智力代表角色推理与理解复杂抽象概念的能力。法术伤害随智力与魅力中较高者增长，法术暴击伤害随智力增长。
-      append: "法术伤害 +<good>{spell_bonus:1}</> %。法术暴击伤害 +<good>{spell_crit_damage:1}</> %。"
+    append: "法术伤害 +<good>{spell_bonus:1}</> %。法术暴击伤害 +<good>{spell_crit_damage:1}</> %。"
   Personality:
     description: >-
       魅力代表角色的意志力与个人魅力。最大魔力、法术消耗与治疗能力均基于魅力。
-      append: >-
+    append: >-
       治疗 +<good>{heal_bonus:1}</> %。法术消耗 -<good>{cost_cut:1}</> %。魅力额外提供 <value>{personality_levels}</> 级等值的魔力。
   Endurance:
     append: >-

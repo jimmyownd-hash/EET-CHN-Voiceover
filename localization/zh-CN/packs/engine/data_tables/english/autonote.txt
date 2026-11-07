@@ -298,15 +298,15 @@ Note bit	Autonote Text	Category
 297	结霜的液体带来御水能力。	Misc		
 298	晃动的液体带来御风能力。	Misc		
 299	浑浊的液体带来御土能力。	Misc		
-300	杀死了诺菲克斯	Stat		
-301	杀死了诺菲克斯	Stat		
-302	杀死了诺菲克斯	Stat		
-303	杀死了诺菲克斯	Stat		
-304	杀死了诺菲克斯	Stat		
-305	杀死了诺菲克斯	Stat		
-306	杀死了诺菲克斯	Stat		
-307	杀死了诺菲克斯	misc		
-308	杀死了诺菲克斯	Stat		
+300	0	Stat		
+301	0	Stat		
+302	0	Stat		
+303	0	Stat		
+304	0	Stat		
+305	0	Stat		
+306	0	Stat		
+307	0	misc		
+308	0	Stat		
 309	方尖碑信息 #1：pohuwwba	Obelisk		
 310	方尖碑信息 #2：ininhil_	Obelisk		
 311	方尖碑信息 #3：redditoh	Obelisk		
@@ -694,4 +694,4 @@ Note bit	Autonote Text	Category
 693	御魔奇术药剂 = 驱逐恐惧药剂 + 天神护体药剂	potion		
 694	御魔奇术药剂 = 驱魔除咒药剂 + 水中呼吸药剂	potion		
 695	御魔奇术药剂 = 治愈痴狂药剂 + 圣灵佑佐药剂	potion		
-696	杀死了诺菲克斯	Misc		
+696	0	Misc		

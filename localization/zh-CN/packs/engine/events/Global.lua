@@ -18,7 +18,7 @@ RegisterGlobalEvent(1, "Cataclysm", function()
 end)
 
 RegisterGlobalEvent(2, "车队领袖", function()
-    evt.SetMessage("达德洛斯带我们来这里，是为了和一齿蜥蜴人氏族交易托伯斯克果。\n他已经去和村长布雷基斯�一齿谈了。\n你们或许该去找他？")
+    evt.SetMessage("达德洛斯带我们来这里，是为了和单牙蜥蜴人氏族交易托伯斯克果。\n他已经去和村长布拉克许·单牙谈了。\n你们或许该去找他？")
     SetQBit(QBit(232)) -- Set when you talk to S'ton
 end)
 
@@ -37,7 +37,7 @@ RegisterGlobalEvent(5, "Pirates", function()
         evt.SetMessage("来自恐怖的雷格那岛的海盗们正趁着大灾变及其造成的混乱，横行诸岛。\n一旦他们征服匕伤，就能把它当作前哨，直接进犯渡鸦海滨！\n必须通知阿尔瓦的商业议会！\n你们必须想办法到船上去，把消息带给他们！")
         return
     end
-    evt.SetMessage("干得漂亮，解决了那些海盗。如今他们不在了，一齿酋长和他的族人也许能重建家园。这里发生的一切，实在是场惨剧。")
+    evt.SetMessage("干得漂亮，解决了那些海盗。如今他们不在了，单牙酋长和他的族人也许能重建家园。这里发生的一切，实在是场惨剧。")
 end)
 
 RegisterGlobalEvent(6, "Caravan", function()
@@ -62,7 +62,7 @@ RegisterGlobalEvent(8, "岩石传送门", function()
 end)
 
 RegisterGlobalEvent(9, "佛得瑞克·塔力米尔", function()
-    evt.SetMessage("一位名叫弗雷德里克�泰利米尔的牧师，过去几年一直和我们住在一起。\n他一直在研究石头传送门和那座废弃神殿的外围废墟。\n也许他懂得怎么让传送门重新运转！\n找到他，请他帮忙！")
+    evt.SetMessage("一位名叫弗雷德里克·泰利米尔的牧师，过去几年一直和我们住在一起。\n他一直在研究石头传送门和那座废弃神殿的外围废墟。\n也许他懂得怎么让传送门重新运转！\n找到他，请他帮忙！")
 end)
 
 RegisterGlobalEvent(10, "岩石传送门", function()
@@ -74,7 +74,7 @@ RegisterGlobalEvent(11, "Cataclysm", function()
 end)
 
 RegisterGlobalEvent(12, "能量石", function()
-    evt.SetMessage("这么说一齿酋长把他一直保存的那块能量石给了你！它能给岛西南端的传送门供能。使用时，踏上传送门的同时，在脑中默念那块石头的模样即可。")
+    evt.SetMessage("这么说单牙酋长把他一直保存的那块能量石给了你！它能给岛西南端的传送门供能。使用时，踏上传送门的同时，在脑中默念那块石头的模样即可。")
     evt.ForPlayer(Players.All)
     SetAutonote(492) -- Brought Power Stone to Fredrick Talimere.
     AddValue(Experience, 1500)
@@ -105,7 +105,7 @@ RegisterGlobalEvent(14, "Quest", function()
         SetQBit(QBit(137)) -- Find Isthric the Tongue, brother of Rohtnax. Return to Rohtnax in the village of Blood Drop on Dagger Wound Island.
         return
     end
-    evt.SetMessage("你们找到了伊斯西里克，还告诉他怎么回家了？\n阿尔瓦的商人，我们真的欠你们一份人情！\n我会在布雷基斯�一fang酋长面前替你们美言。\n请收下这些治疗伤口的药水作为谢礼。")
+    evt.SetMessage("你们找到了伊斯西里克，还告诉他怎么回家了？\n阿尔瓦的商人，我们真的欠你们一份人情！\n我会在布拉克许·单牙酋长面前替你们美言。\n请收下这些治疗伤口的药水作为谢礼。")
     evt.ForPlayer(Players.All)
     AddValue(Experience, 750)
     evt.ForPlayer(Players.Member0)
@@ -126,7 +126,7 @@ RegisterGlobalEvent(15, "岩石传送门", function()
 end)
 
 RegisterGlobalEvent(16, "佛得瑞克·塔力米尔", function()
-    evt.SetMessage("那个粗鲁的男人？\n他只关心那座废弃神殿，对身边的世事一概不闻不问！\n我祖母早就警告过他，那座神殿是至邪之地。\n他从来不听。\n如今祖母不在了，除了布雷基斯�一fang，再没人记得从前的事。")
+    evt.SetMessage("那个粗鲁的男人？\n他只关心那座废弃神殿，对身边的世事一概不闻不问！\n我祖母早就警告过他，那座神殿是至邪之地。\n他从来不听。\n如今祖母不在了，除了布拉克许·单牙，再没人记得从前的事。")
 end)
 
 RegisterGlobalEvent(17, "火之山", function()
@@ -140,7 +140,7 @@ end)
 RegisterGlobalEvent(19, "Quest", function()
     evt.ForPlayer(Players.All)
     if not HasItem(652) then -- Prophecies of the Snake
-        evt.SetMessage("有一则“巨蛇预言”，我一直找不到抄本。\n我想它或许最能揭示贾丹姆的未来。牧师弗雷德里克�泰利米尔跟我提过巨蛇废墟和那座废弃神殿。\n他和我看法一致：那则预言的抄本也许就藏在神殿某处。\n你们能替我找到吗？")
+        evt.SetMessage("有一则“巨蛇预言”，我一直找不到抄本。\n我想它或许最能揭示贾丹姆的未来。牧师弗雷德里克·泰利米尔跟我提过巨蛇废墟和那座废弃神殿。\n他和我看法一致：那则预言的抄本也许就藏在神殿某处。\n你们能替我找到吗？")
         SetQBit(QBit(135)) -- Find the Prophecies of the Snake for Pascella Tisk.
         return
     end
@@ -156,7 +156,7 @@ end)
 
 RegisterGlobalEvent(20, "Quest", function()
     if not IsQBitSet(QBit(3)) then -- Deliver Dadeross' Letter to Elgar Fellmoon at the Merchant House in Ravenshore. - Given by Dadeross in Dagger Wound. Taken by Fellmoon in Ravenshore.
-        evt.SetMessage("你们必须想办法离开这些岛。总得有人把这里发生的事禀报我们的主人——阿尔瓦的商人！\n他们必须知道这场大灾变和雷格那人的袭击！我写了一封信给阿尔瓦商人在渡鸦海滨的代表埃尔加�费尔姆恩。信里说明了我们的处境。要说谁能指点我们该怎么办，那就是费尔姆恩。立刻把信交给他。")
+        evt.SetMessage("你们必须想办法离开这些岛。总得有人把这里发生的事禀报我们的主人——阿尔瓦的商人！\n他们必须知道这场大灾变和雷格那人的袭击！我写了一封信给阿尔瓦商人在渡鸦海滨的代表埃尔加·费尔姆恩。信里说明了我们的处境。要说谁能指点我们该怎么办，那就是费尔姆恩。立刻把信交给他。")
         evt.SetNPCGreeting(2, 8) -- Dadeross greeting: What are you doing here? Get my letter to Fellmoon!
         AddValue(InventoryItem(741), 741) -- Dadeross' Letter to Fellmoon
         SetQBit(QBit(221)) -- Dadeross' Letter to Fellmoon - I lost it, taken event g 28
@@ -164,7 +164,7 @@ RegisterGlobalEvent(20, "Quest", function()
         ClearQBit(QBit(85)) -- Find Dadeross, the Minotaur in charge of your merchant caravan. When you saw him last, he was going to talk to the village clan leader. - Given at the start of the game, taken by dadeross when he gives you the deliver letter quest.
         return
     end
-    evt.SetMessage("你必须把我的信送到渡鸦海滨，交给埃尔加�费尔姆恩！")
+    evt.SetMessage("你必须把我的信送到渡鸦海滨，交给埃尔加·费尔姆恩！")
 end)
 RegisterCanShowTopic(20, function()
     evt._BeginCanShowTopic(20)
@@ -180,7 +180,7 @@ end)
 
 RegisterGlobalEvent(21, "Quest", function()
     if not IsQBitSet(QBit(7)) then -- Bring Brekish Onefang's portal crystal to Fredrick Talimere. - Brekish Onefang asks player to bring a power crystal to Fredrick Talimere
-        evt.SetMessage("把这块水晶带给弗雷德里克�泰利米尔。我知道它和石头传送门有关。也许他能告诉你它是怎么工作的。")
+        evt.SetMessage("把这块水晶带给弗雷德里克·泰利米尔。我知道它和石头传送门有关。也许他能告诉你它是怎么工作的。")
         AddValue(InventoryItem(617), 617) -- Power Stone
         SetQBit(QBit(212)) -- Power Stone - I lost it
         SetQBit(QBit(7)) -- Bring Brekish Onefang's portal crystal to Fredrick Talimere. - Brekish Onefang asks player to bring a power crystal to Fredrick Talimere
@@ -188,7 +188,7 @@ RegisterGlobalEvent(21, "Quest", function()
         evt.SetNPCTopic(28, 3, 13) -- Fredrick Talimere topic 3: Abandoned Temple
         return
     end
-    evt.SetMessage("把传送门水晶带给弗雷德里克�泰利米尔。他会知道它的用途。")
+    evt.SetMessage("把传送门水晶带给弗雷德里克·泰利米尔。他会知道它的用途。")
 end)
 RegisterCanShowTopic(21, function()
     evt._BeginCanShowTopic(21)
@@ -203,7 +203,7 @@ RegisterCanShowTopic(21, function()
 end)
 
 RegisterGlobalEvent(22, "如何晋升为暗精尊者", function()
-    evt.SetMessage("商业议会派我们最伟大的战士考瑞�黑刺去，就席卷整个贾丹姆的灾难向太阳神殿的祭司请教。\n阿尔瓦一传来大灾变的流言，考瑞就动身前往低语森林的太阳神殿了。\n她本该在请教祭司之后回来。\n她至今未归，我们非常担心。至于你的晋升，只有考瑞能准确考验你的本领、评定你是否够格。\n若找到她，就尽力协助她，并把她的近况和下落带回来。")
+    evt.SetMessage("商业议会派我们最伟大的战士考瑞·黑刺去，就席卷整个贾丹姆的灾难向太阳神殿的祭司请教。\n阿尔瓦一传来大灾变的流言，考瑞就动身前往低语森林的太阳神殿了。\n她本该在请教祭司之后回来。\n她至今未归，我们非常担心。至于你的晋升，只有考瑞能准确考验你的本领、评定你是否够格。\n若找到她，就尽力协助她，并把她的近况和下落带回来。")
     SetQBit(QBit(39)) -- Find Cauri Blackthorne then return to Dantillion in Murmurwoods with information of her location. - Dark Elf Promotion to Patriarch
     evt.SetNPCTopic(39, 0, 31) -- Relburn Jeebes topic 0: Where is Cauri?
 end)
@@ -297,10 +297,10 @@ end)
 
 RegisterGlobalEvent(29, "Quest", function()
     if IsQBitSet(QBit(12)) then -- Quest 11 is done.
-        evt.SetMessage("你必须赶到阿尔瓦的巴斯沈�卢德林那儿。快去！必须把近来的事通知他！")
+        evt.SetMessage("你必须赶到阿尔瓦的巴斯沈·卢德林那儿。快去！必须把近来的事通知他！")
         return
     elseif IsQBitSet(QBit(24)) then -- Received Reward from Elgar Fellmoon for completing quest 9.
-        evt.SetMessage("你们也许知道，我们行会总部在阿尔瓦城。你们若没去过，最容易的路就是沿河向上穿过北边峡谷。\n去行会会馆找巴斯沈�卢德林。把水晶和传闻的事告诉他。劳德林会知道怎么办。")
+        evt.SetMessage("你们也许知道，我们行会总部在阿尔瓦城。你们若没去过，最容易的路就是沿河向上穿过北边峡谷。\n去行会会馆找巴斯沈·卢德林。把水晶和传闻的事告诉他。劳德林会知道怎么办。")
         SetQBit(QBit(11)) -- Report to Bastian Loudrin, the merchant guildmaster in Alvar. - Given By Elgar Fellmoon (w503, area 2). Taken by Bastian Loudrin (area 3).
         return
     elseif IsQBitSet(QBit(10)) then -- Letter from Q Bit 9 delivered.
@@ -312,9 +312,9 @@ RegisterGlobalEvent(29, "Quest", function()
         ClearQBit(QBit(284)) -- Return to Fellmoon in Ravenshore and report your success in blackmailing the wererat smuggler, Arion Hunter.
         return
     elseif IsQBitSet(QBit(9)) then -- Deliver Fellmoon's blackmail letter to Arion Hunter, leader of the wererat smugglers. Report back to Fellmoon. - Given and taken by Elgar Fellmoon (w503, area 2).
-        evt.SetMessage("听着。我们需要那些船！把我的信送给艾瑞安�韩特。忘了？他的巢穴在西边沿海往上！")
+        evt.SetMessage("听着。我们需要那些船！把我的信送给艾瑞安·韩特。忘了？他的巢穴在西边沿海往上！")
     else
-        evt.SetMessage("本地走私犯有渡鸦海滨最快的船。我的手下若能用这些船，就能沿海岸上下快速侦察，好弄清达德洛斯信里提到的灾难范围。\n来。把这封信带给走私头子艾瑞安�韩特。我敢说它会‘说服’他出借手下。他的巢穴在西边沿海往上。\n哦，差点忘了。那些走私犯——他们是鼠人——你知道他们的德行。亨特可以讲道理，但他的手下若不太文明，别惊讶。")
+        evt.SetMessage("本地走私犯有渡鸦海滨最快的船。我的手下若能用这些船，就能沿海岸上下快速侦察，好弄清达德洛斯信里提到的灾难范围。\n来。把这封信带给走私头子艾瑞安·韩特。我敢说它会‘说服’他出借手下。他的巢穴在西边沿海往上。\n哦，差点忘了。那些走私犯——他们是鼠人——你知道他们的德行。亨特可以讲道理，但他的手下若不太文明，别惊讶。")
         SetQBit(QBit(9)) -- Deliver Fellmoon's blackmail letter to Arion Hunter, leader of the wererat smugglers. Report back to Fellmoon. - Given and taken by Elgar Fellmoon (w503, area 2).
         AddValue(InventoryItem(742), 742) -- Blackmail Letter
         SetQBit(QBit(222)) -- Blackmail Letter - I lost it, taken event g 32
@@ -379,7 +379,7 @@ RegisterGlobalEvent(34, "古代巨魔之家", function()
 end)
 
 RegisterGlobalEvent(35, "Quest", function()
-    evt.SetMessage("也许你们能找到我们先前的故乡，看看石头诅咒是否还在。\n若还在，也许有办法解除它。\n你们队伍里任何完成这件事的巨魔，都会被晋升为我们氏族的战斗巨魔。这个头衔附带许多荣誉，你们也将作为传奇英雄被我们永远铭记。\n我们的一位战士达丁�沙行者已出发去找那地方。\n他原以为会在残破镇的石头旷野里找到线索。\n也许你们能在那儿找到他、一起行动——至少找到把你们引向目标的线索。")
+    evt.SetMessage("也许你们能找到我们先前的故乡，看看石头诅咒是否还在。\n若还在，也许有办法解除它。\n你们队伍里任何完成这件事的巨魔，都会被晋升为我们氏族的战斗巨魔。这个头衔附带许多荣誉，你们也将作为传奇英雄被我们永远铭记。\n我们的一位战士达丁·沙行者已出发去找那地方。\n他原以为会在残破镇的石头旷野里找到线索。\n也许你们能在那儿找到他、一起行动——至少找到把你们引向目标的线索。")
     SetQBit(QBit(68)) -- Find the Ancient Troll Homeland and return to Volog Sandwind in the Ironsand Desert. - Given By ? In area 4
     evt.SetNPCTopic(43, 0, 40) -- Volog Sandwind topic 0: Ancient Home
 end)
@@ -487,17 +487,17 @@ RegisterGlobalEvent(43, "Quest", function()
                 evt.SetMessage("很好……或者说，至少好得符合预期。你设法拉了三家盟友加入联盟——我的顾问告诉我，最少三家就足以实现预言中‘……贾丹姆必须团结一致……’那部分。可惜不能更多，可灾难事件显然正在走向高潮。是时候继续前进了。\n你必须去渡鸦海滨，与聚集在那儿的联盟议会会面。与他们一起决定应对元素危机的下一步。")
                 return
             end
-            evt.SetMessage("你们必须结成联盟，对抗我们面临的毁灭！争取死灵法师公会、太阳神庙、残破镇牛头人、绞刑峡谷巨龙，以及绞刑峡谷查尔斯�科切特的屠龙队的支持。我知道你会发现让他们全部同意合作根本不可能，但你仍必须尽力。\n我们的贤者告诉我，若想在这预言时代活下来，我提到的势力中至少三家必须同意合作。去把这件事办成。你若珍视这个世界和你们的性命，就快去！")
+            evt.SetMessage("你们必须结成联盟，对抗我们面临的毁灭！争取死灵法师公会、太阳神庙、残破镇牛头人、绞刑峡谷巨龙，以及绞刑峡谷查尔斯·科切特的屠龙队的支持。我知道你会发现让他们全部同意合作根本不可能，但你仍必须尽力。\n我们的贤者告诉我，若想在这预言时代活下来，我提到的势力中至少三家必须同意合作。去把这件事办成。你若珍视这个世界和你们的性命，就快去！")
             return
         elseif IsQBitSet(QBit(22)) then -- Allied with Dragons. Return Dragon Egg to Dragons done.
             if IsQBitSet(QBit(23)) then -- Allied with Minotaurs. Rescue the Minotaurs done.
                 evt.SetMessage("很好……或者说，至少好得符合预期。你设法拉了三家盟友加入联盟——我的顾问告诉我，最少三家就足以实现预言中‘……贾丹姆必须团结一致……’那部分。可惜不能更多，可灾难事件显然正在走向高潮。是时候继续前进了。\n你必须去渡鸦海滨，与聚集在那儿的联盟议会会面。与他们一起决定应对元素危机的下一步。")
                 return
             end
-            evt.SetMessage("你们必须结成联盟，对抗我们面临的毁灭！争取死灵法师公会、太阳神庙、残破镇牛头人、绞刑峡谷巨龙，以及绞刑峡谷查尔斯�科切特的屠龙队的支持。我知道你会发现让他们全部同意合作根本不可能，但你仍必须尽力。\n我们的贤者告诉我，若想在这预言时代活下来，我提到的势力中至少三家必须同意合作。去把这件事办成。你若珍视这个世界和你们的性命，就快去！")
+            evt.SetMessage("你们必须结成联盟，对抗我们面临的毁灭！争取死灵法师公会、太阳神庙、残破镇牛头人、绞刑峡谷巨龙，以及绞刑峡谷查尔斯·科切特的屠龙队的支持。我知道你会发现让他们全部同意合作根本不可能，但你仍必须尽力。\n我们的贤者告诉我，若想在这预言时代活下来，我提到的势力中至少三家必须同意合作。去把这件事办成。你若珍视这个世界和你们的性命，就快去！")
             return
         else
-            evt.SetMessage("你们必须结成联盟，对抗我们面临的毁灭！争取死灵法师公会、太阳神庙、残破镇牛头人、绞刑峡谷巨龙，以及绞刑峡谷查尔斯�科切特的屠龙队的支持。我知道你会发现让他们全部同意合作根本不可能，但你仍必须尽力。\n我们的贤者告诉我，若想在这预言时代活下来，我提到的势力中至少三家必须同意合作。去把这件事办成。你若珍视这个世界和你们的性命，就快去！")
+            evt.SetMessage("你们必须结成联盟，对抗我们面临的毁灭！争取死灵法师公会、太阳神庙、残破镇牛头人、绞刑峡谷巨龙，以及绞刑峡谷查尔斯·科切特的屠龙队的支持。我知道你会发现让他们全部同意合作根本不可能，但你仍必须尽力。\n我们的贤者告诉我，若想在这预言时代活下来，我提到的势力中至少三家必须同意合作。去把这件事办成。你若珍视这个世界和你们的性命，就快去！")
             return
         end
     elseif IsQBitSet(QBit(20)) then -- Allied with Temple of the Sun. Destroy the Skeleton Transformer done.
@@ -506,21 +506,21 @@ RegisterGlobalEvent(43, "Quest", function()
                 evt.SetMessage("很好……或者说，至少好得符合预期。你设法拉了三家盟友加入联盟——我的顾问告诉我，最少三家就足以实现预言中‘……贾丹姆必须团结一致……’那部分。可惜不能更多，可灾难事件显然正在走向高潮。是时候继续前进了。\n你必须去渡鸦海滨，与聚集在那儿的联盟议会会面。与他们一起决定应对元素危机的下一步。")
                 return
             end
-            evt.SetMessage("你们必须结成联盟，对抗我们面临的毁灭！争取死灵法师公会、太阳神庙、残破镇牛头人、绞刑峡谷巨龙，以及绞刑峡谷查尔斯�科切特的屠龙队的支持。我知道你会发现让他们全部同意合作根本不可能，但你仍必须尽力。\n我们的贤者告诉我，若想在这预言时代活下来，我提到的势力中至少三家必须同意合作。去把这件事办成。你若珍视这个世界和你们的性命，就快去！")
+            evt.SetMessage("你们必须结成联盟，对抗我们面临的毁灭！争取死灵法师公会、太阳神庙、残破镇牛头人、绞刑峡谷巨龙，以及绞刑峡谷查尔斯·科切特的屠龙队的支持。我知道你会发现让他们全部同意合作根本不可能，但你仍必须尽力。\n我们的贤者告诉我，若想在这预言时代活下来，我提到的势力中至少三家必须同意合作。去把这件事办成。你若珍视这个世界和你们的性命，就快去！")
             return
         elseif IsQBitSet(QBit(22)) then -- Allied with Dragons. Return Dragon Egg to Dragons done.
             if IsQBitSet(QBit(23)) then -- Allied with Minotaurs. Rescue the Minotaurs done.
                 evt.SetMessage("很好……或者说，至少好得符合预期。你设法拉了三家盟友加入联盟——我的顾问告诉我，最少三家就足以实现预言中‘……贾丹姆必须团结一致……’那部分。可惜不能更多，可灾难事件显然正在走向高潮。是时候继续前进了。\n你必须去渡鸦海滨，与聚集在那儿的联盟议会会面。与他们一起决定应对元素危机的下一步。")
                 return
             end
-            evt.SetMessage("你们必须结成联盟，对抗我们面临的毁灭！争取死灵法师公会、太阳神庙、残破镇牛头人、绞刑峡谷巨龙，以及绞刑峡谷查尔斯�科切特的屠龙队的支持。我知道你会发现让他们全部同意合作根本不可能，但你仍必须尽力。\n我们的贤者告诉我，若想在这预言时代活下来，我提到的势力中至少三家必须同意合作。去把这件事办成。你若珍视这个世界和你们的性命，就快去！")
+            evt.SetMessage("你们必须结成联盟，对抗我们面临的毁灭！争取死灵法师公会、太阳神庙、残破镇牛头人、绞刑峡谷巨龙，以及绞刑峡谷查尔斯·科切特的屠龙队的支持。我知道你会发现让他们全部同意合作根本不可能，但你仍必须尽力。\n我们的贤者告诉我，若想在这预言时代活下来，我提到的势力中至少三家必须同意合作。去把这件事办成。你若珍视这个世界和你们的性命，就快去！")
             return
         else
-            evt.SetMessage("你们必须结成联盟，对抗我们面临的毁灭！争取死灵法师公会、太阳神庙、残破镇牛头人、绞刑峡谷巨龙，以及绞刑峡谷查尔斯�科切特的屠龙队的支持。我知道你会发现让他们全部同意合作根本不可能，但你仍必须尽力。\n我们的贤者告诉我，若想在这预言时代活下来，我提到的势力中至少三家必须同意合作。去把这件事办成。你若珍视这个世界和你们的性命，就快去！")
+            evt.SetMessage("你们必须结成联盟，对抗我们面临的毁灭！争取死灵法师公会、太阳神庙、残破镇牛头人、绞刑峡谷巨龙，以及绞刑峡谷查尔斯·科切特的屠龙队的支持。我知道你会发现让他们全部同意合作根本不可能，但你仍必须尽力。\n我们的贤者告诉我，若想在这预言时代活下来，我提到的势力中至少三家必须同意合作。去把这件事办成。你若珍视这个世界和你们的性命，就快去！")
             return
         end
     else
-        evt.SetMessage("你们必须结成联盟，对抗我们面临的毁灭！争取死灵法师公会、太阳神庙、残破镇牛头人、绞刑峡谷巨龙，以及绞刑峡谷查尔斯�科切特的屠龙队的支持。我知道你会发现让他们全部同意合作根本不可能，但你仍必须尽力。\n我们的贤者告诉我，若想在这预言时代活下来，我提到的势力中至少三家必须同意合作。去把这件事办成。你若珍视这个世界和你们的性命，就快去！")
+        evt.SetMessage("你们必须结成联盟，对抗我们面临的毁灭！争取死灵法师公会、太阳神庙、残破镇牛头人、绞刑峡谷巨龙，以及绞刑峡谷查尔斯·科切特的屠龙队的支持。我知道你会发现让他们全部同意合作根本不可能，但你仍必须尽力。\n我们的贤者告诉我，若想在这预言时代活下来，我提到的势力中至少三家必须同意合作。去把这件事办成。你若珍视这个世界和你们的性命，就快去！")
         return
     end
 end)
@@ -565,7 +565,7 @@ RegisterGlobalEvent(47, "Vilebite", function()
 end)
 
 RegisterGlobalEvent(48, "Alliance", function()
-    evt.SetMessage("你说要“联合贾丹姆的联盟”？要不是洛德林提议的，我早把你宰了当晚饭了。这事虽有趣，眼下我却无暇考虑。我们天天遭到查尔斯�奇克奥那该死的骑士袭击。他这道麻烦不除，我没法照洛德林说的做。也许你能帮我对付奇克奥？")
+    evt.SetMessage("你说要“联合贾丹姆的联盟”？要不是洛德林提议的，我早把你宰了当晚饭了。这事虽有趣，眼下我却无暇考虑。我们天天遭到查尔斯·奇克奥那该死的骑士袭击。他这道麻烦不除，我没法照洛德林说的做。也许你能帮我对付奇克奥？")
     evt.SetNPCTopic(17, 0, 49) -- Deftclaw Redreaver topic 0: Quest
 end)
 RegisterCanShowTopic(48, function()
@@ -587,7 +587,7 @@ RegisterGlobalEvent(49, "Quest", function()
     elseif IsQBitSet(QBit(33)) then -- Find the Dragon Egg and return it to the dragon leader, Deftclaw Redreaver. - Given and taken by DRAGON LEADER (area 5)
         evt.ForPlayer(Players.All)
         if not HasItem(605) then -- Dragon Leader's Egg
-            evt.SetMessage("要我加入你们的联盟，你就得帮我对付查尔斯�奇克奥。把他从我这儿偷走的龙蛋给我夺回来！")
+            evt.SetMessage("要我加入你们的联盟，你就得帮我对付查尔斯·奇克奥。把他从我这儿偷走的龙蛋给我夺回来！")
             return
         end
         evt.ShowMovie("\"dragonsrevenge\"", true)
@@ -618,7 +618,7 @@ RegisterGlobalEvent(49, "Quest", function()
 end)
 
 RegisterGlobalEvent(50, "布拉森·暴风枪的治疗方法", function()
-    evt.SetMessage("复原宝石或许能治好骑士布雷曾�风暴之枪的病，就是你说降临在他身上的那事。\n太阳神殿与死灵法师公会向来不睦；他们的对头，无疑就是我们的朋友。\n让风暴之枪复活，他就能回到查尔斯�奇克奥身边。")
+    evt.SetMessage("复原宝石或许能治好骑士布雷曾·风暴之枪的病，就是你说降临在他身上的那事。\n太阳神殿与死灵法师公会向来不睦；他们的对头，无疑就是我们的朋友。\n让风暴之枪复活，他就能回到查尔斯·奇克奥身边。")
     evt.SetNPCTopic(50, 0, 743) -- Dervish Chevron topic 0: Travel with you!
     AddValue(InventoryItem(623), 623) -- Gem of Restoration
     SetQBit(QBit(73)) -- Received Cure for Blazen Stormlance
@@ -642,7 +642,7 @@ RegisterGlobalEvent(51, "骷髅龙", function()
 end)
 
 RegisterGlobalEvent(52, "如何晋升到勇士", function()
-    evt.SetMessage("我父亲布雷曾多年前离开这里，去阴影塔一带猎杀骷髅龙。不幸的是，他再也没回来。\n他带走了“霜蚀”——有史以来最伟大的屠龙长矛。查尔斯�奇克奥始终没原谅我父亲带走霜蚀。\n我们完全不知道我父亲出了什么事。\n由于我父亲是查尔斯的副手，又对遗失霜蚀负有责任，查尔斯便不肯提升我为骑士长——无论我本领多强。也许你们若找到霜蚀，查尔斯就会把你们队伍里的骑士和我都提升为骑士长！")
+    evt.SetMessage("我父亲布雷曾多年前离开这里，去阴影塔一带猎杀骷髅龙。不幸的是，他再也没回来。\n他带走了“霜蚀”——有史以来最伟大的屠龙长矛。查尔斯·奇克奥始终没原谅我父亲带走霜蚀。\n我们完全不知道我父亲出了什么事。\n由于我父亲是查尔斯的副手，又对遗失霜蚀负有责任，查尔斯便不肯提升我为骑士长——无论我本领多强。也许你们若找到霜蚀，查尔斯就会把你们队伍里的骑士和我都提升为骑士长！")
     SetQBit(QBit(70)) -- Find Blazen Stormlance and recover the spear Ebonest. Return to Leane Stormlance in Garrote Gorge and deliver Ebonest to Charles Quixote.
     evt.SetNPCTopic(49, 0, 59) -- Leane Stormlance topic 0: My Father
 end)
@@ -654,7 +654,7 @@ end)
 RegisterGlobalEvent(54, "Cure", function()
     evt.ForPlayer(Players.All)
     if not HasItem(623) then -- Gem of Restoration
-        evt.SetMessage("也许太阳的牧师们有办法治好我——他们是唯一懂得如何驱散折磨我的黑暗魔法的人。我在渡鸦海滨有位朋友，名叫德维什�谢弗伦。他多年前离开太阳神殿，独自研究贾丹姆的种种奥秘。\n也许他知道疗法，甚至就带在身上。\n他若帮不了你，答应我，一定要回来杀了我，好让我终于安息！")
+        evt.SetMessage("也许太阳的牧师们有办法治好我——他们是唯一懂得如何驱散折磨我的黑暗魔法的人。我在渡鸦海滨有位朋友，名叫德维什·谢弗伦。他多年前离开太阳神殿，独自研究贾丹姆的种种奥秘。\n也许他知道疗法，甚至就带在身上。\n他若帮不了你，答应我，一定要回来杀了我，好让我终于安息！")
         SetQBit(QBit(72)) -- Inquire about a cure for Blazen Stormlance from Dervish Chevron in Ravenshore.
         return
     end
@@ -675,7 +675,7 @@ RegisterGlobalEvent(55, "疯狂的死灵法师", function()
 end)
 
 RegisterGlobalEvent(56, "Stormlance", function()
-    evt.SetMessage("布雷曾�风暴之枪是我的副手，也是我的朋友。\n我一直不懂他的个人追求——非要去寻找那些传闻中的骷髅龙。\n他带走了我最得力的工具。\n霜蚀一到我手里，龙患就能稳稳解决。\n")
+    evt.SetMessage("布雷曾·风暴之枪是我的副手，也是我的朋友。\n我一直不懂他的个人追求——非要去寻找那些传闻中的骷髅龙。\n他带走了我最得力的工具。\n霜蚀一到我手里，龙患就能稳稳解决。\n")
 end)
 
 RegisterGlobalEvent(57, "Ebonest", function()
@@ -685,11 +685,11 @@ end)
 RegisterGlobalEvent(58, "如何晋升到勇士", function()
     evt.ForPlayer(Players.All)
     if not HasItem(539) then -- Ebonest
-        evt.SetMessage("你们找到布雷曾�风暴之枪了？可霜蚀在哪儿？\n带着长矛回来见我，你们就能得到晋升！")
+        evt.SetMessage("你们找到布雷曾·风暴之枪了？可霜蚀在哪儿？\n带着长矛回来见我，你们就能得到晋升！")
         return
     end
     if not IsQBitSet(QBit(22)) then -- Allied with Dragons. Return Dragon Egg to Dragons done.
-        evt.SetMessage("你们找到布雷曾�风暴之枪了？\n那我的长矛霜蚀呢？\n你们连它也找到了？好极了！\n我感谢你们，欠你们一份人情！\n我会把你们队伍里所有骑士提升为骑士长，并把我会的技能教给其余人。")
+        evt.SetMessage("你们找到布雷曾·风暴之枪了？\n那我的长矛霜蚀呢？\n你们连它也找到了？好极了！\n我感谢你们，欠你们一份人情！\n我会把你们队伍里所有骑士提升为骑士长，并把我会的技能教给其余人。")
         for _, player in ipairs({Players.Member0, Players.Member1, Players.Member2, Players.Member3, Players.Member4}) do
             evt.ForPlayer(player)
             if IsAtLeast(ClassId, 16) then
@@ -739,13 +739,13 @@ end)
 RegisterGlobalEvent(59, "我的父亲", function()
     if IsQBitSet(QBit(435)) then -- Roster Character In Party 36
         if HasItem(539) then -- Ebonest
-            evt.SetMessage("你们找到我父亲和霜蚀了？\n我永远报答不完你们！\n我们该把长矛带给查尔斯�奇克奥；他要是同意，就会提升我和你队伍里的骑士！")
+            evt.SetMessage("你们找到我父亲和霜蚀了？\n我永远报答不完你们！\n我们该把长矛带给查尔斯·奇克奥；他要是同意，就会提升我和你队伍里的骑士！")
             evt.ForPlayer(Players.All)
             AddValue(Experience, 5000)
             evt.SetNPCTopic(49, 0, 611) -- Leane Stormlance topic 0: Roster Join Event
             return
         elseif IsQBitSet(QBit(1541)) then -- Returned Ebonest to Charles Quixote.
-            evt.SetMessage("你们找到我父亲和霜蚀了？\n我永远报答不完你们！\n我们该把长矛带给查尔斯�奇克奥；他要是同意，就会提升我和你队伍里的骑士！")
+            evt.SetMessage("你们找到我父亲和霜蚀了？\n我永远报答不完你们！\n我们该把长矛带给查尔斯·奇克奥；他要是同意，就会提升我和你队伍里的骑士！")
             evt.ForPlayer(Players.All)
             AddValue(Experience, 5000)
             evt.SetNPCTopic(49, 0, 611) -- Leane Stormlance topic 0: Roster Join Event
@@ -756,25 +756,25 @@ RegisterGlobalEvent(59, "我的父亲", function()
     elseif HasItem(539) then -- Ebonest
         evt.SetMessage("你们找到霜蚀了？\n那我父亲呢？\n他在哪儿？\n我原以为你们会等找到我父亲和长矛后一起回来。")
     else
-        evt.SetMessage("你们找到我父亲了吗？\n还有长矛霜蚀？\n我们必须把它送回查尔斯�奇克奥那里！")
+        evt.SetMessage("你们找到我父亲了吗？\n还有长矛霜蚀？\n我们必须把它送回查尔斯·奇克奥那里！")
     end
 end)
 
 RegisterGlobalEvent(60, "如何晋升到神龙", function()
     if IsQBitSet(QBit(21)) then -- Allied with Charles Quioxte's Dragon Hunters. Return Dragon Egg to Quixote done.
-        evt.SetMessage("你以为我会提升一条龙，一条侍奉那些与我的死敌查尔斯�奇克奥结盟者的龙？\n何等狂妄！\n何等放肆！\n你们必须向我证明自己！而在证明的过程中，你们将给你们的盟友一记重击！\n由此往西南，奇克奥设下了他那支微不足道的“屠龙者”营地。\n由奇克奥军队的副将杰里克�啸骨统领。\n毁掉这座营地！\n杀掉那一带所有为奇克奥效力的人，然后回来见我。\n带着屠龙者啸骨的剑回来见我。")
+        evt.SetMessage("你以为我会提升一条龙，一条侍奉那些与我的死敌查尔斯·奇克奥结盟者的龙？\n何等狂妄！\n何等放肆！\n你们必须向我证明自己！而在证明的过程中，你们将给你们的盟友一记重击！\n由此往西南，奇克奥设下了他那支微不足道的“屠龙者”营地。\n由奇克奥军队的副将杰里克·啸骨统领。\n毁掉这座营地！\n杀掉那一带所有为奇克奥效力的人，然后回来见我。\n带着屠龙者啸骨的剑回来见我。")
         SetQBit(QBit(74)) -- Kill all Dragon Slayers and return the Sword of Whistlebone the Slayer to Deftclaw Redreaver in Garrote Gorge.
         evt.SetNPCTopic(17, 1, 61) -- Deftclaw Redreaver topic 1: Dragon Slayers
         evt.SetNPCTopic(17, 1, 61) -- Deftclaw Redreaver topic 1: Dragon Slayers
         return
     elseif IsQBitSet(QBit(22)) then -- Allied with Dragons. Return Dragon Egg to Dragons done.
-        evt.SetMessage("要达到巨龙的尊位，一条龙必须证明自己能以一敌众。\n他必须直面查尔斯�奇克奥派来对付我们的鼠辈。\n由此往西南，奇克奥设下了他那支微不足道的“屠龙者”营地。\n由奇克奥军队的副将杰里克�啸骨统领。\n毁掉这座营地！\n杀掉那一带所有为奇克奥效力的人，然后回来见我。\n带着屠龙者啸骨的剑回来见我。\n由此，你们将向我证明自己的资格。\n")
+        evt.SetMessage("要达到巨龙的尊位，一条龙必须证明自己能以一敌众。\n他必须直面查尔斯·奇克奥派来对付我们的鼠辈。\n由此往西南，奇克奥设下了他那支微不足道的“屠龙者”营地。\n由奇克奥军队的副将杰里克·啸骨统领。\n毁掉这座营地！\n杀掉那一带所有为奇克奥效力的人，然后回来见我。\n带着屠龙者啸骨的剑回来见我。\n由此，你们将向我证明自己的资格。\n")
         SetQBit(QBit(74)) -- Kill all Dragon Slayers and return the Sword of Whistlebone the Slayer to Deftclaw Redreaver in Garrote Gorge.
         evt.SetNPCTopic(17, 1, 61) -- Deftclaw Redreaver topic 1: Dragon Slayers
         evt.SetNPCTopic(53, 1, 61) -- Deftclaw Redreaver topic 1: Dragon Slayers
         return
     else
-        evt.SetMessage("要达到巨龙的尊位，一条龙必须证明自己能以一敌众。\n他必须直面查尔斯�奇克奥派来对付我们的鼠辈。\n由此往西南，奇克奥设下了他那支微不足道的“屠龙者”营地。\n由奇克奥军队的副将杰里克�啸骨统领。\n毁掉这座营地！\n杀掉那一带所有为奇克奥效力的人，然后回来见我。\n带着屠龙者啸骨的剑回来见我。\n由此，你们将向我证明自己的资格。\n")
+        evt.SetMessage("要达到巨龙的尊位，一条龙必须证明自己能以一敌众。\n他必须直面查尔斯·奇克奥派来对付我们的鼠辈。\n由此往西南，奇克奥设下了他那支微不足道的“屠龙者”营地。\n由奇克奥军队的副将杰里克·啸骨统领。\n毁掉这座营地！\n杀掉那一带所有为奇克奥效力的人，然后回来见我。\n带着屠龙者啸骨的剑回来见我。\n由此，你们将向我证明自己的资格。\n")
         SetQBit(QBit(74)) -- Kill all Dragon Slayers and return the Sword of Whistlebone the Slayer to Deftclaw Redreaver in Garrote Gorge.
         evt.SetNPCTopic(17, 1, 61) -- Deftclaw Redreaver topic 1: Dragon Slayers
         evt.SetNPCTopic(53, 1, 61) -- Deftclaw Redreaver topic 1: Dragon Slayers
@@ -787,7 +787,7 @@ RegisterGlobalEvent(61, "屠龙者", function()
         return
     end
     if not IsQBitSet(QBit(22)) then -- Allied with Dragons. Return Dragon Egg to Dragons done.
-        evt.SetMessage("那个该诅咒的骑士查尔斯�奇克奥，正把他最精锐的屠龙者集结到由此往西南的一处营地。\n他一定在计划再次进攻龙穴！")
+        evt.SetMessage("那个该诅咒的骑士查尔斯·奇克奥，正把他最精锐的屠龙者集结到由此往西南的一处营地。\n他一定在计划再次进攻龙穴！")
         return
     end
     evt.SetMessage("你们杀掉屠龙者了？\n屠龙者啸骨的剑呢？！？")
@@ -891,7 +891,7 @@ RegisterGlobalEvent(64, "Quest", function()
             return
         end
         evt.ShowMovie("\"dragonhunters\"", true)
-        evt.SetMessage("好了，那事办成了。我会安排亲自去渡鸦海滨，坐进你们的议会。说实话，我也该换换环境了。我会让我的副手雷金纳德�多雷留守。再说一次，干得好。")
+        evt.SetMessage("好了，那事办成了。我会安排亲自去渡鸦海滨，坐进你们的议会。说实话，我也该换换环境了。我会让我的副手雷金纳德·多雷留守。再说一次，干得好。")
         SetQBit(QBit(21)) -- Allied with Charles Quioxte's Dragon Hunters. Return Dragon Egg to Quixote done.
         SetQBit(QBit(35)) -- Quest 33 is done.
         ClearQBit(QBit(16)) -- Form an alliance with the Dragon hunters of Garrote Gorge. - Given by Bastian Lourdrin (area 3). Activates Merchanthouse in Alvar. Taken when Dragon Egg (item 605) delivered to Charles Quixote or dragon leader.
@@ -1107,7 +1107,7 @@ end)
 
 RegisterGlobalEvent(76, "太阳预言", function()
     evt.ForPlayer(Players.All)
-    evt.SetMessage("在贾丹姆众多预言中，我唯独尚未研究过太阳预言。\n这座神殿是由特修斯�晨辉建立的，他多年前从埃拉西亚来到这里寻找这些预言。\n不幸的是，没有找到。\n我们希望这些预言藏着化解正在毁灭贾丹姆之事件的答案。")
+    evt.SetMessage("在贾丹姆众多预言中，我唯独尚未研究过太阳预言。\n这座神殿是由特修斯·晨辉建立的，他多年前从埃拉西亚来到这里寻找这些预言。\n不幸的是，没有找到。\n我们希望这些预言藏着化解正在毁灭贾丹姆之事件的答案。")
 end)
 RegisterCanShowTopic(76, function()
     evt._BeginCanShowTopic(76)
@@ -1376,7 +1376,7 @@ RegisterGlobalEvent(93, "多谢你的帮助！", function()
 end)
 
 RegisterGlobalEvent(94, "Alliance", function()
-    evt.SetMessage("巴斯沈�卢德林一直是公会的挚友。可悲的是，此刻我必须拒绝他的请求。就在我们说话这会儿，我的公会正为生存而战。你瞧，太阳神殿已对我们宣战。我们大多数成员都在野外——要么率领军队，要么在召唤僵尸入伍。我多希望能说些别的，可那该诅咒的神殿占了上风。要是平衡能倒向我们这边就好了。")
+    evt.SetMessage("巴斯沈·卢德林一直是公会的挚友。可悲的是，此刻我必须拒绝他的请求。就在我们说话这会儿，我的公会正为生存而战。你瞧，太阳神殿已对我们宣战。我们大多数成员都在野外——要么率领军队，要么在召唤僵尸入伍。我多希望能说些别的，可那该诅咒的神殿占了上风。要是平衡能倒向我们这边就好了。")
     evt.SetNPCTopic(9, 0, 95) -- Sandro topic 0: Quest
 end)
 RegisterCanShowTopic(94, function()
@@ -1393,7 +1393,7 @@ end)
 
 RegisterGlobalEvent(95, "Quest", function()
     if not IsQBitSet(QBit(28)) then -- Bring the Nightshade Brazier to the Necromancers' Guild leader, Sandro. The Brazier is in the Temple of the Sun. - Given and taken by Sandro (area 6). Taken when Qbit 27 set.
-        evt.SetMessage("若能把夜影火盆夺回我们手中，阴影塔的防御便不成问题。我们就能把这场战争烧到太阳神殿门口。将他们彻底歼灭！既然知道它的重要性，牧师们便把火盆安在神殿深处的密室里。戴森�利兰相信他能进入那间密室。带他去神殿，夺回火盆送回给我。你想让我加入你的联盟？好，替我办成这件事，我就欠你一份人情。关于夜影火盆有任何疑问，去问坦特。那东西是他造的。")
+        evt.SetMessage("若能把夜影火盆夺回我们手中，阴影塔的防御便不成问题。我们就能把这场战争烧到太阳神殿门口。将他们彻底歼灭！既然知道它的重要性，牧师们便把火盆安在神殿深处的密室里。戴森·利兰相信他能进入那间密室。带他去神殿，夺回火盆送回给我。你想让我加入你的联盟？好，替我办成这件事，我就欠你一份人情。关于夜影火盆有任何疑问，去问坦特。那东西是他造的。")
         SetQBit(QBit(28)) -- Bring the Nightshade Brazier to the Necromancers' Guild leader, Sandro. The Brazier is in the Temple of the Sun. - Given and taken by Sandro (area 6). Taken when Qbit 27 set.
         if IsQBitSet(QBit(89)) or IsQBitSet(QBit(90)) then -- Dyson Leland talks to you about the Necromancers. For global event 97-100.
             evt.SetNPCTopic(11, 3, 634) -- Dyson Leland topic 3: Roster Join Event
@@ -1404,7 +1404,7 @@ RegisterGlobalEvent(95, "Quest", function()
 end)
 
 RegisterGlobalEvent(96, "戴森·李蓝", function()
-    evt.SetMessage("冲突之初，太阳神殿就想派间谍潜入我们行列。真愚蠢——以为能如此轻易骗过一群黑暗法师！揭穿他们的眼线易如反掌——一个叫“戴森�利兰”的人。从那以后我们就把他反过来对付他的旧主——至少表面如此。坦白说，我并不全信他的忠诚。不过他确实有用。只要还有用，我们就留他一命。")
+    evt.SetMessage("冲突之初，太阳神殿就想派间谍潜入我们行列。真愚蠢——以为能如此轻易骗过一群黑暗法师！揭穿他们的眼线易如反掌——一个叫“戴森·利兰”的人。从那以后我们就把他反过来对付他的旧主——至少表面如此。坦白说，我并不全信他的忠诚。不过他确实有用。只要还有用，我们就留他一命。")
 end)
 RegisterCanShowTopic(96, function()
     evt._BeginCanShowTopic(96)
@@ -1447,7 +1447,7 @@ RegisterGlobalEvent(98, "太阳神庙", function()
 end)
 
 RegisterGlobalEvent(99, "Yourself", function()
-    evt.SetMessage("几个月前，我被召去私下觐见太阳神殿的大祭司奥斯卡�泰尔。他派我执行渗透死灵法师公会的任务。“变得和他们一样，”他说，“取得他们的信任。在你伺机给予致命一击之前，把他们的情报喂给我们。”计划太简单，统帅也太简单！我依言而行，把自己浸泡在邪恶之中，好显得邪恶。可公会仿佛能看穿我的心。我被识破是间谍。在死亡威胁下，我如今服从他们的命令。")
+    evt.SetMessage("几个月前，我被召去私下觐见太阳神殿的大祭司奥斯卡·泰尔。他派我执行渗透死灵法师公会的任务。“变得和他们一样，”他说，“取得他们的信任。在你伺机给予致命一击之前，把他们的情报喂给我们。”计划太简单，统帅也太简单！我依言而行，把自己浸泡在邪恶之中，好显得邪恶。可公会仿佛能看穿我的心。我被识破是间谍。在死亡威胁下，我如今服从他们的命令。")
 end)
 
 RegisterGlobalEvent(100, "Join", function()
@@ -1492,9 +1492,9 @@ RegisterGlobalEvent(103, "Quest", function()
         SetAward(Award(11)) -- Formed and alliance with the Temple of the Sun.
         return
     elseif IsQBitSet(QBit(26)) then -- Find the skeleton transformer in the Shadowspire Necromancers' Guild. Destroy it and return to Oskar Tyre. - Given and taken by Oskar Tyre (area 7). Taken when Qbit 29 set.
-        evt.SetMessage("你又来这儿谈联盟？我早告诉过你该做什么。去阴影塔的死灵法师公会，找到戴森�利兰，帮他毁掉他们的骨架转化器！")
+        evt.SetMessage("你又来这儿谈联盟？我早告诉过你该做什么。去阴影塔的死灵法师公会，找到戴森·利兰，帮他毁掉他们的骨架转化器！")
     else
-        evt.SetMessage("话又说回来，若战局倒向我们这边，我们也能给你的联盟分出些资源。也许你可以做我们的幸运使者？死灵法师公会里有一件叫“骨架转化器”的装置。它把活物转化成骷髅——黑暗法师的主力增援全靠它。一旦它被毁，我们很快就能占上风。我们在他们公会里安插了一名眼线，戴森�利兰。找到他，帮他砸烂他们造骷髅的装置。办成这件事，我就更乐意考虑你的请求。")
+        evt.SetMessage("话又说回来，若战局倒向我们这边，我们也能给你的联盟分出些资源。也许你可以做我们的幸运使者？死灵法师公会里有一件叫“骨架转化器”的装置。它把活物转化成骷髅——黑暗法师的主力增援全靠它。一旦它被毁，我们很快就能占上风。我们在他们公会里安插了一名眼线，戴森·利兰。找到他，帮他砸烂他们造骷髅的装置。办成这件事，我就更乐意考虑你的请求。")
         SetQBit(QBit(26)) -- Find the skeleton transformer in the Shadowspire Necromancers' Guild. Destroy it and return to Oskar Tyre. - Given and taken by Oskar Tyre (area 7). Taken when Qbit 29 set.
     end
 end)
@@ -1504,17 +1504,17 @@ RegisterGlobalEvent(104, "Alliance", function()
 end)
 
 RegisterGlobalEvent(105, "诡异的通道", function()
-    evt.SetMessage("我们用艾瑞安�韩特的船设法收集了些情报。我派一艘去残破镇，另一艘去匕伤群岛。据报两地都出现了奇异的传送门。岛上那道门立在主岛东南海面升起的大火山坡上。残破镇的传送门在大湖中央。据说形成那湖的水就是从门里涌出来的。")
+    evt.SetMessage("我们用艾瑞安·韩特的船设法收集了些情报。我派一艘去残破镇，另一艘去匕伤群岛。据报两地都出现了奇异的传送门。岛上那道门立在主岛东南海面升起的大火山坡上。残破镇的传送门在大湖中央。据说形成那湖的水就是从门里涌出来的。")
 end)
 
 RegisterGlobalEvent(106, "Ironfists", function()
-    evt.SetMessage("我们初次见面后不过几小时，一桩极巧的事发生了。一位伟大贤者——来自铁拳城堡恩洛斯朝廷的赞索——与我们取得了联系！他以强大法术把形象投影进这间屋子。大灾变发生时，他正与罗兰和凯瑟琳�铁拳在我们海岸外的海上。他们在随之而来的风暴中幸存，如今想在渡鸦海滨登陆，援助联盟。不幸的是，他们被雷格那海盗舰队拦住。我们必须帮他们登陆。赞索声称对这里发生之事深知内情。我们需要他的谋略！")
+    evt.SetMessage("我们初次见面后不过几小时，一桩极巧的事发生了。一位伟大贤者——来自铁拳城堡恩洛斯朝廷的赞索——与我们取得了联系！他以强大法术把形象投影进这间屋子。大灾变发生时，他正与罗兰和凯瑟琳·铁拳在我们海岸外的海上。他们在随之而来的风暴中幸存，如今想在渡鸦海滨登陆，援助联盟。不幸的是，他们被雷格那海盗舰队拦住。我们必须帮他们登陆。赞索声称对这里发生之事深知内情。我们需要他的谋略！")
     evt.SetNPCTopic(40, 0, 107) -- Elgar Fellmoon topic 0: Quest
 end)
 
 RegisterGlobalEvent(107, "Quest", function()
     if IsQBitSet(QBit(37)) then -- Regnan Pirate Fleet is sunk.
-        evt.SetMessage("你击沉雷格那舰队的出色之举已见成效。就在昨天早上，凯瑟琳与罗兰�铁拳偕他们的贤者赞索抵达。有他们加入联盟，我们实力大增——不可计量地大增。我得承认，这场危机中有我最黑暗的时刻。多亏你们的努力，我相信最糟的阶段已经过去。我满怀希望，我们定能熬过这一劫。")
+        evt.SetMessage("你击沉雷格那舰队的出色之举已见成效。就在昨天早上，凯瑟琳与罗兰·铁拳偕他们的贤者赞索抵达。有他们加入联盟，我们实力大增——不可计量地大增。我得承认，这场危机中有我最黑暗的时刻。多亏你们的努力，我相信最糟的阶段已经过去。我满怀希望，我们定能熬过这一劫。")
         ClearQBit(QBit(36)) -- Sink the Regnan Fleet. Return to the Ravenshore council chamber. - Given and taken at Ravenshore council chamber.
         SetQBit(QBit(38)) -- Quest 36 is done.
         evt.SetNPCTopic(40, 0, 109) -- Elgar Fellmoon topic 0: Xanthor
@@ -1528,7 +1528,7 @@ RegisterGlobalEvent(107, "Quest", function()
     elseif IsQBitSet(QBit(36)) then -- Sink the Regnan Fleet. Return to the Ravenshore council chamber. - Given and taken at Ravenshore council chamber.
         evt.SetMessage("你必须击沉那支雷格那舰队！务必让铁拳一行安全登陆。他们的贤者赞索掌握着我们不可或缺的危机知识。")
     else
-        evt.SetMessage("我们的线人认为雷格那主力舰队泊在雷格那岛上某处隐蔽港口。你若能趁舰队在港时将其击沉，便能大大削弱他们在我们海岸外巡逻的能力。不幸的是，我们没有一支强大到能在雷格那登陆的舰队。布雷基斯�一齿传信给我们，说雷格那人在匕首主岛外的环礁上建了前哨。他相信这前哨以神秘方式补给。他的斥候从不见有船靠岸，可那里始终物资充足。也许你该去那里解开这个谜。也许答案会把你送到雷格那？无论用什么手段，要让铁拳一行在渡鸦海滨登陆，雷格那舰队必须被击沉。")
+        evt.SetMessage("我们的线人认为雷格那主力舰队泊在雷格那岛上某处隐蔽港口。你若能趁舰队在港时将其击沉，便能大大削弱他们在我们海岸外巡逻的能力。不幸的是，我们没有一支强大到能在雷格那登陆的舰队。布拉克许·单牙传信给我们，说雷格那人在匕首主岛外的环礁上建了前哨。他相信这前哨以神秘方式补给。他的斥候从不见有船靠岸，可那里始终物资充足。也许你该去那里解开这个谜。也许答案会把你送到雷格那？无论用什么手段，要让铁拳一行在渡鸦海滨登陆，雷格那舰队必须被击沉。")
         SetQBit(QBit(36)) -- Sink the Regnan Fleet. Return to the Ravenshore council chamber. - Given and taken at Ravenshore council chamber.
         AddValue(History(12), 0)
     end
@@ -1579,7 +1579,7 @@ RegisterGlobalEvent(116, "猎龙", function()
 end)
 
 RegisterGlobalEvent(117, "黑井·古伯", function()
-    evt.SetMessage("从雷格那海盗的战术判断，我怀疑有布莱克威尔�库珀插手。库珀是我的一位老……可以说“老相识”。嘿，我要是个赌徒，愿拿金子打赌，指挥匕伤雷格那远征军的就是他。")
+    evt.SetMessage("从雷格那海盗的战术判断，我怀疑有布莱克威尔·库珀插手。库珀是我的一位老……可以说“老相识”。嘿，我要是个赌徒，愿拿金子打赌，指挥匕伤雷格那远征军的就是他。")
 end)
 
 RegisterGlobalEvent(118, "Xanthor", function()
@@ -1611,7 +1611,7 @@ RegisterGlobalEvent(124, "雷格那岛", function()
 end)
 
 RegisterGlobalEvent(125, "吉科德的宝藏", function()
-    evt.SetMessage("我知道现在不是想复仇的时候，但我愿把我了解到的仇敌查尔斯�奇克奥的事告诉你们。牛头人国王马苏尔提过，奇克奥在他的城堡里随身带着一柄威力强大的剑。它叫“毒蛇”。也许你们夺得它，会有助于联盟大业？")
+    evt.SetMessage("我知道现在不是想复仇的时候，但我愿把我了解到的仇敌查尔斯·奇克奥的事告诉你们。牛头人国王马苏尔提过，奇克奥在他的城堡里随身带着一柄威力强大的剑。它叫“毒蛇”。也许你们夺得它，会有助于联盟大业？")
 end)
 
 RegisterGlobalEvent(126, "Gateways", function()
@@ -1743,7 +1743,7 @@ RegisterGlobalEvent(150, "Safety", function()
 end)
 
 RegisterGlobalEvent(151, "Xanthor", function()
-    evt.SetMessage("主人此刻不在。他去议事厅找埃尔加�费尔姆恩了。也许你们能在那儿找到他。")
+    evt.SetMessage("主人此刻不在。他去议事厅找埃尔加·费尔姆恩了。也许你们能在那儿找到他。")
 end)
 
 RegisterGlobalEvent(152, "水晶", function()
@@ -2563,7 +2563,7 @@ RegisterGlobalEvent(192, "500个金币！", function()
 end)
 
 RegisterGlobalEvent(193, "Quest", function()
-    evt.SetMessage("许多十年前，传奇的太阳牧师卡米恩�斯莱斯率领一支十字军，征讨阴影塔的死灵法师公会。\n公会在同样栖身阴影塔地区的吸血鬼协助下击败了斯莱斯的军队。\n卡米恩�斯莱斯上战场时随身带着那件名叫“日食”的牧师宝物。\n在最后一战中，斯莱斯被一名诺斯费拉图击倒，那面盾牌也失落了。")
+    evt.SetMessage("许多十年前，传奇的太阳牧师卡米恩·斯莱斯率领一支十字军，征讨阴影塔的死灵法师公会。\n公会在同样栖身阴影塔地区的吸血鬼协助下击败了斯莱斯的军队。\n卡米恩·斯莱斯上战场时随身带着那件名叫“日食”的牧师宝物。\n在最后一战中，斯莱斯被一名诺斯费拉图击倒，那面盾牌也失落了。")
     SetQBit(QBit(127)) -- Recover the shield, Eclipse, for Lathius in Ravenshore.
     evt.SetNPCTopic(73, 0, 194) -- Lathius topic 0: Eclipse
 end)
@@ -2919,7 +2919,7 @@ RegisterGlobalEvent(219, "Quest", function()
     elseif IsQBitSet(QBit(154)) then -- Kill all the Dragons in the Garrote Gorge wilderness area. Return to Avalon in Garrote Gorge.
         evt.SetMessage("你还没有杀光所有鼠辈。\n我这里有报告说，这一带仍有龙出没。\n把它们全杀光再回来！")
     else
-        evt.SetMessage("你想博取查尔斯�奇克奥的好感？\n帮我们征讨绞刑峡谷的龙。若这一带和龙穴里的龙全被杀光，查尔斯�奇克奥定会听到你的名字！等它们全死了再回来见我！\n我会重谢你们。")
+        evt.SetMessage("你想博取查尔斯·奇克奥的好感？\n帮我们征讨绞刑峡谷的龙。若这一带和龙穴里的龙全被杀光，查尔斯·奇克奥定会听到你的名字！等它们全死了再回来见我！\n我会重谢你们。")
         SetQBit(QBit(154)) -- Kill all the Dragons in the Garrote Gorge wilderness area. Return to Avalon in Garrote Gorge.
     end
 end)
@@ -2936,7 +2936,7 @@ RegisterCanShowTopic(219, function()
 end)
 
 RegisterGlobalEvent(220, "终于！", function()
-    evt.SetMessage("你杀光了那些鼠辈！\n这是我答应的奖赏！\n我还会亲自向查尔斯�奇克奥提及你的协助！")
+    evt.SetMessage("你杀光了那些鼠辈！\n这是我答应的奖赏！\n我还会亲自向查尔斯·奇克奥提及你的协助！")
 end)
 
 RegisterGlobalEvent(221, "Quest", function()
@@ -2952,7 +2952,7 @@ RegisterGlobalEvent(221, "Quest", function()
     elseif IsQBitSet(QBit(157)) then -- Kill all the Dragon Hunter's in the Garrote Gorge wilderness area. Return to Jerin Flame-eye in the Garrote Gorge Dragon Caves.
         evt.SetMessage("你还没有杀光所有屠龙者。\n一小队刚回来，报告说在平原上看到了他们。\n把他们全杀光再回来！")
     else
-        evt.SetMessage("你想博取巧爪�掠夺者的好感？\n谁不想呢？\n你若杀光绞刑峡谷荒野上的所有屠龙者，我一定向他提及你。\n我还能给你一份丰厚的酬谢！")
+        evt.SetMessage("你想博取巧爪·掠夺者的好感？\n谁不想呢？\n你若杀光绞刑峡谷荒野上的所有屠龙者，我一定向他提及你。\n我还能给你一份丰厚的酬谢！")
         SetQBit(QBit(157)) -- Kill all the Dragon Hunter's in the Garrote Gorge wilderness area. Return to Jerin Flame-eye in the Garrote Gorge Dragon Caves.
     end
 end)
@@ -2969,7 +2969,7 @@ RegisterCanShowTopic(221, function()
 end)
 
 RegisterGlobalEvent(222, "现在一切又都回复原状了！", function()
-    evt.SetMessage("查尔斯�奇克奥那帮地狱屠龙者都死了？好极了！\n我们又能安心享受绞刑峡谷的太平了。\n这是答应你的奖赏！\n我这就去向巧爪�掠夺者禀报你的英勇！")
+    evt.SetMessage("查尔斯·奇克奥那帮地狱屠龙者都死了？好极了！\n我们又能安心享受绞刑峡谷的太平了。\n这是答应你的奖赏！\n我这就去向巧爪·掠夺者禀报你的英勇！")
 end)
 
 RegisterGlobalEvent(223, "Quest", function()
@@ -2979,7 +2979,7 @@ RegisterGlobalEvent(223, "Quest", function()
 end)
 
 RegisterGlobalEvent(224, "胜利之鼓的历史", function()
-    evt.SetMessage("胜利之鼓是查尔斯�奇克奥带来的。\n它震耳欲聋的声响，能让任何听见的龙心生恐惧。\n不幸的是，在奇克奥试图于绞刑峡谷建立城堡时，它在与娜迦的一场战斗中失落了。")
+    evt.SetMessage("胜利之鼓是查尔斯·奇克奥带来的。\n它震耳欲聋的声响，能让任何听见的龙心生恐惧。\n不幸的是，在奇克奥试图于绞刑峡谷建立城堡时，它在与娜迦的一场战斗中失落了。")
 end)
 
 RegisterGlobalEvent(225, "鼓在哪里？", function()
@@ -4428,7 +4428,7 @@ RegisterCanShowTopic(297, function()
 end)
 
 RegisterGlobalEvent(298, "报告！", function()
-    evt.SetMessage("你是新来的吧？\n告诉艾瑞安�韩特，我对他那帮乌合之众的期待，可不包括你这种货色！\n把报告给我，然后从我眼前消失！\n你让我恶心！")
+    evt.SetMessage("你是新来的吧？\n告诉艾瑞安·韩特，我对他那帮乌合之众的期待，可不包括你这种货色！\n把报告给我，然后从我眼前消失！\n你让我恶心！")
     ClearQBit(QBit(117)) -- Deliver fake report to the Dread Pirate Stanley in the Pirate's Rest Tavern on the Island of Regna.
     evt.ForPlayer(Players.All)
     RemoveItem(602) -- False Report
@@ -4466,37 +4466,37 @@ RegisterGlobalEvent(299, "贾丹姆大陆的命运", function()
 end)
 
 RegisterGlobalEvent(417, "普多·泰恩", function()
-    evt.SetMessage("水坑�塞恩是位极有前途的学员。\n你若想学习手杖的专家用法，可以去渡鸦海滨城找他。")
+    evt.SetMessage("水坑·塞恩是位极有前途的学员。\n你若想学习手杖的专家用法，可以去渡鸦海滨城找他。")
     SetAutonote(89) -- You may receive Expert Staff instruction from Puddle Thain in the city of Ravenshore.
 end)
 
 RegisterGlobalEvent(418, "赛丽雅·斯通", function()
-    evt.SetMessage("西莉亚�斯通，手杖大师，住在铁沙漠的巨魔村铁锈镇。\n若你渴望，她能把你教成手杖大师。")
+    evt.SetMessage("西莉亚·斯通，手杖大师，住在铁沙漠的巨魔村铁锈镇。\n若你渴望，她能把你教成手杖大师。")
     SetAutonote(90) -- Master Staff is taught by Celia Stone located in the village of Rust. Rust is in the Ironsand Desert.
 end)
 
 RegisterGlobalEvent(419, "崔斯坦·止水", function()
-    evt.SetMessage("宗师特里斯坦�静水，指导所有手杖学员。\n唯有他能帮你达到这柄精良武器的宗师境界。\n去阴影塔脚下的暮光城找他。")
+    evt.SetMessage("宗师特里斯坦·静水，指导所有手杖学员。\n唯有他能帮你达到这柄精良武器的宗师境界。\n去阴影塔脚下的暮光城找他。")
     SetAutonote(91) -- The Grand Master of Staff, Tristen Stillwater is located in the Shadowspire city of Twilight.
 end)
 
 RegisterGlobalEvent(420, "爱利·卢欧林", function()
-    evt.SetMessage("艾瑞�路德林目前住在渡鸦海滨。\n她是一位极专注的剑术学员，能把你教到该武器的专家水平。")
+    evt.SetMessage("艾瑞·路德林目前住在渡鸦海滨。\n她是一位极专注的剑术学员，能把你教到该武器的专家水平。")
     SetAutonote(92) -- You may receive Expert Sword training from Aerie Luodrin in the city of Ravenshore.
 end)
 
 RegisterGlobalEvent(421, "杰新·卡卓", function()
-    evt.SetMessage("不幸的是，剑术大师杰辛�卡德龙觉得，他的技艺——这么说吧——“教”给绞刑峡谷的屠龙者更“有利可图”。\n你若想达到剑术大师水平，就得去绞刑峡谷屠龙者营地找他。")
+    evt.SetMessage("不幸的是，剑术大师杰辛·卡德龙觉得，他的技艺——这么说吧——“教”给绞刑峡谷的屠龙者更“有利可图”。\n你若想达到剑术大师水平，就得去绞刑峡谷屠龙者营地找他。")
     SetAutonote(93) -- Master Sword is taught by Jaycin Cardron. You can find her in the Garrote Gorge Dragon Hunter's Camp.
 end)
 
 RegisterGlobalEvent(422, "麦友·追龙者", function()
-    evt.SetMessage("剑术宗师米永�追龙者，已加入骑士查尔斯�奇克奥剿灭绞刑峡谷龙族的远征。\n你可以在屠龙者堡垒找到米永。")
+    evt.SetMessage("剑术宗师米永·追龙者，已加入骑士查尔斯·奇克奥剿灭绞刑峡谷龙族的远征。\n你可以在屠龙者堡垒找到米永。")
     SetAutonote(94) -- The Grand Master of Sword, Miyon Dragontracker can be found on the island of Regna.
 end)
 
 RegisterGlobalEvent(423, "罗瑞·维斯波", function()
-    evt.SetMessage("匕首专家导师洛丽�维斯珀斯，住在阿尔瓦的黑暗精灵城。\n去那儿找她。")
+    evt.SetMessage("匕首专家导师洛丽·维斯珀斯，住在阿尔瓦的黑暗精灵城。\n去那儿找她。")
     SetAutonote(95) -- The Expert Dagger instructor, Lori Vespers, lives in the Dark Elf city of Alvar.
 end)
 
@@ -4506,32 +4506,32 @@ RegisterGlobalEvent(424, "Jobber", function()
 end)
 
 RegisterGlobalEvent(425, "卡拉·诺瑟斯", function()
-    evt.SetMessage("匕首宗师卡拉�瑟尔塞斯，训练所有雷格那海盗使用匕首。\n她和他们一起住在雷格那岛上，因为他们给她的报酬丰厚。")
+    evt.SetMessage("匕首宗师卡拉·瑟尔塞斯，训练所有雷格那海盗使用匕首。\n她和他们一起住在雷格那岛上，因为他们给她的报酬丰厚。")
     SetAutonote(97) -- Karla Nirses, the Grand Master Dagger teacher, can be found on Regna Island.
 end)
 
 RegisterGlobalEvent(426, "哈洛·佛斯太克", function()
-    evt.SetMessage("赫拉德�战痕，查尔斯�奇克奥麾下最出色的骑士之一，是斧技的专家导师。\n在绞刑峡谷的屠龙者营地能找到他。")
+    evt.SetMessage("赫拉德·战痕，查尔斯·奇克奥麾下最出色的骑士之一，是斧技的专家导师。\n在绞刑峡谷的屠龙者营地能找到他。")
     SetAutonote(98) -- Herald Foestryke teaches Expert Axe in the Dragon Hunter's Camp located in Garrote Gorge.
 end)
 
 RegisterGlobalEvent(427, "杰斯普·韩特", function()
-    evt.SetMessage("贾斯普�亨特是斧术的大师导师。\n他能教你通往斧术大师的技能。\n他家在海滨城渡鸦海滨。")
+    evt.SetMessage("贾斯普·亨特是斧术的大师导师。\n他能教你通往斧术大师的技能。\n他家在海滨城渡鸦海滨。")
     SetAutonote(99) -- Jasp Hunter is the Master Axe instructor. His home is in the seaside city of Ravenshore.
 end)
 
 RegisterGlobalEvent(428, "加瑞克·森杰克", function()
-    evt.SetMessage("宗师加里克�森雅克，是斧道的宗师导师。\n他家在残破镇地区的巴尔萨煞巢穴。")
+    evt.SetMessage("宗师加里克·森雅克，是斧道的宗师导师。\n他家在残破镇地区的巴尔萨煞巢穴。")
     SetAutonote(100) -- Grand Master Garic Senjac, the Grand Master Axe teacher makes his home in Balthazar Lair located in Ravage Roaming.
 end)
 
 RegisterGlobalEvent(429, "麦崔克·陶恩赛佛", function()
-    evt.SetMessage("马特里克�守镇者曾多次抵御雷格那海盗对渡鸦海滨城的进犯。\n他的长矛技艺与教导，帮市民把海盗击退。他能把你教到长矛专家水平。")
+    evt.SetMessage("马特里克·守镇者曾多次抵御雷格那海盗对渡鸦海滨城的进犯。\n他的长矛技艺与教导，帮市民把海盗击退。他能把你教到长矛专家水平。")
     SetAutonote(101) -- Matric Townsaver teaches Expert Spear from his home in Ravenshore.
 end)
 
 RegisterGlobalEvent(430, "雅山德拉·惠瑟史密斯", function()
-    evt.SetMessage("阿珊德拉�威斯密斯是长矛的大师导师。\n她的长矛之道教导将引领你达到该武器的大师级。\n她住在商业城阿尔瓦。")
+    evt.SetMessage("阿珊德拉·威斯密斯是长矛的大师导师。\n她的长矛之道教导将引领你达到该武器的大师级。\n她住在商业城阿尔瓦。")
     SetAutonote(102) -- Ashandra Withersmythe is the Master teacher of the Spear. She lives in the merchant city of Alvar.
 end)
 
@@ -4541,12 +4541,12 @@ RegisterGlobalEvent(431, "Yarrow", function()
 end)
 
 RegisterGlobalEvent(432, "席瓦·锐眼", function()
-    evt.SetMessage("希万�锐眼是射箭专家。\n她的教导能把你教到这种远程武器的专家水平。\n她住在匕伤群岛的血滴村。")
+    evt.SetMessage("希万·锐眼是射箭专家。\n她的教导能把你教到这种远程武器的专家水平。\n她住在匕伤群岛的血滴村。")
     SetAutonote(104) -- Shivan Keeneye, the Expert Bow teacher lives in the village of Blood Drop on the Dagger Wound Islands.
 end)
 
 RegisterGlobalEvent(433, "欧伯力克·诺斯沃", function()
-    evt.SetMessage("大师奥贝里克�鼻草在渡鸦海滨家中教弓术学员。\n你若想达到这武器的大师级，就去那儿找他。")
+    evt.SetMessage("大师奥贝里克·鼻草在渡鸦海滨家中教弓术学员。\n你若想达到这武器的大师级，就去那儿找他。")
     SetAutonote(105) -- Master Bow teacher Oberic Nosewort lives in Ravenshore city
 end)
 
@@ -4556,12 +4556,12 @@ RegisterGlobalEvent(434, "Solis", function()
 end)
 
 RegisterGlobalEvent(435, "丽莎·所尔波罗", function()
-    evt.SetMessage("莉莎�酸眉在渡鸦海滨家中教授钉锤专家用法。")
+    evt.SetMessage("莉莎·酸眉在渡鸦海滨家中教授钉锤专家用法。")
     SetAutonote(107) -- Lisha Sourbrow teaches Expert Mace from her home in Ravenshore.
 end)
 
 RegisterGlobalEvent(436, "罗伯特·晨星", function()
-    evt.SetMessage("罗伯特�晨星，在绞刑峡谷教骑士们钉锤大师。")
+    evt.SetMessage("罗伯特·晨星，在绞刑峡谷教骑士们钉锤大师。")
     SetAutonote(108) -- Master Mace teacher, Robert Morningstar, trains the knights of the Garrote Gorge Dragon Hunter's Camp.
 end)
 
@@ -4571,17 +4571,17 @@ RegisterGlobalEvent(437, "贺斯沃弟兄", function()
 end)
 
 RegisterGlobalEvent(438, "奎蓝·摩尔", function()
-    evt.SetMessage("奎林�摩尔曾为骑士查尔斯�奇克奥效力，但不赞同他杀光绞刑峡谷一带龙的十字军。摩尔仍在阿尔瓦城家中教授盾牌专家用法。")
+    evt.SetMessage("奎林·摩尔曾为骑士查尔斯·奇克奥效力，但不赞同他杀光绞刑峡谷一带龙的十字军。摩尔仍在阿尔瓦城家中教授盾牌专家用法。")
     SetAutonote(113) -- Expert Shield teacher, Qillain Moore, lives in the the city of Alvar.
 end)
 
 RegisterGlobalEvent(439, "谢尔顿·夜木", function()
-    evt.SetMessage("谢尔登�夜木住在阴影塔死灵法师公会下方的暮光城。\n她能教你盾牌大师。")
+    evt.SetMessage("谢尔登·夜木住在阴影塔死灵法师公会下方的暮光城。\n她能教你盾牌大师。")
     SetAutonote(114) -- Master Shield teacher, Sheldon Nightwood lives in the Shadowspire city of Twilight.
 end)
 
 RegisterGlobalEvent(440, "派林·瑞佛斯通", function()
-    evt.SetMessage("骑士佩林�掠夺斯顿，拥有盾牌宗师的头衔。\n他目前效力于查尔斯�奇克奥，教授骑士们盾牌的正确用法。\n去绞刑峡谷的屠龙者营地找他。")
+    evt.SetMessage("骑士佩林·掠夺斯顿，拥有盾牌宗师的头衔。\n他目前效力于查尔斯·奇克奥，教授骑士们盾牌的正确用法。\n去绞刑峡谷的屠龙者营地找他。")
     SetAutonote(115) -- Peryn Reaverston, Grand Master Shield instructor, lives in the Dragon Hunter's Camp in Garrote Gorge.
 end)
 
@@ -4591,27 +4591,27 @@ RegisterGlobalEvent(441, "Thadin", function()
 end)
 
 RegisterGlobalEvent(442, "沙漠斯·荷力菲", function()
-    evt.SetMessage("大师沙姆斯�霍利菲尔德住在牛头人城巴尔萨煞巢穴，位于残破镇地区。\n他能教你皮甲大师。")
+    evt.SetMessage("大师沙姆斯·霍利菲尔德住在牛头人城巴尔萨煞巢穴，位于残破镇地区。\n他能教你皮甲大师。")
     SetAutonote(117) -- Master Leather instructor Shamus Hollyfield dwells in the Minotaur city, Balthazar Lair, which is located in the Ravage Roaming region.
 end)
 
 RegisterGlobalEvent(443, "麦瓦力·爱姆斯麦尔", function()
-    evt.SetMessage("梅德瓦里�榆沼打造王国最精良的皮甲。\n她还拥有皮甲宗师的头衔，可在铁沙漠铁锈镇村的家中指导你。")
+    evt.SetMessage("梅德瓦里·榆沼打造王国最精良的皮甲。\n她还拥有皮甲宗师的头衔，可在铁沙漠铁锈镇村的家中指导你。")
     SetAutonote(118) -- Medwari Elmsmire, the Grand Master of Leather makes her home in the village of Rust in the Ironsand Desert.
 end)
 
 RegisterGlobalEvent(444, "托伯伦·佛吉爱特", function()
-    evt.SetMessage("托布伦�锻锤匠在第一次海盗战争中协助过渡鸦海滨城。\n她的熔炉连续烧了四周，为渡鸦海滨的守卫打造锁甲。\n她如今仍在海滨港城渡鸦海滨的家中教授锁甲专家用法。")
+    evt.SetMessage("托布伦·锻锤匠在第一次海盗战争中协助过渡鸦海滨城。\n她的熔炉连续烧了四周，为渡鸦海滨的守卫打造锁甲。\n她如今仍在海滨港城渡鸦海滨的家中教授锁甲专家用法。")
     SetAutonote(119) -- Tobren Forgewright the Expert Chain teacher lives in the seaside port of Ravenshore.
 end)
 
 RegisterGlobalEvent(445, "海立安·艾佛斯麦", function()
-    evt.SetMessage("哈连�永笑向锁甲宗师学尽一切技艺，随后逃到阿尔瓦城，在那里向阿尔瓦商人教授这种护甲的大师用法。\n他也会把你教到大师级。")
+    evt.SetMessage("哈连·永笑向锁甲宗师学尽一切技艺，随后逃到阿尔瓦城，在那里向阿尔瓦商人教授这种护甲的大师用法。\n他也会把你教到大师级。")
     SetAutonote(120) -- Master Chain instructor, Halian Eversmyle, can be found in the city of Alvar.
 end)
 
 RegisterGlobalEvent(446, "赛林·伯更斗", function()
-    evt.SetMessage("宗师瑟琳�燃烛教授把锁甲用到极致的方法。\n她和雷格那海盗们住在一起。")
+    evt.SetMessage("宗师瑟琳·燃烛教授把锁甲用到极致的方法。\n她和雷格那海盗们住在一起。")
     SetAutonote(121) -- Grand Master of Chain, Seline Burnkindle, teaches from her home on the island of Renga.
 end)
 
@@ -4626,17 +4626,17 @@ RegisterGlobalEvent(448, "Botham", function()
 end)
 
 RegisterGlobalEvent(449, "赛欣·艾恩法斯特", function()
-    evt.SetMessage("板甲宗师塞思�铁拳，是查尔斯�奇克奥征讨绞刑峡谷龙族背后的真正力量。\n没有他在板甲用法上的教导，奇克奥的骑士在掠夺者之龙的震怒前不过是炮灰。")
+    evt.SetMessage("板甲宗师塞思·铁拳，是查尔斯·奇克奥征讨绞刑峡谷龙族背后的真正力量。\n没有他在板甲用法上的教导，奇克奥的骑士在掠夺者之龙的震怒前不过是炮灰。")
     SetAutonote(124) -- Seth Ironfist, Grand Master of Plate Armor teaches in the Dragon Hunter's Camp in Garrote Gorge.
 end)
 
 RegisterGlobalEvent(450, "泰伦·谈普", function()
-    evt.SetMessage("塔伦�坦珀逃离埃拉西亚，在一群对坦珀家史一无所知的人中间重起炉灶。\n他在渡鸦海滨家中教授火焰魔法专家技能。")
+    evt.SetMessage("塔伦·坦珀逃离埃拉西亚，在一群对坦珀家史一无所知的人中间重起炉灶。\n他在渡鸦海滨家中教授火焰魔法专家技能。")
     SetAutonote(125) -- Taren Temper teaches Expert Fire Magic from his home in Ravenshore.
 end)
 
 RegisterGlobalEvent(451, "所罗门·史提尔", function()
-    evt.SetMessage("所罗门�钢铁，火焰大师，住在宁静的阿尔瓦城。\n他能教你火焰魔法大师。")
+    evt.SetMessage("所罗门·钢铁，火焰大师，住在宁静的阿尔瓦城。\n他能教你火焰魔法大师。")
     SetAutonote(126) -- Solomon Steele, Master instructor of Fire Magic, lives in the tranquil city of Alvar.
 end)
 
@@ -4651,22 +4651,22 @@ RegisterGlobalEvent(453, "Reshie", function()
 end)
 
 RegisterGlobalEvent(454, "荷力司·暴风眼", function()
-    evt.SetMessage("霍利斯�风暴眼，气系大师，把家安在牛头人的家园巴尔萨煞巢穴。\n")
+    evt.SetMessage("霍利斯·风暴眼，气系大师，把家安在牛头人的家园巴尔萨煞巢穴。\n")
     SetAutonote(129) -- Hollis Stormeye, Master Air Magic teacher, makes her home in Balthazar Lair located in Ravage Roaming.
 end)
 
 RegisterGlobalEvent(455, "克劳德·耐德龙", function()
-    evt.SetMessage("云�内德伦曾想与气之领主做交易。\n他动身寻找进入气元素位面的路，以为在那里能学清气系魔法中所有他仍不明了的地方。\n你得亲自去一趟气元素位面，看看他是否成功了。")
+    evt.SetMessage("云·内德伦曾想与气之领主做交易。\n他动身寻找进入气元素位面的路，以为在那里能学清气系魔法中所有他仍不明了的地方。\n你得亲自去一趟气元素位面，看看他是否成功了。")
     SetAutonote(130) -- Cloud Nedlon, the Grand Master of Air may be found on the Plane of Air.
 end)
 
 RegisterGlobalEvent(456, "乌尔布拉契·派德东", function()
-    evt.SetMessage("乌尔布雷希特�佩德森单枪匹马止住了第二次海盗战争。\n海盗开始登陆时，他冲下海滩保卫渡鸦海滨。\n他驾驭大海本身，把雷格那舰队逼回了大洋。\n不幸的是，这番努力让他彻底失去了使用魔法的能力。\n尽管如此，他仍教授水系魔法专家知识。\n他至今住在渡鸦海滨。")
+    evt.SetMessage("乌尔布雷希特·佩德森单枪匹马止住了第二次海盗战争。\n海盗开始登陆时，他冲下海滩保卫渡鸦海滨。\n他驾驭大海本身，把雷格那舰队逼回了大洋。\n不幸的是，这番努力让他彻底失去了使用魔法的能力。\n尽管如此，他仍教授水系魔法专家知识。\n他至今住在渡鸦海滨。")
     SetAutonote(131) -- Ulbrecht Pederton, Expert teacher of Water Magic lives in Ravenshore city.
 end)
 
 RegisterGlobalEvent(457, "葛丽果力·迷雾", function()
-    evt.SetMessage("格雷戈里�雾，水系大师，把家安在铁沙漠的铁锈镇村。\n他声称有个计划，要用魔法把炎热沙漠变成翠绿平原。\n他若有空，就能教你水系魔法大师。")
+    evt.SetMessage("格雷戈里·雾，水系大师，把家安在铁沙漠的铁锈镇村。\n他声称有个计划，要用魔法把炎热沙漠变成翠绿平原。\n他若有空，就能教你水系魔法大师。")
     SetAutonote(132) -- Gregory Mist, Master teacher of Water Magic, makes his home in the village of Rust in the Ironsand Desert.
 end)
 
@@ -4676,97 +4676,97 @@ RegisterGlobalEvent(458, "黑流", function()
 end)
 
 RegisterGlobalEvent(459, "奥斯崔恩·葛瑞维克", function()
-    evt.SetMessage("奥斯特林�格里维奇，土系魔法专家导师，住在匕伤群岛的血滴村。")
+    evt.SetMessage("奥斯特林·格里维奇，土系魔法专家导师，住在匕伤群岛的血滴村。")
     SetAutonote(134) -- Ostrin Grivic, Expert instructor of Earth Magic, lives in the village of Blood Drop on the Dagger Wound Islands.
 end)
 
 RegisterGlobalEvent(460, "陶乐熙·塞百物", function()
-    evt.SetMessage("土系魔法大师多萝西�塞布尔伍德协助终结了第一次海盗战争。\n在一位无名气系法师的帮助下，她筑起黏土墙，把雷格那海盗挡在船边。\n她如今在阿尔瓦家中教授技艺。")
+    evt.SetMessage("土系魔法大师多萝西·塞布尔伍德协助终结了第一次海盗战争。\n在一位无名气系法师的帮助下，她筑起黏土墙，把雷格那海盗挡在船边。\n她如今在阿尔瓦家中教授技艺。")
     SetAutonote(135) -- The Master teacher of Earth Magic, Dorothy Sablewood, lives in the city of Alvar.
 end)
 
 RegisterGlobalEvent(461, "Griven", function()
-    evt.SetMessage("宗师格瑞文在给多萝西�塞布尔伍德上完最后一课后，进入了土元素位面。\n也许他至今仍住在那里。\n谁知道元素位面里会发生什么呢？")
+    evt.SetMessage("宗师格瑞文在给多萝西·塞布尔伍德上完最后一课后，进入了土元素位面。\n也许他至今仍住在那里。\n谁知道元素位面里会发生什么呢？")
     SetAutonote(136) -- The Grand Master instructor of Air Magic, Griven, may be found on the Plane of Air.
 end)
 
 RegisterGlobalEvent(462, "史拉顿·何索恩", function()
-    evt.SetMessage("斯特拉顿�霍桑能把你提升到精神魔法专家境界。他把家安在港城渡鸦海滨。")
+    evt.SetMessage("斯特拉顿·霍桑能把你提升到精神魔法专家境界。他把家安在港城渡鸦海滨。")
     SetAutonote(137) -- Straton Hawthorne can raise you to Expert level in the arts of Spirit Magic. He makes his home in the port city of Ravenshore.
 end)
 
 RegisterGlobalEvent(463, "贝索德·科恩", function()
-    evt.SetMessage("大师贝特霍尔德�科恩，效力于骑士查尔斯�奇克奥征讨绞刑峡谷一带龙族的十字军。\n去那边的屠龙者营地找他。\n你若运气好，他会有空教你精神魔法大师。")
+    evt.SetMessage("大师贝特霍尔德·科恩，效力于骑士查尔斯·奇克奥征讨绞刑峡谷一带龙族的十字军。\n去那边的屠龙者营地找他。\n你若运气好，他会有空教你精神魔法大师。")
     SetAutonote(138) -- Spirit Magic Master instructor, Bethold Kern, can be found in the Garrote Gorge Dragon Hunter's Camp.
 end)
 
 RegisterGlobalEvent(464, "来西特·鸦眼", function()
-    evt.SetMessage("拉西特�鸦视是精神魔法宗师。\n他住在低语森林、靠近太阳神殿处，在那里继续研究精神的本质。\n他能把你的精神魔法提升到宗师。")
+    evt.SetMessage("拉西特·鸦视是精神魔法宗师。\n他住在低语森林、靠近太阳神殿处，在那里继续研究精神的本质。\n他能把你的精神魔法提升到宗师。")
     SetAutonote(139) -- Lasiter Ravensight, is the Grand Master teacher of Spirit Magic. He lives in the Murmurwoods close to the Temple of the Sun.
 end)
 
 RegisterGlobalEvent(465, "商恩·克鲁兰", function()
-    evt.SetMessage("沙恩�克鲁伦，心智魔法学员，能教你这门奥术的专家技能。\n去黑暗精灵城阿尔瓦找他。")
+    evt.SetMessage("沙恩·克鲁伦，心智魔法学员，能教你这门奥术的专家技能。\n去黑暗精灵城阿尔瓦找他。")
     SetAutonote(140) -- Shane Krewlen, Expert instructor of Mind Magic, lives in the Dark Elf city of Alvar.
 end)
 
 RegisterGlobalEvent(466, "芭芭拉·拉兹", function()
-    evt.SetMessage("巴辛�洛茨，心智魔法大师，住在残破镇地区的牛头人城巴尔萨煞巢穴。\n经她教导，你可达到心智魔法大师。")
+    evt.SetMessage("巴辛·洛茨，心智魔法大师，住在残破镇地区的牛头人城巴尔萨煞巢穴。\n经她教导，你可达到心智魔法大师。")
     SetAutonote(141) -- Barthine Lotts, Master of Mind Magic, dwells in the Minotaur city of Balthazar Lair in the Ravage Roaming region.
 end)
 
 RegisterGlobalEvent(467, "吉拉德·梦妖", function()
-    evt.SetMessage("吉拉德�梦匠，心智魔法宗师，已与许多其他魔法宗师聚于低语森林地区。\n在那里，他们与太阳神殿合作，精进共同的技艺与知识。\n吉拉德能把你教到心智魔法宗师水平。")
+    evt.SetMessage("吉拉德·梦匠，心智魔法宗师，已与许多其他魔法宗师聚于低语森林地区。\n在那里，他们与太阳神殿合作，精进共同的技艺与知识。\n吉拉德能把你教到心智魔法宗师水平。")
     SetAutonote(142) -- Gilad Dreamwright, Grand Master of Mind Magic, lives in Murmurwoods near the Temple of the Sun.
 end)
 
 RegisterGlobalEvent(468, "赛瓦·波斯德", function()
-    evt.SetMessage("泽瓦�泰然，肢体魔法奥术的专家导师，与他的族人一起住在伊法里纳海的匕伤群岛。")
+    evt.SetMessage("泽瓦·泰然，肢体魔法奥术的专家导师，与他的族人一起住在伊法里纳海的匕伤群岛。")
     SetAutonote(143) -- Zevah Poised, Expert instructor of Body Magic, lives with his people on the Islands of Dagger Wound.
 end)
 
 RegisterGlobalEvent(469, "土加·爱林", function()
-    evt.SetMessage("图戈尔�阿林，肢体魔法大师，在绞刑峡谷地区以治疗技艺效力于骑士查尔斯�奇克奥。\n他的肢体魔法被用来救治征讨绞刑峡谷龙族时受伤的年轻骑士们。")
+    evt.SetMessage("图戈尔·阿林，肢体魔法大师，在绞刑峡谷地区以治疗技艺效力于骑士查尔斯·奇克奥。\n他的肢体魔法被用来救治征讨绞刑峡谷龙族时受伤的年轻骑士们。")
     SetAutonote(144) -- Tugor Arin, Master of Body Magic can be found in the Garrote Gorge Dragon Hunter's Camp.
 end)
 
 RegisterGlobalEvent(470, "克理塔斯·雪树", function()
-    evt.SetMessage("宗师克里提亚斯�雪树，住在宁静的低语森林，远离世间的试炼与烦扰。\n唯有他能传授你肢体魔法之道，把你提升到这门奥术的宗师。")
+    evt.SetMessage("宗师克里提亚斯·雪树，住在宁静的低语森林，远离世间的试炼与烦扰。\n唯有他能传授你肢体魔法之道，把你提升到这门奥术的宗师。")
     SetAutonote(145) -- Grand Master of Body Magic, Critias Snowtree, dwells in the Murmurwoods forest.
 end)
 
 RegisterGlobalEvent(471, "阿基巴德·曙光", function()
-    evt.SetMessage("阿基巴德�晨辉，光明魔法专家导师，在伊法里纳海滨的渡鸦海滨城修习他的技艺。\n他父母给他取这个名字时，并不知道它与埃拉西亚死灵法师公会领袖同名。\n阿基巴德渴望在光明中成就自己的名声，而非活在同名者的黑暗里。")
+    evt.SetMessage("阿基巴德·晨辉，光明魔法专家导师，在伊法里纳海滨的渡鸦海滨城修习他的技艺。\n他父母给他取这个名字时，并不知道它与埃拉西亚死灵法师公会领袖同名。\n阿基巴德渴望在光明中成就自己的名声，而非活在同名者的黑暗里。")
     SetAutonote(146) -- Archibald Dawnsglow, Expert instructor of Light Magic, practices his arts in the city of Ravenshore.
 end)
 
 RegisterGlobalEvent(472, "卢理那斯·破晓者", function()
-    evt.SetMessage("大师卢尼乌斯�曙临，与低语森林的牧师们住在一起。你若能在森林的危险中幸存，他可把你提升为光明魔法大师。")
+    evt.SetMessage("大师卢尼乌斯·曙临，与低语森林的牧师们住在一起。你若能在森林的危险中幸存，他可把你提升为光明魔法大师。")
     SetAutonote(147) -- Master Light Magic teacher, Lunius Dawnbringer, dwells near the Temple of the Sun in the Murmurwoods.
 end)
 
 RegisterGlobalEvent(473, "艾德林·明眼", function()
-    evt.SetMessage("奥尔德林�明眼，光明宗师，把家安在雷格那岛上。\n他希望终结海盗的邪恶行径。\n你若能在海盗手中幸存，他可教你到宗师。")
+    evt.SetMessage("奥尔德林·明眼，光明宗师，把家安在雷格那岛上。\n他希望终结海盗的邪恶行径。\n你若能在海盗手中幸存，他可教你到宗师。")
     SetAutonote(148) -- Aldrin Cleareye, Grand Master of the Light, lives on the island of Regna.
 end)
 
 RegisterGlobalEvent(474, "帕特温·达肯摩尔", function()
-    evt.SetMessage("帕特温�暗森，黑暗魔法之道的专家导师，与阿尔瓦的黑暗精灵们住在一起。\n")
+    evt.SetMessage("帕特温·暗森，黑暗魔法之道的专家导师，与阿尔瓦的黑暗精灵们住在一起。\n")
     SetAutonote(149) -- Patwin Darkenmore, Expert teacher of the ways of Dark Magic, lives among the Dark Elves of Alvar.
 end)
 
 RegisterGlobalEvent(475, "卡拉·安伯普尔", function()
-    evt.SetMessage("黑暗魔法大师卡拉�棕池追随过西斯库斯�影行者——黑暗宗师——的足迹，如今与阴影塔的死灵法师们住在一起。")
+    evt.SetMessage("黑暗魔法大师卡拉·棕池追随过西斯库斯·影行者——黑暗宗师——的足迹，如今与阴影塔的死灵法师们住在一起。")
     SetAutonote(150) -- Dark Magic Master Carla Umberpool has a home in the village of Twilight at the base of the Shadowspire.
 end)
 
 RegisterGlobalEvent(476, "西西克斯·影跑者", function()
-    evt.SetMessage("西斯库斯�影行者，黑暗魔法艺术宗师，已在雷格那岛上安家。\n海盗船长们出击前会来这里求取她对船只的祝福。\n她能教你黑暗魔法宗师。")
+    evt.SetMessage("西斯库斯·影行者，黑暗魔法艺术宗师，已在雷格那岛上安家。\n海盗船长们出击前会来这里求取她对船只的祝福。\n她能教你黑暗魔法宗师。")
     SetAutonote(151) -- Sithicus Shadowrunner, the Grand Master Dark Magic instructor, lives on the island of Regna.
 end)
 
 RegisterGlobalEvent(477, "其拉·史巴克曼", function()
-    evt.SetMessage("基拉�火花人，鉴定物品技能的专家导师，住在阿尔瓦城。\n")
+    evt.SetMessage("基拉·火花人，鉴定物品技能的专家导师，住在阿尔瓦城。\n")
     SetAutonote(161) -- Kyra Sparkmen, Expert teacher of the Identify Item skill, lives in the city of Alvar.
 end)
 
@@ -4776,37 +4776,37 @@ RegisterGlobalEvent(478, "Eithian", function()
 end)
 
 RegisterGlobalEvent(479, "艾尔斯伯·络真", function()
-    evt.SetMessage("埃尔兹贝特�罗根，鉴定物品技能宗师，住在阴影塔的暮光城。\n她能教你达到宗师所需的一切。")
+    evt.SetMessage("埃尔兹贝特·罗根，鉴定物品技能宗师，住在阴影塔的暮光城。\n她能教你达到宗师所需的一切。")
     SetAutonote(163) -- Elzbet Roggen, Grand Master of the Identify Item skill, lives in the Shadowspire city of Twilight.
 end)
 
 RegisterGlobalEvent(480, "费许那·汤伯", function()
-    evt.SetMessage("菲什纳�汤布，从阿尔瓦商人的任上退休，回到他在伊法里纳海匕伤岛的家。\n去那儿找他，学商人之道的专家技能。")
+    evt.SetMessage("菲什纳·汤布，从阿尔瓦商人的任上退休，回到他在伊法里纳海匕伤岛的家。\n去那儿找他，学商人之道的专家技能。")
     SetAutonote(164) -- Fishner Thomb Expert Merchant instructor makes his home on the Islands of Dagger Wound.
 end)
 
 RegisterGlobalEvent(481, "费顿·艾佛森", function()
-    evt.SetMessage("芬顿�艾弗森，阿尔瓦商人大师，考核所有想在商人技能上精进的人。\n你会在商业城阿尔瓦找到芬顿，他能把你教到商人技能大师。")
+    evt.SetMessage("芬顿·艾弗森，阿尔瓦商人大师，考核所有想在商人技能上精进的人。\n你会在商业城阿尔瓦找到芬顿，他能把你教到商人技能大师。")
     SetAutonote(165) -- Fenton Iverson, Master Merchant instructor, lives in the merchant city of Alvar.
 end)
 
 RegisterGlobalEvent(482, "瑞文·快舌", function()
-    evt.SetMessage("雷文�快舌，阿尔瓦商人宗师，住在渡鸦海滨城。\n在那里，雷文能观察众多种族互相贸易往来。\n唯有他能把你的商人知识提升到宗师。")
+    evt.SetMessage("雷文·快舌，阿尔瓦商人宗师，住在渡鸦海滨城。\n在那里，雷文能观察众多种族互相贸易往来。\n唯有他能把你的商人知识提升到宗师。")
     SetAutonote(166) -- Raven Quicktoungue, Grand Master Merchant instructor, dwells in the city of Ravenshore.
 end)
 
 RegisterGlobalEvent(483, "艾凡达·拉兹", function()
-    evt.SetMessage("埃万达�洛茨教授修理物品的专家技能。\n他住在海滨城渡鸦海滨。")
+    evt.SetMessage("埃万达·洛茨教授修理物品的专家技能。\n他住在海滨城渡鸦海滨。")
     SetAutonote(167) -- Evandar Lotts teaches the Expert skills of Repairing Items. He dwells in the seaside city of Ravenshore.
 end)
 
 RegisterGlobalEvent(484, "逵克·珍妮", function()
-    evt.SetMessage("快手�杰妮是修理物品技能的大师。她住在绞刑峡谷屠龙者堡垒周围的村子里。")
+    evt.SetMessage("快手·杰妮是修理物品技能的大师。她住在绞刑峡谷屠龙者堡垒周围的村子里。")
     SetAutonote(168) -- Quick Jeni, is the Master of the Repair Item skill. She lives in the village around the Dragon Hunter's Fort in Garrote Gorge.
 end)
 
 RegisterGlobalEvent(485, "逵斯林·东克", function()
-    evt.SetMessage("奎思林�汤克，修理物品技能宗师，住在宁静的低语森林。\n他的技艺对太阳神殿极有价值。")
+    evt.SetMessage("奎思林·汤克，修理物品技能宗师，住在宁静的低语森林。\n他的技艺对太阳神殿极有价值。")
     SetAutonote(169) -- Quethrin Tonk, Grand Master of the Repair Item skill, dwells in Murmurwoods.
 end)
 
@@ -4816,52 +4816,52 @@ RegisterGlobalEvent(486, "Menasaur", function()
 end)
 
 RegisterGlobalEvent(487, "肯尼斯·欧特顿", function()
-    evt.SetMessage("肯尼思�奥特顿拥有十字军头衔，在绞刑峡谷效力于骑士查尔斯�奇克奥。\n传闻他曾徒手把一条龙摔倒在地。\n当然，击杀时别的骑士也得上。\n肯尼思还拥有健体大师导师的头衔。")
+    evt.SetMessage("肯尼思·奥特顿拥有十字军头衔，在绞刑峡谷效力于骑士查尔斯·奇克奥。\n传闻他曾徒手把一条龙摔倒在地。\n当然，击杀时别的骑士也得上。\n肯尼思还拥有健体大师导师的头衔。")
     SetAutonote(171) -- Kenneth Otterton, the Master instructor of Body Building lives in the Dragon Hunter's Camp in Garrote Gorge.
 end)
 
 RegisterGlobalEvent(488, "米凯尔·史密森", function()
-    evt.SetMessage("米克尔�史密森拥有“贾丹姆最强者”的头衔。\n他同时也是健体技能宗师。\n你若想完美你身体的力量，就去铁沙漠的铁锈镇村找他。")
+    evt.SetMessage("米克尔·史密森拥有“贾丹姆最强者”的头衔。\n他同时也是健体技能宗师。\n你若想完美你身体的力量，就去铁沙漠的铁锈镇村找他。")
     SetAutonote(172) -- Mikel Smithson is the Grand Master of the Body Building skill. Seek him out in the village of Rust in the Ironsand Desert.
 end)
 
 RegisterGlobalEvent(489, "艾顿·普特南", function()
-    evt.SetMessage("奥尔顿�帕特南是冥想艺术的专家。\n你若去海滨城渡鸦海滨找他，他就能教你。")
+    evt.SetMessage("奥尔顿·帕特南是冥想艺术的专家。\n你若去海滨城渡鸦海滨找他，他就能教你。")
     SetAutonote(173) -- Alton Putnam, is an Expert in the art of Meditation. He can instruct you if you seek him out in the seaside city of Ravenshore.
 end)
 
 RegisterGlobalEvent(490, "葛拉琴·耐芙莫尔", function()
-    evt.SetMessage("格雷琴�永逝，教授所有太阳牧师冥想的大师艺术。他住在太阳神殿附近的低语森林。")
+    evt.SetMessage("格雷琴·永逝，教授所有太阳牧师冥想的大师艺术。他住在太阳神殿附近的低语森林。")
     SetAutonote(174) -- Gretchin Nevermore, the teacher of Master Meditation, dwells in the merchant city of Alvar.
 end)
 
 RegisterGlobalEvent(491, "蓝诺德·夜行者", function()
-    evt.SetMessage("莱纳德�夜行者，冥想宗师，是阴影塔死灵法师公会最重要的成员之一。\n他在黎明城家中教授所有死灵法师冥想之术。")
+    evt.SetMessage("莱纳德·夜行者，冥想宗师，是阴影塔死灵法师公会最重要的成员之一。\n他在黎明城家中教授所有死灵法师冥想之术。")
     SetAutonote(175) -- Lenord Nightcrawler, Grand Master of Meditation, teaches from his home in the village of Twilight.
 end)
 
 RegisterGlobalEvent(492, "希尔克·夜行者", function()
-    evt.SetMessage("西尔克�夜行者，感知技能的专家导师，把家安在黑暗精灵城阿尔瓦。\n他大部分时间都在教阿尔瓦商人识破隐秘之物所需的技能，不过运气好的话，他也许会抽空教你。")
+    evt.SetMessage("西尔克·夜行者，感知技能的专家导师，把家安在黑暗精灵城阿尔瓦。\n他大部分时间都在教阿尔瓦商人识破隐秘之物所需的技能，不过运气好的话，他也许会抽空教你。")
     SetAutonote(176) -- Silk Nightwalker, Expert teacher of the Perception skill, makes his home in the Dark Elf city of Alvar.
 end)
 
 RegisterGlobalEvent(493, "海尔加·钢眼", function()
-    evt.SetMessage("海尔加�钢眼，与阴影塔的死灵法师们住在黎明城。\n死灵法师公会感激她在感知技能上的大师级教导。")
+    evt.SetMessage("海尔加·钢眼，与阴影塔的死灵法师们住在黎明城。\n死灵法师公会感激她在感知技能上的大师级教导。")
     SetAutonote(177) -- Helga Steeleye, teacher of Master Perception, lives in the Shadowspire city of Twilight.
 end)
 
 RegisterGlobalEvent(494, "巴兰·确尾", function()
-    evt.SetMessage("宗师巴兰�稳径住在牛头人城巴尔萨煞巢穴。\n要获得他在感知技能上的教导，你得去残破镇找他。")
+    evt.SetMessage("宗师巴兰·稳径住在牛头人城巴尔萨煞巢穴。\n要获得他在感知技能上的教导，你得去残破镇找他。")
     SetAutonote(178) -- Grand Master instructor of Perception, Balan Suretrail lives in the Minotaur city of Balthazar Lair.
 end)
 
 RegisterGlobalEvent(495, "凯斯瑞·塔兰", function()
-    evt.SetMessage("凯斯里克�塔伦特在铁沙漠铁锈镇村家中教授再生的专家知识。")
+    evt.SetMessage("凯斯里克·塔伦特在铁沙漠铁锈镇村家中教授再生的专家知识。")
     SetAutonote(179) -- Kethric Tarent, teaches Expert Regeneration from his home in the Ironsand Desert village of Rust.
 end)
 
 RegisterGlobalEvent(496, "威廉·山普森", function()
-    evt.SetMessage("威廉�桑普森，再生大师，住在宁静的低语森林。\n他利用太阳神殿的图书馆增进自己的巨魔历史知识。")
+    evt.SetMessage("威廉·桑普森，再生大师，住在宁静的低语森林。\n他利用太阳神殿的图书馆增进自己的巨魔历史知识。")
     SetAutonote(180) -- William Sampson, Master Regeneration instructor, lives in Murmurwoods.
 end)
 
@@ -4871,17 +4871,17 @@ RegisterGlobalEvent(497, "多尾乌许", function()
 end)
 
 RegisterGlobalEvent(498, "其王·为斯特", function()
-    evt.SetMessage("谢冯�维斯特教授解除陷阱的专家知识——这门技能对那些在他匕伤岛老家附近探索废墟神殿的人很有用。")
+    evt.SetMessage("谢冯·维斯特教授解除陷阱的专家知识——这门技能对那些在他匕伤岛老家附近探索废墟神殿的人很有用。")
     SetAutonote(182) -- Chevon Wist, teaches Expert Disarm Trap from his home on the Dagger Wound Islands.
 end)
 
 RegisterGlobalEvent(499, "凯力·来特芬格", function()
-    evt.SetMessage("凯莉�轻指，解除陷阱大师，已退休回到商业城阿尔瓦的家中。\n在那里她仍教年轻商人设陷阱与解除宝箱机关的技能。\n你若够格，她能把你的解除陷阱技能提升到大师。")
+    evt.SetMessage("凯莉·轻指，解除陷阱大师，已退休回到商业城阿尔瓦的家中。\n在那里她仍教年轻商人设陷阱与解除宝箱机关的技能。\n你若够格，她能把你的解除陷阱技能提升到大师。")
     SetAutonote(183) -- Kelli Lightfingers, Master of Disarming Traps, teaches from her home in the city of Alvar.
 end)
 
 RegisterGlobalEvent(500, "加拉司·理夫特", function()
-    evt.SetMessage("加雷斯�举重者，解除陷阱宗师，住在奢华的雷格那岛，在那里他教海盗同伴们如何最精巧地为劫掠来的宝箱设陷阱。")
+    evt.SetMessage("加雷斯·举重者，解除陷阱宗师，住在奢华的雷格那岛，在那里他教海盗同伴们如何最精巧地为劫掠来的宝箱设陷阱。")
     SetAutonote(184) -- Gareth Lifter, Grand Master of Disarming Traps, teaches from his home on the island of Regna.
 end)
 
@@ -5003,22 +5003,22 @@ RegisterGlobalEvent(506, nil, function()
 end)
 
 RegisterGlobalEvent(507, "泰沙·马克", function()
-    evt.SetMessage("泰莎�制造者，怪物鉴定专家，想通过编目绞刑峡谷的各种龙来精进技艺。\n她目前效力于骑士查尔斯�奇克奥。")
+    evt.SetMessage("泰莎·制造者，怪物鉴定专家，想通过编目绞刑峡谷的各种龙来精进技艺。\n她目前效力于骑士查尔斯·奇克奥。")
     SetAutonote(191) -- Tessa Maker, Expert in Monster Identification, lives in the Garrote Gorge Dragon Hunter's Camp.
 end)
 
 RegisterGlobalEvent(508, "马崔克·锐锋", function()
-    evt.SetMessage("马特里克�锐边，鉴定怪物技能大师，目前在研究低语森林的生物。\n你若想达到这门技能的大师级，就得去那儿找他。")
+    evt.SetMessage("马特里克·锐边，鉴定怪物技能大师，目前在研究低语森林的生物。\n你若想达到这门技能的大师级，就得去那儿找他。")
     SetAutonote(192) -- Matric Keenedge, Master Identify Monster teacher, can be found in Murmurwoods.
 end)
 
 RegisterGlobalEvent(509, "布拉肯·石刀", function()
-    evt.SetMessage("布莱克恩�劈石，怪物鉴定宗师，见过贾丹姆大陆上的每一种生物。\n你若在渡鸦海滨城找到他的家，他就能把知识教给你。")
+    evt.SetMessage("布莱克恩·劈石，怪物鉴定宗师，见过贾丹姆大陆上的每一种生物。\n你若在渡鸦海滨城找到他的家，他就能把知识教给你。")
     SetAutonote(193) -- Blacken Stonecleaver, Grand Master of Monster Identification, teaches his skill from his home in the city of Ravenshore.
 end)
 
 RegisterGlobalEvent(510, "诺伯特·杀手", function()
-    evt.SetMessage("骑士诺伯特�斩杀者，以武器精通的专家形态教授查尔斯�奇克奥麾下所有骑士。\n你若去绞刑峡谷，可以旁听他的一课。")
+    evt.SetMessage("骑士诺伯特·斩杀者，以武器精通的专家形态教授查尔斯·奇克奥麾下所有骑士。\n你若去绞刑峡谷，可以旁听他的一课。")
     SetAutonote(194) -- Knight Norbert Slayer, Expert Armsmaster instructor, lives in the Garrote Gorge Dragon Hunter's Camp.
 end)
 
@@ -5028,7 +5028,7 @@ RegisterGlobalEvent(511, "疤面拉沙庭", function()
 end)
 
 RegisterGlobalEvent(512, "杰斯伯·史提尔克夫", function()
-    evt.SetMessage("贾斯珀�钢盔，武器精通技能宗师，是雷格那海盗议会的领袖之一。\n他教所有海盗使用武器。\n你若有勇气去雷格那——并在他的教导下幸存——你也将拥有这门技能的宗师。")
+    evt.SetMessage("贾斯珀·钢盔，武器精通技能宗师，是雷格那海盗议会的领袖之一。\n他教所有海盗使用武器。\n你若有勇气去雷格那——并在他的教导下幸存——你也将拥有这门技能的宗师。")
     SetAutonote(196) -- Jasper Steelcoif, Grand Master teacher of the Armsmaster skill, can be found on Regna Island.
 end)
 
@@ -5056,7 +5056,7 @@ RegisterGlobalEvent(514, nil, function()
 end)
 
 RegisterGlobalEvent(515, nil, function()
-    evt.SetMessage("太好了！\n这是一箱箭头。\n埃拉西亚的皮普�希利尔收购这些出价最高。务必去见他！")
+    evt.SetMessage("太好了！\n这是一箱箭头。\n埃拉西亚的皮普·希利尔收购这些出价最高。务必去见他！")
     ClearQBit(QBit(764)) -- Bought Item 3
     if IsAtLeast(Gold, 200) then
         if not IsAtLeast(Gold, 200) then
@@ -5088,12 +5088,12 @@ RegisterCanShowTopic(515, function()
 end)
 
 RegisterGlobalEvent(516, "塔必煞·瓦特沙", function()
-    evt.SetMessage("塔比莎�分水岭，炼金巫师专家，在商业城阿尔瓦的家中教授药水与药膏技艺。")
+    evt.SetMessage("塔比莎·分水岭，炼金巫师专家，在商业城阿尔瓦的家中教授药水与药膏技艺。")
     SetAutonote(200) -- Tabitha Watershed, Expert Alchemy instructor, teaches from her home in the merchant city of Alvar.
 end)
 
 RegisterGlobalEvent(517, "凯斯瑞·宝石", function()
-    evt.SetMessage("凯斯瑞�宝石，炼金巫师大师，住在低语森林，研究那片宁静森林里生长的植物与蘑菇。")
+    evt.SetMessage("凯斯瑞·宝石，炼金巫师大师，住在低语森林，研究那片宁静森林里生长的植物与蘑菇。")
     SetAutonote(201) -- Kethry Treasurestone, Master Alchemy teacher, lives in the Murmurwoods region.
 end)
 
@@ -5103,47 +5103,47 @@ RegisterGlobalEvent(518, "Ich", function()
 end)
 
 RegisterGlobalEvent(519, "派德拉·密斯瑞", function()
-    evt.SetMessage("佩特拉�米斯里特，学习技能专家，住在低语森林太阳神殿附近。")
+    evt.SetMessage("佩特拉·米斯里特，学习技能专家，住在低语森林太阳神殿附近。")
     SetAutonote(203) -- Petra Mithrit, Expert teacher of the Learning skill, dwells near the Temple of the Sun in the Murmurwoods.
 end)
 
 RegisterGlobalEvent(520, "加瑞特·雾春", function()
-    evt.SetMessage("加勒特�泉雾，学习大师，教授所有死灵法术学员学习的艺术。\n死灵法师公会为此重谢他。\n他家在阴影塔脚下的黎明城。")
+    evt.SetMessage("加勒特·泉雾，学习大师，教授所有死灵法术学员学习的艺术。\n死灵法师公会为此重谢他。\n他家在阴影塔脚下的黎明城。")
     SetAutonote(204) -- Garret Mistspring, Master of Learning, instructs students from his home is in the Shadowspire city of Twilight.
 end)
 
 RegisterGlobalEvent(521, "汪达·来特史汪", function()
-    evt.SetMessage("旺达�誓光，学习宗师，受雇于查尔斯�奇克奥，教授他麾下所有骑士学习的技能。\n查尔斯�奇克奥希望这能让他的部队在对抗绞刑峡谷龙族的战斗中占得先机。")
+    evt.SetMessage("旺达·誓光，学习宗师，受雇于查尔斯·奇克奥，教授他麾下所有骑士学习的技能。\n查尔斯·奇克奥希望这能让他的部队在对抗绞刑峡谷龙族的战斗中占得先机。")
     SetAutonote(205) -- Wanda Lightsworn, Grand Master of Learning, lives in the Garrote Gorge Dragon Hunter's Camp.
 end)
 
 RegisterGlobalEvent(522, "佛林·沙达", function()
-    evt.SetMessage("弗林�沙多，吸血鬼专家，住在暮光城，为任何前往该地区的吸血鬼充当耳目与安全屋。\n他能教你吸血鬼的专家能力。")
+    evt.SetMessage("弗林·沙多，吸血鬼专家，住在暮光城，为任何前往该地区的吸血鬼充当耳目与安全屋。\n他能教你吸血鬼的专家能力。")
     SetAutonote(155) -- Flynn Shador, Expert Vampire ability instructor, lives in the Shadowspire city of Twilight.
 end)
 
 RegisterGlobalEvent(523, "道格拉斯·德斯摩尔", function()
-    evt.SetMessage("道格拉斯�迪尔思穆尔，吸血鬼大师，会教任何本领达他标准的人。\n一旦他教完你，你就掌握了所有吸血鬼天生的大师能力。\n他家在阴影塔的黎明城。")
+    evt.SetMessage("道格拉斯·迪尔思穆尔，吸血鬼大师，会教任何本领达他标准的人。\n一旦他教完你，你就掌握了所有吸血鬼天生的大师能力。\n他家在阴影塔的黎明城。")
     SetAutonote(156) -- Douglas Dirthmoore, Master Vampire ability instructor, makes his home in the Shadowspire city of Twilight.
 end)
 
 RegisterGlobalEvent(524, "佩吉·阿拉尼雅", function()
-    evt.SetMessage("尽管无人确知，佩奇�蛛形，吸血鬼宗师，传闻是贾丹姆大陆上第一位吸血鬼。她通晓作为吸血鬼生存的一切，能教你她所拥有的宗师能力。\n去阴影塔找她的巢穴。")
+    evt.SetMessage("尽管无人确知，佩奇·蛛形，吸血鬼宗师，传闻是贾丹姆大陆上第一位吸血鬼。她通晓作为吸血鬼生存的一切，能教你她所拥有的宗师能力。\n去阴影塔找她的巢穴。")
     SetAutonote(157) -- Payge Arachnia, Grand Master Vampire ability instructor, lives in her lair located in Shadowspire.
 end)
 
 RegisterGlobalEvent(525, "费德温·德维禧", function()
-    evt.SetMessage("费德温�苦修者能教你黑暗精灵的专家之道。\n一旦受教于他，你就踏上了成为族人领袖的伟大旅程。\n去黑暗精灵城阿尔瓦找他。")
+    evt.SetMessage("费德温·苦修者能教你黑暗精灵的专家之道。\n一旦受教于他，你就踏上了成为族人领袖的伟大旅程。\n去黑暗精灵城阿尔瓦找他。")
     SetAutonote(152) -- Fedwin Dervish, can instruct you in the Expert ways of the Dark Elf ability. Search him out in the Dark Elf city of Alvar.
 end)
 
 RegisterGlobalEvent(526, "蓝西·卡佛希尔", function()
-    evt.SetMessage("兰希�洞山，阿尔瓦商人大师，目前住在海滨港城渡鸦海滨。\n她精通如何把所有黑暗精灵天生的能力练到大师级。")
+    evt.SetMessage("兰希·洞山，阿尔瓦商人大师，目前住在海滨港城渡鸦海滨。\n她精通如何把所有黑暗精灵天生的能力练到大师级。")
     SetAutonote(153) -- Lanshee Caverhill lives in the seaside port of Ravenshore. She teaches the Master skills of the Dark Elf ability.
 end)
 
 RegisterGlobalEvent(527, "堂·爱格瑞尼尔", function()
-    evt.SetMessage("唐�阿格雷内尔，阿尔瓦商人大师，能教你黑暗精灵的宗师技能。\n你得证明自己配受他的教导，但回报完全值得这番努力。")
+    evt.SetMessage("唐·阿格雷内尔，阿尔瓦商人大师，能教你黑暗精灵的宗师技能。\n你得证明自己配受他的教导，但回报完全值得这番努力。")
     SetAutonote(154) -- Ton Agraynel can instruct you in the Grand Master skills of a Dark Elf. He lives in the city of Alvar.
 end)
 
@@ -5153,12 +5153,12 @@ RegisterGlobalEvent(528, "Ishton", function()
 end)
 
 RegisterGlobalEvent(529, "Erthint", function()
-    evt.SetMessage("龙大师厄辛特是所有效忠于巧爪�掠夺者之龙的飞行队长，能把一条龙的天生龙类能力教到大师级。厄辛特住在绞刑峡谷的龙穴里。")
+    evt.SetMessage("龙大师厄辛特是所有效忠于巧爪·掠夺者之龙的飞行队长，能把一条龙的天生龙类能力教到大师级。厄辛特住在绞刑峡谷的龙穴里。")
     SetAutonote(159) -- Master Dragon ability instructor, Erthint, lives in the Dragon Caves of Garrote Gorge.
 end)
 
 RegisterGlobalEvent(530, "克兰·疤翅", function()
-    evt.SetMessage("克莱因�疤翼，实力仅次于巧爪�掠夺者本人。\n克莱因拥有龙族宗师头衔，教所有龙运用天生能力。\n你若想达到宗师境界，就去找他。\n他就住在这儿，绞刑峡谷的龙穴里。")
+    evt.SetMessage("克莱因·疤翼，实力仅次于巧爪·掠夺者本人。\n克莱因拥有龙族宗师头衔，教所有龙运用天生能力。\n你若想达到宗师境界，就去找他。\n他就住在这儿，绞刑峡谷的龙穴里。")
     SetAutonote(160) -- Klain, the Grand Master Dragon ability instructor dwells in the Dragon Caves of Garrote Gorge.
 end)
 
@@ -5915,18 +5915,18 @@ RegisterGlobalEvent(581, "牧师与死灵法师之战", function()
     elseif IsQBitSet(QBit(20)) then -- Allied with Temple of the Sun. Destroy the Skeleton Transformer done.
         evt.SetMessage("由于你毁掉了死灵法师公会的骨架转化器，太阳神殿在与公会的战争中占了上风。那装置造出的骷髅是公会增援的主力。没了它们，死灵法师的军队在神殿推进面前土崩瓦解。我收到的每份报告，都把战线的核心推向死灵法师公会的门口。")
     else
-        evt.SetMessage("死灵法师公会与太阳神殿分居光明到黑暗光谱的两端，二者关系素来不佳，如今更是公开交战。神殿大祭司奥斯卡�泰尔说，是一次神圣异象驱使他向公会宣战，好把贾丹姆从黑暗的玷污中清洗出去。两派在我们大陆上都算新来者。公会落脚阴影塔，而贾丹姆第一座（也是唯一一座）太阳神殿在低语森林。")
+        evt.SetMessage("死灵法师公会与太阳神殿分居光明到黑暗光谱的两端，二者关系素来不佳，如今更是公开交战。神殿大祭司奥斯卡·泰尔说，是一次神圣异象驱使他向公会宣战，好把贾丹姆从黑暗的玷污中清洗出去。两派在我们大陆上都算新来者。公会落脚阴影塔，而贾丹姆第一座（也是唯一一座）太阳神殿在低语森林。")
     end
 end)
 
 RegisterGlobalEvent(582, "屠龙者", function()
     if IsQBitSet(QBit(21)) then -- Allied with Charles Quioxte's Dragon Hunters. Return Dragon Egg to Quixote done.
-        evt.SetMessage("看来查尔斯�奇克奥在绞刑峡谷的猎龙行动几乎把那里的龙捕杀殆尽。我想等他们完事，那些山旅行起来会更安全。不过我倒想知道，没有了龙，贾丹姆会变成什么样。")
+        evt.SetMessage("看来查尔斯·奇克奥在绞刑峡谷的猎龙行动几乎把那里的龙捕杀殆尽。我想等他们完事，那些山旅行起来会更安全。不过我倒想知道，没有了龙，贾丹姆会变成什么样。")
         return
     elseif IsQBitSet(QBit(22)) then -- Allied with Dragons. Return Dragon Egg to Dragons done.
-        evt.SetMessage("你替巧爪�掠夺者寻回了他的继承人，让他能安全进攻查尔斯�奇克奥的营地。屠龙者靠孤立猎物成员行动。他们根本没准备好面对成群的龙！不用说，营地的龙产品产量已锐减到涓滴。可惜。公会从前靠它们赚了不少。")
+        evt.SetMessage("你替巧爪·掠夺者寻回了他的继承人，让他能安全进攻查尔斯·奇克奥的营地。屠龙者靠孤立猎物成员行动。他们根本没准备好面对成群的龙！不用说，营地的龙产品产量已锐减到涓滴。可惜。公会从前靠它们赚了不少。")
     else
-        evt.SetMessage("著名屠龙者、埃拉西亚的查尔斯�奇克奥在绞刑峡谷设了一支狩猎队。这可不是什么“游猎”，事实上，这是我听说过的同类最大规模行动。猎手们有个固定基地，在那里贩卖皮革、龙蛋、幼龙和其他物品。绞刑峡谷向来龙口众多，但我想它们如今必濒临灭绝——奇克奥的猎手效率太高了。")
+        evt.SetMessage("著名屠龙者、埃拉西亚的查尔斯·奇克奥在绞刑峡谷设了一支狩猎队。这可不是什么“游猎”，事实上，这是我听说过的同类最大规模行动。猎手们有个固定基地，在那里贩卖皮革、龙蛋、幼龙和其他物品。绞刑峡谷向来龙口众多，但我想它们如今必濒临灭绝——奇克奥的猎手效率太高了。")
     end
 end)
 
@@ -5975,11 +5975,11 @@ RegisterGlobalEvent(589, "恩洛斯", function()
 end)
 
 RegisterGlobalEvent(590, "埃拉西亚", function()
-    evt.SetMessage("我们在埃拉西亚击败克里根人后，我把王位禅让给了我的一位将军——摩根�肯德尔——由他摄政。我已把挑选埃拉西亚新统治者的任务交在他能干的手里。我知道这放弃得很多，但我首先是恩洛斯的女王。大灾变发生时，我们正乘船前往那里，结果被卷到了这里。")
+    evt.SetMessage("我们在埃拉西亚击败克里根人后，我把王位禅让给了我的一位将军——摩根·肯德尔——由他摄政。我已把挑选埃拉西亚新统治者的任务交在他能干的手里。我知道这放弃得很多，但我首先是恩洛斯的女王。大灾变发生时，我们正乘船前往那里，结果被卷到了这里。")
 end)
 
 RegisterGlobalEvent(591, "克里根人", function()
-    evt.SetMessage("克里根人？他们已经不复存在；我对此确信无疑。我们平定路西法�克里根之后，我的军队搜遍了埃奥法，寻找他们残余的任何迹象。一无所获。不，我们世界的克里根之灾已被清除。")
+    evt.SetMessage("克里根人？他们已经不复存在；我对此确信无疑。我们平定路西法·克里根之后，我的军队搜遍了埃奥法，寻找他们残余的任何迹象。一无所获。不，我们世界的克里根之灾已被清除。")
 end)
 
 RegisterGlobalEvent(592, "元素生物", function()
@@ -6129,7 +6129,7 @@ RegisterGlobalEvent(654, "我的生活", function()
         evt.SetMessage("还是个孩子时，我就知道自己与奶酪有着特殊的缘分。你瞧，我的第一段记忆，就是从母亲手里咬一小口农家切达干酪！从那天起我就知道，品尝奶酪、通晓它无尽的奇妙滋味、走遍世界搜寻稀有珍奇的奶酪之物，将是我的热爱。我也就这样造就了自己的人生……与命运。")
         return
     end
-    evt.SetMessage("有了你带给我的奶酪，我如今已尝遍世界上已知的所有奶酪。如今谁也不能说我，阿赛尔�弗罗玛戈，不是历史上最杰出的奶酪鉴赏家！无人能与我的荣耀相比！哈哈哈哈……")
+    evt.SetMessage("有了你带给我的奶酪，我如今已尝遍世界上已知的所有奶酪。如今谁也不能说我，阿赛尔·弗罗玛戈，不是历史上最杰出的奶酪鉴赏家！无人能与我的荣耀相比！哈哈哈哈……")
 end)
 
 RegisterGlobalEvent(655, "沃里奶酪大师", function()
@@ -6273,7 +6273,7 @@ RegisterGlobalEvent(674, "其它飞龙", function()
 end)
 
 RegisterGlobalEvent(675, "雷格那飞龙", function()
-    evt.SetMessage("查尔斯�奇克奥把我们从埃拉西亚带过来时，船驶过雷格那岛。由于这是航程中我们头一次见到贾丹姆的土地，我看到一条古龙振翅飞向该岛，算是我们狩猎远征马到成功的吉兆。我多希望能给那家伙一矛！那是我见过最大的龙！")
+    evt.SetMessage("查尔斯·奇克奥把我们从埃拉西亚带过来时，船驶过雷格那岛。由于这是航程中我们头一次见到贾丹姆的土地，我看到一条古龙振翅飞向该岛，算是我们狩猎远征马到成功的吉兆。我多希望能给那家伙一矛！那是我见过最大的龙！")
 end)
 
 RegisterGlobalEvent(676, "毁灭者", function()
@@ -6347,7 +6347,7 @@ RegisterGlobalEvent(690, "Adventure", function()
         evt.SetMessage("跟你们走？我想不会。我在这儿有的是热闹，何必加入一群外行？别逗我笑了。你们能给我什么，是猎龙生涯给不了的？")
         return
     end
-    evt.SetMessage("与你们一同冒险？好啊。事实上，查尔斯�奇克奥离开前就这么建议过。“内利克斯，”他说，“那些联盟英雄要是路过，你该考虑跟他们走。”显然，他很看重你们。好吧，他的举荐对我就够了。我们走？")
+    evt.SetMessage("与你们一同冒险？好啊。事实上，查尔斯·奇克奥离开前就这么建议过。“内利克斯，”他说，“那些联盟英雄要是路过，你该考虑跟他们走。”显然，他很看重你们。好吧，他的举荐对我就够了。我们走？")
     evt.SetNPCTopic(280, 0, 619) -- Nelix Uriel topic 0: Roster Join Event
 end)
 
@@ -6407,7 +6407,7 @@ end)
 
 RegisterGlobalEvent(697, "加入我们", function()
     if not IsQBitSet(QBit(38)) then -- Quest 36 is done.
-        evt.SetMessage("加入你们？呵-呵。多有趣的主意。伟大的索恩�底石凭什么跟你们这种人同行？")
+        evt.SetMessage("加入你们？呵-呵。多有趣的主意。伟大的索恩·底石凭什么跟你们这种人同行？")
         return
     end
     evt.SetMessage("好！听上去真棒。从我听到的你们的冒险来看，你们有机会成就伟大。有我相助，我们能把这机会变成必然。那么，我们走？我总在寻找为自己传奇添砖加瓦的机会！")
@@ -6484,7 +6484,7 @@ end)
 
 RegisterGlobalEvent(708, "加入我们", function()
     if not IsQBitSet(QBit(59)) then -- Returned to the Merchant guild in Alvar with overdune. Quest 25 done.
-        evt.SetMessage("我想不会！我凭什么跟你们这种人同行？也许你没听清我的名字，“贾斯�塞尔本？”对，就是那个“塞尔本”，乌合之众。不，不管你们在搞什么，我没兴趣。")
+        evt.SetMessage("我想不会！我凭什么跟你们这种人同行？也许你没听清我的名字，“贾斯·塞尔本？”对，就是那个“塞尔本”，乌合之众。不，不管你们在搞什么，我没兴趣。")
         return
     end
     evt.SetMessage("好，我们会组成一支了不起的队伍！我们都建下如此伟绩，联合起来岂能不续辉煌？你们愿意，我就跟你们走。")
@@ -6504,7 +6504,7 @@ RegisterGlobalEvent(710, "Wasps", function()
 end)
 
 RegisterGlobalEvent(711, "受过训练的飞龙", function()
-    evt.SetMessage("这事没多少人知道，龙是可以训练的。有点像驯马，只不过需要更特殊的装备和大量魔法。堡垒外那些温顺的龙就是我的作品。此刻它们效忠于我们，但我会把它们交给最终买主——恩洛斯的小领主芬尼斯�格林伍德。当然，等他付了钱我就这么做。")
+    evt.SetMessage("这事没多少人知道，龙是可以训练的。有点像驯马，只不过需要更特殊的装备和大量魔法。堡垒外那些温顺的龙就是我的作品。此刻它们效忠于我们，但我会把它们交给最终买主——恩洛斯的小领主芬尼斯·格林伍德。当然，等他付了钱我就这么做。")
 end)
 
 RegisterGlobalEvent(712, "Zanthora", function()
@@ -6540,7 +6540,7 @@ RegisterGlobalEvent(719, "恐怖海盗史坦力", function()
 end)
 
 RegisterGlobalEvent(720, "贾丹姆的走私者", function()
-    evt.SetMessage("哦，当然，我们雷格那人得容忍一点竞争——我指的是走私者，你知道的——可我听说恐怖海盗斯坦利正在收拾他们。我听说他绑架了艾瑞安�韩特的家人，好胁迫那个鼠人别踏我们的地盘。")
+    evt.SetMessage("哦，当然，我们雷格那人得容忍一点竞争——我指的是走私者，你知道的——可我听说恐怖海盗斯坦利正在收拾他们。我听说他绑架了艾瑞安·韩特的家人，好胁迫那个鼠人别踏我们的地盘。")
 end)
 
 RegisterGlobalEvent(721, "史坦力的财宝", function()
@@ -6595,12 +6595,12 @@ RegisterGlobalEvent(732, "Hint", function()
     evt.ForPlayer(Players.All)
     if IsQBitSet(QBit(4)) then -- Letter from Q Bit 3 delivered.
         if not IsQBitSet(QBit(24)) then -- Received Reward from Elgar Fellmoon for completing quest 9.
-            evt.SetMessage("我看见一个幻象：你把渡鸦海滨埃尔加�月落的一封信带给渡鸦海滨走私者领袖艾瑞安�韩特。此后你回到月落身边。幻象结尾模糊不清，说明你尚未亲历到底。不过，做这些事是你的命运。")
+            evt.SetMessage("我看见一个幻象：你把渡鸦海滨埃尔加·月落的一封信带给渡鸦海滨走私者领袖艾瑞安·韩特。此后你回到月落身边。幻象结尾模糊不清，说明你尚未亲历到底。不过，做这些事是你的命运。")
             SetAutonote(235) -- I see a vision of you in which you take a letter from Elgar Fellmoon in Ravenshore to Arion Hunter, the leader of the Ravenshore smugglers. After this, you return to Fellmoon. The end of the vision is a blur, so you must not have lived entirely through it. Still, it is your fate to do these things.
             return
         end
         if not IsQBitSet(QBit(12)) then -- Quest 11 is done.
-            evt.SetMessage("我不需要幻象也知道你下一步该做什么。照月落请你的去做。去找阿尔瓦商人公会会长巴斯沈�卢德林。他在阿尔瓦城。")
+            evt.SetMessage("我不需要幻象也知道你下一步该做什么。照月落请你的去做。去找阿尔瓦商人公会会长巴斯沈·卢德林。他在阿尔瓦城。")
             SetAutonote(236) -- I don't need my vision to tell me what you must do next. Do as Fellmoon asked of you. Go seek Bastian Loudrin, the guildmaster of the Alvarian Merchant Guild. He is in the city of Alvar.
             return
         end
@@ -6720,12 +6720,12 @@ RegisterGlobalEvent(732, "Hint", function()
             evt.SetMessage("昨夜我在梦中，看见你前往铁沙漠，寻找一位目击者，他能证明大灾变期间那里如何形成了一个巨大的火湖。")
             SetAutonote(238) -- In my dreams last night, I saw you traveling to the Ironsand Desert to find a witness to the formation of a great lake of fire which formed there during the cataclysm.
         else
-            evt.SetMessage("我看到现在与你未来之间一条重要的联系尚未建立。你必须回到巴斯沈�卢德林身边，继续与他对话。他会把你道路的下一步交给你。")
+            evt.SetMessage("我看到现在与你未来之间一条重要的联系尚未建立。你必须回到巴斯沈·卢德林身边，继续与他对话。他会把你道路的下一步交给你。")
             SetAutonote(237) -- I see an important connection has not been made between the present and your future. You must return to Bastian Loudrin and continue your conversations with him. He will send you on the next step down your road.
         end
         return
     elseif IsQBitSet(QBit(3)) then -- Deliver Dadeross' Letter to Elgar Fellmoon at the Merchant House in Ravenshore. - Given by Dadeross in Dagger Wound. Taken by Fellmoon in Ravenshore.
-        evt.SetMessage("嗯……我看不了太远——今天以太太厚。我只看到你必须把达德洛斯给你的信交给商人埃尔加�月落。月落在渡鸦海滨城。")
+        evt.SetMessage("嗯……我看不了太远——今天以太太厚。我只看到你必须把达德洛斯给你的信交给商人埃尔加·月落。月落在渡鸦海滨城。")
         SetAutonote(234) -- Hmmm�I cannot look too far ahead--for the ether is thick today. All I see is that you must deliver the letter Dadeross gave you to the merchant, Elgar Fellmoon. Fellmoon lives in the city of Ravenshore.
     else
         evt.SetMessage("你们受雇于阿尔瓦商人，对吧？那我想你该去找达德洛斯，你们商队的领袖。我的远视幻象告诉我，他在匕伤群岛。")
@@ -6761,7 +6761,7 @@ RegisterGlobalEvent(733, "晋升黑暗精灵", function()
             end
         end
     else
-        evt.SetMessage("找不到考丽�黑荆棘的下落，你们就不能晋升！\n找到她，她会晋升你们。\n等她被找到并回到商人公会后，我很乐意把你队伍里任何黑暗精灵晋升为宗长。")
+        evt.SetMessage("找不到考丽·黑荆棘的下落，你们就不能晋升！\n找到她，她会晋升你们。\n等她被找到并回到商人公会后，我很乐意把你队伍里任何黑暗精灵晋升为宗长。")
     end
 end)
 
@@ -6933,7 +6933,7 @@ RegisterGlobalEvent(738, "晋升死灵法师", function()
             end
         end
     else
-        evt.SetMessage("你还没寻回凯尔佚书！\n不把书带回来，就别想晋升！\n找维特里努斯�泰尔希尔谈谈。")
+        evt.SetMessage("你还没寻回凯尔佚书！\n不把书带回来，就别想晋升！\n找维特里努斯·泰尔希尔谈谈。")
     end
 end)
 
@@ -7666,7 +7666,7 @@ RegisterGlobalEvent(799, nil, function()
             evt.SetMessage("我能把一个普通游荡者变成可怕的杀手，但前提是他有干这行的性情。\n你必须选择走光明还是黑暗的时候快到了。\n你若偏爱阴影，就来找我，我完成你的训练。")
             return
         end
-        evt.SetMessage("这么说……你想当刺客。\n好吧。\n我可以为你们中间的游荡者提供必要训练，但你必须先证明你的手段与忠诚，我才肯在你身上花时间。\n我的上司通知我，某位埃莉诺�卡迈恩女士必须死。\n她曾为我们效力，如今却与我们的敌人同住天宫，向他们提供有损我们事业的情报。\n让她闭嘴，再带回一件她的小玩意儿证明事已办妥。")
+        evt.SetMessage("这么说……你想当刺客。\n好吧。\n我可以为你们中间的游荡者提供必要训练，但你必须先证明你的手段与忠诚，我才肯在你身上花时间。\n我的上司通知我，某位埃莉诺·卡迈恩女士必须死。\n她曾为我们效力，如今却与我们的敌人同住天宫，向他们提供有损我们事业的情报。\n让她闭嘴，再带回一件她的小玩意儿证明事已办妥。")
         SetQBit(QBit(533)) -- Go to the Celestial Court in Celeste and kill Lady Eleanor Carmine. Return with proof to Seknit Undershadow in the Deyja Moors.
         evt.SetNPCTopic(355, 1, 800) -- Seknit Undershadow topic 1: Assassin
     elseif IsQBitSet(QBit(1561)) then -- Promoted to Honorary Rogue
@@ -7674,7 +7674,7 @@ RegisterGlobalEvent(799, nil, function()
             evt.SetMessage("我能把一个普通游荡者变成可怕的杀手，但前提是他有干这行的性情。\n你必须选择走光明还是黑暗的时候快到了。\n你若偏爱阴影，就来找我，我完成你的训练。")
             return
         end
-        evt.SetMessage("这么说……你想当刺客。\n好吧。\n我可以为你们中间的游荡者提供必要训练，但你必须先证明你的手段与忠诚，我才肯在你身上花时间。\n我的上司通知我，某位埃莉诺�卡迈恩女士必须死。\n她曾为我们效力，如今却与我们的敌人同住天宫，向他们提供有损我们事业的情报。\n让她闭嘴，再带回一件她的小玩意儿证明事已办妥。")
+        evt.SetMessage("这么说……你想当刺客。\n好吧。\n我可以为你们中间的游荡者提供必要训练，但你必须先证明你的手段与忠诚，我才肯在你身上花时间。\n我的上司通知我，某位埃莉诺·卡迈恩女士必须死。\n她曾为我们效力，如今却与我们的敌人同住天宫，向他们提供有损我们事业的情报。\n让她闭嘴，再带回一件她的小玩意儿证明事已办妥。")
         SetQBit(QBit(533)) -- Go to the Celestial Court in Celeste and kill Lady Eleanor Carmine. Return with proof to Seknit Undershadow in the Deyja Moors.
         evt.SetNPCTopic(355, 1, 800) -- Seknit Undershadow topic 1: Assassin
     else
@@ -7748,7 +7748,7 @@ end)
 
 RegisterGlobalEvent(803, nil, function()
     if IsQBitSet(QBit(611)) then -- Chose the path of Light
-        evt.SetMessage("看到你选择光明之路，我很高兴，十字军们！\n朋友，一件不义之事已经发生，除了我们，还有谁能匡扶正义？\n一个邪恶恶棍绑架了一位名叫艾丽斯�哈格里夫斯的少女。\n他叫威廉�塞塔格，把她关在自己塔里。\n你们必须立刻策马前去，把这恶棍剑斩，救出可爱的艾丽斯！\n你们若成功，就将是真正的大地英雄！")
+        evt.SetMessage("看到你选择光明之路，我很高兴，十字军们！\n朋友，一件不义之事已经发生，除了我们，还有谁能匡扶正义？\n一个邪恶恶棍绑架了一位名叫艾丽斯·哈格里夫斯的少女。\n他叫威廉·塞塔格，把她关在自己塔里。\n你们必须立刻策马前去，把这恶棍剑斩，救出可爱的艾丽斯！\n你们若成功，就将是真正的大地英雄！")
         evt.SetNPCTopic(356, 0, 804) -- Sir Charles Quixote topic 0: Hero
         SetQBit(QBit(536)) -- Rescue Alice Hargreaves from William's Tower in the Deyja Moors then talk to Sir Charles Quixote.
         evt.SetNPCGreeting(356, 158) -- Sir Charles Quixote greeting: Hail. I am Sir Charles Quixote. I am the humble champion of the people, and I am at thy service.
@@ -7765,7 +7765,7 @@ RegisterGlobalEvent(804, nil, function()
         evt.SetMessage("尽管你们的功绩确实令人赞叹，十字军们，可在救出那姑娘之前，我不能封你们为英雄！")
         return
     end
-    evt.SetMessage("你们做到了！我早知道你们行！\n我真为你们骄傲！\n艾丽斯已挣脱邪恶威廉�塞塔格的魔掌，邪恶被击溃，正义得伸张。\n昔日不义之处，如今归于正义！[查尔斯长舒一口气，笑容灿烂]好了。\n我这儿的事办完了！\n你们通过了试炼，配得奖赏。\n因此我郑重封你们为英雄！")
+    evt.SetMessage("你们做到了！我早知道你们行！\n我真为你们骄傲！\n艾丽斯已挣脱邪恶威廉·塞塔格的魔掌，邪恶被击溃，正义得伸张。\n昔日不义之处，如今归于正义！[查尔斯长舒一口气，笑容灿烂]好了。\n我这儿的事办完了！\n你们通过了试炼，配得奖赏。\n因此我郑重封你们为英雄！")
     for _, player in ipairs(PartyMembers()) do
         evt.ForPlayer(player)
         if IsAtLeast(ClassId, 27) then
@@ -7814,7 +7814,7 @@ RegisterGlobalEvent(806, nil, function()
         evt.SetMessage("我当然最想腐蚀你那显然虔诚的灵魂，可恐怕你没胆子贯彻我的教导。\n你已选择光明之路，休想得到我的任何帮助。")
         return
     elseif IsQBitSet(QBit(612)) then -- Chose the path of Dark
-        evt.SetMessage("我们谈正事吧，如何？\n我知道你清楚我身为埃拉西亚最黑恶棍的地位。\n要证明自己这么邪恶，需要努力和冲劲——我希望你有这份胆气。\n我最想做的就是把你留在我手下训练数年，教你当恶棍最精妙的门道。\n不幸的是，上面催我加快你的学业。\n为此，我有一条直攻恶棍之道的捷径。\n有个女人，艾丽斯�哈格里夫斯，出身高贵、品性纯洁。\n把她从格芬哈特城堡的居所掳走。带回这里，关进我的塔里。\n办妥此事，我就把你队伍里所有十字军晋升为恶棍，把其余人封作荣誉恶棍。")
+        evt.SetMessage("我们谈正事吧，如何？\n我知道你清楚我身为埃拉西亚最黑恶棍的地位。\n要证明自己这么邪恶，需要努力和冲劲——我希望你有这份胆气。\n我最想做的就是把你留在我手下训练数年，教你当恶棍最精妙的门道。\n不幸的是，上面催我加快你的学业。\n为此，我有一条直攻恶棍之道的捷径。\n有个女人，艾丽斯·哈格里夫斯，出身高贵、品性纯洁。\n把她从格芬哈特城堡的居所掳走。带回这里，关进我的塔里。\n办妥此事，我就把你队伍里所有十字军晋升为恶棍，把其余人封作荣誉恶棍。")
         if IsQBitSet(QBit(1590)) then -- Promoted to Crusader
             SetQBit(QBit(538)) -- Capture Alice Hargreaves from her residence in Castle Gryphonheart and return her to William's Tower in the Deyja Moors.
             evt.SetNPCTopic(357, 0, 807) -- William Setag topic 0: Villain
@@ -7870,7 +7870,7 @@ RegisterGlobalEvent(809, nil, function()
 end)
 
 RegisterGlobalEvent(810, nil, function()
-    evt.SetMessage("[巴塞洛缪�休姆以意念联系你]恭喜，年轻人。\n我作为武僧给你们上的最后一课是：\n启蒙在于旅程，而非终点。\n此际，终点之所以关键，是为了证明你们走得完这趟旅程。\n我如今把所有武僧晋升为入门弟子，其余人等封为荣誉入门弟子——恭喜。")
+    evt.SetMessage("[巴塞洛缪·休姆以意念联系你]恭喜，年轻人。\n我作为武僧给你们上的最后一课是：\n启蒙在于旅程，而非终点。\n此际，终点之所以关键，是为了证明你们走得完这趟旅程。\n我如今把所有武僧晋升为入门弟子，其余人等封为荣誉入门弟子——恭喜。")
     for _, player in ipairs(PartyMembers()) do
         evt.ForPlayer(player)
         if IsAtLeast(ClassId, 22) then
@@ -7931,7 +7931,7 @@ end)
 RegisterGlobalEvent(813, nil, function()
     if IsQBitSet(QBit(1572)) then -- Promoted to Initiate
         if IsQBitSet(QBit(611)) then -- Chose the path of Light
-            evt.SetMessage("[斯特凡�桑嗤笑]你想让我教你东西？\n你们这些哭鼻子的老好人，让我拿刀的胳膊直痒痒！\n趁我没真教你什么叫打架，滚开！")
+            evt.SetMessage("[斯特凡·桑嗤笑]你想让我教你东西？\n你们这些哭鼻子的老好人，让我拿刀的胳膊直痒痒！\n趁我没真教你什么叫打架，滚开！")
             return
         elseif IsQBitSet(QBit(612)) then -- Chose the path of Dark
             evt.SetMessage("我的一个手下给我送来一封信，我需要破译。\n密码要靠知道某本书里某个词来对照。\n你想当忍者，就得这么做：潜入魔法学校，查出著名的《潮汐卷轴》第三个词是什么。\n用它破译信件，再照信里说的做。\n那是进入大师之墓的钥匙。\n你会在埃拉西亚南部找到那座墓。\n[斯特凡递给你一张纸片]这是那封密信。")
@@ -7945,7 +7945,7 @@ RegisterGlobalEvent(813, nil, function()
         end
     elseif IsQBitSet(QBit(1573)) then -- Promoted to Honorary Initiate
         if IsQBitSet(QBit(611)) then -- Chose the path of Light
-            evt.SetMessage("[斯特凡�桑嗤笑]你想让我教你东西？\n你们这些哭鼻子的老好人，让我拿刀的胳膊直痒痒！\n趁我没真教你什么叫打架，滚开！")
+            evt.SetMessage("[斯特凡·桑嗤笑]你想让我教你东西？\n你们这些哭鼻子的老好人，让我拿刀的胳膊直痒痒！\n趁我没真教你什么叫打架，滚开！")
             return
         elseif IsQBitSet(QBit(612)) then -- Chose the path of Dark
             evt.SetMessage("我的一个手下给我送来一封信，我需要破译。\n密码要靠知道某本书里某个词来对照。\n你想当忍者，就得这么做：潜入魔法学校，查出著名的《潮汐卷轴》第三个词是什么。\n用它破译信件，再照信里说的做。\n那是进入大师之墓的钥匙。\n你会在埃拉西亚南部找到那座墓。\n[斯特凡递给你一张纸片]这是那封密信。")
@@ -7958,7 +7958,7 @@ RegisterGlobalEvent(813, nil, function()
             return
         end
     else
-        evt.SetMessage("有抱负是好事，可我只训练有经验的学生。\n等你取得入门弟子身份再回来，也许我会教你……前提是你有正确的看法。\n你要是想找人帮你成为入门弟子，也许该从那个软蛋巴塞洛缪�休姆开始。\n我敢说他乐意给你启蒙教育。")
+        evt.SetMessage("有抱负是好事，可我只训练有经验的学生。\n等你取得入门弟子身份再回来，也许我会教你……前提是你有正确的看法。\n你要是想找人帮你成为入门弟子，也许该从那个软蛋巴塞洛缪·休姆开始。\n我敢说他乐意给你启蒙教育。")
         return
     end
 end)
@@ -8084,7 +8084,7 @@ RegisterGlobalEvent(819, nil, function()
         SetQBit(QBit(544)) -- Retrieve the Perfect Bow from the Titans' Stronghold in Avlee and return it to Steagal Snick in Avlee.
         evt.SetNPCTopic(380, 0, 820) -- Steagal Snick topic 0: Sniper
     elseif IsQBitSet(QBit(611)) then -- Chose the path of Light
-        evt.SetMessage("在追随光明之路，是吧？\n你每次从背后射人都要哭，怎么当狙击手？\n也许你该去找那个软心肠的劳伦斯�马克帮忙。\n我知道我不会帮你。")
+        evt.SetMessage("在追随光明之路，是吧？\n你每次从背后射人都要哭，怎么当狙击手？\n也许你该去找那个软心肠的劳伦斯·马克帮忙。\n我知道我不会帮你。")
     else
         evt.SetMessage("想当狙击手，嗯？也许。\n可我怀疑你有没有这个胆子。\n得心像葡萄干一样皱缩、像石头一样坚硬，才干得了你必须干的事。\n向我证明你追随黑暗之路，我再教你更深的。")
     end
@@ -8409,7 +8409,7 @@ end)
 RegisterGlobalEvent(836, nil, function()
     if IsQBitSet(QBit(1607)) then -- Promoted to Priest
         if IsQBitSet(QBit(611)) then -- Chose the path of Light
-            evt.SetMessage("牧师们。\n你们来找我，是求我做你们光明之路上的引路人。\n但要警告你们，要学它的道，你们必须先懂自己灵魂的道。\n我本建议我们就此冥想一阵，可看你们样子是急着走。\n布拉卡达南边有座叫埃弗蒙的岛，岛上有古老的太阳神庙与月亮神庙。\n两座庙里都住着两教的残余，曾经荣耀的教会沦落为争夺一座小岛的两座古神庙。\n太阳教会是我们当今信仰——光明之路——的发源宗教。\n我建议我们帮他们一把，把天平倒向太阳教会。\n用代达罗斯�福克派你去找来、用于当牧师的那张地图，说服一位船长送你们上岛。\n到了那里，在月亮教会净化祭坛，借此给予太阳教会援助与慰藉。\n这会大大削弱月亮教团，使太阳教会能在战斗中压倒他们。\n办完回来找我。\n")
+            evt.SetMessage("牧师们。\n你们来找我，是求我做你们光明之路上的引路人。\n但要警告你们，要学它的道，你们必须先懂自己灵魂的道。\n我本建议我们就此冥想一阵，可看你们样子是急着走。\n布拉卡达南边有座叫埃弗蒙的岛，岛上有古老的太阳神庙与月亮神庙。\n两座庙里都住着两教的残余，曾经荣耀的教会沦落为争夺一座小岛的两座古神庙。\n太阳教会是我们当今信仰——光明之路——的发源宗教。\n我建议我们帮他们一把，把天平倒向太阳教会。\n用代达罗斯·福克派你去找来、用于当牧师的那张地图，说服一位船长送你们上岛。\n到了那里，在月亮教会净化祭坛，借此给予太阳教会援助与慰藉。\n这会大大削弱月亮教团，使太阳教会能在战斗中压倒他们。\n办完回来找我。\n")
             SetQBit(QBit(554)) -- Purify the Altar of Evil in the Temple of the Moon on Evenmorn Isle then return to Rebecca Devine in Celeste.
             evt.SetNPCTopic(385, 0, 837) -- Rebecca Devine topic 0: Priest of Light
         elseif IsQBitSet(QBit(612)) then -- Chose the path of Dark
@@ -8420,7 +8420,7 @@ RegisterGlobalEvent(836, nil, function()
         return
     elseif IsQBitSet(QBit(1608)) then -- Promoted to Honorary Priest
         if IsQBitSet(QBit(611)) then -- Chose the path of Light
-            evt.SetMessage("牧师们。\n你们来找我，是求我做你们光明之路上的引路人。\n但要警告你们，要学它的道，你们必须先懂自己灵魂的道。\n我本建议我们就此冥想一阵，可看你们样子是急着走。\n布拉卡达南边有座叫埃弗蒙的岛，岛上有古老的太阳神庙与月亮神庙。\n两座庙里都住着两教的残余，曾经荣耀的教会沦落为争夺一座小岛的两座古神庙。\n太阳教会是我们当今信仰——光明之路——的发源宗教。\n我建议我们帮他们一把，把天平倒向太阳教会。\n用代达罗斯�福克派你去找来、用于当牧师的那张地图，说服一位船长送你们上岛。\n到了那里，在月亮教会净化祭坛，借此给予太阳教会援助与慰藉。\n这会大大削弱月亮教团，使太阳教会能在战斗中压倒他们。\n办完回来找我。\n")
+            evt.SetMessage("牧师们。\n你们来找我，是求我做你们光明之路上的引路人。\n但要警告你们，要学它的道，你们必须先懂自己灵魂的道。\n我本建议我们就此冥想一阵，可看你们样子是急着走。\n布拉卡达南边有座叫埃弗蒙的岛，岛上有古老的太阳神庙与月亮神庙。\n两座庙里都住着两教的残余，曾经荣耀的教会沦落为争夺一座小岛的两座古神庙。\n太阳教会是我们当今信仰——光明之路——的发源宗教。\n我建议我们帮他们一把，把天平倒向太阳教会。\n用代达罗斯·福克派你去找来、用于当牧师的那张地图，说服一位船长送你们上岛。\n到了那里，在月亮教会净化祭坛，借此给予太阳教会援助与慰藉。\n这会大大削弱月亮教团，使太阳教会能在战斗中压倒他们。\n办完回来找我。\n")
             SetQBit(QBit(554)) -- Purify the Altar of Evil in the Temple of the Moon on Evenmorn Isle then return to Rebecca Devine in Celeste.
             evt.SetNPCTopic(385, 0, 837) -- Rebecca Devine topic 0: Priest of Light
         elseif IsQBitSet(QBit(612)) then -- Chose the path of Dark
@@ -8429,7 +8429,7 @@ RegisterGlobalEvent(836, nil, function()
             evt.SetMessage("你若想追随光明之路，首先必须正式选择它。\n很快就会有人请你做出选择，道路自会清晰。\n在那之前，我不能做你的引路人。")
         end
     else
-        evt.SetMessage("你们想成为光明牧师，必须先成为牧师。\n我没时间训练牧师，可我那死对头代达罗斯�福克有。\n别担心，他会公正地晋升你们，即使你们不愿追随他所代表的那条可怕的黑暗之路。")
+        evt.SetMessage("你们想成为光明牧师，必须先成为牧师。\n我没时间训练牧师，可我那死对头代达罗斯·福克有。\n别担心，他会公正地晋升你们，即使你们不愿追随他所代表的那条可怕的黑暗之路。")
     end
 end)
 
@@ -9267,7 +9267,7 @@ end)
 
 RegisterGlobalEvent(870, nil, function()
     if not IsQBitSet(QBit(601)) then -- Talked to elfking
-        evt.SetMessage("尽管埃里眼下不掌管哈蒙代尔，我的国王、埃里的埃尔德里奇�帕森，仍宣称这片领土是我们合法的领地。\n原因很复杂，但归结为一个简单事实：多年前的木材战争中，埃拉西亚窃走了我们的土地，不夺回来我们决不罢休。\n我的国王希望与你们谈谈。\n请前往图拉林森林的皮尔庞特见他。\n我们不会让你们白跑一趟。")
+        evt.SetMessage("尽管埃里眼下不掌管哈蒙代尔，我的国王、埃里的埃尔德里奇·帕森，仍宣称这片领土是我们合法的领地。\n原因很复杂，但归结为一个简单事实：多年前的木材战争中，埃拉西亚窃走了我们的土地，不夺回来我们决不罢休。\n我的国王希望与你们谈谈。\n请前往图拉林森林的皮尔庞特见他。\n我们不会让你们白跑一趟。")
         return
     end
     if not IsQBitSet(QBit(592)) then -- Gave plans to elfking
@@ -9278,7 +9278,7 @@ RegisterGlobalEvent(870, nil, function()
 end)
 
 RegisterGlobalEvent(871, nil, function()
-    evt.SetMessage("朝廷有消息说，你们拒绝了埃拉西亚要你们劫出间谍洛伦�斯蒂尔的请求。\n不仅如此，你们还帮我们安插了一个假囚犯，他自从到那儿就一直在喂他们假情报。\n埃里欠你们一份情！")
+    evt.SetMessage("朝廷有消息说，你们拒绝了埃拉西亚要你们劫出间谍洛伦·斯蒂尔的请求。\n不仅如此，你们还帮我们安插了一个假囚犯，他自从到那儿就一直在喂他们假情报。\n埃里欠你们一份情！")
 end)
 RegisterCanShowTopic(871, function()
     evt._BeginCanShowTopic(871)
@@ -9330,7 +9330,7 @@ RegisterCanShowTopic(873, function()
 end)
 
 RegisterGlobalEvent(874, nil, function()
-    evt.SetMessage("[凯瑟琳女王仪态高贵地颔首]我看你们就是赢了马克姆勋爵那项无聊比赛的一伙。\n我得承认，在矮人国王承认你们是哈蒙代尔合法统治者之前，我并没抱多大信心。\n你们一定做了什么赢得了他的敬重，否则他根本不会理你们。\n我仍不太明白他看中了你们什么，但也许这里头真有些名堂。\n我们走着瞧。\n也许你们能替我做件事，让我觉得该让你们保住新头衔。\n近来，我一位宝贵的……特工在图拉林森林仅仅因为尽职就被捕了。\n他们把他关在皮尔庞特外某个洞穴里。\n他叫洛伦�斯蒂尔，他们威胁说，若 28 天内某些不可接受的条件得不到满足，就处决他。\n在那之前把他带回来，你们就会赢得敬重、黄金与感激。")
+    evt.SetMessage("[凯瑟琳女王仪态高贵地颔首]我看你们就是赢了马克姆勋爵那项无聊比赛的一伙。\n我得承认，在矮人国王承认你们是哈蒙代尔合法统治者之前，我并没抱多大信心。\n你们一定做了什么赢得了他的敬重，否则他根本不会理你们。\n我仍不太明白他看中了你们什么，但也许这里头真有些名堂。\n我们走着瞧。\n也许你们能替我做件事，让我觉得该让你们保住新头衔。\n近来，我一位宝贵的……特工在图拉林森林仅仅因为尽职就被捕了。\n他们把他关在皮尔庞特外某个洞穴里。\n他叫洛伦·斯蒂尔，他们威胁说，若 28 天内某些不可接受的条件得不到满足，就处决他。\n在那之前把他带回来，你们就会赢得敬重、黄金与感激。")
     evt.SetNPCTopic(408, 0, 875) -- Queen Catherine topic 0: Prisoner of War
     SetQBit(QBit(590)) -- Rescue Loren Steel from the Tularean Caves in the Tularean Forest and return him to Queen Catherine.
     SetQBit(QBit(600)) -- Talked to Catherine
@@ -9675,7 +9675,7 @@ RegisterGlobalEvent(885, nil, function()
         evt.SetNPCTopic(409, 3, 0) -- ElfKing topic 3 cleared
         return
     elseif IsAtLeast(Counter(1), 672) then
-        evt.SetMessage("洛伦�斯蒂尔的处决日期已过。\n别费事把冒名者送给女王了——她会疑心太重，我们的计策成不了。\n他这就离开你们。")
+        evt.SetMessage("洛伦·斯蒂尔的处决日期已过。\n别费事把冒名者送给女王了——她会疑心太重，我们的计策成不了。\n他这就离开你们。")
         ClearQBit(QBit(1696)) -- Replacement for NPCs �72 ver. 7
         ClearQBit(QBit(1695)) -- Replacement for NPCs �71 ver. 7
         evt.SetNPCTopic(409, 2, 0) -- ElfKing topic 2 cleared
@@ -9826,19 +9826,19 @@ end)
 RegisterGlobalEvent(894, nil, function()
     evt.ForPlayer(Players.All)
     if not IsQBitSet(QBit(626)) then -- Finished Wizard Proving Grounds
-        evt.SetMessage("首先，你要去塞莱斯特见格文�马格努斯，完成他的训练。\n证明你的能力与忠诚后，你会更多了解自己在埃拉西亚未来中的角色。")
+        evt.SetMessage("首先，你要去塞莱斯特见格文·马格努斯，完成他的训练。\n证明你的能力与忠诚后，你会更多了解自己在埃拉西亚未来中的角色。")
         return
     end
     if not IsQBitSet(QBit(627)) then -- Finished Wizard Task 2 - Temple of Dark
-        evt.SetMessage("加文的每位顾问都有一项任务给你。\n去找复活特拉、卡内格姆爵士和克拉格�哈克了解详情。\n这些任务不容有失——未来的平衡系于此。")
+        evt.SetMessage("加文的每位顾问都有一项任务给你。\n去找复活特拉、卡内格姆爵士和克拉格·哈克了解详情。\n这些任务不容有失——未来的平衡系于此。")
         return
     end
     if not IsQBitSet(QBit(628)) then -- Finished Wizard Task 3 - Wine Cellar
-        evt.SetMessage("加文的每位顾问都有一项任务给你。\n去找复活特拉、卡内格姆爵士和克拉格�哈克了解详情。\n这些任务不容有失——未来的平衡系于此。")
+        evt.SetMessage("加文的每位顾问都有一项任务给你。\n去找复活特拉、卡内格姆爵士和克拉格·哈克了解详情。\n这些任务不容有失——未来的平衡系于此。")
         return
     end
     if not IsQBitSet(QBit(629)) then -- Finished Wizard Task 4 - Soul Jars
-        evt.SetMessage("加文的每位顾问都有一项任务给你。\n去找复活特拉、卡内格姆爵士和克拉格�哈克了解详情。\n这些任务不容有失——未来的平衡系于此。")
+        evt.SetMessage("加文的每位顾问都有一项任务给你。\n去找复活特拉、卡内格姆爵士和克拉格·哈克了解详情。\n这些任务不容有失——未来的平衡系于此。")
         return
     end
     if not IsQBitSet(QBit(631)) then -- Killed Evil MM3 Person
@@ -10080,7 +10080,7 @@ RegisterGlobalEvent(906, nil, function()
         evt.SetMessage("继续找他的公寓。\n托尔伯蒂从不相信自己会出事，而到目前为止他一直是对的。\n我们要证明他错了。\n无论如何把立方体弄到手。\n能不流血最好。\n必须杀他，那也没关系。\n拿到立方体就行。")
         return
     end
-    evt.SetMessage("[罗伯特接过立方体]又一次，你们成功了！\n目标近在咫尺！\n我知道你们有许多问题，而你们再替复活特拉完成一项任务后，我敢说她会一一解答。\n你们会在 光辉城堡觐见厅里找到她和格文�马格努斯。")
+    evt.SetMessage("[罗伯特接过立方体]又一次，你们成功了！\n目标近在咫尺！\n我知道你们有许多问题，而你们再替复活特拉完成一项任务后，我敢说她会一一解答。\n你们会在 光辉城堡觐见厅里找到她和格文·马格努斯。")
     RemoveItem(1477) -- Control Cube
     AddValue(History(22), 0)
     AddValue(Experience, 250000)
@@ -10439,7 +10439,7 @@ RegisterGlobalEvent(924, nil, function()
 end)
 
 RegisterGlobalEvent(925, nil, function()
-    evt.SetMessage("托马斯�格雷掌管巫术学校。\n你们想晋升法师或荣誉法师，就找他。\n他的房间就在我身后那扇门进去。")
+    evt.SetMessage("托马斯·格雷掌管巫术学校。\n你们想晋升法师或荣誉法师，就找他。\n他的房间就在我身后那扇门进去。")
 end)
 
 RegisterGlobalEvent(926, nil, function()
@@ -10589,7 +10589,7 @@ end)
 
 RegisterGlobalEvent(937, nil, function()
     evt.ForPlayer(Players.All)
-    evt.SetMessage("历史学家诺伯特�思拉什的来信？让我看看。\n[马克姆勋爵匆匆扫过信]嗯……他想要那根签署《皮尔庞特条约》用的孔雀羽毛，是吧。\n好吧，既然他手里有所谓条约原件，我想羽毛该归他。\n他答应给我收藏里任何别的东西。\n把这个带给他，告诉他我很快会亲自去他那儿取货！")
+    evt.SetMessage("历史学家诺伯特·思拉什的来信？让我看看。\n[马克姆勋爵匆匆扫过信]嗯……他想要那根签署《皮尔庞特条约》用的孔雀羽毛，是吧。\n好吧，既然他手里有所谓条约原件，我想羽毛该归他。\n他答应给我收藏里任何别的东西。\n把这个带给他，告诉他我很快会亲自去他那儿取货！")
     RemoveItem(1416) -- Letter from Norbert Thrush to Lord Markham
     evt.ForPlayer(Players.Current)
     AddValue(InventoryItem(1405), 1405) -- Parson's Quill
@@ -10661,7 +10661,7 @@ RegisterGlobalEvent(940, nil, function()
 end)
 
 RegisterGlobalEvent(941, nil, function()
-    evt.SetMessage("我们只请你们帮一个小忙。\nlambent城堡里存着一块珍贵的挂毯，是三年前从攻打瞭望塔的行动中缴获的。\n我想请你们替我把挂毯弄来，因为你们肯定多少能进那座城堡——我平时的同伙连那地方都靠近不了。\n我听说附近有一大帮地精和叛逃剑士出没……他们要是碰巧摸到哈蒙代尔就可惜了。\n你们有一个月时间弄到挂毯。\n别迟到。")
+    evt.SetMessage("我们只请你们帮一个小忙。\n光辉城堡里存着一块珍贵的挂毯，是三年前从攻打瞭望塔的行动中缴获的。\n我想请你们替我把挂毯弄来，因为你们肯定多少能进那座城堡——我平时的同伙连那地方都靠近不了。\n我听说附近有一大帮地精和叛逃剑士出没……他们要是碰巧摸到哈蒙代尔就可惜了。\n你们有一个月时间弄到挂毯。\n别迟到。")
     SetQBit(QBit(694)) -- Steal the Tapestry from your associate's Castle and return it to Niles Stantley in the Mercenary Guild in Tatalia. - Do the Merc Guild Quest
     SetValue(Counter(5), 0)
     evt.SetNPCTopic(438, 0, 943) -- Niles Stantley topic 0: Quest
@@ -10865,62 +10865,62 @@ RegisterGlobalEvent(1064, nil, function()
 end)
 
 RegisterGlobalEvent(1065, nil, function()
-    evt.SetMessage("手杖大师导师埃尔西�佩德顿，可在布拉卡达沙漠西南地区的一道山脊上找到。")
+    evt.SetMessage("手杖大师导师埃尔西·佩德顿，可在布拉卡达沙漠西南地区的一道山脊上找到。")
     SetAutonote(323) -- The Master instructor of the Staff, Elsie Pederton, can be found in the Bracada Desert, on a ridge in the southwest region.
 end)
 
 RegisterGlobalEvent(1066, nil, function()
-    evt.SetMessage("手杖之道的至高导师吉莉安�米斯里特，可在精灵领地埃里找到。\n她的家在东北部的城里。")
+    evt.SetMessage("手杖之道的至高导师吉莉安·米斯里特，可在精灵领地埃里找到。\n她的家在东北部的城里。")
     SetAutonote(324) -- The ultimate teacher in the ways of the Staff, Jillian Mithrit, can be found in the elven territory of Avlee. Her home is in the city in the northeast.
 end)
 
 RegisterGlobalEvent(1067, nil, function()
-    evt.SetMessage("剑术大师导师图戈尔�切片者，住在迪雅西部地区的一座小村里。")
+    evt.SetMessage("剑术大师导师图戈尔·切片者，住在迪雅西部地区的一座小村里。")
     SetAutonote(325) -- The Master instructor of the Sword, Tugor Slicer, maintains his residence in a small village in the western region of Deyja.
 end)
 
 RegisterGlobalEvent(1068, nil, function()
-    evt.SetMessage("剑术宗师查德里克�城镇守卫者，可在威尔宁、哈蒙代尔城正南方的一座小村里找到。")
+    evt.SetMessage("剑术宗师查德里克·城镇守卫者，可在威尔宁、哈蒙代尔城正南方的一座小村里找到。")
     SetAutonote(326) -- The Grandmaster of the Sword, Chadric Townsaver, can be found in a small village in Welnin, just south of the city of Harmondale.
 end)
 
 RegisterGlobalEvent(1069, nil, function()
-    evt.SetMessage("匕首大师导师阿兹诺格�劈砍者，可在尼根北部地区找到。")
+    evt.SetMessage("匕首大师导师阿兹诺格·劈砍者，可在尼根北部地区找到。")
     SetAutonote(327) -- The Master tutor of the Dagger, Aznog Slasher, can be found in the northern region of Nighon.
 end)
 
 RegisterGlobalEvent(1070, nil, function()
-    evt.SetMessage("匕首宗师托克�拳，可在泰塔利亚的潮水城找到。\n传闻首都斯坦德威克下方埃拉西亚下水道深处的神偷大师，也能教到这个级别。")
+    evt.SetMessage("匕首宗师托克·拳，可在泰塔利亚的潮水城找到。\n传闻首都斯坦德威克下方埃拉西亚下水道深处的神偷大师，也能教到这个级别。")
     SetAutonote(328) -- The Grandmaster of the Dagger, Token Fist, can be found in city of Tidewater in Tatalia. Rumor has it that the Master Thief in the depths of the Erathian Sewers beneath the capitol city of Steadwick can also instruct at this level.
 end)
 
 RegisterGlobalEvent(1071, nil, function()
-    evt.SetMessage("斧术大师导师达林�锐边，可在石头城东北角找到。")
+    evt.SetMessage("斧术大师导师达林·锐边，可在石头城东北角找到。")
     SetAutonote(329) -- The Master Instructor of all that is the Axe, Dalin Keenedge, can be found in the northeast corner of Stone City.
 end)
 
 RegisterGlobalEvent(1072, nil, function()
-    evt.SetMessage("斧术至高导师卡恩�断石者，可在泰塔利亚东北部的雪山高处找到。")
+    evt.SetMessage("斧术至高导师卡恩·断石者，可在泰塔利亚东北部的雪山高处找到。")
     SetAutonote(330) -- The ultimate teacher of the uses of the Axe, Karn Stonecleaver, can be found in the snowy heights of the northeast region of Tatalia.
 end)
 
 RegisterGlobalEvent(1073, nil, function()
-    evt.SetMessage("大师导师克拉德林�银尖，可在图拉林森林精灵地区皮尔庞特城的东北部找到。他会在那里进一步传授你长矛之道。")
+    evt.SetMessage("大师导师克拉德林·银尖，可在图拉林森林精灵地区皮尔庞特城的东北部找到。他会在那里进一步传授你长矛之道。")
     SetAutonote(331) -- The Master teacher, Claderin Silverpoint, can be found in the northeast section of the city of Pierpont in the elven region of the Tularean Forest. There he will further you knowledge of the Spear.
 end)
 
 RegisterGlobalEvent(1074, nil, function()
-    evt.SetMessage("长矛宗师塞勒涅�隼眼，把家安在石头城东北角。")
+    evt.SetMessage("长矛宗师塞勒涅·隼眼，把家安在石头城东北角。")
     SetAutonote(332) -- The Grandmaster of the Spear, Selene Falconeye, makes her home in the northeast corner of Stone City.
 end)
 
 RegisterGlobalEvent(1075, nil, function()
-    evt.SetMessage("神箭手导师兰希�鸦视，住在尼根北部地区。")
+    evt.SetMessage("神箭手导师兰希·鸦视，住在尼根北部地区。")
     SetAutonote(333) -- The Master tutor of the Bow, Lanshee Ravensight, lives in the northern regions of Nighon.
 end)
 
 RegisterGlobalEvent(1076, nil, function()
-    evt.SetMessage("弓箭宗师卡德里克�沉稳者，可在哈蒙代尔城城堡东南不远处找到。")
+    evt.SetMessage("弓箭宗师卡德里克·沉稳者，可在哈蒙代尔城城堡东南不远处找到。")
     SetAutonote(334) -- The Grandmaster of the Bow, Cardric the Steady, can be found just to the southeast of the castle in the city of Harmondale.
 end)
 
@@ -10930,22 +10930,22 @@ RegisterGlobalEvent(1077, nil, function()
 end)
 
 RegisterGlobalEvent(1078, nil, function()
-    evt.SetMessage("钉锤宗师帕特温�炎烧者，在他位于迪雅东部地区地精村的家中授徒。")
+    evt.SetMessage("钉锤宗师帕特温·炎烧者，在他位于迪雅东部地区地精村的家中授徒。")
     SetAutonote(336) -- The Grandmaster of the Mace, Patwin Felburn, teaches from his home in the goblin village found in the eastern area of Deyja.
 end)
 
 RegisterGlobalEvent(1079, nil, function()
-    evt.SetMessage("我的导师伊斯兰姆�绞刑井，可在泰塔利亚东北部的雪山高处找到。你会在那里进一步学习盾牌之道。")
+    evt.SetMessage("我的导师伊斯兰姆·绞刑井，可在泰塔利亚东北部的雪山高处找到。你会在那里进一步学习盾牌之道。")
     SetAutonote(337) -- My Master, Isram Gallowswell, can be found in the snowy heights of the northeast area of Tatalia. You will gain further instruction in the Shield there.
 end)
 
 RegisterGlobalEvent(1080, nil, function()
-    evt.SetMessage("盾牌宗师费德温�史密斯森，可在埃弗蒙群岛的东岛上找到。")
+    evt.SetMessage("盾牌宗师费德温·史密斯森，可在埃弗蒙群岛的东岛上找到。")
     SetAutonote(338) -- The Grandmaster of the Shield, Fedwin Smithson, can be found on the eastern island of the Evenmorn Islands.
 end)
 
 RegisterGlobalEvent(1081, nil, function()
-    evt.SetMessage("皮甲大师导师拉比莎�内尔登，住在尼根北部地区。")
+    evt.SetMessage("皮甲大师导师拉比莎·内尔登，住在尼根北部地区。")
     SetAutonote(339) -- The Master tutor of Leather Armor, Rabisa Neldon, lives in the northern regions of Nighon.
 end)
 
@@ -10955,27 +10955,27 @@ RegisterGlobalEvent(1082, nil, function()
 end)
 
 RegisterGlobalEvent(1083, nil, function()
-    evt.SetMessage("锁甲大师导师梅德瓦里�追龙者，可在精灵领地埃里找到。\n他的家在东北部的城里。")
+    evt.SetMessage("锁甲大师导师梅德瓦里·追龙者，可在精灵领地埃里找到。\n他的家在东北部的城里。")
     SetAutonote(341) -- The Master instructor of uses of Chain Armor, Medwari Dragontracker, can be found in the elven territory of Avlee. His home is in the city in the northeast.
 end)
 
 RegisterGlobalEvent(1084, nil, function()
-    evt.SetMessage("锁甲宗师导师哈利安�永逝，住在迪雅西北地区的一座大城市里。")
+    evt.SetMessage("锁甲宗师导师哈利安·永逝，住在迪雅西北地区的一座大城市里。")
     SetAutonote(342) -- The Grandmaster instructor of Chain Armor, Halian Nevermore, maintains his residence in a large city in the northwest region of Deyja.
 end)
 
 RegisterGlobalEvent(1085, nil, function()
-    evt.SetMessage("我的导师德基安�锻权，把家安在埃拉西亚首都斯坦德威克。他能进一步传授你板甲之道。")
+    evt.SetMessage("我的导师德基安·锻权，把家安在埃拉西亚首都斯坦德威克。他能进一步传授你板甲之道。")
     SetAutonote(343) -- My Master, Dekian Forgewright, makes his home in Erathia in the capitol city of Steadwick. He can provide further instruction in the uses of Plate Armor.
 end)
 
 RegisterGlobalEvent(1086, nil, function()
-    evt.SetMessage("板甲宗师布兰德�制造者，可在布拉卡达沙漠中部地区的一道山脊上找到。")
+    evt.SetMessage("板甲宗师布兰德·制造者，可在布拉卡达沙漠中部地区的一道山脊上找到。")
     SetAutonote(344) -- The Grandmaster of Plate Armor, Brand the Maker, can be found in the Bracada desert, on a ridge in the central region.
 end)
 
 RegisterGlobalEvent(1087, nil, function()
-    evt.SetMessage("火系魔法大师导师灰烬�脾气，可在哈蒙代尔城马厩附近找到。")
+    evt.SetMessage("火系魔法大师导师灰烬·脾气，可在哈蒙代尔城马厩附近找到。")
     SetAutonote(345) -- The Master tutor of Fire Magic, Ashen Temper, can be found in the city of Harmondale near the stables.
 end)
 
@@ -10985,7 +10985,7 @@ RegisterGlobalEvent(1088, nil, function()
 end)
 
 RegisterGlobalEvent(1089, nil, function()
-    evt.SetMessage("气系魔法大师导师里斯林�绿风暴，住在精灵领地埃里。\n他的家在东北部的城里。")
+    evt.SetMessage("气系魔法大师导师里斯林·绿风暴，住在精灵领地埃里。\n他的家在东北部的城里。")
     SetAutonote(347) -- The Master tutor of Air Magic, Rislyn Greenstorm, lives in the elven territory of Avlee. His home is in the city in the northeast.
 end)
 
@@ -10995,7 +10995,7 @@ RegisterGlobalEvent(1090, nil, function()
 end)
 
 RegisterGlobalEvent(1091, nil, function()
-    evt.SetMessage("水系魔法大师导师托布伦�雨盾，住在尼根西南地区。")
+    evt.SetMessage("水系魔法大师导师托布伦·雨盾，住在尼根西南地区。")
     SetAutonote(349) -- The Master tutor of the uses of Water Magic, Tobren Rainshield, lives in the southwest region of Nighon.
 end)
 
@@ -11005,7 +11005,7 @@ RegisterGlobalEvent(1092, nil, function()
 end)
 
 RegisterGlobalEvent(1093, nil, function()
-    evt.SetMessage("土系魔法大师导师劳拉�石匠，把家安在图拉林森林的精灵领地。\n她的住处皮尔庞特城。")
+    evt.SetMessage("土系魔法大师导师劳拉·石匠，把家安在图拉林森林的精灵领地。\n她的住处皮尔庞特城。")
     SetAutonote(351) -- The Master tutor of Earth Magic, Lara Stonewright, makes her home in the elven territory of the Tularean Forest. Her residence is in the city of Pierpont.
 end)
 
@@ -11015,7 +11015,7 @@ RegisterGlobalEvent(1094, nil, function()
 end)
 
 RegisterGlobalEvent(1095, nil, function()
-    evt.SetMessage("教过我的导师希瑟�梦匠，把家安在埃拉西亚首都斯坦德威克某处。\n在那里可进一步学习精神魔法。")
+    evt.SetMessage("教过我的导师希瑟·梦匠，把家安在埃拉西亚首都斯坦德威克某处。\n在那里可进一步学习精神魔法。")
     SetAutonote(353) -- The Master who taught me, Heather Dreamwright, makes her home in Erathia, somewhere in the capitol city of Steadwick. Further knowledge of Spirit Magic can be gained there.
 end)
 
@@ -11025,12 +11025,12 @@ RegisterGlobalEvent(1096, nil, function()
 end)
 
 RegisterGlobalEvent(1097, nil, function()
-    evt.SetMessage("心智魔法之道的大师导师迈尔斯�羽风，可在精灵领地埃里找到。\n他的家在东北方向的城里。")
+    evt.SetMessage("心智魔法之道的大师导师迈尔斯·羽风，可在精灵领地埃里找到。\n他的家在东北方向的城里。")
     SetAutonote(355) -- The Master teacher in the ways of Mind Magic, Myles Featherwind, can be found in the elven territory of Avlee. His home is in the city to the northeast.
 end)
 
 RegisterGlobalEvent(1098, nil, function()
-    evt.SetMessage("心智魔法宗师泽维尔�不来梅，可在泰塔利亚东北部的雪山高处找到。")
+    evt.SetMessage("心智魔法宗师泽维尔·不来梅，可在泰塔利亚东北部的雪山高处找到。")
     SetAutonote(356) -- The Grandmaster of Mind Magic, Xavier Bremen, can be found in the snowy heights of the northeast area of Tatalia.
 end)
 
@@ -11045,17 +11045,17 @@ RegisterGlobalEvent(1100, nil, function()
 end)
 
 RegisterGlobalEvent(1101, nil, function()
-    evt.SetMessage("鉴定物品技能大师塞缪尔�本森，可在布拉卡达沙漠中部地区的一道山脊上找到。")
+    evt.SetMessage("鉴定物品技能大师塞缪尔·本森，可在布拉卡达沙漠中部地区的一道山脊上找到。")
     SetAutonote(359) -- The Master of the Identify Item skill, Samuel Benson, can be found on a ridge in the central region of the Bracada desert.
 end)
 
 RegisterGlobalEvent(1102, nil, function()
-    evt.SetMessage("鉴定物品技能宗师佩奇�蓝天鹅，可在精灵领地埃里找到。\n他的家就在精灵城斯波沃德西北不远处。")
+    evt.SetMessage("鉴定物品技能宗师佩奇·蓝天鹅，可在精灵领地埃里找到。\n他的家就在精灵城斯波沃德西北不远处。")
     SetAutonote(360) -- The Grandmaster of the Identify Item skill, Payge Blueswan, can be found in the elven territory of Avlee. His home is just northwest of the elven city of Spaward.
 end)
 
 RegisterGlobalEvent(1103, nil, function()
-    evt.SetMessage("商人技能大师伯托尔德�洞山，可在埃弗蒙群岛最东端的岛上找到。")
+    evt.SetMessage("商人技能大师伯托尔德·洞山，可在埃弗蒙群岛最东端的岛上找到。")
     SetAutonote(361) -- The Master of the Merchant skill, Berthold Caverhill, can be found on the eastern most island of the Evenmorn Islands.
 end)
 
@@ -11065,7 +11065,7 @@ RegisterGlobalEvent(1104, nil, function()
 end)
 
 RegisterGlobalEvent(1105, nil, function()
-    evt.SetMessage("修理物品技能大师导师托马斯�摩尔，可在泰塔利亚南部地区的沼泽三角洲找到。")
+    evt.SetMessage("修理物品技能大师导师托马斯·摩尔，可在泰塔利亚南部地区的沼泽三角洲找到。")
     SetAutonote(363) -- The Grandmaster of the Merchant skill, Brigham the Frugal, can be found in a tower in the Bracada desert, on a ridge in the northern region.
 end)
 
@@ -11075,17 +11075,17 @@ RegisterGlobalEvent(1106, nil, function()
 end)
 
 RegisterGlobalEvent(1107, nil, function()
-    evt.SetMessage("健体之道大师旺达�森林击，可在迪雅荒原东部的地精村找到。")
+    evt.SetMessage("健体之道大师旺达·森林击，可在迪雅荒原东部的地精村找到。")
     SetAutonote(365) -- The Master of the of the art of Body Building, Wanda Foestryke, can be found in the goblin village in eastern Deyja.
 end)
 
 RegisterGlobalEvent(1108, nil, function()
-    evt.SetMessage("健体技能宗师埃万德�托马斯，把家安在尼根东部地区。")
+    evt.SetMessage("健体技能宗师埃万德·托马斯，把家安在尼根东部地区。")
     SetAutonote(366) -- The Grandmaster of the Body Building skill, Evander Thomas, makes his home in the eastern regions of Nighon.
 end)
 
 RegisterGlobalEvent(1109, nil, function()
-    evt.SetMessage("冥想大师泰莎�绿地，可在布拉卡达沙漠东南地区的一道山脊上找到。")
+    evt.SetMessage("冥想大师泰莎·绿地，可在布拉卡达沙漠东南地区的一道山脊上找到。")
     SetAutonote(367) -- The Master of Meditation, Tessa Greensward, can be found on a ridge in the southeast region of the Bracada desert.
 end)
 
@@ -11095,32 +11095,32 @@ RegisterGlobalEvent(1110, nil, function()
 end)
 
 RegisterGlobalEvent(1111, nil, function()
-    evt.SetMessage("感知技能大师加雷特�多特，可在图拉林森林的精灵地区找到。\n他的家在精灵城皮尔庞特。")
+    evt.SetMessage("感知技能大师加雷特·多特，可在图拉林森林的精灵地区找到。\n他的家在精灵城皮尔庞特。")
     SetAutonote(369) -- The Master of the Perception Skill, Garret Dotes, can be found in the elven area of the Tularean Forest. His home is in the Elven city of Pierpont.
 end)
 
 RegisterGlobalEvent(1112, nil, function()
-    evt.SetMessage("感知技能宗师佩特拉�明眼，可在迪雅西北地区的城里找到。")
+    evt.SetMessage("感知技能宗师佩特拉·明眼，可在迪雅西北地区的城里找到。")
     SetAutonote(370) -- The Grandmaster of the Skill of Perception, Petra Cleareye, can be found in the city in the northwest region of Deyja.
 end)
 
 RegisterGlobalEvent(1113, nil, function()
-    evt.SetMessage("解除陷阱技能大师莱诺德�剥皮者，住在哈蒙代尔南边一道俯瞰全城的山脊上。")
+    evt.SetMessage("解除陷阱技能大师莱诺德·剥皮者，住在哈蒙代尔南边一道俯瞰全城的山脊上。")
     SetAutonote(371) -- The Master of Disarm Trap Skill, Lenord Skinner, lives on a ridge, south of Harmondale, overlooking the city.
 end)
 
 RegisterGlobalEvent(1114, nil, function()
-    evt.SetMessage("解除陷阱技能宗师西尔克�快舌，把家安在尼根南部地区。")
+    evt.SetMessage("解除陷阱技能宗师西尔克·快舌，把家安在尼根南部地区。")
     SetAutonote(372) -- The Grandmaster of the Disarm Trap Skill, Silk Quicktoungue, makes his home in the southern region of Nighon.
 end)
 
 RegisterGlobalEvent(1115, nil, function()
-    evt.SetMessage("闪避技能大师奥伯里克�鹤，可在埃弗蒙群岛最东端的岛上找到。")
+    evt.SetMessage("闪避技能大师奥伯里克·鹤，可在埃弗蒙群岛最东端的岛上找到。")
     SetAutonote(373) -- The Master of the Dodging Skill, Oberic Crane, can be found on the eastern most island of the Evenmorn Islands
 end)
 
 RegisterGlobalEvent(1116, nil, function()
-    evt.SetMessage("闪避技能宗师肯尼思�韦恩，可在埃拉西亚首都斯坦德威克找到。")
+    evt.SetMessage("闪避技能宗师肯尼思·韦恩，可在埃拉西亚首都斯坦德威克找到。")
     SetAutonote(374) -- The Grandmaster of the Dodging Skill, Kenneth Wain, can be found in the capitol city of Steadwick, in Erathia.
 end)
 
@@ -11135,7 +11135,7 @@ RegisterGlobalEvent(1118, nil, function()
 end)
 
 RegisterGlobalEvent(1119, nil, function()
-    evt.SetMessage("鉴定怪物技能大师导师杰尼�快足，住在精灵领地埃里。\n她的家在东北部的城里。")
+    evt.SetMessage("鉴定怪物技能大师导师杰尼·快足，住在精灵领地埃里。\n她的家在东北部的城里。")
     SetAutonote(377) -- The Master instructor of the Identify Monster Skill, Jeni Swiftfoot, lives in the elven territory of Avlee. Her home is in the city in the northeast.
 end)
 
@@ -11145,7 +11145,7 @@ RegisterGlobalEvent(1120, nil, function()
 end)
 
 RegisterGlobalEvent(1121, nil, function()
-    evt.SetMessage("武器精通技能大师导师葆拉�亮矛，住在精灵领地埃里。\n她的家在东北部的城里。")
+    evt.SetMessage("武器精通技能大师导师葆拉·亮矛，住在精灵领地埃里。\n她的家在东北部的城里。")
     SetAutonote(379) -- The Master tutor of the Armsmaster Skill, Paula Brightspear, lives in the elven territory of Avlee. Her home is in the city in the northeast.
 end)
 
@@ -11155,37 +11155,37 @@ RegisterGlobalEvent(1122, nil, function()
 end)
 
 RegisterGlobalEvent(1123, nil, function()
-    evt.SetMessage("偷窃技能大师导师莱安�影行者，把家安在迪雅东部地区的地精村。")
+    evt.SetMessage("偷窃技能大师导师莱安·影行者，把家安在迪雅东部地区的地精村。")
     SetAutonote(381) -- The Master tutor of the Stealing Skill, Leane Shadowrunner, makes her home in the goblin village in the eastern region of the Deyja.
 end)
 
 RegisterGlobalEvent(1124, nil, function()
-    evt.SetMessage("偷窃之道宗师导师埃弗里尔�夜行者，可在泰塔利亚南部地区的沼泽三角洲找到。")
+    evt.SetMessage("偷窃之道宗师导师埃弗里尔·夜行者，可在泰塔利亚南部地区的沼泽三角洲找到。")
     SetAutonote(382) -- The Grandmaster teacher of the art of Stealing, Everil Nightwalker, can be found in the swampy delta of the southern region of Tatalia.
 end)
 
 RegisterGlobalEvent(1125, nil, function()
-    evt.SetMessage("炼金术大师埃尔兹贝特�冬勺，可在尼根西部地区找到。")
+    evt.SetMessage("炼金术大师埃尔兹贝特·冬勺，可在尼根西部地区找到。")
     SetAutonote(383) -- The Master of Alchemy, Elzbet Winterspoon, can be found in the western region of Nighon.
 end)
 
 RegisterGlobalEvent(1126, nil, function()
-    evt.SetMessage("炼金术宗师导师露西德�苹果，可在精灵领地埃里找到。\n他的家在中部海湾某座岛上。")
+    evt.SetMessage("炼金术宗师导师露西德·苹果，可在精灵领地埃里找到。\n他的家在中部海湾某座岛上。")
     SetAutonote(384) -- The Grandmaster instructor of Alchemy, Lucid Apple, can be found in the elven territory of Avlee. His home is on an island somewhere in the central bay.
 end)
 
 RegisterGlobalEvent(1127, nil, function()
-    evt.SetMessage("学习技能大师多萝西�森雅克，可在尼根东南地区找到。")
+    evt.SetMessage("学习技能大师多萝西·森雅克，可在尼根东南地区找到。")
     SetAutonote(385) -- The Master of Learning, Dorothy Senjac, can be found in the southeast region of Nighon.
 end)
 
 RegisterGlobalEvent(1128, nil, function()
-    evt.SetMessage("学习技能宗师威廉�史密斯森，在埃弗蒙群岛东岛的家中授徒。")
+    evt.SetMessage("学习技能宗师威廉·史密斯森，在埃弗蒙群岛东岛的家中授徒。")
     SetAutonote(386) -- The Grandmaster of Learning, William Smithson, instructs from his home on the eastern island of the Evenmorn Islands.
 end)
 
 RegisterGlobalEvent(1129, nil, function()
-    evt.SetMessage("光明魔法大师海伦娜�晨星，可在云城塞莱斯特找到！")
+    evt.SetMessage("光明魔法大师海伦娜·晨星，可在云城塞莱斯特找到！")
     SetAutonote(387) -- The Master of Light Magic, Helena Mornigstar, can be found in the cloud city of Celeste!
 end)
 
@@ -11195,7 +11195,7 @@ RegisterGlobalEvent(1130, nil, function()
 end)
 
 RegisterGlobalEvent(1131, nil, function()
-    evt.SetMessage("黑暗魔法大师塞思�暗影，可在迪雅下方的深渊找到！")
+    evt.SetMessage("黑暗魔法大师塞思·暗影，可在迪雅下方的深渊找到！")
     SetAutonote(389) -- The Master of Dark, Seth Darkenmore, can be found in The Pit beneath Deyja!
 end)
 
@@ -11440,7 +11440,7 @@ RegisterGlobalEvent(1168, nil, function()
 end)
 
 RegisterGlobalEvent(1169, nil, function()
-    evt.SetMessage("朋友们，在这儿看好钱包——斯坦德威克盗贼遍地。\n说真的，我们是世界盗贼之都！\n神偷大师比尔�拉斯克住在斯坦德威克下方的下水道里，这是常识。")
+    evt.SetMessage("朋友们，在这儿看好钱包——斯坦德威克盗贼遍地。\n说真的，我们是世界盗贼之都！\n神偷大师比尔·拉斯克住在斯坦德威克下方的下水道里，这是常识。")
 end)
 
 RegisterGlobalEvent(1170, nil, function()
@@ -11468,7 +11468,7 @@ RegisterCanShowTopic(1170, function()
 end)
 
 RegisterGlobalEvent(1171, nil, function()
-    evt.SetMessage("比尔�拉斯克也许是个罪犯，可他不时为王室效力。\n特殊任务、官方否认参与、间谍活动……那一类事。\n不少不寻常的事件都能扯到比尔头上，却扯不到王室。\n说真的，你难道不觉得，就算一个人躲在下水道里，女王的人也找得到、抓得到他吗？")
+    evt.SetMessage("比尔·拉斯克也许是个罪犯，可他不时为王室效力。\n特殊任务、官方否认参与、间谍活动……那一类事。\n不少不寻常的事件都能扯到比尔头上，却扯不到王室。\n说真的，你难道不觉得，就算一个人躲在下水道里，女王的人也找得到、抓得到他吗？")
 end)
 
 RegisterGlobalEvent(1172, nil, function()
@@ -11546,15 +11546,15 @@ RegisterGlobalEvent(1175, nil, function()
 end)
 
 RegisterGlobalEvent(1176, nil, function()
-    evt.SetMessage("稍等，让我查查。\n魔镜魔镜挂墙上……<女巫对着镜子凝视几分钟，然后叹气>还是艾丽斯�哈格里夫斯。\n她住在格芬哈特城堡。\n那姑娘真是贵族美人！\n她让我想起了年轻的时候。")
+    evt.SetMessage("稍等，让我查查。\n魔镜魔镜挂墙上……<女巫对着镜子凝视几分钟，然后叹气>还是艾丽斯·哈格里夫斯。\n她住在格芬哈特城堡。\n那姑娘真是贵族美人！\n她让我想起了年轻的时候。")
 end)
 
 RegisterGlobalEvent(1177, nil, function()
-    evt.SetMessage("我们最优秀、最正直的市民之一是威廉�塞塔格，有人认为他是当今最黑心的恶棍。\n说真的，他是我们最好的特工之一。\n法师之流抱怨，是因为他们在他的计谋里吃过太多亏——可在他这一行，他差不多是最顶尖的。\n你们想找活儿干，就去见他。\n他的塔在迪雅北岸一处相当难到的地方。\n他不喜欢访客，可看到更多学生出现在他门口，他应该会高兴。")
+    evt.SetMessage("我们最优秀、最正直的市民之一是威廉·塞塔格，有人认为他是当今最黑心的恶棍。\n说真的，他是我们最好的特工之一。\n法师之流抱怨，是因为他们在他的计谋里吃过太多亏——可在他这一行，他差不多是最顶尖的。\n你们想找活儿干，就去见他。\n他的塔在迪雅北岸一处相当难到的地方。\n他不喜欢访客，可看到更多学生出现在他门口，他应该会高兴。")
 end)
 
 RegisterGlobalEvent(1178, nil, function()
-    evt.SetMessage("你想找位老师开始正式的武僧训练，就去找巴塞洛缪�休姆——你可以在哈蒙代尔镇南边的村子里找到他。")
+    evt.SetMessage("你想找位老师开始正式的武僧训练，就去找巴塞洛缪·休姆——你可以在哈蒙代尔镇南边的村子里找到他。")
 end)
 
 RegisterGlobalEvent(1179, nil, function()
@@ -11697,11 +11697,11 @@ RegisterGlobalEvent(1194, nil, function()
 end)
 
 RegisterGlobalEvent(1195, nil, function()
-    evt.SetMessage("你要是厌倦了业余赏金狩猎、想在这行上进阶，就去找埃里的埃比尼泽�播种者。\n不过他只教暗影之路的追随者。")
+    evt.SetMessage("你要是厌倦了业余赏金狩猎、想在这行上进阶，就去找埃里的埃比尼泽·播种者。\n不过他只教暗影之路的追随者。")
 end)
 
 RegisterGlobalEvent(1196, nil, function()
-    evt.SetMessage("海盗在潮穴里活动二十年了。\n他们不是雷格那人，也不是比尔�拉斯克的人，可仍然相当凶。\n你想进去，就往西边那些岛去。")
+    evt.SetMessage("海盗在潮穴里活动二十年了。\n他们不是雷格那人，也不是比尔·拉斯克的人，可仍然相当凶。\n你想进去，就往西边那些岛去。")
 end)
 
 RegisterGlobalEvent(1197, nil, function()
@@ -12093,7 +12093,7 @@ RegisterGlobalEvent(1243, nil, function()
 end)
 
 RegisterGlobalEvent(1244, nil, function()
-    evt.SetMessage("人们说迪雅近来相当热闹。\n似乎迪雅的领袖（兼恩洛斯前国王）阿基巴德�铁拳已离开深渊，去了埃里东海岸外一座岛。\n一大批死灵法师跟着他去了那儿——看来内部起了某种分裂。")
+    evt.SetMessage("人们说迪雅近来相当热闹。\n似乎迪雅的领袖（兼恩洛斯前国王）阿基巴德·铁拳已离开深渊，去了埃里东海岸外一座岛。\n一大批死灵法师跟着他去了那儿——看来内部起了某种分裂。")
 end)
 RegisterCanShowTopic(1244, function()
     evt._BeginCanShowTopic(1244)
@@ -12142,7 +12142,7 @@ RegisterGlobalEvent(1248, nil, function()
         evt.SetMessage("科兰克造的地下复合体防御好得惊人。\n前门能挡住一切魔法攻击，岛屿地形又让任何大部队难以登陆。\n到目前为止，科兰克深居简出，没人认真试探过他的防御，可他最好的防护来自复合体内部的一系列传送阻挡器。\n不先打掉这些阻挡器，任何魔法入侵部队都无法传送越过前门。")
         return
     end
-    evt.SetMessage("了不起的防御也就这样了。\n传闻说，阿基巴德�铁拳率领的死灵法师直接传送到科兰克实验室，占领了它。\n不过我听说，这跟内部的背叛有点关系。")
+    evt.SetMessage("了不起的防御也就这样了。\n传闻说，阿基巴德·铁拳率领的死灵法师直接传送到科兰克实验室，占领了它。\n不过我听说，这跟内部的背叛有点关系。")
 end)
 RegisterCanShowTopic(1248, function()
     evt._BeginCanShowTopic(1248)
@@ -12176,7 +12176,7 @@ RegisterGlobalEvent(1252, nil, function()
         evt.SetMessage("各位大人！\n阿基巴德领主派工程师和工匠来升级哈蒙代尔城堡了！\n如今我们有楼上楼下了！\n阿基巴德领主还在这些新区的箱子里留了礼物。\n工匠们正在门厅开店，会卖许多好东西！\n哦对了，工人们还发现了城堡更古老的区域——一间酷刑室和地牢！\n我们真幸运！\n我从没想过哈蒙代尔能享受到这种奢华，各位大人！")
         return
     elseif HasAward(Award(6)) then -- Completed Wizard Proving Grounds
-        evt.SetMessage("各位大人！\n格文�马格努斯派工程师和工匠来升级哈蒙代尔城堡了！\n如今我们有楼上楼下了！\n格文�马格努斯还在这些新区的箱子里留了礼物。\n工匠们正在门厅开店，会卖许多好东西！\n不过工人们还发现了城堡更古老的区域——一间酷刑室和地牢。\n恐怕景象不太好看。")
+        evt.SetMessage("各位大人！\n格文·马格努斯派工程师和工匠来升级哈蒙代尔城堡了！\n如今我们有楼上楼下了！\n格文·马格努斯还在这些新区的箱子里留了礼物。\n工匠们正在门厅开店，会卖许多好东西！\n不过工人们还发现了城堡更古老的区域——一间酷刑室和地牢。\n恐怕景象不太好看。")
     else
         evt.SetMessage("各位大人。哈蒙代尔城堡已准备就绪。")
         return
@@ -12211,7 +12211,7 @@ end)
 RegisterGlobalEvent(1257, nil, function()
     evt.ForPlayer(Players.All)
     if not HasItem(1496) then return end -- Crate of Tularean Wood
-    evt.SetMessage("啊，我朋友罗伯特�贝尔克纳普发来的一船图拉林木材。\n希望他一切都好。这是你的报酬。")
+    evt.SetMessage("啊，我朋友罗伯特·贝尔克纳普发来的一船图拉林木材。\n希望他一切都好。这是你的报酬。")
     RemoveItem(1496) -- Crate of Tularean Wood
     evt.ForPlayer(Players.Current)
     if IsAtLeast(DayOfWeek, 0) then
@@ -12241,7 +12241,7 @@ RegisterGlobalEvent(1257, nil, function()
 end)
 
 RegisterGlobalEvent(1258, nil, function()
-    evt.SetMessage("这是你的一箱狮鹫羽毛。\n图拉林森林的罗伯特�贝尔克纳普收这些羽毛出价最高。\n见到他一定代我问好。")
+    evt.SetMessage("这是你的一箱狮鹫羽毛。\n图拉林森林的罗伯特·贝尔克纳普收这些羽毛出价最高。\n见到他一定代我问好。")
     ClearQBit(QBit(762)) -- Bought Item 1
     if IsAtLeast(Gold, 200) then
         if not IsAtLeast(Gold, 200) then
@@ -12339,7 +12339,7 @@ end)
 RegisterGlobalEvent(1261, nil, function()
     evt.ForPlayer(Players.All)
     if not HasItem(1495) then return end -- Crate of Griffin Feathers
-    evt.SetMessage("皮普�希利尔又发了一船狮鹫羽毛。\n这是你的报酬。\n好好享受这一天！")
+    evt.SetMessage("皮普·希利尔又发了一船狮鹫羽毛。\n这是你的报酬。\n好好享受这一天！")
     RemoveItem(1495) -- Crate of Griffin Feathers
     evt.ForPlayer(Players.Current)
     if IsAtLeast(DayOfWeek, 0) then
@@ -12369,7 +12369,7 @@ RegisterGlobalEvent(1261, nil, function()
 end)
 
 RegisterGlobalEvent(1262, nil, function()
-    evt.SetMessage("谢谢！\n这是你的一箱沙子。被遗弃拜尔德斯的阿文�云幕为这沙子出好价钱——他用它造精美的瓶子！")
+    evt.SetMessage("谢谢！\n这是你的一箱沙子。被遗弃拜尔德斯的阿文·云幕为这沙子出好价钱——他用它造精美的瓶子！")
     ClearQBit(QBit(767)) -- Bought Item 6
     if IsAtLeast(Gold, 2000) then
         if not IsAtLeast(Gold, 2000) then
@@ -12458,7 +12458,7 @@ end)
 RegisterGlobalEvent(1265, nil, function()
     evt.ForPlayer(Players.All)
     if not HasItem(1497) then return end -- Crate of Sand
-    evt.SetMessage("啊，卡林德拉�金视发来的一船沙子。\n这是你的报酬。")
+    evt.SetMessage("啊，卡林德拉·金视发来的一船沙子。\n这是你的报酬。")
     RemoveItem(1497) -- Crate of Sand
     evt.ForPlayer(Players.Current)
     if IsAtLeast(Counter(7), 24) then
@@ -12477,7 +12477,7 @@ RegisterGlobalEvent(1265, nil, function()
 end)
 
 RegisterGlobalEvent(1266, nil, function()
-    evt.SetMessage("这是你的一箱恩洛斯葡萄酒。\n把它送到泰塔利亚的卡林德拉�金视手里，她会付你好价钱！")
+    evt.SetMessage("这是你的一箱恩洛斯葡萄酒。\n把它送到泰塔利亚的卡林德拉·金视手里，她会付你好价钱！")
     ClearQBit(QBit(766)) -- Bought Item 5
     if IsAtLeast(Gold, 2000) then
         if not IsAtLeast(Gold, 2000) then
@@ -12512,7 +12512,7 @@ end)
 RegisterGlobalEvent(1267, nil, function()
     evt.ForPlayer(Players.All)
     if not HasItem(1498) then return end -- Crate of Glass Bottles
-    evt.SetMessage("阿文�云幕又给我发了一船玻璃瓶。\n该再装几瓶恩洛斯葡萄酒了。\n这是你的报酬。")
+    evt.SetMessage("阿文·云幕又给我发了一船玻璃瓶。\n该再装几瓶恩洛斯葡萄酒了。\n这是你的报酬。")
     RemoveItem(1498) -- Crate of Glass Bottles
     evt.ForPlayer(Players.Current)
     if IsAtLeast(Counter(8), 24) then
@@ -13050,7 +13050,7 @@ RegisterGlobalEvent(1320, nil, function()
 end)
 
 RegisterGlobalEvent(1321, nil, function()
-    evt.SetMessage("嚎叫月的店主是乔治�卡尼斯。\n那是个好地方。\n替我向他问好！")
+    evt.SetMessage("嚎叫月的店主是乔治·卡尼斯。\n那是个好地方。\n替我向他问好！")
 end)
 
 RegisterGlobalEvent(1322, nil, function()
@@ -13124,7 +13124,7 @@ end)
 
 RegisterGlobalEvent(1327, nil, function()
     if not IsQBitSet(QBit(1699)) then -- Replacement for NPCs �11 ver. 6
-        evt.SetMessage("我知道落难少女稀缺，可这任务是传统试炼。\n我在这儿实在不能通融规则。\n继续找——我相信你们会找到人的。\n要帮忙的话，我听说贵族约翰�西尔弗之女米拉达�席尔瓦，被一群暴徒囚禁在浓雾岛上。")
+        evt.SetMessage("我知道落难少女稀缺，可这任务是传统试炼。\n我在这儿实在不能通融规则。\n继续找——我相信你们会找到人的。\n要帮忙的话，我听说贵族约翰·西尔弗之女米拉达·席尔瓦，被一群暴徒囚禁在浓雾岛上。")
         return
     end
     evt.SetMessage("我听过你们大胆营救的故事，很高兴你们带着西尔弗小姐回来了。\n我会立刻安排把她送回家人身边。\n堪称楷模的工作！\n我特此正式把所有圣武士晋升为十字军，把所有非圣武士封为荣誉十字军！")
@@ -13147,7 +13147,7 @@ RegisterGlobalEvent(1327, nil, function()
 end)
 
 RegisterGlobalEvent(1328, nil, function()
-    evt.SetMessage("那么！\n晋升十字军是好事，可晋升英雄更是大好事。\n你们现在大概也猜到了，英雄身份的条件是杀一条龙。\n我知道这看似很难，可传统有传统的要求。\n更糟的是，你不能随便杀一条龙，必须杀一条有名的龙。\n你的任务是杀死长牙�枯皮，带一只爪或一颗牙作凭证回来。\n幸运的是，我们知道长牙齿在黑摩尔城堡后方山里的一个洞穴里。\n他已杀了至少十二个想当英雄的人，小心！")
+    evt.SetMessage("那么！\n晋升十字军是好事，可晋升英雄更是大好事。\n你们现在大概也猜到了，英雄身份的条件是杀一条龙。\n我知道这看似很难，可传统有传统的要求。\n更糟的是，你不能随便杀一条龙，必须杀一条有名的龙。\n你的任务是杀死长牙·枯皮，带一只爪或一颗牙作凭证回来。\n幸运的是，我们知道长牙齿在黑摩尔城堡后方山里的一个洞穴里。\n他已杀了至少十二个想当英雄的人，小心！")
     SetQBit(QBit(1113)) -- Slay Longfang Witherhide in his cave near Castle Darkmoor and return to Wilbur Humphrey in Castle Ironfist. - Paul
     evt.SetNPCTopic(789, 1, 1329) -- Wilbur Humphrey topic 1: Heroes
 end)
@@ -13390,11 +13390,11 @@ end)
 RegisterGlobalEvent(1359, nil, function()
     evt.ForPlayer(Players.All)
     if IsQBitSet(QBit(1105)) then -- Show Sulman's letter to Andover Potbello in New Sorpigal. - Set when the party starts
-        evt.SetMessage("你们大概该把那封信拿给新索匹格的安德弗�波特贝洛看。")
+        evt.SetMessage("你们大概该把那封信拿给新索匹格的安德弗·波特贝洛看。")
         SetAutonote(479) -- You should probably show the sixth letter to Andover Potbello in New Sorpigal.
         return
     elseif IsQBitSet(QBit(1106)) then -- Bring Sulman's letter to Regent Wilbur Humphrey at Castle Ironfist. - Set by Andover after you show him the letter
-        evt.SetMessage("你们得把那封信交给铁拳城堡的摄政者威尔伯�汉弗里。")
+        evt.SetMessage("你们得把那封信交给铁拳城堡的摄政者威尔伯·汉弗里。")
         SetAutonote(478) -- You need to give The Letter to Regent Wilbur Humphrey in Ironfist Castle.
         return
     elseif IsAtLeast(BaseLevel, 25) then
@@ -13826,7 +13826,7 @@ RegisterGlobalEvent(1396, nil, function()
 end)
 
 RegisterGlobalEvent(1397, nil, function()
-    evt.SetMessage("这么说，你们自认配得上大德鲁伊头衔。\n你们必须完成月亮仪式才能达到大德鲁伊身份。\n在上一代德鲁伊分裂之前，这曾相当容易，可如今你们得一路杀进神圣祭坛。\n它在月亮神庙，目前由邪恶异端塞德里克�德鲁瑟斯控制。\n他们绝不会让你们和平完成仪式，所以你们大概得打进去。\n与太阳仪式一样，月亮仪式也必须在特定时间、特定地点举行。\n每逢满月的午夜，到月亮神庙的月亮祭坛祈祷。\n你们那时若在，我会以魔法联系你们，引导你们完成仪式。")
+    evt.SetMessage("这么说，你们自认配得上大德鲁伊头衔。\n你们必须完成月亮仪式才能达到大德鲁伊身份。\n在上一代德鲁伊分裂之前，这曾相当容易，可如今你们得一路杀进神圣祭坛。\n它在月亮神庙，目前由邪恶异端塞德里克·德鲁瑟斯控制。\n他们绝不会让你们和平完成仪式，所以你们大概得打进去。\n与太阳仪式一样，月亮仪式也必须在特定时间、特定地点举行。\n每逢满月的午夜，到月亮神庙的月亮祭坛祈祷。\n你们那时若在，我会以魔法联系你们，引导你们完成仪式。")
     SetQBit(QBit(1143)) -- Visit the Altar of the Moon in the Temple of the Moon at midnight of a full moon. - NPC
     evt.SetNPCTopic(1090, 1, 1398) -- Loretta Fleise topic 1: Arch Druids
 end)
@@ -13851,7 +13851,7 @@ RegisterGlobalEvent(1401, nil, function()
 end)
 
 RegisterGlobalEvent(1402, nil, function()
-    evt.SetMessage("天气转好、雪消失时，我正望着窗外！\n奇迹！\n真正的奇迹！\n你们为我的人民和我立了大功。\n<捶胸>埃里克�冯�斯壮姆嘉德伯爵从此是你们永远的朋友！\n")
+    evt.SetMessage("天气转好、雪消失时，我正望着窗外！\n奇迹！\n真正的奇迹！\n你们为我的人民和我立了大功。\n<捶胸>埃里克·冯·斯壮姆嘉德伯爵从此是你们永远的朋友！\n")
     ClearQBit(QBit(1144)) -- End winter for Lord Stromgard at Castle Stromgard, and return to him with the good news. - NPC
     SetQBit(QBit(1199)) -- NPC
     AddValue(655595, 10)
@@ -15409,31 +15409,31 @@ RegisterGlobalEvent(1448, nil, function()
 end)
 
 RegisterGlobalEvent(1573, nil, function()
-    evt.SetMessage("手杖之道最好的老师贾斯珀�赖斯住在银湾附近。\n你们若想继续手杖训练，就去找他谈谈。")
+    evt.SetMessage("手杖之道最好的老师贾斯珀·赖斯住在银湾附近。\n你们若想继续手杖训练，就去找他谈谈。")
 end)
 
 RegisterGlobalEvent(1574, nil, function()
-    evt.SetMessage("布莱克郡的盖伊�汉普顿把我会的剑术都教给了我。\n你们若想精通刀剑，就该拜他为师。")
+    evt.SetMessage("布莱克郡的盖伊·汉普顿把我会的剑术都教给了我。\n你们若想精通刀剑，就该拜他为师。")
 end)
 
 RegisterGlobalEvent(1575, nil, function()
-    evt.SetMessage("跟儒勒�迈尔斯比起来我只是个新手。\n他住在石头城堡附近，能教任何人改进匕首技巧。")
+    evt.SetMessage("跟儒勒·迈尔斯比起来我只是个新手。\n他住在石头城堡附近，能教任何人改进匕首技巧。")
 end)
 
 RegisterGlobalEvent(1576, nil, function()
-    evt.SetMessage("艾文里尔�史密瑟斯在我们大多数人出生前就已精通战斧，可他不训练人类。\n我想你们若能为他做点特别的事，他也许会考虑教一个人类怎样真正挥斧。\n他大部分时间在诅咒沼泽的鬼屋里。")
+    evt.SetMessage("艾文里尔·史密瑟斯在我们大多数人出生前就已精通战斧，可他不训练人类。\n我想你们若能为他做点特别的事，他也许会考虑教一个人类怎样真正挥斧。\n他大部分时间在诅咒沼泽的鬼屋里。")
 end)
 
 RegisterGlobalEvent(1577, nil, function()
-    evt.SetMessage("恩洛斯最好的矛术师伯顿�卢瑟福住在黑沼。\n我不清楚他为何挑这么偏僻的地方安家。\n也许他不喜欢被学生打扰？")
+    evt.SetMessage("恩洛斯最好的矛术师伯顿·卢瑟福住在黑沼。\n我不清楚他为何挑这么偏僻的地方安家。\n也许他不喜欢被学生打扰？")
 end)
 
 RegisterGlobalEvent(1578, nil, function()
-    evt.SetMessage("斯特罗姆加领主箭术虽好，却不收学生。\n要精通弓，你们得去克里格斯找德斯蒙德�韦勒。")
+    evt.SetMessage("斯特罗姆加领主箭术虽好，却不收学生。\n要精通弓，你们得去克里格斯找德斯蒙德·韦勒。")
 end)
 
 RegisterGlobalEvent(1579, nil, function()
-    evt.SetMessage("你们若想精通钉锤，得去布莱克郡找埃罗尔�奥斯特曼谈谈。")
+    evt.SetMessage("你们若想精通钉锤，得去布莱克郡找埃罗尔·奥斯特曼谈谈。")
 end)
 
 RegisterGlobalEvent(1580, nil, function()
@@ -15441,19 +15441,19 @@ RegisterGlobalEvent(1580, nil, function()
 end)
 
 RegisterGlobalEvent(1581, nil, function()
-    evt.SetMessage("没人能像布莱克郡的布朗温�梅克那样用盾。\n你们若想精通盾，就该找他。")
+    evt.SetMessage("没人能像布莱克郡的布朗温·梅克那样用盾。\n你们若想精通盾，就该找他。")
 end)
 
 RegisterGlobalEvent(1582, nil, function()
-    evt.SetMessage("阿伦�西勒开办着最好的皮甲穿戴技艺学校。\n他通常在石头城堡附近开课。")
+    evt.SetMessage("阿伦·西勒开办着最好的皮甲穿戴技艺学校。\n他通常在石头城堡附近开课。")
 end)
 
 RegisterGlobalEvent(1583, nil, function()
-    evt.SetMessage("黑沼是大卫�费瑟的家，他是我所知唯一能教你们精通锁甲技巧的人。")
+    evt.SetMessage("黑沼是大卫·费瑟的家，他是我所知唯一能教你们精通锁甲技巧的人。")
 end)
 
 RegisterGlobalEvent(1584, nil, function()
-    evt.SetMessage("福里斯特�萨瑟斯，恩洛斯首席圣武士之一，在泰珀城堡附近教授板甲精通。")
+    evt.SetMessage("福里斯特·萨瑟斯，恩洛斯首席圣武士之一，在泰珀城堡附近教授板甲精通。")
 end)
 
 RegisterGlobalEvent(1585, nil, function()
@@ -15461,15 +15461,15 @@ RegisterGlobalEvent(1585, nil, function()
 end)
 
 RegisterGlobalEvent(1586, nil, function()
-    evt.SetMessage("卡奥�塞勒姆在浓雾岛能教你们更多气系魔法的诀窍。")
+    evt.SetMessage("卡奥·塞勒姆在浓雾岛能教你们更多气系魔法的诀窍。")
 end)
 
 RegisterGlobalEvent(1587, nil, function()
-    evt.SetMessage("要精通水系，你们得在浓雾岛的哈珀�柯林斯门下受训。")
+    evt.SetMessage("要精通水系，你们得在浓雾岛的哈珀·柯林斯门下受训。")
 end)
 
 RegisterGlobalEvent(1588, nil, function()
-    evt.SetMessage("雷维�博塔尼亚在银湾能训练你们精通土系。")
+    evt.SetMessage("雷维·博塔尼亚在银湾能训练你们精通土系。")
 end)
 
 RegisterGlobalEvent(1589, nil, function()
@@ -15477,11 +15477,11 @@ RegisterGlobalEvent(1589, nil, function()
 end)
 
 RegisterGlobalEvent(1590, nil, function()
-    evt.SetMessage("塞恩�罗珀在银湾能训练你们精通心智系。")
+    evt.SetMessage("塞恩·罗珀在银湾能训练你们精通心智系。")
 end)
 
 RegisterGlobalEvent(1591, nil, function()
-    evt.SetMessage("你们若想精通体术魔法，得去银湾找吉尔伯特�哈默谈谈。")
+    evt.SetMessage("你们若想精通体术魔法，得去银湾找吉尔伯特·哈默谈谈。")
 end)
 
 RegisterGlobalEvent(1592, nil, function()
@@ -15493,39 +15493,39 @@ RegisterGlobalEvent(1593, nil, function()
 end)
 
 RegisterGlobalEvent(1594, nil, function()
-    evt.SetMessage("汉斯�吉福德在自由天堂能教你们更多鉴定物品的妙诀。")
+    evt.SetMessage("汉斯·吉福德在自由天堂能教你们更多鉴定物品的妙诀。")
 end)
 
 RegisterGlobalEvent(1595, nil, function()
-    evt.SetMessage("我见过最油嘴滑舌的商人是银湾的威尔�奥斯曼。\n你们若想提升商人技巧，就该找他。")
+    evt.SetMessage("我见过最油嘴滑舌的商人是银湾的威尔·奥斯曼。\n你们若想提升商人技巧，就该找他。")
 end)
 
 RegisterGlobalEvent(1596, nil, function()
-    evt.SetMessage("你们觉得我擅长修理的话，瑞安�特里克尔是这一带最好的。\n我相信能说服他帮你们精通这门技艺。\n我上次听说他住在石头城堡附近。")
+    evt.SetMessage("你们觉得我擅长修理的话，瑞安·特里克尔是这一带最好的。\n我相信能说服他帮你们精通这门技艺。\n我上次听说他住在石头城堡附近。")
 end)
 
 RegisterGlobalEvent(1597, nil, function()
-    evt.SetMessage("杰森�特拉弗勒会指导你们健身术最精妙之处。\n他在自由天堂工作——前提是你们受得了他严苛的训练。")
+    evt.SetMessage("杰森·特拉弗勒会指导你们健身术最精妙之处。\n他在自由天堂工作——前提是你们受得了他严苛的训练。")
 end)
 
 RegisterGlobalEvent(1598, nil, function()
-    evt.SetMessage("精通冥想若是你们的目标，就得去浓雾岛找野野�阿里加纳卡。")
+    evt.SetMessage("精通冥想若是你们的目标，就得去浓雾岛找野野·阿里加纳卡。")
 end)
 
 RegisterGlobalEvent(1599, nil, function()
-    evt.SetMessage("感知力可以在黑沼的马科�卡利古拉帮助下精通。")
+    evt.SetMessage("感知力可以在黑沼的马科·卡利古拉帮助下精通。")
 end)
 
 RegisterGlobalEvent(1600, nil, function()
-    evt.SetMessage("雅克�科尔正与斯特罗姆加领主合作研发实验配方。\n他若有空，也许能帮你们精通炼金术。")
+    evt.SetMessage("雅克·科尔正与斯特罗姆加领主合作研发实验配方。\n他若有空，也许能帮你们精通炼金术。")
 end)
 
 RegisterGlobalEvent(1601, nil, function()
-    evt.SetMessage("最伟大的拆陷阱师加布�莱斯特目前在石头城堡附近传授技艺。\n你们想学所有最好的诀窍就该找他。")
+    evt.SetMessage("最伟大的拆陷阱师加布·莱斯特目前在石头城堡附近传授技艺。\n你们想学所有最好的诀窍就该找他。")
 end)
 
 RegisterGlobalEvent(1602, nil, function()
-    evt.SetMessage("约翰�塔克能教你们精通学习技能。\n我相信他仍住在银湾。")
+    evt.SetMessage("约翰·塔克能教你们精通学习技能。\n我相信他仍住在银湾。")
 end)
 
 RegisterGlobalEvent(1603, nil, function()
@@ -15606,7 +15606,7 @@ RegisterGlobalEvent(1610, nil, function()
 end)
 
 RegisterGlobalEvent(1611, nil, function()
-    evt.SetMessage("谁想得到，我走遍恩洛斯想讨伐的邪恶，竟离我自家这么近？\n杰拉德�布莱克墨斯曾是我的副手。\n他谋杀我前不久开始与羊鸣教神庙通信，他们开始给他喂我们兄弟会的目标。\n我最终成了目标之一，杰拉德接管了兄弟会。\n如今，银盔和他们猎捕的人一样邪恶。\n我确信我们兄弟会的腐化是羊鸣教神庙一手造成的。\n与此同时，杰拉德的兄弟、巫师马库斯一直在给银盔供应高质量装备。\n我上次听说，马库斯在东南边一座岛上的熔炉里帮人干活。")
+    evt.SetMessage("谁想得到，我走遍恩洛斯想讨伐的邪恶，竟离我自家这么近？\n杰拉德·布莱克墨斯曾是我的副手。\n他谋杀我前不久开始与羊鸣教神庙通信，他们开始给他喂我们兄弟会的目标。\n我最终成了目标之一，杰拉德接管了兄弟会。\n如今，银盔和他们猎捕的人一样邪恶。\n我确信我们兄弟会的腐化是羊鸣教神庙一手造成的。\n与此同时，杰拉德的兄弟、巫师马库斯一直在给银盔供应高质量装备。\n我上次听说，马库斯在东南边一座岛上的熔炉里帮人干活。")
 end)
 
 RegisterGlobalEvent(1612, nil, function()
@@ -15717,7 +15717,7 @@ RegisterGlobalEvent(1622, nil, function()
 end)
 
 RegisterGlobalEvent(1623, nil, function()
-    evt.SetMessage("塞德里克�德鲁瑟斯和他的天体教团占领了独石——一处德鲁伊神圣的古老之地。\n他们黑暗的仪式正在腐化独石，必须阻止他们——他们用作仪式中心的那座祭坛必须被损毁。\n为我们做这件事，我们会补偿你们的时间与辛劳。")
+    evt.SetMessage("塞德里克·德鲁瑟斯和他的天体教团占领了独石——一处德鲁伊神圣的古老之地。\n他们黑暗的仪式正在腐化独石，必须阻止他们——他们用作仪式中心的那座祭坛必须被损毁。\n为我们做这件事，我们会补偿你们的时间与辛劳。")
     SetQBit(QBit(1155)) -- Deface the altar in the Monolith west of Silver Cove and return to Eleanor Vanderbilt in Silver Cove. - NPC
     evt.SetNPCTopic(1052, 0, 1624) -- Eleanor Vanderbilt topic 0: Quest
 end)
@@ -15840,7 +15840,7 @@ RegisterGlobalEvent(1636, nil, function()
 end)
 
 RegisterGlobalEvent(1637, nil, function()
-    evt.SetMessage("暗影行会的成员近来南下，一直试图把手伸到这一带商人头上。\n我拒绝他们进城，他们就绑架了老治疗师莎丽�卡内基——镇民都爱戴她——想借此‘说服’我允许他们在这儿活动。\n我不敢相信他们的勒索竟南进到这么远，我原以为这下面安全。\n请救回莎丽——我可以出点钱当报酬，镇民们也一定会感激她回来。")
+    evt.SetMessage("暗影行会的成员近来南下，一直试图把手伸到这一带商人头上。\n我拒绝他们进城，他们就绑架了老治疗师莎丽·卡内基——镇民都爱戴她——想借此‘说服’我允许他们在这儿活动。\n我不敢相信他们的勒索竟南进到这么远，我原以为这下面安全。\n请救回莎丽——我可以出点钱当报酬，镇民们也一定会感激她回来。")
     SetQBit(QBit(1162)) -- Rescue Sharry from the Shadow Guild Hideout and return with her to Frank Fairchild in New Sorpigal. - NPC
     evt.SetNPCTopic(788, 0, 1638) -- Frank Fairchild topic 0: Quest
 end)
@@ -15863,10 +15863,10 @@ end)
 RegisterGlobalEvent(1639, nil, function()
     evt.ForPlayer(Players.All)
     if not HasItem(2124) then -- Orders from the Shadow Guild
-        evt.SetMessage("我受够暗影行会了，可我没有他们活动的确凿证据。\n我真希望手里有点东西能拿给安东尼�斯通，证明暗影行会在这下面不干好事。")
+        evt.SetMessage("我受够暗影行会了，可我没有他们活动的确凿证据。\n我真希望手里有点东西能拿给安东尼·斯通，证明暗影行会在这下面不干好事。")
         return
     end
-    evt.SetMessage("有意思。\n龙骑兵是暗影行会雇的。\n我敢说安东尼�斯通一定想听听这个。\n下次见到他我会呈上这封信。谢谢你们提供这个。\n有了他们恶行的证据，我相信他现在会对暗影行会采取行动了。")
+    evt.SetMessage("有意思。\n龙骑兵是暗影行会雇的。\n我敢说安东尼·斯通一定想听听这个。\n下次见到他我会呈上这封信。谢谢你们提供这个。\n有了他们恶行的证据，我相信他现在会对暗影行会采取行动了。")
     RemoveItem(2124) -- Orders from the Shadow Guild
     AddValue(Experience, 5000)
     evt.ForPlayer(Players.Current)
@@ -15938,7 +15938,7 @@ RegisterGlobalEvent(1646, nil, function()
 end)
 
 RegisterGlobalEvent(1647, nil, function()
-    evt.SetMessage("我们镇中了可怕的诅咒，不过大多数人不信。\n每逢满月，我们都会变成狼人。\n虽然我们谁都不是真邪恶，可我们真不知道自己变成狼人时会做出什么可怕的事。\n我们没法去找我们的领主艾克顿�斯宾德勒反映这个问题，因为他没意识到我们就是狼人。\n请想办法把我们变回正常！")
+    evt.SetMessage("我们镇中了可怕的诅咒，不过大多数人不信。\n每逢满月，我们都会变成狼人。\n虽然我们谁都不是真邪恶，可我们真不知道自己变成狼人时会做出什么可怕的事。\n我们没法去找我们的领主艾克顿·斯宾德勒反映这个问题，因为他没意识到我们就是狼人。\n请想办法把我们变回正常！")
     SetQBit(QBit(1165)) -- Destroy the Werewolf's altar in the Lair of the Wolf and return to Maria Trepan in Blackshire. - NPC
     evt.SetNPCTopic(997, 0, 1648) -- Maria Trepan topic 0: Quest
 end)
@@ -15964,7 +15964,7 @@ RegisterGlobalEvent(1651, nil, function()
 end)
 
 RegisterGlobalEvent(1652, nil, function()
-    evt.SetMessage("逃跑途中，我把纯净珍珠藏在了这些洞穴里。\n这颗珍珠既能保护你们不受狼人诅咒，珍珠一碰到狼之祭坛还会毁掉它。\n那应当能解救所有被这些狼人带来的诅咒折磨的人。\n珍珠在与这个洞穴相对的另一头。\n请帮我一个忙，把珍珠还给威尔伯�汉弗里。\n他是主管圣武士的领主，珍珠该归他。")
+    evt.SetMessage("逃跑途中，我把纯净珍珠藏在了这些洞穴里。\n这颗珍珠既能保护你们不受狼人诅咒，珍珠一碰到狼之祭坛还会毁掉它。\n那应当能解救所有被这些狼人带来的诅咒折磨的人。\n珍珠在与这个洞穴相对的另一头。\n请帮我一个忙，把珍珠还给威尔伯·汉弗里。\n他是主管圣武士的领主，珍珠该归他。")
     SetQBit(QBit(1166)) -- NPC
     evt.SetNPCTopic(789, 2, 1655) -- Wilbur Humphrey topic 2: Pearl of Purity
 end)
@@ -16102,7 +16102,7 @@ RegisterGlobalEvent(1675, nil, function()
         evt.SetMessage("近来，银兄弟会一直在扰乱我的生意和商队。\n我不清楚约翰爵士为何觉得有必要这么做，可我希望这停下来。\n你们若能说服他别来烦我，我敢说能从替你们省下的钱里分一份给你们。")
         return
     end
-    evt.SetMessage("这么说，约翰爵士被谋杀，银盔是被羊鸣教神庙收买的？\n这就解释了很多事。\n你们把这事带给我，干得好，不过你们得去安东尼�斯通那儿领赏。")
+    evt.SetMessage("这么说，约翰爵士被谋杀，银盔是被羊鸣教神庙收买的？\n这就解释了很多事。\n你们把这事带给我，干得好，不过你们得去安东尼·斯通那儿领赏。")
     RemoveItem(2068) -- Ankh
     AddValue(Experience, 10000)
     evt.ForPlayer(Players.Current)
@@ -16126,13 +16126,13 @@ RegisterGlobalEvent(1676, nil, function()
 end)
 
 RegisterGlobalEvent(1677, nil, function()
-    evt.SetMessage("这么说，腐化银盔、谋杀约翰�席尔瓦爵士的幕后黑手是巴？\n约翰爵士真惨，愿他灵魂安息。\n<眨眼>洛雷塔叫你们来找我领赏？\n贪财的女巫。\n来，你们的效劳不能没有报酬。")
+    evt.SetMessage("这么说，腐化银盔、谋杀约翰·席尔瓦爵士的幕后黑手是巴？\n约翰爵士真惨，愿他灵魂安息。\n<眨眼>洛雷塔叫你们来找我领赏？\n贪财的女巫。\n来，你们的效劳不能没有报酬。")
     AddValue(Gold, 5000)
     evt.SetNPCTopic(801, 2, 0) -- Anthony Stone topic 2 cleared
 end)
 
 RegisterGlobalEvent(1678, nil, function()
-    evt.SetMessage("<劳里达�弗丽斯以传心术联系你们>欢迎来到太阳仪式。\n站在生命之圈中，面朝北方，身前不投下影子。\n默思这一真理：\n‘金钱就是一切。\n我没有比金钱更真的朋友……’<咧嘴笑>开玩笑的。\n现在，闭上眼，当你们站在世界与时间的中心，只为这一个崇高时刻冥想……<长长的静默停顿>\n睁开眼。\n我特此把所有德鲁伊晋升为高级德鲁伊，把所有非德鲁伊封为荣誉德鲁伊。<洛雷塔渐渐消失>")
+    evt.SetMessage("<劳里达·弗丽斯以传心术联系你们>欢迎来到太阳仪式。\n站在生命之圈中，面朝北方，身前不投下影子。\n默思这一真理：\n‘金钱就是一切。\n我没有比金钱更真的朋友……’<咧嘴笑>开玩笑的。\n现在，闭上眼，当你们站在世界与时间的中心，只为这一个崇高时刻冥想……<长长的静默停顿>\n睁开眼。\n我特此把所有德鲁伊晋升为高级德鲁伊，把所有非德鲁伊封为荣誉德鲁伊。<洛雷塔渐渐消失>")
     for _, player in ipairs(PartyMembers()) do
         evt.ForPlayer(player)
         if IsAtLeast(ClassId, 12) then
@@ -16152,7 +16152,7 @@ RegisterGlobalEvent(1678, nil, function()
 end)
 
 RegisterGlobalEvent(1679, nil, function()
-    evt.SetMessage("<劳里达�弗丽斯以传心术联系你们>欢迎来到月亮仪式。\n站在月亮祭坛前面朝南方。\n闭上眼，默思四季之环与生命之轮。\n<长长的静默停顿>\n睁开眼吧，我的朋友们。\n我特此把所有高级德鲁伊晋升为大德鲁伊，把所有荣誉高级德鲁伊封为荣誉大德鲁伊。\n<洛雷塔渐渐消失>")
+    evt.SetMessage("<劳里达·弗丽斯以传心术联系你们>欢迎来到月亮仪式。\n站在月亮祭坛前面朝南方。\n闭上眼，默思四季之环与生命之轮。\n<长长的静默停顿>\n睁开眼吧，我的朋友们。\n我特此把所有高级德鲁伊晋升为大德鲁伊，把所有荣誉高级德鲁伊封为荣誉大德鲁伊。\n<洛雷塔渐渐消失>")
     for _, player in ipairs(PartyMembers()) do
         evt.ForPlayer(player)
         if IsAtLeast(ClassId, 13) then
@@ -16204,7 +16204,7 @@ RegisterGlobalEvent(1691, nil, function()
         evt.SetMessage("与斯特罗姆加领主无关的事，我不能投票。\n在得到他支持之前，我不能投你们。")
         return
     end
-    evt.SetMessage("我投你们票，允许你们拜访神使——这是埃里克�冯�斯壮姆嘉德亲自指示的。")
+    evt.SetMessage("我投你们票，允许你们拜访神使——这是埃里克·冯·斯壮姆嘉德亲自指示的。")
 end)
 
 RegisterGlobalEvent(1692, nil, function()
