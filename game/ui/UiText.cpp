@@ -355,6 +355,11 @@ std::string translateLocked(Overrides &data, const std::string &text, int depth)
     for (const Separator &separator :
          {Separator{" · ", " · "}, Separator{", ", "、"}, Separator{" / ", " / "}, Separator{" and ", "和"}})
     {
+        if (depth == 0 && std::string(separator.find) == " and ")
+        {
+            continue;
+        }
+
         const std::string find = separator.find;
 
         if (text.find(find) == std::string::npos)

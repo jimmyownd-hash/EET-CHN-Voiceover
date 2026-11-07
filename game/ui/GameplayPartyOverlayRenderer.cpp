@@ -1,3 +1,4 @@
+#include "game/ui/UiText.h"
 #include "game/ui/GameplayPartyOverlayRenderer.h"
 #include "game/items/InventoryBags.h"
 #include "game/ui/InventoryBagOverview.h"
@@ -10382,7 +10383,8 @@ void GameplayPartyOverlayRenderer::renderCharacterOverlay(
             }
             label = replaceAllText(label, "{character_name}", pCharacter != nullptr ? pCharacter->name : "");
             label = replaceAllText(label, "{character_class}", pCharacter != nullptr
-                ? "the " + party.rules().classes.displayName(party, *pCharacter)
+                ? (UiText::hasOverrides() ? " " + UiText::translate(party.rules().classes.displayName(party, *pCharacter))
+                                          : "the " + party.rules().classes.displayName(party, *pCharacter))
                 : "");
             label = replaceAllText(
                 label,

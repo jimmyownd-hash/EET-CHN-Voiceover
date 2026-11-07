@@ -1,3 +1,4 @@
+#include "game/ui/UiText.h"
 #include "game/ui/MenuDesignScreen.h"
 
 #include "engine/FontAsset.h"
@@ -296,7 +297,7 @@ void MenuDesignScreen::drawDesign()
 std::vector<std::string> MenuDesignScreen::wrapParagraph(const std::string &paragraph, const std::string &font,
                                                          float scale, float width)
 {
-    std::istringstream input(paragraph);
+    std::istringstream input(UiText::translate(paragraph));
     std::string word, words;
     while (input >> word)
     {
@@ -314,7 +315,7 @@ void MenuDesignScreen::textInRect(const Rect &rect, const std::string &text, con
 {
     const int faceHeight = std::max(1, fontHeight(font));
     float scale = designScale() * logicalSize / faceHeight;
-    std::string encoded = text;
+    std::string encoded = UiText::translate(text);
     if (encoded.find('\n') == std::string::npos && rect.height < logicalSize * designScale() * 1.9f)
     {
         const float width = measureTextWidth(font, encoded, scale);
@@ -364,7 +365,7 @@ float MenuDesignScreen::textBlockHeight(const std::string &text, const std::stri
 {
     const float scale = designScale() * logicalSize / std::max(1, fontHeight(font));
     size_t lineCount = 0;
-    std::istringstream paragraphs(text);
+    std::istringstream paragraphs(UiText::translate(text));
     std::string paragraph;
     while (std::getline(paragraphs, paragraph))
     {
