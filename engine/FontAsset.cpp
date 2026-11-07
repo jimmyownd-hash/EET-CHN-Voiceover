@@ -495,6 +495,9 @@ std::optional<FontAtlasImage> loadTrueTypeFontAtlas(const AssetFileSystem &asset
     std::optional<int> weight;
     bool unicode = false;
     std::string characterListFile;
+    // Unicode faces may draw their glyphs smaller than the logical height (CJK glyphs fill the whole em box, while
+    // the Latin faces they replace reach only cap height), keeping the line metrics the layouts were made for.
+    float glyphScale = 1.0f;
     try
     {
         const YAML::Node descriptor = YAML::Load(descriptorText.value_or(""));
@@ -503,6 +506,10 @@ std::optional<FontAtlasImage> loadTrueTypeFontAtlas(const AssetFileSystem &asset
         characterListFile = unicode ? descriptor["characters_file"].as<std::string>("") : "";
         atlas.fontHeight = descriptor["logical_height"].as<int>();
         baseline = descriptor["baseline"].as<int>();
+        if (unicode && descriptor["glyph_scale"])
+        {
+            glyphScale = descriptor["glyph_scale"].as<float>();
+        }
         if (descriptor["weight"])
         {
             weight = descriptor["weight"].as<int>();
@@ -511,7 +518,8 @@ std::optional<FontAtlasImage> loadTrueTypeFontAtlas(const AssetFileSystem &asset
             (!unicode && descriptor["encoding"].as<std::string>() != "windows-1252") || file.empty() ||
             (unicode && (characterListFile.empty() || characterListFile.find_first_of("/\\") != std::string::npos)) ||
             file.find_first_of("/\\") != std::string::npos || atlas.fontHeight < 8 || atlas.fontHeight > 64 ||
-            baseline < 0 || baseline > atlas.fontHeight || (weight && (*weight < 1 || *weight > 1000)))
+            baseline < 0 || baseline > atlas.fontHeight || (weight && (*weight < 1 || *weight > 1000))
+            || glyphScale < 0.5f || glyphScale > 1.0f)
         {
             error = "Invalid independent outline font descriptor: " + name;
             return std::nullopt;
@@ -540,7 +548,8 @@ std::optional<FontAtlasImage> loadTrueTypeFontAtlas(const AssetFileSystem &asset
     if (!bytes || bytes->empty() || bytes->size() > 32 * 1024 * 1024 || FT_Init_FreeType(&font.library) != 0 ||
         FT_New_Memory_Face(font.library, bytes->data(), FT_Long(bytes->size()), 0, &font.face) != 0 ||
         !FT_IS_SCALABLE(font.face) || FT_Select_Charmap(font.face, FT_ENCODING_UNICODE) != 0 ||
-        FT_Set_Pixel_Sizes(font.face, 0, rasterHeight * atlas.atlasScale) != 0)
+        FT_Set_Pixel_Sizes(font.face, 0,
+                           std::max(1, int(std::lround(rasterHeight * atlas.atlasScale * glyphScale)))) != 0)
     {
         error = "Unable to open outline font: " + file;
         return std::nullopt;

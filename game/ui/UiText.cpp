@@ -88,7 +88,7 @@ std::optional<Pattern> parsePattern(const std::string &key, const std::string &v
                 for (size_t k = i + 1; k < close; ++k)
                 {
                     const char c = key[k];
-                    nameOk = nameOk && (std::isalnum(static_cast<unsigned char>(c)) || c == '_');
+                    nameOk = nameOk && (std::isalnum(static_cast<unsigned char>(c)) || c == '_' || c == '#');
                 }
 
                 if (nameOk)
@@ -181,7 +181,34 @@ bool matchPattern(const Pattern &pattern, const std::string &text, std::unordere
             return false;
         }
 
-        captures[part.text] = text.substr(position, end - position);
+        std::string capture = text.substr(position, end - position);
+
+        // A placeholder whose name ends in '#' ({n#}) stands for a number (a count, a price, a level): digits with
+        // their punctuation, percent signs and colour codes. Any other text fails the pattern, so a short pattern
+        // such as "{a#} of {b#}" never rewrites an item name.
+        if (!part.text.empty() && part.text.back() == '#')
+        {
+            bool digit = false;
+
+            for (const char c : capture)
+            {
+                const bool ok = std::isdigit(static_cast<unsigned char>(c)) || c == ' ' || c == '.' || c == ','
+                    || c == '%' || c == '+' || c == '-' || c == '/' || c == 'x' || c == '\f';
+                digit = digit || std::isdigit(static_cast<unsigned char>(c));
+
+                if (!ok)
+                {
+                    return false;
+                }
+            }
+
+            if (!digit)
+            {
+                return false;
+            }
+        }
+
+        captures[part.text] = std::move(capture);
         position = end;
     }
 
