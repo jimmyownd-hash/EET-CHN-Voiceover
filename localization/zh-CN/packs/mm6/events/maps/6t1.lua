@@ -1,0 +1,499 @@
+-- Temple of Baa
+-- generated from legacy EVT/STR
+
+SetMapMetadata({
+    levitateTrapEvents = {51},
+    onLoad = {70},
+    onLeave = {},
+    openedChestIds = {
+    [23] = {0, 0},
+    [27] = {1},
+    [28] = {2},
+    [29] = {3},
+    [30] = {4},
+    [31] = {5},
+    },
+    contextActions = {
+    [1] = { kind = "open_door", source = "title" },
+    [2] = { kind = "open_door", source = "title" },
+    [3] = { kind = "open_door", source = "title" },
+    [4] = { kind = "open_door", source = "title" },
+    [5] = { kind = "open_door", source = "title" },
+    [6] = { kind = "open_door", source = "title" },
+    [7] = { kind = "open_door", source = "title" },
+    [8] = { kind = "open_door", source = "title" },
+    [9] = { kind = "open_door", source = "title" },
+    [10] = { kind = "open_door", source = "title" },
+    [11] = { kind = "open_door", source = "title" },
+    [12] = { kind = "read", source = "title" },
+    [14] = { kind = "read", source = "title" },
+    [15] = { kind = "open_door", source = "title" },
+    [16] = { kind = "read", source = "title" },
+    [17] = { kind = "open_door", source = "title" },
+    [18] = { kind = "open_door", source = "title" },
+    [19] = { kind = "open_door", source = "title" },
+    [20] = { kind = "open_door", source = "title" },
+    [21] = { kind = "open_door", source = "title" },
+    [22] = { kind = "open_door", source = "title" },
+    [23] = { kind = "open_chest", source = "opcode", chestIds = {0} },
+    [24] = { kind = "read", source = "title" },
+    [26] = { kind = "secret_event", source = "heuristic", hidden = true },
+    [27] = { kind = "open_chest", source = "opcode", chestIds = {1} },
+    [28] = { kind = "open_chest", source = "opcode", chestIds = {2} },
+    [29] = { kind = "open_chest", source = "opcode", chestIds = {3} },
+    [30] = { kind = "open_chest", source = "opcode", chestIds = {4} },
+    [31] = { kind = "open_chest", source = "opcode", chestIds = {5} },
+    [32] = { kind = "generic_event", source = "opcode" },
+    [34] = { kind = "fountain", source = "title" },
+    [50] = { kind = "leave_dungeon", source = "opcode", targetMap = "outd3.odm", targetName = "铁拳城堡" },
+    [52] = { kind = "secret_event", source = "heuristic", hidden = true },
+    },
+    textureNames = {},
+    spriteNames = {},
+    castSpellIds = {6, 63},
+    timers = {
+    { eventId = 51, sourceEventId = 51, triggerStep = 0, origin = "legacy", triggerKind = "timer", scheduleKind = "interval", intervalHalfMinutes = 5 },
+    },
+})
+
+RegisterEvent(1, "门", function()
+    evt.ForPlayer(Players.All)
+    if not HasItem(2178) then -- Secret Door Key
+        evt.StatusText("门是锁着的。")
+        return
+    end
+    evt.ForPlayer(Players.All)
+    RemoveItem(2178) -- Secret Door Key
+    evt.SetDoorState(1, DoorAction.Close)
+end, "门")
+
+RegisterEvent(2, "门", function()
+    evt.ForPlayer(Players.All)
+    if not HasItem(2177) then -- Treasure Room Key
+        evt.StatusText("门是锁着的。")
+        return
+    end
+    evt.SetDoorState(2, DoorAction.Close)
+    evt.ForPlayer(Players.All)
+    RemoveItem(2177) -- Treasure Room Key
+end, "门")
+
+RegisterEvent(3, "门", function()
+    evt.ForPlayer(Players.All)
+    if not HasItem(2183) then -- Treasure Room Key
+        evt.StatusText("门是锁着的。")
+        return
+    end
+    evt.SetDoorState(3, DoorAction.Close)
+    evt.ForPlayer(Players.All)
+    RemoveItem(2183) -- Treasure Room Key
+end, "门")
+
+RegisterEvent(4, "门", function()
+    evt.SetDoorState(4, DoorAction.Close)
+end, "门")
+
+RegisterEvent(5, "门", function()
+    evt.ForPlayer(Players.All)
+    if not HasItem(2176) then -- Store Room Key
+        evt.StatusText("门是锁着的。")
+        return
+    end
+    evt.SetDoorState(5, DoorAction.Close)
+    evt.ForPlayer(Players.All)
+    RemoveItem(2176) -- Store Room Key
+    evt.SummonMonsters(3, 3, 2, -9956, -2760, -255, 0, 0) -- encounter slot 3 "Skeleton" tier C, count 2, pos=(-9956, -2760, -255), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 2, 2, -9956, -2908, -255, 0, 0) -- encounter slot 3 "Skeleton" tier B, count 2, pos=(-9956, -2908, -255), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 2, -9956, -3108, -255, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 2, pos=(-9956, -3108, -255), actor group 0, no unique actor name
+    evt.SummonMonsters(1, 1, 1, -9866, -2606, -255, 0, 0) -- encounter slot 1 "Cleric" tier A, count 1, pos=(-9866, -2606, -255), actor group 0, no unique actor name
+    evt.SummonMonsters(1, 1, 1, -10102, -2606, -255, 0, 0) -- encounter slot 1 "Cleric" tier A, count 1, pos=(-10102, -2606, -255), actor group 0, no unique actor name
+end, "门")
+
+RegisterEvent(6, "门", function()
+    evt.ForPlayer(Players.All)
+    if not HasItem(2182) then -- Store Room Key
+        evt.StatusText("门是锁着的。")
+        return
+    end
+    evt.SetDoorState(6, DoorAction.Close)
+    evt.ForPlayer(Players.All)
+    RemoveItem(2182) -- Store Room Key
+    evt.SummonMonsters(3, 3, 2, -9956, -2760, -255, 0, 0) -- encounter slot 3 "Skeleton" tier C, count 2, pos=(-9956, -2760, -255), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 2, 2, -9956, -2908, -255, 0, 0) -- encounter slot 3 "Skeleton" tier B, count 2, pos=(-9956, -2908, -255), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 2, -9956, -3108, -255, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 2, pos=(-9956, -3108, -255), actor group 0, no unique actor name
+    evt.SummonMonsters(1, 1, 1, -9866, -2606, -255, 0, 0) -- encounter slot 1 "Cleric" tier A, count 1, pos=(-9866, -2606, -255), actor group 0, no unique actor name
+    evt.SummonMonsters(1, 1, 1, -10102, -2606, -255, 0, 0) -- encounter slot 1 "Cleric" tier A, count 1, pos=(-10102, -2606, -255), actor group 0, no unique actor name
+end, "门")
+
+RegisterEvent(7, "门", function()
+    evt.SetDoorState(7, DoorAction.Close)
+end, "门")
+
+RegisterEvent(8, "门", function()
+    evt.SetDoorState(8, DoorAction.Close)
+end, "门")
+
+RegisterEvent(9, "门", function()
+    evt.ForPlayer(Players.All)
+    if not HasItem(2175) then -- Bathhouse Key
+        evt.StatusText("门是锁着的。")
+        return
+    end
+    evt.SetDoorState(9, DoorAction.Close)
+    evt.ForPlayer(Players.All)
+    RemoveItem(2175) -- Bathhouse Key
+    evt.SummonMonsters(3, 3, 2, -9986, 3669, -255, 0, 0) -- encounter slot 3 "Skeleton" tier C, count 2, pos=(-9986, 3669, -255), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 2, 2, -9986, 3741, -255, 0, 0) -- encounter slot 3 "Skeleton" tier B, count 2, pos=(-9986, 3741, -255), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 2, -9986, 3870, -255, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 2, pos=(-9986, 3870, -255), actor group 0, no unique actor name
+    evt.SummonMonsters(1, 1, 1, -9986, 2537, -255, 0, 0) -- encounter slot 1 "Cleric" tier A, count 1, pos=(-9986, 2537, -255), actor group 0, no unique actor name
+    evt.SummonMonsters(1, 1, 1, -9986, 3603, -255, 0, 0) -- encounter slot 1 "Cleric" tier A, count 1, pos=(-9986, 3603, -255), actor group 0, no unique actor name
+end, "门")
+
+RegisterEvent(10, "门", function()
+    evt.ForPlayer(Players.All)
+    if not HasItem(2181) then -- Bathhouse Key
+        evt.StatusText("门是锁着的。")
+        return
+    end
+    evt.SetDoorState(10, DoorAction.Close)
+    evt.ForPlayer(Players.All)
+    RemoveItem(2181) -- Bathhouse Key
+    evt.SummonMonsters(3, 3, 2, -9986, 3669, -255, 0, 0) -- encounter slot 3 "Skeleton" tier C, count 2, pos=(-9986, 3669, -255), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 2, 2, -9986, 3741, -255, 0, 0) -- encounter slot 3 "Skeleton" tier B, count 2, pos=(-9986, 3741, -255), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 2, -9986, 3870, -255, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 2, pos=(-9986, 3870, -255), actor group 0, no unique actor name
+    evt.SummonMonsters(1, 1, 1, -9986, 2537, -255, 0, 0) -- encounter slot 1 "Cleric" tier A, count 1, pos=(-9986, 2537, -255), actor group 0, no unique actor name
+    evt.SummonMonsters(1, 1, 1, -9986, 3603, -255, 0, 0) -- encounter slot 1 "Cleric" tier A, count 1, pos=(-9986, 3603, -255), actor group 0, no unique actor name
+end, "门")
+
+RegisterEvent(11, "门", function()
+    evt.SetDoorState(11, DoorAction.Close)
+    evt.SetDoorState(12, DoorAction.Close)
+end, "门")
+
+RegisterEvent(12, "标牌", function(continueStep)
+    if continueStep == 2 then
+    end
+    if continueStep ~= nil then return end
+    evt.SetMessage("银牌上写着：风会吹过，季节更替，只有当一切走到尽头，门才会打开。")
+    evt._PressAnyKey(12, 2)
+end, "标牌")
+
+RegisterEvent(14, "标牌", function(continueStep)
+    if continueStep == 2 then
+    end
+    if continueStep ~= nil then return end
+    evt.SetMessage("铜牌上写着：风会吹过，季节更替，只有当一切走到尽头，门才会打开。")
+    evt._PressAnyKey(14, 2)
+end, "标牌")
+
+RegisterEvent(15, "门", function()
+    evt.SetDoorState(15, DoorAction.Close)
+    evt.SetDoorState(16, DoorAction.Close)
+end, "门")
+
+RegisterEvent(16, "标牌", function(continueStep)
+    if continueStep == 2 then
+    end
+    if continueStep ~= nil then return end
+    evt.SetMessage("青金石牌上写着：风会吹过，季节更替，只有当一切走到尽头，门才会打开。")
+    evt._PressAnyKey(16, 2)
+end, "标牌")
+
+RegisterEvent(17, "门", function()
+    evt.SetDoorState(17, DoorAction.Close)
+    evt.SetDoorState(18, DoorAction.Close)
+end, "门")
+
+RegisterEvent(18, "门", function()
+    evt.SetDoorState(18, DoorAction.Close)
+end, "门")
+
+RegisterEvent(19, "门", function()
+    if IsAtLeast(MapVar(4), 1) then
+        AddValue(MapVar(5), 1)
+        if not IsAtLeast(MapVar(5), 2) then
+            evt.StatusText("门咔哒一声开了。")
+            return
+        end
+        SetValue(MapVar(5), 1)
+    end
+    evt.DamagePlayer(Players.All, const.Damage.Fire, 10)
+    SetValue(MapVar(4), 0)
+    SetValue(MapVar(5), 0)
+    SetValue(MapVar(6), 0)
+    SetValue(MapVar(10), 0)
+    evt.StatusText("噼啪！")
+end, "门")
+
+RegisterEvent(20, "门", function()
+    if IsAtLeast(MapVar(6), 1) then
+        AddValue(MapVar(10), 1)
+        if IsAtLeast(MapVar(10), 2) then
+            SetValue(MapVar(10), 1)
+            evt.DamagePlayer(Players.All, const.Damage.Fire, 10)
+            evt.StatusText("噼啪！")
+            return
+        elseif IsAtLeast(MapVar(4), 1) then
+            if not IsAtLeast(MapVar(5), 1) then return end
+            if IsAtLeast(MapVar(6), 1) then
+                evt.SetDoorState(20, DoorAction.Close)
+                evt.SetDoorState(19, DoorAction.Close)
+                evt.SetDoorState(21, DoorAction.Close)
+                evt.SetDoorState(22, DoorAction.Close)
+                SetValue(MapVar(4), 0)
+                SetValue(MapVar(5), 0)
+                SetValue(MapVar(6), 0)
+                SetValue(MapVar(10), 0)
+            end
+            return
+        else
+            return
+        end
+        return
+    end
+    evt.DamagePlayer(Players.All, const.Damage.Fire, 10)
+    evt.StatusText("噼啪！")
+end, "门")
+
+RegisterEvent(21, "门", function()
+    if IsAtLeast(MapVar(5), 1) then
+        AddValue(MapVar(6), 1)
+        if not IsAtLeast(MapVar(6), 2) then
+            evt.StatusText("门咔哒一声开了。")
+            return
+        end
+        SetValue(MapVar(5), 1)
+    end
+    evt.DamagePlayer(Players.All, const.Damage.Fire, 10)
+    SetValue(MapVar(4), 0)
+    SetValue(MapVar(5), 0)
+    SetValue(MapVar(6), 0)
+    SetValue(MapVar(10), 0)
+    evt.StatusText("噼啪！")
+end, "门")
+
+RegisterEvent(22, "门", function()
+    AddValue(MapVar(4), 1)
+    if not IsAtLeast(MapVar(4), 2) then
+        evt.StatusText("门咔哒一声开了。")
+        return
+    end
+    SetValue(MapVar(4), 1)
+    evt.DamagePlayer(Players.All, const.Damage.Fire, 10)
+    evt.StatusText("噼啪！")
+end, "门")
+
+RegisterEvent(23, "箱子", function()
+    if not IsAtLeast(MapVar(21), 1) then
+        evt.OpenChest(0)
+        SetValue(MapVar(21), 1)
+        evt.SummonMonsters(3, 3, 2, -9986, 1295, -255, 0, 0) -- encounter slot 3 "Skeleton" tier C, count 2, pos=(-9986, 1295, -255), actor group 0, no unique actor name
+        evt.SummonMonsters(3, 2, 2, -10224, 1295, -255, 0, 0) -- encounter slot 3 "Skeleton" tier B, count 2, pos=(-10224, 1295, -255), actor group 0, no unique actor name
+        evt.SummonMonsters(3, 1, 2, -9716, 1295, -255, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 2, pos=(-9716, 1295, -255), actor group 0, no unique actor name
+        evt.SummonMonsters(1, 1, 1, -9688, 1678, -255, 0, 0) -- encounter slot 1 "Cleric" tier A, count 1, pos=(-9688, 1678, -255), actor group 0, no unique actor name
+        evt.SummonMonsters(1, 1, 1, -10273, 1678, -255, 0, 0) -- encounter slot 1 "Cleric" tier A, count 1, pos=(-10273, 1678, -255), actor group 0, no unique actor name
+        evt.SummonMonsters(3, 3, 2, -8716, 101, -255, 0, 0) -- encounter slot 3 "Skeleton" tier C, count 2, pos=(-8716, 101, -255), actor group 0, no unique actor name
+        evt.SummonMonsters(3, 2, 2, -8716, 405, -255, 0, 0) -- encounter slot 3 "Skeleton" tier B, count 2, pos=(-8716, 405, -255), actor group 0, no unique actor name
+        evt.SummonMonsters(3, 1, 2, -8716, -117, -255, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 2, pos=(-8716, -117, -255), actor group 0, no unique actor name
+        evt.SummonMonsters(1, 1, 1, -8261, -227, -255, 0, 0) -- encounter slot 1 "Cleric" tier A, count 1, pos=(-8261, -227, -255), actor group 0, no unique actor name
+        evt.SummonMonsters(1, 1, 1, -8261, 453, -255, 0, 0) -- encounter slot 1 "Cleric" tier A, count 1, pos=(-8261, 453, -255), actor group 0, no unique actor name
+        evt.SummonMonsters(3, 3, 2, -10009, -1039, -255, 0, 0) -- encounter slot 3 "Skeleton" tier C, count 2, pos=(-10009, -1039, -255), actor group 0, no unique actor name
+        evt.SummonMonsters(3, 2, 2, -9713, -1039, -255, 0, 0) -- encounter slot 3 "Skeleton" tier B, count 2, pos=(-9713, -1039, -255), actor group 0, no unique actor name
+        evt.SummonMonsters(3, 1, 2, -10272, -1039, -255, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 2, pos=(-10272, -1039, -255), actor group 0, no unique actor name
+        evt.SummonMonsters(1, 1, 1, -10281, -1402, -255, 0, 0) -- encounter slot 1 "Cleric" tier A, count 1, pos=(-10281, -1402, -255), actor group 0, no unique actor name
+        evt.SummonMonsters(1, 1, 1, -9716, -1402, -255, 0, 0) -- encounter slot 1 "Cleric" tier A, count 1, pos=(-9716, -1402, -255), actor group 0, no unique actor name
+        evt.SummonMonsters(3, 3, 2, -11291, 138, -255, 0, 0) -- encounter slot 3 "Skeleton" tier C, count 2, pos=(-11291, 138, -255), actor group 0, no unique actor name
+        evt.SummonMonsters(3, 2, 2, -11291, -93, -255, 0, 0) -- encounter slot 3 "Skeleton" tier B, count 2, pos=(-11291, -93, -255), actor group 0, no unique actor name
+        evt.SummonMonsters(3, 1, 2, -11291, 454, -255, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 2, pos=(-11291, 454, -255), actor group 0, no unique actor name
+        evt.SummonMonsters(1, 1, 1, -11675, 454, -255, 0, 0) -- encounter slot 1 "Cleric" tier A, count 1, pos=(-11675, 454, -255), actor group 0, no unique actor name
+        evt.SummonMonsters(1, 1, 1, -11675, -139, -255, 0, 0) -- encounter slot 1 "Cleric" tier A, count 1, pos=(-11675, -139, -255), actor group 0, no unique actor name
+        return
+    end
+    evt.OpenChest(0)
+end, "箱子")
+
+RegisterEvent(24, "标牌", function(continueStep)
+    if continueStep == 2 then
+    end
+    if continueStep ~= nil then return end
+    evt.SetMessage("木牌上写着：风会吹过，季节更替，只有当一切走到尽头，门才会打开。")
+    evt._PressAnyKey(24, 2)
+end, "标牌")
+
+RegisterEvent(26, nil, function()
+    evt.ForPlayer(Players.All)
+    if IsAtLeast(ThieverySkill, 1) then
+        return
+    elseif IsAtLeast(Asleep, 1) then
+        return
+    else
+        evt.CastSpell(63, 10, 1, 0, 0, 0, 0, 0, 0) -- Mass Fear
+        evt.StatusText("受折磨灵魂的鬼魅声音冲击着你的耳朵。")
+        return
+    end
+end)
+
+RegisterEvent(27, "箱子", function()
+    evt.OpenChest(1)
+end, "箱子")
+
+RegisterEvent(28, "箱子", function()
+    evt.OpenChest(2)
+end, "箱子")
+
+RegisterEvent(29, "箱子", function()
+    evt.OpenChest(3)
+end, "箱子")
+
+RegisterEvent(30, "箱子", function()
+    evt.OpenChest(4)
+end, "箱子")
+
+RegisterEvent(31, "箱子", function()
+    evt.OpenChest(5)
+end, "箱子")
+
+RegisterEvent(32, "雕像", function()
+    if IsAtLeast(MapVar(12), 1) then return end
+    AddValue(InventoryItem(2176), 2176) -- Store Room Key
+    evt.StatusText("发现了东西！")
+    SetValue(MapVar(12), 1)
+end, "雕像")
+
+RegisterEvent(34, "喷泉", function()
+    if not IsAtLeast(MapVar(16), 1) then
+        evt.StatusText("神清气爽。")
+        return
+    end
+    SubtractValue(MapVar(16), 1)
+    AddValue(CurrentHealth, 20)
+    evt.StatusText("生命值恢复20点。")
+end, "喷泉")
+
+RegisterEvent(50, "出口", function()
+    evt.MoveToMap(4885, -7698, 96, 1536, 0, 0, 0, 0, "outd3.odm") -- Castle Ironfist
+end, "出口")
+
+RegisterEvent(51, nil, function()
+    evt.CastSpell(6, 4, 1, -1590, 133, -100, -2200, 133, -100) -- Fireball
+end)
+
+RegisterEvent(52, nil, function()
+    if IsAtLeast(MapVar(31), 1) then return end
+    evt.PlaySound(42682, 0, 0)
+    evt.SummonMonsters(3, 3, 1, 3702, 3216, 577, 0, 0) -- encounter slot 3 "Skeleton" tier C, count 1, pos=(3702, 3216, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 3, 1, 3702, 2572, 577, 0, 0) -- encounter slot 3 "Skeleton" tier C, count 1, pos=(3702, 2572, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 3, 1, 3702, 1929, 577, 0, 0) -- encounter slot 3 "Skeleton" tier C, count 1, pos=(3702, 1929, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 3, 1, 3702, 1286, 577, 0, 0) -- encounter slot 3 "Skeleton" tier C, count 1, pos=(3702, 1286, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 3, 1, 3702, 643, 577, 0, 0) -- encounter slot 3 "Skeleton" tier C, count 1, pos=(3702, 643, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 3, 1, 3702, 0, 577, 0, 0) -- encounter slot 3 "Skeleton" tier C, count 1, pos=(3702, 0, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 3, 1, 3702, -643, 577, 0, 0) -- encounter slot 3 "Skeleton" tier C, count 1, pos=(3702, -643, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 3, 1, 3702, -1286, 577, 0, 0) -- encounter slot 3 "Skeleton" tier C, count 1, pos=(3702, -1286, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 3, 1, 3702, -1929, 577, 0, 0) -- encounter slot 3 "Skeleton" tier C, count 1, pos=(3702, -1929, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 3, 1, 3702, -2572, 577, 0, 0) -- encounter slot 3 "Skeleton" tier C, count 1, pos=(3702, -2572, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 3, 1, 3326, 3216, 577, 0, 0) -- encounter slot 3 "Skeleton" tier C, count 1, pos=(3326, 3216, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 3, 1, 3326, 2572, 577, 0, 0) -- encounter slot 3 "Skeleton" tier C, count 1, pos=(3326, 2572, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 3, 1, 3326, 1929, 577, 0, 0) -- encounter slot 3 "Skeleton" tier C, count 1, pos=(3326, 1929, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 3, 1, 3326, 1286, 577, 0, 0) -- encounter slot 3 "Skeleton" tier C, count 1, pos=(3326, 1286, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 3, 1, 3326, 643, 577, 0, 0) -- encounter slot 3 "Skeleton" tier C, count 1, pos=(3326, 643, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 3, 1, 3326, 0, 577, 0, 0) -- encounter slot 3 "Skeleton" tier C, count 1, pos=(3326, 0, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 3, 1, 3326, -643, 577, 0, 0) -- encounter slot 3 "Skeleton" tier C, count 1, pos=(3326, -643, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 3, 1, 3326, -1286, 577, 0, 0) -- encounter slot 3 "Skeleton" tier C, count 1, pos=(3326, -1286, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 3, 1, 3326, -1929, 577, 0, 0) -- encounter slot 3 "Skeleton" tier C, count 1, pos=(3326, -1929, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 3, 1, 3326, -2572, 577, 0, 0) -- encounter slot 3 "Skeleton" tier C, count 1, pos=(3326, -2572, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 2, 1, 2950, 3216, 577, 0, 0) -- encounter slot 3 "Skeleton" tier B, count 1, pos=(2950, 3216, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 2, 1, 2950, 2572, 577, 0, 0) -- encounter slot 3 "Skeleton" tier B, count 1, pos=(2950, 2572, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 2, 1, 2950, 1929, 577, 0, 0) -- encounter slot 3 "Skeleton" tier B, count 1, pos=(2950, 1929, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 2, 1, 2950, 1286, 577, 0, 0) -- encounter slot 3 "Skeleton" tier B, count 1, pos=(2950, 1286, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 2, 1, 2950, 643, 577, 0, 0) -- encounter slot 3 "Skeleton" tier B, count 1, pos=(2950, 643, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 2, 1, 2950, 0, 577, 0, 0) -- encounter slot 3 "Skeleton" tier B, count 1, pos=(2950, 0, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 2, 1, 2950, -643, 577, 0, 0) -- encounter slot 3 "Skeleton" tier B, count 1, pos=(2950, -643, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 2, 1, 2950, -1286, 577, 0, 0) -- encounter slot 3 "Skeleton" tier B, count 1, pos=(2950, -1286, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 2, 1, 2950, -1929, 577, 0, 0) -- encounter slot 3 "Skeleton" tier B, count 1, pos=(2950, -1929, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 2, 1, 2950, -2572, 577, 0, 0) -- encounter slot 3 "Skeleton" tier B, count 1, pos=(2950, -2572, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 2, 1, 2400, 3216, 577, 0, 0) -- encounter slot 3 "Skeleton" tier B, count 1, pos=(2400, 3216, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 2, 1, 2400, 2572, 577, 0, 0) -- encounter slot 3 "Skeleton" tier B, count 1, pos=(2400, 2572, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 2, 1, 2400, 1929, 577, 0, 0) -- encounter slot 3 "Skeleton" tier B, count 1, pos=(2400, 1929, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 2, 1, 2400, 1286, 577, 0, 0) -- encounter slot 3 "Skeleton" tier B, count 1, pos=(2400, 1286, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 2, 1, 2400, 643, 577, 0, 0) -- encounter slot 3 "Skeleton" tier B, count 1, pos=(2400, 643, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 2, 1, 2400, 0, 577, 0, 0) -- encounter slot 3 "Skeleton" tier B, count 1, pos=(2400, 0, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 2, 1, 2400, -643, 577, 0, 0) -- encounter slot 3 "Skeleton" tier B, count 1, pos=(2400, -643, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 2, 1, 2400, -1286, 577, 0, 0) -- encounter slot 3 "Skeleton" tier B, count 1, pos=(2400, -1286, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 2, 1, 2400, -1929, 577, 0, 0) -- encounter slot 3 "Skeleton" tier B, count 1, pos=(2400, -1929, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 2, 1, 2400, -2572, 577, 0, 0) -- encounter slot 3 "Skeleton" tier B, count 1, pos=(2400, -2572, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 2, 1, 1985, 3216, 577, 0, 0) -- encounter slot 3 "Skeleton" tier B, count 1, pos=(1985, 3216, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 2, 1, 1985, 2572, 577, 0, 0) -- encounter slot 3 "Skeleton" tier B, count 1, pos=(1985, 2572, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 2, 1, 1985, 1929, 577, 0, 0) -- encounter slot 3 "Skeleton" tier B, count 1, pos=(1985, 1929, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 2, 1, 1985, 1286, 577, 0, 0) -- encounter slot 3 "Skeleton" tier B, count 1, pos=(1985, 1286, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 2, 1, 1985, 643, 577, 0, 0) -- encounter slot 3 "Skeleton" tier B, count 1, pos=(1985, 643, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 2, 1, 1985, 0, 577, 0, 0) -- encounter slot 3 "Skeleton" tier B, count 1, pos=(1985, 0, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 2, 1, 1985, -643, 577, 0, 0) -- encounter slot 3 "Skeleton" tier B, count 1, pos=(1985, -643, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 2, 1, 1985, -1286, 577, 0, 0) -- encounter slot 3 "Skeleton" tier B, count 1, pos=(1985, -1286, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 2, 1, 1985, -1929, 577, 0, 0) -- encounter slot 3 "Skeleton" tier B, count 1, pos=(1985, -1929, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 2, 1, 1985, -2572, 577, 0, 0) -- encounter slot 3 "Skeleton" tier B, count 1, pos=(1985, -2572, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 1476, 3216, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(1476, 3216, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 1476, 2572, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(1476, 2572, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 1476, 1929, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(1476, 1929, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 1476, 1286, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(1476, 1286, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 1476, 643, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(1476, 643, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 1476, 0, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(1476, 0, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 1476, -643, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(1476, -643, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 1476, -1286, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(1476, -1286, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 1476, -1929, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(1476, -1929, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 1476, -2572, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(1476, -2572, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 810, 3216, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(810, 3216, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 810, 2572, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(810, 2572, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 810, 1929, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(810, 1929, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 810, 1286, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(810, 1286, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 810, 643, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(810, 643, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 810, 0, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(810, 0, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 810, -643, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(810, -643, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 810, -1286, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(810, -1286, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 810, -1929, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(810, -1929, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 810, -2572, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(810, -2572, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 440, 3216, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(440, 3216, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 440, 2572, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(440, 2572, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 440, 1929, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(440, 1929, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 440, 1286, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(440, 1286, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 440, 643, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(440, 643, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 440, 0, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(440, 0, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 440, -643, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(440, -643, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 440, -1286, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(440, -1286, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 440, -1929, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(440, -1929, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 440, -2572, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(440, -2572, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 0, 3216, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(0, 3216, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 0, 2572, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(0, 2572, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 0, 1929, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(0, 1929, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 0, 1286, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(0, 1286, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 0, 643, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(0, 643, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 0, 0, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(0, 0, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 0, -643, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(0, -643, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 0, -1286, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(0, -1286, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 0, -1929, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(0, -1929, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 0, -2572, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(0, -2572, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, -650, 3216, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(-650, 3216, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, -650, 2572, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(-650, 2572, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, -650, 1929, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(-650, 1929, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, -650, 1286, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(-650, 1286, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, -650, 643, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(-650, 643, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, -650, 0, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(-650, 0, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, -650, -643, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(-650, -643, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, -650, -1286, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(-650, -1286, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, -650, -1929, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(-650, -1929, 577), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, -650, -2572, 577, 0, 0) -- encounter slot 3 "Skeleton" tier A, count 1, pos=(-650, -2572, 577), actor group 0, no unique actor name
+    SetValue(MapVar(31), 1)
+end)
+
+RegisterEvent(53, nil, function()
+    if IsAtLeast(MapVar(26), 1) then return end
+    AddValue(Gold, 5000)
+    SetValue(MapVar(26), 1)
+end)
+
+RegisterEvent(70, nil, function()
+    SetValue(MapVar(4), 0)
+    SetValue(MapVar(5), 0)
+    SetValue(MapVar(6), 0)
+    SetValue(MapVar(10), 0)
+end)
+

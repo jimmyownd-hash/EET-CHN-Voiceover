@@ -1,0 +1,6 @@
+key	column	value
+Learning	Description	飞升会提升角色法术的威力：每一点技能都会增加伤害与治疗量，代价是更高的法力消耗和更长的施法时间。每提升一级精通，就能收回一部分法力消耗。
+Learning	Normal	法力消耗降低 12.5%
+Learning	Expert	法力消耗降低 25%
+Learning	Master	法力消耗降低 37.5%
+Learning	GrandMaster	法力消耗降低 50%

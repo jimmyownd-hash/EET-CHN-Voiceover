@@ -1,0 +1,463 @@
+-- Goblinwatch
+-- generated from legacy EVT/STR
+
+SetMapMetadata({
+    levitateTrapEvents = {19},
+    onLoad = {66},
+    onLeave = {},
+    openedChestIds = {
+    [41] = {1},
+    [42] = {2},
+    [43] = {3},
+    [44] = {4},
+    [45] = {5},
+    [46] = {6},
+    [47] = {7},
+    [48] = {8},
+    [49] = {9},
+    [50] = {10},
+    },
+    contextActions = {
+    [1] = { kind = "open_door", source = "title" },
+    [2] = { kind = "open_door", source = "title" },
+    [3] = { kind = "open_door", source = "title" },
+    [4] = { kind = "open_door", source = "title" },
+    [5] = { kind = "open_door", source = "title" },
+    [6] = { kind = "open_door", source = "title" },
+    [7] = { kind = "open_door", source = "title" },
+    [8] = { kind = "open_door", source = "title" },
+    [9] = { kind = "open_door", source = "title" },
+    [10] = { kind = "open_door", source = "title" },
+    [11] = { kind = "open_door", source = "title" },
+    [12] = { kind = "open_door", source = "title" },
+    [13] = { kind = "open_door", source = "title" },
+    [14] = { kind = "open_door", source = "title" },
+    [15] = { kind = "open_door", source = "title" },
+    [16] = { kind = "open_door", source = "title" },
+    [17] = { kind = "open_door", source = "title" },
+    [18] = { kind = "open_door", source = "title" },
+    [20] = { kind = "open_door", source = "opcode" },
+    [21] = { kind = "open_door", source = "opcode" },
+    [22] = { kind = "open_door", source = "opcode" },
+    [23] = { kind = "open_door", source = "opcode" },
+    [24] = { kind = "open_door", source = "opcode" },
+    [25] = { kind = "open_door", source = "opcode" },
+    [26] = { kind = "open_door", source = "opcode" },
+    [27] = { kind = "open_door", source = "opcode" },
+    [28] = { kind = "open_door", source = "opcode" },
+    [29] = { kind = "open_door", source = "opcode" },
+    [30] = { kind = "open_door", source = "opcode" },
+    [31] = { kind = "teleport", source = "heuristic" },
+    [32] = { kind = "open_door", source = "opcode" },
+    [33] = { kind = "open_door", source = "opcode" },
+    [34] = { kind = "open_door", source = "opcode" },
+    [41] = { kind = "open_chest", source = "opcode", chestIds = {1} },
+    [42] = { kind = "open_chest", source = "opcode", chestIds = {2} },
+    [43] = { kind = "open_chest", source = "opcode", chestIds = {3} },
+    [44] = { kind = "open_chest", source = "opcode", chestIds = {4} },
+    [45] = { kind = "open_chest", source = "opcode", chestIds = {5} },
+    [46] = { kind = "open_chest", source = "opcode", chestIds = {6} },
+    [47] = { kind = "open_chest", source = "opcode", chestIds = {7} },
+    [48] = { kind = "open_chest", source = "opcode", chestIds = {8} },
+    [49] = { kind = "open_chest", source = "opcode", chestIds = {9} },
+    [50] = { kind = "open_chest", source = "opcode", chestIds = {10} },
+    [51] = { kind = "leave_dungeon", source = "opcode", targetMap = "oute3.odm", targetName = "新索匹格" },
+    [55] = { kind = "secret_event", source = "heuristic", hidden = true },
+    [60] = { kind = "open_door", source = "title" },
+    [61] = { kind = "open_door", source = "title" },
+    [62] = { kind = "use_switch", source = "title" },
+    [63] = { kind = "open_door", source = "opcode" },
+    [64] = { kind = "secret_event", source = "heuristic", hidden = true },
+    },
+    textureNames = {"t1swdd", "t1swdu"},
+    spriteNames = {},
+    castSpellIds = {6, 12},
+    timers = {
+    { eventId = 65, sourceEventId = 65, triggerStep = 0, origin = "legacy", triggerKind = "timer", scheduleKind = "daily", startHour = 0, startMinute = 0, startSecond = 1 },
+    },
+})
+
+RegisterEvent(1, "门", function()
+    evt.SetDoorState(1, DoorAction.Close)
+end, "门")
+
+RegisterEvent(2, "门", function()
+    evt.SetDoorState(2, DoorAction.Close)
+end, "门")
+
+RegisterEvent(3, "门", function()
+    evt.SetDoorState(3, DoorAction.Close)
+end, "门")
+
+RegisterEvent(4, "门", function()
+    evt.SetDoorState(4, DoorAction.Close)
+end, "门")
+
+RegisterEvent(5, "门", function()
+    evt.SetDoorState(5, DoorAction.Close)
+end, "门")
+
+RegisterEvent(6, "门", function()
+    evt.SetDoorState(6, DoorAction.Close)
+end, "门")
+
+RegisterEvent(7, "门", function()
+    evt.SetDoorState(7, DoorAction.Close)
+end, "门")
+
+RegisterEvent(8, "门", function()
+    evt.SetDoorState(8, DoorAction.Close)
+end, "门")
+
+RegisterEvent(9, "门", function()
+    evt.SetDoorState(9, DoorAction.Close)
+end, "门")
+
+RegisterEvent(10, "门", function()
+    evt.SetDoorState(10, DoorAction.Close)
+end, "门")
+
+RegisterEvent(11, "门", function()
+    evt.SetDoorState(11, DoorAction.Close)
+end, "门")
+
+RegisterEvent(12, "门", function()
+    evt.SetDoorState(12, DoorAction.Close)
+end, "门")
+
+RegisterEvent(13, "门", function()
+    evt.SetDoorState(13, DoorAction.Close)
+end, "门")
+
+RegisterEvent(14, "门", function()
+    evt.SetDoorState(14, DoorAction.Close)
+end, "门")
+
+RegisterEvent(15, "门", function()
+    evt.SetDoorState(15, DoorAction.Close)
+end, "门")
+
+RegisterEvent(16, "门", function()
+    evt.SetDoorState(16, DoorAction.Close)
+end, "门")
+
+RegisterEvent(17, "门", function()
+    evt.SetDoorState(17, DoorAction.Close)
+end, "门")
+
+RegisterEvent(18, "门", function()
+    evt.SetDoorState(18, DoorAction.Close)
+end, "门")
+
+RegisterEvent(19, "A", function()
+    evt.CastSpell(6, 3, 1, 2496, 4864, 360, 0, 0, 0) -- Fireball
+end, "A")
+
+RegisterEvent(20, "B", function()
+    if IsAtLeast(MapVar(2), 1) then return end
+    SetValue(MapVar(2), 1)
+    evt.SetDoorState(55, DoorAction.Close)
+    evt.SetDoorState(56, DoorAction.Close)
+    evt.SetDoorState(57, DoorAction.Open)
+    evt.SetDoorState(58, DoorAction.Open)
+    evt.SetTexture(-2011, "t1swdu")
+end, "B")
+
+RegisterEvent(21, "C", function()
+    if IsAtLeast(MapVar(3), 1) then return end
+    SetValue(MapVar(3), 1)
+    evt.SetDoorState(57, DoorAction.Close)
+    evt.SetDoorState(58, DoorAction.Close)
+    evt.SetDoorState(55, DoorAction.Open)
+    evt.SetDoorState(56, DoorAction.Open)
+    evt.SetTexture(-2012, "t1swdu")
+end, "C")
+
+RegisterEvent(22, "D", function()
+    if IsAtLeast(MapVar(4), 1) then return end
+    SetValue(MapVar(4), 1)
+    evt.SetDoorState(40, DoorAction.Close)
+    evt.SetDoorState(52, DoorAction.Close)
+    evt.SetDoorState(51, DoorAction.Close)
+    evt.SetDoorState(57, DoorAction.Open)
+    evt.SetDoorState(58, DoorAction.Open)
+    evt.SetTexture(-2013, "t1swdu")
+end, "D")
+
+RegisterEvent(23, "E", function()
+    if IsAtLeast(MapVar(5), 1) then return end
+    SetValue(MapVar(5), 1)
+    evt.SetDoorState(57, DoorAction.Close)
+    evt.SetDoorState(58, DoorAction.Close)
+    evt.SetDoorState(40, DoorAction.Open)
+    evt.SetDoorState(52, DoorAction.Open)
+    evt.SetDoorState(51, DoorAction.Open)
+    evt.SetTexture(-2009, "t1swdu")
+end, "E")
+
+RegisterEvent(24, "F", function()
+    if IsAtLeast(MapVar(6), 1) then return end
+    SetValue(MapVar(6), 1)
+    evt.SetDoorState(36, DoorAction.Close)
+    evt.SetDoorState(47, DoorAction.Close)
+    evt.SetDoorState(48, DoorAction.Close)
+    evt.SetDoorState(55, DoorAction.Open)
+    evt.SetDoorState(56, DoorAction.Open)
+    evt.SetTexture(-2008, "t1swdu")
+end, "F")
+
+RegisterEvent(25, "G", function()
+    if IsAtLeast(MapVar(7), 1) then return end
+    SetValue(MapVar(7), 1)
+    evt.SetDoorState(59, DoorAction.Close)
+    evt.SetDoorState(60, DoorAction.Close)
+    evt.SetTexture(-2007, "t1swdu")
+end, "G")
+
+RegisterEvent(26, "H", function()
+    if IsAtLeast(MapVar(8), 1) then return end
+    SetValue(MapVar(8), 1)
+    evt.SetDoorState(38, DoorAction.Close)
+    evt.SetDoorState(44, DoorAction.Close)
+    evt.SetDoorState(36, DoorAction.Open)
+    evt.SetDoorState(47, DoorAction.Open)
+    evt.SetDoorState(48, DoorAction.Open)
+    evt.SetTexture(-2006, "t1swdu")
+end, "H")
+
+RegisterEvent(27, "I", function()
+    if IsAtLeast(MapVar(9), 1) then return end
+    SetValue(MapVar(9), 1)
+    evt.SetDoorState(36, DoorAction.Close)
+    evt.SetDoorState(47, DoorAction.Close)
+    evt.SetDoorState(48, DoorAction.Close)
+    evt.SetDoorState(38, DoorAction.Open)
+    evt.SetDoorState(44, DoorAction.Open)
+    evt.SetTexture(-2002, "t1swdu")
+end, "I")
+
+RegisterEvent(28, "J", function()
+    if IsAtLeast(MapVar(10), 1) then return end
+    SetValue(MapVar(10), 1)
+    evt.SetDoorState(36, DoorAction.Close)
+    evt.SetDoorState(47, DoorAction.Close)
+    evt.SetDoorState(48, DoorAction.Close)
+    evt.SetDoorState(40, DoorAction.Open)
+    evt.SetDoorState(52, DoorAction.Open)
+    evt.SetDoorState(51, DoorAction.Open)
+    evt.SetTexture(-2003, "t1swdu")
+end, "J")
+
+RegisterEvent(29, "K", function()
+    if IsAtLeast(MapVar(11), 1) then return end
+    SetValue(MapVar(11), 1)
+    evt.SetDoorState(59, DoorAction.Close)
+    evt.SetDoorState(60, DoorAction.Close)
+    evt.SetDoorState(57, DoorAction.Open)
+    evt.SetDoorState(58, DoorAction.Open)
+    evt.SetTexture(-2004, "t1swdu")
+end, "K")
+
+RegisterEvent(30, "L", function()
+    if IsAtLeast(MapVar(12), 1) then return end
+    SetValue(MapVar(12), 1)
+    evt.SetDoorState(38, DoorAction.Close)
+    evt.SetDoorState(44, DoorAction.Close)
+    evt.SetDoorState(55, DoorAction.Open)
+    evt.SetDoorState(56, DoorAction.Open)
+    evt.SetTexture(-2005, "t1swdu")
+end, "L")
+
+RegisterEvent(31, "M", function()
+    evt.MoveToMap(9000, 1916, -767, 128, 0, 0, 0, 0)
+end, "M")
+
+RegisterEvent(32, "N", function()
+    if IsAtLeast(MapVar(13), 1) then return end
+    SetValue(MapVar(13), 1)
+    evt.SetDoorState(40, DoorAction.Close)
+    evt.SetDoorState(51, DoorAction.Close)
+    evt.SetDoorState(52, DoorAction.Close)
+    evt.SetDoorState(36, DoorAction.Open)
+    evt.SetDoorState(47, DoorAction.Open)
+    evt.SetDoorState(48, DoorAction.Open)
+    evt.SetTexture(-2000, "t1swdu")
+end, "N")
+
+RegisterEvent(33, "O", function()
+    if IsAtLeast(MapVar(14), 1) then return end
+    SetValue(MapVar(14), 1)
+    evt.SetDoorState(57, DoorAction.Close)
+    evt.SetDoorState(58, DoorAction.Close)
+    evt.SetDoorState(59, DoorAction.Open)
+    evt.SetDoorState(60, DoorAction.Open)
+    evt.SetTexture(-1999, "t1swdu")
+end, "O")
+
+RegisterEvent(34, "P", function()
+    SetValue(MapVar(2), 0)
+    SetValue(MapVar(3), 0)
+    SetValue(MapVar(4), 0)
+    SetValue(MapVar(5), 0)
+    SetValue(MapVar(6), 0)
+    SetValue(MapVar(7), 0)
+    SetValue(MapVar(8), 0)
+    SetValue(MapVar(9), 0)
+    SetValue(MapVar(10), 0)
+    SetValue(MapVar(11), 0)
+    SetValue(MapVar(12), 0)
+    SetValue(MapVar(13), 0)
+    SetValue(MapVar(14), 0)
+    evt.SetTexture(-2011, "t1swdd")
+    evt.SetTexture(-2012, "t1swdd")
+    evt.SetTexture(-2013, "t1swdd")
+    evt.SetTexture(-2009, "t1swdd")
+    evt.SetTexture(-2008, "t1swdd")
+    evt.SetTexture(-2007, "t1swdd")
+    evt.SetTexture(-2006, "t1swdd")
+    evt.SetTexture(-2002, "t1swdd")
+    evt.SetTexture(-2003, "t1swdd")
+    evt.SetTexture(-2004, "t1swdd")
+    evt.SetTexture(-2005, "t1swdd")
+    evt.SetTexture(-2000, "t1swdd")
+    evt.SetTexture(-1999, "t1swdd")
+    evt.SetDoorState(40, DoorAction.Open)
+    evt.SetDoorState(51, DoorAction.Open)
+    evt.SetDoorState(52, DoorAction.Open)
+    evt.SetDoorState(36, DoorAction.Open)
+    evt.SetDoorState(47, DoorAction.Open)
+    evt.SetDoorState(48, DoorAction.Open)
+    evt.SetDoorState(38, DoorAction.Open)
+    evt.SetDoorState(44, DoorAction.Open)
+    evt.SetDoorState(55, DoorAction.Open)
+    evt.SetDoorState(56, DoorAction.Open)
+    evt.SetDoorState(57, DoorAction.Open)
+    evt.SetDoorState(58, DoorAction.Open)
+    evt.SetDoorState(59, DoorAction.Open)
+    evt.SetDoorState(60, DoorAction.Open)
+end, "P")
+
+RegisterEvent(41, "箱子", function()
+    evt.OpenChest(1)
+end, "箱子")
+
+RegisterEvent(42, "箱子", function()
+    evt.OpenChest(2)
+end, "箱子")
+
+RegisterEvent(43, "箱子", function()
+    evt.OpenChest(3)
+end, "箱子")
+
+RegisterEvent(44, "箱子", function()
+    evt.OpenChest(4)
+end, "箱子")
+
+RegisterEvent(45, "箱子", function()
+    evt.OpenChest(5)
+end, "箱子")
+
+RegisterEvent(46, "箱子", function()
+    evt.OpenChest(6)
+end, "箱子")
+
+RegisterEvent(47, "箱子", function()
+    evt.OpenChest(7)
+    if IsAtLeast(MapVar(21), 1) then return end
+    SetValue(MapVar(21), 1)
+    evt.SummonObject(2100, 9856, 4992, -1024, 512, 3, false) -- Starburst
+    evt.SummonMonsters(2, 2, 3, 9856, 4992, -1024, 0, 0) -- encounter slot 2 "BGoblin" tier B, count 3, pos=(9856, 4992, -1024), actor group 0, no unique actor name
+end, "箱子")
+
+RegisterEvent(48, "箱子", function()
+    evt.OpenChest(8)
+end, "箱子")
+
+RegisterEvent(49, "箱子", function()
+    evt.OpenChest(9)
+end, "箱子")
+
+RegisterEvent(50, "箱子", function()
+    evt.OpenChest(10)
+end, "箱子")
+
+RegisterEvent(51, "出口门", function()
+    evt.MoveToMap(-18400, -14982, 1600, 512, 0, 0, 0, 0, "oute3.odm") -- 新索皮加尔
+end, "出口门")
+
+RegisterEvent(55, nil, function()
+    if IsAtLeast(MapVar(26), 1) then return end
+    SetValue(MapVar(26), 1)
+    evt.GiveItem(4, ItemType.Armor_)
+end)
+
+RegisterEvent(60, "门", function()
+    evt.SetDoorState(45, DoorAction.Close)
+    evt.SetDoorState(46, DoorAction.Close)
+end, "门")
+
+RegisterEvent(61, "门", function()
+    evt.SetDoorState(23, DoorAction.Close)
+end, "门")
+
+RegisterEvent(62, "开关", function()
+    evt.SetDoorState(31, DoorAction.Close)
+    evt.SetDoorState(32, DoorAction.Close)
+end, "开关")
+
+RegisterEvent(63, nil, function()
+    evt.SetDoorState(30, DoorAction.Close)
+end)
+
+RegisterEvent(64, nil, function()
+    if IsAtLeast(MapVar(15), 1) then return end
+    evt.CastSpell(12, 15, 1, 0, 0, 0, 0, 0, 0) -- Wizard Eye
+    SetValue(MapVar(15), 1)
+end)
+
+RegisterEvent(65, nil, function()
+    SetValue(MapVar(15), 0)
+end)
+
+RegisterEvent(66, nil, function()
+    if IsAtLeast(MapVar(2), 1) then
+        evt.SetTexture(-2011, "t1swdu")
+    end
+    if IsAtLeast(MapVar(3), 1) then
+        evt.SetTexture(-2012, "t1swdu")
+    end
+    if IsAtLeast(MapVar(4), 1) then
+        evt.SetTexture(-2013, "t1swdu")
+    end
+    if IsAtLeast(MapVar(4), 1) then
+        evt.SetTexture(-2009, "t1swdu")
+    end
+    if IsAtLeast(MapVar(6), 1) then
+        evt.SetTexture(-2008, "t1swdu")
+    end
+    if IsAtLeast(MapVar(7), 1) then
+        evt.SetTexture(-2007, "t1swdu")
+    end
+    if IsAtLeast(MapVar(8), 1) then
+        evt.SetTexture(-2006, "t1swdu")
+    end
+    if IsAtLeast(MapVar(9), 1) then
+        evt.SetTexture(-2002, "t1swdu")
+    end
+    if IsAtLeast(MapVar(10), 1) then
+        evt.SetTexture(-2003, "t1swdu")
+    end
+    if IsAtLeast(MapVar(11), 1) then
+        evt.SetTexture(-2004, "t1swdu")
+    end
+    if IsAtLeast(MapVar(12), 1) then
+        evt.SetTexture(-2005, "t1swdu")
+    end
+    if IsAtLeast(MapVar(13), 1) then
+        evt.SetTexture(-2000, "t1swdu")
+    end
+    if IsAtLeast(MapVar(14), 1) then
+        evt.SetTexture(-1999, "t1swdu")
+    end
+end)
+

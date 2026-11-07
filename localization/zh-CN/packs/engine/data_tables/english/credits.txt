@@ -1,0 +1,195 @@
+_制作：
+Jon Van Caneghem
+
+
+
+
+
+_执行制作人：
+Mark Caldwell
+
+
+
+
+
+_制作人：
+Peter Ryu
+
+
+
+
+
+_总监：
+Paul Rattner
+
+
+
+
+
+_设计师：
+John Van Caneghem
+Bryan Farina
+James Dickinson
+Tom Ono
+
+
+
+
+
+_主程序师：
+Bob Young
+
+_程序师：
+Dean Gibson
+George Ruof
+
+
+
+
+
+_关卡主设计师：
+Riki Corredera
+
+_关卡设计师：
+David Vela
+Lisa Whitman
+Tom Zeliff
+
+
+
+
+
+_美术负责人：
+John Slowsky
+
+_Hypnotix 美术总监：
+John Philip Sousa 
+
+_Hypnotix 主美术师：
+Jason Timmons
+
+_资源协调：
+Kate Vanover
+
+_New World Computing 美术师：
+George Almond 
+Jeff Bigman 
+Becky Crystal 
+Brian DeMetz
+John Gibson
+Louis Henderson
+Edward Hudson
+Steve Jasper
+Joel Kelly
+Brian Kemper	 
+April Lee 
+Bonnie Long-Hemsath	
+Kurt McKeever		
+Adam McCarthy		
+Bill Nesemeier	
+Bill Stoneham	
+Phelan Sykes		
+Ken Thomson				
+Julia Ulano		
+Steve Wasaf
+
+_3DO 美术师：
+Marc Apablaza 
+Inna Cherneykina 
+Nikolay Chigirev 
+Paul Forest 
+Vadim Grigoriev 
+Shao Wei Liu 
+Andrey Rubetskoy 
+Leonid Starkov 
+David Wells 
+
+_Hypnotix 美术师：
+Michael Ballezzi
+Ruben J. Carbonell
+Carlos Cheek
+Joel Eckert
+Scott Lange
+Jason Marcil
+William Rooks
+Robert Santiago
+Richard Strongi
+Anthony Pereira
+
+
+
+
+
+_音乐制作人：
+Rob King
+
+_冒险主题与配乐：
+Paul Romero
+
+_额外配乐：
+Rob King
+Steve Baca
+
+_音效设计与配音剪辑：
+Rob King
+Steve Baca
+Chuck Russom
+
+_配音演员：
+Mari Devon
+Mike Sorich
+Lex Lang
+Melissa Faulkner
+Mona Marshall
+Dave Krauss
+Barry Stigler
+Dan Warren
+John Gofe
+Jeff Sorenson
+Danny Fehsenfeld
+Rick Stone
+Richard Epcar
+Rob King
+Barbara Goodson
+Aric Devone
+Catherine Battistone
+Steve Kramer
+Roger Lubin
+Briana Gordon
+Ellen Stern
+Doug Stone
+Holly Willard
+Wendee Lee
+
+
+
+
+
+_测试经理：
+Karl Drown
+
+_New World Computing 测试部：
+Mary Ellen Babson 
+Joseph Buron
+Devin Chapman
+Ernie Gallardo
+Chris Miller
+Todd Smailes
+Eric Williamson
+Rich Holmes
+
+_3DO 测试部：
+Kim Dang
+Tamsen Mitchell
+Jack Osorno
+Tony Lee
+
+
+
+
+
+_特别鸣谢：
+Debbie Van Caneghem
+Sheldon Borenstein
+Kate Hedstrom
+Rosanne Banez

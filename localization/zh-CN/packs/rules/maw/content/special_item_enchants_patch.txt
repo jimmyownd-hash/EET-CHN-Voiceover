@@ -1,0 +1,13 @@
+key	column	value
+6	Bonus Stat	爆裂冲击！（伤害减半）
+19	Bonus Stat	吸取 10% 物理与魔法伤害
+21	Bonus Stat	免疫疾病与诅咒
+22	Bonus Stat	免疫疯狂与法术值流失
+23	Bonus Stat	免疫麻痹与恐惧
+24	Bonus Stat	免疫中毒与虚弱
+25	Bonus Stat	免疫睡眠与昏迷
+26	Bonus Stat	免疫石化与早衰
+28	Bonus Stat	免疫死亡与湮灭
+39	Bonus Stat	受到的物理伤害降低 15%
+43	Bonus Stat	吸取 10% 魔法伤害，提升施法速度（不可叠加）
+44	Bonus Stat	吸取 10% 物理伤害，提升攻击速度

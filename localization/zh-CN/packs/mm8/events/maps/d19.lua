@@ -1,0 +1,968 @@
+-- Necromancers' Guild
+-- generated from legacy EVT/STR
+
+SetMapMetadata({
+    levitateTrapFaceMask = 0x08000000,
+    onLoad = {1, 2, 3, 4, 5},
+    onLeave = {6, 7, 8, 9, 10},
+    openedChestIds = {
+    [81] = {0},
+    [82] = {1},
+    [83] = {2},
+    [84] = {3},
+    [85] = {4},
+    [86] = {5},
+    [87] = {6},
+    [88] = {7},
+    [89] = {8},
+    [90] = {9},
+    [91] = {10},
+    [92] = {11},
+    [93] = {12},
+    [94] = {13},
+    [95] = {14},
+    [96] = {15},
+    [97] = {16},
+    [98] = {17},
+    [99] = {18},
+    [100] = {19},
+    },
+    contextActions = {
+    [2] = { kind = "open_door", source = "opcode" },
+    [11] = { kind = "open_door", source = "title" },
+    [12] = { kind = "press_button", source = "title" },
+    [13] = { kind = "press_button", source = "title" },
+    [14] = { kind = "press_button", source = "title" },
+    [15] = { kind = "open_door", source = "title" },
+    [16] = { kind = "open_door", source = "title" },
+    [18] = { kind = "press_button", source = "title" },
+    [19] = { kind = "press_button", source = "title" },
+    [20] = { kind = "use_lever", source = "title" },
+    [21] = { kind = "use_lever", source = "title" },
+    [22] = { kind = "use_lever", source = "title" },
+    [23] = { kind = "use_lever", source = "title" },
+    [24] = { kind = "use_lever", source = "title" },
+    [25] = { kind = "open_door", source = "title" },
+    [26] = { kind = "open_door", source = "title" },
+    [27] = { kind = "open_door", source = "title" },
+    [28] = { kind = "open_door", source = "title" },
+    [29] = { kind = "open_door", source = "title" },
+    [30] = { kind = "open_door", source = "title" },
+    [31] = { kind = "open_door", source = "title" },
+    [32] = { kind = "open_door", source = "title" },
+    [33] = { kind = "open_door", source = "title" },
+    [34] = { kind = "open_door", source = "title" },
+    [35] = { kind = "open_door", source = "title" },
+    [36] = { kind = "open_door", source = "title" },
+    [37] = { kind = "open_door", source = "title" },
+    [38] = { kind = "open_door", source = "title" },
+    [39] = { kind = "open_door", source = "title" },
+    [40] = { kind = "open_door", source = "title" },
+    [41] = { kind = "open_door", source = "title" },
+    [42] = { kind = "open_door", source = "title" },
+    [43] = { kind = "open_door", source = "title" },
+    [44] = { kind = "open_door", source = "title" },
+    [45] = { kind = "open_door", source = "title" },
+    [46] = { kind = "open_door", source = "title" },
+    [47] = { kind = "open_door", source = "title" },
+    [48] = { kind = "open_door", source = "title" },
+    [49] = { kind = "open_door", source = "title" },
+    [50] = { kind = "open_door", source = "title" },
+    [51] = { kind = "open_door", source = "title" },
+    [52] = { kind = "open_door", source = "title" },
+    [53] = { kind = "open_door", source = "title" },
+    [54] = { kind = "open_door", source = "title" },
+    [55] = { kind = "open_door", source = "title" },
+    [56] = { kind = "open_door", source = "title" },
+    [57] = { kind = "open_door", source = "title" },
+    [58] = { kind = "open_door", source = "title" },
+    [59] = { kind = "open_door", source = "title" },
+    [60] = { kind = "open_door", source = "title" },
+    [61] = { kind = "open_door", source = "title" },
+    [62] = { kind = "open_door", source = "title" },
+    [63] = { kind = "open_door", source = "title" },
+    [64] = { kind = "open_door", source = "title" },
+    [65] = { kind = "open_door", source = "title" },
+    [66] = { kind = "open_door", source = "title" },
+    [81] = { kind = "open_chest", source = "opcode", chestIds = {0} },
+    [82] = { kind = "open_chest", source = "opcode", chestIds = {1} },
+    [83] = { kind = "open_chest", source = "opcode", chestIds = {2} },
+    [84] = { kind = "open_chest", source = "opcode", chestIds = {3} },
+    [85] = { kind = "open_chest", source = "opcode", chestIds = {4} },
+    [86] = { kind = "open_chest", source = "opcode", chestIds = {5} },
+    [87] = { kind = "open_chest", source = "opcode", chestIds = {6} },
+    [88] = { kind = "open_chest", source = "opcode", chestIds = {7} },
+    [89] = { kind = "open_chest", source = "opcode", chestIds = {8} },
+    [90] = { kind = "open_chest", source = "opcode", chestIds = {9} },
+    [91] = { kind = "open_chest", source = "opcode", chestIds = {10} },
+    [92] = { kind = "open_chest", source = "opcode", chestIds = {11} },
+    [93] = { kind = "open_chest", source = "opcode", chestIds = {12} },
+    [94] = { kind = "open_chest", source = "opcode", chestIds = {13} },
+    [95] = { kind = "open_chest", source = "opcode", chestIds = {14} },
+    [96] = { kind = "open_chest", source = "opcode", chestIds = {15} },
+    [97] = { kind = "open_chest", source = "opcode", chestIds = {16} },
+    [98] = { kind = "open_chest", source = "opcode", chestIds = {17} },
+    [99] = { kind = "open_chest", source = "opcode", chestIds = {18} },
+    [100] = { kind = "open_chest", source = "opcode", chestIds = {19} },
+    [201] = { kind = "enter_house", source = "opcode", houseId = 213, targetName = "桑德罗/赞特王座厅" },
+    [203] = { kind = "enter_house", source = "opcode", houseId = 754, targetName = "戴森·利兰之室" },
+    [452] = { kind = "open_door", source = "title" },
+    [454] = { kind = "open_door", source = "opcode" },
+    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "out06.odm", targetName = "影尖塔" },
+    },
+    textureNames = {},
+    spriteNames = {},
+    castSpellIds = {},
+    timers = {
+    },
+})
+
+RegisterEvent(1, nil, function()
+    if IsQBitSet(QBit(20)) then -- Allied with Temple of the Sun. Destroy the Skeleton Transformer done.
+        evt.SetMonGroupBit(41, MonsterBits.Hostile, 1) -- actor group 41: Necromancer, spawn Necromancer (monster) A
+        evt.SetMonGroupBit(42, MonsterBits.Hostile, 1) -- actor group 42: spawn Necromancer (monster) A
+        evt.SetMonGroupBit(10, MonsterBits.Invisible, 0) -- actor group 10: spawn Necromancer (monster) A, spawn Skeletons Archer A, spawn Vampire (monster) A
+        evt.SetMonGroupBit(10, MonsterBits.Hostile, 1) -- actor group 10: spawn Necromancer (monster) A, spawn Skeletons Archer A, spawn Vampire (monster) A
+        SetValue(MapVar(11), 2)
+        evt.SetDoorState(5, DoorAction.Close)
+        return
+    elseif IsQBitSet(QBit(229)) then -- You have Pissed off the Necros
+        if not IsAtLeast(Counter(9), 1344) then
+            evt.SetMonGroupBit(41, MonsterBits.Hostile, 1) -- actor group 41: Necromancer, spawn Necromancer (monster) A
+            evt.SetMonGroupBit(42, MonsterBits.Hostile, 1) -- actor group 42: spawn Necromancer (monster) A
+            evt.SetMonGroupBit(10, MonsterBits.Invisible, 0) -- actor group 10: spawn Necromancer (monster) A, spawn Skeletons Archer A, spawn Vampire (monster) A
+            evt.SetMonGroupBit(10, MonsterBits.Hostile, 1) -- actor group 10: spawn Necromancer (monster) A, spawn Skeletons Archer A, spawn Vampire (monster) A
+            SetValue(MapVar(11), 2)
+            evt.SetDoorState(5, DoorAction.Close)
+            return
+        end
+        SetValue(MapVar(11), 0)
+        evt.SetMonGroupBit(10, MonsterBits.Hostile, 0) -- actor group 10: spawn Necromancer (monster) A, spawn Skeletons Archer A, spawn Vampire (monster) A
+        evt.SetMonGroupBit(10, MonsterBits.Invisible, 1) -- actor group 10: spawn Necromancer (monster) A, spawn Skeletons Archer A, spawn Vampire (monster) A
+        evt.SetMonGroupBit(41, MonsterBits.Hostile, 0) -- actor group 41: Necromancer, spawn Necromancer (monster) A
+        evt.SetMonGroupBit(42, MonsterBits.Hostile, 0) -- actor group 42: spawn Necromancer (monster) A
+        ClearQBit(QBit(229)) -- You have Pissed off the Necros
+        evt.SetDoorState(5, DoorAction.Close)
+        return
+    else
+        evt.SetDoorState(5, DoorAction.Close)
+        return
+    end
+end)
+
+RegisterEvent(2, nil, function()
+    evt.SetDoorState(8, DoorAction.Close)
+    evt.SetDoorState(9, DoorAction.Open)
+    evt.SetDoorState(10, DoorAction.Close)
+    evt.SetDoorState(11, DoorAction.Open)
+    evt.SetDoorState(12, DoorAction.Open)
+    evt.SetDoorState(13, DoorAction.Open)
+    evt.SetDoorState(14, DoorAction.Open)
+    evt.SetDoorState(15, DoorAction.Open)
+    evt.SetDoorState(16, DoorAction.Open)
+    SetValue(MapVar(21), 0)
+end)
+
+RegisterNoOpEvent(3, nil)
+
+RegisterNoOpEvent(4, nil)
+
+RegisterNoOpEvent(5, nil)
+
+RegisterEvent(6, nil, function()
+    if IsQBitSet(QBit(19)) then -- Allied with Necromancers Guild. Steal Nightshade Brazier done.
+        evt.MoveNPC(9, 0) -- Sandro -> removed
+        evt.MoveNPC(56, 751) -- Sandro -> Council Chamber Door
+        evt.MoveNPC(63, 213) -- Thant -> Sandro/Thant's 王座大厅
+    end
+    if IsQBitSet(QBit(229)) then -- You have Pissed off the Necros
+        return
+    elseif IsAtLeast(MapVar(11), 2) then
+        SetQBit(QBit(229)) -- You have Pissed off the Necros
+        SetValue(Counter(9), 0)
+    else
+        SetValue(MapVar(11), 0)
+    end
+end)
+
+RegisterNoOpEvent(7, nil)
+
+RegisterNoOpEvent(8, nil)
+
+RegisterNoOpEvent(9, nil)
+
+RegisterNoOpEvent(10, nil)
+
+RegisterEvent(11, "门", function()
+    evt.SetDoorState(1, DoorAction.Open)
+end, "门")
+
+RegisterEvent(12, "按钮", function()
+    evt.SetDoorState(2, DoorAction.Trigger)
+end, "按钮")
+
+RegisterEvent(13, "按钮", function()
+    evt.SetDoorState(3, DoorAction.Trigger)
+end, "按钮")
+
+RegisterEvent(14, "按钮", function()
+    evt.SetDoorState(4, DoorAction.Trigger)
+    evt.SetDoorState(5, DoorAction.Close)
+end, "按钮")
+
+RegisterEvent(15, "门", function()
+    if not IsQBitSet(QBit(20)) then -- Allied with Temple of the Sun. Destroy the Skeleton Transformer done.
+        if not HasPlayer(34) then -- Dyson Leyland
+            evt.SetNPCGreeting(45, 107) -- Guard greeting: Halt! These areas are off limits to guests! Guild members only!
+            if not IsAtLeast(Invisible, 0) then
+                evt.SpeakNPC(45) -- Guard
+            end
+            evt.FaceAnimation(FaceAnimation.DoorLocked)
+            return
+        end
+        if not evt._IsNpcInParty(34) then
+            evt.SetNPCGreeting(45, 0) -- Guard greeting cleared
+            if not IsAtLeast(Invisible, 0) then
+                evt.SpeakNPC(45) -- Guard
+            end
+            evt.FaceAnimation(FaceAnimation.DoorLocked)
+            return
+        end
+    end
+    evt.SetDoorState(5, DoorAction.Open)
+end, "门")
+
+RegisterEvent(16, "门", function()
+    evt.SetDoorState(6, DoorAction.Open)
+end, "门")
+
+RegisterEvent(18, "按钮", function()
+    if not IsAtLeast(MapVar(21), 15) then
+        evt.SetDoorState(8, DoorAction.Open)
+        evt.SetDoorState(9, DoorAction.Close)
+        evt.SetDoorState(10, DoorAction.Open)
+        if IsAtLeast(MapVar(21), 6) then
+            SubtractValue(MapVar(21), 1)
+        end
+        return
+    end
+    evt.FaceAnimation(FaceAnimation.DoorLocked)
+end, "按钮")
+
+RegisterEvent(19, "按钮", function()
+    if not IsAtLeast(MapVar(21), 15) then
+        if IsAtLeast(MapVar(21), 5) then
+            evt.SetDoorState(8, DoorAction.Close)
+            evt.SetDoorState(9, DoorAction.Open)
+            evt.SetDoorState(10, DoorAction.Close)
+            AddValue(MapVar(21), 1)
+            return
+        end
+    end
+    evt.StatusText("门纹丝不动")
+end, "按钮")
+
+RegisterEvent(20, "拉杆", function()
+    if not IsAtLeast(MapVar(21), 15) then
+        if IsAtLeast(MapVar(21), 6) then
+            evt.StatusText("拉杆纹丝不动")
+            return
+        elseif IsAtLeast(MapVar(21), 5) then
+            evt.StatusText("拉杆纹丝不动")
+            return
+        elseif IsAtLeast(MapVar(21), 4) then
+            evt.StatusText("拉杆纹丝不动")
+            return
+        elseif IsAtLeast(MapVar(21), 3) then
+            evt.StatusText("拉杆纹丝不动")
+            return
+        elseif IsAtLeast(MapVar(21), 2) then
+            evt.StatusText("拉杆纹丝不动")
+            return
+        elseif IsAtLeast(MapVar(21), 1) then
+            evt.SetDoorState(11, DoorAction.Open)
+            SubtractValue(MapVar(21), 1)
+        else
+            evt.SetDoorState(11, DoorAction.Close)
+            AddValue(MapVar(21), 1)
+        end
+    return
+    end
+    evt.StatusText("拉杆纹丝不动")
+end, "拉杆")
+
+RegisterEvent(21, "拉杆", function()
+    if IsAtLeast(MapVar(21), 15) then
+        evt.StatusText("拉杆纹丝不动")
+        return
+    elseif IsAtLeast(MapVar(21), 6) then
+        evt.StatusText("拉杆纹丝不动")
+        return
+    elseif IsAtLeast(MapVar(21), 5) then
+        evt.StatusText("拉杆纹丝不动")
+        return
+    elseif IsAtLeast(MapVar(21), 4) then
+        evt.StatusText("拉杆纹丝不动")
+        return
+    elseif IsAtLeast(MapVar(21), 3) then
+        evt.SetDoorState(12, DoorAction.Open)
+        SubtractValue(MapVar(21), 1)
+        return
+    elseif IsAtLeast(MapVar(21), 2) then
+        evt.SetDoorState(12, DoorAction.Close)
+        AddValue(MapVar(21), 1)
+        return
+    elseif IsAtLeast(MapVar(21), 1) then
+        evt.StatusText("拉杆纹丝不动")
+        return
+    else
+        evt.StatusText("拉杆纹丝不动")
+        return
+    end
+end, "拉杆")
+
+RegisterEvent(22, "拉杆", function()
+    if IsAtLeast(MapVar(21), 15) then
+        evt.StatusText("拉杆纹丝不动")
+        return
+    elseif IsAtLeast(MapVar(21), 6) then
+        evt.StatusText("拉杆纹丝不动")
+        return
+    elseif IsAtLeast(MapVar(21), 5) then
+        evt.StatusText("拉杆纹丝不动")
+        return
+    elseif IsAtLeast(MapVar(21), 4) then
+        evt.StatusText("拉杆纹丝不动")
+        return
+    elseif IsAtLeast(MapVar(21), 3) then
+        evt.StatusText("拉杆纹丝不动")
+        return
+    elseif IsAtLeast(MapVar(21), 2) then
+        evt.SetDoorState(13, DoorAction.Open)
+        SubtractValue(MapVar(21), 1)
+        return
+    elseif IsAtLeast(MapVar(21), 1) then
+        evt.SetDoorState(13, DoorAction.Close)
+        AddValue(MapVar(21), 1)
+    else
+        evt.StatusText("拉杆纹丝不动")
+    end
+return
+end, "拉杆")
+
+RegisterEvent(23, "拉杆", function()
+    if IsAtLeast(MapVar(21), 15) then
+        evt.StatusText("拉杆纹丝不动")
+        return
+    elseif IsAtLeast(MapVar(21), 6) then
+        evt.StatusText("拉杆纹丝不动")
+        return
+    elseif IsAtLeast(MapVar(21), 5) then
+        evt.SetDoorState(14, DoorAction.Open)
+        SubtractValue(MapVar(21), 1)
+        return
+    elseif IsAtLeast(MapVar(21), 4) then
+        evt.SetDoorState(14, DoorAction.Close)
+        AddValue(MapVar(21), 1)
+        return
+    elseif IsAtLeast(MapVar(21), 3) then
+        evt.StatusText("拉杆纹丝不动")
+        return
+    elseif IsAtLeast(MapVar(21), 2) then
+        evt.StatusText("拉杆纹丝不动")
+        return
+    elseif IsAtLeast(MapVar(21), 1) then
+        evt.SetDoorState(14, DoorAction.Open)
+        SubtractValue(MapVar(21), 1)
+    else
+        evt.StatusText("拉杆纹丝不动")
+    end
+return
+end, "拉杆")
+
+RegisterEvent(24, "拉杆", function()
+    if IsAtLeast(MapVar(21), 15) then
+        evt.StatusText("拉杆纹丝不动")
+        return
+    elseif IsAtLeast(MapVar(21), 6) then
+        evt.StatusText("拉杆纹丝不动")
+        return
+    elseif IsAtLeast(MapVar(21), 5) then
+        evt.StatusText("拉杆纹丝不动")
+        return
+    elseif IsAtLeast(MapVar(21), 4) then
+        evt.SetDoorState(15, DoorAction.Open)
+        SubtractValue(MapVar(21), 1)
+        return
+    elseif IsAtLeast(MapVar(21), 3) then
+        evt.SetDoorState(15, DoorAction.Close)
+        AddValue(MapVar(21), 1)
+        return
+    elseif IsAtLeast(MapVar(21), 2) then
+        evt.StatusText("拉杆纹丝不动")
+        return
+    elseif IsAtLeast(MapVar(21), 1) then
+        evt.StatusText("拉杆纹丝不动")
+        return
+    else
+        evt.StatusText("拉杆纹丝不动")
+        return
+    end
+end, "拉杆")
+
+RegisterEvent(25, "门梁", function()
+    if not IsAtLeast(MapVar(21), 6) then
+        evt.StatusText("横梁纹丝不动")
+        return
+    end
+    if not IsAtLeast(MapVar(21), 15) then
+        evt.SetDoorState(16, DoorAction.Close)
+        SetValue(MapVar(21), 15)
+        return
+    end
+    evt.SetDoorState(16, DoorAction.Open)
+    SetValue(MapVar(21), 6)
+end, "门梁")
+
+RegisterEvent(26, "门", function()
+    evt.SetDoorState(59, DoorAction.Close)
+    evt.SetDoorState(60, DoorAction.Close)
+    evt.SetDoorState(61, DoorAction.Close)
+    evt.SetDoorState(62, DoorAction.Close)
+end, "门")
+
+RegisterEvent(27, "门", function()
+    if not IsAtLeast(MapVar(21), 15) then
+        evt.SetDoorState(8, DoorAction.Open)
+        evt.SetDoorState(9, DoorAction.Close)
+        evt.SetDoorState(10, DoorAction.Open)
+        evt.SetMonGroupBit(41, MonsterBits.Hostile, 1) -- actor group 41: Necromancer, spawn Necromancer (monster) A
+        evt.SetMonGroupBit(42, MonsterBits.Hostile, 1) -- actor group 42: spawn Necromancer (monster) A
+        evt.SetMonGroupBit(10, MonsterBits.Invisible, 0) -- actor group 10: spawn Necromancer (monster) A, spawn Skeletons Archer A, spawn Vampire (monster) A
+        evt.SetMonGroupBit(10, MonsterBits.Hostile, 1) -- actor group 10: spawn Necromancer (monster) A, spawn Skeletons Archer A, spawn Vampire (monster) A
+        evt.SetDoorState(7, DoorAction.Open)
+        return
+    end
+    evt.FaceAnimation(FaceAnimation.DoorLocked)
+end, "门")
+
+RegisterEvent(28, "门", function()
+    evt.SetDoorState(18, DoorAction.Open)
+end, "门")
+
+RegisterEvent(29, "门", function()
+    evt.SetDoorState(19, DoorAction.Open)
+end, "门")
+
+RegisterEvent(30, "门", function()
+    evt.SetDoorState(20, DoorAction.Open)
+end, "门")
+
+RegisterEvent(31, "门", function()
+    evt.SetDoorState(21, DoorAction.Open)
+end, "门")
+
+RegisterEvent(32, "门", function()
+    evt.SetDoorState(22, DoorAction.Open)
+end, "门")
+
+RegisterEvent(33, "门", function()
+    evt.SetDoorState(23, DoorAction.Open)
+end, "门")
+
+RegisterEvent(34, "门", function()
+    evt.SetDoorState(24, DoorAction.Open)
+end, "门")
+
+RegisterEvent(35, "门", function()
+    evt.SetDoorState(25, DoorAction.Open)
+end, "门")
+
+RegisterEvent(36, "门", function()
+    evt.SetDoorState(26, DoorAction.Open)
+end, "门")
+
+RegisterEvent(37, "门", function()
+    evt.SetDoorState(27, DoorAction.Open)
+end, "门")
+
+RegisterEvent(38, "门", function()
+    evt.SetDoorState(28, DoorAction.Open)
+end, "门")
+
+RegisterEvent(39, "门", function()
+    evt.SetDoorState(29, DoorAction.Open)
+end, "门")
+
+RegisterEvent(40, "门", function()
+    evt.SetDoorState(30, DoorAction.Open)
+end, "门")
+
+RegisterEvent(41, "门", function()
+    evt.SetDoorState(31, DoorAction.Open)
+end, "门")
+
+RegisterEvent(42, "门", function()
+    evt.SetDoorState(32, DoorAction.Open)
+end, "门")
+
+RegisterEvent(43, "门", function()
+    evt.SetDoorState(33, DoorAction.Open)
+end, "门")
+
+RegisterEvent(44, "门", function()
+    evt.SetDoorState(34, DoorAction.Open)
+end, "门")
+
+RegisterEvent(45, "门", function()
+    evt.SetDoorState(35, DoorAction.Open)
+end, "门")
+
+RegisterEvent(46, "门", function()
+    evt.SetDoorState(36, DoorAction.Open)
+end, "门")
+
+RegisterEvent(47, "门", function()
+    evt.SetDoorState(37, DoorAction.Open)
+end, "门")
+
+RegisterEvent(48, "门", function()
+    evt.SetDoorState(38, DoorAction.Open)
+end, "门")
+
+RegisterEvent(49, "门", function()
+    evt.SetDoorState(39, DoorAction.Open)
+end, "门")
+
+RegisterEvent(50, "门", function()
+    evt.SetDoorState(40, DoorAction.Open)
+end, "门")
+
+RegisterEvent(51, "门", function()
+    evt.SetDoorState(41, DoorAction.Open)
+end, "门")
+
+RegisterEvent(52, "门", function()
+    evt.SetDoorState(42, DoorAction.Open)
+end, "门")
+
+RegisterEvent(53, "门", function()
+    evt.SetDoorState(43, DoorAction.Open)
+end, "门")
+
+RegisterEvent(54, "门", function()
+    evt.SetDoorState(44, DoorAction.Open)
+end, "门")
+
+RegisterEvent(55, "门", function()
+    evt.SetDoorState(45, DoorAction.Open)
+end, "门")
+
+RegisterEvent(56, "门", function()
+    evt.SetDoorState(46, DoorAction.Open)
+end, "门")
+
+RegisterEvent(57, "门", function()
+    evt.SetDoorState(47, DoorAction.Open)
+end, "门")
+
+RegisterEvent(58, "门", function()
+    evt.SetDoorState(48, DoorAction.Open)
+end, "门")
+
+RegisterEvent(59, "门", function()
+    evt.SetDoorState(49, DoorAction.Open)
+end, "门")
+
+RegisterEvent(60, "门", function()
+    evt.SetDoorState(50, DoorAction.Open)
+end, "门")
+
+RegisterEvent(61, "门", function()
+    if IsAtLeast(MapVar(11), 2) then
+        evt.SetDoorState(51, DoorAction.Open)
+        evt.SetDoorState(52, DoorAction.Open)
+        return
+    elseif IsQBitSet(QBit(229)) then -- You have Pissed off the Necros
+        evt.SetDoorState(51, DoorAction.Open)
+        evt.SetDoorState(52, DoorAction.Open)
+        return
+    elseif IsQBitSet(QBit(20)) then -- Allied with Temple of the Sun. Destroy the Skeleton Transformer done.
+        evt.SetMonGroupBit(41, MonsterBits.Hostile, 1) -- actor group 41: Necromancer, spawn Necromancer (monster) A
+        evt.SetMonGroupBit(42, MonsterBits.Hostile, 1) -- actor group 42: spawn Necromancer (monster) A
+        evt.SetMonGroupBit(10, MonsterBits.Invisible, 0) -- actor group 10: spawn Necromancer (monster) A, spawn Skeletons Archer A, spawn Vampire (monster) A
+        evt.SetMonGroupBit(10, MonsterBits.Hostile, 1) -- actor group 10: spawn Necromancer (monster) A, spawn Skeletons Archer A, spawn Vampire (monster) A
+        SetValue(MapVar(11), 2)
+        evt.SetDoorState(51, DoorAction.Open)
+        evt.SetDoorState(52, DoorAction.Open)
+        return
+    elseif IsQBitSet(QBit(19)) then -- Allied with Necromancers Guild. Steal Nightshade Brazier done.
+        if not IsAtLeast(MapVar(11), 1) then
+            SetValue(MapVar(11), 1)
+            evt.SpeakNPC(34) -- Guard
+            evt.FaceAnimation(FaceAnimation.DoorLocked)
+            return
+        end
+        SetQBit(QBit(229)) -- You have Pissed off the Necros
+        SetValue(Counter(9), 0)
+        evt.SetMonGroupBit(41, MonsterBits.Hostile, 1) -- actor group 41: Necromancer, spawn Necromancer (monster) A
+        evt.SetMonGroupBit(42, MonsterBits.Hostile, 1) -- actor group 42: spawn Necromancer (monster) A
+        evt.SetMonGroupBit(10, MonsterBits.Invisible, 0) -- actor group 10: spawn Necromancer (monster) A, spawn Skeletons Archer A, spawn Vampire (monster) A
+        evt.SetMonGroupBit(10, MonsterBits.Hostile, 1) -- actor group 10: spawn Necromancer (monster) A, spawn Skeletons Archer A, spawn Vampire (monster) A
+        SetValue(MapVar(11), 2)
+        evt.SetDoorState(51, DoorAction.Open)
+        evt.SetDoorState(52, DoorAction.Open)
+    else
+        evt.SpeakNPC(34) -- Guard
+        evt.FaceAnimation(FaceAnimation.DoorLocked)
+    end
+return
+end, "门")
+
+RegisterEvent(62, "门", function()
+    if IsAtLeast(MapVar(11), 2) then
+        evt.SetDoorState(53, DoorAction.Open)
+        evt.SetDoorState(54, DoorAction.Open)
+        return
+    elseif IsQBitSet(QBit(229)) then -- You have Pissed off the Necros
+        evt.SetDoorState(53, DoorAction.Open)
+        evt.SetDoorState(54, DoorAction.Open)
+        return
+    elseif IsQBitSet(QBit(20)) then -- Allied with Temple of the Sun. Destroy the Skeleton Transformer done.
+        evt.SetMonGroupBit(41, MonsterBits.Hostile, 1) -- actor group 41: Necromancer, spawn Necromancer (monster) A
+        evt.SetMonGroupBit(42, MonsterBits.Hostile, 1) -- actor group 42: spawn Necromancer (monster) A
+        evt.SetMonGroupBit(10, MonsterBits.Invisible, 0) -- actor group 10: spawn Necromancer (monster) A, spawn Skeletons Archer A, spawn Vampire (monster) A
+        evt.SetMonGroupBit(10, MonsterBits.Hostile, 1) -- actor group 10: spawn Necromancer (monster) A, spawn Skeletons Archer A, spawn Vampire (monster) A
+        SetValue(MapVar(11), 2)
+        evt.SetDoorState(53, DoorAction.Open)
+        evt.SetDoorState(54, DoorAction.Open)
+        return
+    elseif IsQBitSet(QBit(19)) then -- Allied with Necromancers Guild. Steal Nightshade Brazier done.
+        if not IsAtLeast(MapVar(11), 1) then
+            SetValue(MapVar(11), 1)
+            evt.SpeakNPC(34) -- Guard
+            evt.FaceAnimation(FaceAnimation.DoorLocked)
+            return
+        end
+        SetQBit(QBit(229)) -- You have Pissed off the Necros
+        SetValue(Counter(9), 0)
+        evt.SetMonGroupBit(41, MonsterBits.Hostile, 1) -- actor group 41: Necromancer, spawn Necromancer (monster) A
+        evt.SetMonGroupBit(42, MonsterBits.Hostile, 1) -- actor group 42: spawn Necromancer (monster) A
+        evt.SetMonGroupBit(10, MonsterBits.Invisible, 0) -- actor group 10: spawn Necromancer (monster) A, spawn Skeletons Archer A, spawn Vampire (monster) A
+        evt.SetMonGroupBit(10, MonsterBits.Hostile, 1) -- actor group 10: spawn Necromancer (monster) A, spawn Skeletons Archer A, spawn Vampire (monster) A
+        SetValue(MapVar(11), 2)
+        evt.SetDoorState(53, DoorAction.Open)
+        evt.SetDoorState(54, DoorAction.Open)
+    else
+        evt.SpeakNPC(34) -- Guard
+        evt.FaceAnimation(FaceAnimation.DoorLocked)
+    end
+return
+end, "门")
+
+RegisterEvent(63, "门", function()
+    if IsAtLeast(MapVar(11), 2) then
+        evt.SetDoorState(55, DoorAction.Open)
+        evt.SetDoorState(56, DoorAction.Open)
+        return
+    elseif IsQBitSet(QBit(229)) then -- You have Pissed off the Necros
+        evt.SetDoorState(55, DoorAction.Open)
+        evt.SetDoorState(56, DoorAction.Open)
+        return
+    elseif IsQBitSet(QBit(20)) then -- Allied with Temple of the Sun. Destroy the Skeleton Transformer done.
+        evt.SetMonGroupBit(41, MonsterBits.Hostile, 1) -- actor group 41: Necromancer, spawn Necromancer (monster) A
+        evt.SetMonGroupBit(42, MonsterBits.Hostile, 1) -- actor group 42: spawn Necromancer (monster) A
+        evt.SetMonGroupBit(10, MonsterBits.Invisible, 0) -- actor group 10: spawn Necromancer (monster) A, spawn Skeletons Archer A, spawn Vampire (monster) A
+        evt.SetMonGroupBit(10, MonsterBits.Hostile, 1) -- actor group 10: spawn Necromancer (monster) A, spawn Skeletons Archer A, spawn Vampire (monster) A
+        SetValue(MapVar(11), 2)
+        evt.SetDoorState(55, DoorAction.Open)
+        evt.SetDoorState(56, DoorAction.Open)
+        return
+    elseif IsQBitSet(QBit(19)) then -- Allied with Necromancers Guild. Steal Nightshade Brazier done.
+        if not IsAtLeast(MapVar(11), 1) then
+            SetValue(MapVar(11), 1)
+            evt.SpeakNPC(34) -- Guard
+            evt.FaceAnimation(FaceAnimation.DoorLocked)
+            return
+        end
+        SetQBit(QBit(229)) -- You have Pissed off the Necros
+        SetValue(Counter(9), 0)
+        evt.SetMonGroupBit(41, MonsterBits.Hostile, 1) -- actor group 41: Necromancer, spawn Necromancer (monster) A
+        evt.SetMonGroupBit(42, MonsterBits.Hostile, 1) -- actor group 42: spawn Necromancer (monster) A
+        evt.SetMonGroupBit(10, MonsterBits.Invisible, 0) -- actor group 10: spawn Necromancer (monster) A, spawn Skeletons Archer A, spawn Vampire (monster) A
+        evt.SetMonGroupBit(10, MonsterBits.Hostile, 1) -- actor group 10: spawn Necromancer (monster) A, spawn Skeletons Archer A, spawn Vampire (monster) A
+        SetValue(MapVar(11), 2)
+        evt.SetDoorState(55, DoorAction.Open)
+        evt.SetDoorState(56, DoorAction.Open)
+    else
+        evt.SpeakNPC(34) -- Guard
+        evt.FaceAnimation(FaceAnimation.DoorLocked)
+    end
+return
+end, "门")
+
+RegisterEvent(64, "门", function()
+    if IsAtLeast(MapVar(11), 2) then
+        evt.SetDoorState(57, DoorAction.Open)
+        evt.SetDoorState(58, DoorAction.Open)
+        return
+    elseif IsQBitSet(QBit(229)) then -- You have Pissed off the Necros
+        evt.SetDoorState(57, DoorAction.Open)
+        evt.SetDoorState(58, DoorAction.Open)
+        return
+    elseif IsQBitSet(QBit(20)) then -- Allied with Temple of the Sun. Destroy the Skeleton Transformer done.
+        evt.SetMonGroupBit(41, MonsterBits.Hostile, 1) -- actor group 41: Necromancer, spawn Necromancer (monster) A
+        evt.SetMonGroupBit(42, MonsterBits.Hostile, 1) -- actor group 42: spawn Necromancer (monster) A
+        evt.SetMonGroupBit(10, MonsterBits.Invisible, 0) -- actor group 10: spawn Necromancer (monster) A, spawn Skeletons Archer A, spawn Vampire (monster) A
+        evt.SetMonGroupBit(10, MonsterBits.Hostile, 1) -- actor group 10: spawn Necromancer (monster) A, spawn Skeletons Archer A, spawn Vampire (monster) A
+        SetValue(MapVar(11), 2)
+        evt.SetDoorState(57, DoorAction.Open)
+        evt.SetDoorState(58, DoorAction.Open)
+        return
+    elseif IsQBitSet(QBit(19)) then -- Allied with Necromancers Guild. Steal Nightshade Brazier done.
+        if not IsAtLeast(MapVar(11), 1) then
+            SetValue(MapVar(11), 1)
+            evt.SpeakNPC(34) -- Guard
+            evt.FaceAnimation(FaceAnimation.DoorLocked)
+            return
+        end
+        SetQBit(QBit(229)) -- You have Pissed off the Necros
+        SetValue(Counter(9), 0)
+        evt.SetMonGroupBit(41, MonsterBits.Hostile, 1) -- actor group 41: Necromancer, spawn Necromancer (monster) A
+        evt.SetMonGroupBit(42, MonsterBits.Hostile, 1) -- actor group 42: spawn Necromancer (monster) A
+        evt.SetMonGroupBit(10, MonsterBits.Invisible, 0) -- actor group 10: spawn Necromancer (monster) A, spawn Skeletons Archer A, spawn Vampire (monster) A
+        evt.SetMonGroupBit(10, MonsterBits.Hostile, 1) -- actor group 10: spawn Necromancer (monster) A, spawn Skeletons Archer A, spawn Vampire (monster) A
+        SetValue(MapVar(11), 2)
+        evt.SetDoorState(57, DoorAction.Open)
+        evt.SetDoorState(58, DoorAction.Open)
+    else
+        evt.SpeakNPC(34) -- Guard
+        evt.FaceAnimation(FaceAnimation.DoorLocked)
+    end
+return
+end, "门")
+
+RegisterEvent(65, "门", function()
+    evt.SetDoorState(59, DoorAction.Open)
+    evt.SetDoorState(60, DoorAction.Open)
+end, "门")
+
+RegisterEvent(66, "门", function()
+    evt.SetDoorState(61, DoorAction.Open)
+    evt.SetDoorState(62, DoorAction.Open)
+end, "门")
+
+RegisterEvent(81, "箱子", function()
+    evt.OpenChest(0)
+end, "箱子")
+
+RegisterEvent(82, "箱子", function()
+    evt.OpenChest(1)
+end, "箱子")
+
+RegisterEvent(83, "箱子", function()
+    evt.OpenChest(2)
+end, "箱子")
+
+RegisterEvent(84, "箱子", function()
+    evt.OpenChest(3)
+end, "箱子")
+
+RegisterEvent(85, "箱子", function()
+    evt.OpenChest(4)
+end, "箱子")
+
+RegisterEvent(86, "箱子", function()
+    evt.OpenChest(5)
+end, "箱子")
+
+RegisterEvent(87, "箱子", function()
+    evt.OpenChest(6)
+end, "箱子")
+
+RegisterEvent(88, "箱子", function()
+    evt.OpenChest(7)
+end, "箱子")
+
+RegisterEvent(89, "箱子", function()
+    evt.OpenChest(8)
+end, "箱子")
+
+RegisterEvent(90, "箱子", function()
+    evt.OpenChest(9)
+end, "箱子")
+
+RegisterEvent(91, "箱子", function()
+    evt.OpenChest(10)
+end, "箱子")
+
+RegisterEvent(92, "箱子", function()
+    evt.OpenChest(11)
+end, "箱子")
+
+RegisterEvent(93, "箱子", function()
+    evt.OpenChest(12)
+end, "箱子")
+
+RegisterEvent(94, "箱子", function()
+    evt.OpenChest(13)
+end, "箱子")
+
+RegisterEvent(95, "箱子", function()
+    evt.OpenChest(14)
+end, "箱子")
+
+RegisterEvent(96, "箱子", function()
+    evt.OpenChest(15)
+end, "箱子")
+
+RegisterEvent(97, "箱子", function()
+    evt.OpenChest(16)
+end, "箱子")
+
+RegisterEvent(98, "箱子", function()
+    evt.OpenChest(17)
+end, "箱子")
+
+RegisterEvent(99, "箱子", function()
+    evt.OpenChest(18)
+end, "箱子")
+
+RegisterEvent(100, "箱子", function()
+    evt.OpenChest(19)
+end, "箱子")
+
+RegisterEvent(131, nil, function()
+    if IsQBitSet(QBit(27)) then return end -- Skeleton Transformer Destroyed.
+    if not IsQBitSet(QBit(26)) then return end -- Find the skeleton transformer in the Shadowspire Necromancers' Guild. Destroy it and return to Oskar Tyre. - Given and taken by Oskar Tyre (area 7). Taken when Qbit 29 set.
+    if not HasPlayer(34) then return end -- Dyson Leyland
+    if not IsAtLeast(MapVar(21), 15) then return end
+    if evt._IsNpcInParty(34) then
+        SetQBit(QBit(27)) -- Skeleton Transformer Destroyed.
+        evt.ShowMovie("\"skeltrans\"", true)
+        evt.SetFacetBit(30, FacetBits.Untouchable, 1)
+        evt.SetFacetBit(30, FacetBits.Invisible, 1)
+    end
+end)
+
+RegisterEvent(201, "桑德罗/赞特王座厅", function()
+    if IsQBitSet(QBit(27)) then -- Skeleton Transformer Destroyed.
+        evt.FaceAnimation(FaceAnimation.DoorLocked)
+        return
+    elseif IsAtLeast(MapVar(11), 2) then
+        evt.FaceAnimation(FaceAnimation.DoorLocked)
+        return
+    elseif IsQBitSet(QBit(20)) then -- Allied with Temple of the Sun. Destroy the Skeleton Transformer done.
+        evt.FaceAnimation(FaceAnimation.DoorLocked)
+        return
+    elseif IsQBitSet(QBit(19)) then -- Allied with Necromancers Guild. Steal Nightshade Brazier done.
+        evt.EnterHouse(213) -- Sandro/Thant's 王座大厅
+        return
+    else
+        evt.ForPlayer(Players.All)
+        if HasItem(604) then -- Nightshade Brazier
+            RemoveItem(604) -- Nightshade Brazier
+            ClearQBit(QBit(14)) -- Form an alliance with the Necromancers' Guild in Shadowspire. - Given by Bastian Lourdrin (area 3). Activates Merchanthouse in Alvar. Taken by Sandro (area 6) or when quest 15 is done.
+            ClearQBit(QBit(15)) -- Form an alliance with the Temple of the Sun in Murmurwoods. - Given by Bastian Lourdrin (area 3). Activates Merchanthouse in Alvar. Taken by Oskar Tyre (area 7), or when quest 27 is done.
+            ClearQBit(QBit(28)) -- Bring the Nightshade Brazier to the Necromancers' Guild leader, Sandro. The Brazier is in the Temple of the Sun. - Given and taken by Sandro (area 6). Taken when Qbit 27 set.
+            ClearQBit(QBit(26)) -- Find the skeleton transformer in the Shadowspire Necromancers' Guild. Destroy it and return to Oskar Tyre. - Given and taken by Oskar Tyre (area 7). Taken when Qbit 29 set.
+            SetQBit(QBit(19)) -- Allied with Necromancers Guild. Steal Nightshade Brazier done.
+            evt.MoveNPC(10, 0) -- Thant -> removed
+            evt.SetNPCTopic(9, 0, 0) -- Sandro topic 0 cleared
+            evt.SetNPCTopic(9, 1, 101) -- Sandro topic 1: Thant
+            evt.SetNPCGreeting(9, 32) -- Sandro greeting: Hah! The only advantage that the Sun Temple had against us is no more. With the Nightshade Brazier back in our possession, we no longer need worry about the daytime defense of Shadowspire. We can march our undead to their very doors. We will destroy their temple and wipe them from the face of Jadame! Now that the tide of battle has turned in our favor, we of the Necromancers' Guild can more generously consider the request made by our friend, Bastian Loudrin. Thant can take over here while I am away sitting on your alliance council.
+            evt.ForPlayer(Players.All)
+            SetAward(Award(10)) -- Formed an alliance with the Necromancers' Guild.
+            AddValue(Experience, 12500)
+            evt.ForPlayer(Players.Current)
+            AddValue(Gold, 8000)
+            evt.ShowMovie("\"nightshade\"", true)
+            AddValue(History(10), 0)
+            ClearQBit(QBit(203)) -- Nightshade Brazier - I lost it
+        end
+        evt.EnterHouse(213) -- Sandro/Thant's 王座大厅
+        return
+    end
+end, "桑德罗/赞特王座厅")
+
+RegisterEvent(203, "戴森·利兰之室", function()
+    SetValue(MapVar(31), 5)
+    if IsQBitSet(QBit(26)) then -- Find the skeleton transformer in the Shadowspire Necromancers' Guild. Destroy it and return to Oskar Tyre. - Given and taken by Oskar Tyre (area 7). Taken when Qbit 29 set.
+        if IsQBitSet(QBit(89)) and IsQBitSet(QBit(90)) then -- Dyson Leland talks to you about the Necromancers. For global event 97-100.
+            evt.SetNPCTopic(11, 3, 634) -- Dyson Leland topic 3: Roster Join Event
+            if IsQBitSet(QBit(26)) then -- Find the skeleton transformer in the Shadowspire Necromancers' Guild. Destroy it and return to Oskar Tyre. - Given and taken by Oskar Tyre (area 7). Taken when Qbit 29 set.
+                SetValue(MapVar(31), 4)
+            end
+            if not IsQBitSet(QBit(28)) then -- Bring the Nightshade Brazier to the Necromancers' Guild leader, Sandro. The Brazier is in the Temple of the Sun. - Given and taken by Sandro (area 6). Taken when Qbit 27 set.
+                evt.SetNPCGreeting(11, 35) -- Dyson Leland greeting: Ah, you are sent by his high holiness�Oskar Tyre thinks to activate his agent. Though I would wish him no good, I will do as he asks. Yes, I have knowledge of the guild's Skeleton Transformer and believe I can destroy it. Very well, let us do this thing against the Necromancers' Guild. I will at least be able to strike against one of my enemies!
+                evt.EnterHouse(754) -- Dyson Leland's Room
+                return
+            end
+            if not IsAtLeast(MapVar(31), 5) then
+                evt.SetNPCGreeting(11, 36) -- Dyson Leland greeting: Hah! So both Sandro and Oskar Tyre seek to use me against the other. I have thought of the possibility of this occurring. I believe that if I were to strike against one, it would become impossible for me to strike the other.So I guess we have a choice--help the guild or the temple. Which? I don't know, as my hatred for both is equal. I suppose I'll have to do with a half measure of revenge.
+                evt.EnterHouse(754) -- Dyson Leland's Room
+                return
+            end
+            evt.SetNPCGreeting(11, 34) -- Dyson Leland greeting: So, Sandro has asked you to strike a blow against the Sun Temple! Though I hate the guild. I would be willing to help you. Half a serving of revenge is better than none.
+        else
+        end
+        evt.EnterHouse(754) -- Dyson Leland's Room
+        return
+    elseif IsQBitSet(QBit(28)) then -- Bring the Nightshade Brazier to the Necromancers' Guild leader, Sandro. The Brazier is in the Temple of the Sun. - Given and taken by Sandro (area 6). Taken when Qbit 27 set.
+        if IsQBitSet(QBit(89)) and IsQBitSet(QBit(90)) then -- Dyson Leland talks to you about the Necromancers. For global event 97-100.
+            evt.SetNPCTopic(11, 3, 634) -- Dyson Leland topic 3: Roster Join Event
+            if IsQBitSet(QBit(26)) then -- Find the skeleton transformer in the Shadowspire Necromancers' Guild. Destroy it and return to Oskar Tyre. - Given and taken by Oskar Tyre (area 7). Taken when Qbit 29 set.
+                SetValue(MapVar(31), 4)
+            end
+            if not IsQBitSet(QBit(28)) then -- Bring the Nightshade Brazier to the Necromancers' Guild leader, Sandro. The Brazier is in the Temple of the Sun. - Given and taken by Sandro (area 6). Taken when Qbit 27 set.
+                evt.SetNPCGreeting(11, 35) -- Dyson Leland greeting: Ah, you are sent by his high holiness�Oskar Tyre thinks to activate his agent. Though I would wish him no good, I will do as he asks. Yes, I have knowledge of the guild's Skeleton Transformer and believe I can destroy it. Very well, let us do this thing against the Necromancers' Guild. I will at least be able to strike against one of my enemies!
+                evt.EnterHouse(754) -- Dyson Leland's Room
+                return
+            end
+            if not IsAtLeast(MapVar(31), 5) then
+                evt.SetNPCGreeting(11, 36) -- Dyson Leland greeting: Hah! So both Sandro and Oskar Tyre seek to use me against the other. I have thought of the possibility of this occurring. I believe that if I were to strike against one, it would become impossible for me to strike the other.So I guess we have a choice--help the guild or the temple. Which? I don't know, as my hatred for both is equal. I suppose I'll have to do with a half measure of revenge.
+                evt.EnterHouse(754) -- Dyson Leland's Room
+                return
+            end
+            evt.SetNPCGreeting(11, 34) -- Dyson Leland greeting: So, Sandro has asked you to strike a blow against the Sun Temple! Though I hate the guild. I would be willing to help you. Half a serving of revenge is better than none.
+        else
+        end
+        evt.EnterHouse(754) -- Dyson Leland's Room
+        return
+    else
+        evt.EnterHouse(754) -- Dyson Leland's Room
+        return
+    end
+end, "戴森·利兰之室")
+
+RegisterEvent(451, nil, function()
+    if IsAtLeast(MapVar(11), 2) then return end
+    SetValue(MapVar(11), 0)
+end)
+
+RegisterEvent(452, "门", function()
+    evt.SetDoorState(5, DoorAction.Open)
+end, "门")
+
+RegisterEvent(453, nil, function()
+    if IsAtLeast(Invisible, 0) then return end
+    if IsAtLeast(MapVar(11), 1) then return end
+    evt.SpeakNPC(34) -- Guard
+    SetValue(MapVar(11), 1)
+end)
+
+RegisterEvent(454, nil, function()
+    if IsAtLeast(MapVar(11), 2) then return end
+    if IsAtLeast(Invisible, 0) then return end
+    evt.SetMonGroupBit(41, MonsterBits.Hostile, 1) -- actor group 41: Necromancer, spawn Necromancer (monster) A
+    evt.SetMonGroupBit(42, MonsterBits.Hostile, 1) -- actor group 42: spawn Necromancer (monster) A
+    evt.SetMonGroupBit(10, MonsterBits.Invisible, 0) -- actor group 10: spawn Necromancer (monster) A, spawn Skeletons Archer A, spawn Vampire (monster) A
+    evt.SetMonGroupBit(10, MonsterBits.Hostile, 1) -- actor group 10: spawn Necromancer (monster) A, spawn Skeletons Archer A, spawn Vampire (monster) A
+    SetValue(MapVar(11), 2)
+    evt.SetDoorState(7, DoorAction.Open)
+end)
+
+RegisterEvent(501, "离开死灵法师公会", function()
+    evt.MoveToMap(15620, -11571, 4480, 1536, 0, 0, 0, 1, "out06.odm") -- Shadowspire
+end, "离开死灵法师公会")
+

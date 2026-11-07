@@ -1,0 +1,56 @@
+screen: TownPortal
+
+elements:
+  - id: TownPortalRoot
+    anchor: center
+    width: 640
+    height: 480
+    z_index: 440
+    visible: true
+    scale:
+      min: 1.0
+      max: 8.0
+    children:
+      - id: TownPortalBackground
+        anchor: top_left
+        offset_x: 0
+        offset_y: 0
+        width: 640
+        height: 480
+        z_index: 0
+        asset:
+          default: townport
+
+      - id: TownPortalDestinationLabel
+        anchor: bottom_right
+        offset_x: -60
+        offset_y: -50
+        width: 240
+        height: 28
+        z_index: 250
+        text:
+          value: "{destination}"
+          font: Fondamento
+          align_x: center
+          align_y: middle
+          scale: 1.0
+
+      - id: TownPortalCloseButton
+        anchor: bottom_right
+        offset_x: -3
+        offset_y: -3
+        width: 83
+        height: 30
+        z_index: 300
+        interactive: true
+        asset:
+          default: obsidian_button_close_normal
+          pressed: obsidian_button_close_pressed
+          highlighted: obsidian_button_close_hover
+        text:
+          value: 关闭
+          font: Fondamento
+          color: "#e8d1a4"
+          align_x: center
+          align_y: middle
+          scale: 0.41666665625

@@ -1,0 +1,7 @@
+205	纳迦女皇
+211	Cleric of Baa
+212	Priest of Baa
+213	羊鸣教红衣主教
+214	羊鸣教大主教
+300	Goblin King
+301	大耳怪副官

@@ -1,0 +1,8 @@
+10010	技能重置	0	MAW respec explanation		Oracle, Judge Grey, The Seer	
+10011	重置技能	0	MAW respec		Oracle, Judge Grey, The Seer	
+10020	德鲁伊力量之环	0	MAW Druid Circlet quest		Dantillion	
+10021	释放巨龙	0	MAW Dragon Hatchling release		Baby Dragon	
+10022	是，释放它	0	MAW Dragon Hatchling release confirmation		Baby Dragon	
+10030	无尽竞技场	0	MAW Endless Arena		Arena Master	
+10031	开始下一层	0	MAW Endless Arena start		Arena Master	
+10040	维度地图	0	MAW Dimensional Maps quest		Oracle, Judge Grey, The Seer	

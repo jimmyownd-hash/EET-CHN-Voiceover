@@ -1,0 +1,885 @@
+# Settings menu: sections (tabs), their settings in display order and the keyboard bindings.
+# Rows appear in catalog order; a new `group` value starts a new heading. After editing, regenerate the tab layouts
+# with `python3 tools/generate_settings_layouts.py`. An empty `desc` gives a compact row, used for the intensity
+# sliders that follow their own toggle; `depends` rows are indented under the setting they depend on.
+# An `action` row stores no setting: the game fills its label, description and button (update_now: the installed
+# version, the update status and Check Now). `updater_only` sections and rows exist only where the game updates itself.
+# `ruleset_desc` replaces a row's description in the pause menu of a game with a ruleset (keep it no longer than `desc`,
+# whose length the layout measures).
+# The `game` section's rows are the ruleset options of the game in progress, not settings.ini values: the menu fills
+# their choices from the ruleset and leaves out what it does not offer.
+sections:
+- id: gameplay
+  name: 游戏玩法
+- id: interface
+  name: 界面
+- id: video
+  name: 视频
+- id: audio
+  name: 音频
+- id: controls
+  name: 键盘与鼠标
+- id: keyboard
+  name: 键盘
+# The rules of the game in progress: only in the pause menu of a game with a ruleset. It never shows beside Updates
+# (main menu only), so both use the seventh tab.
+- id: game
+  name: 规则
+  game_only: true
+- id: updates
+  name: 更新
+  updater_only: true
+  slot: 6
+settings:
+- id: bolster_monsters
+  section: gameplay
+  group: 难度
+  name: 怪物强度缩放
+  type: toggle
+  desc: 怪物会跟上队伍等级。进入区域时生效。
+  ruleset_desc: 仅限标准游戏；本局的规则集会自行调整怪物强度。
+- id: melee_hit_feedback
+  section: gameplay
+  group: 战斗中
+  name: 近战打击反馈
+  type: toggle
+  desc: 根据击中的目标播放撞击音效，并使被击中的生物短暂停顿。
+- id: melee_camera_kick
+  section: gameplay
+  group: 战斗中
+  name: 镜头震动
+  type: toggle
+  desc: 暴击和击杀时，视角会顺着打击方向轻微晃动。
+- id: turn_based_monster_speed
+  section: gameplay
+  group: 回合制战斗
+  name: 怪物回合速度
+  type: steps
+  options:
+  - ['1', 1x]
+  - ['1.5', 1.5x]
+  - ['2', 2x]
+  - ['3', 3x]
+  - ['4', 4x]
+  desc: 加快怪物回合的播放速度。
+- id: turn_based_party_speed
+  section: gameplay
+  group: 回合制战斗
+  name: 队伍攻击速度
+  type: steps
+  options:
+  - ['1', 1x]
+  - ['1.5', 1.5x]
+  - ['2', 2x]
+  - ['3', 3x]
+  - ['4', 4x]
+  desc: 加快队伍攻击和飞行中法术的播放速度。移动阶段的行走速度不变。
+- id: skip_event_cutscenes
+  section: gameplay
+  group: 剧情
+  name: 跳过事件过场
+  type: toggle
+  desc: 跳过事件影片。首次冒险时建议保持关闭。
+- id: combat_text
+  section: interface
+  group: 战斗信息
+  name: 漂浮战斗文字
+  type: toggle
+  desc: 在世界中显示伤害数字和战斗信息。
+- id: combat_log
+  section: interface
+  group: 战斗信息
+  name: 战斗日志
+  type: toggle
+  desc: 追随者头像旁的按钮会打开近期命中的日志，每条包含其伤害步骤。
+  desktop_only: true
+- id: show_hits
+  section: interface
+  group: 战斗信息
+  name: 命中信息
+  type: toggle
+  desc: 在状态栏中描述每次攻击。
+- id: enemy_health_bars
+  section: interface
+  group: 敌人生命条
+  name: 显示生命条
+  type: select
+  options:
+  - ['off', '关']
+  - [target, 仅目标]
+  - [combat, 战斗中]
+  - [nearby, 附近]
+  desc: 显示在目标、近期参战者或附近所有可见敌人上方。
+- id: enemy_health_bar_values
+  section: interface
+  group: 敌人生命条
+  name: 生命数值
+  type: select
+  options:
+  - ['off', '关']
+  - [target, 仅目标]
+  - [all, 全部生命条]
+  desc: 在生命条上方显示当前与最大生命值。
+- id: enemy_health_bar_damage_trail
+  section: interface
+  group: 敌人生命条
+  name: 伤害拖影
+  type: toggle
+  desc: 在当前填充后方短暂显示最近损失的生命。
+- id: quest_markers
+  section: interface
+  group: 探索
+  name: 任务标记
+  type: toggle
+  desc: 标记可提供或可完成任务的角色（世界中有此类任务时）。
+- id: context_action_popup
+  section: interface
+  group: 探索
+  name: 上下文动作菜单
+  type: toggle
+  desc: 为指针下的物体提供动作选项。
+- id: party_frame
+  section: interface
+  group: 队伍
+  name: 肖像框
+  type: toggle
+  desc: 游戏中在队伍头像后绘制边框。其他界面始终保留边框。
+- id: item_buttons
+  section: interface
+  group: 队伍
+  name: 药水与卷轴按钮
+  type: toggle
+  desc: 队伍边框两端的按钮。每个按钮会打开一份暂停状态下的队伍携带物清单。
+- id: quick_item_rings
+  section: interface
+  group: 队伍
+  name: 快捷物品环
+  type: toggle
+  desc: 每个头像旁的按钮会打开其六格快捷环；药水键打开的是该环，而不是清单。
+- id: rarity_glow
+  section: interface
+  group: 物品
+  name: 物品稀有度光晕
+  type: select
+  options:
+  - ['off', '关']
+  - [hold, 按住按键]
+  - [always, 始终]
+  desc: 以稀有度颜色勾画物品轮廓（有稀有度的规则集，如 MAW）。
+  game_ruleset: maw
+- id: update_now
+  section: updates
+  group: 版本
+  name: 已安装版本
+  type: action
+  updater_only: true
+  desc: 点击“立即检查”会在 jasicek.net 上查找新版本。未经询问不会下载任何内容。
+- id: check_for_updates
+  section: updates
+  group: 自动检查
+  name: 检查更新
+  type: select
+  updater_only: true
+  options:
+  - [auto, 启动时]
+  - ['off', 从不]
+  - [ask, 询问我]
+  desc: OpenYAMM 启动时在 jasicek.net 上查找新版本。未经询问不会下载任何内容。
+- id: window_mode
+  section: video
+  group: 显示
+  name: 显示模式
+  type: select
+  options:
+  - [windowed, 窗口化]
+  - [windowed_fullscreen, 无边框]
+  - [fullscreen, 全屏]
+  desc: 更改必须在 15 秒内确认。
+- id: resolution
+  section: video
+  group: 显示
+  name: 分辨率
+  type: select
+  desc: 无边框模式使用你的桌面分辨率。
+- id: vsync
+  section: video
+  group: 显示
+  name: 垂直同步
+  type: toggle
+  desc: 通过将帧与显示器匹配来防止画面撕裂。
+- id: graphics_quality
+  section: video
+  group: 质量
+  name: 图形质量
+  type: steps
+  options:
+  - [low, 低]
+  - [medium, 中]
+  - [high, 高]
+  desc: 立即设置下方多数选项；修改其中任一选项会显示为自定义。
+- id: antialiasing
+  section: video
+  group: 质量
+  name: 抗锯齿
+  type: select
+  options:
+  - ['off', '关']
+  - [2x, 2倍抗锯齿]
+  - [4x, 4倍抗锯齿]
+  desc: 平滑锯齿边缘和闪烁的树叶。
+  # Android renders without multisampling (game/render/CinematicGrading.cpp).
+  desktop_only: true
+- id: view_distance
+  section: video
+  group: 质量
+  name: 视野距离
+  type: select
+  options:
+  - [default, 世界默认]
+  - ['32768', 扩展]
+  - [unlimited, 无限]
+  desc: 更远的距离可能会降低户外性能。
+- id: model_lods
+  section: video
+  group: 质量
+  name: 远处生物细节
+  type: toggle
+  desc: 远处的生物使用简化形状；附近的生物保留完整细节。
+- id: texture_filtering
+  section: video
+  group: 纹理
+  name: 平滑纹理
+  type: toggle
+  desc: 关闭时保留原版锐利、像素化的纹理像素。
+- id: terrain_anisotropy
+  section: video
+  group: 纹理
+  name: 地面纹理清晰度
+  type: select
+  options:
+  - ['off', '关']
+  - [2x, 2×]
+  - [4x, 4×]
+  - [8x, 8×]
+  - [16x, 16×]
+  desc: 保持远处地面纹理锐利（各向异性过滤）。
+  depends: texture_filtering
+- id: model_shadow_quality
+  section: video
+  group: 光照与阴影
+  name: 生物阴影
+  type: select
+  options:
+  - ['0', '关']
+  - ['1', 低]
+  - ['2', 中]
+  - ['3', 高]
+  desc: 生物的动态阴影；更高质量会增加细节和范围。
+- id: light_grid
+  section: video
+  group: 光照与阴影
+  name: 光照细节
+  type: select
+  options:
+  - [high, 高]
+  - [low, 低]
+  desc: 火炬、法术和其他光源的排序精细度；低设置适合手机。
+- id: colored_lights
+  section: video
+  group: 光照与阴影
+  name: 彩色光照
+  type: toggle
+  desc: 光源会用自身颜色为周围环境染色。
+- id: warm_torch_light
+  section: video
+  group: 光照与阴影
+  name: 温暖火炬光
+  type: toggle
+  desc: 火炬光发出火焰般的橙色光晕，而非原版的白色。
+- id: ambient_occlusion
+  section: video
+  group: 光照与阴影
+  name: 环境光遮蔽
+  type: toggle
+  desc: 在实体表面相接处添加柔和阴影。
+  # Android renders without ambient occlusion (game/render/CinematicGrading.cpp).
+  desktop_only: true
+- id: ambient_occlusion_strength
+  section: video
+  group: 光照与阴影
+  name: 强度
+  type: range
+  min: 0
+  max: 100
+  unit: '%'
+  depends: ambient_occlusion
+  desc: ''
+  # Android renders without ambient occlusion (game/render/CinematicGrading.cpp).
+  desktop_only: true
+- id: terrain_decorations
+  section: video
+  group: 环境
+  name: 地形细节
+  type: toggle
+  desc: 在可用处绘制额外的地面装饰。
+- id: weather_quality
+  section: video
+  group: 环境
+  name: 天气
+  type: select
+  options:
+  - [high, 高]
+  - [medium, 中]
+  - [low, 低]
+  - ['off', '关']
+  desc: 雨雪的密度；关闭后隐藏它们，但天气仍在继续。
+- id: wet_surfaces
+  section: video
+  group: 环境
+  name: 潮湿表面
+  type: toggle
+  desc: 雨水使地面和建筑变暗，之后缓慢变干。
+- id: terrain_specular
+  section: video
+  group: 环境
+  name: 地面高光
+  type: toggle
+  desc: 光滑的岩石和潮湿地面会反射阳光和附近光源。
+- id: water_reflections
+  section: video
+  group: 水面
+  name: 反射
+  type: toggle
+  desc: 在水中反射天空、地面和建筑。需要额外的渲染开销。
+- id: water_reflection_size
+  section: video
+  group: 水面
+  name: 反射细节
+  type: select
+  depends: water_reflections
+  options:
+  - ['128', 极低]
+  - ['256', 低]
+  - ['512', 中]
+  - ['1024', 高]
+  - ['2048', 极高]
+  desc: 更高质量的反射更清晰，但开销更高。
+- id: water_sprite_reflections
+  section: video
+  group: 水面
+  name: 反射附近物体
+  type: toggle
+  depends: water_reflections
+  desc: 包含附近的生物、树木和装饰。
+- id: water_movement_ripples
+  section: video
+  group: 水面
+  name: 移动涟漪
+  type: toggle
+  desc: 生物在水面移动产生的小涟漪。
+- id: rain_ripples
+  section: video
+  group: 水面
+  name: 雨滴涟漪
+  type: toggle
+  desc: 下雨时平静水面上的雨滴波纹。
+- id: bloom
+  section: video
+  group: 后期处理
+  name: 辉光
+  type: toggle
+  desc: 火焰、发光水晶和法术光芒会柔和地弥散到周围环境中。
+- id: bloom_strength
+  section: video
+  group: 后期处理
+  name: 强度
+  type: range
+  min: 0
+  max: 100
+  unit: '%'
+  depends: bloom
+  desc: ''
+- id: cinematic_grading
+  section: video
+  group: 后期处理
+  name: 电影色调
+  type: toggle
+  desc: 突出阴影细节并柔化过度饱和的大地色调。
+- id: cinematic_strength
+  section: video
+  group: 后期处理
+  name: 强度
+  type: range
+  min: 0
+  max: 100
+  unit: '%'
+  depends: cinematic_grading
+  desc: ''
+- id: sharpening
+  section: video
+  group: 后期处理
+  name: 锐化
+  type: range
+  min: 0
+  max: 100
+  unit: '%'
+  desc: 锐化 3D 视图；界面不受影响。设为零则关闭。
+- id: melee_hit_effects
+  section: video
+  group: 战斗特效
+  name: 近战命中特效
+  type: toggle
+  desc: 近战攻击命中处显示劈砍、突刺或重击效果。
+- id: melee_hit_flash
+  section: video
+  group: 战斗特效
+  name: 近战命中闪光
+  type: toggle
+  desc: 近战中受击的生物会短暂变亮。
+- id: melee_hit_blood_effects
+  section: video
+  group: 战斗特效
+  name: 近战溅血
+  type: toggle
+  desc: 近战攻击命中时添加流血效果。
+- id: blood_splats
+  section: video
+  group: 战斗特效
+  name: 血渍
+  type: toggle
+  desc: 在被杀死的生物下方留下血泊。
+- id: surface_materials
+  section: video
+  group: 实验性
+  name: 表面材质
+  type: toggle
+  desc: 墙壁、地板和门显示凹凸、金属、玻璃和发光窗户。下一张地图生效。
+- id: surface_parallax
+  section: video
+  group: 实验性
+  name: 表面深度
+  type: toggle
+  desc: 附近的砖块、石头和雕刻显示其深度。需要少量额外渲染。
+- id: surface_reflections
+  section: video
+  group: 实验性
+  name: 表面反射
+  type: toggle
+  desc: 大理石、玻璃、金属和水洼反射周围的建筑。需要表面材质。
+- id: sound_volume
+  section: audio
+  group: 音量
+  name: 音效
+  type: range
+  min: 0
+  max: 9
+  unit: / 9
+  desc: 武器、法术、界面和世界的声音。设为零则静音。
+- id: music_volume
+  section: audio
+  group: 音量
+  name: 音乐
+  type: range
+  min: 0
+  max: 9
+  unit: / 9
+  desc: 菜单、城镇和地牢中的音乐。设为零则静音。
+- id: voice_volume
+  section: audio
+  group: 音量
+  name: 语音
+  type: range
+  min: 0
+  max: 9
+  unit: / 9
+  desc: 角色的语音反应和对话。设为零则静音。
+- id: walksound
+  section: audio
+  group: 声音
+  name: 脚步声
+  type: toggle
+  desc: 播放行走和奔跑的声音。
+- id: repeated_voice_lines
+  section: audio
+  group: 声音
+  name: 重复语音
+  type: steps
+  options:
+  - ['0', 'Off']
+  - ['500', 0.5 s]
+  - ['1000', 1 s]
+  - ['2000', 2 s]
+  - ['3000', 3 s]
+  - ['5000', 5 s]
+  - ['10000', 10 s]
+  desc: 角色在这段时间内同一句话最多说一次，例如受伤时的呼喊或对物品的评论。
+- id: control_scheme
+  section: controls
+  group: 预设
+  name: 控制预设
+  type: select
+  options:
+  - [modern, Modern]
+  - [classic, Classic]
+  desc: '现代：WASD 移动，左键攻击，E 键使用。经典：方向键移动，A 键攻击，左键使用。'
+- id: smart_click
+  section: controls
+  group: 鼠标
+  name: 智能左键
+  type: toggle
+  desc: 左键可对光标下的目标交谈、开启、拾取或使用，其余位置则为攻击。
+  desktop_only: true
+- id: mouse_sensitivity
+  section: controls
+  group: 鼠标
+  name: 鼠标灵敏度
+  type: range
+  min: 0
+  max: 100
+  unit: '%'
+  desc: 视角跟随鼠标的速度。设为零则关闭鼠标视角。
+- id: turn_rate
+  section: controls
+  group: 鼠标
+  name: 转身速度
+  type: select
+  options:
+  - [16x, 16×]
+  - [32x, 32×]
+  - [smooth, 平滑]
+  desc: 基础转身速度，从原版的 16 倍和 32 倍到更快的平滑模式。
+- id: invert_mouse_y
+  section: controls
+  group: 鼠标
+  name: 反转鼠标Y轴
+  type: toggle
+  desc: 鼠标上移则向下看，下移则向上看。
+- id: always_run
+  section: controls
+  group: 移动
+  name: 始终奔跑
+  type: toggle
+  desc: 默认奔跑而非行走。
+- id: bag_number_keys
+  section: controls
+  group: 背包
+  name: 数字键
+  type: select
+  options:
+  - [member, 选择成员]
+  - [bag, 打开背包]
+  desc: '数字键用于背包页面、商店和宝箱；Shift 加数字执行另一操作。单人队伍直接打开背包。'
+  game_ruleset: maw
+- id: ruleset_name
+  section: game
+  group: 规则集
+  name: 规则集
+  type: select
+  desc: 在冒险开始时选择。各部分的规则如下。
+- id: ruleset_difficulty
+  section: game
+  group: 规则集
+  name: 难度
+  type: select
+  options:
+  - [easy, 简单]
+  - [normal, 普通]
+  - [maw, MAW]
+  - [hard, 困难]
+  - [hell, 地狱]
+  - [nightmare, 噩梦]
+  desc: 怪物生命和伤害、数量、战利品和首领。噩梦难度选定后无法再降低。
+- id: ruleset_progression
+  section: game
+  group: 规则集
+  name: 进度
+  type: select
+  options:
+  - [free, 自由]
+  - [horizontal, 横向]
+  desc: 自由模式让怪物随你在别处获得的等级成长；横向模式固定每张地图的等级。
+- id: ruleset_challenge
+  section: game
+  group: 规则集
+  name: 挑战模式
+  type: select
+  options:
+  - [none, 无]
+  - [doom, 毁灭]
+  - [road_to_insanity, 疯狂之路]
+  - [beyond_madness, 超越疯狂]
+  - [austerity, 严苛]
+  desc: 开始时选定一次；固定用于整个冒险。
+- id: ruleset_randomizer
+  section: game
+  group: 规则集
+  name: 随机化
+  type: toggle
+  desc: 开始时选定一次；固定用于整个冒险。
+- id: ruleset_homing
+  section: game
+  group: 偏好
+  name: 制导投射物
+  type: toggle
+  desc: 你的投射物会追踪目标。
+- id: ruleset_friendly_fire
+  section: game
+  group: 偏好
+  name: 友军伤害
+  type: toggle
+  desc: 你的攻击和法术会伤到和平的镇民与卫兵。
+- id: ruleset_trainer_hints
+  section: game
+  group: 偏好
+  name: 导师提示
+  type: toggle
+  desc: 技能提示会指出下一级精通最近的导师。
+- id: ruleset_bow
+  section: game
+  group: 偏好
+  name: 弓箭
+  type: toggle
+  desc: '关闭：弓、弩和龙息都不会射击。纯近战挑战。'
+- id: ruleset_loot_filter
+  section: game
+  group: 偏好
+  name: 战利品过滤
+  type: window
+  options:
+  - ['off', '关']
+  - [soft, 柔和]
+  - [regular, 常规]
+  - [strict, 严格]
+  - [very_strict, 非常严格]
+  - [custom, 自定义]
+  desc: 不想携带的战利品会变成金币。打开过滤并附带预设方案。
+# Shown only in Road to Insanity and Beyond Madness, where it happens; last, so the rows
+# above keep their places when it is hidden.
+- id: ruleset_disintegrate
+  section: game
+  group: 偏好
+  name: 湮灭
+  type: toggle
+  desc: 彻底死亡（远超复活界限）的同伴会离开队伍前往冒险者旅馆。
+bindings:
+- id: forward
+  name: 前进
+  group: 移动
+- id: backward
+  name: 后退
+  group: 移动
+- id: left
+  name: 左移 / 左转
+  group: 移动
+- id: right
+  name: 右移 / 右转
+  group: 移动
+- id: jump
+  name: 跳跃
+  group: 移动
+- id: always_run_toggle
+  name: 切换始终奔跑
+  group: 移动
+- id: fly_up
+  name: 上升
+  group: 移动
+- id: fly_down
+  name: 下降
+  group: 移动
+- id: land
+  name: 降落
+  group: 移动
+- id: look_up
+  name: 向上看
+  group: 镜头
+- id: look_down
+  name: 向下看
+  group: 镜头
+- id: center_view
+  name: 居中视角
+  group: 镜头
+- id: zoom_in
+  name: 放大
+  group: 镜头
+- id: zoom_out
+  name: 缩小
+  group: 镜头
+- id: attack
+  name: 攻击
+  group: 战斗中
+- id: cast_ready
+  name: 施放快速法术
+  group: 战斗中
+- id: quick_spell_1
+  name: 施放快速法术 1
+  group: 战斗中
+- id: quick_spell_2
+  name: 施放快速法术 2
+  group: 战斗中
+- id: quick_spell_3
+  name: 施放快速法术 3
+  group: 战斗中
+- id: quick_spell_4
+  name: 施放快速法术 4
+  group: 战斗中
+- id: cast
+  name: 打开法术书
+  group: 战斗中
+- id: combat
+  name: 开启/关闭回合制战斗
+  group: 战斗中
+- id: pass
+  name: 跳过回合（回合制）
+  group: 战斗中
+- id: use
+  name: 使用 / 互动
+  group: 互动
+- id: yell
+  name: 呐喊（村民会逃跑）
+  group: 互动
+- id: trigger
+  name: 互动前方
+  group: 互动
+- id: char_cycle
+  name: 下一个角色
+  group: 队伍与书籍
+- id: quest
+  name: 任务书
+  group: 队伍与书籍
+- id: map_book
+  name: 地图册
+  group: 队伍与书籍
+- id: history
+  name: 历史记录
+  group: 队伍与书籍
+- id: quick_ref
+  name: 快速参考
+  group: 队伍与书籍
+- id: rest
+  name: 休息
+  group: 队伍与书籍
+- id: follower_panel
+  name: 追随者面板
+  group: 队伍与书籍
+- id: follower_1
+  name: 与追随者 1 交谈
+  group: 队伍与书籍
+- id: follower_2
+  name: 与追随者 2 交谈
+  group: 队伍与书籍
+- id: follower_3
+  name: 与追随者 3 交谈
+  group: 队伍与书籍
+- id: follower_4
+  name: 与追随者 4 交谈
+  group: 队伍与书籍
+- id: double_speed
+  name: 切换双倍速度
+  group: 系统
+- id: quick_save
+  name: 快速存档
+  group: 系统
+- id: quick_load
+  name: 快速读档
+  group: 系统
+# MAW's keys (devdocs/maw/GAPS.md §11 D.18): listed only in a MAW game's pause menu. `context` is the page a key acts
+# on; keys of different contexts may share a key (A picks the alchemist on the inventory page and moves left in play;
+# MAW's E closes our character screen).
+- id: unstuck
+  name: 脱离卡死
+  group: MAW
+  ruleset: maw
+- id: open_workbench
+  name: 打开工作台
+  group: MAW
+  ruleset: maw
+- id: gather_loot
+  name: 收集尸体与制作物品
+  group: MAW
+  ruleset: maw
+- id: alchemist_pick
+  name: 炼金术士拿走炼金物品
+  group: MAW
+  ruleset: maw
+  context: inventory
+- id: skill_cover
+  name: 切换掩护
+  group: MAW
+  ruleset: maw
+  context: skills
+- id: skill_mana_shield
+  name: 切换法力护盾
+  group: MAW
+  ruleset: maw
+  context: skills
+- id: skill_rotation
+  name: 切换元素师循环
+  group: MAW
+  ruleset: maw
+  context: skills
+- id: knight_charge
+  name: 骑士冲锋（孤身骑士）
+  group: MAW
+  ruleset: maw
+- id: show_item_rarity
+  name: 显示物品稀有度（按住）
+  group: MAW
+  ruleset: maw
+  context: inventory
+- id: bag_1
+  name: 打开背包 1（配合 Shift，如控制设置的数字键所述）
+  group: MAW
+  ruleset: maw
+  context: inventory
+- id: bag_2
+  name: 打开背包 2（配合 Shift，如控制设置的数字键所述）
+  group: MAW
+  ruleset: maw
+  context: inventory
+- id: bag_3
+  name: 打开背包 3（配合 Shift，如控制设置的数字键所述）
+  group: MAW
+  ruleset: maw
+  context: inventory
+- id: bag_4
+  name: 打开背包 4（配合 Shift，如控制设置的数字键所述）
+  group: MAW
+  ruleset: maw
+  context: inventory
+- id: crafting_bag
+  name: 制作背包（配合 Shift；标记或取消标记打开的背包）
+  group: MAW
+  ruleset: maw
+  context: inventory
+- id: open_progress
+  name: 打开日志的进度标签页
+  group: MAW
+  ruleset: maw
+- id: open_auras
+  name: 打开灵气面板
+  group: MAW
+  ruleset: maw
+- id: quick_item_wheel
+  name: 药水（药水清单；开启快捷物品环时为当前成员的圆环）
+  group: 药水
+- id: scroll_popup
+  name: 卷轴（卷轴清单）
+  group: 药水
+- id: quick_item_1
+  name: 快速药水（当前成员的栏位 1）
+  group: 药水
+- id: quick_item_2
+  name: 使用药水栏位 2
+  group: 药水
+- id: quick_item_3
+  name: 使用药水栏位 3
+  group: 药水
+- id: quick_item_4
+  name: 使用药水栏位 4
+  group: 药水
+- id: quick_item_5
+  name: 使用药水栏位 5
+  group: 药水
+- id: quick_item_6
+  name: 使用药水栏位 6
+  group: 药水

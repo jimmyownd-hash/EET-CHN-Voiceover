@@ -1,0 +1,1608 @@
+# House Id	Animation Id	Building Name	NPC List	Video Name	Enter Sound	Room Sound Id	House Sound Base Id	NPC Picture Id	House Movie Type
+1	16	真钢之志		lwpshp			30200	1129	Weapon Shop
+2	46	锋刃		mwepshp			32400	1109	Weapon Shop
+3	30	抛光钢刃店		dewpshp			31300	1119	Weapon Shop
+4	59	兰斯长矛店		dhwepshp			33500	1105	Weapon Shop
+5	73	染血匕首与刀剑		nwepshp			34600	1098	Weapon Shop
+6	46	艾泽尔的斧头店		mwepshp			32400	1109	Weapon Shop
+7	96	定制弯刀店		rwepshp			35700	1072	Weapon Shop
+8	230	骑士之刃		human weapon smith01			30840	0536	Weapon Shop
+9	230	淬火钢		human weapon smith01			30840	0536	Weapon Shop
+10	230	女王铁匠铺		human weapon smith01			30840	0536	Weapon Shop
+11	235	猎人小屋		elf weapon smith			31070	0527	Weapon Shop
+12	233	神圣之剑		wizard weapon smith			30620	1503	Weapon Shop
+13	231	怨恨之刃		necromancer weapon smith01			30980	0512	Weapon Shop
+14	234	染血匕首		warlock weapon smith			30680	1510	Weapon Shop
+15	230	范德的刀剑与弓		human weapon smith01			30840	0536	Weapon Shop
+16	235	敲击之弓		elf weapon smith			31070	0527	Weapon Shop
+17	232	平衡之斧		dwarven weapon smith01			31110	0489	Weapon Shop
+18	230	刀剑公司		human weapon smith01			30840	0536	Weapon Shop
+19	230	合金武器店		human weapon smith01			30840	0536	Weapon Shop
+20	230	最佳防御		human weapon smith01			30840	0536	Weapon Shop
+21	230	铁木长矛店		human weapon smith01			30840	0536	Weapon Shop
+22	371	刀具商店		blcksmid			31520	0051	Weapon Shop
+23	372	锤与钳		blckspor			31510	0050	Weapon Shop
+24	370	精制刀剑店		blcksrch			31530	0052	Weapon Shop
+25	371	鹰眼		blcksmid			31520	0051	Weapon Shop
+26	372	长矛专卖店		blckspor			31510	0050	Weapon Shop
+27	372	钝击武器店		blckspor			31510	0050	Weapon Shop
+28	370	磨刀石		blcksrch			31530	0052	Weapon Shop
+29	371	羽毛与弓弦店		blcksmid			31520	0051	Weapon Shop
+30	371	柄杆长柄武器店		blcksmid			31520	0051	Weapon Shop
+31	370	阿卜杜勒折扣武器店		blcksrch			31530	0052	Weapon Shop
+32	370	歌吟之钢		blcksrch			31530	0052	Weapon Shop
+33	371	目标与投掷店		blcksmid			31520	0051	Weapon Shop
+34	370	坚毅之心法杖长矛店		blcksrch			31530	0052	Weapon Shop
+35	370	骑士乐园		blcksrch			31530	0052	Weapon Shop
+36	17	制革厂		larmshp			30300	1128	Armor Shop
+37	60	抛光盾牌		dharmshp			33600	1104	Armor Shop
+38	31	军械库		dearmshp			31400	1110	Armor Shop
+39	60	板甲防护店		dharmshp			33600	1104	Armor Shop
+40	74	柔韧皮革店		narmshp			34700	1097	Armor Shop
+41	47	连环锁甲店		marmshp			32500	1108	Armor Shop
+42	97	卡尔战装店		rarmshp			35800	1076	Armor Shop
+43	174	埃里克的军械库		human armor01			30940	0537	Armor Shop
+44	174	枯木城堡		human armor01			30940	0537	Armor Shop
+45	330	占位		out12 connecting tunnel cave #1				0	Dungeon Ent
+46	174	占位		human armor01			30940	0537	Armor Shop
+47	174	农夫铁匠铺		human armor01			30940	0537	Armor Shop
+48	324	占位		out10 connecting tunnel cave #1				0	Dungeon Ent
+49	174	凯瑟琳女王铁匠铺		human armor01			30940	0537	Armor Shop
+50	174	占位		human armor01			30940	0537	Armor Shop
+51	179	皮甲与圆盾店		elf armor			31100	0496	Armor Shop
+52	177	荣誉盔甲		wizard armor			30660	1505	Armor Shop
+53	175	恶意之盾		necromancer armor01			31020	1509	Armor Shop
+54	178	制革厂		warlock armor			30770	1529	Armor Shop
+55	174	缺失之环		human armor01			30940	0537	Armor Shop
+56	179	艾维利前哨		elf armor			31100	0496	Armor Shop
+57	176	抛光护肩		dwarven armor01			30570	0491	Armor Shop
+58	174	塞尔的盔甲与盾牌店		human armor01			30940	0537	Armor Shop
+59	174	合金盔甲与盾牌店		human armor01			30940	0537	Armor Shop
+60	174	绿林铁匠铺		human armor01			30940	0537	Armor Shop
+61	174	掷出的护手		human armor01			30940	0537	Armor Shop
+62	448	共同防御		armmid			31550	1037	Armor Shop
+63	449	盔甲商城		armpoor			31540	1036	Armor Shop
+64	448	金属编织军械库		armmid			31550	1037	Armor Shop
+65	449	亚伯拉罕金属工坊		armpoor			31540	1036	Armor Shop
+66	449	铁拳军械库		armpoor			31540	1036	Armor Shop
+67	448	铸造厂		armmid			31550	1037	Armor Shop
+68	447	铁壁防御		armrich			31560	0001	Armor Shop
+69	449	阿卜杜勒折扣盔甲店		armpoor			31540	1036	Armor Shop
+70	448	优质盔甲店		armmid			31550	1037	Armor Shop
+71	448	锁甲与护胫店		armmid			31550	1037	Armor Shop
+72	447	步兵之友		armrich			31560	0001	Armor Shop
+73	447	盔甲工坊		armrich			31560	0001	Armor Shop
+74	447	一线银光盔甲盾牌店		armrich			31560	0001	Armor Shop
+75	447	附魔锁甲		armrich			31560	0001	Armor Shop
+76	19	可怖护符店		lmagshp			30500	1126	Magic Shop
+77	76	必需之物店		nmagshp			34900	1099	Magic Shop
+78	33	秘法物品店		demagshp			31600	1133	Magic Shop
+79	61	护符与吊坠店		dhmagshp			33800	1103	Magic Shop
+80	76	神秘混乱店		nmagshp			34900	1099	Magic Shop
+81	49	力量护身符店		mmagshp			32700	1082	Magic Shop
+82	99	雷格纳的礼物		rmagshp			36000	1075	Magic Shop
+83	33	卡奥里的珍奇店		demagshp			31600	1133	Magic Shop
+84	194	翡翠附魔店		human magic shop01			30910	0529	Magic Shop
+85	194	奥托的奇物店		human magic shop01			30910	0529	Magic Shop
+86	194	女王陛下的魔法店		human magic shop01			30910	0529	Magic Shop
+87	199	自然魔法店		elf magic shop			31110	0525	Magic Shop
+88	195	死亡之门		necromancer magic shop01			30990	0509	Magic Shop
+89	197	神器与古董店		wizard magic shop			30630	1526	Magic Shop
+90	197	秘奥法物店		wizard magic shop			30630	1526	Magic Shop
+91	195	奇异魔法店		necromancer magic shop01			30990	0509	Magic Shop
+92	198	秘法物品店		warlock magic shop			30740	1502	Magic Shop
+93	196	精致物品店		dwarven magic shop01			31170	0490	Magic Shop
+94	194	戒指与遗物店		human magic shop01			30910	0529	Magic Shop
+95	194	神秘力量店		human magic shop01			30910	0529	Magic Shop
+96	194	潦草书页		human magic shop01			30910	0529	Magic Shop
+97	377	洞察之眼		magmid			31610	0040	Magic Shop
+98	375	女巫酿造		apthcwch			31630	0054	Magic Shop
+99	378	小魔法商店		magicpor			46600	0039	Magic Shop
+100	374	阿卜杜勒折扣魔法用品店		apthcmid			31640	0055	Magic Shop
+101	373	蝾螈之眼		apthcrch			31650	0056	Magic Shop
+102	378	烟雾与镜面店		magicpor			46600	0039	Magic Shop
+103	375	苹果、荆棘与药剂		apthcwch			31630	0054	Magic Shop
+104	374	奇异附魔店		apthcmid			31640	0055	Magic Shop
+105	376	巫师商店		magrch			31620	0041	Magic Shop
+106	377	泰的小饰品店		magmid			31610	0040	Magic Shop
+107	373	炼金与咒语店		apthcrch			31650	0056	Magic Shop
+108	375	小巧护符店		apthcwch			31630	0054	Magic Shop
+109	376	强力魔法店		magrch			31620	0041	Magic Shop
+110	18	草药精华店		lalcshop			30400	1127	Alchemist
+111	18	药剂店		lalcshop			30400	1127	Alchemist
+112	32	成品药剂店		dealcshp			31500	1117	Alchemist
+113	75	狼毒		nalcshp			34800	1096	Alchemist
+114	98	膏药与疗法店		ralcshp			35900	1077	Alchemist
+115	48	佩里厄斯的药粉店		malcshp				1083	Alchemist
+116	180	蓝色酒瓶		human alchemisht01			31190	0539	Alchemist
+117	180	灵药与仙丹店		human alchemisht01			31190	0539	Alchemist
+118	180	铅之转化		human alchemisht01			31190	0539	Alchemist
+119	185	沸腾大锅		elf alchemist			31130	1549	Alchemist
+120	181	熏黑药瓶		necromancer alchemist01			31010	0515	Alchemist
+121	183	埃德蒙的安瓿店		wizard alchemist			45700	1506	Alchemist
+122	183	信念之瓶		wizard alchemist			45700	1506	Alchemist
+123	181	地狱诱惑店		necromancer alchemist01			31010	0515	Alchemist
+124	182	强效药剂与酿造店		dwarven achemist01			30560	1552	Alchemist
+125	180	烧杯与药瓶店		human alchemisht01			31190	0539	Alchemist
+126	180	芳香疗法店		human alchemisht01			31190	0539	Alchemist
+127	180	实用之选		human alchemisht01			31190	0539	Alchemist
+128	240	火焰系入门公会		fire guild			30920	0538	Fire Guild
+129	240	火焰系进阶公会		fire guild			30920	0538	Fire Guild
+130	240	火焰系大师公会		fire guild			30920	0538	Fire Guild
+131	240	火焰系至高公会		fire guild			30920	0538	Fire Guild
+132	423	火焰系入门公会		elemfire			31660	0047	Fire Guild
+133	423	火焰系进阶公会		elemfire			31660	0047	Fire Guild
+134	236	天空系入门公会		air guild			30530	0851	Air Guild
+135	236	天空系进阶公会		air guild			30530	0851	Air Guild
+136	236	天空系大师公会		air guild			30530	0851	Air Guild
+137	236	天空系至高公会		air guild			30530	0851	Air Guild
+138	425	天空系入门公会		elemair			31670	0049	Air Guild
+139	425	天空系进阶公会		elemair			31670	0049	Air Guild
+140	244	水系入门公会		water guild			30690	0518	Water Guild
+141	244	水系进阶公会		water guild			30690	0518	Water Guild
+142	244	水系大师公会		water guild			30690	0518	Water Guild
+143	244	水系至高公会		water guild			30690	0518	Water Guild
+144	426	水系入门公会		elemwatr			31680	0046	Water Guild
+145	426	水系进阶公会		elemwatr			31680	0046	Water Guild
+146	239	大地系入门公会		earth guild			31120	0526	Earth Guild
+147	239	大地系进阶公会		earth guild			31120	0526	Earth Guild
+148	239	大地系大师公会		earth guild			31120	0526	Earth Guild
+149	239	大地系至高公会		earth guild			31120	0526	Earth Guild
+150	424	大地系入门公会		elemerth			31690	0048	Earth Guild
+151	424	大地系进阶公会		elemerth			31690	0048	Earth Guild
+152	243	灵魂系入门公会		spirit guild			30810	0519	Spirit Guild
+153	243	灵魂系进阶公会		spirit guild			30810	0519	Spirit Guild
+154	243	灵魂系大师公会		spirit guild			30810	0519	Spirit Guild
+155	243	灵魂系至高公会		spirit guild			30810	0519	Spirit Guild
+156	431	灵魂系入门公会		selfspir			46700	0193	Spirit Guild
+157	431	灵魂系进阶公会		selfspir			46700	0193	Spirit Guild
+158	242	精神系入门公会		mind guild			45800	0786	Mind Guild
+159	242	精神系进阶公会		mind guild			45800	0786	Mind Guild
+160	242	精神系大师公会		mind guild			45800	0786	Mind Guild
+161	242	精神系至高公会		mind guild			45800	0786	Mind Guild
+162	432	精神系入门公会		selfmind			31710	0392	Mind Guild
+163	432	精神系进阶公会		selfmind			31710	0392	Mind Guild
+164	237	身体系入门公会		body guild			30540	0511	Body Guild
+165	237	身体系进阶公会		body guild			30540	0511	Body Guild
+166	237	身体系大师公会		body guild			30540	0511	Body Guild
+167	237	身体系至高公会		body guild			30540	0511	Body Guild
+168	433	身体系入门公会		selfbody			31720	1034	Body Guild
+169	433	身体系进阶公会		selfbody			31720	1034	Body Guild
+170	156	光明公会		desplshp			31700	1115	Light Guild
+171	241	光明公会		light guild			30850	0516	Light Guild
+172	241	启迪公会		light guild			30850	0516	Light Guild
+173	428	光明系入门公会		mirpthl			31730	0121	Light Guild
+174	428	光明系进阶公会		mirpthl			31730	0121	Light Guild
+175	165	黑暗公会		nsplshp			35000	1095	Dark Guild
+176	238	暮光公会		dark guild			30550	0520	Dark Guild
+177	238	占位		dark guild			30550	0520	Dark Guild
+178	238	黑夜公会		dark guild			30550	0520	Dark Guild
+179	238	占位		dark guild			30550	0520	Dark Guild
+180	429	黑暗系入门公会		mirpthd			31740	0362	Dark Guild
+181	429	黑暗系进阶公会		mirpthd			31740	0362	Dark Guild
+182	150	治疗与诅咒店		lsplshp			30600	1125	Elemental Guild
+183	154	元素公会		desplshp			31700	1115	Elemental Guild
+184	154	烦恼诅咒店		desplshp			31700	1115	Elemental Guild
+185	166	防护魔法店		rsplshp			36000	1074	Elemental Guild
+186	159	自助公会		msplshp			32800	1081	Self Guild
+187	159	自习所		msplshp			32800	1081	Self Guild
+188	159	精神公会		msplshp			32800	1081	Self Guild
+189	434	自我入门公会		selfall			31760	0197	Self Guild
+190	434	自我进阶公会		selfall			31760	0197	Self Guild
+191	419	海盗巢穴		thfpirat			31450	0022	Merc Guild
+192	419	海盗巢穴		thfpirat			31450	0022	Merc Guild
+193	417	护卫服务		thfrich			31470	0024	Merc Guild
+194	417	护卫服务		thfrich			31470	0024	Merc Guild
+195	418	走私者公会		thfpoor			31460	0023	Merc Guild
+196	418	走私者公会		thfpoor			31460	0023	Merc Guild
+197	422	刀刃尽头		mercpoor			31480	0036	Merc Guild
+198	421	决斗者之刃		mercmid			31490	0037	Merc Guild
+199	420	狂战士之怒		mercrich			46500	0038	Merc Guild
+200	421	决斗者之刃		mercmid			31490	0037	Merc Guild
+201	422	刀刃尽头		mercpoor			31480	0036	Merc Guild
+202	420	狂战士之怒		mercrich			46500	0038	Merc Guild
+203	218	哈蒙代尔市政厅		human town hall				1531	Town Hall
+204	218	斯特德威克市政厅		human town hall				1531	Town Hall
+205	223	皮尔庞特市政厅		elf town hall			31050	0484	Town Hall
+206	221	黎明大厅		wizard town hall			45600	1498	Town Hall
+207	219	午夜大厅		necromancer town hall01			30960	1522	Town Hall
+208	383	市政厅	788,1076	citymid			31320	0	Town Hall
+209	385	高级议会	1084,1085,1086,1087,1088,1089	cityspec				0	Town Hall
+210	384	市政厅	822,831,1077	citypoor			31310	0	Town Hall
+211	382	市政厅	1078	cityrich			31330	0	Town Hall
+212	24	族长大厅	1,2	lchwar				0	Throne
+213	81	桑德罗/赞特的王座室	9,10	tsthrone				0	Throne
+214	67	日之神庙领袖室	33	tthrone				0	Throne
+215	350	马克汉姆勋爵的房间		lord markam				0	Throne
+216	347	王座室	398	dwarven king				0	Throne
+217	342	王座室	408	gryphonheart throne room				0	Throne
+218	343	王座室	409	elf castle throne room				0	Throne
+219	345	王座室	427	necromancer castle throne rooms				0	Throne
+220	344	王座室	418	wizard castle throne room				0	Throne
+221	354	王座室		necromancer throne room empty				0	Throne
+222	389	王座室	789,798	throne02			31780	0	Throne
+223	390	王座室	790	throne01			31820	0	Throne
+224	387	王座室	791	throne06			46800	0	Throne
+225	388	王座室	801	throne03			31790	0	Throne
+226	391	王座室	799	throne05			31810	0	Throne
+227	392	王座室	800	throne04			31830	0	Throne
+228	23	酒食铺		ltavern			30900	1122	Tavern
+229	37	凯塞尔酒馆		detavern			32000	1112	Tavern
+230	37	利润之屋		detavern			32000	1112	Tavern
+231	89	干渴喉咙		trtavern			36800	1091	Tavern
+232	63	龙血旅馆		dhtavern			34200	1248	Tavern
+233	80	黑水商会		ntavern			35300	1092	Tavern
+234	105	旅者休憩		tavern			36400	1071	Tavern
+235	53	牛眼旅馆		mtavern			33100	1080	Tavern
+236	101	海盗休憩地	108	rtavern			36400	1073	Tavern
+237	63	跳舞的巨魔		dhtavern			34200	1248	Tavern
+238	37	米霍客栈		detavern			32000	1112	Tavern
+239	206	双棕榈酒馆		human tavern01			30870	0535	Tavern
+240	206	本店请客	434	human tavern01			30870	0535	Tavern
+241	206	狮鹫休憩处		human tavern01			30870	0535	Tavern
+242	211	翡翠旅馆		elf tavern			31090	0524	Tavern
+243	207	傲慢地精		necromancer tavern 01			30930	1511	Tavern
+244	209	熟悉之地		wizard tavern			30650	1500	Tavern
+245	209	祝福佳酿		wizard tavern			30650	1500	Tavern
+246	207	吸血鬼酒廊		necromancer tavern 01			30930	1511	Tavern
+247	206	笑面僧侣		human tavern01			30870	0535	Tavern
+248	210	命运愚行		warlock tavern			30760	1524	Tavern
+249	208	矿工专营店		dwarven tavern01			31180	0485	Tavern
+250	206	忠诚佣兵		human tavern01			30870	0535	Tavern
+251	211	盆栽小精灵		elf tavern			31090	0524	Tavern
+252	208	格罗格的烈酒店		dwarven tavern01			31180	0485	Tavern
+253	206	骑士训练场		human tavern01			30870	0535	Tavern
+254	206	最后去处		human tavern01			30870	0535	Tavern
+255	206	加里昂客栈		human tavern01			30870	0535	Tavern
+256	206	生物用品店		human tavern01			30870	0535	Tavern
+257	206	你想当英雄吗？		human tavern01			30870	0535	Tavern
+258	206	优雅兽人		human tavern01			30870	0535	Tavern
+259	206	飞鸟乐园		human tavern01			30870	0535	Tavern
+260	394	孤独骑士	786,787	tavrich			31390	0027	Tavern
+261	393	小鬼拍击		tavpoor1			46400	0278	Tavern
+262	397	箭矢飞翔		tavpirat			31430	0095	Tavern
+263	398	一石之遥		tavgob			31440	1031	Tavern
+264	394	国王之冠		tavrich			31390	0027	Tavern
+265	395	鬼火		tavpoor2			31410	0433	Tavern
+266	398	地精之牙		tavgob			31440	1031	Tavern
+267	397	断折弯刀		tavpirat			31430	0095	Tavern
+268	397	起锚		tavpirat			31430	0095	Tavern
+269	396	小树林		tavmid			31420	0156	Tavern
+270	395	常去之地	817	tavpoor2			31410	0433	Tavern
+271	393	锈蚀之盾		tavpoor1			46400	0278	Tavern
+272	394	维克托大厅		tavrich			31390	0027	Tavern
+273	396	回荡低语		tavmid			31420	0156	Tavern
+274	395	洛克姆之傲	792	tavpoor2			31410	0433	Tavern
+275	396	霜理之店		tavmid			31420	0156	Tavern
+276	393	寒霜酒杯		tavpoor1			46400	0278	Tavern
+277	395	绿洲		tavpoor2			31410	0433	Tavern
+278	393	嚎月旅馆		tavpoor1			46400	0278	Tavern
+279	394	破碎承诺		tavrich			31390	0027	Tavern
+280	396	最后机会		tavmid			31420	0156	Tavern
+281	22	安全之地		lbank			30800	1123	Bank
+282	36	斯蒂尔金库		debank			31900	1113	Bank
+283	36	金融公会		debank			31900	1113	Bank
+284	79	血库		nbank			35200	1093	Bank
+285	52	巴尔萨煞银行		mbank			33000	1107	Bank
+286	186	金库		human bank01			30890	1555	Bank
+287	186	埃拉西亚银行		human bank01			30890	1555	Bank
+288	191	自然储备店		elf bank			31030	0541	Bank
+289	189	物资财富店		wizard bank			30670	1504	Bank
+290	187	冻结资产店		necromancer bank01			31030	0513	Bank
+291	186	仓储处		human bank01			30890	1555	Bank
+292	191	黄金大厅		elf bank			31030	0541	Bank
+293	188	矿产财富店		dwarven bank			30580	0486	Bank
+294	186	占位		human bank01			30890	1555	Bank
+295	186	占位		human bank01			30890	1555	Bank
+296	186	占位		human bank01			30890	1555	Bank
+297	413	储蓄所		bank			31340	0053	Bank
+298	413	储备库		bank			31340	0053	Bank
+299	413	恩洛斯第一银行		bank			31340	0053	Bank
+300	413	外汇兑换处		bank			31340	0053	Bank
+301	413	安全信托		bank			31340	0053	Bank
+302	413	仓储处		bank			31340	0053	Bank
+303	15	神秘医药店		ltemple			30100	1130	Temple
+304	58	圣所		dhtemple			33400	1247	Temple
+305	29	治疗之屋		detemple			31200	1120	Temple
+306	58	神圣钢铁店		dhtemple			33400	1247	Temple
+307	72	黑夜大教堂		ntemple			34500	1099	Temple
+308	45	萨满		mtemple			32300	1078	Temple
+309	95	福佑之海		rtemple			35600	1171	Temple
+310	212	治疗者帐篷		human temple01			30880	0510	Temple
+311	366	韦尔宁大教堂	432	human temple02			30710	1516	Temple
+312	366	慰藉之屋		human temple02			30710	1516	Temple
+313	217	自然疗法店		elf temple			31040	0523	Temple
+314	213	黑暗神庙		necromancer temple			30950	1527	Temple
+315	215	光明神庙		wizard temple			30590	1499	Temple
+316	215	光明神庙	428	wizard temple			30590	1499	Temple
+317	213	黑暗神庙	429	necromancer temple			30950	1527	Temple
+318	216	祭品与祝福		warlock temple			30710	1523	Temple
+319	366	塔塔利亚骑士团		human temple02			30710	1516	Temple
+320	217	宁静神庙		elf temple			31040	0523	Temple
+321	214	石之神庙		dwarven temple01			31140	0488	Temple
+322	366	庇护所		human temple02			30710	1516	Temple
+323	212	圣地		human temple01			30880	0510	Temple
+324	212	治疗者帐篷		human temple01			30880	0510	Temple
+325	401	新索匹格神庙		temprich			31360	1035	Temple
+326	401	石之神庙		temprich			31360	1035	Temple
+327	400	黑郡神庙		tempmid			31370	1034	Temple
+328	399	阿卜杜勒折扣神庙		temppoor			31350	1033	Temple
+329	401	白帽神庙		temprich			31360	1035	Temple
+330	400	迷雾岛神庙		tempmid			31370	1034	Temple
+331	401	银湾神庙		temprich			31360	1035	Temple
+332	400	国王神庙		tempmid			31370	1034	Temple
+333	399	治疗之屋		temppoor			31350	1033	Temple
+334	402	巴阿神庙		tempevil			31380	1032	Temple
+335	479	铁拳城堡		cstlgood			31280	0	Castle Entrance
+336	479	牛顿城堡		cstlgood			31280	0	Castle Entrance
+337	479	泰珀城堡		cstlgood			31280	0	Castle Entrance
+338	479	石城堡		cstlgood			31280	0	Castle Entrance
+339	479	弗莱斯城堡		cstlgood			31280	0	Castle Entrance
+340	479	斯托姆加德城堡		cstlgood			31280	0	Castle Entrance
+341	147	大地之主的监牢		pr_lorde				0	Dungeon Ent
+342	148	火焰之主的监牢		pr_lordf				0	Dungeon Ent
+343	149	水系之主的监牢		pr_lordw				0	Dungeon Ent
+344	170	巴尔萨煞巢穴						0	Dungeon Ent
+345	146	废弃神庙后门		ab_tempbd				0	Dungeon Ent
+346	112	废弃神庙		ab_temp				0	Dungeon Ent
+347	144	天空位面之门		gw_air				0	Dungeon Ent
+348	145	水系位面之门		gw_water				0	Dungeon Ent
+349	113	海盗前哨		p_outpst				0	Dungeon Ent
+350	142	火焰位面之门		gw_fire				0	Dungeon Ent
+351	114	走私者海湾		smg_cove				0	Dungeon Ent
+352	143	大地位面之门		gw_earth				0	Dungeon Ent
+353	115	恐狼巢穴		dire_lr				0	Dungeon Ent
+354	116	阿尔瓦商会	3	mrch_hs				0	Dungeon Ent
+355	117	水晶内部		in_cryst				0	Dungeon Ent
+356	118	黄蜂窝		wasp_nst				0	Dungeon Ent
+357	119	巨魔掠夺堡		ogre_ft				0	Dungeon Ent
+358	120	巨魔之墓		trol_tmb				0	Dungeon Ent
+359	121	独眼巨人储藏室		cyc_lr				0	Dungeon Ent
+360	122	火焰锁链		ch_fire				0	Dungeon Ent
+361	123	屠龙者营地		dh_camp				0	Dungeon Ent
+362	124	龙穴		drgn_cav				0	Dungeon Ent
+363	125	娜迦金库		naga_vlt				0	Dungeon Ent
+364	126	日之神庙		tpl_sun				0	Dungeon Ent
+365	127	废弃德鲁伊石圈		ab_druid				0	Dungeon Ent
+366	128	牛头人巢穴		mino_lr				0	Dungeon Ent
+367	129	野蛮人要塞		barb_frt				0	Dungeon Ent
+368	130	海盗要塞		p_strong				0	Dungeon Ent
+369	131	废弃海盗堡垒		a_p_keep				0	Dungeon Ent
+370	132	小型潜艇坞		s_subpen				0	Dungeon Ent
+371	133	死灵法师公会		nec_gild				0	Dungeon Ent
+372	134	疯狂死灵法师实验室		mad_lab				0	Dungeon Ent
+373	135	天空城堡		cstl_air				0	Dungeon Ent
+374	136	天空城堡		cstl_air				0	Dungeon Ent
+375	137	贡品之墓						0	Dungeon Ent
+376	138	火焰城堡		cstl_fir				0	Dungeon Ent
+377	139	军营		war_camp				0	Dungeon Ent
+378	140	埃斯卡顿的宫殿		esch_pal				0	Dungeon Ent
+379	141	天空之主的监牢		pr_elords				0	Dungeon Ent
+380	368			player castle bad				0	Dungeon Ent
+381	367			player castle good				0	Dungeon Ent
+382	365	哈蒙代尔城堡		out02 castle harmondy abandoned				0	Dungeon Ent
+383	306	狮鹫之心城堡		out03 castle gryphonheart				0	Dungeon Ent
+384	307	纳文城堡		out04 elf castle				0	Dungeon Ent
+385	317	暮色城堡		out08 evil entrance				0	Dungeon Ent
+386	314	闪烁城堡		out07 castle lambent				0	Dungeon Ent
+387	300	月之神庙		out01 temple of the moon				0	Dungeon Ent
+388	328	古墓						0	Dungeon Ent
+389	301	龙巢		out01 dragon cave				0	Dungeon Ent
+390	302	哈蒙代尔城堡		out02 castle harmondy				0	Dungeon Ent
+391	303	白崖洞穴		out02 white cliff cave				0	Dungeon Ent
+392	304	埃拉西亚下水道		out03 erathian sewer				0	Dungeon Ent
+393	305	河畔堡垒		out03 fort riverstride				0	Dungeon Ent
+394	308	图拉林洞穴		out04 tularean caves				0	Dungeon Ent
+395	309	克兰克实验室		out04 clanker's laboratory				0	Dungeon Ent
+396	310	深渊大厅		out05 hall of the pit				0	Dungeon Ent
+397	311	瞭望塔 6		out05 watchtower 6				0	Dungeon Ent
+398	312	巫术学院		out06 school of sorcery				0	Dungeon Ent
+399	313	红矮人矿场		out06 red dwarf mines				0	Dungeon Ent
+400	315	迷雾之墙		out07 walls of mist				0	Dungeon Ent
+401	316	光明神庙		out07 temple of the light				0	Dungeon Ent
+402	318	繁殖区		out08 breeding zone				0	Dungeon Ent
+403	319	黑暗神庙		out08 temple of the dark				0	Dungeon Ent
+404	320	月之圣殿		out09 grand temple of the moon				0	Dungeon Ent
+405	321	日之圣殿		out09 grand temple of the sun				0	Dungeon Ent
+406	322	雷拳山		out10 thunderfist mountain				0	Dungeon Ent
+407	323	迷宫		out10 the maze				0	Dungeon Ent
+408	327	石城		out11 stone city				0	Dungeon Ent
+409	329	佐德殖民地		out12 colony zod				0	Dungeon Ent
+410	333	雇佣兵公会		out13 mercenary guild				0	Dungeon Ent
+411	334	潮水洞穴		out13 tidewater caverns				0	Dungeon Ent
+412	335	酒窖		out13 wine cellar				0	Dungeon Ent
+413	336	泰坦要塞		out14 titan's stronghold				0	Dungeon Ent
+414	337	巴阿神庙		out14 temple of baa				0	Dungeon Ent
+415	338	山丘下的大厅		out14 hall under the hill				0	Dungeon Ent
+416	339	林肯号		out15 the linclon				0	Dungeon Ent
+417	480	地精守望		d01				0	Dungeon Ent
+418	406	巴阿神庙		t1				0	Dungeon Ent
+419	481	阿拉莫斯城堡		cd1				0	Dungeon Ent
+420	456	VARN 之墓		pyramid				0	Dungeon Ent
+421	457	蜂巢		hive				0	Dungeon Ent
+422	472	废弃神庙		d02				0	Dungeon Ent
+423	468	拳之神庙		t2				0	Dungeon Ent
+424	482	暗泽城堡		cd2				0	Dungeon Ent
+425	465	暗影公会藏身处		d03				0	Dungeon Ent
+426	469	赞萨神庙		t3				0	Dungeon Ent
+427	483	克里格尖塔城堡		cd3				0	Dungeon Ent
+428	473	火焰领主大厅		d04				0	Dungeon Ent
+429	407	日之神庙		t4				0	Dungeon Ent
+430	461	斯内格尔洞穴		d05				0	Dungeon Ent
+431	408	月之神庙		t5				0	Dungeon Ent
+432	459	龙骑兵洞穴		d06				0	Dungeon Ent
+433	405	巴阿至高神庙		t6				0	Dungeon Ent
+434	476	银盔前哨		d07				0	Dungeon Ent
+435	404	巴阿高等神庙		t7				0	Dungeon Ent
+436	478	暗影公会		d08				0	Dungeon Ent
+437	409	蛇之神庙		t8				0	Dungeon Ent
+438	466	斯内格尔铁矿		d09				0	Dungeon Ent
+439	470	龙骑兵堡垒		d10				0	Dungeon Ent
+440	471	科拉贡庄园		d11				0	Dungeon Ent
+441	467	银盔要塞		d12				0	Dungeon Ent
+442	463	巨石碑		d13				0	Dungeon Ent
+443	458	疯人埃斯里克之墓		d14				0	Dungeon Ent
+444	462	冰风堡		d15				0	Dungeon Ent
+445	460	军阀要塞		d16				0	Dungeon Ent
+446	464	狼穴		d17				0	Dungeon Ent
+447	474	加里克的铁匠铺		d18				0	Dungeon Ent
+448	475	阿加尔的实验室		d19				0	Dungeon Ent
+449	477	龙骑士洞穴		d20				0	Dungeon Ent
+450	411	预言者	794	oracpoor			46200	0	Seer
+451	410	神谕所	793	oracrich			31210	0	Seer
+452	104	公会商队		stables			32200	1155	Stables
+453	104	公会商队		stables			32200	1155	Stables
+454	104	公会商队		stables			32200	1155	Stables
+455	104	公会商队		stables			32200	1155	Stables
+456	104	公会商队		stables			32200	1155	Stables
+457	104	公会商队		stables			32200	1155	Stables
+458	104	公会商队		stables			32200	1155	Stables
+459	104	公会商队		stables			32200	1155	Stables
+460	104	公会商队		stables			32200	1155	Stables
+461	200	J.V.C 畜栏		human stables01			30860	0917	Stables
+462	200	皇家坐骑店		human stables01			30860	0917	Stables
+463	205	胡的种马场		elf stables			31080	0697	Stables
+464	201	忠实坐骑店		necromancer stables			31000	0508	Stables
+465	203	水晶商队		wizard stables			30640	1501	Stables
+466	200	干马鞍店		human stables01			30860	0917	Stables
+467	205	豪华马车行		elf stables			31080	0697	Stables
+468	200	占位		human stables01			30860	0917	Stables
+469	200	占位		human stables01			30860	0917	Stables
+470	414	新索匹格马车公司		6stables			46300	0068	Stables
+471	414	皇室航线		6stables			46300	0068	Stables
+472	414	自由港东行旅行社		6stables			46300	0068	Stables
+473	414	自由港西行旅行社		6stables			46300	0068	Stables
+474	414	暗泽旅行社		6stables			46300	0068	Stables
+475	414	阿卜杜勒折扣旅行社		6stables			46300	0068	Stables
+476	414	白帽运输公司		6stables			46300	0068	Stables
+477	414	国王大道		6stables			46300	0068	Stables
+478	414	黑郡马车行		6stables			46300	0068	Stables
+479	39	风灵		deboat			32100	1111	Boats
+480	39	无畏号		deboat			32100	1111	Boats
+481	90	烟雾		wrboat				1069	Boats
+482	90	迷雾		wrboat				1069	Boats
+483	90	风		wrboat				1069	Boats
+484	39	飞沫		deboat			32100	1111	Boats
+485	192	玛格丽特女士号		boat01			45900	0890	Boats
+486	192	凯瑟琳女士号		boat01			45900	0890	Boats
+487	192	海精灵号		boat01			45900	0890	Boats
+488	192	女巫店		boat01			45900	0890	Boats
+489	192	圣帆航运		boat01			45900	0890	Boats
+490	192	无畏号		boat01			45900	0890	Boats
+491	192	独角鲸号		boat01			45900	0890	Boats
+492	192	追风者号		boat01			45900	0890	Boats
+493	192	迷雾飞行者号		boat01			45900	0890	Boats
+494	192	占位		boat01			45900	0890	Boats
+495	192	占位		boat01			45900	0890	Boats
+496	415	奥德赛号		ship			31290	0381	Boats
+497	415	和风号		ship			31290	0381	Boats
+498	415	凯瑟琳女王号		ship			31290	0381	Boats
+499	415	冒险		ship			31290	0381	Boats
+500	415	蔚蓝天空		ship			31290	0381	Boats
+501	415	追风者号		ship			31290	0381	Boats
+502	415	梭鱼号		ship			31290	0381	Boats
+503	415	卷云		ship			31290	0381	Boats
+504	415	虎鲨号		ship			31290	0381	Boats
+505	415	海啸号		ship			31290	0381	Boats
+506	415	女武神号		ship			31290	0381	Boats
+507	415	进取号		ship			31290	0381	Boats
+508	87	威尔伯特陋屋	72	trporhs1				0	House
+509	25	枯萎铁匠庄园	122	derchhs1				0	House
+510	27	晚祷大厅	124	demedhs				0	House
+511	27	太阳大厅	129	demedhs				0	House
+512	27	恒笑大厅	137	demedhs				0	House
+513	27	摩尔小屋	142	demedhs				0	House
+514	27	克鲁伦之屋	160	demedhs				0	House
+515	25	暗泽尔大厅	169	derchhs1				0	House
+516	25	苦行僧庄园	175	derchhs1				0	House
+517	25	阿格拉内尔大厅	177	derchhs1				0	House
+518	27	轻指之屋	182	demedhs				0	House
+519	27	夜行者小屋	184	demedhs				0	House
+520	27	火花人之家	199	demedhs				0	House
+521	27	黑木大厅	155	demedhs				0	House
+522	25	斯蒂尔庄园	146	derchhs1				0	House
+523	27	赏金猎人公会	110	demedhs				0	House
+524	27	分水岭小屋	211	demedhs				0	House
+525	25	弗罗马戈庄园	254	derchhs1				0	House
+526	25	黑荆庄园	39	derchhs1				0	House
+527	27	永别之屋	194	demedhs				0	House
+528	27	伊塔勒小屋	44	demedhs				0	House
+529	27	丰收大厅	246	demedhs				0	House
+530	27	艾弗森庄园	188	demedhs				0	House
+531	27	奥斯克莱顿宅邸	267	demedhs				0	House
+532	27	塞尔伯恩宅邸	275	demedhs				0	House
+533	27	灰晓宅邸	245	demedhs				0	House
+534	27	斯特拉雷之屋	283	demedhs				0	House
+535	27	白兰地之屋	99	demedhs				0	House
+536	27	鲍斯宅邸	224	demedhs				0	House
+537	27	布雷曼宅邸	225	demedhs				0	House
+538	56	风暴枪宅邸	49,113	dhmedhs				0	House
+539	57	晨星宅邸	131,230	dhporhs				0	House
+540	56	森林之击宅邸	92,115	dhmedhs				0	House
+541	57	铁拳宅邸	141,219	dhporhs				0	House
+542	56	掠夺石宅邸	144	dhmedhs				0	House
+543	108	伯恩之家	147	felmhs				0	House
+544	110	房屋 322		eelmhs				0	House
+545	109	黑潮之家	150	welmhs				0	House
+546	111	房屋 324		aelmhs				0	House
+547	27	里汉西之家	74	demedhs				0	House
+548	27	邦巴大厅	223	demedhs				0	House
+549	27	凯尔登小屋	76	demedhs				0	House
+550	27	维尔登小屋	79	demedhs				0	House
+551	27	远井之屋	233	demedhs				0	House
+552	27	羽风之家	234	demedhs				0	House
+553	87	斯通陋屋	119,238	trporhs1				0	House
+554	87	炉誓陋屋	132	trporhs1				0	House
+555	87	塔利昂陋屋	78,135	trporhs1				0	House
+556	87	迷雾陋屋	149	trporhs1				0	House
+557	87	霍伯特陋屋	82,242	trporhs1				0	House
+558	87	绿暴陋屋	198,243	trporhs1				0	House
+559	87	波尔陋屋	84,244	trporhs1				0	House
+560	87	塔伦特陋屋	214	trporhs1				0	House
+561	87	施梅克陋屋	43,67,86	trporhs1				0	House
+562	57	阿瓦隆宅邸	90	dhporhs				0	House
+563	56	阿林宅邸	164	dhmedhs				0	House
+564	57	光誓宅邸	192	dhporhs				0	House
+565	56	奥特尔顿宅邸	197	dhmedhs				0	House
+566	57	卡兰德利尔宅邸	87	dhporhs				0	House
+567	56	工匠宅邸	205	dhmedhs				0	House
+568	57	屠戮者宅邸	208	dhporhs				0	House
+569	56	克恩宅邸	158	dhmedhs				0	House
+570	57	珍妮宅邸	203	dhporhs				0	House
+571	56	韦尔德里克之家	232	dhmedhs				0	House
+572	171	伊斯顿洞	91,178,255	cave				0	House
+573	171	伊希尔戈尔之洞	179,269	cave				0	House
+574	171	疤翼之洞	89,180	cave				0	House
+575	10	告诉詹姆斯你看到了这个 353		lmedhs1				0	House
+576	10	告诉詹姆斯你看到了这个 354		lmedhs1				0	House
+577	68	故事郡大厅	61	nrchhs1				0	House
+578	71	夜行者庄园	195	nporhs				0	House
+579	68	雾泉宅邸	191	nrchhs1				0	House
+580	68	阿拉克尼亚之屋	174	nrchhs1				0	House
+581	68	污泽小屋	173	nrchhs1				0	House
+582	71	拉塞恩之屋	62	nporhs				0	House
+583	71	亮矛大厅	226	nporhs				0	House
+584	68	夜林庄园	143	nrchhs1				0	House
+585	68	沙多尔之屋	172	nrchhs1				0	House
+586	71	梅库图拉之屋	276	nporhs				0	House
+587	68	罗根大厅	201	nrchhs1				0	House
+588	71	哈利恩小屋	95	nporhs				0	House
+589	68	罗伯茨宅邸	294	nrchhs1				0	House
+590	68	因法乌斯图斯之家	284	nrchhs1				0	House
+591	68	旅程之屋	104	nrchhs1				0	House
+592	71	低语大厅	101	nporhs				0	House
+593	71	钢眼庄园	185	nporhs				0	House
+594	68	恩惠之屋	94	nrchhs1				0	House
+595	68	琥珀池之屋	170	nrchhs1				0	House
+596	68	凯尔文之家	83	nrchhs1				0	House
+597	71	洞丘大厅	227	nporhs				0	House
+598	68	真理庄园	292	nrchhs1				0	House
+599	71	静水庄园	120	nporhs				0	House
+600	71	鹤之小屋		nporhs				0	House
+601	68	比斯庄园		nrchhs1				0	House
+602	68	费尔伯恩宅邸	235	nrchhs1				0	House
+603	68	绞架井庄园	240	nrchhs1				0	House
+604	71	小提琴骨之屋	236	nporhs				0	House
+605	68	德维贝罗宅邸	278	nrchhs1				0	House
+606	68	坦蒂利昂之家	93	nrchhs1				0	House
+607	68	拳之宅邸	237	nrchhs1				0	House
+608	71	瓦尔格林实验室	319	nporhs				0	House
+609	68	华莱士之屋	325	nrchhs1				0	House
+610	66	鸦视宅邸	159	clporhs				0	House
+611	66	织梦者宅邸	162	clporhs				0	House
+612	66	雪树宅邸	59,165	clporhs				0	House
+613	66	丹蒂利恩宅邸	41,167	clporhs				0	House
+614	66	米斯里特宅邸	190	clporhs				0	House
+615	66	汤克宅邸	88,204	clporhs				0	House
+616	66	锋刃宅邸	206	clporhs				0	House
+617	66	宝石宅邸	100,212	clporhs				0	House
+618	66	桑普森宅邸	215	clporhs				0	House
+619	87	泽维乌斯宅邸	85	trporhs1				0	House
+620	87	维什之家	321	trporhs1				0	House
+621	87	帆之小屋	315	trporhs1				0	House
+622	87	波尔多陋屋	320	trporhs1				0	House
+623	87	加尔维努斯之家	77	trporhs1				0	House
+624	43	萨尼斯之家	57	mporhs				0	House
+625	43	费里斯之家	322	mporhs				0	House
+626	44	水淹房屋		mdrownhs				0	House
+627	44	水淹店铺		mdrownhs				0	House
+628	41	武器店占位		mrchhs				0	House
+629	41	稳尾之屋	186	mrchhs				0	House
+630	41	里奥内尔之家	282	mrchhs				0	House
+631	41	盔甲店占位		mrchhs				0	House
+632	41	魔法店占位		mrchhs				0	House
+633	41	法术店占位		mrchhs				0	House
+634	41	乌尔布雷希特之家	290	mrchhs				0	House
+635	43	森贾克之家	117	mporhs				0	House
+636	41	炼金师占位		mrchhs				0	House
+637	41	神庙占位		mrchhs				0	House
+638	41	洛特之家	161	mrchhs				0	House
+639	41	冬青地之家	134	mrchhs				0	House
+640	43	泰萨拉之家	58	mporhs				0	House
+641	41	暴风眼之家	152	mrchhs				0	House
+642	41	银行占位		mrchhs				0	House
+643	41	训练厅占位		mrchhs				0	House
+644	44	水淹房屋		mdrownhs				0	House
+645	94	屠龙者大厅	114	rmedhs				0	House
+646	92	尼尔斯的战利品	126	rrchhs1				0	House
+647	94	焚火者的战利品店	138	rmedhs				0	House
+648	92	明眼大厅	168	rrchhs1				0	House
+649	94	暗影行者金库	171	rmedhs				0	House
+650	92	起重者仓库	183	rrchhs1				0	House
+651	94	钢盔大厅	210	rmedhs				0	House
+652	92	咆哮庄园	316	rrchhs1				0	House
+653	94	马蒙居所	317	rmedhs				0	House
+654	92	独眼巢穴	96	rrchhs1				0	House
+655	94	保罗庄园	318	rmedhs				0	House
+656	92	特伦斯之家	323	rrchhs1				0	House
+657	94	蕨类巢穴	324	rmedhs				0	House
+658	92	帕维尔之家	103	rrchhs1				0	House
+659	94	纳拉尼大厅	326	rmedhs				0	House
+660	92	默瑟居所	327	rrchhs1				0	House
+661	86	天空之主的居室	26	aelmcell				0	House
+662	85	水系之主的居室	24	welmcell				0	House
+663	84	大地之主的居室	25	eelmcell				0	House
+664	83	火焰之主的居室	23	felmcell				0	House
+665	111	翼帆之家	258	aelmhs				0	House
+666	111	蒸汽之家	259	aelmhs				0	House
+667	111	和风之家	239	aelmhs				0	House
+668	111	空屋		aelmhs				0	House
+669	111	空屋		aelmhs				0	House
+670	111	空屋		aelmhs				0	House
+671	111	空屋		aelmhs				0	House
+672	111	内德隆之家	153	aelmhs				0	House
+673	71	鹤之小屋	228	nporhs				0	House
+674	10	卡格诺商店	106	lmedhs1				0	House
+675	68	比斯庄园	220	nrchhs1				0	House
+676	110	土行者之家	256	eelmhs				0	House
+677	110	泥土之家	257	eelmhs				0	House
+678	110	空屋		eelmhs				0	House
+679	110	空屋		eelmhs				0	House
+680	110	空屋		eelmhs				0	House
+681	110	空屋		eelmhs				0	House
+682	110	空屋		eelmhs				0	House
+683	110	空屋		eelmhs				0	House
+684	110	空屋		eelmhs				0	House
+685	110	空屋		eelmhs				0	House
+686	108	余烬之家	311	felmhs				0	House
+687	108	恒焰之家	312	felmhs				0	House
+688	108	空屋		felmhs				0	House
+689	108	空屋		felmhs				0	House
+690	108	空屋		felmhs				0	House
+691	109	河玻璃之家	260	welmhs				0	House
+692	109	清溪之家	261	welmhs				0	House
+693	109	空屋		welmhs				0	House
+694	109	空屋		welmhs				0	House
+695	109	空屋		welmhs				0	House
+696	110	格里文之家	156	eelmhs				0	House
+697	87	石下之屋	289	trporhs1				0	House
+698	87	蓟骨宅邸	281	trporhs1				0	House
+699	56	内利克斯之家	280	dhmedhs				0	House
+700	56	泰姆普斯之家	288	dhmedhs				0	House
+701	66	韦里什之家	279	clporhs				0	House
+702	171	弗拉姆德林洞	277	cave				0	House
+703	171	硫磺洞	285	cave				0	House
+704	171	杜罗斯之洞	293	cave				0	House
+705	389	占位		throne02			31780	0	Throne
+706	10	房屋 487		lmedhs1				0	House
+707	10	房屋 488		lmedhs1				0	House
+708	10	房屋 489		lmedhs1				0	House
+709	10	房屋 490		lmedhs1				0	House
+710	0	房屋 491		lmedhs1				0	House
+711	0	房屋 492		lmedhs1				0	House
+712	10	房屋 493		lmedhs1				0	House
+713	10	房屋 494		lmedhs1				0	House
+714	10	房屋 495		lmedhs1				0	House
+715	10	房屋 496		lmedhs1				0	House
+716	10	房屋 497		lmedhs1				0	House
+717	10	房屋 498		lmedhs1				0	House
+718	10	房屋 501		lmedhs1				0	House
+719	10	房屋 502		lmedhs1				0	House
+720	10	房屋 503		lmedhs1				0	House
+721	10	房屋 504		lmedhs1				0	House
+722	10	房屋 505		lmedhs1				0	House
+723	10	房屋 506		lmedhs1				0	House
+724	10	房屋 507		lmedhs1				0	House
+725	10	房屋 508		lmedhs1				0	House
+726	10	房屋 509		lmedhs1				0	House
+727	10	房屋 510		lmedhs1				0	House
+728	10	房屋 511		lmedhs1				0	House
+729	10	房屋 512		lmedhs1				0	House
+730	10	房屋 513		lmedhs1				0	House
+731	10	房屋 514		lmedhs1				0	House
+732	10	房屋 515		lmedhs1				0	House
+733	10	房屋 516		lmedhs1				0	House
+734	10	房屋 517		lmedhs1				0	House
+735	10	房屋 518		lmedhs1				0	House
+736	10	房屋 519		lmedhs1				0	House
+737	10	房屋 520		lmedhs1				0	House
+738	10	房屋 521		lmedhs1				0	House
+739	10	房屋 522		lmedhs1				0	House
+740	10	房屋 523		lmedhs1				0	House
+741	10	房屋 524		lmedhs1				0	House
+742	10	房屋 525		lmedhs1				0	House
+743	10	占位		lmedhs1				0	House
+744	10	占位		lmedhs1				0	House
+745	10	占位		lmedhs1				0	House
+746	10	占位		lmedhs1				0	House
+747	10	占位		lmedhs1				0	House
+748	10	占位		lmedhs1				0	House
+749	10	占位		lmedhs1				0	House
+750	10	占位		lmedhs1				0	House
+751	40	议事厅大门	40	decouncl				0	House
+752	87	沙丘之家		trporhs1				0	House
+753	64	查尔斯·吉诃德之家	15	cquixote				0	House
+754	71	戴森·利兰的房间	11	nporhs				0	House
+755	54	牛头人首领房间	13	mledden				0	House
+756	10	冒险者旅馆		lmedhs1				0	House
+757	10	神谕所	314	lmedhs1				0	House
+758	10	冒险者旅馆		lmedhs1				0	House
+759	10	冒险者旅馆		lmedhs1				0	House
+760	10	冒险者旅馆		lmedhs1				0	House
+761	13	嘶嘶小屋	69	lporhs1				0	House
+762	87	杰克陋屋	250	trporhs1				0	House
+763	10	占位		lmedhs1				0	House
+764	10	占位		lmedhs1				0	House
+765	10	占位		lmedhs1				0	House
+766	10	占位		lmedhs1				0	House
+767	10	占位		lmedhs1				0	House
+768	10	占位		lmedhs1				0	House
+769	10	占位		lmedhs1				0	House
+770	10	占位		lmedhs1				0	House
+771	10	占位		lmedhs1				0	House
+772	91	鼠人走私首领	4	wrthrone				0	House
+773	38	商会会馆	5	demguild				0	House
+774	82	龙首洞穴	17	dlcavern				0	House
+775	103	埃斯卡顿的王座室	22	esthrone				0	House
+776	13	罗特纳克斯之家	29	lporhs1				0	House
+777	25	艾弗庄园	249	derchhs1				0	House
+778	10	占位		lmedhs1				0	House
+779	10	占位		lmedhs1				0	House
+780	10	占位		lmedhs1				0	House
+781	10	占位		lmedhs1				0	House
+782	10	占位		lmedhs1				0	House
+783	10	占位		lmedhs1				0	House
+784	13	蒂斯克小屋	30	lporhs1				0	House
+785	66	佩德顿之家	148	clporhs				0	House
+786	10	占位		lmedhs1				0	House
+787	10	占位		lmedhs1				0	House
+788	10	占位		lmedhs1				0	House
+789	10	占位		lmedhs1				0	House
+790	10	占位		lmedhs1				0	House
+791	10	占位		lmedhs1				0	House
+792	13	萨丁之家	133	lporhs1				0	House
+793	87	水坑陋屋	118	trporhs1				0	House
+794	10	占位		lmedhs1				0	House
+795	13	伊奇之屋	181,213	lporhs1				0	House
+796	25	锻匠庄园	136	derchhs1				0	House
+797	10	占位		lmedhs1				0	House
+798	13	慵懒者小屋	66,200	lporhs1				0	House
+799	25	苹果之家	217	derchhs1				0	House
+800	10	占位		lmedhs1				0	House
+801	10	占位		lmedhs1				0	House
+802	10	占位		lmedhs1				0	House
+803	10	占位		lmedhs1				0	House
+804	13	蓟草之屋	68,127	lporhs1				0	House
+805	66	特雷布利德之家	98	clporhs				0	House
+806	10	占位		lmedhs1				0	House
+807	10	占位		lmedhs1				0	House
+808	10	占位		lmedhs1				0	House
+809	10	占位		lmedhs1				0	House
+810	10	占位		lmedhs1				0	House
+811	10	占位		lmedhs1				0	House
+812	10	占位		lmedhs1				0	House
+813	13	泽瓦小屋	163	lporhs1				0	House
+814	87	霍尔登陋屋	248	trporhs1				0	House
+815	10	占位		lmedhs1				0	House
+816	10	占位		lmedhs1				0	House
+817	10	占位		lmedhs1				0	House
+818	10	占位		lmedhs1				0	House
+819	10	占位		lmedhs1				0	House
+820	10	占位		lmedhs1				0	House
+821	10	占位		lmedhs1				0	House
+822	10	占位		lmedhs1				0	House
+823	13	伊斯里克之家	70,187	lporhs1				0	House
+824	87	阿兹诺格陋屋	221	trporhs1				0	House
+825	10	占位		lmedhs1				0	House
+826	10	占位		lmedhs1				0	House
+827	10	占位		lmedhs1				0	House
+828	10	占位		lmedhs1				0	House
+829	10	占位		lmedhs1				0	House
+830	10	占位		lmedhs1				0	House
+831	10	占位		lmedhs1				0	House
+832	10	占位		lmedhs1				0	House
+833	13	骨头之家	139	lporhs1				0	House
+834	27	卢德林之屋	112	demedhs				0	House
+835	10	占位		lmedhs1				0	House
+836	10	占位		lmedhs1				0	House
+837	10	占位		lmedhs1				0	House
+838	10	占位		lmedhs1				0	House
+839	10	占位		lmedhs1				0	House
+840	10	占位		lmedhs1				0	House
+841	10	占位		lmedhs1				0	House
+842	10	占位		lmedhs1				0	House
+843	13	拉萨廷小屋	209	lporhs1				0	House
+844	25	阿普尔比庄园	218	derchhs1				0	House
+845	10	占位		lmedhs1				0	House
+846	10	占位		lmedhs1				0	House
+847	10	占位		lmedhs1				0	House
+848	10	占位		lmedhs1				0	House
+849	10	占位		lmedhs1				0	House
+850	10	占位		lmedhs1				0	House
+851	10	占位		lmedhs1				0	House
+852	13	梅纳索尔之家	80,196	lporhs1				0	House
+853	66	阿奇博尔德之家	166	clporhs				0	House
+854	10	占位		lmedhs1				0	House
+855	10	占位		lmedhs1				0	House
+856	10	占位		lmedhs1				0	House
+857	10	占位		lmedhs1				0	House
+858	10	占位		lmedhs1				0	House
+859	10	占位		lmedhs1				0	House
+860	13	外皮小屋	81	lporhs1				0	House
+861	41	阿里乌斯之家	241,266	mrchhs				0	House
+862	10	占位		lmedhs1				0	House
+863	10	占位		lmedhs1				0	House
+864	10	占位		lmedhs1				0	House
+865	10	占位		lmedhs1				0	House
+866	66	塔利米尔小屋	28	clporhs				0	House
+867	27	猎鹿者之家	229	demedhs				0	House
+868	10	占位		lmedhs1				0	House
+869	10	占位		lmedhs1				0	House
+870	11	雷希之屋	151	lmedhs1				0	House
+871	25	城镇守护者大厅	121,130	derchhs1				0	House
+872	10	占位		lmedhs1				0	House
+873	11	房屋		lmedhs1				0	House
+874	66	乔伯之家	125	clporhs				0	House
+875	10	占位		lmedhs1				0	House
+876	11	长尾小屋	97,123	lmedhs1				0	House
+877	66	梅兰德之家	271	clporhs				0	House
+878	10	占位		lmedhs1				0	House
+879	11	艾斯伦之家	65	lmedhs1				0	House
+880	56	蓝锯之家	222	dhmedhs				0	House
+881	10	占位		lmedhs1				0	House
+882	11	格里维克之屋	154	lmedhs1				0	House
+883	25	快舌庄园	189	derchhs1				0	House
+884	10	占位		lmedhs1				0	House
+885	11	乌什小屋	216	lmedhs1				0	House
+886	25	拉拉塞尔庄园	253	derchhs1				0	House
+887	10	占位		lmedhs1				0	House
+888	25	山民小屋	247	derchhs1				0	House
+889	25	洞丘庄园	176	derchhs1				0	House
+890	56	掠夺者之家	75	dhmedhs				0	House
+891	25	泰珀大厅	145	derchhs1				0	House
+892	56	普特南之家	193	dhmedhs				0	House
+893	27	卡兰德小屋	251	demedhs				0	House
+894	66	拉西乌斯之家	73	clporhs				0	House
+895	25	赏金猎人公会	109	derchhs1				0	House
+896	56	博瑟姆大厅	140	dhmedhs				0	House
+897	25	内布利克之家	105	derchhs1				0	House
+898	56	裂石者大厅	207	dhmedhs				0	House
+899	25	旅舍		derchhs1				0	House
+900	56	旅舍		dhmedhs				0	House
+901	27	布里格姆之家	252	demedhs				0	House
+902	68	回忆之屋	270	nrchhs1				0	House
+903	66	霍桑之屋	157	clporhs				0	House
+904	66	洛特家宅	202	clporhs				0	House
+905	25	鼻草之屋	128	derchhs1				0	House
+906	57	追踪者大厅	71	dhporhs				0	House
+907	87	猎人陋屋	116	trporhs1				0	House
+908	66	苦行僧小屋	50	clporhs				0	House
+909	87	多茨家陋屋	231	trporhs1				0	House
+910	246	古斯伍夫之家	720	human poor house 1				0	House
+911	247	狼獾顿宅邸	559	human poor house 2				0	House
+912	248	房屋 271		human poor house 2				0	House
+913	246	房屋 272		human poor house 1				0	House
+914	247	房屋 273		human poor house 2				0	House
+915	248	卡斯特罗之家	721	human poor house 2				0	House
+916	246	拉拉塞尔宅邸	521	human poor house 1				0	House
+917	247	皱眉之家	522	human poor house 2				0	House
+918	173							0640	House
+919	248	阿格拉内尔宅邸	523	human poor house 2				0	House
+920	246	房屋 282		human poor house 1				0	House
+921	247	蒂什宅邸	732	human poor house 2				0	House
+922	248	塔利昂之屋	731	human poor house 2				0	House
+923	246	鸦丘宅邸	443	human poor house 1				0	House
+924	247	卡德林宅邸	733	human poor house 2				0	House
+925	173							0640	House
+926	248	加雷斯之家	511	human poor house 2				0	House
+927	246	锻匠宅邸	474	human poor house 1				0	House
+928	247	漂亮房屋	781	human poor house 2				0	House
+929	249	洛特家宅	464	human medium house 1				0	House
+930	173							0640	House
+931	250	朱利安之家	491	human medium house 2				0	House
+932	249	恒笑宅邸	603	human medium house 1				0	House
+933	250	污泽宅邸	606,763	human medium house 2				0	House
+934	173							0640	House
+935	173							0640	House
+936	249	心誓之家	569	human medium house 1				0	House
+937	250	卡德隆宅邸	609	human medium house 2				0	House
+938	173							0640	House
+939	249	画眉宅邸	435	human medium house 1				0	House
+940	250	希利尔宅邸	722,728	human medium house 2				0	House
+941	252	吉诃德宅邸	356	human rich house 1				0	House
+942	253	奥尔格之屋	382	human rich house 2				0	House
+943	252	塔尔雷什宅邸	779	human rich house 1				0	House
+944	253	巴恩斯之家	629	human rich house 2				0	House
+945	252	丰收宅邸	557	human rich house 1				0	House
+946	255	比斯宅邸	470,734	elven poor house 1				0	House
+947	256	稳途之家	455,769	elven poor house 2				0	House
+948	255	银点宅邸	453	elven poor house 1				0	House
+949	256	米永之家	469	elven poor house 2				0	House
+950	255	绿屋	389	elven poor house 1				0	House
+951	256	沃林宅邸	764,771	elven poor house 2				0	House
+952	255	多茨宅邸	519	elven poor house 1				0	House
+953	256	蓝天鹅之家	505	elven poor house 2				0	House
+954	255	宝石之家	476,589	elven poor house 1				0	House
+955	256	风歌之屋	479,592	elven poor house 2				0	House
+956	255	白帽宅邸	482,595	elven poor house 1				0	House
+957	258	奥廷之屋	446,627	elven medium house 1				0	House
+958	259	黑屋	536	elven medium house 2				0	House
+959	258	小提琴骨宅邸	527,770	elven medium house 1				0	House
+960	259	凯里德宅邸	436,723	elven medium house 2				0	House
+961	258	柳皮之家	545,735	elven medium house 1				0	House
+962	259	房屋 324		elven medium house 2				0	House
+963	258	房屋 325		elven medium house 1				0	House
+964	259	房屋 326		elven medium house 2				0	House
+965	261	本杰明之家	490	elven rich house 1				0	House
+966	262	石匠宅邸	486,599	elven rich house 2				0	House
+967	261	韦瑟森之家	506	elven rich house 1				0	House
+968	262	播种者宅邸	384	elven rich house 2				0	House
+969	282	卡兰德宅邸	604	necromancer poor house 1				0	House
+970	283	明眼之家	520	necromancer poor house 2				0	House
+971	282	森林之击宅邸	513	necromancer poor house 1				0	House
+972	283	牛皮宅邸	767	necromancer poor house 2				0	House
+973	282	暗影行者之家	543	necromancer poor house 1				0	House
+974	283	凯德林宅邸	768	necromancer poor house 2				0	House
+975	285	博瑟姆之家	539	necromancer medium house 1				0	House
+976	286	莫格伦宅邸	737	necromancer medium house 2				0	House
+977	285	德拉肯宅邸	766	necromancer medium house 1				0	House
+978	286	哈利之家	783	necromancer medium house 2				0	House
+979	285	永别宅邸	472	necromancer medium house 1				0	House
+980	286	智者宅邸	515	necromancer medium house 2				0	House
+981	285	夜行者宅邸	500	necromancer medium house 1				0	House
+982	286	费尔伯恩之家	460	necromancer medium house 2				0	House
+983	288	暗影之家	355	necromancer rich house 1				0	House
+984	289	切片者之家	444,623	necromancer rich house 2				0	House
+985	288	福克宅邸	386	necromancer rich house 1				0	House
+986	246	洞丘宅邸	507,597	human poor house 1				0	House
+987	247	鹤之宅邸	531,534	human poor house 2				0	House
+988	248	史密森宅邸	466,550	human poor house 2				0	House
+989	246	河石之屋	567	human poor house 1				0	House
+990	291	白空宅邸	568,576	warlock poor house 1				0	House
+991	292	埃尔莫之家	585	warlock poor house 2				0	House
+992	291	旅舍		warlock poor house 1				0	House
+993	292	旅舍		warlock poor house 2				0	House
+994	291	旅舍		warlock poor house 1				0	House
+995	294	伊万德之家	514	warlock medium house 1				0	House
+996	295	安温宅邸	390,549	warlock medium house 2				0	House
+997	294	丝绸之家	529	warlock medium house 1				0	House
+998	295	旅舍		warlock medium house 2				0	House
+999	294	旅舍		warlock medium house 1				0	House
+1000	295	旅舍		warlock medium house 2				0	House
+1001	294	旅舍		warlock medium house 1				0	House
+1002	297	黄昏之家	433,483	warlock rich house 1				0	House
+1003	298	旅舍		warlock rich house 2				0	House
+1004	299	旅舍		warlock rich house 3				0	House
+1005	246	灰晓宅邸	452	human poor house 1				0	House
+1006	247	暴风眼之家	564	human poor house 2				0	House
+1007	248	不来梅宅邸	493	human poor house 2				0	House
+1008	255	亮矛宅邸	540	elven poor house 1				0	House
+1009	256	霍尔登宅邸	555,577	elven poor house 2				0	House
+1010	173							0640	House
+1011	173							0640	House
+1012	173							0640	House
+1013	173							0640	House
+1014	258	羽风宅邸	492,611	elven medium house 1				0	House
+1015	259	鸦发宅邸	565,607	elven medium house 2				0	House
+1016	258	吉莉安之家	442	elven medium house 1				0	House
+1017	259	绿暴宅邸	480	elven medium house 2				0	House
+1018	173							0640	House
+1019	173							0640	House
+1020	261	斯尼克之屋	380	elven rich house 1				0	House
+1021	262	地狱火之家	471,724	elven rich house 2				0	House
+1022	263	猎鹿者宅邸	554,560	elven rich house 3				0	House
+1023	261	快足之家	537	elven rich house 1				0	House
+1024	173							0640	House
+1025	246	斯蒂尔宅邸	584	human poor house 1				0	House
+1026	247	良知之家	726	human poor house 2				0	House
+1027	248	埃弗里尔之家	544	human poor house 2				0	House
+1028	173							0640	House
+1029	173							0640	House
+1030	246	特里西娅之家	561	human poor house 1				0	House
+1031	247	伊斯拉姆之家	465	human poor house 2				0	House
+1032	248	裂石者宅邸	451	human poor house 2				0	House
+1033	173							0640	House
+1034	246	卡林德拉之家	761	human poor house 1				0	House
+1035	247	邦巴兄弟店	495	human poor house 2				0	House
+1036	248	雷丁宅邸	563	human poor house 2				0	House
+1037	173							0640	House
+1038	246	拳之家	448	human poor house 1				0	House
+1039	247	沃克家	725	human poor house 2				0	House
+1040	248	韦尔德里克之家	473	human poor house 2				0	House
+1041	173							0640	House
+1042	249	维斯孔蒂宅邸	628	human medium house 1				0	House
+1043	250	阿林宅邸	552	human medium house 2				0	House
+1044	173							0640	House
+1045	173							0640	House
+1046	249	桑普森宅邸	610	human medium house 1				0	House
+1047	173							0640	House
+1048	252	塔伦之家	580	human rich house 1				0	House
+1049	253	摩尔宅邸	510	human rich house 2				0	House
+1050	253	罗斯汉姆之家	459	human rich house 2				0	House
+1051	264	锋刃宅邸	450	dwarven poor house 1				0	House
+1052	265	塞琳之家	454	dwarven poor house 2				0	House
+1053	264	韦尔曼宅邸	566	dwarven poor house 1				0	House
+1054	265	塞恩之家	573	dwarven poor house 2				0	House
+1055	267	吉兹莫家	574	dwarven medium house 1				0	House
+1056	268	火花之家	439,562	dwarven medium house 2				0	House
+1057	267	索林森宅邸	458,575	dwarven medium house 1				0	House
+1058	270	厄斯史密斯宅邸	601	dwarven rich house 1				0	House
+1059	273	迪瓦恩之屋	385	wizard poor house 1				0	House
+1060	274	晨星宅邸	498	wizard poor house 2				0	House
+1061	276	冬明之屋	593	wizard medium house 1				0	House
+1062	277	旅舍		wizard medium house 2				0	House
+1063	276	旅舍		wizard medium house 1				0	House
+1064	277	旅舍		wizard medium house 2				0	House
+1065	276	旅舍		wizard medium house 1				0	House
+1066	277	塔伦特宅邸	784	wizard medium house 2				0	House
+1067	279	拉米兹宅邸	785	wizard rich house 1				0	House
+1068	280	旅舍		wizard rich house 2				0	House
+1069	279	旅舍		wizard rich house 1				0	House
+1070	282	旅舍		necromancer poor house 1				0	House
+1071	283	旅舍		necromancer poor house 2				0	House
+1072	282	琥珀池之屋	600	necromancer poor house 1				0	House
+1073	283	暗泽尔宅邸	388,501	necromancer poor house 2				0	House
+1074	282	沙之宅邸	378	necromancer poor house 1				0	House
+1075	283	旅舍		necromancer poor house 2				0	House
+1076	282	旅舍		necromancer poor house 1				0	House
+1077	173							0640	House
+1078	285	旅舍		necromancer medium house 1				0	House
+1079	286	旅舍		necromancer medium house 2				0	House
+1080	288	旅舍		necromancer rich house 1				0	House
+1081	289	旅舍		necromancer rich house 2				0	House
+1082	173							0640	House
+1083	173							0640	House
+1084	173							0640	House
+1085	173							0640	House
+1086	173							0640	House
+1087	173							0640	House
+1088	173							0640	House
+1089	173		765					0640	House
+1090	173							0640	House
+1091	173							0640	House
+1092	173							0640	House
+1093	173							0640	House
+1094	173							0640	House
+1095	173							0640	House
+1096	173							0640	House
+1097	173							0640	House
+1098	173							0640	House
+1099	173							0640	House
+1100	173							0640	House
+1101	246	迷雾庄园	530,533	human poor house 1				0	House
+1102	247	山民宅邸	494,605	human poor house 2				0	House
+1103	248	静水宅邸	488,602	human poor house 2				0	House
+1104	252	马克庄园	379,457	human rich house 1				0	House
+1105	246	鲍斯宅邸	588,591	human poor house 1				0	House
+1106	247	泰珀宅邸	477,624	human poor house 2				0	House
+1107	248	克鲁伦宅邸	503,509	human poor house 2				0	House
+1108	246	枯萎铁匠之家	440,467	human poor house 1				0	House
+1109	246	房屋 473		human poor house 1				0	House
+1110	273	微笑杰克家	553,556	wizard poor house 1				0	House
+1111	274	佩德顿宅邸	441	wizard poor house 2				0	House
+1112	273	阿普尔比庄园	587	wizard poor house 1				0	House
+1113	274	光誓宅邸	497,516	wizard poor house 2				0	House
+1114	273	阿拉珊德拉之家	760	wizard poor house 1				0	House
+1115	276	盖尔家	481	wizard medium house 1				0	House
+1116	276	布里格姆之家	508	wizard medium house 1				0	House
+1117	277	罗恩之家	381	wizard medium house 2				0	House
+1118	279	布兰德之家	475	wizard rich house 1				0	House
+1119	280	本森宅邸	504	wizard rich house 2				0	House
+1120	279	齐姆之家	625,759	wizard rich house 1				0	House
+1121	246	克恩宅邸	485,729	human poor house 1				0	House
+1122	247	查德里克之家	445,449	human poor house 2				0	House
+1123	248	韦德宅邸	518,538	human poor house 2				0	House
+1124	246	斯金纳之家	528,542	human poor house 1				0	House
+1125	247	托伦特家	484,730	human poor house 2				0	House
+1126	249	休姆宅邸	377,608	human medium house 1				0	House
+1127	250	远井宅邸	594,598,719	human medium house 2				0	House
+1128	246	鸦林宅邸	782	human poor house 1				0	House
+1129	247	布莱兹家	478	human poor house 2				0	House
+1130	248	诺里斯之家	535	human poor house 2				0	House
+1131	249	织梦者宅邸	489	human medium house 1				0	House
+1132	250	韦恩庄园	532	human medium house 2				0	House
+1133	285	普特南宅邸	548	necromancer medium house 1				0	House
+1134	286	小贩宅邸	736	necromancer medium house 2				0	House
+1135	283	雪崩家	487	necromancer poor house 2				0	House
+1136	273	石屋	581,582	wizard poor house 1				0	House
+1137	274	分水岭宅邸	586,596	wizard poor house 2				0	House
+1138	276	冬青地宅邸	512	wizard medium house 1				0	House
+1139	277	甜蜜宅邸	383	wizard medium house 2				0	House
+1140	255	泰姆普斯之家	496	elven poor house 1				0	House
+1141	256	凯恩家	517	elven poor house 2				0	House
+1142	255	苹果宅邸	547	elven poor house 1				0	House
+1143	297	罗根宅邸	590	warlock rich house 1				0	House
+1144	298	埃尔兹贝特之家	546	warlock rich house 2				0	House
+1145	299	阿兹诺格之家	447	warlock rich house 3				0	House
+1146	294	霍利斯之家	572,583	warlock medium house 1				0	House
+1147	295	兰希之家	456	warlock medium house 2				0	House
+1148	294	内尔登宅邸	468	warlock medium house 1				0	House
+1149	295	霍桑宅邸	551	warlock medium house 2				0	House
+1150	250	拉西特之家	541	human medium house 2				0	House
+1151	264	达利娅之家	638	dwarven poor house 1				0	House
+1152	267	宝石宅邸	727	dwarven medium house 1				0	House
+1153	270	长石之家	739	dwarven rich house 1				0	House
+1154	267	裂隙宅邸	740	dwarven medium house 1				0	House
+1155	267	石榴石之屋	741	dwarven medium house 1				0	House
+1156	270	裂岩宅邸	738,762	dwarven rich house 1				0	House
+1157	279	托马斯·格雷	387	wizard rich house 1				0	House
+1158	254	爱丽丝·哈格里夫斯		human rich house 2				0	House
+1159	173							0640	House
+1160	173							0640	House
+1161	173							0640	House
+1162	346	盗贼大师	354	master thief				0	House
+1163	245	马克汉姆总部	340,341	lord and judge out01			30790	0	House
+1164	352	仲裁者		arbiter good town				0	House
+1165	351	仲裁者	413	arbiter neutral town				0	House
+1166	353	仲裁者		arbiter evil town				0	House
+1167	246	唐娜·怀里斯宅邸	351	human poor house 1				0	House
+1168	359	玛格丽特夫人号	350	boat01			45900	0	House
+1169	341	王座室		harmondale throne room				0	House
+1170	247	米娅·露西尔之家	353	human poor house 2				0	House
+1171	248	万达利尔宅邸	352	human poor house 2				0	House
+1172	246	房屋 227		human poor house 1				0	House
+1173	247	房屋 228		human poor house 2				0	House
+1174	248	房屋 229		human poor house 2				0	House
+1175	246	房屋 230		human poor house 1				0	House
+1176	247	房屋 231		human poor house 2				0	House
+1177	248	房屋 232		human poor house 2				0	House
+1178	246	房屋 233		human poor house 1				0	House
+1179	247	房屋 234		human poor house 2				0	House
+1180	248	房屋 235		human poor house 2				0	House
+1181	246	房屋 236		human poor house 1				0	House
+1182	247	房屋 237		human poor house 2				0	House
+1183	249	卡罗琳·韦瑟斯之家	348	human medium house 1				0	House
+1184	250	特尔玛宅邸	349	human medium house 2				0	House
+1185	249	房屋 241		human medium house 1				0	House
+1186	250	房屋 242		human medium house 2				0	House
+1187	249	房屋 243		human medium house 1				0	House
+1188	250	房屋 244		human medium house 2				0	House
+1189	249	房屋 245		human medium house 1				0	House
+1190	250	房屋 246		human medium house 2				0	House
+1191	249	房屋 247		human medium house 1				0	House
+1192	250	房屋 248		human medium house 2				0	House
+1193	249	房屋 249		human medium house 1				0	House
+1194	250	房屋 250		human medium house 2				0	House
+1195	249	房屋 251		human medium house 1				0	House
+1196	250	房屋 252		human medium house 2				0	House
+1197	249	房屋 253		human medium house 1				0	House
+1198	252	房屋 254		human rich house 1				0	House
+1199	253	房屋 255		human rich house 2				0	House
+1200	252	房屋 256		human rich house 1				0	House
+1201	253	房屋 257		human rich house 2				0	House
+1202	252	房屋 258		human rich house 1				0	House
+1203	253	房屋 259		human rich house 2				0	House
+1204	252	房屋 260		human rich house 1				0	House
+1205	253	房屋 261		human rich house 2				0	House
+1206	252	房屋 262		human rich house 1				0	House
+1207	253	房屋 263		human rich house 2				0	House
+1208	252	房屋 264		human rich house 1				0	House
+1209	253	房屋 265		human rich house 2				0	House
+1210	252	房屋 266		human rich house 1				0	House
+1211	253	房屋 267		human rich house 2				0	House
+1212	252	房屋 268		human rich house 1				0	House
+1213	381	旅者补给店		genstpor			31570	0042	Alchemist
+1214	427	元素入门公会		elemall			31750	0045	Elemental Guild
+1215	485	国王图书馆		statue				0	House
+1216	435	房屋	1093	roompor1				0	House
+1217	435	房屋	1095	roompor1				0	House
+1218	369	房屋						0	House
+1219	439	房屋	963	roommid1				0	House
+1220	435	房屋	810,846	roompor1				0	House
+1221	439	房屋	962	roommid1				0	House
+1222	435	房屋		roompor1				0	House
+1223	439	房屋	1043	roommid1				0	House
+1224	439	房屋	907	roommid1				0	House
+1225	443	房屋	880,1064	roomrch1				0	House
+1226	435	房屋	1057	roompor1				0	House
+1227	439	房屋	890	roommid1				0	House
+1228	435	房屋	866	roompor1				0	House
+1229	380	锁、枪与桶		genstmid			31580	0043	Alchemist
+1230	427	元素进阶公会		elemall			31750	0045	Elemental Guild
+1231	436	房屋	1094	roompor2				0	House
+1232	436	房屋	1096	roompor2				0	House
+1233	369	房屋						0	House
+1234	435	房屋	1045	roompor1				0	House
+1235	441	房屋	878	roommid3				0	House
+1236	435	房屋	914,972	roompor1				0	House
+1237	436	房屋	811	roompor2				0	House
+1238	438	房屋	1031	roompor4				0	House
+1239	440	房屋	1015	roommid2				0	House
+1240	444	房屋	852	roomrch2				0	House
+1241	436	房屋		roompor2				0	House
+1242	443	房屋	1014	roomrch1				0	House
+1243	436	房屋	1001	roompor2				0	House
+1244	486	国王图书馆	797	archloop				0	House
+1245	379	乔老板杂货店		genstrch			31590	0044	Magic Shop
+1246	369	房屋						0	House
+1247	437	房屋	1097	roompor3				0	House
+1248	443	房屋	1009	roomrch1				0	House
+1249	443	房屋	973	roomrch1				0	House
+1250	442	房屋	876	roommid4				0	House
+1251	436	房屋	870	roompor2				0	House
+1252	437	房屋	842	roompor3				0	House
+1253	435	房屋	904	roompor1				0	House
+1254	438	房屋	1075	roompor4				0	House
+1255	439	房屋	923	roommid1				0	House
+1256	437	房屋	919	roompor3				0	House
+1257	435	房屋	981	roompor1				0	House
+1258	437	房屋	868	roompor3				0	House
+1259	379	阿卜杜勒折扣杂货店		genstrch			31590	0044	Magic Shop
+1260	369	房屋						0	House
+1261	438	房屋		roompor4				0	House
+1262	442	房屋	1007	roommid4				0	House
+1263	440	房屋	1104	roommid2				0	House
+1264	444	房屋		roomrch2				0	House
+1265	444	房屋	995	roomrch2				0	House
+1266	437	房屋	849	roompor3				0	House
+1267	438	房屋	974	roompor4				0	House
+1268	436	房屋	871	roompor2				0	House
+1269	435	房屋	937	roompor1				0	House
+1270	445	房屋	1033	roomrch3				0	House
+1271	438	房屋	925	roompor4				0	House
+1272	440	房屋	965	roommid2				0	House
+1273	438	房屋	853	roompor4				0	House
+1274	381	杂货店		genstpor			31570	0042	Alchemist
+1275	369	房屋						0	House
+1276	435	房屋	1098	roompor1				0	House
+1277	439	房屋	1103	roommid1				0	House
+1278	435	房屋	1000	roompor1				0	House
+1279	445	房屋	966	roomrch3				0	House
+1280	445	房屋	830	roomrch3				0	House
+1281	438	房屋	860	roompor4				0	House
+1282	435	房屋	957	roompor1				0	House
+1283	437	房屋	838	roompor3				0	House
+1284	436	房屋	948	roompor2				0	House
+1285	440	房屋	805	roommid2				0	House
+1286	439	房屋	891,984	roommid1				0	House
+1287	441	房屋	829	roommid3				0	House
+1288	435	房屋	1010,1072	roompor1				0	House
+1289	380	边地贸易站		genstmid			31580	0043	Alchemist
+1290	369	房屋						0	House
+1291	439	房屋	1040	roommid1				0	House
+1292	440	房屋	848	roommid2				0	House
+1293	436	房屋	1017	roompor2				0	House
+1294	446	房屋	795	roomrch4				0	House
+1295	436	房屋	881	roompor2				0	House
+1296	435	房屋	906	roompor1				0	House
+1297	436	房屋	991	roompor2				0	House
+1298	435	房屋	844	roompor1				0	House
+1299	437	房屋	934	roompor3				0	House
+1300	435	房屋	841	roompor1				0	House
+1301	440	房屋	967	roommid2				0	House
+1302	435	房屋	816	roompor1				0	House
+1303	436	房屋	992	roompor2				0	House
+1304	369	房屋						0	House
+1305	436	房屋	1099	roompor2				0	House
+1306	437	房屋	986	roompor3				0	House
+1307	440	房屋	837	roommid2				0	House
+1308	435	房屋	821	roompor1				0	House
+1309	436	房屋	886	roompor2				0	House
+1310	437	房屋	946	roompor3				0	House
+1311	440	房屋	1029	roommid2				0	House
+1312	441	房屋	1042	roommid3				0	House
+1313	436	房屋	855	roompor2				0	House
+1314	438	房屋	1028	roompor4				0	House
+1315	436	房屋	845	roompor2				0	House
+1316	437	房屋	939	roompor3				0	House
+1317	437	房屋	942	roompor3				0	House
+1318	438	房屋	1105	roompor4				0	House
+1319	436	房屋	997	roompor2				0	House
+1320	443	房屋	875	roomrch1				0	House
+1321	437	房屋	917	roompor3				0	House
+1322	438	房屋	989	roompor4				0	House
+1323	443	房屋	1041	roomrch1				0	House
+1324	442	房屋	1046	roommid4				0	House
+1325	437	房屋	827,1068	roompor3				0	House
+1326	440	房屋		roommid2				0	House
+1327	437	房屋	806	roompor3				0	House
+1328	438	房屋	1073	roompor4				0	House
+1329	438	房屋	1100	roompor4				0	House
+1330	441	房屋	874	roommid3				0	House
+1331	446	房屋	819	roomrch4				0	House
+1332	438	房屋	905	roompor4				0	House
+1333	435	房屋	987,1070	roompor1				0	House
+1334	436	房屋	1038	roompor2				0	House
+1335	435	房屋	1047	roompor1				0	House
+1336	438	房屋	832	roompor4				0	House
+1337	369	房屋						0	House
+1338	438	房屋	898	roompor4				0	House
+1339	435	房屋	818	roompor1				0	House
+1340	443	房屋	1167	roomrch1				0	House
+1341	435	房屋	943	roompor1				0	House
+1342	443	房屋	872	roomrch1				0	House
+1343	436	房屋	996	roompor2				0	House
+1344	435	房屋	961	roompor1				0	House
+1345	436	房屋	976	roompor2				0	House
+1346	437	房屋	1117	roompor3				0	House
+1347	369	房屋						0	House
+1348	441	房屋	862	roommid3				0	House
+1349	369	房屋						0	House
+1350	438	房屋	1013	roompor4				0	House
+1351	436	房屋	839	roompor2				0	House
+1352	444	房屋	1168	roomrch2				0	House
+1353	436	房屋	1101	roompor2				0	House
+1354	437	房屋	903	roompor3				0	House
+1355	437	房屋	854,1063	roompor3				0	House
+1356	436	房屋	941	roompor2				0	House
+1357	437	房屋	926	roompor3				0	House
+1358	444	房屋	1002	roomrch2				0	House
+1359	435	房屋	869	roompor1				0	House
+1360	369	房屋						0	House
+1361	437	房屋	873	roompor3				0	House
+1362	435	房屋	960	roompor1				0	House
+1363	445	房屋	1169	roomrch3				0	House
+1364	437	房屋	1102	roompor3				0	House
+1365	436	房屋	1030,1071	roompor2				0	House
+1366	439	房屋	815,887	roommid1				0	House
+1367	438	房屋	1048,1067	roompor4				0	House
+1368	437	房屋	929	roompor3				0	House
+1369	438	房屋	928	roompor4				0	House
+1370	438	房屋	1006	roompor4				0	House
+1371	436	房屋	882	roompor2				0	House
+1372	438	房屋	843	roompor4				0	House
+1373	436	房屋	950	roompor2				0	House
+1374	446	房屋	1170	roomrch4				0	House
+1375	440	房屋	915	roommid2				0	House
+1376	437	房屋	982	roompor3				0	House
+1377	435	房屋	979,1051	roompor1				0	House
+1378	439	房屋	1054	roommid1				0	House
+1379	438	房屋	956	roompor4				0	House
+1380	435	房屋	947	roompor1				0	House
+1381	439	房屋	990	roommid1				0	House
+1382	437	房屋	812	roompor3				0	House
+1383	435	房屋	879	roompor1				0	House
+1384	437	房屋	1036	roompor3				0	House
+1385	443	房屋	1171	roomrch1				0	House
+1386	438	房屋		roompor4				0	House
+1387	438	房屋		roompor4				0	House
+1388	436	房屋	1053,1056	roompor2				0	House
+1389	446	房屋	1058	roomrch4				0	House
+1390	435	房屋	861	roompor1				0	House
+1391	436	房屋	945	roompor2				0	House
+1392	435	房屋	975	roompor1				0	House
+1393	438	房屋	807	roompor4				0	House
+1394	436	房屋	970	roompor2				0	House
+1395	444	房屋	1172	roomrch2				0	House
+1396	441	房屋	1019	roommid3				0	House
+1397	435	房屋	835,1065	roompor1				0	House
+1398	440	房屋	1074,1106	roommid2				0	House
+1399	443	房屋	1055	roomrch1				0	House
+1400	436	房屋	985	roompor2				0	House
+1401	439	房屋	944	roommid1				0	House
+1402	440	房屋	959	roommid2				0	House
+1403	435	房屋	884,935	roompor1				0	House
+1404	369	房屋						0	House
+1405	445	房屋	1173	roomrch3				0	House
+1406	435	房屋	889	roompor1				0	House
+1407	436	房屋	1107	roompor2				0	House
+1408	437	房屋	1161,1162	roompor3				0	House
+1409	439	房屋	999	roommid1				0	House
+1410	440	房屋	921	roommid2				0	House
+1411	441	房屋	953	roommid3				0	House
+1412	442	房屋	927	roommid4				0	House
+1413	437	房屋	825	roompor3				0	House
+1414	440	房屋	1128	roommid2				0	House
+1415	446	房屋	1174	roomrch4				0	House
+1416	438	房屋	916	roompor4				0	House
+1417	438	房屋	1163,1164	roompor4				0	House
+1418	440	房屋	808	roommid2				0	House
+1419	441	房屋	924	roommid3				0	House
+1420	445	房屋	1118	roomrch3				0	House
+1421	436	房屋	864	roompor2				0	House
+1422	439	房屋	857	roommid1				0	House
+1423	441	房屋	1129	roommid3				0	House
+1424	443	房屋	1175	roomrch1				0	House
+1425	369	房屋						0	House
+1426	441	房屋	993,994	roommid3				0	House
+1427	442	房屋	896	roommid4				0	House
+1428	446	房屋	1119	roomrch4				0	House
+1429	437	房屋	824	roompor3				0	House
+1430	440	房屋	847	roommid2				0	House
+1431	437	房屋	1123	roompor3				0	House
+1432	442	房屋	1130	roommid4				0	House
+1433	444	房屋	1176	roomrch2				0	House
+1434	369	房屋						0	House
+1435	442	房屋	823	roommid4				0	House
+1436	443	房屋	1115	roomrch1				0	House
+1437	436	房屋	918	roompor2				0	House
+1438	446	房屋	922	roomrch4				0	House
+1439	441	房屋	958	roommid3				0	House
+1440	444	房屋	1124	roomrch2				0	House
+1441	439	房屋	1131	roommid1				0	House
+1442	403	自由港神庙		tempruin				0	Temple
+1443	369	房屋						0	House
+1444	439	房屋	1050	roommid1				0	House
+1445	444	房屋	1116	roomrch2				0	House
+1446	440	房屋	1052	roommid2				0	House
+1447	369	房屋						0	House
+1448	442	房屋	910	roommid4				0	House
+1449	445	房屋	1125	roomrch3				0	House
+1450	440	房屋	1132	roommid2				0	House
+1451	435	隐士小屋	804	roompor1				0	House
+1452	369	房屋						0	House
+1453	440	房屋	867,1062	roommid2				0	House
+1454	439	房屋	901	roommid1				0	House
+1455	437	房屋	913	roompor3				0	House
+1456	439	房屋	998	roommid1				0	House
+1457	446	房屋	1126	roomrch4				0	House
+1458	444	房屋	1133	roomrch2				0	House
+1459	369	房屋						0	House
+1460	441	房屋	856	roommid3				0	House
+1461	440	房屋	902	roommid2				0	House
+1462	438	房屋	912	roompor4				0	House
+1463	443	房屋	1081	roomrch1				0	House
+1464	439	房屋	1127	roommid1				0	House
+1465	441	房屋	1134	roommid3				0	House
+1466	442	房屋	1069	roommid4				0	House
+1467	441	房屋	1018	roommid3				0	House
+1468	435	房屋	911	roompor1				0	House
+1469	444	房屋	933	roomrch2				0	House
+1470	439	房屋	1135	roommid1				0	House
+1471	439	房屋	1049	roommid1				0	House
+1472	442	房屋	1020	roommid4				0	House
+1473	436	房屋	908,909	roompor2				0	House
+1474	369	房屋						0	House
+1475	437	房屋	1136	roompor3				0	House
+1476	440	房屋	1035	roommid2				0	House
+1477	439	房屋	1039	roommid1				0	House
+1478	439	房屋	1012	roommid1				0	House
+1479	369	房屋						0	House
+1480	438	房屋	1137	roompor4				0	House
+1481	441	房屋	1110	roommid3				0	House
+1482	440	房屋	1027	roommid2				0	House
+1483	441	房屋	932	roommid3				0	House
+1484	369	房屋						0	House
+1485	436	房屋	1138	roompor2				0	House
+1486	442	房屋	1059	roommid4				0	House
+1487	441	房屋	1034	roommid3				0	House
+1488	442	房屋	931	roommid4				0	House
+1489	369	房屋						0	House
+1490	437	房屋	1139	roompor3				0	House
+1491	439	房屋	1060	roommid1				0	House
+1492	369	房屋						0	House
+1493	442	房屋	899	roommid4				0	House
+1494	369	房屋						0	House
+1495	438	房屋	1140	roompor4				0	House
+1496	440	房屋	1061	roommid2				0	House
+1497	369	房屋						0	House
+1498	437	房屋	936	roompor3				0	House
+1499	369	房屋						0	House
+1500	435	房屋	1141	roompor1				0	House
+1501	441	房屋	1024	roommid3				0	House
+1502	369	房屋						0	House
+1503	438	房屋	920	roompor4				0	House
+1504	436	房屋	1142	roompor2				0	House
+1505	442	房屋	1003	roommid4				0	House
+1506	369	房屋						0	House
+1507	435	房屋	863,894	roompor1				0	House
+1508	437	房屋	1143	roompor3				0	House
+1509	439	房屋	1111	roommid1				0	House
+1510	369	房屋						0	House
+1511	441	房屋	814	roommid3				0	House
+1512	438	房屋	1144	roompor4				0	House
+1513	440	房屋	1011,1025	roommid2				0	House
+1514	442	房屋	888	roommid4				0	House
+1515	435	房屋	1145	roompor1				0	House
+1516	441	房屋	1112	roommid3				0	House
+1517	439	房屋	1037	roommid1				0	House
+1518	445	房屋	1146	roomrch3				0	House
+1519	442	房屋	1113	roommid4				0	House
+1520	446	房屋	883	roomrch4				0	House
+1521	443	房屋	1147	roomrch1				0	House
+1522	443	房屋	954	roomrch1				0	House
+1523	436	房屋	858	roompor2				0	House
+1524	444	房屋	820	roomrch2				0	House
+1525	444	房屋	840	roomrch2				0	House
+1526	445	房屋	951	roomrch3				0	House
+1527	445	房屋	1120	roomrch3				0	House
+1528	446	房屋	833	roomrch4				0	House
+1529	437	房屋	1121	roompor3				0	House
+1530	443	房屋	988	roomrch1				0	House
+1531	444	房屋	834	roomrch2				0	House
+1532	444	房屋	877	roomrch2				0	House
+1533	438	房屋	897	roompor4				0	House
+1534	445	房屋	1005,1008	roomrch3				0	House
+1535	435	房屋	809	roompor1				0	House
+1536	446	房屋	1021,1044	roomrch4				0	House
+1537	443	房屋	949	roomrch1				0	House
+1538	443	房屋	1023	roomrch1				0	House
+1539	443	房屋	900	roomrch1				0	House
+1540	444	房屋	1114	roomrch2				0	House
+1541	445	房屋	1122	roomrch3				0	House
+1542	445	房屋	971	roomrch3				0	House
+1543	440	房屋	1016,1022	roommid2				0	House
+1544	446	房屋	969	roomrch4				0	House
+1545	369	房屋						0	House
+1546	443	房屋	955,964	roomrch1				0	House
+1547	369	房屋						0	House
+1548	444	房屋	952	roomrch2				0	House
+1549	445	房屋	892	roomrch3				0	House
+1550	446	房屋	938	roomrch4				0	House
+1551	441	房屋	1148	roommid3				0	House
+1552	442	房屋	1149	roommid4				0	House
+1553	439	房屋	1150	roommid1				0	House
+1554	440	房屋	1151	roommid2				0	House
+1555	441	房屋	1152	roommid3				0	House
+1556	435	房屋	1153	roompor1				0	House
+1557	436	房屋	1154	roompor2				0	House
+1558	437	房屋	1155	roompor3				0	House
+1559	437	房屋	1156	roompor3				0	House
+1560	438	房屋	1157	roompor4				0	House
+1561	441	房屋	1158	roommid3				0	House
+1562	435	房屋	1159	roompor1				0	House
+1563	442	房屋	1160	roommid4				0	House
+1564	21	入会仪式所		ltrhall			30700	1124	Training
+1565	35	体育馆		detrhall			31800	1114	Training
+1566	35	公会训练厅		detrhall			31800	1114	Training
+1567	62	戈德里克的护手		dhtrhall			34000	1102	Training
+1568	78	刺客学院		ntrhall			35100	1236	Training
+1569	51	巴尔萨煞学院		mtrhall			32900	1079	Training
+1570	224	岛屿训练场		human training ground01			30830	0530	Training
+1571	224	基本原理所		human training ground01			30830	0530	Training
+1572	224	为女王陛下效力		human training ground01			30830	0530	Training
+1573	229	试炼场		elf training ground			31060	0521	Training
+1574	227	荣誉试炼		wizard training ground			30610	1496	Training
+1575	225	毁灭之焰		necromancer training ground			30970	1507	Training
+1576	228	应用指导所		warlock training ground			30730	1521	Training
+1577	224	训练必需品店		human training ground01			30830	0530	Training
+1578	229	艾维利体育馆		elf training ground			31060	0521	Training
+1579	226	战争学院		dwarven training ground			31160	0487	Training
+1580	224	占位		human training ground01			30830	0530	Training
+1581	224	占位		human training ground01			30830	0530	Training
+1582	224	占位		human training ground01			30830	0530	Training
+1583	454	新索匹格训练场		train5			31260	0025	Training
+1584	454	自由港学院		train5			31260	0025	Training
+1585	453	阿卜杜勒折扣训练中心		train4			31250	0025	Training
+1586	452	对练场		train3			31240	0025	Training
+1587	452	海边训练场		train3			31240	0025	Training
+1588	454	狼穴		train5			31260	0025	Training
+1589	451	皇家体育馆		train2			31230	0025	Training
+1590	452	岛屿测试中心		train3			31240	0025	Training
+1591	450	独树训练场		train1			31220	0025	Training
+1592	455	河畔学院		train6			31270	0025	Training
+1593	340	监狱		jail				0	Jail
+1594	416	监狱		6jail				0	Jail
+1595	412	马戏团	1177	circus1				0	Circus
+1596	484	帐篷	1178	circus2				0	Circus
+1597	484	篷车	1179	circus2				0	Circus
+1598	484	帐篷	1180	circus2				0	Circus
+1599	484	篷车	1181	circus2				0	Circus
+1600	484	篷车	1182	circus2				0	Circus
+1601	484	帐篷	1183	circus2				0	Circus
+1602	484	帐篷	1108	circus2				0	Circus
+1603	484	帐篷	1165	circus2				0	Circus
+1604	484	帐篷	1109	circus2				0	Circus
+1605	484	帐篷	1166	circus2				0	Circus
+1606	484	帐篷	1004	circus2				0	Circus
+1607	106	冒险者旅馆		inn			36700	1082	The Adventurer's Inn

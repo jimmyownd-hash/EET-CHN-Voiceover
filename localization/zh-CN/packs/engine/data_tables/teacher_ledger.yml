@@ -1,0 +1,11 @@
+# The Ledger of Teachers (level_generation/ui/journal_trainers_20261105): every tavern of a continent sells that
+# continent's ledger as an extra topic until the party has bought it. Buying it names every trainer of the continent in
+# the journal's Trainers notes (and fills their teacher autonotes). {continent} and {price} are filled in.
+price: 2000
+topic: 导师名册
+description: >-
+  {continent}上每一位传授技艺的导师都记在这本册子里：他们住在哪里、教什么、最高教到哪一级。学者们每个季度都会从公会名册里抄录一次。只需 {price} 金币，你就再也不必四处打听了。
+buy: "购买名册：{price} 金币"
+bought: >-
+  给你：{continent}的导师名册。所有导师现在都已记入你日志的笔记中。
+too_poor: 朋友，你身上的金币不够。

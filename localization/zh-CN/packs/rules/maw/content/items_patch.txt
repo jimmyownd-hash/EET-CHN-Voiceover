@@ -1,0 +1,931 @@
+key	column	value
+1041	Pic File	maw_craft_gem01
+1041	Name	月光碎片
+1041	Value	1000
+1041	Equip Stat	Gem
+1041	Skill Group	Misc
+1041	Mod1	0
+1041	Mod2	0
+1041	material	0
+1041	ID/Rep/St	0
+1041	Not identified name	制造物品
+1041	Sprite Index	142
+1041	Notes	制造宝石，第 1 阶。在工作台（制造）上，它可将武器、护甲或珠宝中低于上限最多的基础附魔提升 3 点，或将一项技能提升 1 点；上限随阶数增长。三颗同阶宝石可合成一颗下一阶。
+1042	Pic File	maw_craft_gem02
+1042	Name	火焰黄玉
+1042	Value	2000
+1042	Equip Stat	Gem
+1042	Skill Group	Misc
+1042	Mod1	0
+1042	Mod2	0
+1042	material	0
+1042	ID/Rep/St	0
+1042	Not identified name	制造物品
+1042	Sprite Index	143
+1042	Notes	制造宝石，第 2 阶。在工作台（制造）上，它可将武器、护甲或珠宝中低于上限最多的基础附魔提升 3 点，或将一项技能提升 1 点；上限随阶数增长。三颗同阶宝石可合成一颗下一阶。
+1043	Pic File	maw_craft_gem03
+1043	Name	紫水晶块
+1043	Value	3000
+1043	Equip Stat	Gem
+1043	Skill Group	Misc
+1043	Mod1	0
+1043	Mod2	0
+1043	material	0
+1043	ID/Rep/St	0
+1043	Not identified name	制造物品
+1043	Sprite Index	144
+1043	Notes	制造宝石，第 3 阶。在工作台（制造）上，它可将武器、护甲或珠宝中低于上限最多的基础附魔提升 3 点，或将一项技能提升 1 点；上限随阶数增长。三颗同阶宝石可合成一颗下一阶。
+1044	Pic File	maw_craft_gem04
+1044	Name	琥珀水滴
+1044	Value	4000
+1044	Equip Stat	Gem
+1044	Skill Group	Misc
+1044	Mod1	0
+1044	Mod2	0
+1044	material	0
+1044	ID/Rep/St	0
+1044	Not identified name	制造物品
+1044	Sprite Index	145
+1044	Notes	制造宝石，第 4 阶。在工作台（制造）上，它可将武器、护甲或珠宝中低于上限最多的基础附魔提升 3 点，或将一项技能提升 1 点；上限随阶数增长。三颗同阶宝石可合成一颗下一阶。
+1045	Pic File	maw_craft_gem05
+1045	Name	皇家紫水晶
+1045	Value	5000
+1045	Equip Stat	Gem
+1045	Skill Group	Misc
+1045	Mod1	0
+1045	Mod2	0
+1045	material	0
+1045	ID/Rep/St	0
+1045	Not identified name	制造物品
+1045	Sprite Index	146
+1045	Notes	制造宝石，第 5 阶。在工作台（制造）上，它可将武器、护甲或珠宝中低于上限最多的基础附魔提升 3 点，或将一项技能提升 1 点；上限随阶数增长。三颗同阶宝石可合成一颗下一阶。
+1046	Pic File	maw_craft_gem06
+1046	Name	宝石切割者红宝石
+1046	Value	6000
+1046	Equip Stat	Gem
+1046	Skill Group	Misc
+1046	Mod1	0
+1046	Mod2	0
+1046	material	0
+1046	ID/Rep/St	0
+1046	Not identified name	制造物品
+1046	Sprite Index	147
+1046	Notes	制造宝石，第 6 阶。在工作台（制造）上，它可将武器、护甲或珠宝中低于上限最多的基础附魔提升 3 点，或将一项技能提升 1 点；上限随阶数增长。三颗同阶宝石可合成一颗下一阶。
+1047	Pic File	maw_craft_gem07
+1047	Name	太阳石
+1047	Value	7000
+1047	Equip Stat	Gem
+1047	Skill Group	Misc
+1047	Mod1	0
+1047	Mod2	0
+1047	material	0
+1047	ID/Rep/St	0
+1047	Not identified name	制造物品
+1047	Sprite Index	148
+1047	Notes	制造宝石，第 7 阶。在工作台（制造）上，它可将武器、护甲或珠宝中低于上限最多的基础附魔提升 3 点，或将一项技能提升 1 点；上限随阶数增长。三颗同阶宝石可合成一颗下一阶。
+1048	Pic File	maw_craft_gem08
+1048	Name	博学水晶
+1048	Value	8000
+1048	Equip Stat	Gem
+1048	Skill Group	Misc
+1048	Mod1	0
+1048	Mod2	0
+1048	material	0
+1048	ID/Rep/St	0
+1048	Not identified name	制造物品
+1048	Sprite Index	149
+1048	Notes	制造宝石，第 8 阶。在工作台（制造）上，它可将武器、护甲或珠宝中低于上限最多的基础附魔提升 3 点，或将一项技能提升 1 点；上限随阶数增长。三颗同阶宝石可合成一颗下一阶。
+1049	Pic File	maw_craft_gem09
+1049	Name	埃拉西亚蓝宝石
+1049	Value	9000
+1049	Equip Stat	Gem
+1049	Skill Group	Misc
+1049	Mod1	0
+1049	Mod2	0
+1049	material	0
+1049	ID/Rep/St	0
+1049	Not identified name	制造物品
+1049	Sprite Index	150
+1049	Notes	制造宝石，第 9 阶。在工作台（制造）上，它可将武器、护甲或珠宝中低于上限最多的基础附魔提升 3 点，或将一项技能提升 1 点；上限随阶数增长。三颗同阶宝石可合成一颗下一阶。
+1050	Pic File	maw_craft_gem10
+1050	Name	女王钻石
+1050	Value	10000
+1050	Equip Stat	Gem
+1050	Skill Group	Misc
+1050	Mod1	0
+1050	Mod2	0
+1050	material	0
+1050	ID/Rep/St	0
+1050	Not identified name	制造物品
+1050	Sprite Index	151
+1050	Notes	制造宝石，第 10 阶。在工作台（制造）上，它可将武器、护甲或珠宝中低于上限最多的基础附魔提升 3 点，或将一项技能提升 1 点；上限随阶数增长。三颗同阶宝石可合成一颗下一阶。
+1051	Pic File	maw_craft_gem11
+1051	Name	升华月光碎片
+1051	Value	11000
+1051	Equip Stat	Gem
+1051	Skill Group	Misc
+1051	Mod1	0
+1051	Mod2	0
+1051	material	0
+1051	ID/Rep/St	0
+1051	Not identified name	制造物品
+1051	Sprite Index	142
+1051	Notes	制造宝石，第 11 阶。在工作台（制造）上，它可将武器、护甲或珠宝中低于上限最多的基础附魔提升 3 点，或将一项技能提升 1 点；上限随阶数增长。三颗同阶宝石可合成一颗下一阶。
+1052	Pic File	maw_craft_gem12
+1052	Name	升华火焰黄玉
+1052	Value	12000
+1052	Equip Stat	Gem
+1052	Skill Group	Misc
+1052	Mod1	0
+1052	Mod2	0
+1052	material	0
+1052	ID/Rep/St	0
+1052	Not identified name	制造物品
+1052	Sprite Index	143
+1052	Notes	制造宝石，第 12 阶。在工作台（制造）上，它可将武器、护甲或珠宝中低于上限最多的基础附魔提升 3 点，或将一项技能提升 1 点；上限随阶数增长。三颗同阶宝石可合成一颗下一阶。
+1053	Pic File	maw_craft_gem13
+1053	Name	升华紫水晶块
+1053	Value	13000
+1053	Equip Stat	Gem
+1053	Skill Group	Misc
+1053	Mod1	0
+1053	Mod2	0
+1053	material	0
+1053	ID/Rep/St	0
+1053	Not identified name	制造物品
+1053	Sprite Index	144
+1053	Notes	制造宝石，第 13 阶。在工作台（制造）上，它可将武器、护甲或珠宝中低于上限最多的基础附魔提升 3 点，或将一项技能提升 1 点；上限随阶数增长。三颗同阶宝石可合成一颗下一阶。
+1054	Pic File	maw_craft_gem14
+1054	Name	升华琥珀水滴
+1054	Value	14000
+1054	Equip Stat	Gem
+1054	Skill Group	Misc
+1054	Mod1	0
+1054	Mod2	0
+1054	material	0
+1054	ID/Rep/St	0
+1054	Not identified name	制造物品
+1054	Sprite Index	145
+1054	Notes	制造宝石，第 14 阶。在工作台（制造）上，它可将武器、护甲或珠宝中低于上限最多的基础附魔提升 3 点，或将一项技能提升 1 点；上限随阶数增长。三颗同阶宝石可合成一颗下一阶。
+1055	Pic File	maw_craft_gem15
+1055	Name	升华皇家紫水晶
+1055	Value	15000
+1055	Equip Stat	Gem
+1055	Skill Group	Misc
+1055	Mod1	0
+1055	Mod2	0
+1055	material	0
+1055	ID/Rep/St	0
+1055	Not identified name	制造物品
+1055	Sprite Index	146
+1055	Notes	制造宝石，第 15 阶。在工作台（制造）上，它可将武器、护甲或珠宝中低于上限最多的基础附魔提升 3 点，或将一项技能提升 1 点；上限随阶数增长。三颗同阶宝石可合成一颗下一阶。
+1056	Pic File	maw_craft_gem16
+1056	Name	升华宝石切割者红宝石
+1056	Value	16000
+1056	Equip Stat	Gem
+1056	Skill Group	Misc
+1056	Mod1	0
+1056	Mod2	0
+1056	material	0
+1056	ID/Rep/St	0
+1056	Not identified name	制造物品
+1056	Sprite Index	147
+1056	Notes	制造宝石，第 16 阶。在工作台（制造）上，它可将武器、护甲或珠宝中低于上限最多的基础附魔提升 3 点，或将一项技能提升 1 点；上限随阶数增长。三颗同阶宝石可合成一颗下一阶。
+1057	Pic File	maw_craft_gem17
+1057	Name	升华太阳石
+1057	Value	17000
+1057	Equip Stat	Gem
+1057	Skill Group	Misc
+1057	Mod1	0
+1057	Mod2	0
+1057	material	0
+1057	ID/Rep/St	0
+1057	Not identified name	制造物品
+1057	Sprite Index	148
+1057	Notes	制造宝石，第 17 阶。在工作台（制造）上，它可将武器、护甲或珠宝中低于上限最多的基础附魔提升 3 点，或将一项技能提升 1 点；上限随阶数增长。三颗同阶宝石可合成一颗下一阶。
+1058	Pic File	maw_craft_gem18
+1058	Name	升华博学水晶
+1058	Value	18000
+1058	Equip Stat	Gem
+1058	Skill Group	Misc
+1058	Mod1	0
+1058	Mod2	0
+1058	material	0
+1058	ID/Rep/St	0
+1058	Not identified name	制造物品
+1058	Sprite Index	149
+1058	Notes	制造宝石，第 18 阶。在工作台（制造）上，它可将武器、护甲或珠宝中低于上限最多的基础附魔提升 3 点，或将一项技能提升 1 点；上限随阶数增长。三颗同阶宝石可合成一颗下一阶。
+1059	Pic File	maw_craft_gem19
+1059	Name	升华埃拉西亚蓝宝石
+1059	Value	19000
+1059	Equip Stat	Gem
+1059	Skill Group	Misc
+1059	Mod1	0
+1059	Mod2	0
+1059	material	0
+1059	ID/Rep/St	0
+1059	Not identified name	制造物品
+1059	Sprite Index	150
+1059	Notes	制造宝石，第 19 阶。在工作台（制造）上，它可将武器、护甲或珠宝中低于上限最多的基础附魔提升 3 点，或将一项技能提升 1 点；上限随阶数增长。三颗同阶宝石可合成一颗下一阶。
+1060	Pic File	maw_craft_gem20
+1060	Name	升华女王钻石
+1060	Value	20000
+1060	Equip Stat	Gem
+1060	Skill Group	Misc
+1060	Mod1	0
+1060	Mod2	0
+1060	material	0
+1060	ID/Rep/St	0
+1060	Not identified name	制造物品
+1060	Sprite Index	151
+1060	Notes	制造宝石，第 20 阶。在工作台（制造）上，它可将武器、护甲或珠宝中低于上限最多的基础附魔提升 3 点，或将一项技能提升 1 点；上限随阶数增长。三颗同阶宝石可合成一颗下一阶。
+1061	Pic File	maw_craft_eye_of_void
+1061	Name	虚空之眼
+1061	Value	30000
+1061	Equip Stat	Gem
+1061	Skill Group	Misc
+1061	Mod1	0
+1061	Mod2	0
+1061	material	0
+1061	ID/Rep/St	0
+1061	Not identified name	制造物品
+1061	Sprite Index	354
+1061	Notes	为没有特殊附魔的武器、护甲或珠宝添加一项强力特殊附魔。在工作台（制造）上使用。
+1062	Pic File	maw_craft_hourglass
+1062	Name	创造者沙漏
+1062	Value	20000
+1062	Equip Stat	Gem
+1062	Skill Group	Misc
+1062	Mod1	0
+1062	Mod2	0
+1062	material	0
+1062	ID/Rep/St	0
+1062	Not identified name	制造物品
+1062	Sprite Index	351
+1062	Notes	为已有一项基础附魔的物品添加第二项不同类型、强度与第一项相近的基础附魔。在工作台（制造）上使用。
+1063	Pic File	maw_craft_pandoras_cube
+1063	Name	潘多拉魔盒
+1063	Value	15000
+1063	Equip Stat	Gem
+1063	Skill Group	Misc
+1063	Mod1	0
+1063	Mod2	0
+1063	material	0
+1063	ID/Rep/St	0
+1063	Not identified name	制造物品
+1063	Sprite Index	296
+1063	Notes	将武器伤害或护甲防护精炼提升几个百分点，最高 20%；物品越普通，每个方块提升越多。在工作台（制造）上使用。
+1064	Pic File	maw_craft_mirror
+1064	Name	阿奇博尔德之镜
+1064	Value	100000
+1064	Equip Stat	Gem
+1064	Skill Group	Misc
+1064	Mod1	0
+1064	Mod2	0
+1064	material	0
+1064	ID/Rep/St	0
+1064	Not identified name	制造物品
+1064	Sprite Index	126
+1064	Notes	变成武器、护甲或珠宝的精确复制品；神器不可复制。在工作台（制造）上使用。
+1065	Pic File	maw_craft_emerald_of_power
+1065	Name	力量翡翠
+1065	Value	60000
+1065	Equip Stat	Gem
+1065	Skill Group	Misc
+1065	Mod1	0
+1065	Mod2	0
+1065	material	0
+1065	ID/Rep/St	0
+1065	Not identified name	制造物品
+1065	Sprite Index	300
+1065	Notes	将物品变为同类更强的一档，保留其附魔。在工作台（制造）上使用。
+1066	Pic File	maw_craft_pearl_of_memory
+1066	Name	记忆珍珠
+1066	Value	25000
+1066	Equip Stat	Gem
+1066	Skill Group	Misc
+1066	Mod1	0
+1066	Mod2	0
+1066	material	0
+1066	ID/Rep/St	0
+1066	Not identified name	制造物品
+1066	Sprite Index	367
+1066	Notes	移除物品上你所选择的一项附魔。在工作台（制造）上使用。
+1067	Pic File	maw_craft_orb_of_creation
+1067	Name	创造之球
+1067	Value	80000
+1067	Equip Stat	Gem
+1067	Skill Group	Misc
+1067	Mod1	0
+1067	Mod2	0
+1067	material	0
+1067	ID/Rep/St	0
+1067	Not identified name	制造物品
+1067	Sprite Index	411
+1067	Notes	空球从物品中抽取传奇之力；充满的球将该力量赋予另一件物品。在工作台（制造）上使用。
+1068	Pic File	maw_craft_celestial_orb
+1068	Name	天界之球
+1068	Value	200000
+1068	Equip Stat	Gem
+1068	Skill Group	Misc
+1068	Mod1	0
+1068	Mod2	0
+1068	material	0
+1068	ID/Rep/St	0
+1068	Not identified name	制造物品
+1068	Sprite Index	411
+1068	Notes	空球从物品中抽取天界状态；充满的球使另一件物品变为天界。在工作台（制造）上使用。
+1069	Pic File	maw_craft_endless_potion
+1069	Name	无尽药水
+1069	Value	0
+1069	Equip Stat	Gem
+1069	Skill Group	Misc
+1069	Mod1	0
+1069	Mod2	0
+1069	material	0
+1069	ID/Rep/St	0
+1069	Not identified name	药水瓶
+1069	Sprite Index	60
+1069	Notes	为防护、冥想、再生、魔法防护、冠军、圣骑士、神佑或神圣抗性药剂添加饮用次数。在工作台（制造）上使用。
+1070	Pic File	maw_craft_crafting_cube
+1070	Name	制造方块
+1070	Value	15000
+1070	Equip Stat	Gem
+1070	Skill Group	Misc
+1070	Mod1	0
+1070	Mod2	0
+1070	material	0
+1070	ID/Rep/St	0
+1070	Not identified name	制造物品
+1070	Sprite Index	364
+1070	Notes	将物品的力量（伤害或防护）提升：武器和身体护甲 +2，其他部件 +4，最高为佩戴者等级的五分之一。在工作台（制造）上使用。
+204	Mod1	30
+209	Mod1	30
+214	Mod1	30
+219	Mod1	45
+1006	Mod1	30
+1011	Mod1	30
+1016	Mod1	30
+1021	Mod1	45
+222	Notes	治疗 20 点生命值，另加相当于药水等级对应角色生命值四分之一的量。（饮用：拿起药水并在角色肖像上右键点击。）
+223	Notes	恢复 10 点法术值，另加相当于药水等级对应角色法术值四分之一的量。（饮用：拿起药水并在角色肖像上右键点击。）
+224	Notes	治愈虚弱和睡眠，并在 6 小时内免疫。（饮用：拿起药水并在角色肖像上右键点击。）
+225	Notes	治愈中毒和疾病，并在 6 小时内免疫。（饮用：拿起药水并在角色肖像上右键点击。）
+226	Notes	治愈诅咒和麻痹，并在 6 小时内免疫。（饮用：拿起药水并在角色肖像上右键点击。）
+227	Notes	治愈恐惧和疯狂，并在 6 小时内免疫。（饮用：拿起药水并在角色肖像上右键点击。）
+228	Notes	6 小时内饮用者获得自己的加速光环：更快的攻击与施法，强度随药水力量提升（200 为满）；与队伍光环比较取更强者，两者不会同时生效。共 5 次。（饮用：拿起药水并在角色肖像上右键点击。）
+229	Notes	6 小时内饮用者获得自己的英雄主义光环：更多近战伤害，强度随药水力量提升（200 为满）；与队伍光环比较取更强者，两者不会同时生效。共 5 次。（饮用：拿起药水并在角色肖像上右键点击。）
+230	Notes	6 小时内饮用者获得自己的祝福光环：更高的攻击与命中率，强度随药水力量提升（200 为满）；与队伍光环比较取更强者，两者不会同时生效。共 5 次。（饮用：拿起药水并在角色肖像上右键点击。）
+231	Notes	6 小时内饮用者获得自己的护盾与保护光环，强度随药水力量提升（200 为满）；与队伍光环比较取更强者，两者不会同时生效。共 5 次。需要力量 20。（饮用：拿起药水并在角色肖像上右键点击。）
+232	Notes	6 小时内增加冥想技能等级：1 + 药水力量除以 1.5 的平方根，向上取整。共 5 次。（饮用：拿起药水并在角色肖像上右键点击。）
+233	Notes	6 小时内持续回复生命值，力量越强回复越快；与再生光环比较取更强者。共 5 次。（饮用：拿起药水并在角色肖像上右键点击。）
+234	Notes	6 小时内饮用者获得自己的石肤光环：更高护甲，强度随药水力量提升（200 为满）；与队伍光环比较取更强者，两者不会同时生效。共 5 次。（饮用：拿起药水并在角色肖像上右键点击。）
+235	Notes	让饮用者在水下呼吸 6 小时。需要力量 20。共 5 次。（饮用：拿起药水并在角色肖像上右键点击。）
+237	Notes	保护全队免受魔法伤害 6 小时，且饮用者不会被击昏。共 5 次。（饮用：拿起药水并在角色肖像上右键点击。）
+238	Notes	为没有附魔的武器、护甲或珠宝添加一项基础附魔，强度随药水力量提升。（拿起药水并在物品上右键点击以在工作台使用。）
+239	Notes	治愈石化并在 6 小时内免疫。需要力量 20。（饮用：拿起药水并在角色肖像上右键点击。）
+240	Notes	6 小时内力量与准确度提升 10 + 药水力量。共 5 次。（饮用：拿起药水并在角色肖像上右键点击。）
+241	Notes	6 小时内智力与个性提升 10 + 药水力量。共 5 次。（饮用：拿起药水并在角色肖像上右键点击。）
+242	Notes	6 小时内耐力、速度与运气提升 10 + 药水力量。共 5 次。（饮用：拿起药水并在角色肖像上右键点击。）
+243	Notes	为没有特殊附魔的武器随机添加霜冻、闪电、烈焰或剧毒之一。需要力量 40。（拿起药水并在物品上右键点击以在工作台使用。）
+244	Notes	使没有特殊附魔的武器变得迅捷。需要力量 40。（拿起药水并在物品上右键点击以在工作台使用。）
+245	Notes	6 小时内饮用者获得自己的加速、英雄主义与祝福光环，强度随药水力量提升（200 为满）；与队伍光环比较取更强者，两者不会同时生效。共 5 次。（饮用：拿起药水并在角色肖像上右键点击。）
+246	Notes	治愈除死亡与湮灭外的所有状态，并在 6 小时内免疫。需要力量 40。（饮用：拿起药水并在角色肖像上右键点击。）
+247	Notes	治疗 50 点生命值，另加相当于药水等级对应角色生命值 35% 的量。共 5 次。（饮用：拿起药水并在角色肖像上右键点击。）
+248	Notes	恢复 50 点法术值，另加相当于药水等级对应角色法术值 35% 的量。共 5 次。（饮用：拿起药水并在角色肖像上右键点击。）
+249	Notes	6 小时内饮用者获得自己的火焰、空气、水系与大地抗性光环，强度随药水力量提升（200 为满）；与队伍光环比较取更强者，两者不会同时生效。共 5 次。（饮用：拿起药水并在角色肖像上右键点击。）
+250	Notes	6 小时内饮用者获得自己的心灵与身体抗性光环，强度随药水力量提升（200 为满）；与队伍光环比较取更强者，两者不会同时生效。共 5 次。（饮用：拿起药水并在角色肖像上右键点击。）
+251	Notes	6 小时内饮用者获得自己的护盾、石肤与保护光环，强度随药水力量提升（200 为满）；与队伍光环比较取更强者，两者不会同时生效。共 5 次。（饮用：拿起药水并在角色肖像上右键点击。）
+252	Notes	每 50 点力量永久提升力量与准确度 20。只有超过角色此前喝过的最强纯力药水的部分才生效；更弱的会被拒绝。（饮用：拿起药水并在角色肖像上右键点击。）
+253	Notes	每 50 点力量永久提升智力与个性 20。只有超过角色此前喝过的最强纯智药水的部分才生效；更弱的会被拒绝。（饮用：拿起药水并在角色肖像上右键点击。）
+254	Notes	每 50 点力量永久提升耐力、速度与运气 20。只有超过角色此前喝过的最强纯韧药水的部分才生效；更弱的会被拒绝。（饮用：拿起药水并在角色肖像上右键点击。）
+255	Notes	为没有特殊附魔的武器随机添加寒冰、雷霆、炼狱或强酸之一。需要力量 55。（拿起药水并在物品上右键点击以在工作台使用。）
+256	Notes	为没有特殊附魔的武器添加黑暗附魔。需要力量 100。（拿起药水并在物品上右键点击以在工作台使用。）
+257	Notes	6 小时内饮用者获得自己的诸神之日光环：更高属性，强度随药水力量提升（200 为满）；与队伍光环比较取更强者，两者不会同时生效。共 5 次。（饮用：拿起药水并在角色肖像上右键点击。）
+258	Notes	将饮用者的年龄设为 60 岁。（饮用：拿起药水并在角色肖像上右键点击。）
+259	Notes	授予技能点：k = 力量 / 50（向下取整），获得 5 x k x k + 15 x k。只有超过角色此前喝过的最强超越药水的部分才生效。（饮用：拿起药水并在角色肖像上右键点击。）
+260	Notes	将饮用者的年龄设为 20 岁。（饮用：拿起药水并在角色肖像上右键点击。）
+261	Notes	每 50 点力量永久提升火焰、空气、水系与大地抗性 30，超过此前喝过的最强者。（饮用：拿起药水并在角色肖像上右键点击。）
+262	Notes	每 50 点力量永久提升心灵与身体抗性 30，超过此前喝过的最强者。（饮用：拿起药水并在角色肖像上右键点击。）
+263	Notes	6 小时内饮用者获得自己的庇护之日光环：全部抗性，强度随药水力量提升（200 为满）；与队伍光环比较取更强者，两者不会同时生效。共 5 次。（饮用：拿起药水并在角色肖像上右键点击。）
+264	Notes	此药水已移除
+265	Notes	此药水已移除
+266	Notes	此药水已移除
+267	Notes	此药水已移除
+268	Notes	此药水已移除
+269	Notes	此药水已移除
+270	Notes	此药水已移除
+271	Notes	此药水已移除
+272	Notes	此药水已移除
+273	Notes	此药水已移除
+274	Notes	此药水已移除
+275	Notes	此药水已移除
+276	Notes	此药水已移除
+277	Notes	此药水已移除
+278	Notes	此药水已移除
+279	Notes	此药水已移除
+280	Notes	此药水已移除
+281	Notes	此药水已移除
+282	Notes	此药水已移除
+283	Notes	此药水已移除
+284	Notes	此药水已移除
+285	Notes	此药水已移除
+286	Notes	此药水已移除
+287	Notes	此药水已移除
+288	Notes	此药水已移除
+289	Notes	此药水已移除
+264	Name	MAW 已删除药水
+265	Name	MAW 已删除药水
+266	Name	MAW 已删除药水
+267	Name	MAW 已删除药水
+268	Name	MAW 已删除药水
+269	Name	MAW 已删除药水
+270	Name	MAW 已删除药水
+271	Name	MAW 已删除药水
+272	Name	MAW 已删除药水
+273	Name	MAW 已删除药水
+274	Name	MAW 已删除药水
+275	Name	MAW 已删除药水
+276	Name	MAW 已删除药水
+277	Name	MAW 已删除药水
+278	Name	MAW 已删除药水
+279	Name	MAW 已删除药水
+280	Name	MAW 已删除药水
+281	Name	MAW 已删除药水
+282	Name	MAW 已删除药水
+283	Name	MAW 已删除药水
+284	Name	MAW 已删除药水
+285	Name	MAW 已删除药水
+286	Name	MAW 已删除药水
+287	Name	MAW 已删除药水
+288	Name	MAW 已删除药水
+289	Name	MAW 已删除药水
+291	Name	MAW 已删除药水
+292	Name	MAW 已删除药水
+293	Name	MAW 已删除药水
+294	Name	MAW 已删除药水
+295	Name	MAW 已删除药水
+296	Name	MAW 已删除药水
+297	Name	MAW 已删除药水
+298	Name	MAW 已删除药水
+299	Name	MAW 已删除药水
+252	Pic File	item182
+253	Pic File	item182
+254	Pic File	item182
+255	Pic File	item182
+256	Pic File	item182
+257	Pic File	item182
+258	Pic File	item182
+259	Pic File	item182
+260	Pic File	item182
+261	Pic File	item182
+290	Name	次元地图
+290	Notes	一张被另一维度重写的某地地图。使用它可将队伍带到其入口。在工作台上，虚空之眼或创造者沙漏可解锁它的下一项词缀，制造方块可将其移动到另一处已清除的同类地点，力量翡翠则将其等级提升 50。
+46	Equip Stat	Weapon2
+47	Equip Stat	Weapon2
+48	Equip Stat	Weapon2
+49	Equip Stat	Weapon2
+50	Equip Stat	Weapon2
+507	Equip Stat	Weapon2
+838	Equip Stat	Weapon2
+839	Equip Stat	Weapon2
+840	Equip Stat	Weapon2
+1638	Equip Stat	Weapon2
+1639	Equip Stat	Weapon2
+1640	Equip Stat	Weapon2
+473	Name	强力治疗
+1275	Name	强力治疗
+1989	Name	强力治疗
+400	Value	100
+401	Value	200
+402	Value	300
+403	Value	500
+404	Value	1000
+405	Value	2000
+406	Value	4000
+407	Value	6000
+408	Value	40000
+409	Value	10000
+410	Value	15000
+411	Value	100
+412	Value	200
+413	Value	300
+414	Value	500
+415	Value	1000
+416	Value	2000
+417	Value	4000
+418	Value	6000
+419	Value	8000
+420	Value	40000
+421	Value	40000
+422	Value	100
+423	Value	200
+424	Value	300
+425	Value	500
+426	Value	1000
+427	Value	2000
+428	Value	4000
+429	Value	6000
+430	Value	20000
+431	Value	10000
+432	Value	60000
+433	Value	100
+434	Value	200
+435	Value	300
+436	Value	500
+437	Value	1000
+438	Value	2000
+439	Value	4000
+440	Value	6000
+441	Value	8000
+442	Value	10000
+443	Value	15000
+444	Value	100
+445	Value	200
+446	Value	300
+447	Value	500
+448	Value	1000
+449	Value	2000
+450	Value	4000
+451	Value	6000
+452	Value	8000
+453	Value	10000
+454	Value	60000
+455	Value	100
+456	Value	200
+457	Value	300
+458	Value	500
+459	Value	1000
+460	Value	2000
+461	Value	4000
+462	Value	6000
+463	Value	8000
+464	Value	10000
+465	Value	15000
+466	Value	100
+467	Value	200
+468	Value	300
+469	Value	500
+470	Value	1000
+471	Value	2000
+472	Value	4000
+473	Value	6000
+474	Value	8000
+475	Value	10000
+476	Value	15000
+477	Value	200
+478	Value	400
+479	Value	600
+480	Value	1000
+481	Value	2000
+482	Value	20000
+483	Value	8000
+484	Value	40000
+485	Value	60000
+486	Value	20000
+487	Value	30000
+488	Value	200
+489	Value	400
+490	Value	600
+491	Value	1000
+492	Value	2000
+493	Value	4000
+494	Value	8000
+495	Value	12000
+496	Value	16000
+497	Value	20000
+498	Value	100000
+1202	Value	100
+1203	Value	200
+1204	Value	300
+1205	Value	500
+1206	Value	1000
+1207	Value	2000
+1208	Value	4000
+1209	Value	6000
+1210	Value	40000
+1211	Value	10000
+1212	Value	15000
+1213	Value	100
+1214	Value	200
+1215	Value	300
+1216	Value	500
+1217	Value	1000
+1218	Value	2000
+1219	Value	4000
+1220	Value	6000
+1221	Value	8000
+1222	Value	40000
+1223	Value	40000
+1224	Value	100
+1225	Value	200
+1226	Value	300
+1227	Value	500
+1228	Value	1000
+1229	Value	2000
+1230	Value	4000
+1231	Value	6000
+1232	Value	20000
+1233	Value	10000
+1234	Value	60000
+1235	Value	100
+1236	Value	200
+1237	Value	300
+1238	Value	500
+1239	Value	1000
+1240	Value	2000
+1241	Value	4000
+1242	Value	6000
+1243	Value	8000
+1244	Value	10000
+1245	Value	15000
+1246	Value	100
+1247	Value	200
+1248	Value	300
+1249	Value	500
+1250	Value	1000
+1251	Value	2000
+1252	Value	4000
+1253	Value	6000
+1254	Value	8000
+1255	Value	10000
+1256	Value	60000
+1257	Value	100
+1258	Value	200
+1259	Value	300
+1260	Value	500
+1261	Value	1000
+1262	Value	2000
+1263	Value	4000
+1264	Value	6000
+1265	Value	8000
+1266	Value	10000
+1267	Value	15000
+1268	Value	100
+1269	Value	200
+1270	Value	300
+1271	Value	500
+1272	Value	1000
+1273	Value	2000
+1274	Value	4000
+1275	Value	6000
+1276	Value	8000
+1277	Value	10000
+1278	Value	15000
+1279	Value	100
+1280	Value	200
+1281	Value	300
+1282	Value	500
+1283	Value	1000
+1284	Value	20000
+1285	Value	4000
+1286	Value	40000
+1287	Value	60000
+1288	Value	10000
+1289	Value	15000
+1290	Value	100
+1291	Value	200
+1292	Value	300
+1293	Value	500
+1294	Value	1000
+1295	Value	2000
+1296	Value	4000
+1297	Value	6000
+1298	Value	8000
+1299	Value	10000
+1300	Value	100000
+1902	Value	100
+1903	Value	200
+1904	Value	300
+1905	Value	300
+1906	Value	500
+1907	Value	500
+1908	Value	1000
+1909	Value	2000
+1910	Value	4000
+1911	Value	6000
+1912	Value	40000
+1913	Value	10000
+1914	Value	15000
+1915	Value	100
+1916	Value	200
+1917	Value	300
+1918	Value	300
+1919	Value	500
+1920	Value	500
+1921	Value	1000
+1922	Value	2000
+1923	Value	4000
+1924	Value	6000
+1925	Value	8000
+1926	Value	40000
+1927	Value	40000
+1928	Value	100
+1929	Value	200
+1930	Value	300
+1931	Value	300
+1932	Value	500
+1933	Value	500
+1934	Value	1000
+1935	Value	2000
+1936	Value	4000
+1937	Value	6000
+1938	Value	20000
+1939	Value	10000
+1940	Value	60000
+1941	Value	100
+1942	Value	200
+1943	Value	300
+1944	Value	300
+1945	Value	500
+1946	Value	500
+1947	Value	1000
+1948	Value	2000
+1949	Value	4000
+1950	Value	6000
+1951	Value	8000
+1952	Value	10000
+1953	Value	15000
+1954	Value	100
+1955	Value	200
+1956	Value	300
+1957	Value	300
+1958	Value	500
+1959	Value	500
+1960	Value	1000
+1961	Value	2000
+1962	Value	4000
+1963	Value	6000
+1964	Value	8000
+1965	Value	10000
+1966	Value	60000
+1967	Value	100
+1968	Value	200
+1969	Value	300
+1970	Value	300
+1971	Value	500
+1972	Value	500
+1973	Value	1000
+1974	Value	2000
+1975	Value	4000
+1976	Value	6000
+1977	Value	8000
+1978	Value	10000
+1979	Value	15000
+1980	Value	100
+1981	Value	200
+1982	Value	300
+1983	Value	300
+1984	Value	500
+1985	Value	500
+1986	Value	1000
+1987	Value	2000
+1988	Value	4000
+1989	Value	6000
+1990	Value	8000
+1991	Value	10000
+1992	Value	15000
+1993	Value	100
+1994	Value	200
+1995	Value	300
+1996	Value	300
+1997	Value	500
+1998	Value	500
+1999	Value	1000
+2000	Value	20000
+2001	Value	4000
+2002	Value	40000
+2003	Value	60000
+2004	Value	10000
+2005	Value	15000
+2006	Value	100
+2007	Value	200
+2008	Value	300
+2009	Value	300
+2010	Value	500
+2011	Value	500
+2012	Value	1000
+2013	Value	2000
+2014	Value	4000
+2015	Value	6000
+2016	Value	8000
+2017	Value	10000
+2018	Value	100000
+516	Value	20000
+539	Value	20000
+540	Value	20000
+541	Value	20000
+1439	Value	2500
+2118	Value	2500
+2119	Value	2500
+2199	Value	2500
+971	Pic File	item207
+971	Name	火焰魔法书
+971	Value	100
+971	Equip Stat	Misc
+971	Skill Group	Misc
+971	Mod1	0
+971	Mod2	0
+971	material	0
+971	ID/Rep/St	0
+971	Not identified name	魔法书
+971	Sprite Index	78
+971	Notes	一本被灼烧过的魔法书，散发着温和的热气；封面上烙着火之封印，除非你精通火焰，否则书页会烫得无法手持。
+972	Pic File	item207
+972	Name	空气魔法书
+972	Value	100
+972	Equip Stat	Misc
+972	Skill Group	Misc
+972	Mod1	0
+972	Mod2	0
+972	material	0
+972	ID/Rep/St	0
+972	Not identified name	魔法书
+972	Sprite Index	78
+972	Notes	羽轻的书页发出静电嗡鸣；旋转的空气符文将字行吹散，只有精通空气者才能令其安顿。
+973	Pic File	item207
+973	Name	水系魔法书
+973	Value	100
+973	Equip Stat	Misc
+973	Skill Group	Misc
+973	Mod1	0
+973	Mod2	0
+973	material	0
+973	ID/Rep/St	0
+973	Not identified name	魔法书
+973	Sprite Index	78
+973	Notes	潮湿的羊皮纸上墨迹如潮水般荡漾；水之结界将每个字符化为水滴，除非水系大师将它们唤回。
+974	Pic File	item207
+974	Name	大地魔法书
+974	Value	100
+974	Equip Stat	Misc
+974	Skill Group	Misc
+974	Mod1	0
+974	Mod2	0
+974	material	0
+974	ID/Rep/St	0
+974	Not identified name	魔法书
+974	Sprite Index	78
+974	Notes	重如采石，书脊间塞满砂砾；石之封印将文字压住，只有与大地共鸣者才能看清。
+975	Pic File	item207
+975	Name	精神魔法书
+975	Value	100
+975	Equip Stat	Misc
+975	Skill Group	Misc
+975	Mod1	0
+975	Mod2	0
+975	material	0
+975	ID/Rep/St	0
+975	Not identified name	魔法书
+975	Sprite Index	78
+975	Notes	书页间萦绕着平静的光芒；灵魂束缚符文遮掩了祷文，若无精神技艺，它们将归于寂静。
+976	Pic File	item207
+976	Name	心灵魔法书
+976	Value	100
+976	Equip Stat	Misc
+976	Skill Group	Misc
+976	Mod1	0
+976	Mod2	0
+976	material	0
+976	ID/Rep/St	0
+976	Not identified name	魔法书
+976	Sprite Index	78
+976	Notes	紧密符文的页边会自行重组；思想之锁将文字打乱成谜题，除非心灵门徒将其对齐。
+977	Pic File	item207
+977	Name	身体魔法书
+977	Value	100
+977	Equip Stat	Misc
+977	Skill Group	Misc
+977	Mod1	0
+977	Mod2	0
+977	material	0
+977	ID/Rep/St	0
+977	Not identified name	魔法书
+977	Sprite Index	78
+977	Notes	厚实、带草药气息的羊皮纸随着脉搏温暖；活力结界使书页变硬，只有身体修习者沉稳的双手才能使其放松。
+978	Pic File	item207
+978	Name	光明魔法书
+978	Value	100
+978	Equip Stat	Misc
+978	Skill Group	Misc
+978	Mod1	0
+978	Mod2	0
+978	material	0
+978	ID/Rep/St	0
+978	Not identified name	魔法书
+978	Sprite Index	78
+978	Notes	淡白的光芒从封面渗出；太阳封印耀眼得无法阅读，只有受过光明训练者才能看清。
+979	Pic File	item207
+979	Name	黑暗魔法书
+979	Value	100
+979	Equip Stat	Misc
+979	Skill Group	Misc
+979	Mod1	0
+979	Mod2	0
+979	material	0
+979	ID/Rep/St	0
+979	Not identified name	魔法书
+979	Sprite Index	78
+979	Notes	墨迹如凝滞的夜色，吞噬火炬的光芒；暗影结界吞噬字行，只有精通黑暗的读者才能看见它们。
+67	Not identified name	钉锤
+804	Not identified name	长剑

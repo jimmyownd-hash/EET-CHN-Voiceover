@@ -1,0 +1,293 @@
+-- The Hive
+-- generated from legacy EVT/STR
+
+SetMapMetadata({
+    onLoad = {100},
+    onLeave = {},
+    openedChestIds = {
+    [41] = {1},
+    [42] = {2},
+    [43] = {3},
+    [44] = {4},
+    [45] = {5},
+    },
+    contextActions = {
+    [1] = { kind = "open_door", source = "title" },
+    [2] = { kind = "open_door", source = "title" },
+    [3] = { kind = "open_door", source = "title" },
+    [4] = { kind = "open_door", source = "title" },
+    [5] = { kind = "open_door", source = "title" },
+    [6] = { kind = "open_door", source = "title" },
+    [7] = { kind = "open_door", source = "title" },
+    [8] = { kind = "open_door", source = "title" },
+    [9] = { kind = "open_door", source = "title" },
+    [10] = { kind = "open_door", source = "title" },
+    [11] = { kind = "open_door", source = "title" },
+    [12] = { kind = "open_door", source = "title" },
+    [13] = { kind = "open_door", source = "title" },
+    [14] = { kind = "open_door", source = "title" },
+    [16] = { kind = "teleport", source = "heuristic" },
+    [17] = { kind = "generic_event", source = "opcode" },
+    [21] = { kind = "open_door", source = "title" },
+    [23] = { kind = "boost", source = "title" },
+    [27] = { kind = "open_door", source = "opcode" },
+    [28] = { kind = "open_door", source = "title" },
+    [31] = { kind = "use_switch", source = "title" },
+    [33] = { kind = "open_door", source = "opcode" },
+    [34] = { kind = "use_switch", source = "title" },
+    [36] = { kind = "use_switch", source = "title" },
+    [38] = { kind = "open_door", source = "opcode" },
+    [39] = { kind = "open_door", source = "opcode" },
+    [41] = { kind = "open_chest", source = "opcode", chestIds = {1} },
+    [42] = { kind = "open_chest", source = "opcode", chestIds = {2} },
+    [43] = { kind = "open_chest", source = "opcode", chestIds = {3} },
+    [44] = { kind = "open_chest", source = "opcode", chestIds = {4} },
+    [45] = { kind = "open_chest", source = "opcode", chestIds = {5} },
+    [48] = { kind = "leave_dungeon", source = "opcode", targetMap = "outa1.odm", targetName = "甜水镇" },
+    [50] = { kind = "use_switch", source = "title" },
+    [60] = { kind = "enter_house", source = "opcode", houseId = 0 },
+    },
+    textureNames = {},
+    spriteNames = {},
+    castSpellIds = {},
+    timers = {
+    { eventId = 51, sourceEventId = 51, triggerStep = 0, origin = "legacy", triggerKind = "timer", scheduleKind = "interval", intervalHalfMinutes = 5 },
+    { eventId = 54, sourceEventId = 54, triggerStep = 0, origin = "legacy", triggerKind = "timer", scheduleKind = "interval", intervalHalfMinutes = 10 },
+    { eventId = 57, sourceEventId = 57, triggerStep = 0, origin = "legacy", triggerKind = "timer", scheduleKind = "interval", intervalHalfMinutes = 120 },
+    },
+})
+
+RegisterEvent(1, "门", function()
+    evt.SetDoorState(1, DoorAction.Close)
+end, "门")
+
+RegisterEvent(2, "门", function()
+    evt.SetDoorState(2, DoorAction.Close)
+end, "门")
+
+RegisterEvent(3, "门", function()
+    evt.SetDoorState(3, DoorAction.Close)
+end, "门")
+
+RegisterEvent(4, "门", function()
+    evt.SetDoorState(4, DoorAction.Close)
+end, "门")
+
+RegisterEvent(5, "门", function()
+    evt.SetDoorState(5, DoorAction.Close)
+end, "门")
+
+RegisterEvent(6, "门", function()
+    if not HasItem(2190) then -- Hive Sanctum Key
+        evt.StatusText("门是锁着的")
+        return
+    end
+    evt.SetDoorState(6, DoorAction.Close)
+    RemoveItem(2190) -- Hive Sanctum Key
+end, "门")
+
+RegisterEvent(7, "门", function()
+    evt.SetDoorState(7, DoorAction.Close)
+end, "门")
+
+RegisterEvent(8, "门", function()
+    evt.SetDoorState(8, DoorAction.Close)
+end, "门")
+
+RegisterEvent(9, "门", function()
+    evt.SetDoorState(9, DoorAction.Close)
+end, "门")
+
+RegisterEvent(10, "门", function()
+    evt.SetDoorState(10, DoorAction.Close)
+end, "门")
+
+RegisterEvent(11, "门", function()
+    evt.SetDoorState(11, DoorAction.Close)
+end, "门")
+
+RegisterEvent(12, "门", function()
+    evt.SetDoorState(12, DoorAction.Close)
+end, "门")
+
+RegisterEvent(13, "门", function()
+    evt.SetDoorState(13, DoorAction.Close)
+end, "门")
+
+RegisterEvent(14, "门", function()
+    evt.SetDoorState(14, DoorAction.Close)
+end, "门")
+
+RegisterEvent(16, "开关", function()
+    evt.MoveToMap(468, 3690, 1, 45, 0, 0, 0, 0)
+    evt.SetDoorState(16, DoorAction.Trigger)
+    SetValue(MapVar(2), 0)
+    evt.StatusText("冲洗系统已关闭")
+end, "开关")
+
+RegisterEvent(17, nil, function()
+    if IsAtLeast(MapVar(23), 1) then
+        return
+    elseif IsAtLeast(MapVar(2), 1) then
+        return
+    else
+        evt.StatusText("冲洗系统已启动。")
+        SetValue(MapVar(2), 0)
+        return
+    end
+end)
+
+RegisterEvent(19, nil, function()
+    if IsAtLeast(MapVar(23), 1) then
+        return
+    elseif IsAtLeast(MapVar(2), 1) then
+        return
+    else
+        SetValue(MapVar(2), 1)
+        return
+    end
+end)
+
+RegisterEvent(21, "门", function()
+    evt.StatusText("门纹丝不动")
+end, "门")
+
+RegisterEvent(22, nil, function()
+    SetValue(MapVar(5), 0)
+end)
+
+RegisterEvent(23, "小桶", function()
+    evt.StatusText("生命值+20。")
+    AddValue(CurrentHealth, 20)
+end, "小桶")
+
+RegisterEvent(27, nil, function()
+    evt.SetDoorState(43, DoorAction.Close)
+end)
+
+RegisterEvent(28, "门", function()
+    evt.SetDoorState(28, DoorAction.Close)
+end, "门")
+
+RegisterEvent(29, nil, function()
+    SetValue(MapVar(2), 0)
+end)
+
+RegisterEvent(31, "开关", function()
+    evt.SetDoorState(31, DoorAction.Close)
+    evt.SetDoorState(32, DoorAction.Close)
+end, "开关")
+
+RegisterEvent(33, nil, function()
+    evt.SetDoorState(35, DoorAction.Trigger)
+    evt.SetDoorState(36, DoorAction.Trigger)
+end)
+
+RegisterEvent(34, "开关", function()
+    evt.SetDoorState(37, DoorAction.Trigger)
+    evt.SetDoorState(38, DoorAction.Trigger)
+end, "开关")
+
+RegisterEvent(36, "开关", function()
+    evt.SetDoorState(41, DoorAction.Trigger)
+    evt.SetDoorState(43, DoorAction.Trigger)
+end, "开关")
+
+RegisterEvent(38, nil, function()
+    evt.SetDoorState(42, DoorAction.Close)
+end)
+
+RegisterEvent(39, nil, function()
+    evt.SetDoorState(45, DoorAction.Close)
+    evt.SetDoorState(46, DoorAction.Close)
+end)
+
+RegisterEvent(41, "箱子", function()
+    evt.OpenChest(1)
+end, "箱子")
+
+RegisterEvent(42, "箱子", function()
+    evt.OpenChest(2)
+    SetValue(MapVar(12), 1)
+end, "箱子")
+
+RegisterEvent(43, "箱子", function()
+    evt.OpenChest(3)
+end, "箱子")
+
+RegisterEvent(44, "箱子", function()
+    evt.OpenChest(4)
+end, "箱子")
+
+RegisterEvent(45, "箱子", function()
+    evt.OpenChest(5)
+end, "箱子")
+
+RegisterEvent(48, "出口", function()
+    evt.MoveToMap(-14355, 15010, 3841, 1408, 0, 0, 0, 0, "outa1.odm") -- Sweet Water
+end, "出口")
+
+RegisterEvent(50, "开关", function()
+    evt.SetDoorState(50, DoorAction.Close)
+    SetValue(MapVar(23), 1)
+end, "开关")
+
+RegisterEvent(51, nil, function()
+    if IsAtLeast(MapVar(22), 1) then
+        evt.StatusText("冲洗流程完成。")
+        SetValue(MapVar(22), 0)
+    end
+end)
+
+RegisterEvent(54, nil, function()
+    if not IsAtLeast(MapVar(21), 1) then return end
+    evt.StatusText("冲洗流程进行中。")
+    if not IsAtLeast(MapVar(3), 1) then
+        evt.DamagePlayer(Players.All, const.Damage.Physical, 20)
+    end
+    SetValue(MapVar(22), 1)
+    SetValue(MapVar(21), 0)
+end)
+
+RegisterEvent(56, "受保护", function()
+    SetValue(MapVar(3), 1)
+end, "受保护")
+
+RegisterEvent(57, nil, function()
+    if IsAtLeast(MapVar(2), 1) then
+        evt.StatusText("警告！冲洗系统已启动！")
+        SetValue(MapVar(21), 1)
+    end
+end)
+
+RegisterEvent(58, nil, function()
+    SetValue(MapVar(3), 0)
+end)
+
+RegisterEvent(60, "出口", function()
+    if not IsQBitSet(QBit(1226)) then -- NPC
+        evt.StatusText("门是锁着的")
+        return
+    end
+    evt.ForPlayer(Players.All)
+    if not HasItem(2164) then -- Ritual of the Void
+        evt.EnterHouse(0)
+        return
+    end
+    SetQBit(QBit(1261)) -- NPC
+    ClearQBit(QBit(1222)) -- Quest item bits for seer
+    RemoveItem(2164) -- Ritual of the Void
+    SetAward(Award(78)) -- Destroyed the Hive and Saved Enroth
+    evt.EnterHouse(0)
+end, "出口")
+
+RegisterEvent(100, nil, function()
+    if IsQBitSet(QBit(1204)) then -- NPC
+        evt.SetDoorState(28, DoorAction.Open)
+        evt.SetDoorState(30, DoorAction.Close)
+        evt.SetDoorState(51, DoorAction.Open)
+        evt.SetDoorState(52, DoorAction.Open)
+        evt.SetDoorState(53, DoorAction.Close)
+    end
+end)
+

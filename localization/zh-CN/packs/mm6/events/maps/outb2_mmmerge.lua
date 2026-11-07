@@ -1,0 +1,32 @@
+-- MMMerge map supplement: Blackshire local outdoor state.
+
+RegisterMapOnLoadEvent(65024, "MMMerge outb2 town portal and guards", function()
+    SetQBit(QBit(310)) -- Blackshire town portal destination discovered.
+    MM6.ApplyLocalMonsterRelations({
+        {196, 0, 0},
+    })
+    evt.SetMonGroupBit(39, MonsterBits.Hostile, false)
+    MM6.ApplyDragonTowerState(1184, 61, 42)
+end)
+
+table.insert(evt.meta.map.textureNames, "t1swbu")
+
+ReplaceMapEvent(10, "黑郡马车行", function()
+    evt.EnterHouse(478)
+end, "黑郡马车行")
+
+ReplaceMapEvent(11, "黑郡马车行", function()
+    evt.EnterHouse(478)
+end, "黑郡马车行")
+
+AppendMapEvent(68, function()
+    if not HasEverOwnedItem(2119) then -- Lord Kilburn's Shield
+        MM6.EnsureChestItem(1, 2119, 0, 0)
+    end
+end)
+
+MM6.RegisterDragonTowerTimer(210, -17921, 9724, 2742, 1184)
+
+ReplaceMapEvent(211, "龙之塔", function()
+    MM6.TryDisableDragonTower(1184, 61, 42)
+end)

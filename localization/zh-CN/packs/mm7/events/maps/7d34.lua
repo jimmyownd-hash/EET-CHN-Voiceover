@@ -1,0 +1,322 @@
+-- The Red Dwarf Mines
+-- generated from legacy EVT/STR
+
+SetMapMetadata({
+    onLoad = {1, 65535, 65534, 65533},
+    onLeave = {},
+    openedChestIds = {
+    [176] = {1},
+    [177] = {2},
+    [178] = {3},
+    [179] = {4},
+    [180] = {5},
+    [181] = {6},
+    [182] = {7},
+    [183] = {8},
+    [184] = {9},
+    [185] = {10},
+    [186] = {11},
+    [187] = {12},
+    [188] = {13},
+    [189] = {14},
+    [190] = {15},
+    [191] = {16},
+    [192] = {17},
+    [193] = {18},
+    [194] = {19},
+    [195] = {0},
+    },
+    contextActions = {
+    [151] = { kind = "open_door", source = "opcode" },
+    [176] = { kind = "open_chest", source = "opcode", chestIds = {1} },
+    [177] = { kind = "open_chest", source = "opcode", chestIds = {2} },
+    [178] = { kind = "open_chest", source = "opcode", chestIds = {3} },
+    [179] = { kind = "open_chest", source = "opcode", chestIds = {4} },
+    [180] = { kind = "open_chest", source = "opcode", chestIds = {5} },
+    [181] = { kind = "open_chest", source = "opcode", chestIds = {6} },
+    [182] = { kind = "open_chest", source = "opcode", chestIds = {7} },
+    [183] = { kind = "open_chest", source = "opcode", chestIds = {8} },
+    [184] = { kind = "open_chest", source = "opcode", chestIds = {9} },
+    [185] = { kind = "open_chest", source = "opcode", chestIds = {10} },
+    [186] = { kind = "open_chest", source = "opcode", chestIds = {11} },
+    [187] = { kind = "open_chest", source = "opcode", chestIds = {12} },
+    [188] = { kind = "open_chest", source = "opcode", chestIds = {13} },
+    [189] = { kind = "open_chest", source = "opcode", chestIds = {14} },
+    [190] = { kind = "open_chest", source = "opcode", chestIds = {15} },
+    [191] = { kind = "open_chest", source = "opcode", chestIds = {16} },
+    [192] = { kind = "open_chest", source = "opcode", chestIds = {17} },
+    [193] = { kind = "open_chest", source = "opcode", chestIds = {18} },
+    [194] = { kind = "open_chest", source = "opcode", chestIds = {19} },
+    [195] = { kind = "open_chest", source = "opcode", chestIds = {0} },
+    [196] = { kind = "generic_event", source = "opcode" },
+    [197] = { kind = "generic_event", source = "opcode" },
+    [198] = { kind = "generic_event", source = "opcode" },
+    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "7out06.odm", targetName = "布拉卡达沙漠" },
+    },
+    textureNames = {"c2b"},
+    spriteNames = {"0"},
+    castSpellIds = {},
+    timers = {
+    { eventId = 51, sourceEventId = 51, triggerStep = 0, origin = "legacy", triggerKind = "timer", scheduleKind = "interval", intervalHalfMinutes = 1 },
+    },
+})
+
+RegisterEvent(1, nil, function()
+    if IsQBitSet(QBit(570)) then -- Destroyed critter generator in dungeon. Warrior Mage promo quest.
+        SetValue(MapVar(2), 1)
+    end
+    if IsQBitSet(QBit(610)) then -- Built Castle to Level 2 (rescued dwarf guy)
+        evt.SetSprite(1, 0, "0")
+        evt.SetSprite(2, 0, "0")
+        evt.SetSprite(3, 0, "0")
+        evt.SetSprite(4, 0, "0")
+        evt.SetSprite(5, 0, "0")
+        evt.SetSprite(6, 0, "0")
+        evt.SetSprite(7, 0, "0")
+    end
+end)
+
+RegisterEvent(51, nil, function()
+    if IsAtLeast(Counter(4), 1) then return end
+    evt.SetDoorState(3, DoorAction.Trigger)
+    evt.SetDoorState(4, DoorAction.Trigger)
+end)
+
+RegisterEvent(151, nil, function()
+    if IsAtLeast(Counter(4), 1) then return end
+    evt.SetDoorState(1, DoorAction.Trigger)
+    evt.SetDoorState(2, DoorAction.Trigger)
+end)
+
+RegisterEvent(176, "矿车", function()
+    evt.OpenChest(1)
+end, "矿车")
+
+RegisterEvent(177, "矿车", function()
+    evt.OpenChest(2)
+end, "矿车")
+
+RegisterEvent(178, "矿车", function()
+    evt.OpenChest(3)
+end, "矿车")
+
+RegisterEvent(179, "矿车", function()
+    evt.OpenChest(4)
+end, "矿车")
+
+RegisterEvent(180, "矿车", function()
+    evt.OpenChest(5)
+end, "矿车")
+
+RegisterEvent(181, "矿车", function()
+    evt.OpenChest(6)
+end, "矿车")
+
+RegisterEvent(182, "矿车", function()
+    evt.OpenChest(7)
+end, "矿车")
+
+RegisterEvent(183, "矿车", function()
+    evt.OpenChest(8)
+end, "矿车")
+
+RegisterEvent(184, "矿车", function()
+    evt.OpenChest(9)
+end, "矿车")
+
+RegisterEvent(185, "矿车", function()
+    evt.OpenChest(10)
+end, "矿车")
+
+RegisterEvent(186, "矿车", function()
+    evt.OpenChest(11)
+end, "矿车")
+
+RegisterEvent(187, "矿车", function()
+    evt.OpenChest(12)
+end, "矿车")
+
+RegisterEvent(188, "矿车", function()
+    evt.OpenChest(13)
+end, "矿车")
+
+RegisterEvent(189, "箱子", function()
+    evt.OpenChest(14)
+end, "箱子")
+
+RegisterEvent(190, "箱子", function()
+    evt.OpenChest(15)
+end, "箱子")
+
+RegisterEvent(191, "箱子", function()
+    evt.OpenChest(16)
+end, "箱子")
+
+RegisterEvent(192, "箱子", function()
+    evt.OpenChest(17)
+end, "箱子")
+
+RegisterEvent(193, "箱子", function()
+    evt.OpenChest(18)
+end, "箱子")
+
+RegisterEvent(194, "箱子", function()
+    evt.OpenChest(19)
+end, "箱子")
+
+RegisterEvent(195, "箱子", function()
+    evt.OpenChest(0)
+end, "箱子")
+
+RegisterEvent(196, "矿脉", function()
+    if IsAtLeast(MapVar(16), 1) then return end
+    local randomStep = PickRandomOption(196, 2, {2, 4, 6, 8, 2, 2})
+    if randomStep == 2 then
+        AddValue(InventoryItem(1488), 1488) -- Iron-laced ore
+    elseif randomStep == 4 then
+        AddValue(InventoryItem(1489), 1489) -- Siertal-laced ore
+    elseif randomStep == 6 then
+        evt.DamagePlayer(Players.All, const.Damage.Fire, 50)
+        evt.StatusText("塌方！")
+        AddValue(InventoryItem(1490), 1490) -- Phylt-laced ore
+    elseif randomStep == 8 then
+        AddValue(InventoryItem(1490), 1490) -- Phylt-laced ore
+    end
+    SetValue(MapVar(16), 1)
+    evt.SetTexture(1, "c2b")
+end, "矿脉")
+
+RegisterEvent(197, "矿脉", function()
+    if IsAtLeast(MapVar(17), 1) then return end
+    local randomStep = PickRandomOption(197, 2, {2, 4, 6, 8, 2, 2})
+    if randomStep == 2 then
+        AddValue(InventoryItem(1488), 1488) -- Iron-laced ore
+    elseif randomStep == 4 then
+        AddValue(InventoryItem(1489), 1489) -- Siertal-laced ore
+    elseif randomStep == 6 then
+        evt.DamagePlayer(Players.All, const.Damage.Fire, 50)
+        evt.StatusText("塌方！")
+        AddValue(InventoryItem(1490), 1490) -- Phylt-laced ore
+    elseif randomStep == 8 then
+        AddValue(InventoryItem(1490), 1490) -- Phylt-laced ore
+    end
+    SetValue(MapVar(17), 1)
+    evt.SetTexture(5, "c2b")
+end, "矿脉")
+
+RegisterEvent(198, "矿脉", function()
+    if IsAtLeast(MapVar(18), 1) then return end
+    local randomStep = PickRandomOption(198, 2, {2, 4, 6, 8, 2, 2})
+    if randomStep == 2 then
+        AddValue(InventoryItem(1489), 1489) -- Siertal-laced ore
+    elseif randomStep == 4 then
+        AddValue(InventoryItem(1490), 1490) -- Phylt-laced ore
+    elseif randomStep == 6 then
+        evt.DamagePlayer(Players.All, const.Damage.Fire, 50)
+        evt.StatusText("塌方！")
+        AddValue(InventoryItem(1491), 1491) -- Kergar-laced ore
+    elseif randomStep == 8 then
+        AddValue(InventoryItem(1491), 1491) -- Kergar-laced ore
+    end
+    SetValue(MapVar(18), 1)
+    evt.SetTexture(6, "c2b")
+end, "矿脉")
+
+RegisterEvent(376, "雕像", function()
+    evt.ForPlayer(Players.All)
+    if HasItem(1431) then -- Elixir
+        evt.SetSprite(1, 0, "0")
+        SetQBit(QBit(1689)) -- Replacement for NPCs ¹61 ver. 7
+        evt.SpeakNPC(400) -- Jaycen Keldin
+    end
+end, "雕像")
+
+RegisterEvent(377, "雕像", function()
+    evt.ForPlayer(Players.All)
+    if HasItem(1431) then -- Elixir
+        evt.SetSprite(2, 0, "0")
+        SetQBit(QBit(1690)) -- Replacement for NPCs ¹62 ver. 7
+        evt.SpeakNPC(401) -- Yarrow Keldin
+    end
+end, "雕像")
+
+RegisterEvent(378, "雕像", function()
+    evt.ForPlayer(Players.All)
+    if HasItem(1431) then -- Elixir
+        evt.SetSprite(3, 0, "0")
+        SetQBit(QBit(1691)) -- Replacement for NPCs ¹63 ver. 7
+        evt.SpeakNPC(402) -- Fausil Keldin
+    end
+end, "雕像")
+
+RegisterEvent(379, "雕像", function()
+    evt.ForPlayer(Players.All)
+    if HasItem(1431) then -- Elixir
+        evt.SetSprite(4, 0, "0")
+        SetQBit(QBit(1692)) -- Replacement for NPCs ¹64 ver. 7
+        evt.SpeakNPC(403) -- Red Keldin
+    end
+end, "雕像")
+
+RegisterEvent(380, "雕像", function()
+    evt.ForPlayer(Players.All)
+    if HasItem(1431) then -- Elixir
+        evt.SetSprite(5, 0, "0")
+        SetQBit(QBit(1693)) -- Replacement for NPCs ¹65 ver. 7
+        evt.SpeakNPC(404) -- Thom Keldin
+    end
+end, "雕像")
+
+RegisterEvent(381, "雕像", function()
+    evt.ForPlayer(Players.All)
+    if HasItem(1431) then -- Elixir
+        evt.SetSprite(6, 0, "0")
+        SetQBit(QBit(1694)) -- Replacement for NPCs ¹66 ver. 7
+        evt.SpeakNPC(405) -- Arvin Keldin
+    end
+end, "雕像")
+
+RegisterEvent(382, "雕像", function()
+    evt.ForPlayer(Players.All)
+    if HasItem(1431) then -- Elixir
+        evt.SetSprite(7, 0, "0")
+        SetQBit(QBit(1688)) -- Replacement for NPCs ¹60 ver. 7
+        evt.SpeakNPC(399) -- Drathen Keldin
+    end
+end, "雕像")
+
+RegisterEvent(383, nil, function()
+    if not IsQBitSet(QBit(543)) then return end -- Sabotage the lift in the Red Dwarf Mines in the Bracada Desert then return to Steagal Snick in Avlee.
+    if IsQBitSet(QBit(570)) then return end -- Destroyed critter generator in dungeon. Warrior Mage promo quest.
+    evt.ForPlayer(Players.All)
+    if HasItem(1451) then -- Worn Belt
+        SetQBit(QBit(570)) -- Destroyed critter generator in dungeon. Warrior Mage promo quest.
+        RemoveItem(1451) -- Worn Belt
+        ClearQBit(QBit(728)) -- Worn Belt - I lost it
+        SetValue(Counter(4), 0)
+        evt.FaceAnimation(FaceAnimation.LeaveDungeon)
+    end
+end)
+
+RegisterEvent(501, "离开红矮人矿坑", function()
+    evt.MoveToMap(20980, 14802, 1, 1536, 0, 0, 0, 0, "7out06.odm") -- The Bracada Desert
+end, "离开红矮人矿坑")
+
+RegisterEvent(65535, "", function()
+    if IsAtLeast(MapVar(16), 1) then
+        evt.SetTexture(1, "c2b")
+    end
+end)
+
+RegisterEvent(65534, "", function()
+    if IsAtLeast(MapVar(17), 1) then
+        evt.SetTexture(5, "c2b")
+    end
+end)
+
+RegisterEvent(65533, "", function()
+    if IsAtLeast(MapVar(18), 1) then
+        evt.SetTexture(6, "c2b")
+    end
+end)
+

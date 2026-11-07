@@ -1,0 +1,21 @@
+id: mm6
+name: MM6
+sourceGame: mm6
+start:
+  map: oute3.odm
+# Monsters wider than 60 meet the level indoors, and plan their routes, at radius 60: the original engine let a body
+# through any doorway its centre fitted, and its dungeons have 128-wide passages (devdocs/ACTOR_PURSUIT_AND_REACH.md).
+actorMovement:
+  levelRadiusLimit: 60
+# The certificate the party receives the first time it finishes the story (WinGameScreen, CompletionCertificates.h):
+# the original game's certificate background with the OpenYAMM mark; layout in its 640 x 480 units.
+completion:
+  qbit: 784 # Enroth finished (hive_mmmerge.lua, the good ending)
+  continent: Enroth
+  art: 6winbg
+  headline: 恭喜你！
+  text: >-
+    克里根巢穴化为废墟，祸害恩洛斯的恶魔也已被击溃。艾恩法斯特王国终于可以疗伤复原，人民将长久铭记那些深入巢穴核心、又平安归来的英雄。
+  layout:
+    text: [100, 80, 540, 410]
+    mark: [320, 422, 20]

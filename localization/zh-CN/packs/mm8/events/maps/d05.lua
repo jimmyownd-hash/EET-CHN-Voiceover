@@ -1,0 +1,1293 @@
+-- Abandoned Temple
+-- generated from legacy EVT/STR
+
+SetMapMetadata({
+    levitateTrapFaceMask = 0x08000000,
+    onLoad = {1, 2, 3, 4, 5},
+    onLeave = {6, 7, 8, 9, 10},
+    openedChestIds = {
+    [81] = {0},
+    [82] = {1},
+    [83] = {2},
+    [84] = {3},
+    [85] = {4},
+    [86] = {5},
+    [87] = {6},
+    [88] = {7},
+    [89] = {8},
+    [90] = {9},
+    [91] = {10},
+    [92] = {11},
+    [93] = {12},
+    [94] = {13},
+    [95] = {14},
+    [96] = {15},
+    [97] = {16},
+    [98] = {17},
+    [99] = {18},
+    [100] = {19},
+    },
+    contextActions = {
+    [11] = { kind = "open_door", source = "title" },
+    [12] = { kind = "open_door", source = "opcode" },
+    [13] = { kind = "open_door", source = "title" },
+    [14] = { kind = "open_door", source = "title" },
+    [15] = { kind = "open_door", source = "title" },
+    [16] = { kind = "open_door", source = "title" },
+    [17] = { kind = "open_door", source = "title" },
+    [18] = { kind = "open_door", source = "title" },
+    [19] = { kind = "open_door", source = "title" },
+    [20] = { kind = "press_button", source = "title" },
+    [21] = { kind = "press_button", source = "title" },
+    [22] = { kind = "press_button", source = "title" },
+    [23] = { kind = "press_button", source = "title" },
+    [24] = { kind = "press_button", source = "title" },
+    [25] = { kind = "press_button", source = "title" },
+    [26] = { kind = "press_button", source = "title" },
+    [27] = { kind = "press_button", source = "title" },
+    [28] = { kind = "press_button", source = "title" },
+    [29] = { kind = "press_button", source = "title" },
+    [30] = { kind = "press_button", source = "title" },
+    [31] = { kind = "press_button", source = "title" },
+    [32] = { kind = "press_button", source = "title" },
+    [33] = { kind = "press_button", source = "title" },
+    [34] = { kind = "press_button", source = "title" },
+    [35] = { kind = "press_button", source = "title" },
+    [36] = { kind = "press_button", source = "title" },
+    [37] = { kind = "press_button", source = "title" },
+    [38] = { kind = "press_button", source = "title" },
+    [39] = { kind = "press_button", source = "title" },
+    [40] = { kind = "press_button", source = "title" },
+    [41] = { kind = "press_button", source = "title" },
+    [42] = { kind = "press_button", source = "title" },
+    [43] = { kind = "press_button", source = "title" },
+    [44] = { kind = "press_button", source = "title" },
+    [45] = { kind = "press_button", source = "title" },
+    [46] = { kind = "press_button", source = "title" },
+    [47] = { kind = "press_button", source = "title" },
+    [48] = { kind = "press_button", source = "title" },
+    [49] = { kind = "press_button", source = "title" },
+    [50] = { kind = "press_button", source = "title" },
+    [51] = { kind = "press_button", source = "title" },
+    [52] = { kind = "press_button", source = "title" },
+    [53] = { kind = "press_button", source = "title" },
+    [54] = { kind = "press_button", source = "title" },
+    [55] = { kind = "press_button", source = "title" },
+    [56] = { kind = "press_button", source = "title" },
+    [57] = { kind = "press_button", source = "title" },
+    [58] = { kind = "press_button", source = "title" },
+    [59] = { kind = "press_button", source = "title" },
+    [60] = { kind = "press_button", source = "title" },
+    [61] = { kind = "press_button", source = "title" },
+    [62] = { kind = "open_door", source = "title" },
+    [63] = { kind = "open_door", source = "title" },
+    [64] = { kind = "open_door", source = "opcode" },
+    [81] = { kind = "open_chest", source = "opcode", chestIds = {0} },
+    [82] = { kind = "open_chest", source = "opcode", chestIds = {1} },
+    [83] = { kind = "open_chest", source = "opcode", chestIds = {2} },
+    [84] = { kind = "open_chest", source = "opcode", chestIds = {3} },
+    [85] = { kind = "open_chest", source = "opcode", chestIds = {4} },
+    [86] = { kind = "open_chest", source = "opcode", chestIds = {5} },
+    [87] = { kind = "open_chest", source = "opcode", chestIds = {6} },
+    [88] = { kind = "open_chest", source = "opcode", chestIds = {7} },
+    [89] = { kind = "open_chest", source = "opcode", chestIds = {8} },
+    [90] = { kind = "open_chest", source = "opcode", chestIds = {9} },
+    [91] = { kind = "open_chest", source = "opcode", chestIds = {10} },
+    [92] = { kind = "open_chest", source = "opcode", chestIds = {11} },
+    [93] = { kind = "open_chest", source = "opcode", chestIds = {12} },
+    [94] = { kind = "open_chest", source = "opcode", chestIds = {13} },
+    [95] = { kind = "open_chest", source = "opcode", chestIds = {14} },
+    [96] = { kind = "open_chest", source = "opcode", chestIds = {15} },
+    [97] = { kind = "open_chest", source = "opcode", chestIds = {16} },
+    [98] = { kind = "open_chest", source = "opcode", chestIds = {17} },
+    [99] = { kind = "open_chest", source = "opcode", chestIds = {18} },
+    [100] = { kind = "open_chest", source = "opcode", chestIds = {19} },
+    [102] = { kind = "press_button", source = "title" },
+    [103] = { kind = "press_button", source = "title" },
+    [104] = { kind = "press_button", source = "title" },
+    [105] = { kind = "press_button", source = "title" },
+    [106] = { kind = "press_button", source = "title" },
+    [107] = { kind = "press_button", source = "title" },
+    [108] = { kind = "press_button", source = "title" },
+    [109] = { kind = "press_button", source = "title" },
+    [110] = { kind = "open_door", source = "opcode" },
+    [111] = { kind = "secret_event", source = "heuristic", hidden = true },
+    [112] = { kind = "secret_event", source = "heuristic", hidden = true },
+    [113] = { kind = "secret_event", source = "heuristic", hidden = true },
+    [114] = { kind = "secret_event", source = "heuristic", hidden = true },
+    [115] = { kind = "secret_event", source = "heuristic", hidden = true },
+    [453] = { kind = "open_door", source = "opcode" },
+    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "out01.odm", targetName = "刀伤岛" },
+    [502] = { kind = "leave_dungeon", source = "opcode", targetMap = "out01.odm", targetName = "刀伤岛" },
+    [506] = { kind = "open_door", source = "opcode" },
+    [507] = { kind = "open_door", source = "opcode" },
+    [508] = { kind = "open_door", source = "opcode" },
+    [509] = { kind = "open_door", source = "opcode" },
+    [510] = { kind = "open_door", source = "opcode" },
+    [511] = { kind = "open_door", source = "opcode" },
+    [512] = { kind = "open_door", source = "opcode" },
+    [513] = { kind = "press_button", source = "title" },
+    [514] = { kind = "press_button", source = "title" },
+    [515] = { kind = "press_button", source = "title" },
+    [516] = { kind = "press_button", source = "title" },
+    [517] = { kind = "open_door", source = "opcode" },
+    },
+    textureNames = {"t65a05bl", "t65a05br", "t65b11b", "t65b11c"},
+    spriteNames = {},
+    castSpellIds = {2, 24},
+    timers = {
+    { eventId = 110, sourceEventId = 110, triggerStep = 0, origin = "legacy", triggerKind = "timer", scheduleKind = "interval", intervalHalfMinutes = 5 },
+    },
+})
+
+RegisterEvent(1, nil, function()
+    if IsQBitSet(QBit(403)) then return end -- Roster Character In Party 4
+    evt.SpeakNPC(264) -- Simon Templar
+end)
+
+RegisterEvent(2, nil, function()
+    if not IsAtLeast(MapVar(12), 15) then
+        evt.SetDoorState(108, DoorAction.Close)
+        evt.SetDoorState(109, DoorAction.Close)
+        SetValue(MapVar(2), 0)
+        SetValue(MapVar(3), 0)
+        SetValue(MapVar(4), 0)
+        SetValue(MapVar(5), 0)
+        SetValue(MapVar(6), 0)
+        SetValue(MapVar(7), 0)
+        SetValue(MapVar(8), 0)
+        SetValue(MapVar(9), 0)
+        SetValue(MapVar(12), 0)
+        evt.SetDoorState(110, DoorAction.Close)
+        evt.SetDoorState(111, DoorAction.Close)
+        evt.SetDoorState(112, DoorAction.Close)
+        evt.SetDoorState(113, DoorAction.Close)
+        return
+    end
+    evt.SetDoorState(108, DoorAction.Open)
+    evt.SetDoorState(109, DoorAction.Open)
+    evt.SetDoorState(110, DoorAction.Close)
+    evt.SetDoorState(111, DoorAction.Close)
+    evt.SetDoorState(112, DoorAction.Close)
+    evt.SetDoorState(113, DoorAction.Close)
+end)
+
+RegisterNoOpEvent(3, nil)
+
+RegisterNoOpEvent(4, nil)
+
+RegisterNoOpEvent(5, nil)
+
+RegisterEvent(6, nil, function()
+    evt.ForPlayer(Players.All)
+    if HasItem(626) then -- Prophecies of the Sun
+        SetQBit(QBit(218)) -- Prophesies of the Sun - I lost it
+    end
+end)
+
+RegisterNoOpEvent(7, nil)
+
+RegisterNoOpEvent(8, nil)
+
+RegisterNoOpEvent(9, nil)
+
+RegisterEvent(10, nil, function()
+    if IsQBitSet(QBit(136)) then -- Found Prophiecies of the Snake
+        return
+    elseif HasItem(652) then -- Prophecies of the Snake
+        SetQBit(QBit(136)) -- Found Prophiecies of the Snake
+        ClearQBit(QBit(135)) -- Find the Prophecies of the Snake for Pascella Tisk.
+        return
+    else
+        return
+    end
+end)
+
+RegisterEvent(11, "门", function()
+    evt.SetDoorState(1, DoorAction.Open)
+    evt.SetTexture(10, "t65a05bl")
+    evt.SetTexture(11, "t65a05br")
+end, "门")
+
+RegisterEvent(12, nil, function()
+    evt.SetDoorState(2, DoorAction.Open)
+end)
+
+RegisterEvent(13, "门", function()
+    evt.SetDoorState(3, DoorAction.Open)
+end, "门")
+
+RegisterEvent(14, "门", function()
+    evt.SetDoorState(4, DoorAction.Open)
+end, "门")
+
+RegisterEvent(15, "门", function()
+    evt.SetDoorState(5, DoorAction.Open)
+end, "门")
+
+RegisterEvent(16, "门", function()
+    evt.SetDoorState(6, DoorAction.Open)
+end, "门")
+
+RegisterEvent(17, "门", function()
+    evt.SetDoorState(7, DoorAction.Open)
+end, "门")
+
+RegisterEvent(18, "门", function()
+    evt.SetDoorState(8, DoorAction.Open)
+end, "门")
+
+RegisterEvent(19, "门", function()
+    evt.SetDoorState(9, DoorAction.Open)
+end, "门")
+
+RegisterEvent(20, "按钮", function()
+    evt.SetDoorState(10, DoorAction.Open)
+    evt.SetDoorState(52, DoorAction.Open)
+    evt.SetDoorState(11, DoorAction.Close)
+    evt.SetDoorState(53, DoorAction.Close)
+end, "按钮")
+
+RegisterEvent(21, "按钮", function()
+    evt.SetDoorState(11, DoorAction.Open)
+    evt.SetDoorState(53, DoorAction.Open)
+    evt.SetDoorState(10, DoorAction.Close)
+    evt.SetDoorState(52, DoorAction.Close)
+end, "按钮")
+
+RegisterEvent(22, "按钮", function()
+    evt.SetDoorState(12, DoorAction.Open)
+    evt.SetDoorState(54, DoorAction.Open)
+    evt.SetDoorState(13, DoorAction.Close)
+    evt.SetDoorState(55, DoorAction.Close)
+end, "按钮")
+
+RegisterEvent(23, "按钮", function()
+    if not IsAtLeast(MapVar(22), 1) then
+        evt.SummonMonsters(1, 3, 1, 8000, 640, -640, 0, 0) -- encounter slot 1 "Serpentmen" tier C, count 1, pos=(8000, 640, -640), actor group 0, no unique actor name
+        evt.SetDoorState(13, DoorAction.Open)
+        evt.SetDoorState(55, DoorAction.Open)
+        evt.SetDoorState(12, DoorAction.Close)
+        evt.SetDoorState(54, DoorAction.Close)
+        SetValue(MapVar(22), 1)
+        return
+    end
+    evt.SetDoorState(13, DoorAction.Open)
+    evt.SetDoorState(55, DoorAction.Open)
+    evt.SetDoorState(12, DoorAction.Close)
+    evt.SetDoorState(54, DoorAction.Close)
+    SetValue(MapVar(22), 1)
+end, "按钮")
+
+RegisterEvent(24, "按钮", function()
+    evt.SetDoorState(14, DoorAction.Open)
+    evt.SetDoorState(56, DoorAction.Open)
+    evt.SetDoorState(15, DoorAction.Close)
+    evt.SetDoorState(57, DoorAction.Close)
+end, "按钮")
+
+RegisterEvent(25, "按钮", function()
+    evt.SetDoorState(15, DoorAction.Open)
+    evt.SetDoorState(57, DoorAction.Open)
+    evt.SetDoorState(14, DoorAction.Close)
+    evt.SetDoorState(56, DoorAction.Close)
+end, "按钮")
+
+RegisterEvent(26, "按钮", function()
+    evt.SetDoorState(16, DoorAction.Open)
+    evt.SetDoorState(58, DoorAction.Open)
+    evt.SetDoorState(17, DoorAction.Close)
+    evt.SetDoorState(59, DoorAction.Close)
+end, "按钮")
+
+RegisterEvent(27, "按钮", function()
+    evt.SetDoorState(17, DoorAction.Open)
+    evt.SetDoorState(59, DoorAction.Open)
+    evt.SetDoorState(16, DoorAction.Close)
+    evt.SetDoorState(58, DoorAction.Close)
+end, "按钮")
+
+RegisterEvent(28, "按钮", function()
+    if not IsAtLeast(MapVar(21), 1) then
+        evt.SummonMonsters(1, 3, 1, 9600, -192, -640, 0, 0) -- encounter slot 1 "Serpentmen" tier C, count 1, pos=(9600, -192, -640), actor group 0, no unique actor name
+        evt.SetDoorState(18, DoorAction.Open)
+        evt.SetDoorState(60, DoorAction.Open)
+        evt.SetDoorState(19, DoorAction.Close)
+        evt.SetDoorState(61, DoorAction.Close)
+        SetValue(MapVar(21), 1)
+        return
+    end
+    evt.SetDoorState(18, DoorAction.Open)
+    evt.SetDoorState(60, DoorAction.Open)
+    evt.SetDoorState(19, DoorAction.Close)
+    evt.SetDoorState(61, DoorAction.Close)
+    SetValue(MapVar(21), 1)
+end, "按钮")
+
+RegisterEvent(29, "按钮", function()
+    evt.SetDoorState(19, DoorAction.Open)
+    evt.SetDoorState(61, DoorAction.Open)
+    evt.SetDoorState(18, DoorAction.Close)
+    evt.SetDoorState(60, DoorAction.Close)
+end, "按钮")
+
+RegisterEvent(30, "按钮", function()
+    evt.SetDoorState(20, DoorAction.Open)
+    evt.SetDoorState(62, DoorAction.Open)
+    evt.SetDoorState(21, DoorAction.Close)
+    evt.SetDoorState(63, DoorAction.Close)
+end, "按钮")
+
+RegisterEvent(31, "按钮", function()
+    if not IsAtLeast(MapVar(23), 1) then
+        evt.SummonMonsters(1, 3, 1, 6784, -896, -640, 0, 0) -- encounter slot 1 "Serpentmen" tier C, count 1, pos=(6784, -896, -640), actor group 0, no unique actor name
+        evt.SetDoorState(21, DoorAction.Open)
+        evt.SetDoorState(63, DoorAction.Open)
+        evt.SetDoorState(20, DoorAction.Close)
+        evt.SetDoorState(62, DoorAction.Close)
+        SetValue(MapVar(23), 1)
+        return
+    end
+    evt.SetDoorState(21, DoorAction.Open)
+    evt.SetDoorState(63, DoorAction.Open)
+    evt.SetDoorState(20, DoorAction.Close)
+    evt.SetDoorState(62, DoorAction.Close)
+    SetValue(MapVar(23), 1)
+end, "按钮")
+
+RegisterEvent(32, "按钮", function()
+    evt.SetDoorState(22, DoorAction.Open)
+    evt.SetDoorState(64, DoorAction.Open)
+    evt.SetDoorState(23, DoorAction.Close)
+    evt.SetDoorState(65, DoorAction.Close)
+end, "按钮")
+
+RegisterEvent(33, "按钮", function()
+    if not IsAtLeast(MapVar(24), 1) then
+        evt.SummonMonsters(1, 3, 1, 8256, -896, -640, 0, 0) -- encounter slot 1 "Serpentmen" tier C, count 1, pos=(8256, -896, -640), actor group 0, no unique actor name
+        evt.SetDoorState(23, DoorAction.Open)
+        evt.SetDoorState(65, DoorAction.Open)
+        evt.SetDoorState(22, DoorAction.Close)
+        evt.SetDoorState(64, DoorAction.Close)
+        SetValue(MapVar(24), 1)
+        return
+    end
+    evt.SetDoorState(23, DoorAction.Open)
+    evt.SetDoorState(65, DoorAction.Open)
+    evt.SetDoorState(22, DoorAction.Close)
+    evt.SetDoorState(64, DoorAction.Close)
+    SetValue(MapVar(24), 1)
+end, "按钮")
+
+RegisterEvent(34, "按钮", function()
+    if not IsAtLeast(MapVar(25), 1) then
+        evt.SummonMonsters(1, 3, 1, 8832, -960, -640, 0, 0) -- encounter slot 1 "Serpentmen" tier C, count 1, pos=(8832, -960, -640), actor group 0, no unique actor name
+        evt.SetDoorState(24, DoorAction.Open)
+        evt.SetDoorState(66, DoorAction.Open)
+        evt.SetDoorState(25, DoorAction.Close)
+        evt.SetDoorState(67, DoorAction.Close)
+        SetValue(MapVar(25), 1)
+        return
+    end
+    evt.SetDoorState(24, DoorAction.Open)
+    evt.SetDoorState(66, DoorAction.Open)
+    evt.SetDoorState(25, DoorAction.Close)
+    evt.SetDoorState(67, DoorAction.Close)
+    SetValue(MapVar(25), 1)
+end, "按钮")
+
+RegisterEvent(35, "按钮", function()
+    evt.SetDoorState(25, DoorAction.Open)
+    evt.SetDoorState(67, DoorAction.Open)
+    evt.SetDoorState(24, DoorAction.Close)
+    evt.SetDoorState(66, DoorAction.Close)
+end, "按钮")
+
+RegisterEvent(36, "按钮", function()
+    if not IsAtLeast(MapVar(26), 1) then
+        evt.SummonMonsters(1, 3, 1, 9792, -960, -640, 0, 0) -- encounter slot 1 "Serpentmen" tier C, count 1, pos=(9792, -960, -640), actor group 0, no unique actor name
+        evt.SetDoorState(26, DoorAction.Open)
+        evt.SetDoorState(68, DoorAction.Open)
+        evt.SetDoorState(27, DoorAction.Close)
+        evt.SetDoorState(69, DoorAction.Close)
+        SetValue(MapVar(26), 1)
+        return
+    end
+    evt.SetDoorState(26, DoorAction.Open)
+    evt.SetDoorState(68, DoorAction.Open)
+    evt.SetDoorState(27, DoorAction.Close)
+    evt.SetDoorState(69, DoorAction.Close)
+    SetValue(MapVar(26), 1)
+end, "按钮")
+
+RegisterEvent(37, "按钮", function()
+    if not IsAtLeast(MapVar(27), 1) then
+        evt.SummonMonsters(1, 3, 1, 10176, -960, -640, 0, 0) -- encounter slot 1 "Serpentmen" tier C, count 1, pos=(10176, -960, -640), actor group 0, no unique actor name
+        evt.SetDoorState(27, DoorAction.Open)
+        evt.SetDoorState(69, DoorAction.Open)
+        evt.SetDoorState(26, DoorAction.Close)
+        evt.SetDoorState(68, DoorAction.Close)
+        SetValue(MapVar(27), 1)
+        return
+    end
+    evt.SetDoorState(27, DoorAction.Open)
+    evt.SetDoorState(69, DoorAction.Open)
+    evt.SetDoorState(26, DoorAction.Close)
+    evt.SetDoorState(68, DoorAction.Close)
+    SetValue(MapVar(27), 1)
+end, "按钮")
+
+RegisterEvent(38, "按钮", function()
+    if not IsAtLeast(MapVar(28), 1) then
+        evt.SummonMonsters(1, 3, 1, 6208, -1664, -640, 0, 0) -- encounter slot 1 "Serpentmen" tier C, count 1, pos=(6208, -1664, -640), actor group 0, no unique actor name
+        evt.SetDoorState(28, DoorAction.Open)
+        evt.SetDoorState(70, DoorAction.Open)
+        evt.SetDoorState(29, DoorAction.Close)
+        evt.SetDoorState(71, DoorAction.Close)
+        SetValue(MapVar(28), 1)
+        return
+    end
+    evt.SetDoorState(28, DoorAction.Open)
+    evt.SetDoorState(70, DoorAction.Open)
+    evt.SetDoorState(29, DoorAction.Close)
+    evt.SetDoorState(71, DoorAction.Close)
+    SetValue(MapVar(28), 1)
+end, "按钮")
+
+RegisterEvent(39, "按钮", function()
+    if not IsAtLeast(MapVar(29), 1) then
+        evt.SummonMonsters(1, 3, 1, 6592, -1664, -640, 0, 0) -- encounter slot 1 "Serpentmen" tier C, count 1, pos=(6592, -1664, -640), actor group 0, no unique actor name
+        evt.SetDoorState(29, DoorAction.Open)
+        evt.SetDoorState(71, DoorAction.Open)
+        evt.SetDoorState(28, DoorAction.Close)
+        evt.SetDoorState(70, DoorAction.Close)
+        SetValue(MapVar(29), 1)
+        return
+    end
+    evt.SetDoorState(29, DoorAction.Open)
+    evt.SetDoorState(71, DoorAction.Open)
+    evt.SetDoorState(28, DoorAction.Close)
+    evt.SetDoorState(70, DoorAction.Close)
+    SetValue(MapVar(29), 1)
+end, "按钮")
+
+RegisterEvent(40, "按钮", function()
+    evt.SetDoorState(30, DoorAction.Open)
+    evt.SetDoorState(72, DoorAction.Open)
+    evt.SetDoorState(31, DoorAction.Close)
+    evt.SetDoorState(73, DoorAction.Close)
+end, "按钮")
+
+RegisterEvent(41, "按钮", function()
+    evt.SetDoorState(31, DoorAction.Open)
+    evt.SetDoorState(73, DoorAction.Open)
+    evt.SetDoorState(30, DoorAction.Close)
+    evt.SetDoorState(72, DoorAction.Close)
+end, "按钮")
+
+RegisterEvent(42, "按钮", function()
+    evt.SetDoorState(32, DoorAction.Open)
+    evt.SetDoorState(74, DoorAction.Open)
+    evt.SetDoorState(33, DoorAction.Close)
+    evt.SetDoorState(34, DoorAction.Close)
+    evt.SetDoorState(35, DoorAction.Close)
+    evt.SetDoorState(75, DoorAction.Close)
+    evt.SetDoorState(76, DoorAction.Close)
+    evt.SetDoorState(77, DoorAction.Close)
+end, "按钮")
+
+RegisterEvent(43, "按钮", function()
+    if not IsAtLeast(MapVar(32), 1) then
+        evt.SummonMonsters(1, 3, 1, 9024, -1728, -640, 0, 0) -- encounter slot 1 "Serpentmen" tier C, count 1, pos=(9024, -1728, -640), actor group 0, no unique actor name
+        evt.SetDoorState(32, DoorAction.Close)
+        evt.SetDoorState(33, DoorAction.Open)
+        evt.SetDoorState(34, DoorAction.Close)
+        evt.SetDoorState(35, DoorAction.Close)
+        evt.SetDoorState(74, DoorAction.Close)
+        evt.SetDoorState(75, DoorAction.Open)
+        evt.SetDoorState(76, DoorAction.Close)
+        evt.SetDoorState(77, DoorAction.Close)
+        SetValue(MapVar(32), 1)
+        return
+    end
+    evt.SetDoorState(32, DoorAction.Close)
+    evt.SetDoorState(33, DoorAction.Open)
+    evt.SetDoorState(34, DoorAction.Close)
+    evt.SetDoorState(35, DoorAction.Close)
+    evt.SetDoorState(74, DoorAction.Close)
+    evt.SetDoorState(75, DoorAction.Open)
+    evt.SetDoorState(76, DoorAction.Close)
+    evt.SetDoorState(77, DoorAction.Close)
+    SetValue(MapVar(32), 1)
+end, "按钮")
+
+RegisterEvent(44, "按钮", function()
+    if not IsAtLeast(MapVar(33), 1) then
+        evt.SummonMonsters(1, 3, 1, 9408, -1728, -640, 0, 0) -- encounter slot 1 "Serpentmen" tier C, count 1, pos=(9408, -1728, -640), actor group 0, no unique actor name
+        evt.SetDoorState(32, DoorAction.Close)
+        evt.SetDoorState(33, DoorAction.Close)
+        evt.SetDoorState(34, DoorAction.Open)
+        evt.SetDoorState(35, DoorAction.Close)
+        evt.SetDoorState(74, DoorAction.Close)
+        evt.SetDoorState(75, DoorAction.Close)
+        evt.SetDoorState(76, DoorAction.Open)
+        evt.SetDoorState(77, DoorAction.Close)
+        SetValue(MapVar(33), 1)
+        return
+    end
+    evt.SetDoorState(32, DoorAction.Close)
+    evt.SetDoorState(33, DoorAction.Close)
+    evt.SetDoorState(34, DoorAction.Open)
+    evt.SetDoorState(35, DoorAction.Close)
+    evt.SetDoorState(74, DoorAction.Close)
+    evt.SetDoorState(75, DoorAction.Close)
+    evt.SetDoorState(76, DoorAction.Open)
+    evt.SetDoorState(77, DoorAction.Close)
+    SetValue(MapVar(33), 1)
+end, "按钮")
+
+RegisterEvent(45, "按钮", function()
+    evt.SetDoorState(32, DoorAction.Close)
+    evt.SetDoorState(33, DoorAction.Close)
+    evt.SetDoorState(34, DoorAction.Close)
+    evt.SetDoorState(35, DoorAction.Open)
+    evt.SetDoorState(74, DoorAction.Close)
+    evt.SetDoorState(75, DoorAction.Close)
+    evt.SetDoorState(76, DoorAction.Close)
+    evt.SetDoorState(77, DoorAction.Open)
+    SetValue(MapVar(33), 0)
+end, "按钮")
+
+RegisterEvent(46, "按钮", function()
+    if not IsAtLeast(MapVar(34), 1) then
+        evt.SummonMonsters(1, 3, 1, 7104, -2432, -640, 0, 0) -- encounter slot 1 "Serpentmen" tier C, count 1, pos=(7104, -2432, -640), actor group 0, no unique actor name
+        evt.SetDoorState(36, DoorAction.Open)
+        evt.SetDoorState(78, DoorAction.Open)
+        evt.SetDoorState(37, DoorAction.Close)
+        evt.SetDoorState(79, DoorAction.Close)
+        SetValue(MapVar(34), 1)
+        return
+    end
+    evt.SetDoorState(36, DoorAction.Open)
+    evt.SetDoorState(78, DoorAction.Open)
+    evt.SetDoorState(37, DoorAction.Close)
+    evt.SetDoorState(79, DoorAction.Close)
+    SetValue(MapVar(34), 1)
+end, "按钮")
+
+RegisterEvent(47, "按钮", function()
+    if not IsAtLeast(MapVar(35), 1) then
+        evt.SummonMonsters(1, 3, 1, 7488, -2432, -640, 0, 0) -- encounter slot 1 "Serpentmen" tier C, count 1, pos=(7488, -2432, -640), actor group 0, no unique actor name
+        evt.SetDoorState(37, DoorAction.Open)
+        evt.SetDoorState(79, DoorAction.Open)
+        evt.SetDoorState(36, DoorAction.Close)
+        evt.SetDoorState(78, DoorAction.Close)
+        SetValue(MapVar(35), 1)
+        return
+    end
+    evt.SetDoorState(37, DoorAction.Open)
+    evt.SetDoorState(79, DoorAction.Open)
+    evt.SetDoorState(36, DoorAction.Close)
+    evt.SetDoorState(78, DoorAction.Close)
+    SetValue(MapVar(35), 1)
+end, "按钮")
+
+RegisterEvent(48, "按钮", function()
+    evt.SetDoorState(38, DoorAction.Open)
+    evt.SetDoorState(80, DoorAction.Open)
+    evt.SetDoorState(39, DoorAction.Close)
+    evt.SetDoorState(81, DoorAction.Close)
+end, "按钮")
+
+RegisterEvent(49, "按钮", function()
+    if not IsAtLeast(MapVar(36), 1) then
+        evt.SummonMonsters(1, 3, 1, 8832, -2496, -640, 0, 0) -- encounter slot 1 "Serpentmen" tier C, count 1, pos=(8832, -2496, -640), actor group 0, no unique actor name
+        evt.SetDoorState(39, DoorAction.Open)
+        evt.SetDoorState(81, DoorAction.Open)
+        evt.SetDoorState(38, DoorAction.Close)
+        evt.SetDoorState(80, DoorAction.Close)
+        SetValue(MapVar(36), 1)
+        return
+    end
+    evt.SetDoorState(39, DoorAction.Open)
+    evt.SetDoorState(81, DoorAction.Open)
+    evt.SetDoorState(38, DoorAction.Close)
+    evt.SetDoorState(80, DoorAction.Close)
+    SetValue(MapVar(36), 1)
+end, "按钮")
+
+RegisterEvent(50, "按钮", function()
+    if not IsAtLeast(MapVar(37), 1) then
+        evt.SummonMonsters(1, 3, 1, 9600, -2496, -640, 0, 0) -- encounter slot 1 "Serpentmen" tier C, count 1, pos=(9600, -2496, -640), actor group 0, no unique actor name
+        evt.SetDoorState(40, DoorAction.Open)
+        evt.SetDoorState(82, DoorAction.Open)
+        evt.SetDoorState(41, DoorAction.Close)
+        evt.SetDoorState(83, DoorAction.Close)
+        SetValue(MapVar(37), 1)
+        return
+    end
+    evt.SetDoorState(40, DoorAction.Open)
+    evt.SetDoorState(82, DoorAction.Open)
+    evt.SetDoorState(41, DoorAction.Close)
+    evt.SetDoorState(83, DoorAction.Close)
+    SetValue(MapVar(37), 1)
+end, "按钮")
+
+RegisterEvent(51, "按钮", function()
+    if not IsAtLeast(MapVar(38), 1) then
+        evt.SummonMonsters(1, 3, 1, 9984, -2496, -640, 0, 0) -- encounter slot 1 "Serpentmen" tier C, count 1, pos=(9984, -2496, -640), actor group 0, no unique actor name
+        evt.SetDoorState(41, DoorAction.Open)
+        evt.SetDoorState(83, DoorAction.Open)
+        evt.SetDoorState(40, DoorAction.Close)
+        evt.SetDoorState(82, DoorAction.Close)
+        SetValue(MapVar(38), 1)
+        return
+    end
+    evt.SetDoorState(41, DoorAction.Open)
+    evt.SetDoorState(83, DoorAction.Open)
+    evt.SetDoorState(40, DoorAction.Close)
+    evt.SetDoorState(82, DoorAction.Close)
+    SetValue(MapVar(38), 1)
+end, "按钮")
+
+RegisterEvent(52, "按钮", function()
+    evt.SetDoorState(42, DoorAction.Open)
+    evt.SetDoorState(43, DoorAction.Close)
+    evt.SetDoorState(44, DoorAction.Close)
+    evt.SetDoorState(45, DoorAction.Close)
+    evt.SetDoorState(46, DoorAction.Close)
+    evt.SetDoorState(47, DoorAction.Close)
+    evt.SetDoorState(84, DoorAction.Open)
+    evt.SetDoorState(85, DoorAction.Close)
+    evt.SetDoorState(86, DoorAction.Close)
+    evt.SetDoorState(87, DoorAction.Close)
+    evt.SetDoorState(88, DoorAction.Close)
+    evt.SetDoorState(89, DoorAction.Close)
+end, "按钮")
+
+RegisterEvent(53, "按钮", function()
+    if not IsAtLeast(MapVar(39), 1) then
+        evt.SummonMonsters(1, 3, 1, 7872, -3264, -640, 0, 0) -- encounter slot 1 "Serpentmen" tier C, count 1, pos=(7872, -3264, -640), actor group 0, no unique actor name
+        evt.SetDoorState(42, DoorAction.Close)
+        evt.SetDoorState(43, DoorAction.Open)
+        evt.SetDoorState(44, DoorAction.Close)
+        evt.SetDoorState(45, DoorAction.Close)
+        evt.SetDoorState(46, DoorAction.Close)
+        evt.SetDoorState(47, DoorAction.Close)
+        evt.SetDoorState(84, DoorAction.Close)
+        evt.SetDoorState(85, DoorAction.Open)
+        evt.SetDoorState(86, DoorAction.Close)
+        evt.SetDoorState(87, DoorAction.Close)
+        evt.SetDoorState(88, DoorAction.Close)
+        evt.SetDoorState(89, DoorAction.Close)
+        SetValue(MapVar(39), 1)
+        return
+    end
+    evt.SetDoorState(42, DoorAction.Close)
+    evt.SetDoorState(43, DoorAction.Open)
+    evt.SetDoorState(44, DoorAction.Close)
+    evt.SetDoorState(45, DoorAction.Close)
+    evt.SetDoorState(46, DoorAction.Close)
+    evt.SetDoorState(47, DoorAction.Close)
+    evt.SetDoorState(84, DoorAction.Close)
+    evt.SetDoorState(85, DoorAction.Open)
+    evt.SetDoorState(86, DoorAction.Close)
+    evt.SetDoorState(87, DoorAction.Close)
+    evt.SetDoorState(88, DoorAction.Close)
+    evt.SetDoorState(89, DoorAction.Close)
+    SetValue(MapVar(39), 1)
+end, "按钮")
+
+RegisterEvent(54, "按钮", function()
+    if not IsAtLeast(MapVar(40), 1) then
+        evt.SummonMonsters(1, 3, 1, 8256, -3264, -640, 0, 0) -- encounter slot 1 "Serpentmen" tier C, count 1, pos=(8256, -3264, -640), actor group 0, no unique actor name
+        evt.SetDoorState(42, DoorAction.Close)
+        evt.SetDoorState(43, DoorAction.Close)
+        evt.SetDoorState(44, DoorAction.Open)
+        evt.SetDoorState(45, DoorAction.Close)
+        evt.SetDoorState(46, DoorAction.Close)
+        evt.SetDoorState(47, DoorAction.Close)
+        evt.SetDoorState(84, DoorAction.Close)
+        evt.SetDoorState(85, DoorAction.Close)
+        evt.SetDoorState(86, DoorAction.Open)
+        evt.SetDoorState(87, DoorAction.Close)
+        evt.SetDoorState(88, DoorAction.Close)
+        evt.SetDoorState(89, DoorAction.Close)
+        SetValue(MapVar(40), 1)
+        return
+    end
+    evt.SetDoorState(42, DoorAction.Close)
+    evt.SetDoorState(43, DoorAction.Close)
+    evt.SetDoorState(44, DoorAction.Open)
+    evt.SetDoorState(45, DoorAction.Close)
+    evt.SetDoorState(46, DoorAction.Close)
+    evt.SetDoorState(47, DoorAction.Close)
+    evt.SetDoorState(84, DoorAction.Close)
+    evt.SetDoorState(85, DoorAction.Close)
+    evt.SetDoorState(86, DoorAction.Open)
+    evt.SetDoorState(87, DoorAction.Close)
+    evt.SetDoorState(88, DoorAction.Close)
+    evt.SetDoorState(89, DoorAction.Close)
+    SetValue(MapVar(40), 1)
+end, "按钮")
+
+RegisterEvent(55, "按钮", function()
+    evt.SetDoorState(42, DoorAction.Close)
+    evt.SetDoorState(43, DoorAction.Close)
+    evt.SetDoorState(44, DoorAction.Close)
+    evt.SetDoorState(45, DoorAction.Open)
+    evt.SetDoorState(46, DoorAction.Close)
+    evt.SetDoorState(47, DoorAction.Close)
+    evt.SetDoorState(84, DoorAction.Close)
+    evt.SetDoorState(85, DoorAction.Close)
+    evt.SetDoorState(86, DoorAction.Close)
+    evt.SetDoorState(87, DoorAction.Open)
+    evt.SetDoorState(88, DoorAction.Close)
+    evt.SetDoorState(89, DoorAction.Close)
+end, "按钮")
+
+RegisterEvent(56, "按钮", function()
+    if not IsAtLeast(MapVar(41), 1) then
+        evt.SummonMonsters(1, 3, 1, 9024, -3264, -640, 0, 0) -- encounter slot 1 "Serpentmen" tier C, count 1, pos=(9024, -3264, -640), actor group 0, no unique actor name
+        evt.SetDoorState(42, DoorAction.Close)
+        evt.SetDoorState(43, DoorAction.Close)
+        evt.SetDoorState(44, DoorAction.Close)
+        evt.SetDoorState(45, DoorAction.Close)
+        evt.SetDoorState(46, DoorAction.Open)
+        evt.SetDoorState(47, DoorAction.Close)
+        evt.SetDoorState(84, DoorAction.Close)
+        evt.SetDoorState(85, DoorAction.Close)
+        evt.SetDoorState(86, DoorAction.Close)
+        evt.SetDoorState(87, DoorAction.Close)
+        evt.SetDoorState(88, DoorAction.Open)
+        evt.SetDoorState(89, DoorAction.Close)
+        SetValue(MapVar(41), 1)
+        return
+    end
+    evt.SetDoorState(42, DoorAction.Close)
+    evt.SetDoorState(43, DoorAction.Close)
+    evt.SetDoorState(44, DoorAction.Close)
+    evt.SetDoorState(45, DoorAction.Close)
+    evt.SetDoorState(46, DoorAction.Open)
+    evt.SetDoorState(47, DoorAction.Close)
+    evt.SetDoorState(84, DoorAction.Close)
+    evt.SetDoorState(85, DoorAction.Close)
+    evt.SetDoorState(86, DoorAction.Close)
+    evt.SetDoorState(87, DoorAction.Close)
+    evt.SetDoorState(88, DoorAction.Open)
+    evt.SetDoorState(89, DoorAction.Close)
+    SetValue(MapVar(41), 1)
+end, "按钮")
+
+RegisterEvent(57, "按钮", function()
+    evt.SetDoorState(42, DoorAction.Close)
+    evt.SetDoorState(43, DoorAction.Close)
+    evt.SetDoorState(44, DoorAction.Close)
+    evt.SetDoorState(45, DoorAction.Close)
+    evt.SetDoorState(46, DoorAction.Close)
+    evt.SetDoorState(47, DoorAction.Open)
+    evt.SetDoorState(84, DoorAction.Close)
+    evt.SetDoorState(85, DoorAction.Close)
+    evt.SetDoorState(86, DoorAction.Close)
+    evt.SetDoorState(87, DoorAction.Close)
+    evt.SetDoorState(88, DoorAction.Close)
+    evt.SetDoorState(89, DoorAction.Open)
+end, "按钮")
+
+RegisterEvent(58, "按钮", function()
+    if not IsAtLeast(MapVar(42), 1) then
+        evt.SummonMonsters(1, 3, 1, 7296, -4032, -640, 0, 0) -- encounter slot 1 "Serpentmen" tier C, count 1, pos=(7296, -4032, -640), actor group 0, no unique actor name
+        evt.SetDoorState(48, DoorAction.Open)
+        evt.SetDoorState(90, DoorAction.Open)
+        evt.SetDoorState(49, DoorAction.Close)
+        evt.SetDoorState(91, DoorAction.Close)
+        SetValue(MapVar(42), 1)
+        return
+    end
+    evt.SetDoorState(48, DoorAction.Open)
+    evt.SetDoorState(90, DoorAction.Open)
+    evt.SetDoorState(49, DoorAction.Close)
+    evt.SetDoorState(91, DoorAction.Close)
+    SetValue(MapVar(42), 1)
+end, "按钮")
+
+RegisterEvent(59, "按钮", function()
+    if not IsAtLeast(MapVar(43), 1) then
+        evt.SummonMonsters(1, 3, 1, 7680, -4032, -640, 0, 0) -- encounter slot 1 "Serpentmen" tier C, count 1, pos=(7680, -4032, -640), actor group 0, no unique actor name
+        evt.SetDoorState(49, DoorAction.Open)
+        evt.SetDoorState(91, DoorAction.Open)
+        evt.SetDoorState(48, DoorAction.Close)
+        evt.SetDoorState(90, DoorAction.Close)
+        SetValue(MapVar(43), 1)
+        return
+    end
+    evt.SetDoorState(49, DoorAction.Open)
+    evt.SetDoorState(91, DoorAction.Open)
+    evt.SetDoorState(48, DoorAction.Close)
+    evt.SetDoorState(90, DoorAction.Close)
+    SetValue(MapVar(43), 1)
+end, "按钮")
+
+RegisterEvent(60, "按钮", function()
+    if not IsAtLeast(MapVar(44), 1) then
+        evt.SummonMonsters(1, 3, 1, 8448, -4032, -640, 0, 0) -- encounter slot 1 "Serpentmen" tier C, count 1, pos=(8448, -4032, -640), actor group 0, no unique actor name
+        evt.SetDoorState(50, DoorAction.Open)
+        evt.SetDoorState(92, DoorAction.Open)
+        evt.SetDoorState(51, DoorAction.Close)
+        evt.SetDoorState(93, DoorAction.Close)
+        SetValue(MapVar(44), 1)
+        return
+    end
+    evt.SetDoorState(50, DoorAction.Open)
+    evt.SetDoorState(92, DoorAction.Open)
+    evt.SetDoorState(51, DoorAction.Close)
+    evt.SetDoorState(93, DoorAction.Close)
+    SetValue(MapVar(44), 1)
+end, "按钮")
+
+RegisterEvent(61, "按钮", function()
+    if not IsAtLeast(MapVar(45), 1) then
+        evt.SummonMonsters(1, 3, 1, 8832, -4032, -640, 0, 0) -- encounter slot 1 "Serpentmen" tier C, count 1, pos=(8832, -4032, -640), actor group 0, no unique actor name
+        evt.SetDoorState(51, DoorAction.Open)
+        evt.SetDoorState(93, DoorAction.Open)
+        evt.SetDoorState(50, DoorAction.Close)
+        evt.SetDoorState(92, DoorAction.Close)
+        SetValue(MapVar(45), 1)
+        return
+    end
+    evt.SetDoorState(51, DoorAction.Open)
+    evt.SetDoorState(93, DoorAction.Open)
+    evt.SetDoorState(50, DoorAction.Close)
+    evt.SetDoorState(92, DoorAction.Close)
+    SetValue(MapVar(45), 1)
+end, "按钮")
+
+RegisterEvent(62, "门", function()
+    evt.SetDoorState(108, DoorAction.Open)
+end, "门")
+
+RegisterEvent(63, "门", function()
+    if IsAtLeast(MapVar(12), 1) then return end
+    evt.SetDoorState(109, DoorAction.Close)
+    evt.SetDoorState(108, DoorAction.Close)
+    evt.SetDoorState(110, DoorAction.Open)
+    evt.SetDoorState(111, DoorAction.Open)
+    evt.SetDoorState(112, DoorAction.Open)
+    evt.SetDoorState(113, DoorAction.Open)
+    evt.SetTexture(1, "t65b11c")
+    evt.SetTexture(2, "t65b11c")
+    evt.SetTexture(3, "t65b11c")
+    evt.SetTexture(4, "t65b11c")
+    evt.SetTexture(5, "t65b11c")
+    evt.SetTexture(6, "t65b11c")
+    evt.SetTexture(7, "t65b11c")
+    evt.SetTexture(8, "t65b11c")
+    evt.SetLight(1, 1)
+    evt.SetLight(2, 1)
+    evt.SetLight(3, 1)
+    evt.SetLight(4, 1)
+    evt.SetLight(5, 1)
+    evt.SetLight(6, 1)
+    evt.SetLight(7, 1)
+    evt.SetLight(8, 1)
+    AddValue(MapVar(12), 1)
+end, "门")
+
+RegisterEvent(64, "离开废弃神庙", function()
+    evt.SetDoorState(109, DoorAction.Open)
+end, "离开废弃神庙")
+
+RegisterEvent(81, "箱子", function()
+    evt.OpenChest(0)
+end, "箱子")
+
+RegisterEvent(82, "箱子", function()
+    evt.OpenChest(1)
+end, "箱子")
+
+RegisterEvent(83, "箱子", function()
+    evt.OpenChest(2)
+end, "箱子")
+
+RegisterEvent(84, "箱子", function()
+    evt.OpenChest(3)
+end, "箱子")
+
+RegisterEvent(85, "箱子", function()
+    evt.OpenChest(4)
+end, "箱子")
+
+RegisterEvent(86, "箱子", function()
+    evt.OpenChest(5)
+end, "箱子")
+
+RegisterEvent(87, "箱子", function()
+    evt.OpenChest(6)
+end, "箱子")
+
+RegisterEvent(88, "箱子", function()
+    evt.OpenChest(7)
+end, "箱子")
+
+RegisterEvent(89, "箱子", function()
+    evt.OpenChest(8)
+end, "箱子")
+
+RegisterEvent(90, "箱子", function()
+    evt.OpenChest(9)
+end, "箱子")
+
+RegisterEvent(91, "箱子", function()
+    evt.OpenChest(10)
+end, "箱子")
+
+RegisterEvent(92, "箱子", function()
+    evt.OpenChest(11)
+end, "箱子")
+
+RegisterEvent(93, "箱子", function()
+    evt.OpenChest(12)
+end, "箱子")
+
+RegisterEvent(94, "箱子", function()
+    evt.OpenChest(13)
+end, "箱子")
+
+RegisterEvent(95, "箱子", function()
+    evt.OpenChest(14)
+end, "箱子")
+
+RegisterEvent(96, "箱子", function()
+    evt.OpenChest(15)
+end, "箱子")
+
+RegisterEvent(97, "箱子", function()
+    evt.OpenChest(16)
+end, "箱子")
+
+RegisterEvent(98, "箱子", function()
+    evt.OpenChest(17)
+end, "箱子")
+
+RegisterEvent(99, "箱子", function()
+    evt.OpenChest(18)
+end, "箱子")
+
+RegisterEvent(100, "箱子", function()
+    evt.OpenChest(19)
+end, "箱子")
+
+RegisterEvent(101, nil, function()
+    evt.ForPlayer(Players.All)
+    SetValue(Eradicated, 0)
+end)
+
+RegisterEvent(102, "按钮", function()
+    if IsAtLeast(MapVar(12), 15) then return end
+    if not IsAtLeast(MapVar(12), 1) then return end
+    if not IsAtLeast(MapVar(2), 1) then
+        SetValue(MapVar(2), 1)
+        AddValue(MapVar(12), 1)
+        evt.SetTexture(1, "t65b11b")
+        evt.SetLight(1, 0)
+        return
+    end
+    SetValue(MapVar(2), 0)
+    SubtractValue(MapVar(12), 1)
+    evt.SetTexture(1, "t65b11c")
+    evt.SetLight(1, 1)
+end, "按钮")
+
+RegisterEvent(103, "按钮", function()
+    if IsAtLeast(MapVar(12), 15) then return end
+    if not IsAtLeast(MapVar(12), 1) then return end
+    if not IsAtLeast(MapVar(3), 1) then
+        SetValue(MapVar(3), 1)
+        AddValue(MapVar(12), 1)
+        evt.SetTexture(2, "t65b11b")
+        evt.SetLight(2, 0)
+        return
+    end
+    SetValue(MapVar(3), 0)
+    SubtractValue(MapVar(12), 1)
+    evt.SetTexture(2, "t65b11c")
+    evt.SetLight(2, 1)
+end, "按钮")
+
+RegisterEvent(104, "按钮", function()
+    if IsAtLeast(MapVar(12), 15) then return end
+    if not IsAtLeast(MapVar(12), 1) then return end
+    if not IsAtLeast(MapVar(4), 1) then
+        SetValue(MapVar(4), 1)
+        AddValue(MapVar(12), 1)
+        evt.SetTexture(3, "t65b11b")
+        evt.SetLight(3, 0)
+        return
+    end
+    SetValue(MapVar(4), 0)
+    SubtractValue(MapVar(12), 1)
+    evt.SetTexture(3, "t65b11c")
+    evt.SetLight(3, 1)
+end, "按钮")
+
+RegisterEvent(105, "按钮", function()
+    if IsAtLeast(MapVar(12), 15) then return end
+    if not IsAtLeast(MapVar(12), 1) then return end
+    if not IsAtLeast(MapVar(5), 1) then
+        SetValue(MapVar(5), 1)
+        AddValue(MapVar(12), 1)
+        evt.SetTexture(4, "t65b11b")
+        evt.SetLight(4, 0)
+        return
+    end
+    SetValue(MapVar(5), 0)
+    SubtractValue(MapVar(12), 1)
+    evt.SetTexture(4, "t65b11c")
+    evt.SetLight(4, 1)
+end, "按钮")
+
+RegisterEvent(106, "按钮", function()
+    if IsAtLeast(MapVar(12), 15) then return end
+    if not IsAtLeast(MapVar(12), 1) then return end
+    if not IsAtLeast(MapVar(6), 1) then
+        SetValue(MapVar(6), 1)
+        AddValue(MapVar(12), 1)
+        evt.SetTexture(5, "t65b11b")
+        evt.SetLight(5, 0)
+        return
+    end
+    SetValue(MapVar(6), 0)
+    SubtractValue(MapVar(12), 1)
+    evt.SetTexture(5, "t65b11c")
+    evt.SetLight(5, 1)
+end, "按钮")
+
+RegisterEvent(107, "按钮", function()
+    if IsAtLeast(MapVar(12), 15) then return end
+    if not IsAtLeast(MapVar(12), 1) then return end
+    if not IsAtLeast(MapVar(7), 1) then
+        SetValue(MapVar(7), 1)
+        AddValue(MapVar(12), 1)
+        evt.SetTexture(6, "t65b11b")
+        evt.SetLight(6, 0)
+        return
+    end
+    SetValue(MapVar(7), 0)
+    SubtractValue(MapVar(12), 1)
+    evt.SetTexture(6, "t65b11c")
+    evt.SetLight(6, 1)
+end, "按钮")
+
+RegisterEvent(108, "按钮", function()
+    if IsAtLeast(MapVar(12), 15) then return end
+    if not IsAtLeast(MapVar(12), 1) then return end
+    if not IsAtLeast(MapVar(8), 1) then
+        SetValue(MapVar(8), 1)
+        AddValue(MapVar(12), 1)
+        evt.SetTexture(7, "t65b11b")
+        evt.SetLight(7, 0)
+        return
+    end
+    SetValue(MapVar(8), 0)
+    SubtractValue(MapVar(12), 1)
+    evt.SetTexture(7, "t65b11c")
+    evt.SetLight(7, 1)
+end, "按钮")
+
+RegisterEvent(109, "按钮", function()
+    if IsAtLeast(MapVar(12), 15) then return end
+    if not IsAtLeast(MapVar(12), 1) then return end
+    if not IsAtLeast(MapVar(9), 1) then
+        SetValue(MapVar(9), 1)
+        AddValue(MapVar(12), 1)
+        evt.SetTexture(8, "t65b11b")
+        evt.SetLight(8, 0)
+        return
+    end
+    SetValue(MapVar(9), 0)
+    SubtractValue(MapVar(12), 1)
+    evt.SetTexture(8, "t65b11c")
+    evt.SetLight(8, 1)
+end, "按钮")
+
+RegisterEvent(110, nil, function()
+    if IsAtLeast(MapVar(12), 15) then
+        return
+    elseif IsAtLeast(MapVar(12), 9) then
+        evt.StopDoor(110)
+        evt.StopDoor(111)
+        evt.StopDoor(112)
+        evt.StopDoor(113)
+        evt.SetDoorState(108, DoorAction.Open)
+        evt.SetDoorState(109, DoorAction.Open)
+        SetValue(MapVar(12), 15)
+        return
+    else
+        return
+    end
+end)
+
+RegisterEvent(111, nil, function()
+    evt.CastSpell(24, 10, 1, 13184, 2848, -464, 0, 0, 0) -- Poison Spray
+    evt.CastSpell(24, 10, 1, 13088, 2944, -464, 0, 0, 0) -- Poison Spray
+    evt.CastSpell(24, 10, 1, 13184, 3040, -464, 0, 0, 0) -- Poison Spray
+    evt.CastSpell(24, 10, 1, 13280, 2944, -464, 0, 0, 0) -- Poison Spray
+end)
+
+RegisterEvent(112, nil, function()
+    evt.CastSpell(24, 10, 1, 13184, 1824, -464, 0, 0, 0) -- Poison Spray
+    evt.CastSpell(24, 10, 1, 13088, 1920, -464, 0, 0, 0) -- Poison Spray
+    evt.CastSpell(24, 10, 1, 13184, 2016, -464, 0, 0, 0) -- Poison Spray
+    evt.CastSpell(24, 10, 1, 13280, 1920, -464, 0, 0, 0) -- Poison Spray
+end)
+
+RegisterEvent(113, nil, function()
+    evt.CastSpell(24, 10, 1, 10368, 2016, -464, 0, 0, 0) -- Poison Spray
+    evt.CastSpell(24, 10, 1, 10464, 1920, -464, 0, 0, 0) -- Poison Spray
+    evt.CastSpell(24, 10, 1, 10368, 1824, -464, 0, 0, 0) -- Poison Spray
+    evt.CastSpell(24, 10, 1, 10272, 1920, -464, 0, 0, 0) -- Poison Spray
+end)
+
+RegisterEvent(114, nil, function()
+    evt.CastSpell(24, 10, 1, 10368, 3040, -464, 0, 0, 0) -- Poison Spray
+    evt.CastSpell(24, 10, 1, 10464, 2944, -464, 0, 0, 0) -- Poison Spray
+    evt.CastSpell(24, 10, 1, 10368, 2848, -464, 0, 0, 0) -- Poison Spray
+    evt.CastSpell(24, 10, 1, 10272, 2944, -464, 0, 0, 0) -- Poison Spray
+end)
+
+RegisterEvent(115, nil, function()
+    evt.CastSpell(2, 10, 1, 11840, 2496, -448, 0, 0, 0) -- Fire Bolt
+    evt.CastSpell(2, 10, 1, 11840, 2368, -448, 0, 0, 0) -- Fire Bolt
+    evt.CastSpell(2, 10, 1, 11712, 2368, -448, 0, 0, 0) -- Fire Bolt
+    evt.CastSpell(2, 10, 1, 11712, 2496, -448, 0, 0, 0) -- Fire Bolt
+end)
+
+RegisterEvent(402, nil, nil)
+
+RegisterEvent(451, nil, function()
+    if IsAtLeast(MapVar(14), 1) then
+        return
+    end
+    if IsAtLeast(MapVar(13), 3) then
+        return
+    end
+    if not IsAtLeast(MapVar(13), 2) then
+        AddValue(MapVar(13), 1)
+        SetValue(MapVar(14), 1)
+        return
+    end
+    evt.SetFacetBit(15, FacetBits.IsSecret, 1)
+    AddValue(MapVar(13), 1)
+end)
+
+RegisterEvent(452, nil, function()
+    if IsAtLeast(MapVar(14), 1) then
+        SetValue(MapVar(14), 0)
+    end
+end)
+
+RegisterEvent(453, nil, function()
+    evt.SetDoorState(115, DoorAction.Open)
+end)
+
+RegisterEvent(501, "离开废弃神庙", function()
+    evt.MoveToMap(-12789, 18734, 1857, 1536, 0, 0, 0, 1, "out01.odm") -- Dagger Wound Island
+end, "离开废弃神庙")
+
+RegisterEvent(502, "离开废弃神庙", function()
+    evt.MoveToMap(21519, 21106, 97, 1024, 0, 0, 0, 1, "out01.odm") -- Dagger Wound Island
+end, "离开废弃神庙")
+
+RegisterEvent(506, nil, function()
+    evt.SetDoorState(94, DoorAction.Open)
+end)
+
+RegisterEvent(507, nil, function()
+    evt.SetDoorState(95, DoorAction.Open)
+end)
+
+RegisterEvent(508, nil, function()
+    evt.SetDoorState(96, DoorAction.Open)
+end)
+
+RegisterEvent(509, nil, function()
+    evt.SetDoorState(97, DoorAction.Open)
+end)
+
+RegisterEvent(510, nil, function()
+    evt.SetDoorState(98, DoorAction.Open)
+end)
+
+RegisterEvent(511, nil, function()
+    evt.SetDoorState(99, DoorAction.Open)
+end)
+
+RegisterEvent(512, nil, function()
+    evt.SetDoorState(94, DoorAction.Close)
+    evt.SetDoorState(95, DoorAction.Close)
+    evt.SetDoorState(96, DoorAction.Close)
+    evt.SetDoorState(97, DoorAction.Close)
+    evt.SetDoorState(98, DoorAction.Close)
+    evt.SetDoorState(99, DoorAction.Close)
+end)
+
+RegisterEvent(513, "按钮", function()
+    if IsAtLeast(MapVar(31), 1) then return end
+    evt.SetDoorState(100, DoorAction.Close)
+    evt.SetDoorState(101, DoorAction.Open)
+    evt.SetFacetBit(100, FacetBits.Untouchable, 1)
+    evt.SetFacetBit(101, FacetBits.MoveByDoor, 1)
+    SetValue(MapVar(31), 1)
+end, "按钮")
+
+RegisterEvent(514, "按钮", function()
+    if IsAtLeast(MapVar(31), 2) then
+        return
+    end
+    if not IsAtLeast(MapVar(31), 1) then
+        evt.StatusText("按钮纹丝不动")
+        return
+    end
+    evt.SetDoorState(102, DoorAction.Close)
+    evt.SetDoorState(103, DoorAction.Open)
+    evt.SetFacetBit(101, FacetBits.Untouchable, 1)
+    evt.SetFacetBit(101, FacetBits.MoveByDoor, 0)
+    evt.SetFacetBit(102, FacetBits.MoveByDoor, 1)
+    SetValue(MapVar(31), 2)
+end, "按钮")
+
+RegisterEvent(515, "按钮", function()
+    if IsAtLeast(MapVar(31), 3) then
+        return
+    end
+    if not IsAtLeast(MapVar(31), 2) then
+        evt.StatusText("按钮纹丝不动")
+        return
+    end
+    evt.SetDoorState(104, DoorAction.Close)
+    evt.SetDoorState(105, DoorAction.Open)
+    evt.SetFacetBit(102, FacetBits.Untouchable, 1)
+    evt.SetFacetBit(102, FacetBits.MoveByDoor, 0)
+    evt.SetFacetBit(103, FacetBits.MoveByDoor, 1)
+    SetValue(MapVar(31), 3)
+end, "按钮")
+
+RegisterEvent(516, "按钮", function()
+    if IsAtLeast(MapVar(31), 4) then
+        return
+    end
+    if not IsAtLeast(MapVar(31), 3) then
+        evt.StatusText("按钮纹丝不动")
+        return
+    end
+    evt.SetDoorState(106, DoorAction.Close)
+    evt.SetDoorState(107, DoorAction.Open)
+    evt.SetFacetBit(103, FacetBits.Untouchable, 1)
+    evt.SetFacetBit(103, FacetBits.MoveByDoor, 0)
+    SetValue(MapVar(31), 4)
+end, "按钮")
+
+RegisterEvent(517, nil, function()
+    evt.SetDoorState(114, DoorAction.Open)
+end)
+

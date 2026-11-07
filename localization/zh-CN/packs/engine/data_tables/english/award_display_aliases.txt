@@ -1,0 +1,46 @@
+Key	State	State Id	Text	Sort	Notes
+mm8.award.2	party_autonote	492	把力之石带给了费瑞瑞克·塔力米尔。	3	MM8 award 2 remapped by MMMerge
+mm8.award.3	party_autonote	493	恐吓那名鼠人走私者。	1	MM8 award 3 remapped by MMMerge
+mm8.award.4	party_autonote	494	将达德洛斯的信交给爱德加·费尔蒙。	1	MM8 award 4 remapped by MMMerge
+mm8.award.6	party_autonote	495	将维尔拜的骨灰放到巨魔墓穴中。	3	MM8 award 6 remapped by MMMerge
+mm8.award.38	party_autonote	496	赢得了赏金猎人初学者的称号。	5	MM8 award 38 remapped by MMMerge
+mm8.award.39	party_autonote	497	赢得了赏金猎人老手的称号。	5	MM8 award 39 remapped by MMMerge
+mm8.award.40	party_autonote	498	赢得了赏金猎人大师的称号。	5	MM8 award 40 remapped by MMMerge
+mm8.award.52	party_autonote	499	将御火药剂带到铁锈村南边的房子。	3	MM8 award 52 remapped by MMMerge
+mm8.award.53	party_autonote	500	杀死阿尔瓦地区所有的食人妖。	3	MM8 award 53 remapped by MMMerge
+mm8.award.57	party_autonote	501	替绞刑峡谷猎龙人碉堡的卡林最尔找到了灭龙花。	3	MM8 award 57 remapped by MMMerge
+mm8.award.58	party_autonote	502	替绞刑峡谷的巴力安·泪翼找到了灭龙花。	3	MM8 award 58 remapped by MMMerge
+mm8.award.62	party_autonote	503	替绞刑峡谷猎龙人碉堡的阿瓦龙杀死了绞刑峡谷地区所有的龙。	3	MM8 award 62 remapped by MMMerge
+mm8.award.63	party_autonote	504	替焰眼杀死了所有绞刑峡谷地区的猎龙人。	3	MM8 award 63 remapped by MMMerge
+mm8.award.19	party_qbit	1537	晋升为暗精尊者。	2	MM8 award 19 remapped by MMMerge
+mm8.award.21	party_qbit	1538	晋升为战斗巨魔。	2	MM8 award 21 remapped by MMMerge
+mm8.award.22	party_qbit	1539	找到了巨魔的家乡。	2	MM8 award 22 remapped by MMMerge
+mm8.award.23	party_qbit	1540	晋升为勇士。	2	MM8 award 23 remapped by MMMerge
+mm8.award.24	party_qbit	1541	把黑木之矛还给查尔斯·吉科德。	2	MM8 award 24 remapped by MMMerge
+mm8.award.25	party_qbit	1542	救出布拉森·暴风枪。	2	MM8 award 25 remapped by MMMerge
+mm8.award.26	party_qbit	1543	晋升为神龙。	2	MM8 award 26 remapped by MMMerge
+mm8.award.27	party_qbit	1544	将惠索朋之剑交给达夫克劳·红斧。	2	MM8 award 27 remapped by MMMerge
+mm8.award.28	party_qbit	1545	晋升为牛头领主。	2	MM8 award 28 remapped by MMMerge
+mm8.award.30	party_qbit	1546	晋升为太阳主教。	2	MM8 award 30 remapped by MMMerge
+mm8.award.32	party_qbit	1547	晋升为吸血圣王。	2	MM8 award 32 remapped by MMMerge
+mm8.award.34	party_qbit	1548	晋升为巫妖。	2	MM8 award 34 remapped by MMMerge
+mm8.award.51	party_qbit	1549	替血滴镇的希斯找到了蛇之圣像。	3	MM8 award 51 remapped by MMMerge
+mm8.award.55	party_qbit	1550	找到盾牌日蚀。	3	MM8 award 55 remapped by MMMerge
+mm8.award.56	party_qbit	1551	从阿尔瓦的食人妖要塞救出伊拉贝尔·韩特。	3	MM8 award 56 remapped by MMMerge
+mm8.award.59	party_qbit	1552	将神选之药剂带给匕伤岛上的蓝贵德。	3	MM8 award 59 remapped by MMMerge
+mm8.award.60	party_qbit	1553	杀死渡鸦海滨地区所有的猛狼。	3	MM8 award 60 remapped by MMMerge
+mm8.award.61	party_qbit	1554	替爱立安·韩特将假的报告交给了恐怖海盗史坦力。	3	MM8 award 61 remapped by MMMerge
+mm7.arcomage.239	party_arcomage_win	239	在翡翠岛的双棕榈酒馆赢得了亚克曼纸牌对局。	4	MM7 tavern Arcomage win
+mm7.arcomage.240	party_arcomage_win	240	在哈蒙代尔的本店请客酒馆赢得了亚克曼纸牌对局。	4	MM7 tavern Arcomage win
+mm7.arcomage.241	party_arcomage_win	241	在埃拉西亚的狮鹫休憩处赢得了亚克曼纸牌对局。	4	MM7 tavern Arcomage win
+mm7.arcomage.242	party_arcomage_win	242	在图拉林森林的翡翠旅馆赢得了亚克曼纸牌对局。	4	MM7 tavern Arcomage win
+mm7.arcomage.243	party_arcomage_win	243	在德雅的傲慢地精赢得了亚克曼纸牌对局。	4	MM7 tavern Arcomage win
+mm7.arcomage.244	party_arcomage_win	244	在布拉卡达沙漠的熟悉之地赢得了亚克曼纸牌对局。	4	MM7 tavern Arcomage win
+mm7.arcomage.245	party_arcomage_win	245	在塞莱斯特的祝福佳酿赢得了亚克曼纸牌对局。	4	MM7 tavern Arcomage win
+mm7.arcomage.246	party_arcomage_win	246	在深渊的吸血鬼酒廊赢得了亚克曼纸牌对局。	4	MM7 tavern Arcomage win
+mm7.arcomage.247	party_arcomage_win	247	在永暮岛的笑面僧侣赢得了亚克曼纸牌对局。	4	MM7 tavern Arcomage win
+mm7.arcomage.248	party_arcomage_win	248	在雷拳山的命运之愚赢得了亚克曼纸牌对局。	4	MM7 tavern Arcomage win
+mm7.arcomage.249	party_arcomage_win	249	在巴罗丘陵的矿工专营店赢得了亚克曼纸牌对局。	4	MM7 tavern Arcomage win
+mm7.arcomage.250	party_arcomage_win	250	在塔塔利亚的忠诚佣兵赢得了亚克曼纸牌对局。	4	MM7 tavern Arcomage win
+mm7.arcomage.251	party_arcomage_win	251	在艾维利的盆栽小精灵赢得了亚克曼纸牌对局。	4	MM7 tavern Arcomage win
+mm7.arcomage.252	party_arcomage_win	252	在石城的格罗格的烈酒店赢得了亚克曼纸牌对局。	4	MM7 tavern Arcomage win

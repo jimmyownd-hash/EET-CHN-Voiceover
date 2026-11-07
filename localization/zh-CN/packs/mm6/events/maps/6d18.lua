@@ -1,0 +1,538 @@
+-- Gharik's Forge
+-- generated from legacy EVT/STR
+
+SetMapMetadata({
+    onLoad = {52},
+    onLeave = {},
+    openedChestIds = {
+    [44] = {1},
+    [45] = {2},
+    [46] = {3},
+    [47] = {4},
+    [48] = {5, 8},
+    [49] = {6},
+    [50] = {7},
+    },
+    contextActions = {
+    [1] = { kind = "open_door", source = "title" },
+    [2] = { kind = "open_door", source = "opcode" },
+    [3] = { kind = "use_lever", source = "title" },
+    [4] = { kind = "use_lever", source = "title" },
+    [5] = { kind = "use_lever", source = "title" },
+    [6] = { kind = "use_lever", source = "title" },
+    [7] = { kind = "use_lever", source = "title" },
+    [8] = { kind = "use_lever", source = "title" },
+    [9] = { kind = "use_lever", source = "title" },
+    [10] = { kind = "use_lever", source = "title" },
+    [11] = { kind = "use_lever", source = "title" },
+    [12] = { kind = "use_lever", source = "title" },
+    [13] = { kind = "use_lever", source = "title" },
+    [14] = { kind = "use_lever", source = "title" },
+    [15] = { kind = "use_lever", source = "title" },
+    [16] = { kind = "use_lever", source = "title" },
+    [17] = { kind = "use_lever", source = "title" },
+    [18] = { kind = "use_lever", source = "title" },
+    [19] = { kind = "use_lever", source = "title" },
+    [20] = { kind = "use_lever", source = "title" },
+    [21] = { kind = "use_lever", source = "title" },
+    [22] = { kind = "use_lever", source = "title" },
+    [23] = { kind = "use_lever", source = "title" },
+    [24] = { kind = "use_lever", source = "title" },
+    [25] = { kind = "use_lever", source = "title" },
+    [26] = { kind = "use_lever", source = "title" },
+    [29] = { kind = "use_lever", source = "title" },
+    [30] = { kind = "use_lever", source = "title" },
+    [31] = { kind = "teleport", source = "heuristic" },
+    [32] = { kind = "teleport", source = "heuristic" },
+    [33] = { kind = "use_lever", source = "title" },
+    [34] = { kind = "use_lever", source = "title" },
+    [35] = { kind = "use_lever", source = "title" },
+    [36] = { kind = "use_lever", source = "title" },
+    [38] = { kind = "use_lever", source = "title" },
+    [39] = { kind = "use_lever", source = "title" },
+    [40] = { kind = "use_lever", source = "title" },
+    [41] = { kind = "teleport", source = "heuristic" },
+    [42] = { kind = "teleport", source = "heuristic" },
+    [43] = { kind = "teleport", source = "heuristic" },
+    [44] = { kind = "open_chest", source = "opcode", chestIds = {1} },
+    [45] = { kind = "open_chest", source = "opcode", chestIds = {2} },
+    [46] = { kind = "open_chest", source = "opcode", chestIds = {3} },
+    [47] = { kind = "open_chest", source = "opcode", chestIds = {4} },
+    [48] = { kind = "open_chest", source = "opcode", chestIds = {5, 8} },
+    [49] = { kind = "open_chest", source = "opcode", chestIds = {6} },
+    [50] = { kind = "open_chest", source = "opcode", chestIds = {7} },
+    [55] = { kind = "open_door", source = "title" },
+    [62] = { kind = "generic_event", source = "opcode" },
+    [90] = { kind = "leave_dungeon", source = "opcode", targetMap = "oute3.odm", targetName = "新索匹格" },
+    },
+    textureNames = {},
+    spriteNames = {},
+    castSpellIds = {},
+    timers = {
+    { eventId = 54, sourceEventId = 54, triggerStep = 0, origin = "legacy", triggerKind = "timer", scheduleKind = "interval", intervalHalfMinutes = 2 },
+    { eventId = 56, sourceEventId = 56, triggerStep = 0, origin = "legacy", triggerKind = "timer", scheduleKind = "interval", intervalHalfMinutes = 1 },
+    { eventId = 57, sourceEventId = 57, triggerStep = 0, origin = "legacy", triggerKind = "timer", scheduleKind = "interval", intervalHalfMinutes = 1 },
+    { eventId = 58, sourceEventId = 58, triggerStep = 0, origin = "legacy", triggerKind = "timer", scheduleKind = "interval", intervalHalfMinutes = 1 },
+    { eventId = 59, sourceEventId = 59, triggerStep = 0, origin = "legacy", triggerKind = "timer", scheduleKind = "interval", intervalHalfMinutes = 1 },
+    { eventId = 60, sourceEventId = 60, triggerStep = 0, origin = "legacy", triggerKind = "timer", scheduleKind = "interval", intervalHalfMinutes = 1 },
+    { eventId = 61, sourceEventId = 61, triggerStep = 0, origin = "legacy", triggerKind = "timer", scheduleKind = "interval", intervalHalfMinutes = 1 },
+    },
+})
+
+RegisterEvent(1, "门", function()
+    evt.SetDoorState(2, DoorAction.Close)
+end, "门")
+
+RegisterEvent(2, nil, function()
+    evt.SetDoorState(1, DoorAction.Close)
+    evt.SetDoorState(2, DoorAction.Close)
+end)
+
+RegisterEvent(3, "拉杆", function()
+    evt.SetDoorState(3, DoorAction.Close)
+    evt.SetDoorState(4, DoorAction.Close)
+end, "拉杆")
+
+RegisterEvent(4, "拉杆", function()
+    evt.SetDoorState(5, DoorAction.Close)
+    evt.SetDoorState(6, DoorAction.Close)
+end, "拉杆")
+
+RegisterEvent(5, "拉杆", function()
+    evt.SetDoorState(7, DoorAction.Close)
+    evt.SetDoorState(8, DoorAction.Close)
+end, "拉杆")
+
+RegisterEvent(6, "拉杆", function()
+    evt.SetDoorState(9, DoorAction.Close)
+    evt.SetDoorState(10, DoorAction.Close)
+end, "拉杆")
+
+RegisterEvent(7, "拉杆", function()
+    evt.SetDoorState(11, DoorAction.Close)
+    evt.SetDoorState(12, DoorAction.Close)
+end, "拉杆")
+
+RegisterEvent(8, "拉杆", function()
+    evt.SetDoorState(13, DoorAction.Close)
+    evt.SetDoorState(14, DoorAction.Close)
+    evt.SetDoorState(49, DoorAction.Open)
+end, "拉杆")
+
+RegisterEvent(9, "拉杆", function()
+    evt.SetDoorState(15, DoorAction.Close)
+    evt.SetDoorState(16, DoorAction.Close)
+end, "拉杆")
+
+RegisterEvent(10, "拉杆", function()
+    evt.SetDoorState(17, DoorAction.Close)
+    evt.SetDoorState(18, DoorAction.Close)
+end, "拉杆")
+
+RegisterEvent(11, "拉杆", function()
+    evt.SetDoorState(19, DoorAction.Close)
+    evt.SetDoorState(20, DoorAction.Close)
+end, "拉杆")
+
+RegisterEvent(12, "拉杆", function()
+    evt.SetDoorState(21, DoorAction.Close)
+    evt.SetDoorState(22, DoorAction.Close)
+end, "拉杆")
+
+RegisterEvent(13, "拉杆", function()
+    evt.SetDoorState(23, DoorAction.Close)
+    evt.SetDoorState(24, DoorAction.Close)
+end, "拉杆")
+
+RegisterEvent(14, "拉杆", function()
+    evt.SetDoorState(25, DoorAction.Close)
+    evt.SetDoorState(26, DoorAction.Close)
+end, "拉杆")
+
+RegisterEvent(15, "拉杆", function()
+    evt.SetDoorState(27, DoorAction.Trigger)
+    evt.SetDoorState(28, DoorAction.Trigger)
+end, "拉杆")
+
+RegisterEvent(16, "拉杆", function()
+    if IsQBitSet(QBit(1035)) then -- 11 D7, opens tomb in D18.
+        if IsQBitSet(QBit(1223)) then -- Quest item bits for seer
+            evt.ForPlayer(Players.All)
+            if HasItem(2107) then -- Key to Gharik's Laboratory
+                evt.SetDoorState(29, DoorAction.Close)
+                evt.SetDoorState(30, DoorAction.Close)
+                RemoveItem(2107) -- Key to Gharik's Laboratory
+                SetQBit(QBit(1400)) -- NPC
+                ClearQBit(QBit(1223)) -- Quest item bits for seer
+            elseif IsQBitSet(QBit(1400)) then -- NPC
+                evt.SetDoorState(29, DoorAction.Close)
+                evt.SetDoorState(30, DoorAction.Close)
+                RemoveItem(2107) -- Key to Gharik's Laboratory
+                SetQBit(QBit(1400)) -- NPC
+                ClearQBit(QBit(1223)) -- Quest item bits for seer
+            else
+                evt.StatusText("门是锁着的")
+                return
+            end
+            return
+        end
+        evt.SetDoorState(29, DoorAction.Close)
+        evt.SetDoorState(30, DoorAction.Close)
+        RemoveItem(2107) -- Key to Gharik's Laboratory
+        SetQBit(QBit(1400)) -- NPC
+        ClearQBit(QBit(1223)) -- Quest item bits for seer
+        return
+    end
+    evt.ForPlayer(Players.All)
+    if HasItem(2107) then -- Key to Gharik's Laboratory
+        evt.SetDoorState(29, DoorAction.Close)
+        evt.SetDoorState(30, DoorAction.Close)
+        RemoveItem(2107) -- Key to Gharik's Laboratory
+        SetQBit(QBit(1400)) -- NPC
+        ClearQBit(QBit(1223)) -- Quest item bits for seer
+    elseif IsQBitSet(QBit(1400)) then -- NPC
+        evt.SetDoorState(29, DoorAction.Close)
+        evt.SetDoorState(30, DoorAction.Close)
+        RemoveItem(2107) -- Key to Gharik's Laboratory
+        SetQBit(QBit(1400)) -- NPC
+        ClearQBit(QBit(1223)) -- Quest item bits for seer
+    else
+        evt.StatusText("门是锁着的")
+        return
+    end
+end, "拉杆")
+
+RegisterEvent(17, "拉杆", function()
+    evt.SetDoorState(31, DoorAction.Close)
+    evt.SetDoorState(32, DoorAction.Close)
+end, "拉杆")
+
+RegisterEvent(18, "拉杆", function()
+    evt.SetDoorState(33, DoorAction.Close)
+    evt.SetDoorState(34, DoorAction.Close)
+end, "拉杆")
+
+RegisterEvent(19, "拉杆", function()
+    evt.SetDoorState(35, DoorAction.Close)
+    evt.SetDoorState(36, DoorAction.Close)
+end, "拉杆")
+
+RegisterEvent(20, "拉杆", function()
+    evt.SetDoorState(37, DoorAction.Close)
+    evt.SetDoorState(38, DoorAction.Close)
+end, "拉杆")
+
+RegisterEvent(21, "拉杆", function()
+    evt.SetDoorState(39, DoorAction.Close)
+    evt.SetDoorState(40, DoorAction.Close)
+end, "拉杆")
+
+RegisterEvent(22, "拉杆", function()
+    evt.SetDoorState(22, DoorAction.Close)
+end, "拉杆")
+
+RegisterEvent(23, "拉杆", function()
+    evt.SetDoorState(23, DoorAction.Close)
+end, "拉杆")
+
+RegisterEvent(24, "拉杆", function()
+    evt.SetDoorState(24, DoorAction.Close)
+end, "拉杆")
+
+RegisterEvent(25, "拉杆", function()
+    evt.SetDoorState(25, DoorAction.Close)
+end, "拉杆")
+
+RegisterEvent(26, "拉杆", function()
+    evt.SetDoorState(26, DoorAction.Close)
+end, "拉杆")
+
+RegisterEvent(29, "拉杆", function()
+    evt.SetDoorState(29, DoorAction.Close)
+end, "拉杆")
+
+RegisterEvent(30, "拉杆", function()
+    evt.SetDoorState(30, DoorAction.Close)
+end, "拉杆")
+
+RegisterEvent(31, "地砖", function()
+    SetValue(MapVar(2), 0)
+    evt.MoveToMap(1916, 6618, 1, 502, 0, 0, 0, 0)
+end, "地砖")
+
+RegisterEvent(32, "地砖", function()
+    SetValue(MapVar(2), 0)
+    evt.MoveToMap(-2688, 1152, 1152, 1550, 0, 0, 0, 0)
+end, "地砖")
+
+RegisterEvent(33, "拉杆", function()
+    evt.SetDoorState(48, DoorAction.Trigger)
+    evt.SetDoorState(41, DoorAction.Trigger)
+end, "拉杆")
+
+RegisterEvent(34, "拉杆", function()
+    evt.SetDoorState(42, DoorAction.Trigger)
+    evt.SetDoorState(50, DoorAction.Trigger)
+end, "拉杆")
+
+RegisterEvent(35, "拉杆", function()
+    evt.SetDoorState(43, DoorAction.Trigger)
+    evt.SetDoorState(53, DoorAction.Trigger)
+end, "拉杆")
+
+RegisterEvent(36, "拉杆", function()
+    evt.SetDoorState(44, DoorAction.Trigger)
+    evt.SetDoorState(51, DoorAction.Trigger)
+end, "拉杆")
+
+RegisterEvent(38, "拉杆", function()
+    evt.SetDoorState(45, DoorAction.Trigger)
+    evt.SetDoorState(48, DoorAction.Trigger)
+end, "拉杆")
+
+RegisterEvent(39, "拉杆", function()
+    evt.SetDoorState(46, DoorAction.Trigger)
+    evt.SetDoorState(52, DoorAction.Trigger)
+    evt.SetDoorState(49, DoorAction.Open)
+end, "拉杆")
+
+RegisterEvent(40, "拉杆", function()
+    evt.SetDoorState(47, DoorAction.Trigger)
+    evt.SetDoorState(49, DoorAction.Trigger)
+end, "拉杆")
+
+RegisterEvent(41, "地砖", function()
+    SetValue(MapVar(2), 0)
+    evt.MoveToMap(-1822, 4049, 1, 502, 0, 0, 0, 0)
+end, "地砖")
+
+RegisterEvent(42, "地砖", function()
+    SetValue(MapVar(2), 0)
+    evt.MoveToMap(134, 1151, 1, 502, 0, 0, 0, 0)
+end, "地砖")
+
+RegisterEvent(43, "地砖", function()
+    SetValue(MapVar(2), 0)
+    evt.MoveToMap(2324, -141, -2047, 896, 0, 0, 0, 0)
+end, "地砖")
+
+RegisterEvent(44, "箱子", function()
+    evt.OpenChest(1)
+end, "箱子")
+
+RegisterEvent(45, "箱子", function()
+    evt.OpenChest(2)
+end, "箱子")
+
+RegisterEvent(46, "箱子", function()
+    evt.OpenChest(3)
+end, "箱子")
+
+RegisterEvent(47, "箱子", function()
+    evt.OpenChest(4)
+end, "箱子")
+
+RegisterEvent(48, "箱子", function()
+    if not IsAtLeast(MapVar(51), 1) then
+        if not IsQBitSet(QBit(1029)) then -- 5 D18, questbit for getting hourglass
+            SetValue(MapVar(51), 1)
+            evt.OpenChest(5)
+            SetQBit(QBit(1029)) -- 5 D18, questbit for getting hourglass
+            SetQBit(QBit(1207)) -- Quest item bits for seer
+            return
+        end
+        evt.OpenChest(8)
+        return
+    end
+    evt.OpenChest(5)
+    SetQBit(QBit(1029)) -- 5 D18, questbit for getting hourglass
+    SetQBit(QBit(1207)) -- Quest item bits for seer
+end, "箱子")
+
+RegisterEvent(49, "箱子", function()
+    evt.OpenChest(6)
+end, "箱子")
+
+RegisterEvent(50, "箱子", function()
+    evt.OpenChest(7)
+end, "箱子")
+
+RegisterEvent(51, nil, function()
+    SetValue(MapVar(2), 1)
+end)
+
+RegisterEvent(52, nil, function()
+    SetValue(MapVar(2), 0)
+end)
+
+RegisterEvent(53, nil, function()
+    SetValue(MapVar(2), 0)
+end)
+
+RegisterEvent(54, nil, function()
+    if IsAtLeast(MapVar(2), 1) then
+        evt.DamagePlayer(Players.All, const.Damage.Magic, 25)
+    end
+end)
+
+RegisterEvent(55, "门", function()
+    evt.StatusText("门纹丝不动。")
+end, "门")
+
+RegisterEvent(56, nil, function()
+    local randomStep = PickRandomOption(56, 2, {2, 4, 6, 8, 10, 12})
+    if randomStep == 2 then
+        evt.SummonObject(1000, -1792, 1536, -508, 1000, 2, false) -- Gold
+        return
+    elseif randomStep == 4 then
+        evt.SummonObject(1050, -1024, 1408, -508, 1000, 2, true) -- Fireball
+        return
+    elseif randomStep == 6 then
+        evt.SummonObject(1000, -1920, 640, -508, 1000, 2, false) -- Gold
+        return
+    elseif randomStep == 8 then
+        evt.SummonObject(1050, -1664, 256, -508, 1000, 2, true) -- Fireball
+        return
+    elseif randomStep == 10 then
+        evt.SummonObject(1050, -1280, 128, -508, 1000, 2, true) -- Fireball
+        return
+    elseif randomStep == 12 then
+        evt.SummonObject(1050, -1280, -256, -508, 1000, 2, true) -- Fireball
+    end
+end)
+
+RegisterEvent(57, nil, function()
+    local randomStep = PickRandomOption(57, 2, {2, 4, 6, 8, 10})
+    if randomStep == 2 then
+        evt.SummonObject(1000, 2688, 6016, -765, 1000, 2, true) -- Gold
+        return
+    elseif randomStep == 4 then
+        evt.SummonObject(1050, 3328, 5888, -765, 1000, 2, true) -- Fireball
+        return
+    elseif randomStep == 6 then
+        evt.SummonObject(1000, 1664, 5888, -765, 1000, 2, false) -- Gold
+        return
+    elseif randomStep == 8 then
+        evt.SummonObject(1050, 2650, 6528, -765, 1000, 2, false) -- Fireball
+        return
+    elseif randomStep == 10 then
+        evt.SummonObject(1050, 2650, 5248, -765, 1000, 2, false) -- Fireball
+    end
+end)
+
+RegisterEvent(58, nil, function()
+    local randomStep = PickRandomOption(58, 2, {2, 4, 6, 8, 10, 12})
+    if randomStep == 2 then
+        evt.SummonObject(1000, 4608, 256, -2044, 1000, 2, true) -- Gold
+        return
+    elseif randomStep == 4 then
+        evt.SummonObject(1050, 4736, 0, -2044, 1000, 2, false) -- Fireball
+        return
+    elseif randomStep == 6 then
+        evt.SummonObject(1050, 4736, -640, -2044, 1000, 2, true) -- Fireball
+        return
+    elseif randomStep == 8 then
+        evt.SummonObject(1000, 4608, -2816, -2044, 1000, 2, false) -- Gold
+        return
+    elseif randomStep == 10 then
+        evt.SummonObject(1050, 3456, -3456, -2044, 1000, 2, false) -- Fireball
+        return
+    elseif randomStep == 12 then
+        evt.SummonObject(1050, 2816, -3072, -2044, 1000, 2, false) -- Fireball
+    end
+end)
+
+RegisterEvent(59, nil, function()
+    local randomStep = PickRandomOption(59, 2, {2, 4, 6, 8})
+    if randomStep == 2 then
+        evt.SummonObject(1050, -2432, -2304, -2044, 1000, 2, true) -- Fireball
+        return
+    elseif randomStep == 4 then
+        evt.SummonObject(1050, 1408, -1280, -2044, 1000, 2, false) -- Fireball
+        return
+    elseif randomStep == 6 then
+        evt.SummonObject(1050, 512, -1152, -2044, 1000, 2, false) -- Fireball
+        return
+    elseif randomStep == 8 then
+        evt.SummonObject(1000, -1024, -1024, -2044, 1000, 2, false) -- Gold
+    end
+end)
+
+RegisterEvent(60, nil, function()
+    local randomStep = PickRandomOption(60, 2, {2, 4, 6, 8})
+    if randomStep == 2 then
+        evt.SummonObject(1050, 2560, 2304, -1404, 1000, 2, false) -- Fireball
+        return
+    elseif randomStep == 4 then
+        evt.SummonObject(1000, 2560, 1664, -1404, 1000, 2, true) -- Gold
+        return
+    elseif randomStep == 6 then
+        evt.SummonObject(1050, 3456, 2304, -1404, 1000, 2, false) -- Fireball
+        return
+    elseif randomStep == 8 then
+        evt.SummonObject(1050, 3456, 1792, -1404, 1000, 2, false) -- Fireball
+    end
+end)
+
+RegisterEvent(61, nil, function()
+    local randomStep = PickRandomOption(61, 2, {2, 4, 6, 8, 10})
+    if randomStep == 2 then
+        evt.SummonObject(1000, 896, 2816, -765, 1000, 2, true) -- Gold
+        return
+    elseif randomStep == 4 then
+        evt.SummonObject(1050, 1280, 2432, -765, 1000, 2, true) -- Fireball
+        return
+    elseif randomStep == 6 then
+        evt.SummonObject(1000, -512, 2688, -765, 1000, 2, false) -- Gold
+        return
+    elseif randomStep == 8 then
+        evt.SummonObject(1050, -1024, 2304, -765, 1000, 2, false) -- Fireball
+        return
+    elseif randomStep == 10 then
+        evt.SummonObject(1050, -256, 2816, -765, 1000, 2, false) -- Fireball
+    end
+end)
+
+RegisterEvent(62, "书柜", function()
+    if IsAtLeast(MapVar(3), 4) then return end
+    AddValue(MapVar(3), 1)
+    evt.StatusText("发现了东西！")
+    local randomStep = PickRandomOption(62, 4, {4, 6, 8, 10, 12, 14})
+    if randomStep == 4 then
+        AddValue(InventoryItem(1961), 1961) -- Preservation
+        return
+    elseif randomStep == 6 then
+        AddValue(InventoryItem(1973), 1973) -- Charm
+        return
+    elseif randomStep == 8 then
+        AddValue(InventoryItem(1976), 1976) -- Mass Fear
+        return
+    elseif randomStep == 10 then
+        AddValue(InventoryItem(1988), 1988) -- Hammerhands
+        return
+    elseif randomStep == 12 then
+        AddValue(InventoryItem(1965), 1965) -- Shared Life
+        return
+    elseif randomStep == 14 then
+        AddValue(InventoryItem(1962), 1962) -- Heroism
+        return
+    end
+end, "书柜")
+
+RegisterEvent(90, "出口", function()
+    evt.MoveToMap(15585, 11125, 97, 512, 0, 0, 0, 0, "oute3.odm") -- 新索皮加尔
+end, "出口")
+
+RegisterEvent(91, nil, function()
+    if IsAtLeast(MapVar(46), 1) then
+        return
+    elseif IsPlayerBitSet(PlayerBit(59)) then
+        return
+    else
+        SetValue(MapVar(46), 1)
+        SetPlayerBit(PlayerBit(59))
+        AddValue(FireResistance, 25)
+        return
+    end
+end)
+

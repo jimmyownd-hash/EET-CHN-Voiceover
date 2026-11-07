@@ -1,0 +1,22 @@
+id: mm8
+name: MM8
+sourceGame: mm8
+start:
+  map: out01.odm
+# Monsters wider than 60 meet the level indoors, and plan their routes, at radius 60: the original engine let a body
+# through any doorway its centre fitted, and its dungeons have 128-wide passages (devdocs/ACTOR_PURSUIT_AND_REACH.md).
+actorMovement:
+  levelRadiusLimit: 60
+# The certificate the party receives the first time it finishes the story (WinGameScreen, CompletionCertificates.h):
+# the original game's certificate background with the OpenYAMM mark; layout in its 640 x 480 units.
+completion:
+  qbit: 228 # You have seen the Endgame movie
+  continent: Jadame
+  art: winbg
+  headline: 恭喜你！
+  # The original game's ending text.
+  text: >-
+    干得漂亮！你阻止了世界毁灭者，把你的世界从永恒湮灭的边缘拉了回来。生命不仅得以延续，贾丹姆也迎来了新的和平。你缔造的强大同盟将负责这片土地的重建与最终的繁荣。
+  layout:
+    text: [95, 140, 545, 438]
+    mark: [320, 457, 20]

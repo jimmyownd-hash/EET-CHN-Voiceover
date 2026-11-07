@@ -1,0 +1,344 @@
+-- Castle Kriegspire
+-- generated from legacy EVT/STR
+
+SetMapMetadata({
+    onLoad = {63},
+    onLeave = {},
+    openedChestIds = {
+    [41] = {1},
+    [42] = {2, 9},
+    [43] = {3},
+    [44] = {4},
+    [45] = {5},
+    [49] = {6},
+    [50] = {7},
+    },
+    contextActions = {
+    [1] = { kind = "open_door", source = "title" },
+    [2] = { kind = "open_door", source = "title" },
+    [3] = { kind = "open_door", source = "title" },
+    [4] = { kind = "open_door", source = "title" },
+    [5] = { kind = "open_door", source = "title" },
+    [6] = { kind = "open_door", source = "title" },
+    [7] = { kind = "open_door", source = "title" },
+    [8] = { kind = "open_door", source = "title" },
+    [9] = { kind = "open_door", source = "title" },
+    [10] = { kind = "open_door", source = "title" },
+    [11] = { kind = "open_door", source = "title" },
+    [12] = { kind = "open_door", source = "title" },
+    [13] = { kind = "teleport", source = "heuristic" },
+    [15] = { kind = "teleport", source = "heuristic" },
+    [17] = { kind = "open_door", source = "title" },
+    [18] = { kind = "open_door", source = "opcode" },
+    [19] = { kind = "leave_dungeon", source = "opcode", targetMap = "outb1.odm", targetName = "克里格尖塔" },
+    [20] = { kind = "secret_event", source = "heuristic", hidden = true },
+    [21] = { kind = "secret_event", source = "heuristic", hidden = true },
+    [22] = { kind = "secret_event", source = "heuristic", hidden = true },
+    [23] = { kind = "secret_event", source = "heuristic", hidden = true },
+    [27] = { kind = "generic_event", source = "opcode" },
+    [31] = { kind = "open_door", source = "title" },
+    [41] = { kind = "open_chest", source = "opcode", chestIds = {1} },
+    [42] = { kind = "open_chest", source = "opcode", chestIds = {2, 9} },
+    [43] = { kind = "open_chest", source = "opcode", chestIds = {3} },
+    [44] = { kind = "open_chest", source = "opcode", chestIds = {4} },
+    [45] = { kind = "open_chest", source = "opcode", chestIds = {5} },
+    [46] = { kind = "teleport", source = "heuristic" },
+    [49] = { kind = "open_chest", source = "opcode", chestIds = {6} },
+    [50] = { kind = "open_chest", source = "opcode", chestIds = {7} },
+    [58] = { kind = "open_door", source = "title" },
+    [59] = { kind = "open_door", source = "opcode" },
+    [60] = { kind = "open_door", source = "opcode" },
+    [61] = { kind = "teleport", source = "heuristic" },
+    },
+    textureNames = {},
+    spriteNames = {"crysdisc"},
+    castSpellIds = {},
+    timers = {
+    },
+})
+
+RegisterEvent(1, "门", function()
+    evt.SetDoorState(1, DoorAction.Close)
+end, "门")
+
+RegisterEvent(2, "门", function()
+    evt.SetDoorState(2, DoorAction.Close)
+end, "门")
+
+RegisterEvent(3, "门", function()
+    evt.SetDoorState(3, DoorAction.Close)
+end, "门")
+
+RegisterEvent(4, "门", function()
+    evt.SetDoorState(4, DoorAction.Close)
+end, "门")
+
+RegisterEvent(5, "门", function()
+    evt.SetDoorState(5, DoorAction.Close)
+end, "门")
+
+RegisterEvent(6, "门", function()
+    evt.SetDoorState(6, DoorAction.Close)
+end, "门")
+
+RegisterEvent(7, "门", function()
+    evt.SetDoorState(7, DoorAction.Close)
+end, "门")
+
+RegisterEvent(8, "门", function()
+    evt.SetDoorState(8, DoorAction.Close)
+end, "门")
+
+RegisterEvent(9, "门", function()
+    evt.SetDoorState(9, DoorAction.Close)
+end, "门")
+
+RegisterEvent(10, "门", function()
+    evt.SetDoorState(10, DoorAction.Close)
+end, "门")
+
+RegisterEvent(11, "门", function()
+    evt.SetDoorState(11, DoorAction.Close)
+end, "门")
+
+RegisterEvent(12, "门", function()
+    evt.SetDoorState(12, DoorAction.Close)
+end, "门")
+
+RegisterEvent(13, "克里格斯皮尔守护者", function(continueStep)
+    if continueStep == 3 then
+        evt.StatusText("滚开！")
+        return
+    end
+    if continueStep == 5 then
+        if not IsAtLeast(Gold, 50000) then
+            evt.StatusText("滚开！")
+            return
+        end
+        if not IsAtLeast(Gold, 50000) then
+            return
+        end
+        SubtractValue(Gold, 50000)
+        evt.MoveToMap(13487, 3117, 673, 0, 0, 0, 0, 0)
+    end
+    if continueStep ~= nil then return end
+    if not IsQBitSet(QBit(1364)) then -- NPC
+        evt.SetMessage("克里格斯的守卫宣称：『付五万金币，秘密自会揭晓！』")
+        evt.AskQuestion(13, 3, 10, 5, 11, 12, "接受（是/否）？", {"Yes", "Y"})
+        return nil
+    end
+    evt.MoveToMap(13487, 3117, 673, 0, 0, 0, 0, 0)
+end, "克里格斯拜尔守护者")
+
+RegisterEvent(15, nil, function()
+    evt.MoveToMap(5773, 5678, -848, 0, 0, 0, 0, 0)
+end)
+
+RegisterEvent(17, "门", function()
+    evt.SetDoorState(17, DoorAction.Close)
+end, "门")
+
+RegisterEvent(18, nil, function()
+    evt.SetDoorState(18, DoorAction.Close)
+end)
+
+RegisterEvent(19, nil, function()
+    evt.MoveToMap(-11534, -9562, 97, 1536, 0, 0, 0, 0, "outb1.odm") -- Kriegspire
+end)
+
+RegisterEvent(20, nil, function()
+    if IsAtLeast(MapVar(3), 1) then return end
+    evt.SummonMonsters(1, 1, 1, 13458, 3830, 673, 0, 0) -- encounter slot 1 "BMinotaur" tier A, count 1, pos=(13458, 3830, 673), actor group 0, no unique actor name
+    evt.SummonMonsters(1, 1, 1, 13458, 4084, 673, 0, 0) -- encounter slot 1 "BMinotaur" tier A, count 1, pos=(13458, 4084, 673), actor group 0, no unique actor name
+    evt.SummonMonsters(1, 1, 1, 13458, 4518, 673, 0, 0) -- encounter slot 1 "BMinotaur" tier A, count 1, pos=(13458, 4518, 673), actor group 0, no unique actor name
+    evt.SummonMonsters(1, 1, 1, 13054, 4878, 673, 0, 0) -- encounter slot 1 "BMinotaur" tier A, count 1, pos=(13054, 4878, 673), actor group 0, no unique actor name
+    evt.SummonMonsters(1, 2, 1, 12677, 4878, 673, 0, 0) -- encounter slot 1 "BMinotaur" tier B, count 1, pos=(12677, 4878, 673), actor group 0, no unique actor name
+    evt.SummonMonsters(1, 2, 1, 12364, 4878, 673, 0, 0) -- encounter slot 1 "BMinotaur" tier B, count 1, pos=(12364, 4878, 673), actor group 0, no unique actor name
+    evt.SummonMonsters(1, 2, 1, 11991, 4505, 673, 0, 0) -- encounter slot 1 "BMinotaur" tier B, count 1, pos=(11991, 4505, 673), actor group 0, no unique actor name
+    evt.SummonMonsters(1, 2, 1, 11991, 4122, 673, 0, 0) -- encounter slot 1 "BMinotaur" tier B, count 1, pos=(11991, 4122, 673), actor group 0, no unique actor name
+    evt.SummonMonsters(1, 3, 1, 11991, 3688, 673, 0, 0) -- encounter slot 1 "BMinotaur" tier C, count 1, pos=(11991, 3688, 673), actor group 0, no unique actor name
+    evt.SummonMonsters(1, 3, 1, 12424, 3368, 673, 0, 0) -- encounter slot 1 "BMinotaur" tier C, count 1, pos=(12424, 3368, 673), actor group 0, no unique actor name
+    evt.SummonMonsters(1, 3, 1, 12776, 3368, 673, 0, 0) -- encounter slot 1 "BMinotaur" tier C, count 1, pos=(12776, 3368, 673), actor group 0, no unique actor name
+    evt.SummonMonsters(1, 3, 1, 13182, 3368, 673, 0, 0) -- encounter slot 1 "BMinotaur" tier C, count 1, pos=(13182, 3368, 673), actor group 0, no unique actor name
+    SetValue(MapVar(3), 1)
+end)
+
+RegisterEvent(21, nil, function()
+    if IsAtLeast(MapVar(4), 1) then return end
+    evt.SummonMonsters(2, 1, 1, 14033, 4539, 673, 0, 0) -- encounter slot 2 "Cockatrice" tier A, count 1, pos=(14033, 4539, 673), actor group 0, no unique actor name
+    evt.SummonMonsters(2, 1, 1, 14033, 4131, 673, 0, 0) -- encounter slot 2 "Cockatrice" tier A, count 1, pos=(14033, 4131, 673), actor group 0, no unique actor name
+    evt.SummonMonsters(2, 1, 1, 14033, 3720, 673, 0, 0) -- encounter slot 2 "Cockatrice" tier A, count 1, pos=(14033, 3720, 673), actor group 0, no unique actor name
+    evt.SummonMonsters(2, 1, 1, 14444, 3362, 673, 0, 0) -- encounter slot 2 "Cockatrice" tier A, count 1, pos=(14444, 3362, 673), actor group 0, no unique actor name
+    evt.SummonMonsters(2, 2, 1, 14779, 3362, 673, 0, 0) -- encounter slot 2 "Cockatrice" tier B, count 1, pos=(14779, 3362, 673), actor group 0, no unique actor name
+    evt.SummonMonsters(2, 2, 1, 15195, 3362, 673, 0, 0) -- encounter slot 2 "Cockatrice" tier B, count 1, pos=(15195, 3362, 673), actor group 0, no unique actor name
+    evt.SummonMonsters(2, 2, 1, 15548, 3749, 673, 0, 0) -- encounter slot 2 "Cockatrice" tier B, count 1, pos=(15548, 3749, 673), actor group 0, no unique actor name
+    evt.SummonMonsters(2, 2, 1, 15548, 4100, 673, 0, 0) -- encounter slot 2 "Cockatrice" tier B, count 1, pos=(15548, 4100, 673), actor group 0, no unique actor name
+    evt.SummonMonsters(2, 3, 1, 15548, 4460, 673, 0, 0) -- encounter slot 2 "Cockatrice" tier C, count 1, pos=(15548, 4460, 673), actor group 0, no unique actor name
+    evt.SummonMonsters(2, 3, 1, 15142, 4872, 673, 0, 0) -- encounter slot 2 "Cockatrice" tier C, count 1, pos=(15142, 4872, 673), actor group 0, no unique actor name
+    evt.SummonMonsters(2, 3, 1, 14765, 4872, 673, 0, 0) -- encounter slot 2 "Cockatrice" tier C, count 1, pos=(14765, 4872, 673), actor group 0, no unique actor name
+    evt.SummonMonsters(2, 3, 1, 14361, 4872, 673, 0, 0) -- encounter slot 2 "Cockatrice" tier C, count 1, pos=(14361, 4872, 673), actor group 0, no unique actor name
+    SetValue(MapVar(4), 1)
+end)
+
+RegisterEvent(22, nil, function()
+    if IsAtLeast(MapVar(5), 1) then return end
+    evt.SummonMonsters(1, 1, 1, 12990, 1356, 673, 0, 0) -- encounter slot 1 "BMinotaur" tier A, count 1, pos=(12990, 1356, 673), actor group 0, no unique actor name
+    evt.SummonMonsters(1, 1, 1, 12454, 1356, 673, 0, 0) -- encounter slot 1 "BMinotaur" tier A, count 1, pos=(12454, 1356, 673), actor group 0, no unique actor name
+    evt.SummonMonsters(1, 2, 1, 13482, 1741, 673, 0, 0) -- encounter slot 1 "BMinotaur" tier B, count 1, pos=(13482, 1741, 673), actor group 0, no unique actor name
+    evt.SummonMonsters(1, 2, 1, 13482, 2360, 673, 0, 0) -- encounter slot 1 "BMinotaur" tier B, count 1, pos=(13482, 2360, 673), actor group 0, no unique actor name
+    evt.SummonMonsters(1, 3, 1, 13000, 2830, 673, 0, 0) -- encounter slot 1 "BMinotaur" tier C, count 1, pos=(13000, 2830, 673), actor group 0, no unique actor name
+    evt.SummonMonsters(1, 3, 1, 12414, 2830, 673, 0, 0) -- encounter slot 1 "BMinotaur" tier C, count 1, pos=(12414, 2830, 673), actor group 0, no unique actor name
+    evt.SummonMonsters(2, 1, 1, 13147, 2142, 673, 0, 0) -- encounter slot 2 "Cockatrice" tier A, count 1, pos=(13147, 2142, 673), actor group 0, no unique actor name
+    evt.SummonMonsters(2, 1, 1, 12388, 2142, 673, 0, 0) -- encounter slot 2 "Cockatrice" tier A, count 1, pos=(12388, 2142, 673), actor group 0, no unique actor name
+    evt.SummonMonsters(2, 2, 1, 12750, 2501, 673, 0, 0) -- encounter slot 2 "Cockatrice" tier B, count 1, pos=(12750, 2501, 673), actor group 0, no unique actor name
+    evt.SummonMonsters(2, 2, 1, 12750, 1703, 673, 0, 0) -- encounter slot 2 "Cockatrice" tier B, count 1, pos=(12750, 1703, 673), actor group 0, no unique actor name
+    evt.SummonMonsters(2, 3, 1, 12441, 1760, 673, 0, 0) -- encounter slot 2 "Cockatrice" tier C, count 1, pos=(12441, 1760, 673), actor group 0, no unique actor name
+    evt.SummonMonsters(2, 3, 1, 13115, 2297, 673, 0, 0) -- encounter slot 2 "Cockatrice" tier C, count 1, pos=(13115, 2297, 673), actor group 0, no unique actor name
+    SetValue(MapVar(5), 1)
+end)
+
+RegisterEvent(23, nil, function()
+    if IsAtLeast(MapVar(6), 1) then return end
+    evt.SummonMonsters(3, 1, 1, 14373, 2407, 256, 0, 0) -- encounter slot 3 "BDragonFly" tier A, count 1, pos=(14373, 2407, 256), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 1, 1, 14373, 1670, 256, 0, 0) -- encounter slot 3 "BDragonFly" tier A, count 1, pos=(14373, 1670, 256), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 2, 1, 15056, 1670, 256, 0, 0) -- encounter slot 3 "BDragonFly" tier B, count 1, pos=(15056, 1670, 256), actor group 0, no unique actor name
+    evt.SummonMonsters(3, 3, 1, 15056, 2407, 256, 0, 0) -- encounter slot 3 "BDragonFly" tier C, count 1, pos=(15056, 2407, 256), actor group 0, no unique actor name
+    SetValue(MapVar(6), 1)
+end)
+
+RegisterEvent(24, nil, function()
+    if IsAtLeast(MapVar(7), 1) then return end
+    SetValue(MapVar(7), 1)
+    AddValue(Gold, 15000)
+end)
+
+RegisterEvent(25, nil, function()
+    if IsAtLeast(MapVar(8), 1) then return end
+    SetValue(MapVar(8), 1)
+    AddValue(Gold, 15000)
+end)
+
+RegisterEvent(26, "笼子", function()
+    if IsAtLeast(MapVar(10), 1) then return end
+    AddValue(InventoryItem(2165), 2165) -- Roland's Journal
+    SetValue(MapVar(10), 1)
+end, "笼子")
+
+RegisterEvent(27, "克里格斯皮尔馆长", function(continueStep)
+    if continueStep == 2 then
+        evt.StatusText("滚开！")
+        return
+    end
+    if continueStep == 4 then
+        if not IsAtLeast(Gold, 10000) then
+            evt.StatusText("滚开！")
+            return
+        end
+        if not IsAtLeast(Gold, 10000) then
+            return
+        end
+        SubtractValue(Gold, 10000)
+        evt.ForPlayer(Players.All)
+        SetValue(MapVar(1), 0)
+        AddValue(MaxHealth, 0)
+        AddValue(MaxSpellPoints, 0)
+        SubtractValue(1638635, 25)
+    end
+    if continueStep ~= nil then return end
+    evt.SetMessage("克里格斯的管理者宣称：『付一万金币，你将被治愈。』")
+    evt.AskQuestion(27, 2, 10, 4, 11, 12, "接受（是/否）？", {"Yes", "Y"})
+    return nil
+end, "克里格斯拜尔馆主")
+
+RegisterEvent(31, "门", function()
+    evt.SetDoorState(31, DoorAction.Close)
+    evt.SetDoorState(32, DoorAction.Close)
+end, "门")
+
+RegisterEvent(41, "箱子", function()
+    evt.OpenChest(1)
+end, "箱子")
+
+RegisterEvent(42, "箱子", function()
+    if not IsAtLeast(MapVar(2), 1) then
+        if not IsQBitSet(QBit(1323)) then -- NPC
+            evt.OpenChest(2)
+            SetQBit(QBit(1323)) -- NPC
+            SetValue(MapVar(2), 1)
+            return
+        end
+        evt.OpenChest(9)
+        return
+    end
+    evt.OpenChest(2)
+    SetQBit(QBit(1323)) -- NPC
+    SetValue(MapVar(2), 1)
+end, "箱子")
+
+RegisterEvent(43, "箱子", function()
+    evt.OpenChest(3)
+end, "箱子")
+
+RegisterEvent(44, "箱子", function()
+    evt.OpenChest(4)
+end, "箱子")
+
+RegisterEvent(45, "箱子", function()
+    evt.OpenChest(5)
+end, "箱子")
+
+RegisterEvent(46, nil, function()
+    evt.MoveToMap(6383, 4644, 222, 315, 0, 0, 0, 0)
+end)
+
+RegisterEvent(49, "箱子", function()
+    evt.OpenChest(6)
+end, "箱子")
+
+RegisterEvent(50, "箱子", function()
+    evt.OpenChest(7)
+end, "箱子")
+
+RegisterEvent(58, "门", function()
+    evt.StatusText("门纹丝不动")
+end, "门")
+
+RegisterEvent(59, nil, function()
+    SetValue(MapVar(9), 1)
+    evt.SetDoorState(19, DoorAction.Close)
+end)
+
+RegisterEvent(60, nil, function()
+    if IsAtLeast(MapVar(9), 1) then
+        evt.SetDoorState(33, DoorAction.Close)
+        evt.SetDoorState(34, DoorAction.Close)
+    end
+end)
+
+RegisterEvent(61, nil, function()
+    evt.MoveToMap(9111, 2540, 121, 512, 0, 0, 0, 0)
+end)
+
+RegisterEvent(62, nil, function()
+    evt.ForPlayer(Players.All)
+    if IsQBitSet(QBit(1128)) then -- CD3
+        return
+    elseif HasItem(2173) then -- Memory Crystal Epsilon
+        return
+    else
+        evt.SetSprite(290, 1, "crysdisc")
+        evt.ForPlayer(Players.Current)
+        AddValue(InventoryItem(2173), 2173) -- Memory Crystal Epsilon
+        SetQBit(QBit(1128)) -- CD3
+        SetQBit(QBit(1218)) -- Quest item bits for seer
+        return
+    end
+end)
+
+RegisterEvent(63, nil, function()
+    evt.ForPlayer(Players.All)
+    if IsQBitSet(QBit(1128)) or HasItem(2173) then -- CD3
+        evt.SetSprite(290, 1, "crysdisc")
+    end
+end)
+

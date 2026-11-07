@@ -1,0 +1,42 @@
+Standard Bonuses by Group										
+
+Bonus Stat	Of Name	Arm	Shld	Helm	Belt	Cape	Gaunt	Boot	Ring	Amul
+
+Might	之力量	5	0	10	10	10	10	5	10	10
+Intellect	之智慧	5	0	10	10	10	10	5	10	10
+Personality	之魅力	5	0	10	10	10	10	10	10	10
+Endurance	之活力	5	0	10	10	10	10	5	10	10
+Accuracy	之精准	5	0	10	10	10	10	5	10	10
+Speed	之速度	5	0	10	10	10	10	25	10	10
+Luck	之运气	5	0	10	10	10	10	10	10	10
+Hit Points	之生命	10	5	5	0	10	5	10	10	10
+Spell Points	之魔力	10	5	10	0	10	10	10	10	10
+Armor Class	之防御	20	20	10	0	10	10	5	10	10
+Fire Resistance	之火焰抗性	10	10	5	0	10	15	5	10	10
+Air Resistance	之空气抗性	10	10	5	0	10	15	5	10	10
+Water Resistance	之水抗性	10	10	5	0	10	15	5	10	10					
+Earth Resistance	之大地抗性	10	10	5	0	10	15	5	10	10					
+Mind Resistance	之精神抗性	10	10	5	0	10	15	5	10	10					
+Body Resistance	之身体抗性	10	10	5	0	10	15	5	10	10					
+Alchemy skill	之炼金术	0	0	0	5	5	0	5	10	15					
+Stealing skill	之盗窃术	0	0	0	0	0	0	0	0	0					
+Disarm skill	之拆除陷阱	0	0	5	5	5	20	5	15	5					
+ID Item skill	之鉴定物品	0	0	5	5	5	5	5	10	15					
+ID Monster skill	之鉴定怪物	0	0	0	5	5	5	5	10	15					
+Armsmaster skill	之武器精通	10	10	10	10	0	10	10	0	0					
+Dodge skill	之闪避	0 	0	0	15	10	5	10	5	5					
+Unarmed skill	之拳术	0	0	0	5	5	20	10	5	5					
+Great might	之巨力	0	0	0	0	0	0	0	0	0
+
+		120	70	115	70	140	155	110	140	140					
+
+	Bonus range for Standard by Level					Value Mod= (+100 / Plus of Item)									
+	lvl	min	max
+	1	0	0
+	2	1	5
+	3	3	8
+	4	6	12
+	5	10	17
+	6	15	25
+
+	(note weapons can only have Special Bonuses)		

@@ -1,0 +1,1023 @@
+# MAW's spell names and spellbook texts (devdocs/maw/CLASSES_SPELLS_SPEC.md §1-5), written for OpenYAMM's MAW rules
+# after zzMaw-Spells.lua (ascension, adjustSpellTooltips) and zzClasses.lua (dkSkills, assassinSkills). Each part
+# replaces the spell table's; a mastery line set to "" is not shown. `classes:` gives a class line's own text, part by
+# part over the ruleset's.
+#
+# Placeholders, filled with the caster's numbers ({name*factor} scales, {name:1} keeps one decimal). The description
+# reads the caster's school mastery; each mastery line reads its own mastery.
+#   add, dice                 a damage spell's flat damage and dice per point after Ascension and Empower Magic
+#   mastery_add, mastery_dice the same at the line's mastery share (Fire Spike, Lifedrain)
+#   cost                      the spell points a cast costs at the line's mastery
+#   heal_base, heal_per       a heal's base and per-point healing after Ascension (Personality adds more)
+#   cc_seconds                a control spell's seconds on a monster without resistance, before diminishing returns
+#   aura_flat, aura_stat      a flat aura's strength and its stat percent at the caster's skill and level
+#   aura_percent              a percent aura's strength (Haste, Shield, Heroism, Fate, Hammerhands, Empower Magic)
+#   dop_flat, dog_stat        Day of Protection's resistances and Day of the Gods' stat percent
+#   hop_haste, hop_shield, hop_armor, hop_fate   Hour of Power's parts
+#   percent, combo            a class spell's share of a weapon blow at the line's mastery and its combo points
+#   blood_leech               a Death Knight's Blood Leech heal per hit at the line's mastery
+#   hp_share                  Mass Distortion's percent of the target's current hit points
+#   level, skill              the caster's level and school skill
+# The rules add the aura's reservation and holder, the combo points a spell needs and the cast's recovery time.
+
+spells:
+  # Fire
+  1:
+    description: >-
+      光环：提升队伍在黑暗中的照明范围，火焰魔法掌握等级越高越明亮。
+    normal: ""
+    expert: ""
+    master: ""
+    grandmaster: ""
+  2:
+    description: >-
+      向单一目标发射一团火焰。伤害为 {add} + 1-{dice} 点，每点火焰魔法技能提升此值。霹雳火焰安全、有效且施法消耗低。
+  3:
+    description: >-
+      光环：提升队伍 <good>{aura_flat}</> 点火焰抗性和 <good>{aura_stat}</> % 智力。随火焰魔法技能（最高 50 点）与角色等级提升。
+    normal: ""
+    expert: ""
+    master: ""
+    grandmaster: ""
+  4:
+    description: >-
+      光环：队伍武器在原有附魔之上附加魔法火焰。每次近战与射击按武器等级伤害附加火伤，慢速武器加成更多；手持武器还会将此加成附加到每个伤害魔法（范围魔法为 40 %）。双手武器的下限翻倍。
+    normal: "武器等级伤害的 10 %，至少 3 点"
+    expert: "武器等级伤害的 15 %，至少 6 点"
+    master: "武器等级伤害的 20 %，至少 12 点"
+    grandmaster: "武器等级伤害的 25 %，至少 24 点"
+  5:
+    description: >-
+      光环：角色受到攻击和法术后的恢复速度提升 <good>{aura_percent:1}</> %。随火焰魔法技能提升（最高 50 点）。
+    normal: ""
+    expert: ""
+    master: ""
+    grandmaster: ""
+  6:
+    description: >-
+      向单一目标发射火球。命中时火球爆炸，伤害附近所有生物——包括靠得太近的角色。火球伤害为每点火焰魔法技能 1-{dice} 点。
+  7:
+    description: >-
+      在地面放置一枚火焰尖刺，等待生物靠近后爆炸。火焰尖刺在你离开地图或被触发前一直存在。
+    expert: "每点技能造成 1-<good>{mastery_dice}</> 点伤害，最多 5 枚尖刺"
+    master: "每点技能造成 1-<good>{mastery_dice}</> 点伤害，最多 5 枚尖刺"
+    grandmaster: "每点技能造成 1-<good>{mastery_dice}</> 点伤害，最多 5 枚尖刺"
+  8:
+    description: >-
+      光环：用灼热火焰环绕角色，只对他人造成伤害。只要怪物停留在范围内，就对其每秒造成 {add} + 1-{dice} 点伤害（每点火焰魔法技能）。
+    normal: ""
+    expert: ""
+    master: ""
+    grandmaster: ""
+  9:
+    description: >-
+      召唤灼热陨石从天空坠落，在所选目标周围的大范围内砸落。施法时请远离目标。单颗陨石造成 {add} 点伤害，每点火焰魔法技能追加 {dice} 点。此法术仅限室外施放。
+  10:
+    description: >-
+      施放时烧尽视野内所有怪物（角色除外）。每个怪物受到 {add} 点伤害，每点火焰魔法技能追加 1-{dice} 点。此法术仅限室内施放。
+  11:
+    description: >-
+      作为最强的单体直伤法术之一，焚化对单一目标造成巨大伤害。伤害为 {add} 点，每点火焰魔法技能追加 1-{dice} 点。
+  # Air
+  12:
+    description: >-
+      光环：小地图显示怪物和其他兴趣点的位置，空气魔法掌握等级越高，显示越多。
+    normal: ""
+    expert: ""
+    master: ""
+    grandmaster: ""
+  14:
+    description: >-
+      光环：提升队伍 <good>{aura_flat}</> 点空气抗性和 <good>{aura_stat}</> % 速度。随空气魔法技能（最高 50 点）与角色等级提升。
+    normal: ""
+    expert: ""
+    master: ""
+    grandmaster: ""
+  15:
+    description: >-
+      发射小型闪电球，在地图内弹跳直到击中目标或消散。每颗火花造成 1-{dice} 点伤害（每点空气魔法技能）。
+  17:
+    description: >-
+      光环：角色受到的魔法伤害降低 <good>{aura_percent:1}</> %（最多 30 %）。随空气魔法技能提升（最高 50 点）。
+    normal: ""
+    expert: ""
+    master: ""
+    grandmaster: ""
+  18:
+    name: "连锁闪电"
+    description: >-
+      从施法者手中向单一目标放电。必定命中，造成 {add} 点伤害，每点空气魔法技能追加 1-{dice} 点，随后跳跃到范围内最近的怪物。
+    normal: "击中一个怪物"
+    expert: "最多击中 2 个怪物"
+    master: "最多击中 3 个怪物"
+    grandmaster: "最多击中 4 个怪物"
+  19:
+    master: "持续 22.5 分钟 + 每点技能 1.5 分钟"
+    grandmaster: "持续 45 分钟 + 每点技能 3 分钟"
+  20:
+    description: >-
+      内爆摧毁单一目标周围的空气，引发空气急涌、雷鸣，并造成 {add} 点伤害，每点空气魔法技能追加 1-{dice} 点。
+  21:
+    description: >-
+      赋予角色飞行的力量！此法术消耗极高且仅限室外，但非常实用。飞行期间（即未接触地面时）每五分钟消耗 1 点魔力。困难及更高难度、以及严苛模式下，攻击怪物会终止飞行（少数地图除外）。
+  22:
+    description: >-
+      召唤群星自天而降灼烧敌人。共召唤二十颗星，每颗造成 {add} 点伤害，每点空气魔法技能追加 {dice} 点。小心别被爆炸波及！此法术仅限室外施放。
+  # Water
+  24:
+    description: >-
+      向角色正前方的怪物喷射毒液。伤害不高，但很少有怪物对水系魔法有抗性，因此通常有效。每次喷射造成 {add} 点伤害，每点技能追加 1-{dice} 点。
+  25:
+    description: >-
+      光环：提升队伍 <good>{aura_flat}</> 点水抗性和 <good>{aura_stat}</> % 幸运。随水系魔法技能（最高 50 点）与角色等级提升。
+    normal: ""
+    expert: ""
+    master: ""
+    grandmaster: ""
+  26:
+    description: >-
+      向单一目标发射冰箭。飞弹造成 {add} + 1-{dice} 点伤害（每点水系魔法技能）。
+  27:
+    description: >-
+      光环：仅限室外，水上行走让角色可以不沉入水中行走于水面。
+    normal: ""
+    expert: ""
+    master: ""
+    grandmaster: ""
+  28:
+    name: "魔法增效"
+    description: >-
+      光环：队伍的伤害魔法造成 <good>{aura_percent:1}</> % 额外伤害。随水系魔法技能提升（最高 50 点）。
+    normal: ""
+    expert: ""
+    master: ""
+    grandmaster: ""
+  29:
+    description: >-
+      酸液喷发向单一目标喷射极度腐蚀的酸液。必定命中，造成 {add} 点伤害，每点技能追加 1-{dice} 点。
+  32:
+    description: >-
+      向施法者面朝方向发射冰球。冰球命中时碎裂，向除施法者外的所有方向射出 7 枚冰碎片。每枚碎片造成 {add} 点伤害，每点水系魔法技能追加 1-{dice} 点。
+  # Earth
+  34:
+    description: >-
+      用魔法之力拍击怪物，强制它在行动前先从眩晕中恢复。眩晕还会将怪物击退少许。土系魔法技能越高，越容易对强大怪物生效。
+  35:
+    description: >-
+      将单个怪物的步行速度减半、恢复速度加倍。飞升延长效果；怪物的土抗缩短效果。
+    normal: "持续 <good>{cc_seconds:1}</> 秒"
+    expert: "持续 <good>{cc_seconds:1}</> 秒"
+    master: "持续 <good>{cc_seconds:1}</> 秒，怪物减速至 1/4 速度"
+    grandmaster: "持续 <good>{cc_seconds:1}</> 秒，怪物减速至 1/8 速度"
+  36:
+    description: >-
+      光环：提升队伍 <good>{aura_flat}</> 点土抗和 <good>{aura_stat}</> % 活力。随土系魔法技能（最高 50 点）与角色等级提升。
+    normal: ""
+    expert: ""
+    master: ""
+    grandmaster: ""
+  37:
+    description: >-
+      召唤一群叮咬的毒虫纠缠单一目标。虫群造成 {add} 点伤害，每点土系魔法技能追加 1-{dice} 点。
+  38:
+    description: >-
+      光环：提升队伍 <good>{aura_flat}</> 点护甲等级。随土系魔法技能（最高 50 点）与角色等级提升。
+    normal: ""
+    expert: ""
+    master: ""
+    grandmaster: ""
+  39:
+    description: >-
+      向单一怪物发射旋转的剃刀般金属利刃。利刃造成 {add} + 1-{dice} 点伤害（每点土系魔法技能）。利刃是唯一造成物理伤害的法术。
+  41:
+    description: >-
+      释放一颗魔法巨石，接触生物或时间耗尽时爆炸。爆炸造成 {add} 点伤害，每点土系魔法技能追加 1-{dice} 点。
+  43:
+    description: >-
+      发射一颗在空气中爆裂的魔法巨石，让爆炸土石如雨般落向地面。每枚碎片造成 {add} + 1-{dice} 点伤害（每点土系魔法技能）。此法术仅限室外施放。
+  44:
+    description: >-
+      瞬间将单一目标的重量提升到极致，造成其当前生命值 <good>{hp_share:1}</> % 的内伤：15 % 加每点土系魔法技能 0.5 %。更高难度会削弱效果。体积越大，摔得越重。
+  # Spirit
+  46:
+    description: >-
+      光环：提升队伍 <good>{aura_flat}</> 点攻击和 <good>{aura_stat}</> % 精准，以及命中率。随精神魔法技能（最高 50 点）与角色等级提升。
+    normal: ""
+    expert: ""
+    master: ""
+    grandmaster: ""
+  47:
+    description: >-
+      光环：队伍暴击率提升 <good>{aura_percent:1}</> %。随精神魔法技能提升（最高 50 点）。
+    normal: ""
+    expert: ""
+    master: ""
+    grandmaster: ""
+  48:
+    description: >-
+      迫使视野内所有不死怪物逃窜。飞升延长效果；怪物的精神抗性缩短效果。
+    normal: "持续 <good>{cc_seconds:1}</> 秒"
+    expert: "持续 <good>{cc_seconds:1}</> 秒"
+    master: "持续 <good>{cc_seconds:1}</> 秒"
+    grandmaster: "持续 <good>{cc_seconds:1}</> 秒"
+  49:
+    description: >-
+      治疗一名角色；若及时施放可解除诅咒状态：专家可解除每点技能一小时内施加的诅咒，大师为每天，宗师随时。
+    normal: ""
+    expert: "每点技能治疗 <good>{heal_base}</> + <good>{heal_per}</> 点生命"
+    master: "每点技能治疗 <good>{heal_base}</> + <good>{heal_per}</> 点生命"
+    grandmaster: "每点技能治疗 <good>{heal_base}</> + <good>{heal_per}</> 点生命"
+  50:
+    description: >-
+      光环：将每个角色的灵魂与身体紧密绑定。这会延迟因大量生命损失导致的死亡，但无法阻止角色陷入昏迷。
+    normal: ""
+    expert: ""
+    master: ""
+    grandmaster: ""
+  51:
+    description: >-
+      光环：角色近战攻击造成 <good>{aura_percent:1}</> % 额外伤害。随精神魔法技能提升（最高 50 点）。
+    normal: ""
+    expert: ""
+    master: ""
+    grandmaster: ""
+  52:
+    description: >-
+      削弱目标身体与灵魂的联系，对施法者附近的全部怪物造成 {add} + 2-{dice} 点伤害（每点精神魔法技能）。
+  53:
+    grandmaster: "可随时解除死亡与湮灭状态"
+  54:
+    master: "每两点技能向生命池注入 <good>{heal_base}</> + <good>{heal_per}</> 点生命"
+    grandmaster: "每两点技能向生命池注入 <good>{heal_base}</> + <good>{heal_per}</> 点生命"
+  55:
+    grandmaster: "每点技能治疗 <good>{heal_base}</> + <good>{heal_per}</> 点生命"
+  56:
+    name: "冥想"
+    description: >-
+      光环：队伍随时间恢复魔力。恢复速度随每个角色的魔力池、角色等级和精神魔法技能（最高 50 点）提升，脱离战斗时更快。
+    normal: ""
+    expert: ""
+    master: ""
+    grandmaster: ""
+
+  # Mind
+  58:
+    description: >-
+      光环：提升队伍 <good>{aura_flat}</> 点精神抗性和 <good>{aura_stat}</> % 魅力。随心灵魔法技能（最高 50 点）与角色等级提升。
+    normal: ""
+    expert: ""
+    master: ""
+    grandmaster: ""
+  59:
+    description: >-
+      发射一道心灵冲击，损伤单一目标的神经系统。心灵冲击造成 {add} 点伤害，每点心灵魔法技能追加 1-{dice} 点。
+  60:
+    description: >-
+      安抚单一目标生物，消除它对角色的敌意。若它受到伤害，会再次敌对。飞升延长效果；怪物的心灵抗性缩短效果。
+    normal: ""
+    expert: "持续 <good>{cc_seconds:1}</> 秒"
+    master: "持续 <good>{cc_seconds:1}</> 秒"
+    grandmaster: "持续 <good>{cc_seconds:1}</> 秒"
+  62:
+    description: >-
+      使单一怪物陷入战斗狂乱，攻击最近的生物直到法术结束。飞升延长效果；怪物的心灵抗性缩短效果。
+    normal: ""
+    expert: "持续 <good>{cc_seconds:1}</> 秒"
+    master: "持续 <good>{cc_seconds:1}</> 秒"
+    grandmaster: "持续 <good>{cc_seconds:1}</> 秒"
+  63:
+    description: >-
+      施法者视野内的所有生物惧怕施法者并逃窜。飞升延长效果；怪物的心灵抗性缩短效果。
+    normal: ""
+    expert: ""
+    master: "持续 <good>{cc_seconds:1}</> 秒"
+    grandmaster: "持续 <good>{cc_seconds:1}</> 秒"
+  65:
+    description: >-
+      以心灵伤害魔法攻击单一生物。心灵震荡造成 {add} 点伤害，每点心灵魔法技能追加 1-{dice} 点。
+  66:
+    description: >-
+      控制目标的心灵；被奴役的生物会攻击对施法者敌对的怪物。飞升延长效果；怪物的心灵抗性缩短效果。
+    grandmaster: "持续 <good>{cc_seconds:1}</> 秒"
+  # Body
+  68:
+    description: >-
+      治疗单一角色。你的魅力会提升每次治疗效果。
+    normal: "每点技能治疗 <good>{heal_base}</> + <good>{heal_per}</> 点生命"
+    expert: "每点技能治疗 <good>{heal_base}</> + <good>{heal_per}</> 点生命"
+    master: "每点技能治疗 <good>{heal_base}</> + <good>{heal_per}</> 点生命"
+    grandmaster: "每点技能治疗 <good>{heal_base}</> + <good>{heal_per}</> 点生命"
+  69:
+    description: >-
+      光环：提升队伍 <good>{aura_flat}</> 点身体抗性和 <good>{aura_stat}</> % 力量。随身体魔法技能（最高 50 点）与角色等级提升。
+    normal: ""
+    expert: ""
+    master: ""
+    grandmaster: ""
+  70:
+    description: >-
+      直接对单一生物造成魔法伤害。伤害造成 {add} 点，每点身体魔法技能追加 1-{dice} 点。
+  71:
+    description: >-
+      光环：队伍随时间恢复生命。恢复速度随每个角色的生命值、角色等级和身体魔法技能（最高 50 点）提升，脱离战斗时更快。
+    normal: ""
+    expert: ""
+    master: ""
+    grandmaster: ""
+  73:
+    description: >-
+      光环：角色徒手攻击造成 <good>{aura_percent:1}</> % 额外伤害。随身体魔法技能提升（最高 50 点）。
+    normal: ""
+    expert: ""
+    master: ""
+    grandmaster: ""
+  74:
+    name: "强效治疗"
+    description: >-
+      治疗单一角色；若及时施放可治愈疾病：大师可解除每点技能一天内施加的疾病，宗师随时。
+    normal: ""
+    expert: ""
+    master: "每点技能治疗 <good>{heal_base}</> + <good>{heal_per}</> 点生命"
+    grandmaster: "每点技能治疗 <good>{heal_base}</> + <good>{heal_per}</> 点生命"
+  75:
+    description: >-
+      光环：整个队伍免疫造成中毒、疾病、石化、麻痹、虚弱、死亡和湮灭的法术与怪物能力。
+    normal: ""
+    expert: ""
+    master: ""
+    grandmaster: ""
+  76:
+    description: >-
+      飞拳向单一对手掷出沉重的魔法之力，造成 {add} 点伤害，每点身体魔法技能追加 1-{dice} 点。
+  77:
+    description: >-
+      同时治疗队伍中的每个角色。你的魅力会提升每次治疗效果。
+    grandmaster: "每点技能治疗 <good>{heal_base}</> + <good>{heal_per}</> 点生命"
+  # Light
+  78:
+    description: >-
+      向单一目标发射光箭，造成 {add} + 1-{dice} 点伤害（每点光明魔法技能）。对不死生物伤害翻倍。
+  79:
+    description: >-
+      驱散延长不死生物生命的邪恶魔法，对单一目标造成 {add} 点伤害，每点光明魔法技能追加 1-{dice} 点。此法术仅对不死生物生效。
+  81:
+    description: >-
+      麻痹阻止怪物移动或攻击。飞升延长效果；怪物的光明抗性缩短效果；首领被定身一半时间。
+    normal: "持续 <good>{cc_seconds:1}</> 秒"
+    expert: "持续 <good>{cc_seconds:1}</> 秒"
+    master: "持续 <good>{cc_seconds:1}</> 秒"
+    grandmaster: "持续 <good>{cc_seconds:1}</> 秒"
+  83:
+    description: >-
+      光环：将角色全部七项属性提升 <good>{dog_stat:1}</> %。随光明魔法技能提升（最高 75 点）；抗性光环的属性加成不计入。
+    normal: ""
+    expert: ""
+    master: ""
+    grandmaster: ""
+  84:
+    description: >-
+      对视野内所有生物造成 {add} 点伤害，每点光明魔法技能追加 {dice} 点。此法术仅限室内施放。
+  85:
+    description: >-
+      光环：将队伍全部六项抗性提升 <good>{dop_flat}</> 点。随光明魔法技能（最高 75 点）与角色等级提升；更强的抗性光环将取而代之。
+    normal: ""
+    expert: ""
+    master: ""
+    grandmaster: ""
+  86:
+    description: >-
+      光环：以光明魔法技能三分之二（最高 75 点）赋予队伍加速（<good>{hop_haste:1}</> %）、护盾（<good>{hop_shield:1}</> %）、石肤（+<good>{hop_armor}</> 护甲等级）与命运（<good>{hop_fate:1}</> %）；更强的同类光环将取而代之。
+    normal: ""
+    expert: ""
+    master: ""
+    grandmaster: ""
+  87:
+    description: >-
+      将阳光聚焦于一个不幸的生物，造成 {add} 点伤害，每点光明魔法技能追加 1-{dice} 点。室内随时可施放；室外仅限白天。
+  # Dark
+  90:
+    description: >-
+      在施法者前方形成有毒的恶臭气体云，缓慢飘离角色。毒云造成 {add} 点伤害，每点黑暗魔法技能追加 1-{dice} 点，持续到有东西撞入其中。
+  91:
+    name: "吸血光环"
+    description: >-
+      光环：队伍的攻击按造成的部分伤害治疗攻击者（不超过其正常生命上限）：近战伤害的 5 %，远程与法术伤害的 2.5 %。
+    normal: ""
+    expert: ""
+    master: ""
+    grandmaster: ""
+  92:
+    description: >-
+      将最庞大的怪物缩小到更易对付的尺寸。飞升延长效果；怪物的黑暗抗性缩短效果。
+    normal: "持续 <good>{cc_seconds:1}</> 秒"
+    expert: "持续 <good>{cc_seconds:1}</> 秒，同时缩小目标附近 1 个怪物"
+    master: "持续 <good>{cc_seconds:1}</> 秒，同时缩小目标附近 2 个怪物"
+    grandmaster: "持续 <good>{cc_seconds:1}</> 秒，同时缩小目标附近 3 个怪物"
+  93:
+    description: >-
+      在施法者前方喷射灼热的锯齿金属，击中任何挡路的生物。每片造成 {add} + 1-{dice} 点伤害（每点黑暗魔法技能）。
+  94:
+    description: >-
+      控制不死目标的心灵；被控制的不死生物会攻击对施法者敌对的怪物。飞升延长效果；怪物的黑暗抗性缩短效果。
+    normal: ""
+    expert: "持续 <good>{cc_seconds:1}</> 秒"
+    master: "持续 <good>{cc_seconds:1}</> 秒"
+    grandmaster: "持续 <good>{cc_seconds:1}</> 秒"
+  95:
+    description: >-
+      光环：怪物击中角色时，怪物会受到与造成伤害相等的伤害。
+    normal: ""
+    expert: ""
+    master: ""
+    grandmaster: ""
+  96:
+    description: >-
+      以原始黑暗之力环绕目标，使其无法发射远程攻击或施法，并减速。飞升延长效果；怪物的黑暗抗性缩短效果。
+    master: "持续 <good>{cc_seconds:1}</> 秒"
+    grandmaster: "持续 <good>{cc_seconds:1}</> 秒"
+  97:
+    description: >-
+      龙息赋予施法者呼出毒气云的能力，攻击单一怪物并伤害附近所有生物，造成 {add} + 1-{dice} 点伤害（每点黑暗魔法技能）。
+  98:
+    description: >-
+      此法术是城镇杀手。末日审判对地图上所有生物（包括所有角色）造成 {add} 点伤害，每点黑暗技能追加 {dice} 点。每天仅可施放三次，且仅限室外。
+  99:
+    description: >-
+      吸取视野内所有生物（不分敌我）的生命，并以类似分享生命的方式给予队伍。伤害与治疗为 {add} + 1-{dice}（每点技能）。
+  # Racial abilities
+  103:
+    description: >-
+      赋予黑暗精灵使用黑暗火焰的力量——黑暗与火焰之力的结合。目标以火焰或黑暗抗性中较低者抵抗。伤害为 {add} 点，每点技能追加 1-{dice} 点。
+  111:
+    description: >-
+      吸血吸取造成伤害三分之一的量来治疗吸血鬼。造成 {add} + 1-{dice} 点伤害（每点技能）。
+    master: "每点技能造成 {mastery_add} + 1-<good>{mastery_dice}</> 点伤害"
+    grandmaster: "每点技能造成 {mastery_add} + 1-<good>{mastery_dice}</> 点伤害"
+  113:
+    description: >-
+      使用此能力的吸血鬼可以魅惑附近的一小群目标。飞升延长效果；怪物抗性缩短效果。
+    master: "持续 <good>{cc_seconds:1}</> 秒"
+    grandmaster: "持续 <good>{cc_seconds:1}</> 秒"
+  114:
+    description: >-
+      雾形态将吸血鬼受到的物理伤害降低 75 %。雾形态下的吸血鬼无法进行物理攻击，但可以使用法术与能力。
+  122:
+    description: >-
+      在龙的对手心中植入恐惧，使其惊慌逃窜。
+    normal: "持续 <good>{cc_seconds:1}</> 秒"
+    expert: "持续 <good>{cc_seconds:1}</> 秒"
+    master: "持续 <good>{cc_seconds:1}</> 秒，影响附近所有生物"
+    grandmaster: "持续 <good>{cc_seconds:1}</> 秒，影响视野内所有生物"
+  123:
+    description: >-
+      龙息的升级版。它像火球一样击中目标并爆炸波及附近的一切。
+    normal: "造成龙息伤害的 70 %"
+    expert: "造成龙息伤害的 70 %"
+    master: "造成龙息伤害的 85 %"
+    grandmaster: "造成龙息全额伤害"
+classes:
+  # Death Knights know their spells by school mastery (Frost, Blood and Unholy) and pay fixed costs.
+  death_knight:
+    26:
+      description: >-
+        死亡骑士专属：对单一目标造成 <good>{percent}</> % 武器伤害并减速。
+        normal: "造成 <good>{percent}</> % 武器伤害"
+        expert: "怪物减速至 1/2 速度"
+        master: "造成 <good>{percent}</> % 武器伤害"
+        grandmaster: "怪物减速至 1/4 速度"
+    29:
+      description: >-
+        死亡骑士最强的单体法术：造成 <good>{percent}</> % 武器伤害。
+        normal: ""
+        expert: ""
+        master: "造成 <good>{percent}</> % 武器伤害"
+        grandmaster: "造成 <good>{percent}</> % 武器伤害"
+    32:
+      description: >-
+        投掷冰弹，命中时碎裂，最适合大型目标或群体。每次命中造成 <good>{percent}</> % 武器伤害。
+        normal: ""
+        expert: ""
+        master: ""
+        grandmaster: "每次命中造成 <good>{percent}</> % 武器伤害"
+    68:
+      description: >-
+        开关：开启时，你的攻击吸取生命，每次命中消耗 6 点魔力。
+        normal: "吸取 <good>{blood_leech}</> 点生命"
+        expert: "吸取 <good>{blood_leech}</> 点生命"
+        master: "吸取 <good>{blood_leech}</> 点生命"
+        grandmaster: "吸取 <good>{blood_leech}</> 点生命"
+    74:
+      description: >-
+        开关：开启时，你的攻击吸取的生命是吸血之触的两倍，每次命中消耗 12 点魔力。
+        normal: ""
+        expert: ""
+        master: ""
+        grandmaster: "吸取 <good>{blood_leech*2}</> 点生命"
+    76:
+      description: >-
+        令目标窒息，造成 <good>{percent}</> % 武器伤害并使其一时无法行动。
+        normal: ""
+        expert: ""
+        master: "造成 <good>{percent}</> % 武器伤害"
+        grandmaster: "造成 <good>{percent}</> % 武器伤害"
+    90:
+      description: >-
+        致命的飞弹，造成 <good>{percent}</> % 武器伤害，命中时以两倍吸血量治疗你。
+        normal: ""
+        expert: "造成 <good>{percent}</> % 武器伤害"
+        master: "造成 <good>{percent}</> % 武器伤害"
+        grandmaster: "造成 <good>{percent}</> % 武器伤害"
+    96:
+      description: >-
+        开关：开启时，你的攻击削弱命中的怪物，每次命中消耗 15 点魔力。
+        normal: ""
+        expert: ""
+        master: ""
+        grandmaster: ""
+    97:
+      description: >-
+        致命的爆炸，对范围内每个怪物造成 <good>{percent}</> % 武器伤害。可安全用于近身战斗。
+        normal: ""
+        expert: ""
+        master: ""
+        grandmaster: "造成 <good>{percent}</> % 武器伤害"
+  # Assassins spend energy and combo points; their damage spells deal a share of a melee blow.
+  assassin:
+    6:
+      description: >-
+        向单一目标发射火球。命中时爆炸伤害附近所有敌人。火球造成近战一击 <good>{percent}</> % 的伤害。
+        normal: ""
+        expert: ""
+        master: ""
+        grandmaster: ""
+    7:
+      description: >-
+        在地面放置火焰尖刺，等待生物靠近后爆炸。火焰尖刺造成近战一击 <good>{percent}</> % 的伤害。
+        normal: ""
+        expert: ""
+        master: ""
+        grandmaster: ""
+    18:
+      description: >-
+        从施法者手中向单一目标放电。必定命中，造成近战一击 <good>{percent}</> % 的伤害，随后跳跃到范围内最近的怪物。
+    24:
+      description: >-
+        向正前方的怪物喷射毒液。每次喷射造成近战一击 <good>{percent}</> % 的伤害。
+        normal: ""
+        expert: ""
+        master: ""
+        grandmaster: ""
+    29:
+      description: >-
+        向单一目标喷射极度腐蚀的酸液。必定命中，造成近战一击 <good>{percent}</> % 的伤害。
+        normal: ""
+        expert: ""
+        master: ""
+        grandmaster: ""
+    34:
+      description: >-
+        用魔法之力拍击怪物，将其击晕并击退少许。眩晕造成近战一击 <good>{percent}</> % 的伤害。
+        normal: ""
+        expert: ""
+        master: ""
+        grandmaster: ""
+    39:
+      description: >-
+        向单一怪物发射旋转的剃刀般金属利刃，造成近战一击 <good>{percent}</> % 的物理伤害。
+        normal: ""
+        expert: ""
+        master: ""
+        grandmaster: ""
+    44:
+      description: >-
+        瞬间将单一目标的重量提升到极致，造成近战一击 <good>{percent}</> % 的伤害。
+        normal: ""
+        expert: ""
+        master: ""
+        grandmaster: ""
+
+# Skill popups (TRAINERS_SKILLS.md §7, zzMAW-Skills.lua and SkillTooltip.lua), keyed by canonical skill name. `append`
+# adds a paragraph to the skill table's description, `description` replaces it; mastery lines replace the table's, and
+# {table} stands for the table's own line. Placeholders as for spells, plus:
+#   regen_now, regen_next     Regeneration's HP per second now and with one more point (out of combat it is faster)
+#   med_now, med_next         Meditation's SP per second now and with one more point
+#   asc_damage_base, asc_damage_scaling, asc_heal_base, asc_heal_scaling, asc_mana, asc_cc_mana, asc_cast   Ascension's
+#                             percents; asc_mana_change and asc_cc_mana_change the mana ones signed and coloured
+#   cover_chance              the chance to cover an ally now
+#   mana_efficiency           damage one spell point absorbs
+#   ladder_expert, ladder_master, ladder_grandmaster   the levels a self-taught skill gains its masteries at
+#   school_cut                the share of hits a Death Knight's Blood or Unholy (or a Shaman's Air) takes off
+#   school_damage             a class's flat melee damage from the school
+#   elemental_progress        an Elementalist's progress to the next spell of the school, in percent
+#   dragon_leech              a dragon's bite leech from Regeneration (its own paragraph; empty for other races)
+#   armor_items               the worn armour's Armor Class and the skill's bonuses (a paragraph; empty without it)
+skills:
+  Staff:
+    append: >-
+      每点技能将杖类伤害提升 2 %（每点不低于 1）。宗师级时，徒手技能将其一半数值加入杖类伤害。专家及以上等级以全部杖击数值提升护甲等级与队伍全部抗性，并额外计入 10 点技能。{stun_line}
+    normal: "每点 +1 攻击"
+    expert: "每点 +2 攻击、+2 护甲等级、+2 抗性"
+    master: "每点 +3 攻击、+3 护甲等级、+3 抗性；有一定几率麻痹 2 秒"
+    grandmaster: "每点 +4 攻击、+4 护甲等级、+4 抗性；可与徒手技能并用，麻痹持续 4 秒"
+  Sword:
+    append: >-
+      每点技能将剑类、武器精通与特殊能力伤害提升 2 %（每点不低于 1）。大师级起，全部剑击数值还会提升护甲等级，并额外计入 10 点技能。
+    normal: "每点 +1 攻击"
+    expert: "每点 +2 攻击、+1 % 速度"
+    master: "每点 +3 攻击、+1 % 速度、+1 护甲等级；可双持"
+    grandmaster: "每点 +4 攻击、+2 % 速度、+2 护甲等级"
+  Dagger:
+    append: >-
+      每点技能将匕首、武器精通与特殊能力伤害提升 2 %（每点不低于 1）。暴击率随怪物增强而下降，直至 600 级。
+    normal: "每点 +1 攻击"
+    expert: "每点 +2 攻击；可双持"
+    master: "每点 +3 攻击；暴击率 5 % + 每点 1 %"
+    grandmaster: "每点 +4 攻击、+1 % 速度"
+  Axe:
+    append: >-
+      每点技能将斧类、武器精通与特殊能力伤害提升 2 %（每点不低于 1）。
+    normal: "每点 +1 攻击"
+    expert: "每点 +2 攻击、+1 % 速度"
+    master: "每点 +3 攻击、+1 % 速度"
+    grandmaster: "每点 +4 攻击、+1 % 速度；每点 +1 % 暴击伤害"
+  Spear:
+    append: >-
+      每点技能将长矛、武器精通与特殊能力伤害提升 2 %（每点不低于 1）。专家级起，长矛提升护甲等级，并额外计入 10 点技能。
+    normal: "每点 +2 攻击"
+    expert: "每点 +4 攻击、+4 护甲等级"
+    master: "每点 +6 攻击、+6 护甲等级；可单手使用"
+    grandmaster: "每点 +8 攻击、+8 护甲等级；每次命中使目标额外受到 {spear_stack}% 物理伤害，叠加至目标死亡（使用戟时效果减半）"
+  Bow:
+    append: >-
+      每点技能为弓类伤害 +1 并提升 4 %（每点不低于 1）。
+    normal: "每点 +1 攻击"
+    expert: "每点 +2 攻击、+1 % 速度"
+    master: "每点 +3 攻击、+1 % 速度；射出 2 支箭"
+    grandmaster: "每点 +4 攻击、+2 % 速度；射出火焰箭，取火焰与物理伤害中较高者"
+  Mace:
+    append: >-
+      每点技能将锤类、武器精通与特殊能力伤害提升 2 %（每点不低于 1）。{stun_line}
+    normal: "每点 +1 攻击"
+    expert: "每点 +2 攻击"
+    master: "每点 +3 攻击；有一定几率麻痹 2 秒"
+    grandmaster: "每点 +4 攻击；麻痹持续 4 秒"
+  Blaster:
+    append: >-
+      每点技能将枪械伤害提升 4 %（每点不低于 1）。
+    normal: "每点 +1 攻击"
+    expert: "每点 +2 攻击"
+    master: "每点 +3 攻击"
+    grandmaster: "每点 +4 攻击"
+  Unarmed:
+    append: >-
+      徒手攻击每点额外造成 2 点伤害。
+    normal: "每点 +2 攻击"
+    expert: "每点 +2 攻击、+1 % 速度"
+    master: "每点 +3 攻击、+1 % 速度"
+    grandmaster: "每点 +3 攻击、+2 % 速度"
+  Shield:
+    append: >-
+      盾牌技能每点按百分比提升盾牌提供的护甲等级与抗性。{armor_items}
+    normal: "每点 +4 % 护甲等级、+4 % 抗性"
+    expert: "每点 +6 % 护甲等级、+6 % 抗性；无恢复惩罚"
+    master: "每点 +8 % 护甲等级、+8 % 抗性"
+    grandmaster: "每点 +10 % 护甲等级、+10 % 抗性；所受伤害降低 15 %"
+  LeatherArmor:
+    append: >-
+      穿着皮甲时，技能每点按百分比提升所穿全部护甲的护甲等级与抗性。{armor_items}
+    normal: "每点 +3 % 护甲等级、+2 % 抗性"
+    expert: "每点 +4 % 护甲等级、+3 % 抗性；无恢复惩罚"
+    master: "每点 +5 % 护甲等级、+4 % 抗性"
+    grandmaster: "每点 +6 % 护甲等级、+5 % 抗性"
+  ChainArmor:
+    append: >-
+      穿着链甲时，技能每点按百分比提升所穿全部护甲的护甲等级与抗性。{armor_items}
+    normal: "每点 +3 % 护甲等级、+1 % 抗性"
+    expert: "每点 +4 % 护甲等级、+2 % 抗性；恢复惩罚减半"
+    master: "每点 +5 % 护甲等级、+3 % 抗性；无恢复惩罚"
+    grandmaster: "每点 +6 % 护甲等级、+4 % 抗性"
+  PlateArmor:
+    append: >-
+      穿着板甲时，技能每点按百分比提升所穿全部护甲的护甲等级与抗性。{armor_items}
+    normal: "每点 +3 % 护甲等级"
+    expert: "每点 +4 % 护甲等级、+1 % 抗性；恢复惩罚减半"
+    master: "每点 +5 % 护甲等级、+2 % 抗性"
+    grandmaster: "每点 +6 % 护甲等级、+3 % 抗性；无恢复惩罚"
+  Dodging:
+    normal: "每点 +4 护甲等级"
+    expert: "每点 +5 护甲等级"
+    master: "每点 +6 护甲等级；可与皮甲并用"
+    grandmaster: "每点 +6 护甲等级；随技能提升闪避一击的几率；可与皮甲并用"
+  Armsmaster:
+    description: >-
+      武器精通代表战士使用除杖类外所有武器的战斗技巧：更快更流畅的攻击与更强力的打击。其伤害随武器技能增长。骑士在高技能时自行达到至高武器精通：宗师级 <value>{supreme_level}</> 点达成至高武器精通，此后每 10 点武器精通使每种近战武器技能 +1，最高翻倍基础值。至高武器精通每点 +2 伤害。
+      normal: "每点 +1 攻击"
+      expert: "每点 +1 伤害、+1 攻击"
+      master: "每点 +1 伤害、+1 攻击、+1 % 速度"
+      grandmaster: "每点 +1.5 伤害、+1 攻击、+1 % 速度"
+  Bodybuilding:
+    append: >-
+      生命值还按掌握等级每点额外增长 0.5 %、1 %、1.5 % 或 2 %。
+  Regeneration:
+    append: >-
+      当前恢复：每秒 <good>{regen_now:1}</> 点生命（再多 1 点技能为 <good>{regen_next:1}</> 点）。{dragon_leech}
+    normal: "随时间恢复生命"
+    expert: "恢复量再增加一半"
+    master: "恢复量翻倍"
+    grandmaster: "恢复量翻倍，生命损失越多恢复越多"
+  Meditation:
+    append: >-
+      当前冥想：每秒 <mana>{med_now:1}</> 点魔力（再多 1 点技能为 <mana>{med_next:1}</> 点）；魔力上次下降 20 秒后翻倍，附近无敌人时再翻两倍。
+    normal: "随时间恢复魔力"
+    expert: "多四分之一"
+    master: "恢复量再增加一半"
+    grandmaster: "恢复量翻倍"
+  Learning:
+    append: >-
+      当前技能加成：伤害基础 +<good>{asc_damage_base}</> %、每点伤害 +<good>{asc_damage_scaling}</> %、治疗基础 +<good>{asc_heal_base}</> %、每点治疗 +<good>{asc_heal_scaling}</> %；法力消耗 {asc_mana_change}，控制类法术法力消耗 {asc_cc_mana_change}，施法时间 +<bad>{asc_cast}</> %。
+  Perception:
+    normal: "{table}；陷阱与熔岩伤害降低 10 %"
+    expert: "{table}；陷阱与熔岩伤害降低 30 %"
+    master: "{table}；陷阱与熔岩伤害降低 50 %"
+    grandmaster: "{table}；陷阱与熔岩伤害降低 70 %"
+  Merchant:
+    append: >-
+      队伍中最好的商人定价每笔交易：技能乘以掌握度，再加魅力；宗师级或总计 45 点时按成本买卖。声望不影响价格。
+  IdentifyMonster:
+    append: >-
+      当队伍最佳技能乘以掌握度达到怪物等级减去队伍平均等级时（或有人达到宗师级），队伍即可识别该怪物；最佳掌握度决定学到多少信息。
+  Alchemy:
+    append: >-
+      大师级在 1 % 的被杀怪物身上发现随机试剂，宗师级为 2 %。
+      # zzAlchemy.lua:708-709.
+    master: "允许制作白色药剂。混合时药力每技能点提升至 1.5。"
+    grandmaster: "允许制作黑色药剂。混合时药力每技能点提升至 2，并每技能点使药剂持续时间增加 6 分钟。允许怪物掉落无限药剂，其药力由炼金术等级决定。"
+  Cover:
+    append: >-
+      当前掩护几率：<good>{cover_chance}</> %。掌握度在 <value>{ladder_expert}</>、<value>{ladder_master}</>、<value>{ladder_grandmaster}</> 点自行达成。在技能页按 P 切换：{cover_state}。
+  ManaShield:
+    append: >-
+      现在每点魔力吸收 <mana>{mana_efficiency:2}</> 点伤害。在技能页按 M 切换：{mana_shield_state}。
+  Enlightenment:
+    append: >-
+      掌握度在 <value>{ladder_expert}</>、<value>{ladder_master}</>、<value>{ladder_grandmaster}</> 点自行达成。
+  Retaliation:
+    append: >-
+      掌握度在 <value>{ladder_expert}</>、<value>{ladder_master}</>、<value>{ladder_grandmaster}</> 点自行达成。其伤害为技能乘以两个系数：近战之力 <bad>{retaliation_power}</> 与活力 <bad>{retaliation_vitality}</>，当前 <bad>{retaliation_damage}</> 点伤害。平衡之力与活力收益最高。
+class_skills:
+  death_knight:
+    WaterMagic:
+      description: >-
+        寒冰，仅限死亡骑士：每点近战伤害 +0.5、+0.75 或 +1（新手、专家、大师；宗师不再追加）且攻击速度每点 +1 %。其掌握度解锁寒冰之触、水上行走、霜咬与冰弹。
+        normal: "效果随法术而异"
+        expert: "效果随法术而异"
+        master: "效果随法术而异"
+        grandmaster: "效果随法术而异"
+    BodyMagic:
+      description: >-
+        鲜血，仅限死亡骑士：所受物理伤害降低 <good>{school_cut:1}</> %，你的攻击吸取生命。其掌握度解锁吸血之触、再生、窒息与高级吸血之触。
+        normal: "效果随法术而异"
+        expert: "效果随法术而异"
+        master: "效果随法术而异"
+        grandmaster: "效果随法术而异"
+    DarkMagic:
+      description: >-
+        邪恶，仅限死亡骑士：每点近战伤害 +0.5、+0.75 或 +1（新手、专家、大师）且所受魔法伤害降低 <good>{school_cut:1}</> %。其掌握度解锁吸血光环、死亡缠绕、死亡之握与死亡吐息。
+        normal: "效果随法术而异"
+        expert: "效果随法术而异"
+        master: "效果随法术而异"
+        grandmaster: "效果随法术而异"
+  assassin:
+    FireMagic:
+      description: >-
+        战斗让刺客能撑过漫长的战斗：每次攻击有 10 % 几率（每点 +1 %）恢复 15 点能量。
+        normal: "近战攻击消耗 45 能量"
+        expert: "近战攻击消耗 40 能量"
+        master: "近战攻击消耗 35 能量"
+        grandmaster: "近战攻击消耗 30 能量"
+    AirMagic:
+      description: >-
+        潜行：每次消耗能量的攻击获得一层（最多 5 层）增益，每点提升攻击速度 0.5 %，击杀恢复能量。
+        normal: "击杀怪物恢复 10 能量"
+        expert: "击杀怪物恢复 15 能量"
+        master: "击杀怪物恢复 20 能量"
+        grandmaster: "击杀怪物恢复 25 能量"
+    WaterMagic:
+      description: >-
+        毒术：每次攻击额外造成目标生命值 0.1 %（每点）的水系伤害，能量恢复更快。
+        normal: "每秒恢复 8 能量"
+        expert: "每秒恢复 10 能量"
+        master: "每秒恢复 12 能量"
+        grandmaster: "每秒恢复 14 能量"
+    EarthMagic:
+      description: >-
+        刺杀：消耗能量的攻击与法术按掌握度每点额外造成 2、3、4 或 5 点伤害，目标附近每多一个怪物（最多 4 个）伤害降低 20 %。此类攻击为攻击法术积攒连击点；箭矢触发频率减半。更高等级还提供更多能量。
+        normal: "最大能量 +10"
+        expert: "最大能量 +20"
+        master: "最大能量 +30"
+        grandmaster: "最大能量 +40"
+  dragon:
+    Unarmed:
+      description: >-
+        龙用尖牙对敌人造成可怕伤害。伤害为 30 + 每级 2（最高 {dragon_level_cap} 级）；尖牙技能按掌握度与技能等级的百分比提升伤害。每点还使撕咬慢 1.5 % 但强 1.5 %，因此更少、更重的撕咬在相同时间内造成同等伤害。
+        normal: "每点 +2 攻击、+4 % 伤害"
+        expert: "每点 +3 攻击、+6 % 伤害"
+        master: "每点 +4 攻击、+8 % 伤害"
+        grandmaster: "每点 +5 攻击、+10 % 伤害"
+    Dodging:
+      description: >-
+        龙鳞坚硬得足以充当天然护甲：40 + 每级 1 点护甲等级（最高 {dragon_level_cap} 级）。鳞甲技能按百分比提升该坚韧度与魔法抗性（每点）。龙无法闪避。
+        normal: "每点 +2 % 护甲等级、+1 % 抗性"
+        expert: "每点 +3 % 护甲等级、+1 % 抗性"
+        master: "每点 +3 % 护甲等级、+2 % 抗性"
+        grandmaster: "每点 +4 % 护甲等级、+3 % 抗性"
+  shaman:
+    FireMagic:
+      append: >-
+        萨满：每 7 点技能为飞升 +1。近战攻击以 <good>{school_share:1}</> % 燃烧怪物的生命值。
+    AirMagic:
+      append: >-
+        萨满：每 7 点技能为飞升 +1。所受全部伤害降低 <good>{school_cut:1}</> %。
+    WaterMagic:
+      append: >-
+        萨满：每 7 点技能为飞升 +1。每次受击在抗性结算后额外减少 <good>{school_flat_cut}</> 点。
+    EarthMagic:
+      append: >-
+        萨满：每 7 点技能为飞升 +1。近战伤害按掌握度每点 +0.5、+1、+1.5 或 +2。
+    SpiritMagic:
+      append: >-
+        萨满：每 7 点技能为飞升 +1。近战伤害 +<good>{school_percent:1}</> %。
+    MindMagic:
+      append: >-
+        萨满：每 7 点技能为飞升 +1。近战攻击恢复 <mana>{mind_sp}</> 点魔力。
+    BodyMagic:
+      append: >-
+        萨满：每 7 点技能为飞升 +1。近战攻击恢复 <good>{body_hp}</> 点生命。
+  seraphim:
+    SpiritMagic:
+      append: >-
+        炽天使：精神抵御轻击并削弱重击：每次受击在抗性结算后减免 <good>{school_flat_cut}</> 点。
+    MindMagic:
+      append: >-
+        炽天使：心灵为每次攻击附加 <good>{school_damage}</> 点伤害，随力量、武器速度与武器伤害倍率增长。
+      normal: "每点 +1 伤害"
+      expert: "每点 +1.5 伤害"
+      master: "每点 +2 伤害"
+      grandmaster: "每点 +2 伤害"
+    BodyMagic:
+      append: >-
+        炽天使：身体在每次攻击时治疗队伍中生命比例最低的成员，随魅力与武器速度增长。当前治疗：<good>{seraph_heal}</> 点生命。
+      normal: "近战攻击治疗"
+      expert: "治疗效果翻倍"
+      master: "治疗效果三倍"
+      grandmaster: "治疗效果三倍"
+    LightMagic:
+      append: >-
+        炽天使：光明加速炽天使的攻击，并减轻剑刃重量使双手剑可单手使用，空出另一只手持盾。
+      normal: "每点 +0.5 % 攻击速度"
+      expert: "每点 +1 % 攻击速度"
+      master: "每点 +1.5 % 攻击速度"
+      grandmaster: "每点 +2 % 攻击速度"
+  elementalist:
+    FireMagic:
+      append: >-
+        从快捷栏或攻击法术施放的攻击法术会积攒层数并将其转化为同类的另一已知法术：单体、散弹或范围。在技能页按 R 切换轮转；当前为 {rotation}。元素使通过施法学习法术：距下一个火焰法术还有 <good>{elemental_progress:1}</> %。
+    AirMagic:
+      append: >-
+        从快捷栏或攻击法术施放的攻击法术会积攒层数并将其转化为同类的另一已知法术：单体、散弹或范围。在技能页按 R 切换轮转；当前为 {rotation}。元素使通过施法学习法术：距下一个空气法术还有 <good>{elemental_progress:1}</> %。
+    WaterMagic:
+      append: >-
+        从快捷栏或攻击法术施放的攻击法术会积攒层数并将其转化为同类的另一已知法术：单体、散弹或范围。在技能页按 R 切换轮转；当前为 {rotation}。元素使通过施法学习法术：距下一个水系法术还有 <good>{elemental_progress:1}</> %。
+    EarthMagic:
+      append: >-
+        从快捷栏或攻击法术施放的攻击法术会积攒层数并将其转化为同类的另一已知法术：单体、散弹或范围。在技能页按 R 切换轮转；当前为 {rotation}。元素使通过施法学习法术：距下一个土系法术还有 <good>{elemental_progress:1}</> %。
+# Stat popups (zzMaw-Stats.lua BuildStatInformationBox), keyed by the character screen's stat names. `append` adds a
+# paragraph to the stat table's text, `description` replaces it. Numbers are measured against the party's total level
+# (<value>{reference_level}</>), as MAW's are:
+#   might_bonus, spell_bonus, spell_crit_damage, crit_damage, crit_chance   percents
+#   heal_bonus, cost_cut      Personality's healing bonus and spell cost cut, in percent
+#   endurance_bonus           the percent of maximum hit points Endurance adds; endurance_levels and
+#                             personality_levels, the levels' worth of hit points or spell points their effects add
+#   attack_haste, spell_haste the percents Speed takes off attack and spell recovery
+#   avoid_chance              the chance a physical blow misses because of Speed
+#   hit_chance                the chance a melee blow lands
+#   physical_cut, total_cut   the percent of a physical blow armour takes off, and with avoiding blows
+#   fire_cut ... body_cut     the percent each resistance takes off a hit
+#   hp_regen, sp_regen        hit points and spell points regained per second (faster out of combat)
+#   levels_mm6, levels_mm7, levels_mm8, levels_total   the levels banked in each world
+stats:
+  Might:
+    append: "近战与弓类伤害 +<good>{might_bonus:1}</> %。"
+  Intellect:
+    description: >-
+      智力代表角色推理与理解复杂抽象概念的能力。法术伤害随智力与魅力中较高者增长，法术暴击伤害随智力增长。
+      append: "法术伤害 +<good>{spell_bonus:1}</> %。法术暴击伤害 +<good>{spell_crit_damage:1}</> %。"
+  Personality:
+    description: >-
+      魅力代表角色的意志力与个人魅力。最大魔力、法术消耗与治疗能力均基于魅力。
+      append: >-
+      治疗 +<good>{heal_bonus:1}</> %。法术消耗 -<good>{cost_cut:1}</> %。魅力额外提供 <value>{personality_levels}</> 级等值的魔力。
+  Endurance:
+    append: >-
+      生命 +<good>{endurance_bonus:1}</> %，活力额外提供 <value>{endurance_levels}</> 级等值的生命。
+  Accuracy:
+    append: "近战与弓类暴击伤害 +<good>{crit_damage:1}</> %。"
+  Speed:
+    append: >-
+      速度改变攻击恢复 <good>{attack_haste:1}</> % 与法术恢复 <good>{spell_haste}</> %。等级 <value>{reference_level}</> 怪物的物理攻击有 <good>{avoid_chance:1}</> % 落空。宗师级闪避可躲开 <good>{dodge_chance:1}</> % 的怪物攻击。
+  Luck:
+    append: "对等级 <value>{reference_level}</> 怪物的暴击率：<good>{crit_chance:1}</> %。"
+  HitPoints:
+    append: >-
+      每秒恢复 <good>{hp_regen:1}</> 点生命；受到最后一次攻击 20 秒后翻倍，附近无敌人时再翻两倍。
+  SpellPoints:
+    append: >-
+      每秒恢复 <mana>{sp_regen:1}</> 点魔力；魔力上次下降 20 秒后翻倍，附近无敌人时再翻两倍。
+  ArmorClass:
+    append: >-
+      面对等级 <value>{reference_level}</> 的怪物，护甲削减物理攻击 <good>{physical_cut:1}</> %；算上速度躲开的攻击，平均 <good>{total_cut:1}</> %。
+  Attack:
+    append: "对等级 <value>{reference_level}</> 怪物的近战命中率：<good>{hit_chance:1}</> %。"
+  Level:
+    append: >-
+      累计等级：总计 <value>{levels_total:1}</>；恩洛斯 <value>{levels_mm6:1}</>、安塔加里奇 <value>{levels_mm7:1}</>、贾达美 <value>{levels_mm8:1}</>。怪物随其他世界累计的等级成长：恩洛斯强化等级 <value>{bolster_mm6}</>、安塔加里奇 <value>{bolster_mm7}</>、贾达美 <value>{bolster_mm8}</>。
+  FireResistance:
+    append: "面对等级 <value>{reference_level}</> 的怪物，火焰抗性削减火焰攻击 <good>{fire_cut:1}</> %。"
+  AirResistance:
+    append: "面对等级 <value>{reference_level}</> 的怪物，空气抗性削减空气攻击 <good>{air_cut:1}</> %。"
+  WaterResistance:
+    append: "面对等级 <value>{reference_level}</> 的怪物，水抗性削减水系攻击 <good>{water_cut:1}</> %。"
+  EarthResistance:
+    append: "面对等级 <value>{reference_level}</> 的怪物，大地抗性削减土系攻击 <good>{earth_cut:1}</> %。"
+  MindResistance:
+    append: "面对等级 <value>{reference_level}</> 的怪物，心灵抗性削减心灵攻击 <good>{mind_cut:1}</> %。"
+  BodyResistance:
+    append: "面对等级 <value>{reference_level}</> 的怪物，身体抗性削减身体攻击 <good>{body_cut:1}</> %。"
+# Item descriptions, keyed by item id or by a kind of item (gem); they replace the item table's notes.
+# Potions (zzAlchemy.lua:429-541, Tooltip.lua:83-130), numbers at the potion's power:
+#   heal_small, mana_small, heal_large, mana_large   what Healing, Magic, Divine Restoration and Divine Mastery restore
+#   haste, heroism, shield                            the potion's copy of the aura, in percent
+#   stat, stat_light                                  the aura's stat percent (Day of the Gods' wider span)
+#   protection                                        Day of Protection's resistance at the potion's power
+#   meditation                                        the Meditation skill bonus
+#   step, skill_points, best_step, best_skill_points  Transcendence's step at this power and the best one drunk
+# Gems (Tooltip.lua:141-163): tier, max_power, skill_max, two_handed, body, helm, ring (the caps by item class),
+# drop_max_tier, tiers, combine.
+items:
+  gem: >-
+      一种特殊宝石，可提升物品的附魔强度：+3，技能 +1（在工艺台对带基础附魔的物品使用）。
+      最大魔力是原始物品可骰出的最高附魔强度，随宝石等级缩放。
+
+      {combine} 颗同等级宝石在工艺台合成为 1 颗下一等级宝石。宝石最多掉落到 {drop_max_tier} 级：更高等级只能通过合成获得。
+
+      等级: <value>{tier}</>
+      最大魔力: <value>{max_power}</>
+      技能最大魔力: <value>{skill_max}</>
+
+      物品修饰:
+      双手武器: <value>{two_handed}</>
+      身体护甲: <value>{body}</>
+      头盔-靴子-手套-弓: <value>{helm}</>
+      戒指: <value>{ring}</>
+  222: "<value>恢复 {heal_small} 点生命</>"
+  223: "<value>恢复 {mana_small} 点魔力</>"
+  224: "治愈并防止虚弱与被强加的睡眠，持续 6 小时。"
+  225: "治愈并防止疾病与中毒，持续 6 小时。"
+  226: "治愈并防止诅咒与麻痹，持续 6 小时。"
+  227: "治愈并防止恐惧与疯狂，持续 6 小时。"
+  228: "提升你的攻击速度 {haste:1}%，持续 6 小时。"
+  229: "提升你的近战伤害 {heroism:1}%，持续 6 小时。"
+  230: "提升你的攻击与精准 {stat}%，持续 6 小时。"
+  231: "降低所受魔法伤害 {shield:1}% 并获得保全效果，持续 6 小时。\n需要 20 点药力生效。"
+  232: "冥想技能获得 <mana>{meditation}</> 点加成，持续 6 小时。"
+  233: "持续恢复生命，持续 6 小时。"
+  234: "提升你的护甲等级，持续 6 小时。"
+  235: "防止溺水伤害，持续 6 小时。\n需要 20 点药力生效。"
+  236: "提升物品的耐久，使其更不易损坏。"
+  237: "获得 5 层（每 10 点药力 +1 层）魔法防护充能（同法术效果），持续 6 小时。\n50 点药力起还可防止死亡与湮灭。"
+  238: "为无附魔物品赋予 1 个附魔，效果基于药剂药力。\n至少需要 20 点药力生效。"
+  239: "治愈并防止石化状态，持续 6 小时。\n需要 20 点药力生效。"
+  240: "临时提升 10+(1 x 药力) 点力量与精准，持续 6 小时。"
+  241: "临时提升 10+(1 x 药力) 点智力与魅力，持续 6 小时。"
+  242: "临时提升 10+(1 x 药力) 点活力、速度与幸运，持续 6 小时。"
+  243: "为武器附加随机的 2 级元素伤害附魔。\n需要 40 点药力生效。"
+  244: "为非魔法武器附加「迅捷之」属性。\n需要 40 点药力生效。"
+  245: "获得加速（+{haste:1}% 攻击速度）、英勇（+{heroism:1}% 近战伤害）与祝福（+{stat}% 精准），持续 6 小时。"
+  246: "移除并防止除死亡与湮灭外的所有状态，持续 6 小时。\n需要 40 点药力生效。"
+  247: "<value>恢复 {heal_large} 点生命</>\n按药剂药力恢复生命。"
+  248: "<value>恢复 {mana_large} 点魔力</>\n按药剂药力恢复魔力。"
+  249: "提升你的火焰、空气、水与大地抗性及相关属性 {stat}%，持续 6 小时。"
+  250: "提升你的心灵与身体抗性及相关属性 {stat}%，持续 6 小时。"
+  251: "获得护盾（所受魔法伤害 -{shield:1}%）、石肤与保全效果，持续 6 小时。"
+  252: "永久为力量与精准每 50 点药力增加 20 点。\n此前获得的加成不叠加。\n\n当前药力：第 {step} 阶。已饮最佳：第 {best_step} 阶。"
+  253: "永久为智力与魅力每 50 点药力增加 20 点。\n此前获得的加成不叠加。\n\n当前药力：第 {step} 阶。已饮最佳：第 {best_step} 阶。"
+  254: "永久为活力、速度与幸运每 50 点药力增加 20 点。\n此前获得的加成不叠加。\n\n当前药力：第 {step} 阶。已饮最佳：第 {best_step} 阶。"
+  255: "永久为武器附加随机的 3 级元素伤害附魔。\n需要 50 点药力生效。"
+  256: "永久为非魔法武器附加「黑暗之」属性。\n需要 100 点药力生效。"
+  257: "提升你的全部七项属性 {stat_light}%，持续 6 小时。"
+  258: "将角色年龄固定为 60。\n需要 50 点药力生效。"
+  259: "永久获得 {skill_points} 技能点（第 {step} 阶）；每阶 50 点药力。\n仅授予超过已饮最佳部分的差值。\n\n已达成最佳：第 {best_step} 阶（{best_skill_points} 技能点）"
+  260: "将角色年龄固定为 20。\n需要 50 点药力生效。"
+  261: "永久为火焰、空气、水与大地抗性每 50 点药力增加 30 点，一次性使用。\n每阶需要 50 点药力生效。\n此前获得的加成不叠加。\n\n当前药力：第 {step} 阶。已饮最佳：第 {best_step} 阶。"
+  262: "永久为心灵与身体抗性每 50 点药力增加 30 点，一次性使用。\n每阶需要 50 点药力生效。\n此前获得的加成不叠加。\n\n当前药力：第 {step} 阶。已饮最佳：第 {best_step} 阶。"
+  263: "提升你的全部抗性 {protection} 点，持续 6 小时。"
