@@ -4,7 +4,7 @@ name: Build Windows exe
 
 on:
   push:
-    branches: [main]
+    branches: [openyamm-zh121]
   workflow_dispatch:
 
 permissions:
