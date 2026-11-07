@@ -577,7 +577,29 @@ std::string translate(const std::string &text)
         return cached->second;
     }
 
-    std::string result = translateLocked(data, text, 0);
+    // The game writes the middle dot of its lists as a lone Latin-1 byte (\xB7); the table is UTF-8, so match on the
+    // UTF-8 form and show that one.
+    std::string normalized;
+    normalized.reserve(text.size() + 4);
+
+    for (size_t i = 0; i < text.size(); ++i)
+    {
+        if (static_cast<unsigned char>(text[i]) == 0xB7 && (i == 0 || static_cast<unsigned char>(text[i - 1]) != 0xC2))
+        {
+            normalized += "\xC2\xB7";
+        }
+        else
+        {
+            normalized += text[i];
+        }
+    }
+
+    std::string result = translateLocked(data, normalized, 0);
+
+    if (result == normalized)
+    {
+        result = text;
+    }
 
     if (data.cache.size() > 40000)
     {
