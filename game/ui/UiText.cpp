@@ -276,6 +276,39 @@ std::string translateLocked(Overrides &data, const std::string &text, int depth)
         const char *join;
     };
 
+    // A trailing comma (a line the game wrapped inside a list) or a " +N" count of further names stays as it is.
+    {
+        std::string core = text;
+        std::string tail;
+
+        if (core.size() > 1 && core.back() == ',')
+        {
+            core.pop_back();
+            tail = "、";
+        }
+        else
+        {
+            const size_t plus = core.rfind(" +");
+
+            if (plus != std::string::npos && plus + 2 < core.size()
+                && core.find_first_not_of("0123456789", plus + 2) == std::string::npos)
+            {
+                tail = core.substr(plus);
+                core.erase(plus);
+            }
+        }
+
+        if (!tail.empty() && !core.empty())
+        {
+            const std::string translated = translateLocked(data, core, depth + 1);
+
+            if (translated != core)
+            {
+                return translated + tail;
+            }
+        }
+    }
+
     // Colour codes (\f + 5 digits) split the text into separately coloured pieces; translate each piece.
     {
         std::string result;
