@@ -27,6 +27,7 @@ struct Pattern
 struct Overrides
 {
     std::unordered_map<std::string, std::string> exact;
+    std::unordered_map<std::string, std::string> lowerExact; // keys in lower case, for text the game upper-cases
     std::vector<std::pair<std::string, std::string>> prefixes;
     std::vector<Pattern> patterns;
     std::unordered_map<std::string, std::string> cache;
@@ -201,6 +202,28 @@ std::string translateLocked(Overrides &data, const std::string &text, int depth)
         return exact->second;
     }
 
+    if (text.size() >= 3)
+    {
+        std::string lower = text;
+        bool hasUpper = false;
+
+        for (char &c : lower)
+        {
+            hasUpper = hasUpper || std::isupper(static_cast<unsigned char>(c));
+            c = static_cast<char>(std::tolower(static_cast<unsigned char>(c)));
+        }
+
+        if (hasUpper)
+        {
+            const auto found = data.lowerExact.find(lower);
+
+            if (found != data.lowerExact.end())
+            {
+                return found->second;
+            }
+        }
+    }
+
     for (const Pattern &pattern : data.patterns)
     {
         std::unordered_map<std::string, std::string> captures;
@@ -253,7 +276,51 @@ std::string translateLocked(Overrides &data, const std::string &text, int depth)
         const char *join;
     };
 
-    for (const Separator &separator : {Separator{" · ", " · "}, Separator{", ", "、"}})
+    // Colour codes (\f + 5 digits) split the text into separately coloured pieces; translate each piece.
+    {
+        std::string result;
+        bool changed = false;
+        bool hasCode = false;
+        size_t i = 0;
+        size_t segmentStart = 0;
+
+        const auto flush = [&](size_t end)
+        {
+            const std::string segment = text.substr(segmentStart, end - segmentStart);
+            const std::string translated = segment.size() <= 160 ? translateLocked(data, segment, depth + 1) : segment;
+            changed = changed || translated != segment;
+            result += translated;
+        };
+
+        while (i < text.size())
+        {
+            if (text[i] == '\f' && i + 5 < text.size()
+                && text.find_first_not_of("0123456789", i + 1) >= i + 6)
+            {
+                hasCode = true;
+                flush(i);
+                result += text.substr(i, 6);
+                i += 6;
+                segmentStart = i;
+                continue;
+            }
+
+            ++i;
+        }
+
+        if (hasCode)
+        {
+            flush(text.size());
+
+            if (changed)
+            {
+                return result;
+            }
+        }
+    }
+
+    for (const Separator &separator :
+         {Separator{" · ", " · "}, Separator{", ", "、"}, Separator{" / ", " / "}, Separator{" and ", "和"}})
     {
         const std::string find = separator.find;
 
@@ -381,8 +448,37 @@ void load(const OpenYAMM::Engine::AssetFileSystem &assetFileSystem)
         else
         {
             data.exact[key] = value;
+
+            if (key.size() >= 3)
+            {
+                std::string lower = key;
+
+                for (char &c : lower)
+                {
+                    c = static_cast<char>(std::tolower(static_cast<unsigned char>(c)));
+                }
+
+                data.lowerExact.emplace(lower, value);
+            }
         }
     }
+
+    // Patterns with more literal text are more specific; try them first (file order breaks ties).
+    const auto literalSize = [](const Pattern &pattern)
+    {
+        size_t total = 0;
+
+        for (const PatternPart &part : pattern.parts)
+        {
+            total += part.placeholder ? 0 : part.text.size();
+        }
+
+        return total;
+    };
+    std::stable_sort(
+        data.patterns.begin(),
+        data.patterns.end(),
+        [&](const Pattern &left, const Pattern &right) { return literalSize(left) > literalSize(right); });
 
     // Longer prefixes first, so the most specific one wins.
     std::sort(
@@ -424,5 +520,13 @@ std::string translate(const std::string &text)
 
     data.cache.emplace(text, result);
     return result;
+}
+}
+
+namespace UiText
+{
+std::string nameAndTitle(const std::string &name, const std::string &title)
+{
+    return hasOverrides() ? name + " " + translate(title) : name + " the " + title;
 }
 }

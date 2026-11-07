@@ -1,3 +1,4 @@
+#include "game/ui/UiText.h"
 #include "game/events/EventDialogContent.h"
 
 #include "game/events/ISceneEventContext.h"
@@ -861,11 +862,11 @@ std::string formatNpcProfessionText(
         {"%01", npc.name},
         {"%02", memberName},
         {"%04", std::to_string(profession.weeklyCost)},
-        {"%05", timeOfDay},
-        {"%06", className},
-        {"%07", className},
-        {"%08", reputationLabel(effectiveReputation)},
-        {"%11", reputationLabel(effectiveReputation)},
+        {"%05", UiText::translate(timeOfDay)},
+        {"%06", UiText::translate(className)},
+        {"%07", UiText::translate(className)},
+        {"%08", UiText::translate(reputationLabel(effectiveReputation))},
+        {"%11", UiText::translate(reputationLabel(effectiveReputation))},
         {"%12", reputationLabel(requiredReputation.value_or(effectiveReputation))},
         {"%13", memberName},
         {"%14", profession.profession},

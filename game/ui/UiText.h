@@ -24,4 +24,7 @@ bool hasOverrides();
 
 // The translation of text, or text itself when there is none. Safe to call every frame: results are cached.
 std::string translate(const std::string &text);
+
+// "Name the Title" in English; "Name Title" when a translation is installed.
+std::string nameAndTitle(const std::string &name, const std::string &title);
 }

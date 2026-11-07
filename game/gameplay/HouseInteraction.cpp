@@ -1,3 +1,4 @@
+#include "game/ui/UiText.h"
 #include "game/gameplay/HouseInteraction.h"
 
 #include "game/debug/GameplayDebugTrace.h"
@@ -1006,7 +1007,7 @@ std::string selectedMemberLine(const Party *pParty)
         return "Selected: no character";
     }
 
-    return "Selected: " + pMember->name + " the " + pParty->rules().classes.displayName(*pParty, *pMember);
+    return "Selected: " + UiText::nameAndTitle(pMember->name, pParty->rules().classes.displayName(*pParty, *pMember));
 }
 
 std::string houseWelcomeLine(const HouseEntry &houseEntry)

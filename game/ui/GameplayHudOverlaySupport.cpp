@@ -1,3 +1,4 @@
+#include "game/ui/UiText.h"
 #include "game/ui/GameplayBuffHud.h"
 #include "game/ui/GameplayHudOverlaySupport.h"
 
@@ -1145,7 +1146,7 @@ void GameplayHudOverlaySupport::updateCharacterDetailOverlay(
     overlay.active = true;
     const std::string characterName = pCharacter->name.empty() ? "Member" : pCharacter->name;
     const std::string characterClass = party.rules().classes.displayName(party, *pCharacter);
-    overlay.title = characterClass.empty() ? characterName : characterName + " the " + characterClass;
+    overlay.title = characterClass.empty() ? characterName : UiText::nameAndTitle(characterName, characterClass);
     overlay.body.clear();
     overlay.portraitTextureName = defaultCharacterPortraitTextureName(*pCharacter);
     overlay.hitPointsText = std::to_string(summary.health.current) + " / " + std::to_string(summary.health.maximum);
