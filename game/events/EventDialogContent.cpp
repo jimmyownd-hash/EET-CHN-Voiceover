@@ -322,6 +322,14 @@ bool randomNpcNeedsBtbGate(
     return effectivePartyReputation(pWorldRuntime->currentLocationReputation(), &eventRuntimeState) > 5;
 }
 
+// The npc_topic_text id a random NPC's generated greeting came from (runtime only, not saved), so its recorded line
+// npc_text_<id> can play; absent for group news.
+std::unordered_map<uint32_t, uint32_t> &generatedGreetingTextIds()
+{
+    static std::unordered_map<uint32_t, uint32_t> textIds;
+    return textIds;
+}
+
 std::string generatedNpcGreetingText(
     const EventRuntimeState &runtimeState,
     const NpcEntry &npc,
@@ -334,8 +342,14 @@ std::string generatedNpcGreetingText(
     const MergedContinentSettingTable *pContinentSettingTable,
     float currentGameMinutes,
     bool npcIsHired,
-    bool seenGreeting)
+    bool seenGreeting,
+    uint32_t *pTextId = nullptr)
 {
+    if (pTextId != nullptr)
+    {
+        *pTextId = 0;
+    }
+
     const std::optional<std::string> groupNews =
         generatedNpcGroupNewsText(runtimeState, npcDialogTable, npc.id, pCurrentMap);
     if (groupNews && !groupNews->empty())
@@ -352,6 +366,11 @@ std::string generatedNpcGreetingText(
         ? (seenGreeting ? personality.reputationBelowZeroSecondGoodTextId
                         : personality.reputationBelowZeroFirstGoodTextId)
         : (seenGreeting ? personality.reputationOkSecondTextId : personality.reputationOkFirstTextId);
+    if (pTextId != nullptr)
+    {
+        *pTextId = textId;
+    }
+
     const std::optional<std::string> text = npcDialogTable.getText(textId);
     const int reputation = pWorldRuntime != nullptr
         ? effectivePartyReputation(pWorldRuntime->currentLocationReputation(), &runtimeState)
@@ -1473,10 +1492,12 @@ EventDialogContent buildEventDialogContent(
                     auto &cachedGreeting = eventRuntimeState.dialogueState.generatedNpcGreeting;
                     if (!cachedGreeting || cachedGreeting->npcId != pNpc->id)
                     {
+                        uint32_t generatedTextId = 0;
                         std::string greeting = generatedNpcGreetingText(
                             npcRuntimeState, *pNpc, *pNpcDialogTable, *pProfession, *pPersonality,
                             pCurrentMap, pParty, pWorldRuntime, pContinentSettingTable,
-                            currentGameMinutes, npcIsHired, greetingDisplayCount != 0);
+                            currentGameMinutes, npcIsHired, greetingDisplayCount != 0, &generatedTextId);
+                        generatedGreetingTextIds()[pNpc->id] = generatedTextId;
                         if (!greeting.empty())
                         {
                             eventRuntimeState.npcGreetingDisplayCounts[pNpc->id] = greetingDisplayCount + 1;
@@ -1485,6 +1506,12 @@ EventDialogContent buildEventDialogContent(
                             pNpc->id, std::move(greeting)};
                     }
                     dialog.lines = wrapDialogText(cachedGreeting->text, MaxLineWidth);
+                    const std::unordered_map<uint32_t, uint32_t>::const_iterator textIdIt =
+                        generatedGreetingTextIds().find(pNpc->id);
+                    if (textIdIt != generatedGreetingTextIds().end() && textIdIt->second != 0)
+                    {
+                        dialog.voiceKey = "npc_text_" + std::to_string(textIdIt->second);
+                    }
                 }
             }
         }
