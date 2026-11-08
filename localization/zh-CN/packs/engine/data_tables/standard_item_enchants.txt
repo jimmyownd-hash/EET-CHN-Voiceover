@@ -4,7 +4,7 @@ Bonus Stat	Of Name	Arm	Shld	Helm	Belt	Cape	Gaunt	Boot	Ring	Amul
 
 Might	之力量	5	0	10	10	10	10	5	10	10
 Intellect	之智慧	5	0	10	10	10	10	5	10	10
-Personality	之魅力	5	0	10	10	10	10	10	10	10
+Personality	之个性	5	0	10	10	10	10	10	10	10
 Endurance	之活力	5	0	10	10	10	10	5	10	10
 Accuracy	之精准	5	0	10	10	10	10	5	10	10
 Speed	之速度	5	0	10	10	10	10	25	10	10
