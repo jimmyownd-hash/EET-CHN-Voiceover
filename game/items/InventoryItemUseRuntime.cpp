@@ -8,6 +8,7 @@
 #include "game/rules/GameRules.h"
 
 #include <algorithm>
+#include <unordered_map>
 #include <cctype>
 #include <cmath>
 #include <random>
@@ -38,14 +39,28 @@ std::string lowerAscii(std::string value)
     return value;
 }
 
+// Item behaviour is keyed on the English name; a localized name table must not break it, so the known items are
+// recognised by their icon name as well.
+std::string itemLogicName(const ItemDefinition &itemDefinition)
+{
+    static const std::unordered_map<std::string, const char *> IconNames = {
+        {"item302", "Flute"}, {"flute", "Flute"}, {"item311", "Tobersk Fruit"}, {"item329", "Green Apple"},
+        {"item326", "Horseshoe"}, {"7item290", "Horseshoe"}, {"horsshu", "Horseshoe"},
+        {"7item260", "Genie Lamp"}, {"7item274", "Red Apple"}, {"apple", "Apple"}, {"7item277", "Lute"},
+        {"7item276", "Faerie Pipes"}, {"7item278", "Gryphonheart's Trumpet"},
+        {"7item288", "Temple in a Bottle"}, {"tarot", "Deck of Fate"}};
+    const auto found = IconNames.find(itemDefinition.iconName);
+    return found != IconNames.end() ? std::string(found->second) : itemDefinition.name;
+}
+
 bool itemNameEquals(const ItemDefinition &itemDefinition, const std::string &name)
 {
-    return lowerAscii(itemDefinition.name) == lowerAscii(name);
+    return lowerAscii(itemLogicName(itemDefinition)) == lowerAscii(name);
 }
 
 bool itemNameContains(const ItemDefinition &itemDefinition, const std::string &text)
 {
-    return lowerAscii(itemDefinition.name).find(lowerAscii(text)) != std::string::npos;
+    return lowerAscii(itemLogicName(itemDefinition)).find(lowerAscii(text)) != std::string::npos;
 }
 
 std::vector<std::string> pipeSeparatedSkills(const std::string &value)
