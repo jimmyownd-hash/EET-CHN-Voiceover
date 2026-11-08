@@ -590,16 +590,39 @@ std::string translate(const std::string &text)
     std::string normalized;
     normalized.reserve(text.size() + 4);
 
-    for (size_t i = 0; i < text.size(); ++i)
+    for (size_t i = 0; i < text.size();)
     {
-        if (static_cast<unsigned char>(text[i]) == 0xB7 && (i == 0 || static_cast<unsigned char>(text[i - 1]) != 0xC2))
+        const unsigned char c = static_cast<unsigned char>(text[i]);
+        size_t length = 1;
+
+        // Valid UTF-8 sequences (including the real middle dot C2 B7 and Chinese characters whose last byte is B7,
+        // such as the one in "scroll") pass through unchanged; only a stray 0xB7 is the game's Latin-1 middle dot.
+        if (c >= 0xC2 && c <= 0xF4)
+        {
+            const size_t expected = c >= 0xF0 ? 4 : (c >= 0xE0 ? 3 : 2);
+            bool valid = i + expected <= text.size();
+
+            for (size_t k = 1; valid && k < expected; ++k)
+            {
+                valid = (static_cast<unsigned char>(text[i + k]) & 0xC0) == 0x80;
+            }
+
+            if (valid)
+            {
+                length = expected;
+            }
+        }
+
+        if (length == 1 && c == 0xB7)
         {
             normalized += "\xC2\xB7";
         }
         else
         {
-            normalized += text[i];
+            normalized.append(text, i, length);
         }
+
+        i += length;
     }
 
     std::string result = translateLocked(data, normalized, 0);
