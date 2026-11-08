@@ -160,7 +160,9 @@ std::unordered_map<int, int> resolveMawMonsterLevels(
     const bool fixedMadnessLevel =
         inputs.madness && madnessLevel > 0 && !mapLevels.isMadnessStartingMap(inputs.mapFileName);
     const bool partyBolster = !fixedMadnessLevel && !inputs.dimensionPower;
-    const bool arenaByName = inputs.mapName == "The Arena" || inputs.mapName == "Arena";
+    // A localized map table names the arenas in Simplified Chinese.
+    const bool arenaByName = inputs.mapName == "The Arena" || inputs.mapName == "Arena"
+        || inputs.mapName == "\xe7\xab\x9e\xe6\x8a\x80\xe5\x9c\xba";
 
     if (arenaByName)
     {
