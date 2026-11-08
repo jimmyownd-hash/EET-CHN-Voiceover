@@ -3935,7 +3935,7 @@ System	系统
 All actions	全部操作
 Your adventure begins here	你的冒险从这里开始
 Start a New Adventure?	开始新的冒险？
-Leave OpenYAMM?	退出 OpenYAMM？
+Leave OpenYAMM?	退出魔法门重生？
 Return to Main Menu?	返回主菜单？
 Return to your desktop?	返回桌面？
 Unsaved progress in this adventure will be lost.	本次冒险中未保存的进度将会丢失。
@@ -7246,3 +7246,50 @@ Ogr	食人
 Gno	侏儒
 Hal	半身
 MAW	MAW 重铸版
+# v1.7 补充
+Attack Bonus	攻击加成
+Attack Damage	攻击伤害
+Shoot Bonus	射击加成
+Shoot Damage	射击伤害
+Skill Points	技能点
+{race} · {cls} · STARTING CLASS AND ITS PROMOTIONS, SHADED WHERE A PROMOTION ADDS RANK	{race} · {cls} · 初始职业及其转职，带底色的格子表示转职后可提升的精通等级
+{continent}上每一位传授技艺的导师都记在这本册子里：他们住在哪里、教什么、最高教到哪一级。学者们每个季度都会从公会名册里抄录一次。只需 {price} 金币，你就再也不必四处打听了。	{continent}上每一位传授技艺的导师都记在这本册子里：他们住在哪里、教什么、最高教到哪一级。学者们每个季度都会从公会名册里抄录一次。只需 {price} 金币，你就再也不必四处打听了。
+给你：{continent}的导师名册。所有导师现在都已记入你日志的笔记中。	给你：{continent}的导师名册。所有导师现在都已记入你日志的笔记中。
+Fire resistance	火系抗性
+Air resistance	空气抗性
+Water resistance	水系抗性
+Earth resistance	土系抗性
+Mind resistance	心智抗性
+Body resistance	肢体抗性
+Fire resistance {v}	火系抗性 {v}
+Air resistance {v}	空气抗性 {v}
+Water resistance {v}	水系抗性 {v}
+Earth resistance {v}	土系抗性 {v}
+Mind resistance {v}	心智抗性 {v}
+Body resistance {v}	肢体抗性 {v}
+might {v}	力量 {v}
+intellect {v}	智力 {v}
+personality {v}	个性 {v}
+endurance {v}	耐力 {v}
+accuracy {v}	准确 {v}
+speed {v}	速度 {v}
+luck {v}	运气 {v}
+armour {v}	防御 {v}
+Armour class {v}	防御等级 {v}
+melee and ranged {v}	近战与远程 {v}
+Chance to hit {v}	命中率 {v}
+recovery {v}	恢复 {v}
+Faster recovery {v}	恢复更快 {v}
+magic damage taken {v}	承受的法术伤害 {v}
+Magic damage taken {v}	承受的法术伤害 {v}
+critical chance {v}	暴击率 {v}
+Critical chance {v}	暴击率 {v}
+Melee damage {v}	近战伤害 {v}
+Unarmed damage {v}	空手伤害 {v}
+Damage spells {v}	伤害法术 {v}
+Spell points {v}	魔法值 {v}
+Hit points {v}	生命值 {v}
+Chance to...	命中率…
+Chance to…	命中率…
+Chance to hit...	命中率…
+Chance to hit…	命中率…
