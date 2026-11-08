@@ -7095,7 +7095,7 @@ a stronger source covers all	被更强的来源完全覆盖
 holder down: off, still reserved	持有者倒下：已失效，仍占用保留值
 temple, scroll or pedestal; reserves nothing	来自神殿、卷轴或基座；不占用保留值
  HP held	 HP 已保留
- SP held	 SP 已保留
+ SP held	 法术值 已保留
 {n#} free	剩余 {n#}
  · {n#} free	 · 剩余 {n#}
 holds nothing	未持有光环
@@ -7327,3 +7327,14 @@ Saturday {h}:{m}AM	星期六 上午{h}:{m}
 Saturday {h}:{m}PM	星期六 下午{h}:{m}
 Sunday {h}:{m}AM	星期日 上午{h}:{m}
 Sunday {h}:{m}PM	星期日 下午{h}:{m}
+# v1.8 补充
+Critical chance {v}	暴击率 {v}
+Critical damage {v}	暴击伤害 {v}
+MM6	魔法门6
+MM7	魔法门7
+MM8	魔法门8
+Dimension quest	异界任务
+Dimension runs	异界挑战
+Current run	当前挑战
+Bounties	悬赏
+{n} SP	{n} 法术值

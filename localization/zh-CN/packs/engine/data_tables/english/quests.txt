@@ -1023,11 +1023,11 @@ Q Bit	Quest Note Text	Notes	Owner
 1022	0	0	0
 1023	0	0	0
 1024	0	0	0
-1025	1 D09，开启 D05 的钥匙	" 1 D09, key to open D05"	" D09, key to open D05"
-1026	2 D11，为泰拉克斯法杖任务的玻璃碎片而给予	" 2 D11, given for glass shard for staff of terrax quest"	" D11, given for glass shard for staff of terrax quest"
-1027	3 D06，找回竖琴时给予	" 3 D06, given when harp is recovered"	" D06, given when harp is recovered"
-1028	4 D10，从宝箱取回神器时给予	" 4 D10, given when you retreive artifact from chest"	" D10, given when you retreive artifact from chest"
-1029	5 D18，获得沙漏的任务点	" 5 D18, questbit for getting hourglass"	" D18, questbit for getting hourglass"
+1025	开启 D05 的钥匙	" 1 D09, key to open D05"	" D09, key to open D05"
+1026	为泰拉克斯法杖任务的玻璃碎片而给予	" 2 D11, given for glass shard for staff of terrax quest"	" D11, given for glass shard for staff of terrax quest"
+1027	找回竖琴时给予	" 3 D06, given when harp is recovered"	" D06, given when harp is recovered"
+1028	从宝箱取回神器时给予	" 4 D10, given when you retreive artifact from chest"	" D10, given when you retreive artifact from chest"
+1029	获得沙漏的任务点	" 5 D18, questbit for getting hourglass"	" D18, questbit for getting hourglass"
 1030	6 T3，营救囚犯时给予	" 6 T3, given when you rescue prisoner"	" T3, given when you rescue prisoner"
 1031	7 T5，晋升为首席德鲁伊时给予	" 7 T5, when you are promoted to archdruid"	" T5, when you are promoted to archdruid"
 1032	8 T7，找到冒烟枪时给予	" 8 T7, given when you find the smoking gun"	" T7, given when you find the smoking gun"
@@ -1035,32 +1035,32 @@ Q Bit	Quest Note Text	Notes	Owner
 1034	下水道，捕获盗贼王子。	Tim	"Sewer, Capture Prince of Thieves."
 1035	11 D7，开启 D18 中的墓穴。	"11 D7, opens tomb in D18."	"D7, opens tomb in D18."
 1036	12 D3，营救妈妈时给予。	"12 D3, given when you save Mom."	"D3, given when you save Mom."
-1037	13 D13，在 D7 营救少女梅洛迪·西尔弗时给予。	"13 D13, given when you save the damsel, Melody Silver, in D7."	"D13, given when you save the damsel, Melody Silver, in D7."
+1037	在 D7 营救少女梅洛迪·西尔弗时给予。	"13 D13, given when you save the damsel, Melody Silver, in D7."	"D13, given when you save the damsel, Melody Silver, in D7."
 1038	14 D6，发出消息 504 时给予。	"14 D6, given when Message 504 given out."	"D6, given when Message 504 given out."
 1039	15 D7，打开装有治安官证据的箱子时给予。	"15 D7, given when chest with evidence for Constable opened."	"D7, given when chest with evidence for Constable opened."
-1040	16 D17，队伍变成狼人时给予。	"16 D17, given when party is turned into Werewolves."	"D17, given when party is turned into Werewolves."
-1041	17 D17，狼祭坛被摧毁时给予。	"17 D17, given when wolf altar is destroyed."	"D17, given when wolf altar is destroyed."
-1042	18 D17，队伍埋葬受刑者时给予。	"18 D17, given when party buries torture victims."	"D17, given when party buries torture victims."
-1043	19 D17，队伍埋葬更多受刑者时给予。	"19 D17, given when party buries more torture victims."	"D17, given when party buries more torture victims."
-1044	20 D17，队伍挖出猛虎雕像任务物品时给予。	"20 D17, given when party digs up tiger statue quest item."	"D17, given when party digs up tiger statue quest item."
+1040	队伍变成狼人时给予。	"16 D17, given when party is turned into Werewolves."	"D17, given when party is turned into Werewolves."
+1041	狼祭坛被摧毁时给予。	"17 D17, given when wolf altar is destroyed."	"D17, given when wolf altar is destroyed."
+1042	队伍埋葬受刑者时给予。	"18 D17, given when party buries torture victims."	"D17, given when party buries torture victims."
+1043	队伍埋葬更多受刑者时给予。	"19 D17, given when party buries more torture victims."	"D17, given when party buries more torture victims."
+1044	队伍挖出猛虎雕像任务物品时给予。	"20 D17, given when party digs up tiger statue quest item."	"D17, given when party digs up tiger statue quest item."
 1045	21 T2，邪恶水晶被摧毁时给予	"21 T2, Given when evil crystal is destroyed"	"T2, Given when evil crystal is destroyed"
-1046	22 D05，寻找斯纳格尔之斧时给予	"22 D05, Given to find Snergles axe"	"D05, Given to find Snergles axe"
-1047	23 D13，祭坛被亵渎时给予	"23 D13, Given when Altar is desecrated"	"D13, Given when Altar is desecrated"
-1048	24 D14，寻找埃思里克头骨时给予	"24 D14, Given to find Ethrics Skull"	"D14, Given to find Ethrics Skull"
-1049	25 D15，寻找商人的白珍珠时给予	"25 D15, Given to find merchants White pearl"	"D15, Given to find merchants White pearl"
-1050	26 D19，寻找白女巫之冠时给予	"26 D19, Given to find White witches crown"	"D19, Given to find White witches crown"
-1051	27 D05，斧子被归还时给予（这样门就无法打开）	"27 D05, Given when axe is returned (so door can't be opened)"	"D05, Given when axe is returned (so door can't be opened)"
+1046	寻找斯纳格尔之斧时给予	"22 D05, Given to find Snergles axe"	"D05, Given to find Snergles axe"
+1047	祭坛被亵渎时给予	"23 D13, Given when Altar is desecrated"	"D13, Given when Altar is desecrated"
+1048	寻找埃思里克头骨时给予	"24 D14, Given to find Ethrics Skull"	"D14, Given to find Ethrics Skull"
+1049	寻找商人的白珍珠时给予	"25 D15, Given to find merchants White pearl"	"D15, Given to find merchants White pearl"
+1050	寻找白女巫之冠时给予	"26 D19, Given to find White witches crown"	"D19, Given to find White witches crown"
+1051	斧子被归还时给予（这样门就无法打开）	"27 D05, Given when axe is returned (so door can't be opened)"	"D05, Given when axe is returned (so door can't be opened)"
 1052		Dave	
 1053		Dave	
 1054		Dave	
-1055	31 D02，蜘蛛任务完成时给予	"31 D02, given when spider quest is completed"	"D02, given when spider quest is completed"
-1056	32 D02，孩子获救时给予	"32 D02, given when kid is rescued"	"D02, given when kid is rescued"
-1057	33 D02，蛋任务被布置时给予	"33 D02, given when egg quest is assigned"	"D02, given when egg quest is assigned"
-1058	34 D02，找到巴阿神庙遗物时给予	"34 D02, given when temple of Baa relic is found"	"D02, given when temple of Baa relic is found"
-1059	35 D17 带回黑珍珠，幽灵将不再出现。	35 D17 Brought back Black Pearl and Ghost will no longer show up.	Brought back Black Pearl and Ghost will no longer show up.
-1060	36 D02，收获蝙蝠粪时给予	"36 D02, given when bat quano is harvested"	"D02, given when bat quano is harvested"
-1061	37 D02，找到全部尸体时给予	"37 D02, is given when you get all the dead guys"	"D02, is given when you get all the dead guys"
-1062	38 T07，找到冒烟枪时给予	"38 T07, given when you find the smoking gun"	"T07, given when you find the smoking gun"
+1055	蜘蛛任务完成时给予	"31 D02, given when spider quest is completed"	"D02, given when spider quest is completed"
+1056	孩子获救时给予	"32 D02, given when kid is rescued"	"D02, given when kid is rescued"
+1057	蛋任务被布置时给予	"33 D02, given when egg quest is assigned"	"D02, given when egg quest is assigned"
+1058	找到巴阿神庙遗物时给予	"34 D02, given when temple of Baa relic is found"	"D02, given when temple of Baa relic is found"
+1059	带回黑珍珠，幽灵将不再出现。	35 D17 Brought back Black Pearl and Ghost will no longer show up.	Brought back Black Pearl and Ghost will no longer show up.
+1060	收获蝙蝠粪时给予	"36 D02, given when bat quano is harvested"	"D02, given when bat quano is harvested"
+1061	找到全部尸体时给予	"37 D02, is given when you get all the dead guys"	"D02, is given when you get all the dead guys"
+1062	找到冒烟枪时给予	"38 T07, given when you find the smoking gun"	"T07, given when you find the smoking gun"
 1063	39 CD2，找到先知宝石时给予	"39 CD2, given when you find the oracle gem"	"CD2, given when you find the oracle gem"
 1064	40 CD2，获得成为巫妖的知识时给予	"40 CD2, given when you get the knowledge to become a lich"	"CD2, given when you get the knowledge to become a lich"
 1065		Bruce	
@@ -1074,7 +1074,7 @@ Q Bit	Quest Note Text	Notes	Owner
 1073		Bruce	
 1074		Bruce	
 1075	51 T4，角色找到白银圣杯时给予。	"51 T4, Given when characters find Silver Chalice."	"T4, Given when characters find Silver Chalice."
-1076	52 D16，角色找到鹰像时给予	"52 D16, Given when characters find the Eagle Statuette"	"D16, Given when characters find the Eagle Statuette"
+1076	角色找到鹰像时给予	"52 D16, Given when characters find the Eagle Statuette"	"D16, Given when characters find the Eagle Statuette"
 1077	53 T6，角色从祭坛取走先知水晶时给予。	"53 T6, Given when characters take the Oracle Crystal from the altar."	"T6, Given when characters take the Oracle Crystal from the altar."
 1078		Chris	
 1079		Chris	
@@ -1113,10 +1113,10 @@ Q Bit	Quest Note Text	Notes	Owner
 1112	营救一名处于危难之中的少女，并带着她一同返回铁拳城堡威尔伯·汉弗里处。	Paul	Rescue a Damsel in Distress
 1113	杀死盘踞于黑摩尔城堡附近一洞穴里的长牙巨龙威瑟海德，并返回铁拳城堡威尔伯·汉弗里处。	Paul	Slay Longfang Witherhide
 1114	哄尼古拉，让他高兴。	Paul	Entertain Nicolai
-1115	91 D12 约翰·西尔弗只与你交谈一次。	91 D12 John Silver only talks to you once.	D12 John Silver only talks to you once.
-1116	92 D17，圣武士幽灵告诉队伍猛虎雕像位置时给予。	"92 D17, Given when Paladin Ghost tells party where Tiger Statue is."	"D17, Given when Paladin Ghost tells party where Tiger Statue is."
-1117	93 D17，任务点 18 尸体被埋葬时使用。	"93 D17, Used when QB 18 corpses buried."	"D17, Used when QB 18 corpses buried."
-1118	94 D17，任务点 19 尸体被埋葬时使用。	"94 D17, Used when QB 19 corpses buried."	"D17, Used when QB 19 corpses buried."
+1115	约翰·西尔弗只与你交谈一次。	91 D12 John Silver only talks to you once.	D12 John Silver only talks to you once.
+1116	圣武士幽灵告诉队伍猛虎雕像位置时给予。	"92 D17, Given when Paladin Ghost tells party where Tiger Statue is."	"D17, Given when Paladin Ghost tells party where Tiger Statue is."
+1117	任务点 18 尸体被埋葬时使用。	"93 D17, Used when QB 18 corpses buried."	"D17, Used when QB 18 corpses buried."
+1118	任务点 19 尸体被埋葬时使用。	"94 D17, Used when QB 19 corpses buried."	"D17, Used when QB 19 corpses buried."
 1119	找到并把尼古拉王子带回铁拳城堡。	Walt	Find and return the Prince
 1120	找到第三只眼并把它交给铁拳城堡的尼古拉王子。	Walt	Find the Third Eye
 1121	阿奇巴德在图书馆接受了黑暗禁锢任务	Walt	Dark Containment quest taken by Archibald in Library
@@ -1393,7 +1393,7 @@ Q Bit	Quest Note Text	Notes	Owner
 1392	方尖碑（OutC3）	NPC	Obelisk OutC3
 1393	方尖碑（OutD1）	NPC	Obelisk OutD1
 1394	方尖碑（OutD2）	NPC	Obelisk OutD2
-1395	方尖碑（OutD3）	NPC	Obelisk OutD3
+1395	方尖碑（铁拳城堡）	NPC	Obelisk OutD3
 1396	方尖碑（OutE1）	NPC	Obelisk OutE1
 1397	方尖碑（OutE2）	NPC	Obelisk OutE2
 1398	方尖碑（OutE3）	NPC	Obelisk OutE3
