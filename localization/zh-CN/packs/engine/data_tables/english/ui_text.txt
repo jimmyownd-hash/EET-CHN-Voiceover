@@ -7185,3 +7185,50 @@ experience, gold, materials	经验、金币和材料
 {a} inflicts {p} points killing {b}	{a}造成 {p} 点伤害，击杀了{b}
 CRIT!	暴击！
 (CRIT!)	（暴击！）
+{skill} {a#} to {b#}: {n#} skill points, you have {m#}	{skill} {a#}→{b#}：{n#} 点技能点，你有 {m#} 点
+{skill} {a#} to {b#}: {n#} skill point, you have {m#}	{skill} {a#}→{b#}：{n#} 点技能点，你有 {m#} 点
+weaponsmith	武器匠
+armorer	护甲匠
+scholar	学者
+alchemist	炼金术士
+merchant	商人
+Summoner {n}	召唤者·{n}
+Venomous {n}	剧毒·{n}
+Plagueborn {n}	瘟疫之子·{n}
+Fixator {n}	定身·{n}
+Exploding {n}	爆裂·{n}
+Thorn {n}	荆棘·{n}
+Reflecting {n}	反射·{n}
+Adamantite {n}	精金·{n}
+Swapper {n}	换位·{n}
+Regenerating {n}	再生·{n}
+Puller {n}	牵引·{n}
+Leecher {n}	吸取·{n}
+Swift {n}	迅捷·{n}
+Shadow {n}	暗影·{n}
+Broodlord {n}	母巢之王·{n}
+Broodling {n}	母巢幼体·{n}
+Omnipotent {n}	全能·{n}
+Unstoppable {n}	不可阻挡·{n}
+Berserker {n}	狂暴·{n}
+Cryptic {n}	隐秘·{n}
+Skilled {n}	精湛·{n}
+{who} evades damage	{who}躲开了伤害
+{who} evades damage!	{who}躲开了伤害！
+{n#} monsters	{n#} 只怪物
+{n#} monster	{n#} 只怪物
+Teleported {n#} monsters	已传送 {n#} 只怪物
+Teleported {n#} monster	已传送 {n#} 只怪物
+No {item} left	{item}已经用完了
+{who}'s poison effect expired	{who}的中毒效果消失了
+{n#} Hours	{n#} 小时
+{n#} Hour	{n#} 小时
+{n#} Minutes	{n#} 分钟
+{n#} Minute	{n#} 分钟
+{n#} Seconds	{n#} 秒
+{n#} Second	{n#} 秒
+{h#} Hours {m#} Minutes	{h#} 小时 {m#} 分钟
+{h#} Hours	{h#} 小时
+{h#}:{m#} am	上午 {h#}:{m#}
+{h#}:{m#} pm	下午 {h#}:{m#}
+{g} - Day {n#}	{g} · 第 {n#} 天

@@ -966,7 +966,7 @@ elements:
       width: 98.258333
       height: 18
       text:
-        value: 火
+        value: 火系
         font: Lucida
         color: '#e5dcc7'
         align_x: left
@@ -994,7 +994,7 @@ elements:
       width: 98.258333
       height: 18
       text:
-        value: 气
+        value: 空气
         font: Lucida
         color: '#e5dcc7'
         align_x: left
@@ -1022,7 +1022,7 @@ elements:
       width: 98.258333
       height: 18
       text:
-        value: 水
+        value: 水系
         font: Lucida
         color: '#e5dcc7'
         align_x: left
@@ -1050,7 +1050,7 @@ elements:
       width: 98.258333
       height: 18
       text:
-        value: 土
+        value: 土系
         font: Lucida
         color: '#e5dcc7'
         align_x: left
@@ -1078,7 +1078,7 @@ elements:
       width: 98.258333
       height: 18
       text:
-        value: 心灵
+        value: 心智
         font: Lucida
         color: '#e5dcc7'
         align_x: left
@@ -1106,7 +1106,7 @@ elements:
       width: 98.258333
       height: 18
       text:
-        value: 体质
+        value: 肢体
         font: Lucida
         color: '#e5dcc7'
         align_x: left

@@ -194,7 +194,7 @@ elements:
     width: 90
     height: 14
     text:
-      value: 火
+      value: 火系
       font: SMALLNUM
       color: '#e4c793'
       align_x: left
@@ -218,7 +218,7 @@ elements:
     width: 90
     height: 14
     text:
-      value: 气
+      value: 空气
       font: SMALLNUM
       color: '#e4c793'
       align_x: left
@@ -242,7 +242,7 @@ elements:
     width: 90
     height: 14
     text:
-      value: 水
+      value: 水系
       font: SMALLNUM
       color: '#e4c793'
       align_x: left
@@ -266,7 +266,7 @@ elements:
     width: 90
     height: 14
     text:
-      value: 土
+      value: 土系
       font: SMALLNUM
       color: '#e4c793'
       align_x: left
@@ -290,7 +290,7 @@ elements:
     width: 90
     height: 14
     text:
-      value: 心灵
+      value: 心智
       font: SMALLNUM
       color: '#e4c793'
       align_x: left
@@ -314,7 +314,7 @@ elements:
     width: 90
     height: 14
     text:
-      value: 精神
+      value: 灵魂
       font: SMALLNUM
       color: '#e4c793'
       align_x: left
@@ -338,7 +338,7 @@ elements:
     width: 90
     height: 14
     text:
-      value: 体质
+      value: 肢体
       font: SMALLNUM
       color: '#e4c793'
       align_x: left
@@ -386,7 +386,7 @@ elements:
     width: 90
     height: 14
     text:
-      value: 黑暗
+      value: 暗黑
       font: SMALLNUM
       color: '#e4c793'
       align_x: left
