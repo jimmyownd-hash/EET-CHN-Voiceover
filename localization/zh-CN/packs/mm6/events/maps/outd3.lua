@@ -61,10 +61,10 @@ SetMapMetadata({
     [81] = { kind = "open_chest", source = "opcode", chestIds = {1} },
     [82] = { kind = "enter_house", source = "opcode", houseId = 202, targetName = "狂战士之怒" },
     [83] = { kind = "enter_house", source = "opcode", houseId = 1387, targetName = "房屋" },
-    [90] = { kind = "enter_house", source = "opcode", houseId = 425, targetName = "暗影行会藏身处" },
-    [91] = { kind = "enter_house", source = "opcode", houseId = 430, targetName = "斯内格尔洞穴" },
-    [92] = { kind = "enter_house", source = "opcode", houseId = 432, targetName = "龙骑兵洞穴" },
-    [93] = { kind = "enter_house", source = "opcode", houseId = 440, targetName = "科拉贡庄园" },
+    [90] = { kind = "enter_house", source = "opcode", houseId = 425, targetName = "阴影教隐蔽所" },
+    [91] = { kind = "enter_house", source = "opcode", houseId = 430, targetName = "斯纳格的岩洞" },
+    [92] = { kind = "enter_house", source = "opcode", houseId = 432, targetName = "龙骑兵岩洞" },
+    [93] = { kind = "enter_house", source = "opcode", houseId = 440, targetName = "考勒根的豪宅" },
     [94] = { kind = "enter_house", source = "opcode", houseId = 418, targetName = "巴之神殿" },
     [97] = { kind = "enter_house", source = "opcode", houseId = 334, targetName = "巴之神殿" },
     [100] = { kind = "fountain", source = "title" },
@@ -144,7 +144,7 @@ RegisterEvent(19, "国王神殿", function()
 end, "国王神殿")
 
 RegisterEvent(40, "新索匹格", function()
-    evt.StatusText("新索皮加尔")
+    evt.StatusText("新索匹格")
 end, "新索匹格")
 
 RegisterEvent(41, "铁拳城堡", function()

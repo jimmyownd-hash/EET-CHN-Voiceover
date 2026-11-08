@@ -27,11 +27,11 @@ SetMapMetadata({
     [170] = {0},
     },
     contextActions = {
-    [3] = { kind = "enter_house", source = "opcode", houseId = 56, targetName = "艾维利前哨站" },
+    [3] = { kind = "enter_house", source = "opcode", houseId = 56, targetName = "爱佛黎前哨站" },
     [5] = { kind = "enter_house", source = "opcode", houseId = 467, targetName = "豪华马车行" },
     [7] = { kind = "enter_house", source = "opcode", houseId = 492, targetName = "追风者号" },
     [9] = { kind = "enter_house", source = "opcode", houseId = 320, targetName = "宁静神庙" },
-    [11] = { kind = "enter_house", source = "opcode", houseId = 1578, targetName = "艾维利体育馆" },
+    [11] = { kind = "enter_house", source = "opcode", houseId = 1578, targetName = "爱佛黎体育馆" },
     [13] = { kind = "enter_house", source = "opcode", houseId = 251, targetName = "盆栽小精灵" },
     [15] = { kind = "enter_house", source = "opcode", houseId = 292, targetName = "黄金大厅" },
     [17] = { kind = "enter_house", source = "opcode", houseId = 161, targetName = "精神系至高公会" },
@@ -647,7 +647,7 @@ RegisterEvent(453, "方尖碑", function()
     SetQBit(QBit(688)) -- Visited Obelisk in Area 14
 end, "方尖碑")
 
-RegisterEvent(454, "艾维利", nil, "艾维利")
+RegisterEvent(454, "爱佛黎", nil, "爱佛黎")
 
 RegisterEvent(455, "东行至图拉里恩森林", nil, "东行至图拉里恩森林")
 

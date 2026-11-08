@@ -1,4 +1,4 @@
--- 新索皮加尔
+-- 新索匹格
 -- generated from legacy EVT/STR
 
 SetMapMetadata({
@@ -82,7 +82,7 @@ SetMapMetadata({
     [91] = { kind = "open_chest", source = "opcode", chestIds = {17} },
     [92] = { kind = "open_chest", source = "opcode", chestIds = {18} },
     [101] = { kind = "enter_house", source = "opcode", houseId = 417, targetName = "地精守望" },
-    [102] = { kind = "enter_house", source = "opcode", houseId = 422, targetName = "废弃神庙" },
+    [102] = { kind = "enter_house", source = "opcode", houseId = 422, targetName = "废弃神殿" },
     [103] = { kind = "enter_house", source = "opcode", houseId = 447, targetName = "加里克的铁匠铺" },
     [104] = { kind = "travel", source = "opcode", targetMap = "outb3.odm", targetName = "龙沙" },
     [109] = { kind = "well", source = "title" },
@@ -121,7 +121,7 @@ SetMapMetadata({
 RegisterNoOpEvent(2, "欢迎来到新索匹格", "欢迎来到新索匹格")
 
 RegisterEvent(3, "新索匹格神殿", function()
-    evt.EnterHouse(325) -- 新索皮加尔 Temple
+    evt.EnterHouse(325) -- 新索匹格 Temple
 end, "新索匹格神殿")
 
 RegisterEvent(4, "新索匹格神殿", nil, "新索匹格神殿")
@@ -157,7 +157,7 @@ end, "洞察之眼")
 RegisterEvent(14, "洞察之眼", nil, "洞察之眼")
 
 RegisterEvent(15, "新索匹格马车公司", function()
-    evt.EnterHouse(470) -- 新索皮加尔马车公司
+    evt.EnterHouse(470) -- 新索匹格马车公司
 end, "新索匹格马车公司")
 
 RegisterEvent(16, "新索匹格马车公司", nil, "新索匹格马车公司")
@@ -181,7 +181,7 @@ end, "元素入门行会")
 RegisterEvent(22, "元素入门行会", nil, "元素入门行会")
 
 RegisterEvent(23, "新索匹格训练场", function()
-    evt.EnterHouse(1583) -- 新索皮加尔 Training Grounds
+    evt.EnterHouse(1583) -- 新索匹格 Training Grounds
 end, "新索匹格训练场")
 
 RegisterEvent(24, "新索匹格训练场", nil, "新索匹格训练场")
@@ -367,7 +367,7 @@ end, "板条箱")
 RegisterEvent(100, nil, function()
     if IsQBitSet(QBit(1104)) then return end -- Lisa
     SetQBit(QBit(1104)) -- Lisa
-    SetQBit(QBit(1105)) -- Show Sulman's letter to Andover Potbello in 新索皮加尔. - Set when the party starts
+    SetQBit(QBit(1105)) -- Show Sulman's letter to Andover Potbello in 新索匹格. - Set when the party starts
     AddValue(InventoryItem(2125), 2125) -- The Letter
 end)
 
@@ -528,36 +528,36 @@ end)
 RegisterEvent(131, "饮用喷泉", function()
     if not IsAtLeast(MapVar(51), 1) then
         evt.StatusText("神清气爽！")
-        SetAutonote(391) -- 5 Hit points cured by the central fountain in 新索皮加尔.
+        SetAutonote(391) -- 5 Hit points cured by the central fountain in 新索匹格.
         return
     end
     SubtractValue(MapVar(51), 1)
     AddValue(CurrentHealth, 5)
     evt.StatusText("生命值恢复5点。")
-    SetAutonote(391) -- 5 Hit points cured by the central fountain in 新索皮加尔.
+    SetAutonote(391) -- 5 Hit points cured by the central fountain in 新索匹格.
 end, "饮用喷泉")
 
 RegisterEvent(140, "饮用喷泉", function()
     if not IsAtLeast(MapVar(52), 1) then
         evt.StatusText("神清气爽！")
-        SetAutonote(392) -- 5 Spell points restored by the northwest fountain in 新索皮加尔.
+        SetAutonote(392) -- 5 Spell points restored by the northwest fountain in 新索匹格.
         return
     end
     SubtractValue(MapVar(52), 1)
     AddValue(CurrentSpellPoints, 5)
     evt.StatusText("法术值恢复5点。")
-    SetAutonote(392) -- 5 Spell points restored by the northwest fountain in 新索皮加尔.
+    SetAutonote(392) -- 5 Spell points restored by the northwest fountain in 新索匹格.
 end, "饮用喷泉")
 
 RegisterEvent(150, "饮用喷泉", function()
     if not IsAtLeast(MightBonus, 10) then
         SetValue(MightBonus, 10)
         evt.StatusText("力量+10（临时）。")
-        SetAutonote(393) -- 10 Points of temporary might from the northeast fountain in 新索皮加尔.
+        SetAutonote(393) -- 10 Points of temporary might from the northeast fountain in 新索匹格.
         return
     end
     evt.StatusText("神清气爽！")
-    SetAutonote(393) -- 10 Points of temporary might from the northeast fountain in 新索皮加尔.
+    SetAutonote(393) -- 10 Points of temporary might from the northeast fountain in 新索匹格.
 end, "饮用喷泉")
 
 RegisterEvent(210, "水井", function(continueStep)

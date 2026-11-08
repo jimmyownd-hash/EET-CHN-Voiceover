@@ -84,7 +84,7 @@ SetMapMetadata({
     [418] = { kind = "enter_house", source = "opcode", houseId = 380 },
     [419] = { kind = "enter_house", source = "opcode", houseId = 380 },
     [420] = { kind = "enter_house", source = "opcode", houseId = 1169, targetName = "王座室" },
-    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "7out02.odm", targetName = "哈蒙代尔" },
+    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "7out02.odm", targetName = "和谐谷" },
     },
     textureNames = {"bannwc-a", "bannwc-b", "ch1b1", "ch1b1el", "ch1b1er", "chb1p6", "chb1p7", "elfhuma", "elfhumb", "nechuma", "nechumb", "tfb09r1a", "tfb09r1b", "tfb09r1c", "tfb09r1d", "tfb09r1e", "tfb09r1f", "tfb09r1g", "tfb09r1h", "tfb09r1i", "tfb09r1j", "wizh-a", "wizh-b"},
     spriteNames = {"0"},
@@ -636,7 +636,7 @@ RegisterEvent(451, nil, function()
     do return end
 end)
 
-RegisterEvent(501, "离开哈蒙代尔城堡", function()
+RegisterEvent(501, "离开和谐谷城堡", function()
     evt.MoveToMap(-18325, 12564, 480, 0, 0, 0, 0, 0, "7out02.odm") -- Harmondale
-end, "离开哈蒙代尔城堡")
+end, "离开和谐谷城堡")
 

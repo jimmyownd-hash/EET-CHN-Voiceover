@@ -487,7 +487,7 @@ RegisterEvent(453, nil, function()
     evt.SetFacetBit(6, FacetBits.Untouchable, 1)
 end)
 
-RegisterEvent(501, "离开伊普教堂", function()
+RegisterEvent(501, "离开伊普礼拜堂", function()
     evt.MoveToMap(-5012, -470, 1664, 1536, 0, 0, 0, 1, "out08.odm") -- Ravage Roaming
-end, "离开伊普教堂")
+end, "离开伊普礼拜堂")
 

@@ -63,7 +63,7 @@ SetMapMetadata({
     [198] = { kind = "generic_event", source = "opcode" },
     [199] = { kind = "generic_event", source = "opcode" },
     [200] = { kind = "generic_event", source = "opcode" },
-    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "out11.odm", targetName = "巴罗丘陵" },
+    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "out11.odm", targetName = "丘陵地" },
     },
     textureNames = {"t2bs"},
     spriteNames = {},

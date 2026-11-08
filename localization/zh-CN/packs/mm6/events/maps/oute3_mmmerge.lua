@@ -1,7 +1,7 @@
--- MMMerge map supplement: 新索皮加尔 local outdoor state.
+-- MMMerge map supplement: 新索匹格 local outdoor state.
 
 RegisterMapOnLoadEvent(65029, "MMMerge oute3 town portal", function()
-    SetQBit(QBit(313)) -- 新索皮加尔 town portal destination discovered.
+    SetQBit(QBit(313)) -- 新索匹格 town portal destination discovered.
     MM6.ApplyLocalMonsterRelations({
         {185, 0, 0},
     })
@@ -10,11 +10,11 @@ end)
 
 table.insert(evt.meta.map.textureNames, "t1swbu")
 
-ReplaceMapEvent(15, "新索皮加尔马车公司", function()
+ReplaceMapEvent(15, "新索匹格马车公司", function()
     evt.EnterHouse(470)
 end, "新索匹格马车公司")
 
-ReplaceMapEvent(16, "新索皮加尔马车公司", function()
+ReplaceMapEvent(16, "新索匹格马车公司", function()
     evt.EnterHouse(470)
 end, "新索匹格马车公司")
 

@@ -3,8 +3,8 @@ Q Bit	Quest Note Text	Notes	Owner
 2	激活区域 1 的 5 号和 6 号传送点。	Activate Area 1 teleporters 5 and 6.	Riki
 3	将达德洛斯的信送给渡鸦海滨商人之家中的艾德加·费尔蒙	Given by Dadeross in Dagger Wound. Taken by Fellmoon in Ravenshore.	TomO
 4	任务点 3 的信已送达。	Letter from Q Bit 3 delivered.	TomO
-5	杀死匕伤岛上雷格那海盗前哨站的首领	Given by the alliance council at Ravenshore along with quest 31. Starts Pirate Timer.	TomO
-6	已杀死匕伤岛海盗前哨站的海盗首领（任务点 5 给予）。终结匕伤岛上海盗与蜥蜴人的战争。关闭海盗计时器。	Pirate Leader in Dagger Wound Pirate Outpost killed (quest given at Q Bit 5). Ends pirate/lizardman war on Dagger Wound. Shuts off pirate timer.	TomO
+5	杀死匕伤岛上雷格那海盗前哨站站的首领	Given by the alliance council at Ravenshore along with quest 31. Starts Pirate Timer.	TomO
+6	已杀死匕伤岛海盗前哨站站的海盗首领（任务点 5 给予）。终结匕伤岛上海盗与蜥蜴人的战争。关闭海盗计时器。	Pirate Leader in Dagger Wound Pirate Outpost killed (quest given at Q Bit 5). Ends pirate/lizardman war on Dagger Wound. Shuts off pirate timer.	TomO
 7	将布拉克许·单牙的传送水晶带回给费德瑞克·塔力米尔	Brekish Onefang asks player to bring a power crystal to Fredrick Talimere	TomO
 8	玩家携带水晶拜访了费德瑞克·塔力米尔。	Fredrick Talimere visited by player with crystal in their possesion.	TomO
 9	"将费尔蒙的黑函交给半鼠人走私集团的首领艾瑞安·韩特，并将结果回报至艾尔加·费尔蒙"	"Given and taken by Elgar Fellmoon (w503, area 2)."	TomO
@@ -12,8 +12,8 @@ Q Bit	Quest Note Text	Notes	Owner
 11	"将消息报告至阿尔瓦商人公会会长巴斯沉·卢德林"	"Given By Elgar Fellmoon (w503, area 2). Taken by Bastian Loudrin (area 3)."	TomO
 12	任务 11 已完成。	Quest 11 is done.	TomO
 13	在贾丹姆大陆的主要势力之间结盟	Given by Bastian Lourdrin (area 3). Activates Merchanthouse in Alvar. Checked as each alliance is formed. Taken when three are formed. 	TomO
-14	和阴影塔区域的死灵法师公会结盟	Given by Bastian Lourdrin (area 3). Activates Merchanthouse in Alvar. Taken by Sandro (area 6) or when quest 15 is done.	TomO
-15	和低语森林的太阳神庙结盟	"Given by Bastian Lourdrin (area 3). Activates Merchanthouse in Alvar. Taken by Oskar Tyre (area 7), or when quest 27 is done."	TomO
+14	和影旋山脉区域的死灵法师公会结盟	Given by Bastian Lourdrin (area 3). Activates Merchanthouse in Alvar. Taken by Sandro (area 6) or when quest 15 is done.	TomO
+15	和低语之森的太阳神庙结盟	"Given by Bastian Lourdrin (area 3). Activates Merchanthouse in Alvar. Taken by Oskar Tyre (area 7), or when quest 27 is done."	TomO
 16	和绞刑峡谷的猎龙人结盟	Given by Bastian Lourdrin (area 3). Activates Merchanthouse in Alvar. Taken when Dragon Egg (item 605) delivered to Charles Quixote or dragon leader.	TomO
 17	和绞刑峡谷的飞龙们结盟	Given by Bastian Lourdrin (area 3). Activates Merchanthouse in Alvar. Taken when Dragon Egg (item 605) delivered to Charles Quixote or dragon leader.	TomO
 18	和残破镇的牛头人结盟	Given by Bastian Lourdrin (area 3). Activates Merchanthouse in Alvar. Taken when minotaurs rescued.	TomO
@@ -24,7 +24,7 @@ Q Bit	Quest Note Text	Notes	Owner
 23	已与牛头人结盟。已营救牛头人。	Allied with Minotaurs. Rescue the Minotaurs done.	TomO
 24	因完成任务 9 而从艾尔加·费尔蒙处获得奖励。	Received Reward from Elgar Fellmoon for completing quest 9.	TomO
 25	找到一个目击火湖形成的证人，并且将它带回阿尔瓦的商人公会。	Given and taken by Bastian Lourdrin (area 3).	TomO
-26	找到阴影塔的死灵法师公会中的骷髅转换器，摧毁它之后回去找奥斯卡·提尔报到。	Given and taken by Oskar Tyre (area 7). Taken when Qbit 29 set.	TomO
+26	找到影旋山脉的死灵法师公会中的骷髅转换器，摧毁它之后回去找奥斯卡·提尔报到。	Given and taken by Oskar Tyre (area 7). Taken when Qbit 29 set.	TomO
 27	骷髅转化器已被摧毁。	Skeleton Transformer Destroyed.	TomO
 28	"将龙葵灯炉带给死灵法师公会的领导者山德罗。龙葵灯炉就在太阳神庙之中。"	Given and taken by Sandro (area 6). Taken when Qbit 27 set.	TomO
 29	夜影香炉已被偷走。	Nightshade Brazier Stolen.	TomO
@@ -37,11 +37,11 @@ Q Bit	Quest Note Text	Notes	Owner
 36	把雷格那的舰队弄沉，回到渡鸦海滨的议会报告。	Given and taken at Ravenshore council chamber. 	TomO
 37	雷格那海盗舰队已被击沉。	Regnan Pirate Fleet is sunk.	TomO
 38	任务 36 已完成。	Quest 36 is done.	TomO
-39	找到考瑞·黑王座。提示：大家只知道她最后一次拜访过的人是低语森林的丹提理安，从此之后便杳无音信。	Dark Elf Promotion to Patriarch	James
+39	找到考瑞·黑王座。提示：大家只知道她最后一次拜访过的人是低语之森的丹提理安，从此之后便杳无音信。	Dark Elf Promotion to Patriarch	James
 40	已找到并营救考里·布莱克索恩	Found and Rescued Cauri Blackthorne	James
 41	将水之心从水元素界带回来给萨索尔。	Given by XANTHOR. Taken when 41-44 done simultaneously.	TomO
 42	将风之心从风元素界带回来给萨索尔。	Given by XANTHOR. Taken when 41-44 done simultaneously.	TomO
-43	将地之心从土元素界带回来给萨索尔。	Given by XANTHOR. Taken when 41-44 done simultaneously.	TomO
+43	将地之心从地元素界带回来给萨索尔。	Given by XANTHOR. Taken when 41-44 done simultaneously.	TomO
 44	将火之心从火元素界带回来给萨索尔。	Given by XANTHOR. Taken when 41-44 done simultaneously.	TomO
 45	任务 41-44 已完成。已将 41-44 的物品交给赞瑟。	Quests 41-44 done. Items from 41-44 given to XANTHOR.	TomO
 46	穿过水晶传送门，找到大灾变发生的根源。	Given by XANTHOR. Taken by Eschaton.	TomO
@@ -60,13 +60,13 @@ Q Bit	Quest Note Text	Notes	Owner
 59	与奥弗杜恩一同回到阿尔瓦的商人公会。任务 25 已完成。	Returned to the Merchant guild in Alvar with overdune. Quest 25 done.	TomO
 60	任务点 25 设置后，队伍前往铁砂。	Party visits Ironsand After QuestBit 25 set.	TomO
 61	将弹指兄弟维尔拜的骨灰葬到村庄的墓穴之中，并回来找弹指。	"Given and taken by Overdune, NPC 7, w177. "	TomO
-62	已把毒咬者之灰（物品 603）放入巨魔墓穴。	Vilebites Ashes (item603) placed in troll tomb.	TomO
+62	已把毒咬者之灰（物品 603）放入食人妖墓穴。	Vilebites Ashes (item603) placed in troll tomb.	TomO
 63	任务 61 已完成。	Quest 61 done.	TomO
 64	正在进行营救鼠人的任务	On the rescue the wererats quest	TomO
 65	已完成营救鼠人的任务	Finished the Rescue the wererats quest	TomO
 66	正在进行杀死食人魔堡垒食人魔的任务	On the Quest to kill the Ogres in the Ogre Fort	TomO
 67	我已杀死食人魔堡垒中的全部食人魔	I have killed all the oges in the ogre fort	TomO
-68	找到古代巨魔之家，并回到铁沙漠找瓦络德·沙风解释。	Given By ? In area 4	James
+68	找到食人妖古老家园，并回到铁沙漠找瓦络德·沙风解释。	Given By ? In area 4	James
 69	已找到远古巨魔家园	Ancient Troll Homeland Found	James
 70	找到布拉森·暴风枪以及那柄黑木之矛。完成任务之后去绞刑峡谷找连恩·暴风枪，并且将黑木之矛交给查尔斯·吉科德。		James
 71	已找到布雷曾·斯托姆兰斯并找回黑曜石	Found Blazen Stormlance and recovered Ebonest	James
@@ -76,11 +76,11 @@ Q Bit	Quest Note Text	Notes	Owner
 75	已杀死区域 5 西南营地的全部屠龙者	Killed all Dragon Slayers in southwest encampment in Area 5	James
 76	"找到位于黑暗矮人矿坑中的巴尔萨煞之斧。然后请达德洛斯认证那柄斧头是真货，接着再把这柄斧头带回去给牛头人首领的继承人泰沙拉。"	 	James
 77	已找到巴尔萨扎之斧。	Found the Axe of Balthazar.	James
-78	"在废弃神庙中找到太阳预言，并且带回去给史蒂芬。"		James
-79	已在废弃神庙找到太阳预言并将其归还太阳神庙	Found the Prophecies of the Sun in the Abandoned Temple and returned them to the Temple of the Sun	James
-80	找到可布的石棺和尸骸，并且将这些东西带回去给阴影塔地区的拉席安。	 	James
+78	"在废弃神殿中找到太阳预言，并且带回去给史蒂芬。"		James
+79	已在废弃神殿找到太阳预言并将其归还太阳神庙	Found the Prophecies of the Sun in the Abandoned Temple and returned them to the Temple of the Sun	James
+80	找到可布的石棺和尸骸，并且将这些东西带回去给影旋山脉地区的拉席安。	 	James
 81	已找到科尔布石棺	Found the Sarcophagus of Korbu	James
-82	找到失落的凯尔之书，并且带回去给阴影塔的维崔那斯。		James
+82	找到失落的凯尔之书，并且带回去给影旋山脉的维崔那斯。		James
 83	已找到凯尔失落之书	Found the Lost Book of Khel	James
 84	考里·布莱克索恩已复原	Cauri Blackthorne restored	James
 85	"找到达德洛斯，也就是负责管理你们商队的牛头人。上次你看见他的时候，他正准备要和村庄中的长老谈话。"	"Given at the start of the game, taken by dadeross when he gives you the deliver letter quest."	
@@ -109,7 +109,7 @@ Q Bit	Quest Note Text	Notes	Owner
 108	黄热病疫情已治愈！	Yellow Fever epidemic cured!	James
 109	找到神选之药剂，并且将它带回去给匕伤岛的蓝贵德。		James
 110	已从供水系统中清除毒素！	Poison removed from water supply!	James
-111	将废弃神庙中所找到的蛇之圣像带回去给匕伤岛的希斯。	 	James
+111	将废弃神殿中所找到的蛇之圣像带回去给匕伤岛的希斯。	 	James
 112	已找到毒蛇偶像	Found Idol of the Snake	James
 113	将纯粹速度药剂所需要的药材带给匕伤岛上的系斯妥。		James
 114	已归还纯速药水的配料	returned ingredients for a potion of Pure Speed	James
@@ -121,9 +121,9 @@ Q Bit	Quest Note Text	Notes	Owner
 120	已营救走私者首领的家人	Rescued Smuggler Leader's Familly 	James
 121	将纯粹耐力药剂的药材带给铁沙漠中的塔力安。		James
 122	已归还纯耐力药水的配料	returned ingredients for a potion of Pure Endurance	James
-123	将纯粹智力药剂所需要的药材带去给阴影塔地区的凯尔文。		James
+123	将纯粹智力药剂所需要的药材带去给影旋山脉地区的凯尔文。		James
 124	已归还纯智力药水的配料	returned ingredients for a potion of Pure Intellect	James
-125	将纯粹个性药剂的药材带给低语森林的卡斯提盖尔。		James
+125	将纯粹个性药剂的药材带给低语之森的卡斯提盖尔。		James
 126	已归还纯个性药水的配料	returned ingredients for a potion of Pure Personallity	James
 127	"替渡鸦海滨的拉西亚斯找到名为日蚀的盾牌。"	 	James
 128	已为拉西厄斯找回蚀月盾	"Recovered the the Shield, Eclipse for Lathius"	James
@@ -160,11 +160,11 @@ Q Bit	Quest Note Text	Notes	Owner
 159		Questbit set for Riki	James
 160	找到传说中的胜利之鼓，完成任务之后去找绞刑峡谷的赛林姆。	 	James
 161	已找到胜利之鼓	Found the Drum of Victory	James
-162	替阴影塔的班耐费斯找寻机关盒。	 	James
+162	替影旋山脉的班耐费斯找寻机关盒。	 	James
 163	已找到伊塞尔迪尔的谜盒	Found  Iseldir's Puzzle Box	James
-164	找到墓土之瓶，完成任务之后去找阴影塔地区的海林安。	 	James
+164	找到墓土之瓶，完成任务之后去找影旋山脉地区的海林安。	 	James
 165	已找到墓土小瓶	Found Vial of Grave Dirt	James
-166	替阴影塔地区的坦尼林安找到毁灭之骨。	 	James
+166	替影旋山脉地区的坦尼林安找到毁灭之骨。	 	James
 167	已找到厄运之骨	Found Bone of Doom	James
 168	已找到恐怖海盗斯坦利的宝藏！	Found the treasure of the Dread Pirate Stanley!	James
 169	被赏金猎人公会授予初级赏金猎人称号	Named Novice Bounty Hunter by the Guild of Bounty Hunters	James
@@ -194,7 +194,7 @@ Q Bit	Quest Note Text	Notes	Owner
 193	区域 8 方尖碑	Obelisk Area 8	Riki
 194	区域 13 方尖碑	Obelisk Area 13	Riki
 195	然后杀死独角兽之王（只发生一次）	Kill then unicorn King(only happens once)	Riki
-196	在区域一的废弃神庙与主角相遇	Met the PC in the Abandoned temple in area one	Riki
+196	在区域一的废弃神殿与主角相遇	Met the PC in the Abandoned temple in area one	Riki
 197	北瞭望塔通往雷格那地下通道的门已解锁	Door to the passage under regna from the northern watch tower is unlocked	0
 198	南瞭望塔通往雷格那地下通道的门已解锁	Door to the passage under regna from the southern watch tower is unlocked	0
 199	黑曜石 - 我弄丢了它	Ebonest - I lost it	
@@ -303,7 +303,7 @@ Q Bit	Quest Note Text	Notes	Owner
 302	传送增益：渡鸦海滨	TP Buff Ravenshore	
 303	传送增益：巴尔萨扎巢穴	TP Buff Baltazar's Lair	
 304	传送增益：雷格那	TP Buff Regna	
-305	传送增益：阴影塔	TP Buff Shadowspire	
+305	传送增益：影旋山脉	TP Buff Shadowspire	
 306	传送增益：匕伤群岛	TP Buff Daggerwound islands	
 307	传送开关：安塔加利奇	TP Switch Antagrich	
 308	传送开关：恩洛斯	TP Switch Enroth	
@@ -311,7 +311,7 @@ Q Bit	Quest Note Text	Notes	Owner
 310	传送增益：黑郡	TP Buff Blackshire	
 311	传送增益：自由天堂	TP Buff Free Haven	
 312	传送增益：迷雾群岛	TP Buff Misty Islands	
-313	传送增益：新索皮加尔	TP Buff New Sorpigal	
+313	传送增益：新索匹格	TP Buff New Sorpigal	
 314	传送增益：银湾	TP Buff Silver Cove	
 315	传送增益：寒冰高地	TP Buff Frozen Highlands	
 316	0	0	0
@@ -528,37 +528,37 @@ Q Bit	Quest Note Text	Notes	Owner
 527	可以使用小船离开翡翠岛	Able to use boat to get off Emerald Island	Bryan
 528	找到有关失踪的参赛者的线索，然后交给翡翠岛的竞赛组织者。	0	Bryan
 529	不再有讲解员唠叨	No more docent babble	Bryan
-530	"进入马克汉姆在泰塔利亚的府邸，偷走那儿的花瓶，回到埃拉西亚的下水道，把花瓶交给比尔·拉斯克。"	0	Bryan
-531	"潜入迪雅的6号哨塔，把塔顶的顶门石移到塔的底层，然后回埃拉西亚下水道见比尔·拉斯克。"	0	Bryan
+530	"进入马克汉姆在泰塔利亚的府邸，偷走那儿的花瓶，回到伊拉西亚的下水道，把花瓶交给比尔·拉斯克。"	0	Bryan
+531	"潜入迪雅的6号哨塔，把塔顶的顶门石移到塔的底层，然后回伊拉西亚城下水道见比尔·拉斯克。"	0	Bryan
 532	瞭望塔 6。将砝码放入对应的箱子。对全局事件 47（间谍晋升）很重要	Watchtower 6.  Weight in the appropriate box.  Important for Global event 47 (Spy promotion)	
-533	去塞莱斯特的通天院干掉卡米尔，把她身上的匕首交给迪雅的塞克尼特·恩德斯。	0	Bryan
+533	去赛勒斯提的通天院干掉卡米尔，把她身上的匕首交给迪雅的塞克尼特·恩德斯。	0	Bryan
 534	"到泰塔利亚杀死巨龙劳斯莱克，然后去找查尔斯·科切特。"	0	Bryan
 535	执行十字军任务时杀死了巨龙	Killed dragon when on Crusader quest	Bryan
 536	把埃莉斯·哈格从迪雅的威廉姆的塔里救出来，然后去找查尔斯·科切特。	0	Bryan
 537	区域 5 的小型地下城。已营救/俘获爱丽丝·哈格里夫斯。	Mini-dungeon Area 5.  Rescued/Captured Alice Hargreaves.	Bryan
-538	到格芬哈特城堡绑架埃莉斯·哈格，并将她带到迪雅的威廉姆的塔里。	0	Bryan
+538	到狮鹫心城堡绑架埃莉斯·哈格，并将她带到迪雅的威廉姆的塔里。	0	Bryan
 539	在拜尔德斯找到冥想之地。	0	Bryan
-540	"到埃里的羊鸣教神庙铲除羊鸣教高级神甫，然后回到哈蒙代尔找巴斯洛缪·海墨尔。"	0	Bryan
+540	"到埃里的羊鸣教神庙铲除羊鸣教高级神甫，然后回到和谐谷找巴斯洛缪·海墨尔。"	0	Bryan
 541	"到布拉卡达沙漠中的魔法学院破解密码，找到尼格的坟墓，然后进入坟墓彻底搜查一下。任务完成后去地狱城找斯丹芬尼·山德。"	0	Bryan
-542	在埃里的泰坦城堡中找到完美之弓，把它交给哈蒙代尔的劳伦斯·马克。	0	Bryan
+542	在埃里的泰坦城堡中找到完美之弓，把它交给和谐谷的劳伦斯·马克。	0	Bryan
 543	将布拉卡达沙漠中红色矮人矿井的升降机破坏，然后去找埃里的斯第格·斯尼克。	0	Bryan
 544	在埃里的泰坦城堡中找到完美之弓，把它交给埃里的斯第格·斯尼克。	0	Bryan
 545	赢得五场竞技场挑战的胜利，然后回到布拉卡达沙漠中找立德·罗文。	0	Bryan
-546	消灭拜尔德斯的鬼屋中所有的亡灵怪物，然后回到埃拉西亚找福瑞德里克·奥格。	0	Bryan
-547	到图拉利昂森林的那文城堡洗劫精灵宝库，然后回埃拉西亚找福瑞德里克·奥格。	0	Bryan
+546	消灭拜尔德斯的鬼屋中所有的亡灵怪物，然后回到伊拉西亚找福瑞德里克·奥格。	0	Bryan
+547	到图拉利昂森林的那文城堡洗劫精灵宝库，然后回伊拉西亚找福瑞德里克·奥格。	0	Bryan
 548	去图拉利昂森林与最年长的老树谈话，设法平息森林的愤怒。然后回到布拉卡达找里桑德·斯维特。	0	Bryan
 549	设法找到神仙冈的秘密出口，然后去里面和仙帝交谈。	0	Bryan
 550	"设法完成市政厅的赏金任务，赚到10,000个金币，然后回到图拉利昂森林找埃伯登泽·索渥。"	0	Bryan
 551	去泰塔利亚的雇佣兵行会夺回古树之心，把它还给图拉利昂森林里的老树。	0	Bryan
 552	已与最古老的树交谈	Talked to the Oldest Tree	Bryan
 553	已完成树的任务	Solved Tree quest	Bryan
-554	去埃弗蒙岛捣毁月亮神庙的祭坛，然后回到塞莱斯特找蕾贝卡·迪万。	0	Bryan
-555	去泰塔利亚的潮水洞穴找到海盗的地图，然后回到迪雅找达德拉斯·福克。	0	Bryan
+554	去埃弗蒙岛捣毁月亮神庙的祭坛，然后回到赛勒斯提找蕾贝卡·迪万。	0	Bryan
+555	去泰塔利亚的潮穴找到海盗的地图，然后回到迪雅找达德拉斯·福克。	0	Bryan
 556	去埃弗蒙岛捣毁太阳神庙的祭坛，然后回到迪雅找达德拉斯·福克。	0	Bryan
 557	"找到人偶肢体的六个部分，把它拼成人形，然后去魔法学院把人偶交给托马斯·格雷。"	0	Bryan
 558	玩家城堡。魔像应出现在城堡区域。	Player Castle.  Golem should appear in castle bit.	Bryan
 559	去地狱城的再生之地找到普渡众生魔法，然后回到魔法学院把它交给托马斯·格雷。	0	Bryan
-560	去塞莱斯特的净心堂夺回灵魂之坛，然后到地狱城把它交给哈夫·维克。	0	Bryan
+560	去赛勒斯提的净心堂夺回灵魂之坛，然后到地狱城把它交给哈夫·维克。	0	Bryan
 561	"去泰塔利亚、埃弗蒙岛和埃里三个地方分别找到石圈，然后到图拉利昂森林找安东尼·格林。"	0	Bryan
 562	已参观全部巨石阵	Visited all stonehenges	
 563	已参观巨石阵 1（区域 9）	Visited stonehenge 1 (area 9)	
@@ -568,7 +568,7 @@ Q Bit	Quest Note Text	Notes	Owner
 567	去巨人领地的龙穴找龙蛋，然后把它带回尼根见托尔·安文。	0	Bryan
 568	瞭望塔 6。已从上城门取走砝码。间谍晋升任务	Watchtower 6.  Taken the weight from the upper gatehouse.  Spy promo quest	
 569	已解开密码谜题。忍者晋升任务	Solved the code puzzle.  Ninja promo quest	
-570	已摧毁地下城中的生物发生器。战斗法师晋升任务。	Destroyed critter generator in dungeon.  Warrior Mage promo quest.	
+570	已摧毁地下城中的生物发生器。魔法战士晋升任务。	Destroyed critter generator in dungeon.  Warrior Mage promo quest.	
 571	已在[某种]难度级别赢得五次竞技场冠军。冠军晋升任务。	Won five arena championships at [something] difficulty level.  Champion promo quest.	Bryan
 572	已洗劫精灵宝库。黑骑士晋升任务。	Robbed Elven treasury.  Black Knight promo quest.	
 573	已收集 10000 金币的赏金。赏金猎人晋升任务。	Collected 10000 gold in bounties.  Bounty Hunter promo quest.	Bryan
@@ -585,10 +585,10 @@ Q Bit	Quest Note Text	Notes	Owner
 584	已放置魔像修道院标准头部	Placed Golem Abbey normal head	Bryan
 585	已用修道院标准头部完成魔像建造	Finished constructing Golem with Abbey normal head	Bryan
 586	已用标准头部完成魔像建造	Finished constructing Golem with normal head	Bryan
-587	"把哈蒙代尔城堡里面的怪物消灭干净，然后去镇子上的客栈找管家。"	Given by butler at the door to the player castle.	
+587	"把和谐谷城堡里面的怪物消灭干净，然后去镇子上的客栈找管家。"	Given by butler at the door to the player castle.	
 588	营救红矮人矿井的矮人，然后到拜尔德斯的石头城找矮人国王。		Bryan
 589	设法拿到利文斯德要塞的设计图，然后到图拉利昂森林的那文城堡找帕尔森国王。		Bryan
-590	去图拉利昂森林中的洞穴内设法把劳伦·斯迪尔搭救出来，然后把他带回埃拉西亚见凯瑟琳王后。		Bryan
+590	去图拉利昂森林中的洞穴内设法把劳伦·斯迪尔搭救出来，然后把他带回伊拉西亚见凯瑟琳王后。		Bryan
 591	去图拉利昂森林设法夺回格芬哈特号角，把它交给你要帮助的一方。		Bryan
 592	已把计划书交给精灵王	Gave plans to elfking	Bryan
 593	已把洛伦剑交给凯瑟琳	Gave Loren to Catherine	Bryan
@@ -603,23 +603,23 @@ Q Bit	Quest Note Text	Notes	Owner
 602	已告诉凯瑟琳关于假囚犯的事	Told Catherine about fake prisoner	Bryan
 603	已告诉精灵王关于假计划书的事	Told Elfking about fake plans	Bryan
 604	河畔堡。已打开装有计划书的箱子	Fort Riverstride.  Opened chest with plans	
-605	图拉林洞穴。已获得洛伦剑	Tularean Caves.  Got Loren	
+605	土拉立安洞穴。已获得洛伦剑	Tularean Caves.  Got Loren	
 606	去图拉利昂森林的那文城堡，把伪造的要塞设计图交给帕尔森国王。		Bryan
-607	去埃拉西亚的格芬哈特城堡，把假冒的劳伦交给凯瑟琳王后。		Bryan
+607	去伊拉西亚的狮鹫心城堡，把假冒的劳伦交给凯瑟琳王后。		Bryan
 608	已将城堡建到 3 级（善良）不再使用（Riki）	Built Castle to Level 3 (good)NO LONGER USED(Riki)	Bryan
 609	已将城堡建到 3 级（邪恶）不再使用（Riki）	Built Castle to Level 3 (evil)NO LONGER USED(Riki)	Bryan
 610	已将城堡建到 2 级（营救了矮人）	Built Castle to Level 2 (rescued dwarf guy)	Bryan
 611	已选择光明之路	Chose the path of Light	Bryan
 612	已选择黑暗之路	Chose the path of Dark	Bryan
-613	穿过迷雾之墙并且不杀一人，事成之后去塞莱斯特的光辉城堡找格文·马格努斯。		Bryan
+613	穿过迷雾之墙并且不杀一人，事成之后去赛勒斯提的光辉城堡找格文·马格努斯。		Bryan
 614	未杀死任何生物就完成了试炼场	Completed Proving Grounds without killing a single creature	Bryan
-615	分别去塞莱斯特的光明神庙和地狱城的暗黑神庙收集到圣坛碎片，把它们交给塞莱斯特光辉城堡里的瑞瑟雷克特。		Bryan
-616	去巨人领地的星座之地杀死诺菲克斯，然后到塞莱斯特的光辉城堡找瑞瑟雷克特。	0	Bryan
-617	已杀死泽诺菲克斯	Slayed Xenofex	0
-618	去泰塔利亚探索酒窖，然后到塞莱斯特的光辉城堡找克拉格·汉克。	0	Bryan
+615	分别去赛勒斯提的光明神庙和地狱城的暗黑神庙收集到圣坛碎片，把它们交给赛勒斯提光辉城堡里的瑞瑟雷克特。		Bryan
+616	去巨人领地的星座之地杀死赞诺费克斯，然后到赛勒斯提的光辉城堡找瑞瑟雷克特。	0	Bryan
+617	已杀死泽赞诺费克斯	Slayed Xenofex	0
+618	去泰塔利亚探索酒窖，然后到赛勒斯提的光辉城堡找克拉格·汉克。	0	Bryan
 619	已杀死吸血鬼	Slayed the vampire	0
-620	去地狱城的黄昏城堡抢夺灵魂之坛，并把它们交给塞莱斯特的范·卡格汉。	0	Bryan
-621	去地狱城杀死托尔伯蒂，把他身上的控制晶片交给塞莱斯特的智者罗伯特。	0	Bryan
+620	去地狱城的黄昏城堡抢夺灵魂之坛，并把它们交给赛勒斯提的范·卡格汉。	0	Bryan
+621	去地狱城杀死托尔伯蒂，把他身上的控制晶片交给赛勒斯提的智者罗伯特。	0	Bryan
 622	已完成死灵法师试炼场	Finished Necro Proving Grounds	Bryan
 623	已完成死灵法师任务 2 - 光明神庙	Finished Necro Task 2 - Temple of Light	Bryan
 624	已完成死灵法师任务 3 - 灵魂罐	Finished Necro Task 3 - Soul Jars	Bryan
@@ -632,15 +632,15 @@ Q Bit	Quest Note Text	Notes	Owner
 631	已杀死邪恶的魔法门3角色	Killed Evil MM3 Person	Bryan
 632	已获得蜂巢部件	Got Hive part	Bryan
 633	已获得科幻部件	Got the sci-fi part	Bryan
-634	分别去塞莱斯特的光明神庙和地狱城的暗黑神庙收集到圣坛碎片，把它们交给地狱城里的卡斯托。	0	Bryan
-635	去巨人领地的星座之地杀死诺菲克斯，然后到地狱城找卡斯托。	0	Bryan
+634	分别去赛勒斯提的光明神庙和地狱城的暗黑神庙收集到圣坛碎片，把它们交给地狱城里的卡斯托。	0	Bryan
+635	去巨人领地的星座之地杀死赞诺费克斯，然后到地狱城找卡斯托。	0	Bryan
 636	去桑达非斯山从邪术师那里抢夺灵魂之坛，然后把它们交给地狱城的马克西姆。	0	Bryan
 637	破坏科兰克实验室里的魔法防御系统，然后到地狱城找达克·谢德。	0	Bryan
 638	已摧毁克兰克实验室中的魔法防御	Destroyed the magical defenses in Clanker's Lab	0
-639	去塞莱斯特杀死智者罗伯特，然后到地狱城找托尔伯蒂。	0	Bryan
+639	去赛勒斯提杀死智者罗伯特，然后到地狱城找托尔伯蒂。	0	Bryan
 640	顺利穿过再生之地，回地狱城找阿基巴德。	0	Bryan
 641	已完成培育坑。	Completed Breeding Pit.	0
-642	去埃里西面的海里进入林肯号，找到船上的振荡器，把它交给塞莱斯特的瑞瑟雷克特。	0	0
+642	去埃里西面的海里进入林肯号，找到船上的振荡器，把它交给赛勒斯提的瑞瑟雷克特。	0	0
 643	去埃里西面的海里进入林肯号，找到船上的振荡器，把它交给地狱城的卡斯托。	0	0
 644	管家只出现一次（区域 2）	Butler only shows up once (area 2)	Pete
 645	玩家城堡计时器只触发一次	Player castle timer only happens once	Pete
@@ -653,23 +653,23 @@ Q Bit	Quest Note Text	Notes	Owner
 652	已清理闹鬼宅邸（骑士晋升）	Cleaned out the haunted mansion (Cavalier promo)	Bryan
 653	只给一次马卡姆的花瓶（马卡姆庄园，盗贼晋升）。	"Only give Markham's vase once (Markham's manor, Thief promo)."	Bryan
 654	已杀死闹鬼宅邸中的全部怪物	Killed all monsters in Haunted mansion	Bryan
-655	已杀死强盗洞穴中的全部怪物	Killed all monsters in Bandit cave	Bryan
+655	已杀死强盗窝中的全部怪物	Killed all monsters in Bandit cave	Bryan
 656	爱丽丝·哈格里夫斯只在建筑中出现一次	Alice Hargreaves in building only once	Bryan
 657	获得魔法学校卷轴店会员资格	Membership to the School of Sorcery Scroll Shop	Bryan
-658	去拜尔德斯的石头城和矮人交谈，设法使它们帮助你修复哈蒙代尔城堡。	0	0
+658	去拜尔德斯的石头城和矮人交谈，设法使它们帮助你修复和谐谷城堡。	0	0
 659	已把神器交给仲裁者	Gave artifact to arbiter	Bryan
 660	已从迷雾之墙获得巫妖罐	Got Lich Jar from Walls of Mist	Bryan
 661	已从雷拳山获得巫妖罐	Got Lich Jar from Thunderfist Mountain	Bryan
 662	已从幽暮城堡获得巫妖罐	Got Lich Jar from Castle Gloaming	Bryan
 663	"从迪雅的地狱城大厅进入地狱城，到那里的黄昏城堡和阿基巴德交谈。"	0	0
-664	"使用布拉卡达的远距离传送器进入塞莱斯特，到光辉城堡和格文·马格努斯交谈。"	0	0
+664	"使用布拉卡达的远距离传送器进入赛勒斯提，到光辉城堡和格文·马格努斯交谈。"	0	0
 665	为仲裁人格瑞找个继任者。	0	0
 666	已获得波涛卷轴	Got Scroll of Waves	0
-667	从拜尔德斯找回光明神灯，把它交给哈蒙代尔的忒林维泽。	Barrow Lantern Quest	James
+667	从拜尔德斯找回光明灯，把它交给和谐谷的忒林维泽。	Barrow Lantern Quest	James
 668	去尼根从迷宫里找到哈尔代尔的尸骨，把它交给尼根的马吉姆·达斯克。	Haldar's Remains Quest	James
-669	去埃拉西亚东北面的强盗洞穴夺回德弗里克·派尔丁的戒指印章，并到哈蒙代尔把戒指还给他。	Davrik's Ring Quest	James
+669	去伊拉西亚东北面的强盗窝夺回德弗里克·派尔丁的戒指印章，并到和谐谷把戒指还给他。	Davrik's Ring Quest	James
 670	去泰塔利亚为诺伯特·西拉丝把一封信转交给马克汉姆爵士。		James
-671	去埃拉西亚把帕尔森的羽毛笔交给诺伯特·西拉丝。		James
+671	去伊拉西亚把帕尔森的羽毛笔交给诺伯特·西拉丝。		James
 672	已从箱子中取得印章戒指	Got Signet ring out of chest	Tim
 673	已从箱子中取得魔法尘	Got magic dust out of chest 	Tim
 674	已获得光明之灯	Got lantern of light	Tim
@@ -697,14 +697,14 @@ Q Bit	Quest Note Text	Notes	Owner
 696	已杀死城堡中的全部怪物	Killed all castle monsters	Bryan
 697	已杀死野外全部怪物	Killed all outdoor monsters	Bryan
 698	把石头城地下的洞穴人消灭光，然后到石头城找斯巴克·伯恩基德。	0	Bryan
-699	把埃拉西亚和布拉卡达的狮鹫全杀光，然后到迪雅找塞斯·达克森。	0	Bryan
-700	已杀死全部埃拉西亚狮鹫	Killed all Erathian Griffins	Bryan
+699	把伊拉西亚和布拉卡达的狮鹫全杀光，然后到迪雅找塞斯·达克森。	0	Bryan
+700	已杀死全部伊拉西亚狮鹫	Killed all Erathian Griffins	Bryan
 701	已杀死全部布拉卡达沙漠狮鹫	Killed all Bracada Desert Griffins	Bryan
 702	已与马尔威克及其同伙了断	Finished with Malwick & Assc.	Riki
 703	开启 mdtXX 的地图（矮人古墓）	Turn on map in mdtXX(Dwarven Barrow)	Riki
 704	开启 mdkXX 的地图（矮人古墓）	Turn on map in mdkXX(Dwarven Barrow)	Riki
 705	开启 mdrXX 的地图（矮人古墓）	Turn on map in mdrXX(Dwarven Barrow)	Riki
-706	"去悬崖洞穴探访达伦·坦普的兄弟的下落，然后回哈蒙代尔把情况告诉他。"	0	0
+706	"去悬崖洞穴探访达伦·坦普的兄弟的下落，然后回和谐谷把情况告诉他。"	0	0
 707	去地狱城大厅找到四季披风，然后去布拉卡达沙漠找盖里·查姆。	0	0
 708	找到瞭望塔 6 的第二个入口	Find second entrance to Watchtower6	James
 709	已进入仙灵丘	Entered Faerie Mound	James
@@ -715,11 +715,11 @@ Q Bit	Quest Note Text	Notes	Owner
 714	已把物品 618 放入 out13（雕像）	Place item 618 in out13(statue)	0
 715	已把物品 619 放入 out06（雕像）	Place item 619 in out06(statue)	0
 716	得到三幅画像，然后带给泰塔利亚的费迪南德·威斯康。	0	0
-717	"在十三个客栈玩牌全部获得胜利，然后回埃拉西亚找吉娜·巴尼斯。"	0	0
+717	"在十三个客栈玩牌全部获得胜利，然后回伊拉西亚找吉娜·巴尼斯。"	0	0
 718	传送增益：哈蒙戴尔	TP Buff Harmondale	0
-719	传送增益：埃拉西亚	TP Buff Erathia	0
-720	传送增益：图拉林森林	TP Buff Tularean Forest	0
-721	传送增益：塞莱斯特	TP Buff Celeste	0
+719	传送增益：伊拉西亚	TP Buff Erathia	0
+720	传送增益：土拉立安森林	TP Buff Tularean Forest	0
+721	传送增益：赛勒斯提	TP Buff Celeste	0
 722	传送增益：深渊	TP Buff The Pit	0
 723	传送增益：尼根	TP Buff Nighon	0
 724	花瓶 - 我弄丢了它	Vase - I lost it	0
@@ -1103,10 +1103,10 @@ Q Bit	Quest Note Text	Notes	Owner
 1102		Lisa	
 1103		Lisa	
 1104		Lisa	
-1105	向新索匹格镇的安多弗·波特皮洛出示舒尔曼的信。	Set when the party starts	Show Sulman's letter to Andover Potbello in New Sorpigal
+1105	向新索匹格的安多弗·波特皮洛出示舒尔曼的信。	Set when the party starts	Show Sulman's letter to Andover Potbello in New Sorpigal
 1106	把舒尔曼的信带给铁拳城堡的威尔伯·汉弗里摄政王。	Set by Andover after you show him the letter	Bring Sulman's letter to Regent Wilbur Humphrey at Castle Ironfist
-1107	找到大耳怪前哨宝库门的密码并返回新索匹格镇的市政厅。	Set by Town Hall	Find the Combination to the vault door in Goblinwatch
-1108	从羊鸣庙里找到美妙钟琴并返回新索匹格镇的市政厅。	Paul	Destroy the Altar of Evil in the Temple of Baa and return with the Chime of Harmony
+1107	找到大耳怪前哨宝库门的密码并返回新索匹格的市政厅。	Set by Town Hall	Find the Combination to the vault door in Goblinwatch
+1108	从羊鸣庙里找到美妙钟琴并返回新索匹格的市政厅。	Paul	Destroy the Altar of Evil in the Temple of Baa and return with the Chime of Harmony
 1109	在哥布林瞭望塔发现密码组合	Paul	Discovered Combination in Goblin Watch
 1110	找到科尔本爵士的盾牌并返回铁拳城堡向威尔伯·汉弗里报告。	Paul	Find Lord Kilburn's Shield
 1111	已与叛徒交谈	Paul	Talked to Traitor
@@ -1150,9 +1150,9 @@ Q Bit	Quest Note Text	Notes	Owner
 1149	突袭浓雾镇附近的银舵前哨并把他们堕落的证据带给浓雾镇的治安官。	NPC	silver helms are bad quest
 1150	为新索匹格的安多弗·波特皮洛夺回废庙中的蜡烛台。	NPC	Retrieve the candelabra for Andover Potbello
 1151	已营救梅洛迪	NPC	rescued melody
-1152	前往铁拳城堡南面的龙骑兵洞穴，夺回竖琴，并把它交还给铁拳城堡的安德鲁·贝斯普。	NPC	Retreive Andrew Besper's harp 
+1152	前往铁拳城堡南面的龙骑兵岩洞，夺回竖琴，并把它交还给铁拳城堡的安德鲁·贝斯普。	NPC	Retreive Andrew Besper's harp 
 1153	在自由天堂西面的埃斯里克的坟墓中找到埃斯里克的头骨，将它交给自由天堂的盖贝里·卡特曼。	NPC	Retrieve Ethric's skull for Gabriel Cartman in Free Haven
-1154	除掉新索匹格的废庙中的蜘蛛女王，并把它的心带给新索匹格镇的布福德·提·奥曼。	NPC	kill the queen of the spiders
+1154	除掉新索匹格的废庙中的蜘蛛女王，并把它的心带给新索匹格的布福德·提·奥曼。	NPC	kill the queen of the spiders
 1155	摧毁在银湾镇西面独立碑中的祭坛并返回银湾镇的埃里诺·范德贝尔特处。	NPC	deface the altar quest
 1156	已成功玷污祭坛	NPC	successfully defaced the altar bit
 1157	蝙蝠粪任务	NPC	bat guano quest
@@ -1160,12 +1160,12 @@ Q Bit	Quest Note Text	Notes	Owner
 1159	已摧毁水晶	NPC	destroyed the crystal bit
 1160	从布莱克郡附近的巨蛇庙中解救埃曼纽尔，并把他带回布莱克郡的乔安娜·克拉维兹处。	NPC	find the husband quest
 1161	在坦普城堡附近的龙骑兵堡垒里找到失落的神器，并把它交给自由天堂的佐尔丹·菲尔普。	NPC	give retrieve lost artifact quest
-1162	将雪莉从阴影教隐蔽所救出来，并带她前往新索匹格镇的弗兰克·费尔基德处。	NPC	save sharry quest
-1163	将安吉拉从废庙中救出来，并带她前往新索匹格镇的威尔特·德沃森处。	NPC	save angela quest
+1162	将雪莉从阴影教隐蔽所救出来，并带她前往新索匹格的弗兰克·费尔基德处。	NPC	save sharry quest
+1163	将安吉拉从废庙中救出来，并带她前往新索匹格的威尔特·德沃森处。	NPC	save angela quest
 1164	将谢勒尔从布特雷格湾岛屿上的食人族手中解救出来，并带她前往自由天堂的卡尔罗·托米尼处。	NPC	rescue the prisoner quest
 1165	摧毁狼穴中的狼人祭坛并返回布莱克郡的玛利亚·特里潘处。	NPC	werewolf quest
 1166	已激活珍珠	NPC	set pearl active
-1167	"在狼穴中找到腐败珍珠，交给同在狼穴中的幽灵巴塞萨。"	NPC	give pearl quest
+1167	"在狼穴中找到褪色珍珠，交给同在狼穴中的幽灵巴塞萨。"	NPC	give pearl quest
 1168	在克里格斯城堡中找回宝石蛋，交还给克里格斯镇的埃米尔·利姆。	NPC	give egg quest
 1169	"解开烈火爵士的大厅中被魔力锁住的门，然后返回烈火爵士处。"	NPC	unward the doors quest
 1170	已解除火之领主的门防护	NPC	unwarded the doors for fire lord
@@ -1188,7 +1188,7 @@ Q Bit	Quest Note Text	Notes	Owner
 1187	前往阿拉莫斯城堡，找到贝塔记忆水晶，把它放回到高级议会地下的恩洛斯神使的模块坛处。	NPC	Restore Memory Crystal Beta
 1188	前往黑摩尔城堡，找到德尔塔记忆水晶，把它放回到高级议会地下的恩洛斯神使的模块坛处。	NPC	Restore Memory Crystal Delta
 1189	前往克里格斯城堡，找到伊普斯隆记忆水晶，把它放回到高级议会地下的恩洛斯神使的模块坛处。	NPC	Restore Memory Crystal Epsilon
-1190	从飞龙沙漠的维兰坟墓中找回控制块，并返回高级议会地下的恩洛斯神使处。	NPC	Retrieve the Control Cube
+1190	从飞龙沙漠的维兰坟墓中找回控制方块，并返回高级议会地下的恩洛斯神使处。	NPC	Retrieve the Control Cube
 1191	已满足议会要求并揭露叛徒（你被允许进入）	NPC	satisfied the council and exposed the traitor (you're allowed in)
 1192	已揭露叛徒	NPC	exposed the traitor
 1193	你已拥有立方体并被允许进入科幻地下城	NPC	you have the cube and are allowed to enter the sci fi dungeon
@@ -1241,7 +1241,7 @@ Q Bit	Quest Note Text	Notes	Owner
 1240	先知任务 - 至少完成一次十月	NPC	Seer quest - Finished October at least once
 1241	先知任务 - 至少完成一次十一月	NPC	Seer quest - Finished November at least once
 1242	先知任务 - 至少完成一次十二月	NPC	Seer quest - Finished December at least once
-1243	"把小雕像放在甜水镇、克里格斯、飞龙沙漠、幽灵沼泽和布特雷格湾，然后返回布莱克郡的特威伦处。"	NPC	Statuette Quest
+1243	"把小雕像放在甜水镇、克里格斯、飞龙沙漠、幽灵沼泽和布特雷格湾，然后返回布莱克郡的特温伦处。"	NPC	Statuette Quest
 1244	给予小雕像宝箱	NPC	Give statuette chest
 1245	给予奖励宝箱	NPC	Give reward chest
 1246	已放置猛虎雕像	NPC	Placed tiger
@@ -1324,7 +1324,7 @@ Q Bit	Quest Note Text	Notes	Owner
 1323	珠宝蛋宝箱不再出现	NPC	No more Jewelled Egg Chest
 1324	已用钥匙打开哥布林瞭望塔	Peter	Used Key to Open Goblin Watch
 1325	迷雾中的传送台激活。	NPC	Pad activation in Mist.
-1326	石中剑（新索皮加尔）	NPC	Sword in the Stone (New Sorpigal)
+1326	石中剑（新索匹格）	NPC	Sword in the Stone (New Sorpigal)
 1327	石中剑（铁拳城堡）	NPC	Sword in the Stone (IronFist)
 1328	基尔伯恩之盾	NPC	Kilburn's Shield
 1329	铁拳水井	NPC	IronFist Well
@@ -1521,7 +1521,7 @@ Q Bit	Quest Note Text	Notes	Owner
 1520	价格联盟：诅咒沼泽的暗沼旅行社尚未同意涨价。	NPC	Loretta Fleise stable, shown while the quest is open	1140	1520
 1521	价格联盟：银湾的阿卜杜勒折扣旅行社尚未同意涨价。	NPC	Loretta Fleise stable, shown while the quest is open	1140	1521
 1522	价格联盟：铁拳城堡的皇家驿行尚未同意涨价。	NPC	Loretta Fleise stable, shown while the quest is open	1140	1522
-1523	价格联盟：新索皮加尔的新索皮加尔马车公司尚未同意涨价。	NPC	Loretta Fleise stable, shown while the quest is open	1140	1523
+1523	价格联盟：新索匹格的新索匹格马车公司尚未同意涨价。	NPC	Loretta Fleise stable, shown while the quest is open	1140	1523
 1524		marks quest items	scroll of dark containment
 1525		marks quest items	
 1526		marks quest items	
@@ -1582,8 +1582,8 @@ Q Bit	Quest Note Text	Notes	Owner
 1581	晋升为名誉游侠领主	Promoted to Honorary Ranger Lord	
 1582	晋升为赏金猎人	Promoted to Bounty Hunter	
 1583	晋升为名誉赏金猎人	Promoted to Honorary Bounty Hunter	
-1584	晋升为战斗法师	Promoted to Warrior Mage	
-1585	晋升为名誉战斗法师	Promoted to Honorary Warrior Mage	
+1584	晋升为魔法战士	Promoted to Warrior Mage	
+1585	晋升为名誉魔法战士	Promoted to Honorary Warrior Mage	
 1586	晋升为神射手	Promoted to Master Archer	
 1587	晋升为名誉神射手	Promoted to Honorary Master Archer	
 1588	晋升为狙击手	Promoted to Sniper	
@@ -1655,8 +1655,8 @@ Q Bit	Quest Note Text	Notes	Owner
 1654	获得名誉首席德鲁伊晋升	Received Promotion to Honorary Arch Druid	
 1655	获得战斗法师晋升	Received Promotion to Battle Mage	
 1656	获得名誉战斗法师晋升	Received Promotion to Honorary Battle Mage	
-1657	获得战斗法师晋升	Received Promotion to Warrior Mage	
-1658	获得名誉战斗法师晋升	Received Promotion to Honorary Warrior Mage	
+1657	获得魔法战士晋升	Received Promotion to Warrior Mage	
+1658	获得名誉魔法战士晋升	Received Promotion to Honorary Warrior Mage	
 1659	加入元素公会	Joined the Elemental Guild	
 1660	加入自我公会	Joined the Self Guild	
 1661	加入海盗巢穴公会	Joined the Buccaneer's Lair Guild	

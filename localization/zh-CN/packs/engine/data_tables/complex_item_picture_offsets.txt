@@ -1,2 +1,0 @@
-Portrait id	Item id	X	Y
-26	908	4	-3

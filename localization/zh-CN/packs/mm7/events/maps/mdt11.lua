@@ -47,7 +47,7 @@ SetMapMetadata({
     [193] = { kind = "open_chest", source = "opcode", chestIds = {18} },
     [194] = { kind = "open_chest", source = "opcode", chestIds = {19} },
     [195] = { kind = "open_chest", source = "opcode", chestIds = {0} },
-    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "7out03.odm", targetName = "埃拉西亚" },
+    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "7out03.odm", targetName = "伊拉西亚" },
     },
     textureNames = {},
     spriteNames = {},
@@ -143,7 +143,7 @@ RegisterEvent(195, "石棺", function()
     evt.OpenChest(0)
 end, "石棺")
 
-RegisterEvent(501, "离开隐秘陵墓", function()
+RegisterEvent(501, "离开隐藏的陵寝", function()
     evt.MoveToMap(14207, -21526, 0, 1536, 0, 0, 0, 0, "7out03.odm") -- Erathia
-end, "离开隐秘陵墓")
+end, "离开隐藏的陵寝")
 

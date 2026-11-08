@@ -34,7 +34,7 @@ SetMapMetadata({
     [27] = { kind = "enter_house", source = "opcode", houseId = 146, targetName = "土系入门行会" },
     [29] = { kind = "enter_house", source = "opcode", houseId = 158, targetName = "心智入门行会" },
     [31] = { kind = "enter_house", source = "opcode", houseId = 286, targetName = "金库" },
-    [33] = { kind = "enter_house", source = "opcode", houseId = 203, targetName = "哈蒙代尔市政厅" },
+    [33] = { kind = "enter_house", source = "opcode", houseId = 203, targetName = "和谐谷市政厅" },
     [35] = { kind = "enter_house", source = "opcode", houseId = 461, targetName = "J.V.C 畜栏" },
     [37] = { kind = "enter_house", source = "opcode", houseId = 1165, targetName = "仲裁者" },
     [112] = { kind = "open_chest", source = "opcode", chestIds = {1} },
@@ -79,8 +79,8 @@ SetMapMetadata({
     [264] = { kind = "enter_house", source = "opcode", houseId = 1127, targetName = "法斯韦尔宅邸" },
     [267] = { kind = "enter_house", source = "opcode", houseId = 1124, targetName = "剥皮者之家" },
     [268] = { kind = "enter_house", source = "opcode", houseId = 1125, targetName = "激流之居" },
-    [301] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d29.blv", targetName = "哈蒙代尔城堡" },
-    [302] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d21.blv", targetName = "白崖洞穴" },
+    [301] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d29.blv", targetName = "和谐谷城堡" },
+    [302] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d21.blv", targetName = "白崖穴" },
     },
     textureNames = {"chb1", "chb1dl", "chb1dr", "chb1el", "chb1er", "chb1s", "chbw"},
     spriteNames = {"0", "7tree01", "7tree07", "7tree13", "7tree14", "7tree15", "7tree16", "7tree17", "7tree18", "7tree22", "7tree24", "7tree30", "tree37", "v77dec24"},
@@ -95,7 +95,7 @@ SetMapMetadata({
 
 RegisterEvent(1, nil, nil)
 
-RegisterEvent(2, "哈蒙代尔城堡", nil, "哈蒙代尔城堡")
+RegisterEvent(2, "和谐谷城堡", nil, "和谐谷城堡")
 
 RegisterEvent(3, "淬炼钢武器店", function()
     if not IsQBitSet(QBit(695)) then -- Failed either goto or do guild quest
@@ -262,16 +262,16 @@ end, "金库")
 
 RegisterEvent(32, "金库", nil, "金库")
 
-RegisterEvent(33, "哈蒙代尔市政厅", function()
+RegisterEvent(33, "和谐谷市政厅", function()
     if not IsQBitSet(QBit(695)) then -- Failed either goto or do guild quest
         evt.EnterHouse(203) -- Harmondale Townhall
         return
     end
     evt.StatusText("这扇门锁着")
     evt.FaceAnimation(FaceAnimation.DoorLocked)
-end, "哈蒙代尔市政厅")
+end, "和谐谷市政厅")
 
-RegisterEvent(34, "哈蒙代尔市政厅", nil, "哈蒙代尔市政厅")
+RegisterEvent(34, "和谐谷市政厅", nil, "和谐谷市政厅")
 
 RegisterEvent(35, "J.V.C 畜栏", function()
     if not IsQBitSet(QBit(695)) then -- Failed either goto or do guild quest
@@ -738,13 +738,13 @@ end)
 
 RegisterEvent(212, "北行至图拉里恩森林", nil, "北行至图拉里恩森林")
 
-RegisterEvent(213, "西行至埃拉西亚", nil, "西行至埃拉西亚")
+RegisterEvent(213, "西行至伊拉西亚", nil, "西行至伊拉西亚")
 
-RegisterEvent(214, "南行至巴罗丘陵", nil, "南行至巴罗丘陵")
+RegisterEvent(214, "南行至丘陵地", nil, "南行至丘陵地")
 
 RegisterEvent(215, "东", nil, "东")
 
-RegisterEvent(216, "哈蒙代尔", nil, "哈蒙代尔")
+RegisterEvent(216, "和谐谷", nil, "和谐谷")
 
 RegisterEvent(217, "水井", nil, "水井")
 
@@ -759,7 +759,7 @@ RegisterEvent(218, "饮用井水", function()
     evt.StatusText("精神焕发！")
 end, "饮用井水")
 
-RegisterEvent(219, "哈蒙代尔城堡", nil, "哈蒙代尔城堡")
+RegisterEvent(219, "和谐谷城堡", nil, "和谐谷城堡")
 
 RegisterEvent(220, "方尖碑", function()
     if IsQBitSet(QBit(676)) then return end -- Visited Obelisk in Area 2
@@ -1248,7 +1248,7 @@ RegisterEvent(268, "激流之居", function()
     evt.EnterHouse(1125) -- Torrent's
 end, "激流之居")
 
-RegisterEvent(301, "进入哈蒙代尔城堡", function()
+RegisterEvent(301, "进入和谐谷城堡", function()
     if not IsQBitSet(QBit(610)) then -- Built Castle to Level 2 (rescued dwarf guy)
         if not IsQBitSet(QBit(644)) then -- Butler only shows up once (area 2)
             AddValue(History(3), 0)
@@ -1263,11 +1263,11 @@ RegisterEvent(301, "进入哈蒙代尔城堡", function()
         return
     end
     evt.MoveToMap(-5073, -2842, 1, 512, 0, 0, 390, 1, "7d29.blv") -- Castle Harmondale
-end, "进入哈蒙代尔城堡")
+end, "进入和谐谷城堡")
 
-RegisterEvent(302, "进入白崖洞穴", function()
+RegisterEvent(302, "进入白崖穴", function()
     evt.MoveToMap(1344, -256, -107, 1024, 0, 0, 135, 1, "7d21.blv") -- White Cliff Cave
-end, "进入白崖洞穴")
+end, "进入白崖穴")
 
 RegisterEvent(65535, "", function()
     if not IsQBitSet(QBit(610)) then return end -- Built Castle to Level 2 (rescued dwarf guy)

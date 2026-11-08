@@ -99,7 +99,7 @@ SetMapMetadata({
     [99] = { kind = "open_chest", source = "opcode", chestIds = {18} },
     [100] = { kind = "open_chest", source = "opcode", chestIds = {19} },
     [201] = { kind = "enter_house", source = "opcode", houseId = 753, targetName = "查尔斯·吉诃德之家" },
-    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "out05.odm", targetName = "绞杀峡谷" },
+    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "out05.odm", targetName = "绞刑峡谷" },
     },
     textureNames = {},
     spriteNames = {},
@@ -494,7 +494,7 @@ RegisterEvent(453, nil, function()
     SetValue(MapVar(11), 2)
 end)
 
-RegisterEvent(501, "离开屠龙者营地", function()
+RegisterEvent(501, "离开狩龙猎人营地", function()
     evt.MoveToMap(8909, -15194, 640, 512, 0, 0, 0, 1, "out05.odm") -- Garrote Gorge
-end, "离开屠龙者营地")
+end, "离开狩龙猎人营地")
 

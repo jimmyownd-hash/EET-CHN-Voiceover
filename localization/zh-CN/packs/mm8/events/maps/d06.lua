@@ -103,7 +103,7 @@ SetMapMetadata({
     [452] = { kind = "open_door", source = "opcode" },
     [453] = { kind = "open_door", source = "opcode" },
     [454] = { kind = "open_door", source = "opcode" },
-    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "out01.odm", targetName = "刀伤岛" },
+    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "out01.odm", targetName = "匕伤群岛" },
     },
     textureNames = {},
     spriteNames = {},
@@ -468,7 +468,7 @@ RegisterEvent(454, nil, function()
     evt.CastSpell(15, 20, 3, 256, -608, 632, -1, -1, -1) -- Sparks
 end)
 
-RegisterEvent(501, "离开雷格纳海盗前哨站", function()
+RegisterEvent(501, "离开雷格纳海盗前哨站站", function()
     evt.MoveToMap(4217, -17375, 146, 1536, 0, 0, 0, 1, "out01.odm") -- Dagger Wound Island
-end, "离开雷格纳海盗前哨站")
+end, "离开雷格纳海盗前哨站站")
 

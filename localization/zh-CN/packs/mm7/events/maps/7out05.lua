@@ -86,7 +86,7 @@ SetMapMetadata({
     [456] = { kind = "secret_event", source = "heuristic", hidden = true },
     [501] = { kind = "enter_dungeon", source = "opcode", targetMap = "t04.blv", targetName = "深渊大厅" },
     [502] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d15.blv", targetName = "瞭望塔 6" },
-    [503] = { kind = "enter_dungeon", source = "opcode", targetMap = "mdt10.blv", targetName = "威廉·塞塔格之塔" },
+    [503] = { kind = "enter_dungeon", source = "opcode", targetMap = "mdt10.blv", targetName = "赛塔轲的高塔" },
     [504] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d15.blv", targetName = "瞭望塔 6" },
     },
     textureNames = {},

@@ -410,9 +410,9 @@ RegisterEvent(452, "喝一口", function()
     SetPlayerBit(PlayerBit(30))
 end, "喝一口")
 
-RegisterEvent(501, "离开塞莱斯特", function()
+RegisterEvent(501, "离开赛勒斯提", function()
     evt.MoveToMap(-9718, 10097, 2449, 1536, 0, 0, 0, 0, "7out06.odm") -- The Bracada Desert
-end, "离开塞莱斯特")
+end, "离开赛勒斯提")
 
 RegisterEvent(502, "进入迷雾之墙", function()
     evt.MoveToMap(-896, -4717, 161, 512, 0, 0, 144, 1, "7d11.blv") -- The Walls of Mist

@@ -117,8 +117,8 @@ SetMapMetadata({
     [114] = { kind = "secret_event", source = "heuristic", hidden = true },
     [115] = { kind = "secret_event", source = "heuristic", hidden = true },
     [453] = { kind = "open_door", source = "opcode" },
-    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "out01.odm", targetName = "刀伤岛" },
-    [502] = { kind = "leave_dungeon", source = "opcode", targetMap = "out01.odm", targetName = "刀伤岛" },
+    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "out01.odm", targetName = "匕伤群岛" },
+    [502] = { kind = "leave_dungeon", source = "opcode", targetMap = "out01.odm", targetName = "匕伤群岛" },
     [506] = { kind = "open_door", source = "opcode" },
     [507] = { kind = "open_door", source = "opcode" },
     [508] = { kind = "open_door", source = "opcode" },
@@ -893,9 +893,9 @@ RegisterEvent(63, "门", function()
     AddValue(MapVar(12), 1)
 end, "门")
 
-RegisterEvent(64, "离开废弃神庙", function()
+RegisterEvent(64, "离开废弃神殿", function()
     evt.SetDoorState(109, DoorAction.Open)
-end, "离开废弃神庙")
+end, "离开废弃神殿")
 
 RegisterEvent(81, "箱子", function()
     evt.OpenChest(0)
@@ -1190,13 +1190,13 @@ RegisterEvent(453, nil, function()
     evt.SetDoorState(115, DoorAction.Open)
 end)
 
-RegisterEvent(501, "离开废弃神庙", function()
+RegisterEvent(501, "离开废弃神殿", function()
     evt.MoveToMap(-12789, 18734, 1857, 1536, 0, 0, 0, 1, "out01.odm") -- Dagger Wound Island
-end, "离开废弃神庙")
+end, "离开废弃神殿")
 
-RegisterEvent(502, "离开废弃神庙", function()
+RegisterEvent(502, "离开废弃神殿", function()
     evt.MoveToMap(21519, 21106, 97, 1024, 0, 0, 0, 1, "out01.odm") -- Dagger Wound Island
-end, "离开废弃神庙")
+end, "离开废弃神殿")
 
 RegisterEvent(506, nil, function()
     evt.SetDoorState(94, DoorAction.Open)

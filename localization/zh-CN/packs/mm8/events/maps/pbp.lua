@@ -53,7 +53,7 @@ SetMapMetadata({
     [503] = { kind = "enter_dungeon", source = "opcode", targetMap = "d37.blv", targetName = "火焰之主的监牢" },
     [504] = { kind = "enter_dungeon", source = "opcode", targetMap = "d38.blv", targetName = "水系之主的监牢" },
     [505] = { kind = "enter_dungeon", source = "opcode", targetMap = "d39.blv", targetName = "大地之主的监牢" },
-    [506] = { kind = "enter_dungeon", source = "opcode", targetMap = "d10.blv", targetName = "埃斯卡顿的水晶" },
+    [506] = { kind = "enter_dungeon", source = "opcode", targetMap = "d10.blv", targetName = "爱斯卡顿水晶" },
     [507] = { kind = "enter_dungeon", source = "opcode", targetMap = "d50.blv", targetName = "新世界计算（NWC）" },
     },
     textureNames = {},
@@ -173,7 +173,7 @@ RegisterEvent(404, "火焰领主之囚牢", nil, "火焰领主之囚牢")
 
 RegisterEvent(405, "流水领主之囚牢", nil, "流水领主之囚牢")
 
-RegisterEvent(406, "埃斯卡顿的水晶", nil, "埃斯卡顿的水晶")
+RegisterEvent(406, "爱斯卡顿水晶", nil, "爱斯卡顿水晶")
 
 RegisterEvent(501, "进入埃斯卡顿的宫殿", function()
     evt.MoveToMap(-704, -5312, 1, 512, 0, 0, 378, 1, "d35.blv") -- Escaton's Palace
@@ -215,9 +215,9 @@ RegisterEvent(505, "进入大地领主之囚牢", function()
     evt.MoveToMap(-2, 118, 1, 2047, 0, 0, 341, 1, "d39.blv") -- Prison of the Lord of Earth
 end, "进入大地领主之囚牢")
 
-RegisterEvent(506, "进入埃斯卡顿的水晶", function()
+RegisterEvent(506, "进入爱斯卡顿水晶", function()
     evt.MoveToMap(-14232, -2956, 800, 432, 0, 0, 0, 1, "d10.blv") -- Escaton's Crystal
-end, "进入埃斯卡顿的水晶")
+end, "进入爱斯卡顿水晶")
 
 RegisterEvent(507, "巨人之剑", function()
     if HasItem(634) then -- Flute

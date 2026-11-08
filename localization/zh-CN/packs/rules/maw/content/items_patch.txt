@@ -96,7 +96,7 @@ key	column	value
 1048	Sprite Index	149
 1048	Notes	制造宝石，第 8 阶。在工作台（制造）上，它可将武器、护甲或珠宝中低于上限最多的基础附魔提升 3 点，或将一项技能提升 1 点；上限随阶数增长。三颗同阶宝石可合成一颗下一阶。
 1049	Pic File	maw_craft_gem09
-1049	Name	埃拉西亚蓝宝石
+1049	Name	伊拉西亚蓝宝石
 1049	Value	9000
 1049	Equip Stat	Gem
 1049	Skill Group	Misc
@@ -216,7 +216,7 @@ key	column	value
 1058	Sprite Index	149
 1058	Notes	制造宝石，第 18 阶。在工作台（制造）上，它可将武器、护甲或珠宝中低于上限最多的基础附魔提升 3 点，或将一项技能提升 1 点；上限随阶数增长。三颗同阶宝石可合成一颗下一阶。
 1059	Pic File	maw_craft_gem19
-1059	Name	升华埃拉西亚蓝宝石
+1059	Name	升华伊拉西亚蓝宝石
 1059	Value	19000
 1059	Equip Stat	Gem
 1059	Skill Group	Misc

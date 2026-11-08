@@ -53,7 +53,7 @@ SetMapMetadata({
     [195] = { kind = "open_chest", source = "opcode", chestIds = {0} },
     [455] = { kind = "open_door", source = "title" },
     [456] = { kind = "open_door", source = "opcode" },
-    [501] = { kind = "passage", source = "opcode", targetMap = "mdk02.blv", targetName = "古墓IV" },
+    [501] = { kind = "passage", source = "opcode", targetMap = "mdk02.blv", targetName = "4号墓穴" },
     },
     textureNames = {},
     spriteNames = {},

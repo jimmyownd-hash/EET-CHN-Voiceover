@@ -65,7 +65,7 @@ SetMapMetadata({
     [195] = { kind = "open_chest", source = "opcode", chestIds = {0} },
     [376] = { kind = "shrine", source = "title" },
     [451] = { kind = "secret_event", source = "heuristic", hidden = true },
-    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "out09.odm", targetName = "恒晨岛" },
+    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "out09.odm", targetName = "晨昏岛" },
     },
     textureNames = {"cfb1"},
     spriteNames = {},

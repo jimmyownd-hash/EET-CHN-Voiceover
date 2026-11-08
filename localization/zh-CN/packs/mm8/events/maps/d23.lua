@@ -104,7 +104,7 @@ SetMapMetadata({
     [103] = { kind = "secret_event", source = "heuristic", hidden = true },
     [104] = { kind = "secret_event", source = "heuristic", hidden = true },
     [105] = { kind = "secret_event", source = "heuristic", hidden = true },
-    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "out07.odm", targetName = "低语森林" },
+    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "out07.odm", targetName = "低语之森" },
     },
     textureNames = {},
     spriteNames = {},

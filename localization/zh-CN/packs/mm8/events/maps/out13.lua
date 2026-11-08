@@ -80,12 +80,12 @@ SetMapMetadata({
     [451] = { kind = "generic_event", source = "opcode" },
     [453] = { kind = "secret_event", source = "heuristic", hidden = true },
     [490] = { kind = "open_door", source = "title" },
-    [501] = { kind = "enter_dungeon", source = "opcode", targetMap = "d31.blv", targetName = "海盗据点" },
-    [502] = { kind = "enter_dungeon", source = "opcode", targetMap = "d32.blv", targetName = "废弃海盗要塞" },
-    [503] = { kind = "enter_dungeon", source = "opcode", targetMap = "d33.blv", targetName = "雷格纳地下通道" },
+    [501] = { kind = "enter_dungeon", source = "opcode", targetMap = "d31.blv", targetName = "海盗堡垒" },
+    [502] = { kind = "enter_dungeon", source = "opcode", targetMap = "d32.blv", targetName = "废弃海盗碉堡" },
+    [503] = { kind = "enter_dungeon", source = "opcode", targetMap = "d33.blv", targetName = "雷格那地底隧道" },
     [504] = { kind = "enter_dungeon", source = "opcode", targetMap = "d34.blv", targetName = "小型潜艇坞" },
-    [505] = { kind = "enter_dungeon", source = "opcode", targetMap = "d47.blv", targetName = "老洛布洞穴" },
-    [506] = { kind = "enter_dungeon", source = "opcode", targetMap = "d33.blv", targetName = "雷格纳地下通道" },
+    [505] = { kind = "enter_dungeon", source = "opcode", targetMap = "d47.blv", targetName = "老罗伯的洞穴" },
+    [506] = { kind = "enter_dungeon", source = "opcode", targetMap = "d33.blv", targetName = "雷格那地底隧道" },
     },
     textureNames = {},
     spriteNames = {},
@@ -502,9 +502,9 @@ RegisterEvent(501, "进入海盗要塞", function()
     evt.MoveToMap(-554, 3682, 1, 520, 0, 0, 368, 1, "d31.blv") -- Pirate Stronghold
 end, "进入海盗要塞")
 
-RegisterEvent(502, "进入废弃海盗城堡", function()
+RegisterEvent(502, "进入废弃海盗碉堡", function()
     evt.MoveToMap(-6520, -6512, 129, 1024, 0, 0, 369, 1, "d32.blv") -- Abandoned Pirate Keep
-end, "进入废弃海盗城堡")
+end, "进入废弃海盗碉堡")
 
 RegisterEvent(503, "进入高塔", function()
     if not IsQBitSet(QBit(197)) then -- Door to the passage under regna from the northern watch tower is unlocked

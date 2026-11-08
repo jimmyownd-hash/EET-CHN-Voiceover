@@ -412,7 +412,7 @@ RegisterEvent(101, nil, function()
     evt.CastSpell(41, 20, 4, -1912, -2300, -1272, -1912, 1732, -1272) -- Rock Blast
 end)
 
-RegisterEvent(501, "离开黑暗矮人营地", function()
+RegisterEvent(501, "离开黑暗矮人聚集处", function()
     evt.MoveToMap(-8658, 7913, 317, 0, 0, 0, 0, 1, "out03.odm") -- Alvar
-end, "离开黑暗矮人营地")
+end, "离开黑暗矮人聚集处")
 

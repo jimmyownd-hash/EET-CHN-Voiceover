@@ -50,7 +50,7 @@ SetMapMetadata({
     [170] = { kind = "open_chest", source = "opcode", chestIds = {0} },
     [202] = { kind = "well", source = "title" },
     [205] = { kind = "well", source = "title" },
-    [452] = { kind = "travel", source = "opcode", targetMap = "7out02.odm", targetName = "哈蒙代尔" },
+    [452] = { kind = "travel", source = "opcode", targetMap = "7out02.odm", targetName = "和谐谷" },
     [453] = { kind = "obelisk", source = "title" },
     [501] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d27.blv", targetName = "佐德殖民地" },
     [502] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d36.blv", targetName = "通往伊欧弗的隧道" },

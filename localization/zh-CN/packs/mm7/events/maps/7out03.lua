@@ -35,7 +35,7 @@ SetMapMetadata({
     [15] = { kind = "enter_house", source = "opcode", houseId = 1572, targetName = "为女王陛下效力" },
     [17] = { kind = "enter_house", source = "opcode", houseId = 204, targetName = "斯特德威克市政厅" },
     [19] = { kind = "enter_house", source = "opcode", houseId = 241, targetName = "狮鹫休憩处" },
-    [21] = { kind = "enter_house", source = "opcode", houseId = 287, targetName = "埃拉西亚银行" },
+    [21] = { kind = "enter_house", source = "opcode", houseId = 287, targetName = "伊拉西亚银行" },
     [23] = { kind = "enter_house", source = "opcode", houseId = 155, targetName = "灵魂系至高公会" },
     [25] = { kind = "enter_house", source = "opcode", houseId = 159, targetName = "精神系进阶公会" },
     [27] = { kind = "enter_house", source = "opcode", houseId = 166, targetName = "身体系大师公会" },
@@ -116,15 +116,15 @@ SetMapMetadata({
     [453] = { kind = "obelisk", source = "title" },
     [495] = { kind = "enter_house", source = "opcode", houseId = 1131, targetName = "织梦者宅邸" },
     [496] = { kind = "enter_house", source = "opcode", houseId = 1132, targetName = "韦恩庄园" },
-    [501] = { kind = "enter_dungeon", source = "opcode", targetMap = "d01.blv", targetName = "埃拉西亚下水道" },
+    [501] = { kind = "enter_dungeon", source = "opcode", targetMap = "d01.blv", targetName = "伊拉西亚城下水道" },
     [502] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d31.blv", targetName = "河畔堡垒" },
-    [503] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d33.blv", targetName = "狮鹫之心城堡" },
-    [504] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d33.blv", targetName = "狮鹫之心城堡" },
+    [503] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d33.blv", targetName = "狮鹫心城堡" },
+    [504] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d33.blv", targetName = "狮鹫心城堡" },
     [505] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d31.blv", targetName = "河畔堡垒" },
-    [506] = { kind = "enter_dungeon", source = "opcode", targetMap = "d01.blv", targetName = "埃拉西亚下水道" },
-    [507] = { kind = "enter_dungeon", source = "opcode", targetMap = "d01.blv", targetName = "埃拉西亚下水道" },
-    [508] = { kind = "enter_dungeon", source = "opcode", targetMap = "mdt11.blv", targetName = "隐秘陵墓" },
-    [509] = { kind = "enter_dungeon", source = "opcode", targetMap = "mdt14.blv", targetName = "强盗洞穴" },
+    [506] = { kind = "enter_dungeon", source = "opcode", targetMap = "d01.blv", targetName = "伊拉西亚城下水道" },
+    [507] = { kind = "enter_dungeon", source = "opcode", targetMap = "d01.blv", targetName = "伊拉西亚城下水道" },
+    [508] = { kind = "enter_dungeon", source = "opcode", targetMap = "mdt11.blv", targetName = "隐藏的陵寝" },
+    [509] = { kind = "enter_dungeon", source = "opcode", targetMap = "mdt14.blv", targetName = "强盗窝" },
     },
     textureNames = {},
     spriteNames = {"0", "7tree19", "7tree20", "7tree21", "7tree25", "7tree28", "7tree30", "tree26", "tree27", "tree37"},
@@ -213,11 +213,11 @@ end, "狮鹫休憩")
 
 RegisterEvent(20, "狮鹫休憩", nil, "狮鹫休憩")
 
-RegisterEvent(21, "埃拉西亚银行", function()
+RegisterEvent(21, "伊拉西亚银行", function()
     evt.EnterHouse(287) -- Bank of Erathia
-end, "埃拉西亚银行")
+end, "伊拉西亚银行")
 
-RegisterEvent(22, "埃拉西亚银行", nil, "埃拉西亚银行")
+RegisterEvent(22, "伊拉西亚银行", nil, "伊拉西亚银行")
 
 RegisterEvent(23, "灵魂至上行会", function()
     evt.EnterHouse(155) -- Paramount Guild of Spirit
@@ -742,15 +742,15 @@ RegisterEvent(454, "码头", nil, "码头")
 
 RegisterEvent(455, "广场", nil, "广场")
 
-RegisterEvent(456, "狮鹫之心城堡", nil, "狮鹫之心城堡")
+RegisterEvent(456, "狮鹫心城堡", nil, "狮鹫心城堡")
 
 RegisterEvent(457, "河畔堡垒", nil, "河畔堡垒")
 
-RegisterEvent(458, "东行至哈蒙代尔", nil, "东行至哈蒙代尔")
+RegisterEvent(458, "东行至和谐谷", nil, "东行至和谐谷")
 
 RegisterEvent(459, "北行至德加沼泽", nil, "北行至德加沼泽")
 
-RegisterEvent(460, "西行至塔塔利亚", nil, "西行至塔塔利亚")
+RegisterEvent(460, "西行至塔塔力雅", nil, "西行至塔塔力雅")
 
 RegisterEvent(461, "南行至布拉卡达沙漠", nil, "南行至布拉卡达沙漠")
 
@@ -886,9 +886,9 @@ RegisterEvent(500, nil, function()
     goto step_8
 end)
 
-RegisterEvent(501, "进入埃拉西亚下水道", function()
+RegisterEvent(501, "进入伊拉西亚城下水道", function()
     evt.MoveToMap(28, -217, 1, 512, 0, 0, 136, 1, "d01.blv") -- The Erathian Sewers
-end, "进入埃拉西亚下水道")
+end, "进入伊拉西亚城下水道")
 
 RegisterEvent(502, "进入河滨要塞", function()
     evt.MoveToMap(64, -448, 1, 512, 0, 0, 393, 1, "7d31.blv") -- Fort Riverstride
@@ -911,13 +911,13 @@ RegisterEvent(505, "进入河滨要塞", function()
     evt.MoveToMap(-1262, 587, -1215, 1024, 0, 0, 393, 1, "7d31.blv") -- Fort Riverstride
 end, "进入河滨要塞")
 
-RegisterEvent(506, "进入埃拉西亚下水道", function()
+RegisterEvent(506, "进入伊拉西亚城下水道", function()
     evt.MoveToMap(6647, 3511, -511, 1024, 0, 0, 136, 1, "d01.blv") -- The Erathian Sewers
-end, "进入埃拉西亚下水道")
+end, "进入伊拉西亚城下水道")
 
-RegisterEvent(507, "进入埃拉西亚下水道", function()
+RegisterEvent(507, "进入伊拉西亚城下水道", function()
     evt.MoveToMap(-6507, 10205, -383, 512, 0, 0, 136, 1, "d01.blv") -- The Erathian Sewers
-end, "进入埃拉西亚下水道")
+end, "进入伊拉西亚城下水道")
 
 RegisterEvent(508, "进入", function()
     evt.MoveToMap(-111, -25, 1, 640, 0, 0, 0, 0, "mdt11.blv") -- The Hidden Tomb

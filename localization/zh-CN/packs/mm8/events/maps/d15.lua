@@ -99,8 +99,8 @@ SetMapMetadata({
     [99] = { kind = "open_chest", source = "opcode", chestIds = {18} },
     [100] = { kind = "open_chest", source = "opcode", chestIds = {19} },
     [101] = { kind = "secret_event", source = "heuristic", hidden = true },
-    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "out04.odm", targetName = "铁沙沙漠" },
-    [502] = { kind = "leave_dungeon", source = "opcode", targetMap = "out04.odm", targetName = "铁沙沙漠" },
+    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "out04.odm", targetName = "铁砂荒漠" },
+    [502] = { kind = "leave_dungeon", source = "opcode", targetMap = "out04.odm", targetName = "铁砂荒漠" },
     },
     textureNames = {},
     spriteNames = {},
@@ -416,11 +416,11 @@ RegisterEvent(101, nil, function()
     evt.CastSpell(6, 10, 4, -8680, 5456, -88, 0, 0, 0) -- Fireball
 end)
 
-RegisterEvent(501, "离开火焰之链", function()
+RegisterEvent(501, "离开炎之锁链", function()
     evt.MoveToMap(-3632, 18166, 0, 1024, 0, 0, 0, 1, "out04.odm") -- Ironsand Desert
-end, "离开火焰之链")
+end, "离开炎之锁链")
 
-RegisterEvent(502, "离开火焰之链", function()
+RegisterEvent(502, "离开炎之锁链", function()
     evt.MoveToMap(8236, 19211, 1, 0, 0, 0, 0, 1, "out04.odm") -- Ironsand Desert
-end, "离开火焰之链")
+end, "离开炎之锁链")
 

@@ -84,7 +84,7 @@ SetMapMetadata({
     [102] = { kind = "open_chest", source = "opcode", chestIds = {3} },
     [150] = { kind = "enter_house", source = "opcode", houseId = 441, targetName = "银盔要塞" },
     [151] = { kind = "enter_house", source = "opcode", houseId = 442, targetName = "巨石碑" },
-    [152] = { kind = "enter_house", source = "opcode", houseId = 445, targetName = "军阀要塞" },
+    [152] = { kind = "enter_house", source = "opcode", houseId = 445, targetName = "军阀堡垒" },
     [161] = { kind = "well", source = "title" },
     [162] = { kind = "fountain", source = "title" },
     [163] = { kind = "fountain", source = "title" },

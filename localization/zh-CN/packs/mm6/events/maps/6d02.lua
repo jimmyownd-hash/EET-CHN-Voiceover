@@ -193,6 +193,6 @@ RegisterEvent(35, nil, function()
 end)
 
 RegisterEvent(50, "出口", function()
-    evt.MoveToMap(-21468, -263, 193, 1536, 0, 0, 0, 0, "oute3.odm") -- 新索皮加尔
+    evt.MoveToMap(-21468, -263, 193, 1536, 0, 0, 0, 0, "oute3.odm") -- 新索匹格
 end, "出口")
 

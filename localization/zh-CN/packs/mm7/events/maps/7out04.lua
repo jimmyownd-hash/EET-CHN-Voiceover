@@ -100,8 +100,8 @@ SetMapMetadata({
     [261] = { kind = "generic_event", source = "opcode" },
     [452] = { kind = "shrine", source = "title" },
     [453] = { kind = "obelisk", source = "title" },
-    [501] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d32.blv", targetName = "纳文城堡" },
-    [502] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d08.blv", targetName = "图拉林洞穴" },
+    [501] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d32.blv", targetName = "那文城堡" },
+    [502] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d08.blv", targetName = "土拉立安洞穴" },
     [503] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d12.blv", targetName = "克兰克实验室" },
     },
     textureNames = {},
@@ -427,7 +427,7 @@ RegisterEvent(204, "饮用喷泉", function()
     evt.StatusText("精神焕发！")
 end, "饮用喷泉")
 
-RegisterEvent(205, "纳文城堡", nil, "纳文城堡")
+RegisterEvent(205, "那文城堡", nil, "那文城堡")
 
 RegisterEvent(251, "果树", function()
     if evt.CheckSeason(3) then return end

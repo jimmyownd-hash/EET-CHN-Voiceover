@@ -98,7 +98,7 @@ SetMapMetadata({
     [98] = { kind = "open_chest", source = "opcode", chestIds = {17} },
     [99] = { kind = "open_chest", source = "opcode", chestIds = {18} },
     [100] = { kind = "open_chest", source = "opcode", chestIds = {19} },
-    [451] = { kind = "passage", source = "opcode", targetMap = "d06.blv", targetName = "海盗前哨" },
+    [451] = { kind = "passage", source = "opcode", targetMap = "d06.blv", targetName = "海盗前哨站" },
     [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "out13.odm", targetName = "雷格纳" },
     },
     textureNames = {},

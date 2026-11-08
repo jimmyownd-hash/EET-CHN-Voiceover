@@ -902,13 +902,13 @@ RegisterEvent(155, nil, function()
     end
 end)
 
-RegisterEvent(501, "离开埃斯卡顿的水晶", function()
+RegisterEvent(501, "离开爱斯卡顿水晶", function()
     evt.MoveToMap(15574, -9880, 321, 2047, 0, 0, 0, 1, "out02.odm") -- Ravenshore
-end, "离开埃斯卡顿的水晶")
+end, "离开爱斯卡顿水晶")
 
-RegisterEvent(502, "离开埃斯卡顿的水晶", function()
+RegisterEvent(502, "离开爱斯卡顿水晶", function()
     if IsAtLeast(MapVar(12), 10) then
         evt.MoveToMap(1395, 20751, 1152, 1536, 0, 0, 0, 1, "pbp.odm") -- Plane Between Planes
     end
-end, "离开埃斯卡顿的水晶")
+end, "离开爱斯卡顿水晶")
 

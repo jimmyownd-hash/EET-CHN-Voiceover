@@ -907,26 +907,26 @@ class_skills:
 #   levels_mm6, levels_mm7, levels_mm8, levels_total   the levels banked in each world
 stats:
   Might:
-    append: "近战与弓类伤害 +<good>{might_bonus:1}</>%。"
+    append: "<value>近战与弓类伤害</> +<good>{might_bonus:1}</>%。"
   Intellect:
     description: >-
-      智力代表角色推理与理解复杂抽象概念的能力。法术伤害随智力与个性中较高者增长，法术暴击伤害随智力增长。
-    append: "法术伤害 +<good>{spell_bonus:1}</>%。法术暴击伤害 +<good>{spell_crit_damage:1}</>%。"
+      <value>智力</>代表角色推理与理解复杂抽象概念的能力。<mana>法术伤害</>随<value>智力</>与<value>个性</>中较高者增长，<mana>法术暴击伤害</>随<value>智力</>增长。
+    append: "<mana>法术伤害</> +<good>{spell_bonus:1}</>%。<mana>法术暴击伤害</> +<good>{spell_crit_damage:1}</>%。"
   Personality:
     description: >-
-      个性代表角色的意志力与个人魅力。最大魔力、法术消耗与治疗能力均基于个性。
+      <value>个性</>代表角色的意志力与个人魅力。<mana>最大魔力</>、<mana>法术消耗</>与<good>治疗能力</>均基于<value>个性</>。
     append: >-
-      治疗 +<good>{heal_bonus:1}</>%。法术消耗 -<good>{cost_cut:1}</>%。个性额外提供 <value>{personality_levels}</> 级等值的魔力。
+      <good>治疗</> +<good>{heal_bonus:1}</>%。<mana>法术消耗</> -<good>{cost_cut:1}</>%。个性额外提供 <value>{personality_levels}</> 级等值的魔力。
   Endurance:
     append: >-
-      生命 +<good>{endurance_bonus:1}</>%，活力额外提供 <value>{endurance_levels}</> 级等值的生命。
+      <good>生命</> +<good>{endurance_bonus:1}</>%，活力额外提供 <value>{endurance_levels}</> 级等值的生命。
   Accuracy:
-    append: "近战与弓类暴击伤害 +<good>{crit_damage:1}</>%。"
+    append: "<value>近战与弓类暴击伤害</> +<good>{crit_damage:1}</>%。"
   Speed:
     append: >-
-      速度改变攻击恢复 <good>{attack_haste:1}</>% 与法术恢复 <good>{spell_haste}</>%。等级 <value>{reference_level}</> 怪物的物理攻击有 <good>{avoid_chance:1}</>% 落空。宗师级闪避可躲开 <good>{dodge_chance:1}</>% 的怪物攻击。
+      <value>速度</>改变攻击恢复 <good>{attack_haste:1}</>% 与法术恢复 <good>{spell_haste}</>%。等级 <value>{reference_level}</> 怪物的物理攻击有 <good>{avoid_chance:1}</>% 落空。宗师级闪避可躲开 <good>{dodge_chance:1}</>% 的怪物攻击。
   Luck:
-    append: "对等级 <value>{reference_level}</> 怪物的暴击率：<good>{crit_chance:1}</>%。"
+    append: "对等级 <value>{reference_level}</> 怪物的<value>暴击率</>：<good>{crit_chance:1}</>%。"
   HitPoints:
     append: >-
       每秒恢复 <good>{hp_regen:1}</> 点生命；受到最后一次攻击 20 秒后翻倍，附近无敌人时再翻两倍。
@@ -937,10 +937,10 @@ stats:
     append: >-
       面对等级 <value>{reference_level}</> 的怪物，护甲削减物理攻击 <good>{physical_cut:1}</>%；算上速度躲开的攻击，平均 <good>{total_cut:1}</>%。
   Attack:
-    append: "对等级 <value>{reference_level}</> 怪物的近战命中率：<good>{hit_chance:1}</>%。"
+    append: "对等级 <value>{reference_level}</> 怪物的<value>近战命中率</>：<good>{hit_chance:1}</>%。"
   Level:
     append: >-
-      累计等级：总计 <value>{levels_total:1}</>；恩洛斯 <value>{levels_mm6:1}</>、安塔加里奇 <value>{levels_mm7:1}</>、贾达美 <value>{levels_mm8:1}</>。怪物随其他世界累计的等级成长：恩洛斯强化等级 <value>{bolster_mm6}</>、安塔加里奇 <value>{bolster_mm7}</>、贾达美 <value>{bolster_mm8}</>。
+      <value>累计等级</>：总计 <value>{levels_total:1}</>；恩洛斯 <value>{levels_mm6:1}</>、安塔加里奇 <value>{levels_mm7:1}</>、贾达美 <value>{levels_mm8:1}</>。怪物随其他世界累计的等级成长：恩洛斯强化等级 <value>{bolster_mm6}</>、安塔加里奇 <value>{bolster_mm7}</>、贾达美 <value>{bolster_mm8}</>。
   FireResistance:
     append: "面对等级 <value>{reference_level}</> 的怪物，火焰抗性削减火焰攻击 <good>{fire_cut:1}</>%。"
   AirResistance:

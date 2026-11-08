@@ -30,7 +30,7 @@ SetMapMetadata({
     [3] = { kind = "enter_house", source = "opcode", houseId = 55, targetName = "缺失之环" },
     [5] = { kind = "enter_house", source = "opcode", houseId = 466, targetName = "干马鞍店" },
     [7] = { kind = "enter_house", source = "opcode", houseId = 491, targetName = "独角鲸号" },
-    [9] = { kind = "enter_house", source = "opcode", houseId = 319, targetName = "塔塔利亚骑士团" },
+    [9] = { kind = "enter_house", source = "opcode", houseId = 319, targetName = "塔塔力雅骑士团" },
     [11] = { kind = "enter_house", source = "opcode", houseId = 1577, targetName = "训练必需品店" },
     [13] = { kind = "enter_house", source = "opcode", houseId = 250, targetName = "忠诚佣兵" },
     [15] = { kind = "enter_house", source = "opcode", houseId = 291, targetName = "仓储处" },
@@ -88,10 +88,10 @@ SetMapMetadata({
     [452] = { kind = "shrine", source = "title" },
     [453] = { kind = "obelisk", source = "title" },
     [501] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d16.blv", targetName = "酒窖" },
-    [502] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d20.blv", targetName = "雇佣兵公会" },
-    [503] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d17.blv", targetName = "潮水洞穴" },
+    [502] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d20.blv", targetName = "佣兵公会" },
+    [503] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d17.blv", targetName = "潮穴" },
     [504] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d18.blv", targetName = "马克汉姆领主庄园" },
-    [505] = { kind = "enter_dungeon", source = "opcode", targetMap = "mdt09.blv", targetName = "罗姆斯拉克斯洞穴" },
+    [505] = { kind = "enter_dungeon", source = "opcode", targetMap = "mdt09.blv", targetName = "罗姆赛克斯的洞穴" },
     },
     textureNames = {},
     spriteNames = {"0"},
@@ -127,11 +127,11 @@ end, "独角鲸号")
 
 RegisterEvent(8, "独角鲸号", nil, "独角鲸号")
 
-RegisterEvent(9, "塔塔利亚教团", function()
+RegisterEvent(9, "塔塔力雅教团", function()
     evt.EnterHouse(319) -- The Order of Tatalia
-end, "塔塔利亚教团")
+end, "塔塔力雅教团")
 
-RegisterEvent(10, "塔塔利亚教团", nil, "塔塔利亚教团")
+RegisterEvent(10, "塔塔力雅教团", nil, "塔塔力雅教团")
 
 RegisterEvent(11, "训练基础馆", function()
     evt.EnterHouse(1577) -- Training Essentials
@@ -394,13 +394,13 @@ RegisterEvent(204, "饮用井水", function()
     evt.StatusText("精神焕发！")
 end, "饮用井水")
 
-RegisterEvent(205, "雇佣兵公会", nil, "雇佣兵公会")
+RegisterEvent(205, "佣兵公会", nil, "佣兵公会")
 
-RegisterEvent(206, "潮水洞穴", nil, "潮水洞穴")
+RegisterEvent(206, "潮穴", nil, "潮穴")
 
 RegisterEvent(207, "马克汉姆领主庄园", nil, "马克汉姆领主庄园")
 
-RegisterEvent(208, "塔塔利亚", nil, "塔塔利亚")
+RegisterEvent(208, "塔塔力雅", nil, "塔塔力雅")
 
 RegisterEvent(209, "东行至斯泰德维克", nil, "东行至斯泰德维克")
 

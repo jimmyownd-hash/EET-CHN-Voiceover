@@ -76,10 +76,10 @@ SetMapMetadata({
     [185] = { kind = "enter_house", source = "opcode", houseId = 306, targetName = "神圣钢铁店" },
     [187] = { kind = "enter_house", source = "opcode", houseId = 1567, targetName = "戈德里克的护手" },
     [191] = { kind = "enter_house", source = "opcode", houseId = 232, targetName = "龙血旅馆" },
-    [501] = { kind = "enter_dungeon", source = "opcode", targetMap = "d16.blv", targetName = "屠龙者营地" },
+    [501] = { kind = "enter_dungeon", source = "opcode", targetMap = "d16.blv", targetName = "狩龙猎人营地" },
     [502] = { kind = "enter_dungeon", source = "opcode", targetMap = "d17.blv", targetName = "龙穴" },
     [503] = { kind = "enter_dungeon", source = "opcode", targetMap = "d18.blv", targetName = "娜迦金库" },
-    [504] = { kind = "enter_dungeon", source = "opcode", targetMap = "d44.blv", targetName = "伊普大神庙" },
+    [504] = { kind = "enter_dungeon", source = "opcode", targetMap = "d44.blv", targetName = "伊普圣殿" },
     },
     textureNames = {},
     spriteNames = {},
@@ -503,13 +503,13 @@ end, "龙血旅店")
 
 RegisterEvent(192, "龙血旅店", nil, "龙血旅店")
 
-RegisterEvent(401, "屠龙者营地", nil, "屠龙者营地")
+RegisterEvent(401, "狩龙猎人营地", nil, "狩龙猎人营地")
 
 RegisterEvent(402, "龙穴", nil, "龙穴")
 
 RegisterEvent(403, "娜迦金库", nil, "娜迦金库")
 
-RegisterEvent(404, "伊普大神庙", nil, "伊普大神庙")
+RegisterEvent(404, "伊普圣殿", nil, "伊普圣殿")
 
 RegisterEvent(405, "帐篷", nil, "帐篷")
 
@@ -526,9 +526,9 @@ RegisterEvent(490, nil, function()
     end
 end)
 
-RegisterEvent(501, "进入屠龙者营地", function()
+RegisterEvent(501, "进入狩龙猎人营地", function()
     evt.MoveToMap(-1216, 1888, 1, 1536, 0, 0, 361, 1, "d16.blv") -- Dragon Hunter's Camp
-end, "进入屠龙者营地")
+end, "进入狩龙猎人营地")
 
 RegisterEvent(502, "进入龙洞", function()
     evt.MoveToMap(223, -8, 170, 1088, 0, 0, 362, 1, "d17.blv") -- Dragon Cave
@@ -538,7 +538,7 @@ RegisterEvent(503, "进入纳迦宝库", function()
     evt.MoveToMap(-500, -1567, -63, 512, 0, 0, 363, 1, "d18.blv") -- Naga Vault
 end, "进入纳迦宝库")
 
-RegisterEvent(504, "进入伊普大神庙", function()
+RegisterEvent(504, "进入伊普圣殿", function()
     evt.MoveToMap(-2812, 726, 1, 1536, 0, 0, 0, 1, "d44.blv") -- Grand Temple of Eep
-end, "进入伊普大神庙")
+end, "进入伊普圣殿")
 

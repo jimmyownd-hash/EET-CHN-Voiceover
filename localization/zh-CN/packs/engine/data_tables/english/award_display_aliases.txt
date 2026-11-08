@@ -2,7 +2,7 @@ Key	State	State Id	Text	Sort	Notes
 mm8.award.2	party_autonote	492	把力之石带给了费瑞瑞克·塔力米尔。	3	MM8 award 2 remapped by MMMerge
 mm8.award.3	party_autonote	493	恐吓那名鼠人走私者。	1	MM8 award 3 remapped by MMMerge
 mm8.award.4	party_autonote	494	将达德洛斯的信交给爱德加·费尔蒙。	1	MM8 award 4 remapped by MMMerge
-mm8.award.6	party_autonote	495	将维尔拜的骨灰放到巨魔墓穴中。	3	MM8 award 6 remapped by MMMerge
+mm8.award.6	party_autonote	495	将维尔拜的骨灰放到食人妖墓穴中。	3	MM8 award 6 remapped by MMMerge
 mm8.award.38	party_autonote	496	赢得了赏金猎人初学者的称号。	5	MM8 award 38 remapped by MMMerge
 mm8.award.39	party_autonote	497	赢得了赏金猎人老手的称号。	5	MM8 award 39 remapped by MMMerge
 mm8.award.40	party_autonote	498	赢得了赏金猎人大师的称号。	5	MM8 award 40 remapped by MMMerge
@@ -31,16 +31,16 @@ mm8.award.59	party_qbit	1552	将神选之药剂带给匕伤岛上的蓝贵德。
 mm8.award.60	party_qbit	1553	杀死渡鸦海滨地区所有的猛狼。	3	MM8 award 60 remapped by MMMerge
 mm8.award.61	party_qbit	1554	替爱立安·韩特将假的报告交给了恐怖海盗史坦力。	3	MM8 award 61 remapped by MMMerge
 mm7.arcomage.239	party_arcomage_win	239	在翡翠岛的双棕榈酒馆赢得了亚克曼纸牌对局。	4	MM7 tavern Arcomage win
-mm7.arcomage.240	party_arcomage_win	240	在哈蒙代尔的本店请客酒馆赢得了亚克曼纸牌对局。	4	MM7 tavern Arcomage win
-mm7.arcomage.241	party_arcomage_win	241	在埃拉西亚的狮鹫休憩处赢得了亚克曼纸牌对局。	4	MM7 tavern Arcomage win
-mm7.arcomage.242	party_arcomage_win	242	在图拉林森林的翡翠旅馆赢得了亚克曼纸牌对局。	4	MM7 tavern Arcomage win
+mm7.arcomage.240	party_arcomage_win	240	在和谐谷的本店请客酒馆赢得了亚克曼纸牌对局。	4	MM7 tavern Arcomage win
+mm7.arcomage.241	party_arcomage_win	241	在伊拉西亚的狮鹫休憩处赢得了亚克曼纸牌对局。	4	MM7 tavern Arcomage win
+mm7.arcomage.242	party_arcomage_win	242	在土拉立安森林的翡翠旅馆赢得了亚克曼纸牌对局。	4	MM7 tavern Arcomage win
 mm7.arcomage.243	party_arcomage_win	243	在德雅的傲慢地精赢得了亚克曼纸牌对局。	4	MM7 tavern Arcomage win
 mm7.arcomage.244	party_arcomage_win	244	在布拉卡达沙漠的熟悉之地赢得了亚克曼纸牌对局。	4	MM7 tavern Arcomage win
-mm7.arcomage.245	party_arcomage_win	245	在塞莱斯特的祝福佳酿赢得了亚克曼纸牌对局。	4	MM7 tavern Arcomage win
+mm7.arcomage.245	party_arcomage_win	245	在赛勒斯提的祝福佳酿赢得了亚克曼纸牌对局。	4	MM7 tavern Arcomage win
 mm7.arcomage.246	party_arcomage_win	246	在深渊的吸血鬼酒廊赢得了亚克曼纸牌对局。	4	MM7 tavern Arcomage win
 mm7.arcomage.247	party_arcomage_win	247	在永暮岛的笑面僧侣赢得了亚克曼纸牌对局。	4	MM7 tavern Arcomage win
 mm7.arcomage.248	party_arcomage_win	248	在雷拳山的命运之愚赢得了亚克曼纸牌对局。	4	MM7 tavern Arcomage win
-mm7.arcomage.249	party_arcomage_win	249	在巴罗丘陵的矿工专营店赢得了亚克曼纸牌对局。	4	MM7 tavern Arcomage win
-mm7.arcomage.250	party_arcomage_win	250	在塔塔利亚的忠诚佣兵赢得了亚克曼纸牌对局。	4	MM7 tavern Arcomage win
-mm7.arcomage.251	party_arcomage_win	251	在艾维利的盆栽小精灵赢得了亚克曼纸牌对局。	4	MM7 tavern Arcomage win
+mm7.arcomage.249	party_arcomage_win	249	在丘陵地的矿工专营店赢得了亚克曼纸牌对局。	4	MM7 tavern Arcomage win
+mm7.arcomage.250	party_arcomage_win	250	在塔塔力雅的忠诚佣兵赢得了亚克曼纸牌对局。	4	MM7 tavern Arcomage win
+mm7.arcomage.251	party_arcomage_win	251	在爱佛黎的盆栽小精灵赢得了亚克曼纸牌对局。	4	MM7 tavern Arcomage win
 mm7.arcomage.252	party_arcomage_win	252	在石城的格罗格的烈酒店赢得了亚克曼纸牌对局。	4	MM7 tavern Arcomage win

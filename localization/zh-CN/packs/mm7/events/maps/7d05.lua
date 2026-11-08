@@ -49,7 +49,7 @@ SetMapMetadata({
     [195] = { kind = "open_chest", source = "opcode", chestIds = {0} },
     [376] = { kind = "open_door", source = "title" },
     [457] = { kind = "open_door", source = "opcode" },
-    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "7out02.odm", targetName = "哈蒙代尔" },
+    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "7out02.odm", targetName = "和谐谷" },
     },
     textureNames = {},
     spriteNames = {},

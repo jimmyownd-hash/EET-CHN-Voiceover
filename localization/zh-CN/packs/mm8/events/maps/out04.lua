@@ -67,12 +67,12 @@ SetMapMetadata({
     [181] = { kind = "enter_house", source = "opcode", houseId = 454, targetName = "行会商队" },
     [189] = { kind = "enter_house", source = "opcode", houseId = 778, targetName = "占位符" },
     [191] = { kind = "enter_house", source = "opcode", houseId = 231, targetName = "干渴咽喉" },
-    [501] = { kind = "enter_dungeon", source = "opcode", targetMap = "d13.blv", targetName = "巨魔墓穴" },
+    [501] = { kind = "enter_dungeon", source = "opcode", targetMap = "d13.blv", targetName = "食人妖墓穴" },
     [502] = { kind = "enter_dungeon", source = "opcode", targetMap = "d14.blv", targetName = "独眼巨人储藏室" },
-    [503] = { kind = "enter_dungeon", source = "opcode", targetMap = "d15.blv", targetName = "火焰之链" },
+    [503] = { kind = "enter_dungeon", source = "opcode", targetMap = "d15.blv", targetName = "炎之锁链" },
     [504] = { kind = "travel", source = "opcode", targetMap = "elemf.odm", targetName = "火之位面" },
-    [505] = { kind = "enter_dungeon", source = "opcode", targetMap = "d15.blv", targetName = "火焰之链" },
-    [506] = { kind = "enter_dungeon", source = "opcode", targetMap = "d48.blv", targetName = "伊尔辛戈尔洞穴" },
+    [505] = { kind = "enter_dungeon", source = "opcode", targetMap = "d15.blv", targetName = "炎之锁链" },
+    [506] = { kind = "enter_dungeon", source = "opcode", targetMap = "d48.blv", targetName = "爱欣格的洞穴" },
     },
     textureNames = {},
     spriteNames = {},
@@ -318,7 +318,7 @@ end, "干渴咽喉")
 
 RegisterEvent(192, "干渴咽喉", nil, "干渴咽喉")
 
-RegisterEvent(401, "巨魔之墓", nil, "巨魔之墓")
+RegisterEvent(401, "食人妖墓穴", nil, "食人妖墓穴")
 
 RegisterEvent(402, "独眼巨人储藏室", nil, "独眼巨人储藏室")
 
@@ -391,25 +391,25 @@ RegisterEvent(495, "岩石", function()
     SetQBit(QBit(277)) -- Reagant spout area 4
 end, "岩石")
 
-RegisterEvent(501, "进入巨魔墓穴", function()
+RegisterEvent(501, "进入食人妖墓穴", function()
     evt.MoveToMap(-672, 768, -28, 256, 0, 0, 358, 1, "d13.blv") -- Troll Tomb
-end, "进入巨魔墓穴")
+end, "进入食人妖墓穴")
 
 RegisterEvent(502, "进入独眼巨人储藏室", function()
     evt.MoveToMap(0, 0, 1, 1536, 0, 0, 359, 1, "d14.blv") -- Cyclops Larder
 end, "进入独眼巨人储藏室")
 
-RegisterEvent(503, "进入火焰之链", function()
+RegisterEvent(503, "进入炎之锁链", function()
     evt.MoveToMap(-288, -768, 0, 520, 0, 0, 360, 1, "d15.blv") -- Chain of Fire
-end, "进入火焰之链")
+end, "进入炎之锁链")
 
 RegisterEvent(504, "进入火焰位面", function()
     evt.MoveToMap(99, -22056, 3057, 512, 0, 0, 350, 1, "elemf.odm") -- Plane of Fire
 end, "进入火焰位面")
 
-RegisterEvent(505, "进入火焰之链", function()
+RegisterEvent(505, "进入炎之锁链", function()
     evt.MoveToMap(-12423, 4347, -135, 1544, 0, 0, 360, 1, "d15.blv") -- Chain of Fire
-end, "进入火焰之链")
+end, "进入炎之锁链")
 
 RegisterEvent(506, "进入洞穴", function()
     evt.MoveToMap(2116, 9631, 1, 1296, 0, 0, 0, 3, "d48.blv") -- Ilsingore's Cave

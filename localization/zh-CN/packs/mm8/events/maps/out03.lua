@@ -111,10 +111,10 @@ SetMapMetadata({
     [463] = { kind = "enter_house", source = "opcode", houseId = 907, targetName = "猎人小屋" },
     [465] = { kind = "enter_house", source = "opcode", houseId = 908, targetName = "德尔维什小屋" },
     [491] = { kind = "teleport", source = "heuristic" },
-    [501] = { kind = "enter_dungeon", source = "opcode", targetMap = "d11.blv", targetName = "黄蜂窝" },
-    [502] = { kind = "enter_dungeon", source = "opcode", targetMap = "d12.blv", targetName = "食人魔要塞" },
+    [501] = { kind = "enter_dungeon", source = "opcode", targetMap = "d11.blv", targetName = "黄蜂巢" },
+    [502] = { kind = "enter_dungeon", source = "opcode", targetMap = "d12.blv", targetName = "食人妖要塞" },
     [503] = { kind = "enter_dungeon", source = "opcode", targetMap = "d41.blv", targetName = "黑矮人营地" },
-    [504] = { kind = "enter_dungeon", source = "opcode", targetMap = "d11.blv", targetName = "黄蜂窝" },
+    [504] = { kind = "enter_dungeon", source = "opcode", targetMap = "d11.blv", targetName = "黄蜂巢" },
     },
     textureNames = {},
     spriteNames = {},
@@ -606,11 +606,11 @@ end, "元素行会")
 
 RegisterEvent(200, "元素行会", nil, "元素行会")
 
-RegisterEvent(401, "黄蜂窝", nil, "黄蜂窝")
+RegisterEvent(401, "黄蜂巢", nil, "黄蜂巢")
 
 RegisterEvent(402, "巨魔掠夺堡", nil, "巨魔掠夺堡")
 
-RegisterEvent(403, "黑暗矮人营地", nil, "黑暗矮人营地")
+RegisterEvent(403, "黑暗矮人聚集处", nil, "黑暗矮人聚集处")
 
 RegisterEvent(404, "帐篷", nil, "帐篷")
 
@@ -742,9 +742,9 @@ RegisterEvent(502, "进入食人魔劫掠要塞", function()
     evt.MoveToMap(-3424, 32, 0, 1024, 0, 0, 357, 1, "d12.blv") -- Ogre Fortress
 end, "进入食人魔劫掠要塞")
 
-RegisterEvent(503, "进入黑暗矮人营地", function()
+RegisterEvent(503, "进入黑暗矮人聚集处", function()
     evt.MoveToMap(-10528, -352, -896, 512, 0, 0, 0, 1, "d41.blv") -- Dark Dwarf Compound
-end, "进入黑暗矮人营地")
+end, "进入黑暗矮人聚集处")
 
 RegisterEvent(504, "进入黄蜂巢", function()
     evt.MoveToMap(301, 2162, 513, 161, 0, 0, 356, 1, "d11.blv") -- Wasp Nest

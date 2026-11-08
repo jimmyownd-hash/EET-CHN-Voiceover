@@ -77,9 +77,9 @@ SetMapMetadata({
     [457] = { kind = "secret_event", source = "heuristic", hidden = true },
     [458] = { kind = "secret_event", source = "heuristic", hidden = true },
     [459] = { kind = "secret_event", source = "heuristic", hidden = true },
-    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "7out03.odm", targetName = "埃拉西亚" },
-    [502] = { kind = "leave_dungeon", source = "opcode", targetMap = "7out03.odm", targetName = "埃拉西亚" },
-    [503] = { kind = "leave_dungeon", source = "opcode", targetMap = "7out03.odm", targetName = "埃拉西亚" },
+    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "7out03.odm", targetName = "伊拉西亚" },
+    [502] = { kind = "leave_dungeon", source = "opcode", targetMap = "7out03.odm", targetName = "伊拉西亚" },
+    [503] = { kind = "leave_dungeon", source = "opcode", targetMap = "7out03.odm", targetName = "伊拉西亚" },
     },
     textureNames = {},
     spriteNames = {},
@@ -319,15 +319,15 @@ RegisterEvent(459, nil, function()
     evt.CastSpell(24, 10, 4, 0, 6528, 368, 0, 5632, 64) -- Poison Spray
 end)
 
-RegisterEvent(501, "离开埃拉西亚下水道", function()
+RegisterEvent(501, "离开伊拉西亚城下水道", function()
     evt.MoveToMap(2727, -9254, 164, 1536, 0, 0, 0, 0, "7out03.odm") -- Erathia
-end, "离开埃拉西亚下水道")
+end, "离开伊拉西亚城下水道")
 
-RegisterEvent(502, "离开埃拉西亚下水道", function()
+RegisterEvent(502, "离开伊拉西亚城下水道", function()
     evt.MoveToMap(-2184, 14886, 25, 512, 0, 0, 0, 0, "7out03.odm") -- Erathia
-end, "离开埃拉西亚下水道")
+end, "离开伊拉西亚城下水道")
 
-RegisterEvent(503, "离开埃拉西亚下水道", function()
+RegisterEvent(503, "离开伊拉西亚城下水道", function()
     evt.MoveToMap(-18356, 15481, 158, 1, 0, 0, 0, 0, "7out03.odm") -- Erathia
-end, "离开埃拉西亚下水道")
+end, "离开伊拉西亚城下水道")
 

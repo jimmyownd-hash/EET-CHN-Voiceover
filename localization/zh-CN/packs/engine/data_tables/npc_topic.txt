@@ -32,13 +32,13 @@
 31	考瑞在哪里？	0		25. Old Dark Elf	Dark Elf Elder	James
 32	勒索	0		40. Old Dark Elf	Arion Hunter	
 33	走私者的船	0		41. Arion Hunter	Arion Hunter	
-34	古代巨魔之家	0		42. Arion Hunter	TROLL PROMO	James
+34	食人妖古老家园	0		42. Arion Hunter	TROLL PROMO	James
 35	任务	0		43. Arion Hunter	TROLL PROMO	James
-36	找到了古代巨魔之家！	0		45. TROLL PROMO	TROLL PROMO	James
+36	找到了食人妖古老家园！	0		45. TROLL PROMO	TROLL PROMO	James
 37	岩石的诅咒	0		46. TROLL PROMO	Volog Sandwind	
 38	多谢你的帮助！	0		47. Cauri Blackthorne	Cauri Blackthorne	
 39	多谢你的帮助！	0		48. TROLL PROMO	TROLL PROMO	
-40	古代巨魔之家	0		49. TROLL PROMO	TROLL PROMO	
+40	食人妖古老家园	0		49. TROLL PROMO	TROLL PROMO	
 41	送上报告	0			Bastian Loudrin	
 42	任务	0			Bastian Loudrin	
 43	任务	0		54. TROLL PROMO	Bastian Loudrin	
@@ -71,7 +71,7 @@
 70	黑暗矮人			93. Tessalar	Tessalar	
 71	任务				Tessalar	
 72	"残破镇的巴尔萨煞
-野蛮漫游"			96	Dadeross
+荒湮回廊"			96	Dadeross
 73	巴尔萨煞之斧			97. Dadeross	Dadeross	
 74	多谢你的帮助！			99. Tessalar	Tessalar	
 75	快点！			101. Dadeross	Dadeross	
@@ -117,7 +117,7 @@
 114	元素之王的监狱		Elgar's subject during free the elemental lords	182. Elgar Fellmoon NPC 5	Elgar Fellmoon NPC 53	
 115	商人之家		Elgar's subject after player wins game	183. Elgar Fellmoon NPC 5	Elgar Fellmoon NPC 53	
 116	猎龙		Quixote while alliance being formed	184. Elgar Fellmoon NPC 5	Charles Quixote NPC 65	
-117	黑井·古伯		Quixote during sink the fleet	185. Charles Quixote NPC 	Charles Quixote NPC 65	
+117	黑井·库伯		Quixote during sink the fleet	185. Charles Quixote NPC 	Charles Quixote NPC 65	
 118	萨索尔		Quixote during talk to xanthor	186. Charles Quixote NPC 	Charles Quixote NPC 65	
 119	组织部队		Quixote during find the hearts	187. Charles Quixote NPC 	Charles Quixote NPC 65	
 120	界间之地		Quixote during find the source of conflux	188. Charles Quixote NPC 	Charles Quixote NPC 65	
@@ -591,7 +591,7 @@
 587	克里根人				Roland Ironfist	
 588	元素之王				Roland Ironfist	
 589	恩洛斯				Roland Ironfist	
-590	埃拉西亚				Catherine Ironfist	
+590	伊拉西亚				Catherine Ironfist	
 591	克里根人				Catherine Ironfist	
 592	元素				Catherine Ironfist	
 593	你救出他们了吗？				James	
@@ -682,7 +682,7 @@
 678	伊普神庙		Temple of Eep Clue one	838. Mortie Bith NPC 408	Mortie Bith NPC 408	
 679	奶酪		Temple of Eep Clue two	839. Jillian Applebee NPC	Jillian Applebee NPC 406	
 680	土元素之王			840. Plane of Earth one		
-681	土元素界			841. Plane of Earth two		
+681	地元素界			841. Plane of Earth two		
 682	风元素之王			842. Plane of Air one		
 683	风元素界			843. Plane of Air two		
 684	水元素界			844. Plane of Water one		
@@ -752,7 +752,7 @@
 748	占位符					
 749	占位符					
 750	占位符					
-751	哈蒙代尔城堡	0	Praise for Glorious Castle Harmondale	1�053. Markham	Lord Markham	1
+751	和谐谷城堡	0	Praise for Glorious Castle Harmondale	1�053. Markham	Lord Markham	1
 752	狩猎活动	0	Isn't this hunt exciting?	1�052. "Isn't this hunt e	Lord Markham	1
 753	恭喜	0	Speech for winning the contest (replace with topic 8)	1�054. "Congratulations! 	Lord Markham	1
 754	你的船……	0	(replaces topic 7) go to castle Harmondale now	1�055. "Well, the ship th	Lord Markham	1
@@ -768,7 +768,7 @@
 764	海洋	0	Blahblahblah	1�059. "I love being out 	Sally	5
 765	贝壳	0	Wanna buy a seashell (there are more elsewhere)	1�060. "I have some nice 	Sally	5
 766	100个金币买贝壳		Wanna buy a seashell (there are more elsewhere)		Sally	5
-767	哈蒙代尔	0	Blahblahblah	1�057. We have reason to 	Mr. Malwick	6
+767	和谐谷	0	Blahblahblah	1�057. We have reason to 	Mr. Malwick	6
 768	提议	0	Give proposal	1�056. "Allow me to intro	Mr. Malwick	6
 769	接受法杖	0	Give wand	1�058. "Excellent.  Somet	Mr. Malwick	6
 770	拒绝法杖	0	Offer chance again	1�050. "I respect your de	Mr. Malwick	6
@@ -788,7 +788,7 @@
 784	失踪的参赛者	0	Markham's go look for contestants	1�091. Keep in mind I hav	Markham	1
 785	失踪的参赛者		Markham's go look for contestants + Positive and negative returns		Markham	1
 786	失踪的人	0	0	1�094. "Hmm� I recall a f	Donna	0
-787	废弃神庙	0	0	1�095. "The cave right be	Donna	0
+787	废弃神殿	0	0	1�095. "The cave right be	Donna	0
 788	蜻蜓	0	0	1�096. "Wild Dragonflies 	Mia Lucille	0
 789	龙	0	0	1�097. "The Dragon of Eme	Mia Lucille	0
 790	龙穴	0	0	1�098. "You're contestant	Grant	0
@@ -818,8 +818,8 @@
 814	忍者	0	0		Stephan Sand	39
 815	神箭手	0	0		Lawrence Mark	40
 816	神箭手	0	0		Lawrence Mark	40
-817	高级射手	0	0		Steagal Snick	41
-818	高级射手	0	0		Steagal Snick	41
+817	魔法战士	0	0		Steagal Snick	41
+818	魔法战士	0	0		Steagal Snick	41
 819	狙击手	0	0		Steagal Snick	41
 820	狙击手	0	0		Steagal Snick	41
 821	勇士	0	0		Leda Rowan	42
@@ -849,10 +849,10 @@
 845	大法师	0	0		Thomas Grey	48
 846	巫妖	0	0		Halfgild Wynac	49
 847	巫妖	0	0		Halfgild Wynac	49
-848	高级德鲁伊	0	0		Anthony Green	50
-849	高级德鲁伊	0	0		Anthony Green	50
-850	大德鲁伊	0	0		Anthony Green	50
-851	大德鲁伊	0	0		Anthony Green	50
+848	大德鲁伊	0	0		Anthony Green	50
+849	大德鲁伊	0	0		Anthony Green	50
+850	德鲁伊长老	0	0		Anthony Green	50
+851	德鲁伊长老	0	0		Anthony Green	50
 852	邪术师	0	0		Tor Anwyn	51
 853	邪术师	0	0		Tor Anwyn	51
 854	人偶肢体	0	0		Golem	56
@@ -1197,7 +1197,7 @@
 1193	古树		James Quest Hint			
 1194	悬赏捕猎		James Quest Hint			
 1195	悬赏捕猎		James Quest Hint			
-1196	潮水洞穴		James Quest Hint			
+1196	潮穴		James Quest Hint			
 1197	埃弗蒙岛		James Quest Hint			
 1198	航海图		James Quest Hint			
 1199	诅咒		James Quest Hint			
@@ -1228,9 +1228,9 @@
 1224	红矮人矿井		James Quest Hint			
 1225	石像		James Quest Hint			
 1226	石头城		James Quest Hint			
-1227	哈蒙代尔		James Quest Hint			
+1227	和谐谷		James Quest Hint			
 1228	暴动		James Quest Hint			
-1229	哈蒙代尔城堡		James Quest Hint			
+1229	和谐谷城堡		James Quest Hint			
 1230	图拉利昂洞穴		James Quest Hint			
 1231	悬崖洞穴		James Quest Hint			
 1232	利文斯德要塞		James Quest Hint			
@@ -1239,9 +1239,9 @@
 1235	收获与失落		James Quest Hint			
 1236	抉择		James Quest Hint			
 1237	净心堂		James Quest Hint			
-1238	塞莱斯特		James Quest Hint			
+1238	赛勒斯提		James Quest Hint			
 1239	地狱城		James Quest Hint			
-1240	塞莱斯特		James Quest Hint			
+1240	赛勒斯提		James Quest Hint			
 1241	神秘的杀手		James Quest Hint			
 1242	克里根恶魔		James Quest Hint			
 1243	战争失败		James Quest Hint			
@@ -1256,7 +1256,7 @@
 1252	城堡升级		Butler Text			
 1253	魔法柱		Butler Text			
 1254	争议之地		Butler Text			
-1255	哈蒙代尔城堡		Butler Text			
+1255	和谐谷城堡		Butler Text			
 1256	烽火		Spy Text			
 1257	卖出图拉利昂木料		Trading Triangle			
 1258	200个金币买狮鹫羽毛		Trading Triangle			
@@ -1270,7 +1270,7 @@
 1266	2000个金币买恩洛斯美酒	3	Trading Triangle			
 1267	卖出玻璃瓶	3	Trading Triangle			
 1268	船期		James Hint			
-1269	尼根隧道		James Hint			
+1269	尼弘隧道		James Hint			
 1270	做买卖		James Hint			
 1271	加速魔法柱					
 1272	大地之柱					
@@ -1396,17 +1396,17 @@
 1392	钱财					
 1393	钱财					
 1394	钱财					
-1395	高级德鲁伊					
-1396	高级德鲁伊					
-1397	大德鲁伊					
-1398	大德鲁伊					
-1399	大德鲁伊					
+1395	大德鲁伊					
+1396	大德鲁伊					
+1397	德鲁伊长老					
+1398	德鲁伊长老					
+1399	德鲁伊长老					
 1400	冬天					
 1401	冬天					
 1402	冬天					
 1403	冬天					
-1404	高级射手					
-1405	高级射手					
+1404	魔法战士					
+1405	魔法战士					
 1406	神箭手					
 1407	神箭手					
 1408	冬天					
@@ -1641,7 +1641,7 @@
 1637	任务					
 1638	任务					
 1639	阴影教					
-1640	新索匹格镇					
+1640	新索匹格					
 1641	任务					
 1642	任务					
 1643	救命！					
@@ -1653,10 +1653,10 @@
 1649	祝贺					
 1650	祝贺					
 1651	狼人					
-1652	纯洁珍珠					
+1652	纯净珍珠					
 1653	任务					
 1654	任务					
-1655	纯洁珍珠					
+1655	纯净珍珠					
 1656	在此处填写文本343					
 1657	在此处填写文本344					
 1658	在此处填写文本345					

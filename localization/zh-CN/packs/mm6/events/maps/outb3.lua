@@ -119,7 +119,7 @@ RegisterEvent(90, nil, function()
 end)
 
 RegisterEvent(91, nil, function()
-    evt.MoveToMap(0, 0, 0, 0, 0, 0, 0, 0, "oute3.odm") -- 新索皮加尔
+    evt.MoveToMap(0, 0, 0, 0, 0, 0, 0, 0, "oute3.odm") -- 新索匹格
 end)
 
 RegisterEvent(92, nil, function()

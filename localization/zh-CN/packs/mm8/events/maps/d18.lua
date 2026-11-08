@@ -99,7 +99,7 @@ SetMapMetadata({
     [98] = { kind = "open_chest", source = "opcode", chestIds = {17} },
     [99] = { kind = "open_chest", source = "opcode", chestIds = {18} },
     [100] = { kind = "open_chest", source = "opcode", chestIds = {19} },
-    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "out05.odm", targetName = "绞杀峡谷" },
+    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "out05.odm", targetName = "绞刑峡谷" },
     },
     textureNames = {},
     spriteNames = {},

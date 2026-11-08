@@ -86,10 +86,10 @@ local SeerPilgrimageMonthsPerYear = 12
 local SeerPilgrimageDaysPerYear = SeerPilgrimageDaysPerMonth * SeerPilgrimageMonthsPerYear
 
 local seerPilgrimageByMonth = {
-    {month = "一月", stat = "力量", map = "走私湾"},
+    {month = "一月", stat = "力量", map = "走私者聚集处"},
     {month = "二月", stat = "智力", map = "迷雾群岛"},
     {month = "三月", stat = "个性", map = "银湾"},
-    {month = "四月", stat = "耐力", map = "冰冻高地"},
+    {month = "四月", stat = "耐力", map = "冰冻高原"},
     {month = "五月", stat = "精准", map = "自由天堂"},
     {month = "六月", stat = "速度", map = "诅咒沼泽"},
     {month = "七月", stat = "幸运", map = "新索匹格"},
@@ -261,12 +261,12 @@ local promotionFamilies = {
         second = {event = 1351, title = "大主教", from = 5, to = 50, bits = {1649, 1650},
             xp = 30000, quest = 1131, conditionBit = 1132, message = 1744, refusal = 1742}},
     {npc = 799, secondStart = 1397, ceremony = true,
-        first = {event = 1678, title = "高级德鲁伊", from = 12, to = 13, bits = {1651, 1652},
+        first = {event = 1678, title = "大德鲁伊", from = 12, to = 13, bits = {1651, 1652},
             xp = 15000, quest = 1142, message = 1792, ceremonyBit = 1197, ceremonyNpc = 1090},
-        second = {event = 1679, title = "大德鲁伊", from = 13, to = 15, bits = {1653, 1654},
+        second = {event = 1679, title = "德鲁伊长老", from = 13, to = 15, bits = {1653, 1654},
             xp = 40000, quest = 1143, message = 1794, ceremonyBit = 1198, ceremonyNpc = 1091}},
     {npc = 800, secondStart = 1406,
-        first = {event = 1405, title = "战斗法师", from = 0, to = 1, bits = {1655, 1656},
+        first = {event = 1405, title = "魔法战士", from = 0, to = 1, bits = {1655, 1656},
             xp = 15000, quest = 1145, item = 2106, message = 1803, refusal = 1802},
         second = {event = 1413, title = "神箭手", from = 1, to = 2, bits = {1657, 1658},
             xp = 40000, quest = 1146, towerBits = {1180, 1181, 1182, 1183, 1184, 1185},

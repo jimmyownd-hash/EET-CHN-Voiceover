@@ -57,7 +57,7 @@ SetMapMetadata({
     [451] = { kind = "generic_event", source = "opcode" },
     [501] = { kind = "enter_dungeon", source = "opcode", targetMap = "d29.blv", targetName = "火焰城堡" },
     [502] = { kind = "enter_dungeon", source = "opcode", targetMap = "d30.blv", targetName = "军营" },
-    [505] = { kind = "travel", source = "opcode", targetMap = "out04.odm", targetName = "铁沙沙漠" },
+    [505] = { kind = "travel", source = "opcode", targetMap = "out04.odm", targetName = "铁砂荒漠" },
     },
     textureNames = {},
     spriteNames = {},

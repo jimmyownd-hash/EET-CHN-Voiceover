@@ -382,7 +382,7 @@ RegisterEvent(50, "箱子", function()
 end, "箱子")
 
 RegisterEvent(51, "出口门", function()
-    evt.MoveToMap(-18400, -14982, 1600, 512, 0, 0, 0, 0, "oute3.odm") -- 新索皮加尔
+    evt.MoveToMap(-18400, -14982, 1600, 512, 0, 0, 0, 0, "oute3.odm") -- 新索匹格
 end, "出口门")
 
 RegisterEvent(55, nil, function()

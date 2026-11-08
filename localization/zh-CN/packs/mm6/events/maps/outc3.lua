@@ -52,7 +52,7 @@ SetMapMetadata({
     [77] = { kind = "open_chest", source = "opcode", chestIds = {1} },
     [78] = { kind = "open_chest", source = "opcode", chestIds = {2} },
     [79] = { kind = "open_chest", source = "opcode", chestIds = {3} },
-    [90] = { kind = "enter_house", source = "opcode", houseId = 438, targetName = "斯内格尔铁矿" },
+    [90] = { kind = "enter_house", source = "opcode", houseId = 438, targetName = "斯纳格的铁矿" },
     [91] = { kind = "enter_house", source = "opcode", houseId = 424, targetName = "暗泽城堡" },
     [92] = { kind = "enter_house", source = "opcode", houseId = 334, targetName = "巴阿神庙" },
     [93] = { kind = "enter_dungeon", source = "opcode", targetMap = "zddb01.blv", targetName = "龙巢" },

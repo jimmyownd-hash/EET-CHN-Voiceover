@@ -938,11 +938,11 @@ end, "被淹商店")
 
 RegisterEvent(479, "被淹商店", nil, "被淹商店")
 
-RegisterEvent(501, "离开巴尔萨泽巢穴", function()
+RegisterEvent(501, "离开霸杀煞之穴", function()
     evt.MoveToMap(-10869, -8850, 1985, 1024, 0, 0, 0, 1, "out08.odm") -- Ravage Roaming
-end, "离开巴尔萨泽巢穴")
+end, "离开霸杀煞之穴")
 
-RegisterEvent(502, "离开巴尔萨泽巢穴", function()
+RegisterEvent(502, "离开霸杀煞之穴", function()
     evt.MoveToMap(-12279, -12153, 2752, 1536, 0, 0, 0, 1, "out08.odm") -- Ravage Roaming
-end, "离开巴尔萨泽巢穴")
+end, "离开霸杀煞之穴")
 

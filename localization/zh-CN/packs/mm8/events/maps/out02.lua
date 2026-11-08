@@ -1102,7 +1102,7 @@ RegisterEvent(402, "恐狼巢穴", nil, "恐狼巢穴")
 
 RegisterEvent(403, "阿尔瓦商会", nil, "阿尔瓦商会")
 
-RegisterEvent(404, "埃斯卡顿的水晶", nil, "埃斯卡顿的水晶")
+RegisterEvent(404, "爱斯卡顿水晶", nil, "爱斯卡顿水晶")
 
 RegisterEvent(405, "布林勋爵之墓", nil, "布林勋爵之墓")
 
@@ -1313,14 +1313,14 @@ RegisterEvent(503, "进入阿尔瓦商会", function()
     evt.MoveToMap(320, -1290, 513, 512, 0, 0, 354, 1, "d09.blv") -- Merchant House of Alvar
 end, "进入阿尔瓦商会")
 
-RegisterEvent(504, "进入埃斯卡顿的水晶", function()
+RegisterEvent(504, "进入爱斯卡顿水晶", function()
     evt.ForPlayer(Players.All)
     if not HasItem(610) then -- Conflux Key
         evt.FaceAnimation(FaceAnimation.DoorLocked)
         return
     end
     evt.MoveToMap(-1024, -1626, 0, 520, 0, 0, 355, 1, "d10.blv") -- Escaton's Crystal
-end, "进入埃斯卡顿的水晶")
+end, "进入爱斯卡顿水晶")
 
 RegisterEvent(505, "进入阿尔瓦商会", function()
     evt.MoveToMap(-1752, 1370, 449, 0, 0, 0, 354, 1, "d09.blv") -- Merchant House of Alvar

@@ -58,7 +58,7 @@ SetMapMetadata({
     [100] = { kind = "open_chest", source = "opcode", chestIds = {19} },
     [451] = { kind = "generic_event", source = "opcode" },
     [501] = { kind = "enter_dungeon", source = "opcode", targetMap = "d27.blv", targetName = "天空城堡" },
-    [505] = { kind = "travel", source = "opcode", targetMap = "out07.odm", targetName = "低语森林" },
+    [505] = { kind = "travel", source = "opcode", targetMap = "out07.odm", targetName = "低语之森" },
     },
     textureNames = {},
     spriteNames = {},

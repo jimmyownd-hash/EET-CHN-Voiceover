@@ -520,7 +520,7 @@ RegisterEvent(62, "书柜", function()
 end, "书柜")
 
 RegisterEvent(90, "出口", function()
-    evt.MoveToMap(15585, 11125, 97, 512, 0, 0, 0, 0, "oute3.odm") -- 新索皮加尔
+    evt.MoveToMap(15585, 11125, 97, 512, 0, 0, 0, 0, "oute3.odm") -- 新索匹格
 end, "出口")
 
 RegisterEvent(91, nil, function()

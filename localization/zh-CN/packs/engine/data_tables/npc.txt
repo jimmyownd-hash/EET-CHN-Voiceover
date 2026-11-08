@@ -37,7 +37,7 @@ NPC Data (Special)			Group			Current	Profession	Greet	Join	Event	Event	Event	Eve
 35	卫兵	1039	0	0	0	0	0	108	0	0	0	0	0	0	0	Dragon Guard
 36	卫兵	1302	0	0	0	0	0	109	0	0	0	0	0	0	0	Dragon Hunter Guard
 37	卫兵	1167	0	0	0	0	0	110	0	0	0	0	0	0	0	Wererat Guard
-38	杰瑞克·惠索多	1302	0	0	0	0	0	111	0	0	0	0	0	0	0	Placemon in dh camp area 5
+38	杰瑞克·惠索朋	1302	0	0	0	0	0	111	0	0	0	0	0	0	0	Placemon in dh camp area 5
 39	瑞尔朋·吉普斯	1440	0	0	0	526	0	0	0	22	23	733	0	0	0	(3) Dark Elf Promotion Quest
 40	艾尔加·费尔蒙	1438	0	0	0	751	0	24	0	104	105	731	0	0	0	"(2) Merchanthouse, Council Chamber"
 41	丹提理安	1158	0	0	0	613	0	104	0	27	0	0	0	0	0	(8) Cleric of the Sun
@@ -825,7 +825,7 @@ NPC Data (Special)			Group			Current	Profession	Greet	Join	Event	Event	Event	Eve
 823	肯特·威廉姆斯	0434	0	0	0	1435	32	0	0	0	0	0	0	0	0	Person who sells house in Free Haven
 824	戈登·斯泰尔斯	0433	0	0	0	1429	2	0	1	0	0	0	0	0	0	armorer
 825	多夫	0432	0	0	0	1413	13	0	0	1513	1573	0	0	0	0	"staff expert, Bottom middle building (E3)"
-826	特威伦	0431	0	0	0	0	41	0	0	1667	0	0	0	0	0	"Young Twillen, after the statuette quest"
+826	特温伦	0431	0	0	0	0	41	0	0	1667	0	0	0	0	0	"Young Twillen, after the statuette quest"
 827	特伦斯·史密斯	0430	0	0	0	1325	13	0	0	1517	1575	0	0	0	0	"dagger expert, behind tavern below Ironfist  (D3)"
 828	萨穆森·德斯	0429	0	0	0	0	73	0	0	1661	0	0	0	0	0	Human guard in Goblinwatch after quest complete
 829	哈珀·柯林斯	0428	0	0	400	1287	14	0	0	1542	0	1705	0	0	0	water master (E2)
@@ -871,7 +871,7 @@ NPC Data (Special)			Group			Current	Profession	Greet	Join	Event	Event	Event	Eve
 869	埃德加·卡朋特	0388	0	0	400	1359	13	0	0	1529	1581	0	0	0	0	"shield expert, 4 buildings south of Ironfist (D3)"
 870	汉斯·吉福德	0387	0	0	0	1251	14	0	0	1556	0	0	0	0	0	identify master (C2)
 871	艾萨克·斯特里曼	0386	0	0	0	1268	17	0	0	0	0	1695	0	0	0	Self Guild Membership (D1)
-872	特威伦	0385	0	0	0	1342	41	0	0	1664	1666	0	0	0	0	Statuette Quest
+872	特温伦	0385	0	0	0	1342	41	0	0	1664	1666	0	0	0	0	Statuette Quest
 873	娜奥米·海兰德	0384	0	0	0	1361	10	0	1	0	0	0	0	0	0	healer
 874	埃罗尔·奥斯特曼	0383	0	0	0	1330	14	0	0	1526	0	0	0	0	0	mace master (B2)
 875	加布·莱斯特	0382	0	0	0	1320	14	0	0	1570	0	0	0	0	0	disarm master (C1)

@@ -94,10 +94,10 @@ SetMapMetadata({
     [469] = { kind = "secret_event", source = "heuristic", hidden = true },
     [471] = { kind = "teleport", source = "heuristic" },
     [472] = { kind = "teleport", source = "heuristic" },
-    [501] = { kind = "enter_dungeon", source = "opcode", targetMap = "d05.blv", targetName = "废弃神庙" },
-    [502] = { kind = "enter_dungeon", source = "opcode", targetMap = "d06.blv", targetName = "海盗前哨" },
+    [501] = { kind = "enter_dungeon", source = "opcode", targetMap = "d05.blv", targetName = "废弃神殿" },
+    [502] = { kind = "enter_dungeon", source = "opcode", targetMap = "d06.blv", targetName = "海盗前哨站" },
     [503] = { kind = "enter_dungeon", source = "opcode", targetMap = "d40.blv", targetName = "高升图书馆" },
-    [504] = { kind = "enter_dungeon", source = "opcode", targetMap = "d05.blv", targetName = "废弃神庙" },
+    [504] = { kind = "enter_dungeon", source = "opcode", targetMap = "d05.blv", targetName = "废弃神殿" },
     [505] = { kind = "enter_dungeon", source = "opcode", targetMap = "eleme.blv", targetName = "土之位面" },
     },
     textureNames = {},
@@ -502,7 +502,7 @@ end, "冒险者旅店")
 
 RegisterEvent(200, "冒险者旅店", nil, "冒险者旅店")
 
-RegisterEvent(401, "废弃神庙", nil, "废弃神庙")
+RegisterEvent(401, "废弃神殿", nil, "废弃神殿")
 
 RegisterEvent(402, "雷格南海盗哨站", nil, "雷格南海盗哨站")
 
@@ -547,9 +547,9 @@ RegisterEvent(453, nil, function()
     evt.MoveToMap(-21528, -1384, 0, 512, 0, 0, 0, 0)
 end)
 
-RegisterEvent(454, "废弃神庙", function()
+RegisterEvent(454, "废弃神殿", function()
     evt.FaceAnimation(FaceAnimation.DoorLocked)
-end, "废弃神庙")
+end, "废弃神殿")
 
 RegisterEvent(455, nil, function()
     evt.ForPlayer(Players.All)
@@ -890,21 +890,21 @@ RegisterEvent(500, nil, function()
     evt.SpeakNPC(27) -- S'ton
 end)
 
-RegisterEvent(501, "进入废弃神庙", function()
+RegisterEvent(501, "进入废弃神殿", function()
     evt.MoveToMap(-3008, -1696, 2464, 512, 0, 0, 346, 1, "d05.blv") -- Abandoned Temple
-end, "进入废弃神庙")
+end, "进入废弃神殿")
 
-RegisterEvent(502, "进入雷格纳海盗前哨站", function()
+RegisterEvent(502, "进入雷格纳海盗前哨站站", function()
     evt.MoveToMap(-7, -714, 1, 512, 0, 0, 349, 1, "d06.blv") -- Pirate Outpost
-end, "进入雷格纳海盗前哨站")
+end, "进入雷格纳海盗前哨站站")
 
 RegisterEvent(503, "进入升空图书馆", function()
     evt.MoveToMap(-592, 624, 0, 0, 0, 0, 0, 1, "d40.blv") -- Uplifted Library
 end, "进入升空图书馆")
 
-RegisterEvent(504, "进入废弃神庙", function()
+RegisterEvent(504, "进入废弃神殿", function()
     evt.MoveToMap(12704, 2432, 385, 0, 0, 0, 346, 1, "d05.blv") -- Abandoned Temple
-end, "进入废弃神庙")
+end, "进入废弃神殿")
 
 RegisterEvent(505, "进入大地位面", function()
     evt.MoveToMap(0, 0, 49, 512, 0, 0, 352, 1, "eleme.blv") -- Plane of Earth

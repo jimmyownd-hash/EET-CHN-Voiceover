@@ -1578,7 +1578,7 @@ RegisterGlobalEvent(116, "猎龙", function()
     evt.SetMessage("我知道身为联盟一员是要紧差事。可我实在想念狩猎！我总想象我的手下在痛快行猎，而我却在这儿埋首公文。赶紧把联盟这摊子事了结！我想利落收拾这团乱麻！没有狩猎的刺激，我的人生便失了往日的火花。")
 end)
 
-RegisterGlobalEvent(117, "黑井·古伯", function()
+RegisterGlobalEvent(117, "黑井·库伯", function()
     evt.SetMessage("从雷格那海盗的战术判断，我怀疑有布莱克威尔·库珀插手。库珀是我的一位老……可以说“老相识”。嘿，我要是个赌徒，愿拿金子打赌，指挥匕伤雷格那远征军的就是他。")
 end)
 
@@ -7993,27 +7993,27 @@ end)
 RegisterGlobalEvent(815, nil, function()
     if IsQBitSet(QBit(1584)) then -- Promoted to Warrior Mage
         if IsQBitSet(QBit(611)) then -- Chose the path of Light
-            evt.SetMessage("几代人以前，图拉林森林的炼金巫师造了一把附魔弓，用于封印精灵与人类之间的又一份和约。\n运往埃拉西亚途中，弓被埃里的泰坦从信使手里夺走。\n他们用不上这东西，所以它大概还在他们的堡垒里。\n为我们这一行出把力，把弓夺回来。\n它绝对是有史以来同类器物中最精美的一件。\n哦，既然你在那儿，不妨顺手教训那些恶霸一下——他们抢它纯粹出于残忍，而非需要！\n你若成功，我会把所有高级射手晋升为神箭手，其余人相应封为荣誉神箭手。")
+            evt.SetMessage("几代人以前，图拉林森林的炼金巫师造了一把附魔弓，用于封印精灵与人类之间的又一份和约。\n运往埃拉西亚途中，弓被埃里的泰坦从信使手里夺走。\n他们用不上这东西，所以它大概还在他们的堡垒里。\n为我们这一行出把力，把弓夺回来。\n它绝对是有史以来同类器物中最精美的一件。\n哦，既然你在那儿，不妨顺手教训那些恶霸一下——他们抢它纯粹出于残忍，而非需要！\n你若成功，我会把所有魔法战士晋升为神箭手，其余人相应封为荣誉神箭手。")
             SetQBit(QBit(542)) -- Retrieve the Perfect Bow from the Titans' Stronghold in Avlee and return it to Lawrence Mark in Harmondale.
             evt.SetNPCTopic(379, 0, 816) -- Lawrence Mark topic 0: Master Archer
         elseif IsQBitSet(QBit(612)) then -- Chose the path of Dark
             evt.SetMessage("你已选择黑暗之路。\n我永远不会帮你精进，因为怕你用技艺达成自私的目的！")
         else
-            evt.SetMessage("这么说，你已取得高级射手军衔，想晋升神箭手！\n目标不错，可我只晋升那些心灵与勇气配得上技艺的人。\n等你坚定皈依光明后再来找我。\n那时我会帮你。")
+            evt.SetMessage("这么说，你已取得魔法战士军衔，想晋升神箭手！\n目标不错，可我只晋升那些心灵与勇气配得上技艺的人。\n等你坚定皈依光明后再来找我。\n那时我会帮你。")
         end
         return
     elseif IsQBitSet(QBit(1585)) then -- Promoted to Honorary Warrior Mage
         if IsQBitSet(QBit(611)) then -- Chose the path of Light
-            evt.SetMessage("几代人以前，图拉林森林的炼金巫师造了一把附魔弓，用于封印精灵与人类之间的又一份和约。\n运往埃拉西亚途中，弓被埃里的泰坦从信使手里夺走。\n他们用不上这东西，所以它大概还在他们的堡垒里。\n为我们这一行出把力，把弓夺回来。\n它绝对是有史以来同类器物中最精美的一件。\n哦，既然你在那儿，不妨顺手教训那些恶霸一下——他们抢它纯粹出于残忍，而非需要！\n你若成功，我会把所有高级射手晋升为神箭手，其余人相应封为荣誉神箭手。")
+            evt.SetMessage("几代人以前，图拉林森林的炼金巫师造了一把附魔弓，用于封印精灵与人类之间的又一份和约。\n运往埃拉西亚途中，弓被埃里的泰坦从信使手里夺走。\n他们用不上这东西，所以它大概还在他们的堡垒里。\n为我们这一行出把力，把弓夺回来。\n它绝对是有史以来同类器物中最精美的一件。\n哦，既然你在那儿，不妨顺手教训那些恶霸一下——他们抢它纯粹出于残忍，而非需要！\n你若成功，我会把所有魔法战士晋升为神箭手，其余人相应封为荣誉神箭手。")
             SetQBit(QBit(542)) -- Retrieve the Perfect Bow from the Titans' Stronghold in Avlee and return it to Lawrence Mark in Harmondale.
             evt.SetNPCTopic(379, 0, 816) -- Lawrence Mark topic 0: Master Archer
         elseif IsQBitSet(QBit(612)) then -- Chose the path of Dark
             evt.SetMessage("你已选择黑暗之路。\n我永远不会帮你精进，因为怕你用技艺达成自私的目的！")
         else
-            evt.SetMessage("这么说，你已取得高级射手军衔，想晋升神箭手！\n目标不错，可我只晋升那些心灵与勇气配得上技艺的人。\n等你坚定皈依光明后再来找我。\n那时我会帮你。")
+            evt.SetMessage("这么说，你已取得魔法战士军衔，想晋升神箭手！\n目标不错，可我只晋升那些心灵与勇气配得上技艺的人。\n等你坚定皈依光明后再来找我。\n那时我会帮你。")
         end
     else
-        evt.SetMessage("你想当神箭手，该找的人就是我，可你来太早了！\n要成为大师，你得有合适的资历，那意味着先成为高级射手。\n准备好后再回来。")
+        evt.SetMessage("你想当神箭手，该找的人就是我，可你来太早了！\n要成为大师，你得有合适的资历，那意味着先成为战斗法师。\n准备好后再回来。")
     end
 end)
 
@@ -8023,7 +8023,7 @@ RegisterGlobalEvent(816, nil, function()
         evt.SetMessage("夺弓不顺利？\n好吧，慢慢来，仔细计划攻打泰坦的行动。\n对付这么强的对手，打了就跑并不丢人。\n为击败这些怪物，做你必须做的。")
         return
     end
-    evt.SetMessage("你找到弓了！\n让我量一量，按你独特的射箭风格调一调。弄好后你就留着它，用它保卫大地与人民。\n我很乐意把所有高级射手晋升为神箭手，把所有荣誉高级射手封为荣誉神箭手。")
+    evt.SetMessage("你找到弓了！\n让我量一量，按你独特的射箭风格调一调。弄好后你就留着它，用它保卫大地与人民。\n我很乐意把所有魔法战士晋升为神箭手，把所有荣誉魔法战士封为荣誉神箭手。")
     for _, player in ipairs(PartyMembers()) do
         evt.ForPlayer(player)
         if IsAtLeast(ClassId, 1) then
@@ -8047,7 +8047,7 @@ RegisterGlobalEvent(816, nil, function()
 end)
 
 RegisterGlobalEvent(817, nil, function()
-    evt.SetMessage("[喘]这么说，你以为自己能当高级射手，是吧？\n没那么容易。\n你必须在魔法技能与身体技能上同样精通。\n有一场考验。\n去红矮人矿。\n里面你会遇到两种野兽——一种只能用魔法伤，一种只能用钢铁伤。\n在矿下层深处，你会找到矮人造的一台机器，它为升降机供能——那是矿上下层之间唯一的通道。\n为把这些生物困在下层，你得把机器里的皮带换成这根旧皮带——它撑不过一小时就会断。\n这该给你足够时间赶到升降机、在被困之前逃出去。\n把这些生物封死，再回来见我——只有那时我才称你们为高级射手。")
+    evt.SetMessage("[喘]这么说，你以为自己能当魔法战士，是吧？\n没那么容易。\n你必须在魔法技能与身体技能上同样精通。\n有一场考验。\n去红矮人矿。\n里面你会遇到两种野兽——一种只能用魔法伤，一种只能用钢铁伤。\n在矿下层深处，你会找到矮人造的一台机器，它为升降机供能——那是矿上下层之间唯一的通道。\n为把这些生物困在下层，你得把机器里的皮带换成这根旧皮带——它撑不过一小时就会断。\n这该给你足够时间赶到升降机、在被困之前逃出去。\n把这些生物封死，再回来见我——只有那时我才称你们为魔法战士。")
     AddValue(InventoryItem(1451), 1451) -- Worn Belt
     SetQBit(QBit(543)) -- Sabotage the lift in the Red Dwarf Mines in the Bracada Desert then return to Steagal Snick in Avlee.
     SetQBit(QBit(728)) -- Worn Belt - I lost it
@@ -8056,10 +8056,10 @@ end)
 
 RegisterGlobalEvent(818, nil, function()
     if not IsQBitSet(QBit(570)) then -- Destroyed critter generator in dungeon. Warrior Mage promo quest.
-        evt.SetMessage("你还没破坏那台机器。\n办完这事之前，我不会晋升你为高级射手。")
+        evt.SetMessage("你还没破坏那台机器。\n办完这事之前，我不会晋升你为魔法战士。")
         return
     end
-    evt.SetMessage("很好。\n你通过了考验。\n如今这些生物被封死，再也不能捕食矮人，而你也证明了自己在法术与钢铁两方面的能力。\n我很自豪地宣布你们中间所有弓箭手为高级射手，其余人等为荣誉高级射手。\n恭喜！\n现在滚吧。\n我已经烦透你们陪着了。")
+    evt.SetMessage("很好。\n你通过了考验。\n如今这些生物被封死，再也不能捕食矮人，而你也证明了自己在法术与钢铁两方面的能力。\n我很自豪地宣布你们中间所有弓箭手为魔法战士，其余人等为荣誉魔法战士。\n恭喜！\n现在滚吧。\n我已经烦透你们陪着了。")
     for _, player in ipairs(PartyMembers()) do
         evt.ForPlayer(player)
         if IsAtLeast(ClassId, 0) then
@@ -8096,7 +8096,7 @@ RegisterGlobalEvent(820, nil, function()
         evt.SetMessage("又失败？[斯尼克大师打哈欠]\n真意外。\n我说简单点——没弓，就没头衔。")
         return
     end
-    evt.SetMessage("你拿到弓了？！\n好极！\n已经几个世纪没人有胆量挑战泰坦、把那弓夺回来了！\n让我量一量，按你独特的射箭风格调一调。\n我很自豪能第一个把你们中间所有高级射手称作狙击手，并宣布所有荣誉高级射手为荣誉狙击手！\n我得承认，我本以为你没本事成功。\n我很高兴我错了。")
+    evt.SetMessage("你拿到弓了？！\n好极！\n已经几个世纪没人有胆量挑战泰坦、把那弓夺回来了！\n让我量一量，按你独特的射箭风格调一调。\n我很自豪能第一个把你们中间所有魔法战士称作狙击手，并宣布所有荣誉魔法战士为荣誉狙击手！\n我得承认，我本以为你没本事成功。\n我很高兴我错了。")
     for _, player in ipairs(PartyMembers()) do
         evt.ForPlayer(player)
         if IsAtLeast(ClassId, 1) then
@@ -8696,7 +8696,7 @@ end)
 
 RegisterGlobalEvent(849, nil, function()
     if IsQBitSet(QBit(562)) then -- Visited all stonehenges
-        evt.SetMessage("我只需看看你们的眼睛，就知道你们去过哪儿。\n你们见过石圈，它们已在你们身上留下印记。\n告诉你们中间所有德鲁伊如今是高级德鲁伊，不过是走个形式。\n告诉其余人等如今是荣誉德鲁伊，是为报答你们对我和我信仰的敬意。\n")
+        evt.SetMessage("我只需看看你们的眼睛，就知道你们去过哪儿。\n你们见过石圈，它们已在你们身上留下印记。\n告诉你们中间所有德鲁伊如今是大德鲁伊，不过是走个形式。\n告诉其余人等如今是荣誉德鲁伊，是为报答你们对我和我信仰的敬意。\n")
         for _, player in ipairs(PartyMembers()) do
             evt.ForPlayer(player)
             if IsAtLeast(ClassId, 12) then
@@ -8727,7 +8727,7 @@ end)
 
 RegisterGlobalEvent(850, nil, function()
     if IsQBitSet(QBit(611)) then -- Chose the path of Light
-        evt.SetMessage("要被封为高级德鲁伊，你必须为大地效力。\n我知道一件你能做的事。\n在石头城上方那片矮人安葬死者的土地上，有佐卡尔四世的古墓。\n他在尼根入侵埃拉西亚时，为保卫石头城战死。\n他的遗骸始终未被寻回，仍躺在那些隧道里。\n\n取回他的遗骨，放进他古墓中的棺里。\n此事一了，国王得以安息，大地也将安息。\n完成这桩效力后回来找我，我将举行升阶仪式，封你们为高级德鲁伊。")
+        evt.SetMessage("要被封为德鲁伊长老，你必须为大地效力。\n我知道一件你能做的事。\n在石头城上方那片矮人安葬死者的土地上，有佐卡尔四世的古墓。\n他在尼根入侵埃拉西亚时，为保卫石头城战死。\n他的遗骸始终未被寻回，仍躺在那些隧道里。\n\n取回他的遗骨，放进他古墓中的棺里。\n此事一了，国王得以安息，大地也将安息。\n完成这桩效力后回来找我，我将举行升阶仪式，封你们为德鲁伊长老。")
         SetQBit(QBit(566)) -- Retrieve the bones of the Dwarf King from the tunnels between Stone City and Nighon and place them in their proper resting place in the Barrow Downs, then return to Anthony Green in the Tularean Forest.
         evt.SetNPCTopic(389, 0, 851) -- Anthony Green topic 0: Arch Druid
     elseif IsQBitSet(QBit(612)) then -- Chose the path of Dark
@@ -8742,7 +8742,7 @@ RegisterGlobalEvent(851, nil, function()
         evt.SetMessage("这桩效力不易，但必须完成。\n记住，你们必须把佐卡尔四世的遗骨从石头城与尼根之间隧道里的所在，带到一座秘密矮人古墓中佐卡尔的棺里。\n只有那时我才能举行升阶仪式，晋升你们。")
         return
     end
-    evt.SetMessage("[绿大师为你们的成就喜不自胜]你们归还国王遗骨时，我感到国王的灵魂回到了死者之地。\n大地长舒了一口气——你们感觉到了吗？\n升阶仪式完成。\n我很高兴把你们中间所有高级德鲁伊晋升为大德鲁伊，把所有荣誉高级德鲁伊封为荣誉大德鲁伊。\n这是多么快乐的一天！\n你们的功绩会被铭记！")
+    evt.SetMessage("[绿大师为你们的成就喜不自胜]你们归还国王遗骨时，我感到国王的灵魂回到了死者之地。\n大地长舒了一口气——你们感觉到了吗？\n升阶仪式完成。\n我很高兴把你们中间所有大德鲁伊晋升为德鲁伊长老，把所有荣誉大德鲁伊封为荣誉德鲁伊长老。\n这是多么快乐的一天！\n你们的功绩会被铭记！")
     for _, player in ipairs(PartyMembers()) do
         evt.ForPlayer(player)
         if IsAtLeast(ClassId, 13) then
@@ -8764,7 +8764,7 @@ end)
 RegisterGlobalEvent(852, nil, function()
     if IsQBitSet(QBit(1613)) then -- Promoted to Great Druid
         if IsQBitSet(QBit(612)) then -- Chose the path of Dark
-            evt.SetMessage("对有些人来说成为巫师是简单的过程，对另一些人却几乎不可能。\n你需要找一只与你性情相合的使魔。\n使魔会帮你凝聚魔法、集中精神。\n有时一只使魔可以共享，有时不行。\n魔法效应除了高级德鲁伊——一个已与自然调谐的人——谁也察觉不到。\n现在，让我看看你们需要哪种使魔……[托尔拿起一块雕工繁复的宝石，透过它端详你。\n他皱起眉。]\n嗯。\n好吧，好消息是你们需要同一只使魔，找到它后，你们会非常强大。\n坏消息是你们需要一条龙形使魔。\n你们必须找一颗龙蛋。\n带回来，我来孵化它，施放使魔法术。\n龙宝宝会与你们全体相互印记。\n你们也许能在巨人领地的某个龙穴里找到一颗蛋。\n不过，小心龙妈妈。")
+            evt.SetMessage("对有些人来说成为巫师是简单的过程，对另一些人却几乎不可能。\n你需要找一只与你性情相合的使魔。\n使魔会帮你凝聚魔法、集中精神。\n有时一只使魔可以共享，有时不行。\n魔法效应除了大德鲁伊——一个已与自然调谐的人——谁也察觉不到。\n现在，让我看看你们需要哪种使魔……[托尔拿起一块雕工繁复的宝石，透过它端详你。\n他皱起眉。]\n嗯。\n好吧，好消息是你们需要同一只使魔，找到它后，你们会非常强大。\n坏消息是你们需要一条龙形使魔。\n你们必须找一颗龙蛋。\n带回来，我来孵化它，施放使魔法术。\n龙宝宝会与你们全体相互印记。\n你们也许能在巨人领地的某个龙穴里找到一颗蛋。\n不过，小心龙妈妈。")
             SetQBit(QBit(567)) -- Retrieve the dragon egg from the Dragon Cave in the Land of the Giants and return it to Tor Anwyn in Mount Nighon.
             evt.SetNPCTopic(390, 0, 853) -- Tor Anwyn topic 0: Warlock
         elseif IsQBitSet(QBit(611)) then -- Chose the path of Light
@@ -8775,7 +8775,7 @@ RegisterGlobalEvent(852, nil, function()
         return
     elseif IsQBitSet(QBit(1614)) then -- Promoted to Honorary Great Druid
         if IsQBitSet(QBit(612)) then -- Chose the path of Dark
-            evt.SetMessage("对有些人来说成为巫师是简单的过程，对另一些人却几乎不可能。\n你需要找一只与你性情相合的使魔。\n使魔会帮你凝聚魔法、集中精神。\n有时一只使魔可以共享，有时不行。\n魔法效应除了高级德鲁伊——一个已与自然调谐的人——谁也察觉不到。\n现在，让我看看你们需要哪种使魔……[托尔拿起一块雕工繁复的宝石，透过它端详你。\n他皱起眉。]\n嗯。\n好吧，好消息是你们需要同一只使魔，找到它后，你们会非常强大。\n坏消息是你们需要一条龙形使魔。\n你们必须找一颗龙蛋。\n带回来，我来孵化它，施放使魔法术。\n龙宝宝会与你们全体相互印记。\n你们也许能在巨人领地的某个龙穴里找到一颗蛋。\n不过，小心龙妈妈。")
+            evt.SetMessage("对有些人来说成为巫师是简单的过程，对另一些人却几乎不可能。\n你需要找一只与你性情相合的使魔。\n使魔会帮你凝聚魔法、集中精神。\n有时一只使魔可以共享，有时不行。\n魔法效应除了大德鲁伊——一个已与自然调谐的人——谁也察觉不到。\n现在，让我看看你们需要哪种使魔……[托尔拿起一块雕工繁复的宝石，透过它端详你。\n他皱起眉。]\n嗯。\n好吧，好消息是你们需要同一只使魔，找到它后，你们会非常强大。\n坏消息是你们需要一条龙形使魔。\n你们必须找一颗龙蛋。\n带回来，我来孵化它，施放使魔法术。\n龙宝宝会与你们全体相互印记。\n你们也许能在巨人领地的某个龙穴里找到一颗蛋。\n不过，小心龙妈妈。")
             SetQBit(QBit(567)) -- Retrieve the dragon egg from the Dragon Cave in the Land of the Giants and return it to Tor Anwyn in Mount Nighon.
             evt.SetNPCTopic(390, 0, 853) -- Tor Anwyn topic 0: Warlock
         elseif IsQBitSet(QBit(611)) then -- Chose the path of Light
@@ -8784,7 +8784,7 @@ RegisterGlobalEvent(852, nil, function()
             evt.SetMessage("尽管我喜欢把巫师视作暮光或黎明之路的追随者，严格来说我们是黑暗之路的追随者。\n你必须先成为黑暗的虔诚信徒，我才能帮你。\n")
         end
     else
-        evt.SetMessage("我很想领你们走上成为巫师的路，可在你们成为高级德鲁伊之前，我做什么都没用。\n达到那种理解境界后再回来。")
+        evt.SetMessage("我很想领你们走上成为巫师的路，可在你们成为大德鲁伊之前，我做什么都没用。\n达到那种理解境界后再回来。")
     end
 end)
 
@@ -8794,7 +8794,7 @@ RegisterGlobalEvent(853, nil, function()
         evt.SetMessage("你得给我带一颗龙蛋，我才能孵化你们的使魔。\n这一步绕不过去。\n试着在巨人领地找一个龙穴——也许那儿能找到蛋。")
         return
     end
-    evt.SetMessage("[托尔惊讶地看着你]你们真找到了一颗龙蛋！\n已经一个多世纪没有哪个巫师既需要又找到过龙形使魔了！\n这一定会写进史书，错不了！\n我的法术书！\n我需要我的书！\n啊，在这儿。\n[托尔照书吟唱咒语，然后轻敲蛋三下。\n蛋壳裂开，一只龙宝宝爬了出来]\n好了！\n哇，他可爱不可爱？\n恭喜！\n你们不再是普通的高级德鲁伊，而是巫师了！\n当然，你们若原本不是天生的高级德鲁伊，这只是荣誉头衔，但无论如何，值得骄傲。\n")
+    evt.SetMessage("[托尔惊讶地看着你]你们真找到了一颗龙蛋！\n已经一个多世纪没有哪个巫师既需要又找到过龙形使魔了！\n这一定会写进史书，错不了！\n我的法术书！\n我需要我的书！\n啊，在这儿。\n[托尔照书吟唱咒语，然后轻敲蛋三下。\n蛋壳裂开，一只龙宝宝爬了出来]\n好了！\n哇，他可爱不可爱？\n恭喜！\n你们不再是普通的大德鲁伊，而是巫师了！\n当然，你们若原本不是天生的大德鲁伊，这只是荣誉头衔，但无论如何，值得骄傲。\n")
     for _, player in ipairs(PartyMembers()) do
         evt.ForPlayer(player)
         if IsAtLeast(ClassId, 13) then
@@ -11782,7 +11782,7 @@ RegisterGlobalEvent(1206, nil, function()
     elseif IsQBitSet(QBit(1614)) then -- Promoted to Honorary Great Druid
         evt.SetMessage("既然你们自己发现了石圈，它们已对你施了魔法。\n我希望你们别把它们的位置告诉别人，就像我当初为你们做的那样。")
     else
-        evt.SetMessage("三座石圈是德鲁伊很久以前建的。\n既然说出位置会毁掉有志高级德鲁伊的升阶尝试，我只能给你一个笼统线索——它们都在露天，毫无遮蔽，光秃秃的，而且都远离聚落。\n再多说就会破坏你的升阶了。")
+        evt.SetMessage("三座石圈是德鲁伊很久以前建的。\n既然说出位置会毁掉有志大德鲁伊的升阶尝试，我只能给你一个笼统线索——它们都在露天，毫无遮蔽，光秃秃的，而且都远离聚落。\n再多说就会破坏你的升阶了。")
         return
     end
 end)
@@ -13816,23 +13816,23 @@ RegisterGlobalEvent(1394, nil, function()
 end)
 
 RegisterGlobalEvent(1395, nil, function()
-    evt.SetMessage("说来难信，我恰好是这片土地顶尖的德鲁伊之一。\n因此，我有权把德鲁伊晋升为高级德鲁伊和大德鲁伊，前提是他们证明自己配得上。\n要晋升高级德鲁伊，你们必须举行太阳仪式。\n在任何春分或冬至——3 月 20 日、6 月 21 日、9 月 23 日或 12 月 21 日——到石圈中心祈祷。\n你们那时若在，我会以魔法联系你们，引导你们完成仪式，从而晋升你们为高级德鲁伊。\n你们中间非德鲁伊者将被授予荣誉高级德鲁伊身份，我相信这段经历会值得。")
+    evt.SetMessage("说来难信，我恰好是这片土地顶尖的德鲁伊之一。\n因此，我有权把德鲁伊晋升为大德鲁伊和德鲁伊长老，前提是他们证明自己配得上。\n要晋升大德鲁伊，你们必须举行太阳仪式。\n在任何春分或冬至——3 月 20 日、6 月 21 日、9 月 23 日或 12 月 21 日——到石圈中心祈祷。\n你们那时若在，我会以魔法联系你们，引导你们完成仪式，从而晋升你们为大德鲁伊。\n你们中间非德鲁伊者将被授予荣誉大德鲁伊身份，我相信这段经历会值得。")
     SetQBit(QBit(1142)) -- Visit the Altar of the Sun in the circle of stones north of Silver Cove on an equinox or solstice (HINT: March 20th is an equinox). - NPC
     evt.SetNPCTopic(799, 1, 1396) -- Loretta Fleise topic 1: Great Druids
 end)
 
 RegisterGlobalEvent(1396, nil, function()
-    evt.SetMessage("你们必须在春分或冬至到石圈中心祈祷，完成太阳仪式，晋升高级德鲁伊。\n在那之前，我没法帮你们晋升。")
+    evt.SetMessage("你们必须在春分或冬至到石圈中心祈祷，完成太阳仪式，晋升大德鲁伊。\n在那之前，我没法帮你们晋升。")
 end)
 
 RegisterGlobalEvent(1397, nil, function()
-    evt.SetMessage("这么说，你们自认配得上大德鲁伊头衔。\n你们必须完成月亮仪式才能达到大德鲁伊身份。\n在上一代德鲁伊分裂之前，这曾相当容易，可如今你们得一路杀进神圣祭坛。\n它在月亮神庙，目前由邪恶异端塞德里克·德鲁瑟斯控制。\n他们绝不会让你们和平完成仪式，所以你们大概得打进去。\n与太阳仪式一样，月亮仪式也必须在特定时间、特定地点举行。\n每逢满月的午夜，到月亮神庙的月亮祭坛祈祷。\n你们那时若在，我会以魔法联系你们，引导你们完成仪式。")
+    evt.SetMessage("这么说，你们自认配得上德鲁伊长老头衔。\n你们必须完成月亮仪式才能达到德鲁伊长老身份。\n在上一代德鲁伊分裂之前，这曾相当容易，可如今你们得一路杀进神圣祭坛。\n它在月亮神庙，目前由邪恶异端塞德里克·德鲁瑟斯控制。\n他们绝不会让你们和平完成仪式，所以你们大概得打进去。\n与太阳仪式一样，月亮仪式也必须在特定时间、特定地点举行。\n每逢满月的午夜，到月亮神庙的月亮祭坛祈祷。\n你们那时若在，我会以魔法联系你们，引导你们完成仪式。")
     SetQBit(QBit(1143)) -- Visit the Altar of the Moon in the Temple of the Moon at midnight of a full moon. - NPC
     evt.SetNPCTopic(1090, 1, 1398) -- Loretta Fleise topic 1: Arch Druids
 end)
 
 RegisterGlobalEvent(1398, nil, function()
-    evt.SetMessage("你们必须在任何一个满月的午夜站在月亮祭坛前，完成月亮仪式，晋升大德鲁伊。\n在那之前，我没法帮你们晋升。")
+    evt.SetMessage("你们必须在任何一个满月的午夜站在月亮祭坛前，完成月亮仪式，晋升德鲁伊长老。\n在那之前，我没法帮你们晋升。")
 end)
 
 RegisterGlobalEvent(1399, nil, function()
@@ -13876,7 +13876,7 @@ RegisterGlobalEvent(1403, nil, function()
 end)
 
 RegisterGlobalEvent(1404, nil, function()
-    evt.SetMessage("20 年前，我赢得了铁拳城堡年度射箭比赛，此后一直蝉联勇士。\n这让我有权按自己的判断把弓箭手晋升为高级射手和神箭手。\n你们若帮我一个小忙，我就把你们中间所有弓箭手封为高级射手。\n我需要那把旧龙塔的钥匙——恩洛斯每处主要聚落附近都建了龙塔，用来击落飞行生物。\n我想可以把它们调成只打怪物，而不是打空中飞的一切。既然这算是我的心头好项目，你们其余人我就封荣誉高级射手。\n钥匙在我土地南入口附近我的旧要塞里。\n几年前食人魔和他们的同伙把它夺走时，我只好把它留在那儿。\n带着钥匙回来领赏。\n你们若顺手杀一大批那些怪物，我也不会哭哭啼啼。\n他们占了我的要塞！")
+    evt.SetMessage("20 年前，我赢得了铁拳城堡年度射箭比赛，此后一直蝉联勇士。\n这让我有权按自己的判断把弓箭手晋升为战斗法师和神箭手。\n你们若帮我一个小忙，我就把你们中间所有弓箭手封为战斗法师。\n我需要那把旧龙塔的钥匙——恩洛斯每处主要聚落附近都建了龙塔，用来击落飞行生物。\n我想可以把它们调成只打怪物，而不是打空中飞的一切。既然这算是我的心头好项目，你们其余人我就封荣誉战斗法师。\n钥匙在我土地南入口附近我的旧要塞里。\n几年前食人魔和他们的同伙把它夺走时，我只好把它留在那儿。\n带着钥匙回来领赏。\n你们若顺手杀一大批那些怪物，我也不会哭哭啼啼。\n他们占了我的要塞！")
     SetQBit(QBit(1145)) -- Retrieve the key to the Dragon Towers from Icewind Keep south of Whitecap, and bring it to Lord Stromgard at Castle Stromgard. - NPC
     evt.SetNPCTopic(800, 1, 1405) -- Erik Von Stromgard topic 1: Warrior Mages
 end)
@@ -13887,7 +13887,7 @@ RegisterGlobalEvent(1405, nil, function()
         evt.SetMessage("没钥匙——没奖赏。\n我们的交易简单明了。\n去我旧要塞取钥匙，拿到再回来。\n")
         return
     end
-    evt.SetMessage("很好！\n你们拿到了钥匙，但愿也宰了一大堆那些可憎的野兽。\n我特此把所有弓箭手晋升为高级射手，把所有非弓箭手封为荣誉高级射手。")
+    evt.SetMessage("很好！\n你们拿到了钥匙，但愿也宰了一大堆那些可憎的野兽。\n我特此把所有弓箭手晋升为战斗法师，把所有非弓箭手封为荣誉战斗法师。")
     for _, player in ipairs(PartyMembers()) do
         evt.ForPlayer(player)
         if IsAtLeast(ClassId, 0) then
@@ -13905,7 +13905,7 @@ RegisterGlobalEvent(1405, nil, function()
 end)
 
 RegisterGlobalEvent(1406, nil, function()
-    evt.SetMessage("我当初要钥匙，是为了打开龙塔，调整它们别再乱打飞行物。\n有办法把塔调成只打大型目标，而我想为了王国好把它们都调好。\n魔法正变得越来越常见，年轻巫师因为不知道塔的功能而从天上被打下来的故事也一样。\n你们有了钥匙。\n你们若把所有塔调成只打大型目标，我就把你们中间所有高级射手晋升为神箭手，把荣誉高级射手封为荣誉神箭手。")
+    evt.SetMessage("我当初要钥匙，是为了打开龙塔，调整它们别再乱打飞行物。\n有办法把塔调成只打大型目标，而我想为了王国好把它们都调好。\n魔法正变得越来越常见，年轻巫师因为不知道塔的功能而从天上被打下来的故事也一样。\n你们有了钥匙。\n你们若把所有塔调成只打大型目标，我就把你们中间所有战斗法师晋升为神箭手，把荣誉战斗法师封为荣誉神箭手。")
     SetQBit(QBit(1146)) -- Reset all of the Dragon Towers at each town and return to Lord Stromgard in Castle Stromgard. - NPC
     evt.SetNPCTopic(800, 1, 1413) -- Erik Von Stromgard topic 1: Master Archers
 end)
@@ -13943,7 +13943,7 @@ RegisterGlobalEvent(1413, nil, function()
                             evt.SetMessage("嗯。\n并非所有塔都已重置。\n它们不难找，就是去的路有点长。\n最容易找的在我们西边的白帽镇。")
                             return
                         end
-                        evt.SetMessage("我就知道我信任你们没信错！\n你们解决了我们王国的一个大问题，更别提还帮了自己——如今在城镇上空飞行安全了。\n我很乐意把所有高级射手晋升为神箭手，把所有荣誉高级射手封为荣誉神箭手。\n")
+                        evt.SetMessage("我就知道我信任你们没信错！\n你们解决了我们王国的一个大问题，更别提还帮了自己——如今在城镇上空飞行安全了。\n我很乐意把所有战斗法师晋升为神箭手，把所有荣誉战斗法师封为荣誉神箭手。\n")
                         AddValue(327915, 5)
                         ClearQBit(QBit(1146)) -- Reset all of the Dragon Towers at each town and return to Lord Stromgard in Castle Stromgard. - NPC
                         evt.ForPlayer(Players.All)
@@ -16132,7 +16132,7 @@ RegisterGlobalEvent(1677, nil, function()
 end)
 
 RegisterGlobalEvent(1678, nil, function()
-    evt.SetMessage("<劳里达·弗丽斯以传心术联系你们>欢迎来到太阳仪式。\n站在生命之圈中，面朝北方，身前不投下影子。\n默思这一真理：\n‘金钱就是一切。\n我没有比金钱更真的朋友……’<咧嘴笑>开玩笑的。\n现在，闭上眼，当你们站在世界与时间的中心，只为这一个崇高时刻冥想……<长长的静默停顿>\n睁开眼。\n我特此把所有德鲁伊晋升为高级德鲁伊，把所有非德鲁伊封为荣誉德鲁伊。<洛雷塔渐渐消失>")
+    evt.SetMessage("<劳里达·弗丽斯以传心术联系你们>欢迎来到太阳仪式。\n站在生命之圈中，面朝北方，身前不投下影子。\n默思这一真理：\n‘金钱就是一切。\n我没有比金钱更真的朋友……’<咧嘴笑>开玩笑的。\n现在，闭上眼，当你们站在世界与时间的中心，只为这一个崇高时刻冥想……<长长的静默停顿>\n睁开眼。\n我特此把所有德鲁伊晋升为大德鲁伊，把所有非德鲁伊封为荣誉德鲁伊。<洛雷塔渐渐消失>")
     for _, player in ipairs(PartyMembers()) do
         evt.ForPlayer(player)
         if IsAtLeast(ClassId, 12) then
@@ -16152,7 +16152,7 @@ RegisterGlobalEvent(1678, nil, function()
 end)
 
 RegisterGlobalEvent(1679, nil, function()
-    evt.SetMessage("<劳里达·弗丽斯以传心术联系你们>欢迎来到月亮仪式。\n站在月亮祭坛前面朝南方。\n闭上眼，默思四季之环与生命之轮。\n<长长的静默停顿>\n睁开眼吧，我的朋友们。\n我特此把所有高级德鲁伊晋升为大德鲁伊，把所有荣誉高级德鲁伊封为荣誉大德鲁伊。\n<洛雷塔渐渐消失>")
+    evt.SetMessage("<劳里达·弗丽斯以传心术联系你们>欢迎来到月亮仪式。\n站在月亮祭坛前面朝南方。\n闭上眼，默思四季之环与生命之轮。\n<长长的静默停顿>\n睁开眼吧，我的朋友们。\n我特此把所有大德鲁伊晋升为德鲁伊长老，把所有荣誉大德鲁伊封为荣誉德鲁伊长老。\n<洛雷塔渐渐消失>")
     for _, player in ipairs(PartyMembers()) do
         evt.ForPlayer(player)
         if IsAtLeast(ClassId, 13) then

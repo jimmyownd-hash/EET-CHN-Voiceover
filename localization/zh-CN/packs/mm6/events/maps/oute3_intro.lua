@@ -1,4 +1,4 @@
--- 新索皮加尔 initial cutscene.
+-- 新索匹格 initial cutscene.
 
 RegisterMapOnLoadEvent(65030, "MM6 initial cutscene", function()
     if evt.GetGlobalVar("OpenYAMM.WorldIntro.MM6", 0) ~= 0 then

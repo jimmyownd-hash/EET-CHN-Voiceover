@@ -96,7 +96,7 @@ SetMapMetadata({
     [461] = { kind = "fountain", source = "title" },
     [501] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d14.blv", targetName = "巫术学院" },
     [502] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d34.blv", targetName = "红矮人矿坑" },
-    [503] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d25.blv", targetName = "塞莱斯特" },
+    [503] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d25.blv", targetName = "赛勒斯提" },
     },
     textureNames = {},
     spriteNames = {"0"},

@@ -51,7 +51,7 @@ SetMapMetadata({
     [196] = { kind = "secret_event", source = "heuristic", hidden = true },
     [197] = { kind = "secret_event", source = "heuristic", hidden = true },
     [198] = { kind = "secret_event", source = "heuristic", hidden = true },
-    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "7out02.odm", targetName = "哈蒙代尔" },
+    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "7out02.odm", targetName = "和谐谷" },
     },
     textureNames = {"cwb1"},
     spriteNames = {},
@@ -195,9 +195,9 @@ RegisterEvent(198, nil, function()
     evt.SetTexture(4, "cwb1")
 end)
 
-RegisterEvent(501, "离开白崖洞穴", function()
+RegisterEvent(501, "离开白崖穴", function()
     evt.MoveToMap(9686, -17990, 702, 1024, 0, 0, 0, 0, "7out02.odm") -- Harmondale
-end, "离开白崖洞穴")
+end, "离开白崖穴")
 
 RegisterEvent(65535, "", function()
     if IsAtLeast(MapVar(16), 1) then

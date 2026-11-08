@@ -201,7 +201,7 @@
 200	421	决斗者之锋		mercmid			31490	0037	Merc Guild
 201	422	刀锋终点		mercpoor			31480	0036	Merc Guild
 202	420	狂战士之怒		mercrich			46500	0038	Merc Guild
-203	218	哈蒙代尔市政厅		human town hall				1531	Town Hall
+203	218	和谐谷市政厅		human town hall				1531	Town Hall
 204	218	斯特德维克市政厅		human town hall				1531	Town Hall
 205	223	皮尔庞特市政厅		elf town hall			31050	0484	Town Hall
 206	221	黎明之厅		wizard town hall			45600	1498	Town Hall
@@ -285,7 +285,7 @@
 284	79	血库银行		nbank			35200	1093	Bank
 285	52	巴尔萨泽银行		mbank			33000	1107	Bank
 286	186	金库		human bank01			30890	1555	Bank
-287	186	埃拉西亚银行		human bank01			30890	1555	Bank
+287	186	伊拉西亚银行		human bank01			30890	1555	Bank
 288	191	自然储备		elf bank			31030	0541	Bank
 289	189	物资财富		wizard bank			30670	1504	Bank
 290	187	冻结资产		necromancer bank01			31030	0513	Bank
@@ -317,7 +317,7 @@
 316	215	光明神殿	428	wizard temple			30590	1499	Temple
 317	213	黑暗神殿	429	necromancer temple			30950	1527	Temple
 318	216	供奉与祝福		warlock temple			30710	1523	Temple
-319	366	塔塔利亚教团		human temple02			30710	1516	Temple
+319	366	塔塔力雅教团		human temple02			30710	1516	Temple
 320	217	宁静神殿		elf temple			31040	0523	Temple
 321	214	石之神殿		dwarven temple01			31140	0488	Temple
 322	366	圣殿		human temple02			30710	1516	Temple
@@ -342,55 +342,55 @@
 341	147	土之领主监狱		pr_lorde				0	Dungeon Ent
 342	148	火之领主监狱		pr_lordf				0	Dungeon Ent
 343	149	水之领主监狱		pr_lordw				0	Dungeon Ent
-344	170	巴尔萨泽巢穴						0	Dungeon Ent
+344	170	霸杀煞之穴						0	Dungeon Ent
 345	146	废弃神殿后门		ab_tempbd				0	Dungeon Ent
-346	112	废弃神庙		ab_temp				0	Dungeon Ent
+346	112	废弃神殿		ab_temp				0	Dungeon Ent
 347	144	空气位面之门		gw_air				0	Dungeon Ent
 348	145	水之位面之门		gw_water				0	Dungeon Ent
-349	113	海盗前哨		p_outpst				0	Dungeon Ent
+349	113	海盗前哨站		p_outpst				0	Dungeon Ent
 350	142	火之位面之门		gw_fire				0	Dungeon Ent
-351	114	走私湾		smg_cove				0	Dungeon Ent
+351	114	走私者聚集处		smg_cove				0	Dungeon Ent
 352	143	土之位面之门		gw_earth				0	Dungeon Ent
-353	115	凶狼巢穴		dire_lr				0	Dungeon Ent
+353	115	猛狼巢穴		dire_lr				0	Dungeon Ent
 354	116	阿尔瓦商会	3	mrch_hs				0	Dungeon Ent
 355	117	水晶之内		in_cryst				0	Dungeon Ent
-356	118	黄蜂窝		wasp_nst				0	Dungeon Ent
+356	118	黄蜂巢		wasp_nst				0	Dungeon Ent
 357	119	食人魔劫掠堡垒		ogre_ft				0	Dungeon Ent
-358	120	巨魔之墓		trol_tmb				0	Dungeon Ent
+358	120	食人妖墓穴		trol_tmb				0	Dungeon Ent
 359	121	独眼巨人储藏室		cyc_lr				0	Dungeon Ent
-360	122	火焰之链		ch_fire				0	Dungeon Ent
-361	123	屠龙者营地		dh_camp				0	Dungeon Ent
+360	122	炎之锁链		ch_fire				0	Dungeon Ent
+361	123	狩龙猎人营地		dh_camp				0	Dungeon Ent
 362	124	龙穴		drgn_cav				0	Dungeon Ent
 363	125	纳迦宝库		naga_vlt				0	Dungeon Ent
 364	126	太阳神殿		tpl_sun				0	Dungeon Ent
 365	127	废弃德鲁伊石圈		ab_druid				0	Dungeon Ent
 366	128	牛头人巢穴		mino_lr				0	Dungeon Ent
 367	129	野蛮人要塞		barb_frt				0	Dungeon Ent
-368	130	海盗据点		p_strong				0	Dungeon Ent
-369	131	废弃海盗城堡		a_p_keep				0	Dungeon Ent
+368	130	海盗堡垒		p_strong				0	Dungeon Ent
+369	131	废弃海盗碉堡		a_p_keep				0	Dungeon Ent
 370	132	小型潜艇坞		s_subpen				0	Dungeon Ent
-371	133	死灵法师行会		nec_gild				0	Dungeon Ent
+371	133	死灵法师公会		nec_gild				0	Dungeon Ent
 372	134	疯狂死灵法师实验室		mad_lab				0	Dungeon Ent
 373	135	空气城堡		cstl_air				0	Dungeon Ent
 374	136	空气城堡		cstl_air				0	Dungeon Ent
 375	137	献祭之墓						0	Dungeon Ent
 376	138	火焰城堡		cstl_fir				0	Dungeon Ent
 377	139	战争营地		war_camp				0	Dungeon Ent
-378	140	埃斯卡顿宫殿		esch_pal				0	Dungeon Ent
+378	140	爱斯卡顿宫殿		esch_pal				0	Dungeon Ent
 379	141	空气领主监狱		pr_elords				0	Dungeon Ent
 380	368			player castle bad				0	Dungeon Ent
 381	367			player castle good				0	Dungeon Ent
-382	365	哈蒙代尔城堡		out02 castle harmondy abandoned				0	Dungeon Ent
-383	306	狮鹫之心城堡		out03 castle gryphonheart				0	Dungeon Ent
-384	307	纳文城堡		out04 elf castle				0	Dungeon Ent
+382	365	和谐谷城堡		out02 castle harmondy abandoned				0	Dungeon Ent
+383	306	狮鹫心城堡		out03 castle gryphonheart				0	Dungeon Ent
+384	307	那文城堡		out04 elf castle				0	Dungeon Ent
 385	317	暮光城堡		out08 evil entrance				0	Dungeon Ent
 386	314	微光城堡		out07 castle lambent				0	Dungeon Ent
 387	300	月亮神殿		out01 temple of the moon				0	Dungeon Ent
 388	328	古墓						0	Dungeon Ent
 389	301	龙之巢穴		out01 dragon cave				0	Dungeon Ent
-390	302	哈蒙代尔城堡		out02 castle harmondy				0	Dungeon Ent
-391	303	白崖洞穴		out02 white cliff cave				0	Dungeon Ent
-392	304	埃拉西亚下水道		out03 erathian sewer				0	Dungeon Ent
+390	302	和谐谷城堡		out02 castle harmondy				0	Dungeon Ent
+391	303	白崖穴		out02 white cliff cave				0	Dungeon Ent
+392	304	伊拉西亚城下水道		out03 erathian sewer				0	Dungeon Ent
 393	305	河畔堡垒		out03 fort riverstride				0	Dungeon Ent
 394	308	图拉雷恩洞穴		out04 tularean caves				0	Dungeon Ent
 395	309	科兰克的实验室		out04 clanker's laboratory				0	Dungeon Ent
@@ -409,7 +409,7 @@
 408	327	石头城		out11 stone city				0	Dungeon Ent
 409	329	佐德殖民地		out12 colony zod				0	Dungeon Ent
 410	333	佣兵行会		out13 mercenary guild				0	Dungeon Ent
-411	334	潮水洞穴		out13 tidewater caverns				0	Dungeon Ent
+411	334	潮穴		out13 tidewater caverns				0	Dungeon Ent
 412	335	酒窖		out13 wine cellar				0	Dungeon Ent
 413	336	泰坦据点		out14 titan's stronghold				0	Dungeon Ent
 414	337	巴阿神庙		out14 temple of baa				0	Dungeon Ent
@@ -418,35 +418,35 @@
 417	480	大耳怪前哨		d01				0	Dungeon Ent
 418	406	巴阿神庙		t1				0	Dungeon Ent
 419	481	阿拉莫斯城堡		cd1				0	Dungeon Ent
-420	456	VARN之墓		pyramid				0	Dungeon Ent
+420	456	维兰坟墓		pyramid				0	Dungeon Ent
 421	457	蜂巢		hive				0	Dungeon Ent
-422	472	废弃神庙		d02				0	Dungeon Ent
+422	472	废弃神殿		d02				0	Dungeon Ent
 423	468	拳头神殿		t2				0	Dungeon Ent
 424	482	暗沼城堡		cd2				0	Dungeon Ent
-425	465	暗影行会藏身处		d03				0	Dungeon Ent
+425	465	阴影教隐蔽所		d03				0	Dungeon Ent
 426	469	赞萨神殿		t3				0	Dungeon Ent
-427	483	克里格斯皮尔城堡		cd3				0	Dungeon Ent
+427	483	克里格斯城堡		cd3				0	Dungeon Ent
 428	473	火之领主之厅		d04				0	Dungeon Ent
 429	407	太阳神殿		t4				0	Dungeon Ent
-430	461	斯内格尔洞穴		d05				0	Dungeon Ent
+430	461	斯纳格的岩洞		d05				0	Dungeon Ent
 431	408	月亮神殿		t5				0	Dungeon Ent
-432	459	龙骑兵洞穴		d06				0	Dungeon Ent
+432	459	龙骑兵岩洞		d06				0	Dungeon Ent
 433	405	巴之神殿至尊殿		t6				0	Dungeon Ent
-434	476	银盔前哨		d07				0	Dungeon Ent
+434	476	银舵前哨		d07				0	Dungeon Ent
 435	404	巴之神殿上殿		t7				0	Dungeon Ent
-436	478	暗影行会		d08				0	Dungeon Ent
+436	478	阴影教		d08				0	Dungeon Ent
 437	409	蛇之神殿		t8				0	Dungeon Ent
-438	466	斯内格尔铁矿		d09				0	Dungeon Ent
+438	466	斯纳格的铁矿		d09				0	Dungeon Ent
 439	470	龙骑兵堡垒		d10				0	Dungeon Ent
-440	471	科拉贡庄园		d11				0	Dungeon Ent
-441	467	银盔据点		d12				0	Dungeon Ent
+440	471	考勒根的豪宅		d11				0	Dungeon Ent
+441	467	银舵堡垒		d12				0	Dungeon Ent
 442	463	巨石碑		d13				0	Dungeon Ent
-443	458	疯埃斯里克之墓		d14				0	Dungeon Ent
+443	458	疯子埃斯里克的坟墓		d14				0	Dungeon Ent
 444	462	冰风堡垒		d15				0	Dungeon Ent
-445	460	军阀要塞		d16				0	Dungeon Ent
-446	464	狼之巢穴		d17				0	Dungeon Ent
-447	474	加里克铁匠铺		d18				0	Dungeon Ent
-448	475	阿加尔实验室		d19				0	Dungeon Ent
+445	460	军阀堡垒		d16				0	Dungeon Ent
+446	464	狼穴		d17				0	Dungeon Ent
+447	474	加里克的炼铁厂		d18				0	Dungeon Ent
+448	475	阿加的实验室		d19				0	Dungeon Ent
 449	477	龙骑士洞穴		d20				0	Dungeon Ent
 450	411	预言者	794	oracpoor			46200	0	Seer
 451	410	神谕者	793	oracrich			31210	0	Seer

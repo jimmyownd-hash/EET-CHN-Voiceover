@@ -410,29 +410,29 @@ RegisterEvent(100, "箱子", function()
     evt.OpenChest(19)
 end, "箱子")
 
-RegisterEvent(501, "离开雷格纳地下通道", function()
+RegisterEvent(501, "离开雷格那地底隧道", function()
     evt.MoveToMap(160, 3203, -1342, 1024, 0, 0, 0, 1, "d31.blv") -- Pirate Stronghold
-end, "离开雷格纳地下通道")
+end, "离开雷格那地底隧道")
 
-RegisterEvent(502, "离开雷格纳地下通道", function()
+RegisterEvent(502, "离开雷格那地底隧道", function()
     evt.MoveToMap(128, -4352, -160, 512, 0, 0, 0, 1, "d32.blv") -- Abandoned Pirate Keep
-end, "离开雷格纳地下通道")
+end, "离开雷格那地底隧道")
 
-RegisterEvent(503, "离开雷格纳地下通道", function()
+RegisterEvent(503, "离开雷格那地底隧道", function()
     if not IsQBitSet(QBit(197)) then -- Door to the passage under regna from the northern watch tower is unlocked
         SetQBit(QBit(197)) -- Door to the passage under regna from the northern watch tower is unlocked
         evt.MoveToMap(17730, 2999, 1617, 1536, 0, 0, 0, 1, "out13.odm") -- Regna
         return
     end
     evt.MoveToMap(17730, 2999, 1617, 1536, 0, 0, 0, 1, "out13.odm") -- Regna
-end, "离开雷格纳地下通道")
+end, "离开雷格那地底隧道")
 
-RegisterEvent(504, "离开雷格纳地下通道", function()
+RegisterEvent(504, "离开雷格那地底隧道", function()
     if not IsQBitSet(QBit(198)) then -- Door to the passage under regna from the southern watch tower is unlocked
         SetQBit(QBit(198)) -- Door to the passage under regna from the southern watch tower is unlocked
         evt.MoveToMap(13470, -15350, 1617, 1536, 0, 0, 0, 1, "out13.odm") -- Regna
         return
     end
     evt.MoveToMap(13470, -15350, 1617, 1536, 0, 0, 0, 1, "out13.odm") -- Regna
-end, "离开雷格纳地下通道")
+end, "离开雷格那地底隧道")
 

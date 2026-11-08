@@ -13,7 +13,7 @@ Knight/Cleric Male	Knight/Cleric Female	Dark Elf Pesant Male	Dark Elf Pesant Fem
 阿拉恩	妾乐威	迪德	妾乐威	杜蓝朵	卡丽斯塔	迪德	迪德	*end
 艾伦	柯威莎	盖文	柯威莎	达斯特	卡瑞沙	盖文	盖文	*end
 艾伯特	戴雅维	哥伯拉	戴雅维	阿尔瓦特	卡山德拉里	哥伯拉	哥伯拉	*end
-亚历克	戴瑞娜	胡德	戴瑞娜	艾顿	塞莱斯特	胡德	胡德	*end
+亚历克	戴瑞娜	胡德	戴瑞娜	艾顿	赛勒斯提	胡德	胡德	*end
 亚历杭德罗	戴布瑞	杰伦	戴布瑞	艾力顿	达丽雅	杰伦	杰伦	*end
 亚历山大	迪亚力雅	裘单	迪亚力雅	贝轮	达马厉丝	裘单	裘单	*end
 阿尔弗雷德	迪雅利	珠文	迪雅利	布拉捷克	达米提雅	珠文	珠文	*end

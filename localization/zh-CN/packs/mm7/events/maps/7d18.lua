@@ -51,7 +51,7 @@ SetMapMetadata({
     [195] = { kind = "open_chest", source = "opcode", chestIds = {0} },
     [376] = { kind = "secret_event", source = "heuristic", hidden = true },
     [416] = { kind = "enter_house", source = "opcode", houseId = 215, targetName = "马克汉姆勋爵的房间" },
-    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "7out13.odm", targetName = "塔塔利亚" },
+    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "7out13.odm", targetName = "塔塔力雅" },
     },
     textureNames = {},
     spriteNames = {"0"},

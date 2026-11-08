@@ -62,13 +62,13 @@ SetMapMetadata({
     [191] = { kind = "enter_house", source = "opcode", houseId = 235, targetName = "牛眼旅馆" },
     [501] = { kind = "enter_dungeon", source = "opcode", targetMap = "d24.blv", targetName = "巴尔萨煞巢穴" },
     [502] = { kind = "enter_dungeon", source = "opcode", targetMap = "d25.blv", targetName = "野蛮人要塞" },
-    [503] = { kind = "enter_dungeon", source = "opcode", targetMap = "d26.blv", targetName = "科尔布地穴" },
+    [503] = { kind = "enter_dungeon", source = "opcode", targetMap = "d26.blv", targetName = "可布之墓" },
     [504] = { kind = "enter_dungeon", source = "opcode", targetMap = "d24.blv", targetName = "巴尔萨煞巢穴" },
     [505] = { kind = "enter_dungeon", source = "opcode", targetMap = "d25.blv", targetName = "野蛮人要塞" },
     [506] = { kind = "enter_dungeon", source = "opcode", targetMap = "d25.blv", targetName = "野蛮人要塞" },
     [507] = { kind = "enter_dungeon", source = "opcode", targetMap = "d25.blv", targetName = "野蛮人要塞" },
     [508] = { kind = "travel", source = "opcode", targetMap = "elemw.odm", targetName = "水之位面" },
-    [509] = { kind = "enter_dungeon", source = "opcode", targetMap = "d46.blv", targetName = "伊普教堂" },
+    [509] = { kind = "enter_dungeon", source = "opcode", targetMap = "d46.blv", targetName = "伊普礼拜堂" },
     },
     textureNames = {},
     spriteNames = {},
@@ -277,9 +277,9 @@ RegisterEvent(401, "巴尔萨煞巢穴", nil, "巴尔萨煞巢穴")
 
 RegisterEvent(402, "野蛮人要塞", nil, "野蛮人要塞")
 
-RegisterEvent(403, "科尔布地穴", nil, "科尔布地穴")
+RegisterEvent(403, "可布之墓", nil, "可布之墓")
 
-RegisterEvent(404, "伊普教堂", nil, "伊普教堂")
+RegisterEvent(404, "伊普礼拜堂", nil, "伊普礼拜堂")
 
 RegisterEvent(405, "流水位面之门", nil, "流水位面之门")
 
@@ -302,9 +302,9 @@ RegisterEvent(479, nil, function()
     end
 end)
 
-RegisterEvent(501, "进入巴尔萨泽巢穴", function()
+RegisterEvent(501, "进入霸杀煞之穴", function()
     evt.MoveToMap(1, -100, -85, 1540, 0, 0, 344, 1, "d24.blv") -- Balthazar Lair
-end, "进入巴尔萨泽巢穴")
+end, "进入霸杀煞之穴")
 
 RegisterEvent(502, "进入蛮族堡垒", function()
     evt.MoveToMap(-2284, 1847, 1, 1024, 0, 0, 367, 1, "d25.blv") -- Barbarian Fortress
@@ -314,9 +314,9 @@ RegisterEvent(503, "进入科尔布地窖", function()
     evt.MoveToMap(-4436, -6538, 317, 512, 0, 0, 0, 1, "d26.blv") -- The Crypt of Korbu
 end, "进入科尔布地窖")
 
-RegisterEvent(504, "进入巴尔萨泽巢穴", function()
+RegisterEvent(504, "进入霸杀煞之穴", function()
     evt.MoveToMap(832, 849, 44, 1548, 0, 0, 344, 1, "d24.blv") -- Balthazar Lair
-end, "进入巴尔萨泽巢穴")
+end, "进入霸杀煞之穴")
 
 RegisterEvent(505, "进入蛮族堡垒", function()
     evt.MoveToMap(614, 1858, 1, 0, 0, 0, 367, 1, "d25.blv") -- Barbarian Fortress
@@ -334,7 +334,7 @@ RegisterEvent(508, "进入流水位面", function()
     evt.MoveToMap(-6144, -20528, 1, 512, 0, 0, 348, 1, "elemw.odm") -- Plane of Water
 end, "进入流水位面")
 
-RegisterEvent(509, "进入伊普教堂", function()
+RegisterEvent(509, "进入伊普礼拜堂", function()
     evt.MoveToMap(-21, 5, 1, 0, 0, 0, 0, 1, "d46.blv") -- Church of Eep
-end, "进入伊普教堂")
+end, "进入伊普礼拜堂")
 

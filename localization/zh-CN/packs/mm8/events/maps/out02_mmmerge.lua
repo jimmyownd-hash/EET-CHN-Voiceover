@@ -6,7 +6,7 @@ ReplaceMapEvent(104, "位面旅行", function()
 end, "位面旅行")
 evt.meta.map.contextActions[104] = {kind = "teleport", targetName = "位面旅行"}
 
-ReplaceMapEvent(504, "进入埃斯卡顿的水晶", function()
+ReplaceMapEvent(504, "进入爱斯卡顿水晶", function()
     evt.ForPlayer(Players.All)
 
     if HasItem(610) or MM8.GetMapFlag("CrystalOpened") then
@@ -18,4 +18,4 @@ ReplaceMapEvent(504, "进入埃斯卡顿的水晶", function()
 
     evt.ForPlayer(Players.Current)
     evt.FaceAnimation(FaceAnimation.DoorLocked)
-end, "进入埃斯卡顿的水晶")
+end, "进入爱斯卡顿水晶")

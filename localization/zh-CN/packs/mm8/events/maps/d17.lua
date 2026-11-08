@@ -52,7 +52,7 @@ SetMapMetadata({
     [132] = { kind = "enter_house", source = "opcode", houseId = 573, targetName = "伊希尔戈尔洞穴" },
     [133] = { kind = "enter_house", source = "opcode", houseId = 574, targetName = "疤翼洞穴" },
     [201] = { kind = "enter_house", source = "opcode", houseId = 774, targetName = "龙首领洞穴" },
-    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "out05.odm", targetName = "绞杀峡谷" },
+    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "out05.odm", targetName = "绞刑峡谷" },
     },
     textureNames = {},
     spriteNames = {},

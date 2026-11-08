@@ -63,7 +63,7 @@ SetMapMetadata({
     [64] = { kind = "open_door", source = "title" },
     [65] = { kind = "passage", source = "opcode", targetMap = "6d03.blv", targetName = "暗影公会藏身处" },
     [66] = { kind = "teleport", source = "heuristic" },
-    [67] = { kind = "passage", source = "opcode", targetMap = "6d06.blv", targetName = "龙骑兵洞穴" },
+    [67] = { kind = "passage", source = "opcode", targetMap = "6d06.blv", targetName = "龙骑兵岩洞" },
     [68] = { kind = "leave_dungeon", source = "opcode", targetMap = "outc2.odm", targetName = "自由港" },
     [70] = { kind = "generic_event", source = "opcode" },
     [71] = { kind = "generic_event", source = "opcode" },

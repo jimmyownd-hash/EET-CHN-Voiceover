@@ -59,7 +59,7 @@ SetMapMetadata({
     [194] = { kind = "open_chest", source = "opcode", chestIds = {19} },
     [195] = { kind = "open_chest", source = "opcode", chestIds = {20} },
     [454] = { kind = "open_door", source = "opcode" },
-    [501] = { kind = "passage", source = "opcode", targetMap = "7d25.blv", targetName = "塞莱斯特" },
+    [501] = { kind = "passage", source = "opcode", targetMap = "7d25.blv", targetName = "赛勒斯提" },
     },
     textureNames = {},
     spriteNames = {},

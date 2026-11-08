@@ -62,8 +62,8 @@ SetMapMetadata({
     [198] = { kind = "generic_event", source = "opcode" },
     [376] = { kind = "enter_house", source = "opcode", houseId = 1158, targetName = "爱丽丝·哈格里夫斯" },
     [416] = { kind = "enter_house", source = "opcode", houseId = 217, targetName = "王座室" },
-    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "7out03.odm", targetName = "埃拉西亚" },
-    [502] = { kind = "leave_dungeon", source = "opcode", targetMap = "7out03.odm", targetName = "埃拉西亚" },
+    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "7out03.odm", targetName = "伊拉西亚" },
+    [502] = { kind = "leave_dungeon", source = "opcode", targetMap = "7out03.odm", targetName = "伊拉西亚" },
     },
     textureNames = {"chb1"},
     spriteNames = {},
@@ -487,16 +487,16 @@ RegisterEvent(454, nil, function()
     SetValue(MapVar(6), 0)
 end)
 
-RegisterEvent(501, "离开狮鹫之心城堡", function()
+RegisterEvent(501, "离开狮鹫心城堡", function()
     evt.MoveToMap(-486, 9984, 2401, 1024, 0, 0, 0, 0, "7out03.odm") -- Erathia
-end, "离开狮鹫之心城堡")
+end, "离开狮鹫心城堡")
 
-RegisterEvent(502, "离开狮鹫之心城堡", function()
+RegisterEvent(502, "离开狮鹫心城堡", function()
     if not HasItem(1462) then -- Catherine's Key
         evt.StatusText("门锁着")
         evt.FaceAnimation(FaceAnimation.DoorLocked)
         return
     end
     evt.MoveToMap(1050, 9991, 2913, 1024, 0, 0, 0, 0, "7out03.odm") -- Erathia
-end, "离开狮鹫之心城堡")
+end, "离开狮鹫心城堡")
 

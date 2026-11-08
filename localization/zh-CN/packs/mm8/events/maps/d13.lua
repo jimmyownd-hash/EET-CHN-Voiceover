@@ -143,7 +143,7 @@ SetMapMetadata({
     [476] = { kind = "open_door", source = "opcode" },
     [477] = { kind = "open_door", source = "opcode" },
     [478] = { kind = "open_door", source = "opcode" },
-    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "out04.odm", targetName = "铁沙沙漠" },
+    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "out04.odm", targetName = "铁砂荒漠" },
     },
     textureNames = {},
     spriteNames = {},
@@ -1042,7 +1042,7 @@ RegisterEvent(478, nil, function()
     evt.SetDoorState(26, DoorAction.Close)
 end)
 
-RegisterEvent(501, "离开巨魔墓穴", function()
+RegisterEvent(501, "离开食人妖墓穴", function()
     evt.MoveToMap(-15458, -14419, 1, 512, 0, 0, 0, 1, "out04.odm") -- Ironsand Desert
-end, "离开巨魔墓穴")
+end, "离开食人妖墓穴")
 

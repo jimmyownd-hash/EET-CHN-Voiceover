@@ -114,7 +114,7 @@ SetMapMetadata({
     [134] = { kind = "open_door", source = "opcode" },
     [451] = { kind = "open_door", source = "title" },
     [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "out13.odm", targetName = "雷格纳" },
-    [502] = { kind = "passage", source = "opcode", targetMap = "d33.blv", targetName = "雷格纳地下通道" },
+    [502] = { kind = "passage", source = "opcode", targetMap = "d33.blv", targetName = "雷格那地底隧道" },
     },
     textureNames = {},
     spriteNames = {},
@@ -520,11 +520,11 @@ RegisterEvent(451, "门", function()
     evt.FaceAnimation(FaceAnimation.DoorLocked)
 end, "门")
 
-RegisterEvent(501, "离开废弃海盗城堡", function()
+RegisterEvent(501, "离开废弃海盗碉堡", function()
     evt.MoveToMap(-15291, 10754, 1248, 0, 0, 0, 0, 1, "out13.odm") -- Regna
-end, "离开废弃海盗城堡")
+end, "离开废弃海盗碉堡")
 
-RegisterEvent(502, "离开废弃海盗城堡", function()
+RegisterEvent(502, "离开废弃海盗碉堡", function()
     evt.MoveToMap(-7200, 13792, -14, 1, 0, 0, 0, 1, "d33.blv") -- Passage Under Regna
-end, "离开废弃海盗城堡")
+end, "离开废弃海盗碉堡")
 

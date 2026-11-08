@@ -47,17 +47,17 @@ Default Monster Data					Stats								Movement and Combat					Attack 1			Attack 
 43	猎龙人	Dragon Hunter A	15	67	45	375	35%5D20+L1Plate	1	N	Long	Suicidal	2	235	80	d	BrkArmor	Phys	6D5+5	0	0	0	0	0	0	0	0	0	5	5	5	5	5	5	5	0	0	5	0
 44	十字军	Dragon Hunter B	30	180	65	1200	40%7D20+L3Plate	1	N	Med	Suicidal	2	260	70	d	BrkArmor	Phys	8D5+5	0	0	0	0	0	0	0	0	0	10	10	10	10	10	10	10	0	0	10	0
 45	屠龙者	Dragon Hunter C	45	337	85	2475	50%10D20+L4Plate	1	N	Short	Suicidal	2	285	50	d	BrkWeapon	Phys	12D5	0	0	0	0	0	0	0	0	0	15	15	15	15	15	15	15	0	0	15	0
-46	太阳教教徒	Cleric (human male) A	10	40	10	200	25%10D10+L1Staff	1	N	Med	Normal	3	160	90	n	0	Phys	6D4	Fire	0	0	0	0	10	"Light Bolt,E,4"	10	"Heal,E,5"	5	5	5	5	15	15	15	Imm	0	0	0
-47	太阳教牧师	Cleric (human male) B	20	100	15	600	25%10D14+L2Staff	1	N	Med	Normal	3	180	90	n	0	Phys	8D4+4	Fire	0	0	0	0	15	"Day-o-Gods,E,7"	15	"Heal,M,7"	10	10	10	10	25	25	25	Imm	0	0	0
-48	太阳教主教	Cleric (human male) C	30	180	25	1200	25%10D16+L3Staff	1	N	Med	Aggress	3	200	80	n	0	Phys	9D4+8	Light	0	0	0	0	20	"Light Bolt,E,7"	20	"Heal,GM,11"	15	15	15	15	35	35	35	Imm	0	0	0
+46	太阳信徒	Cleric (human male) A	10	40	10	200	25%10D10+L1Staff	1	N	Med	Normal	3	160	90	n	0	Phys	6D4	Fire	0	0	0	0	10	"Light Bolt,E,4"	10	"Heal,E,5"	5	5	5	5	15	15	15	Imm	0	0	0
+47	太阳牧师	Cleric (human male) B	20	100	15	600	25%10D14+L2Staff	1	N	Med	Normal	3	180	90	n	0	Phys	8D4+4	Fire	0	0	0	0	15	"Day-o-Gods,E,7"	15	"Heal,M,7"	10	10	10	10	25	25	25	Imm	0	0	0
+48	太阳祭司	Cleric (human male) C	30	180	25	1200	25%10D16+L3Staff	1	N	Med	Aggress	3	200	80	n	0	Phys	9D4+8	Light	0	0	0	0	20	"Light Bolt,E,7"	20	"Heal,GM,11"	15	15	15	15	35	35	35	Imm	0	0	0
 49	农夫	Vampire Female Peasant A	4	13	0	56	1	1	N	Long	Wimp	4	140	100	0	0	Phys	2D2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 50	农夫	Vampire Female Peasant B	6	21	0	96	1	1	N	Long	Wimp	4	140	100	0	0	Phys	2D2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 51	农夫	Vampire Female Peasant C	10	40	0	200	1	1	N	Long	Wimp	4	140	100	0	0	Phys	2D2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 52	吸血鬼爪牙	Vampire (monster) A	20	100	25	600	15%20D8+L2Boots	1	N	Med	Aggress	2	220	80	c	Disease2	Phys	2D7+15	0	0	0	0	0	15	"Mind Blast,E,4"	10	"Bless,E,4"	5	5	5	5	15	15	15	0	15	0	0
-53	吸血怪	Vampire (monster) B	28	162	35	1064	15%20D8+L2Gloves	1	N	Med	Aggress	2	240	70	c	DrainSP	Phys	4D7+15	0	0	0	0	0	15	"Harm,E,7"	10	"Heroism,E,4"	10	10	10	10	20	20	20	0	20	0	0
+53	吸血鬼	Vampire (monster) B	28	162	35	1064	15%20D8+L2Gloves	1	N	Med	Aggress	2	240	70	c	DrainSP	Phys	4D7+15	0	0	0	0	0	15	"Harm,E,7"	10	"Heroism,E,4"	10	10	10	10	20	20	20	0	20	0	0
 54	大吸血鬼	Vampire (monster) C	40	280	45	2000	15%20D8+L3Cloak	1	N	Short	Suicidal	2	260	60	c	DrainSP	Phys	6D7+15	0	0	0	0	0	15	"Spirit Lash,M,7"	10	"Heroism,M,7"	15	15	15	15	25	25	25	0	25	0	0
 55	黑暗之道旅者	Necromancer (monster) A	30	180	14	1200	15%20D8+L3Ring	1	N	Med	Aggress	3	200	90	0	Afraid	Dark	9D4	Dark	0	0	0	0	20	"Toxic Cloud,E,4"	0	0	10	10	10	10	5	0	5	0	50	0	0
-56	巫师	Necromancer (monster) B	42	302	18	2184	15%20D8+L3Wand	1	N	Med	Aggress	3	220	80	0	Afraid	Dark	12D4	Dark	0	0	0	0	30	"Lightning Bolt,E,7"	0	0	20	20	20	20	10	5	10	0	75	0	0
+56	死灵法师	Necromancer (monster) B	42	302	18	2184	15%20D8+L3Wand	1	N	Med	Aggress	3	220	80	0	Afraid	Dark	12D4	Dark	0	0	0	0	30	"Lightning Bolt,E,7"	0	0	20	20	20	20	10	5	10	0	75	0	0
 57	死灵大法师	Necromancer (monster) C	57	495	30	3819	15%20D8+L5Boots	1	N	Short	Aggress	3	240	70	0	Afraid	Dark	16D4	Dark	0	0	0	0	40	"Fireball,M,9"	10	"Pain Reflection,M,10"	30	30	30	30	15	10	15	0	Imm	0	0
 58	巨魔棍兵	Troll A	18	86	18	504	6D6	1	N	Med	Aggress	2	200	90	m	0	Phys	2D10+4	0	0	0	0	0	0	0	0	0	0	5	5	5	5	0	10	0	0	20	0
 59	巨魔战士	Troll B	28	162	28	1064	5%6D6+L2Club	1	N	Med	Aggress	2	220	80	m	0	Phys	3D10+6	0	0	0	0	0	0	0	0	0	0	10	10	10	10	0	20	0	0	30	0
@@ -75,14 +75,14 @@ Default Monster Data					Stats								Movement and Combat					Attack 1			Attack 
 71	飞龙领袖	Dragon B	85	977	80	8075	250D12+L6	1	Y	Med	Suicidal	4	260	65	0	0	Water	14D8	Fire	0	0	0	0	0	0	0	0	40	40	40	40	40	40	40	15	15	20	0
 72	超级威猛兽	Dragon C	100	1300	100	11000	250D16+L6	1	Y	Short	Suicidal	4	300	60	0	0	Air	16D8	Fire	0	0	0	0	0	0	0	0	45	45	45	45	45	45	45	20	20	30	0
 73	次级火元素	Fire Elemental A	50	400	0	3000	15%10D30+L4	0	Y	Long	Aggress	3	300	70	0	0	Fire	7D10	0	0	0	0	0	20	"Fireball,M,9"	0	0	Imm	10	0	10	Imm	0	10	10	10	10	0
-74	烈火元素	Fire Elemental B	65	617	0	4875	15%10D40+L5	0	Y	Med	Aggress	3	310	70	0	0	Fire	9D10	0	0	0	0	0	30	"Haste,M,9"	0	0	Imm	20	0	20	Imm	0	20	20	20	20	0
+74	火元素	Fire Elemental B	65	617	0	4875	15%10D40+L5	0	Y	Med	Aggress	3	310	70	0	0	Fire	9D10	0	0	0	0	0	30	"Haste,M,9"	0	0	Imm	20	0	20	Imm	0	20	20	20	20	0
 75	高等火元素	Fire Elemental C	80	880	0	7200	15%10D40+L6	0	Y	Med	Aggress	3	330	70	2	0	Fire	10D10	0	0	0	0	0	40	"Incinerate,GM,10"	0	0	Imm	30	0	30	Imm	0	30	30	30	30	0
 76	次级水元素	Water Elemental A	50	400	0	3000	10%10D30+L4	0	Y	Short	Aggress	3	250	70	0	0	Water	7D10	0	0	0	0	0	20	"IceBolt,E,7"	0	0	10	10	Imm	0	Imm	0	10	10	10	10	0
 77	水元素	Water Elemental B	65	617	0	4875	10%10D40+L5	0	Y	Short	Aggress	3	270	70	0	0	Water	9D10	0	0	0	0	0	30	"Acid Burst,M,9"	0	0	20	20	Imm	0	Imm	0	20	20	20	20	0
 78	高等水元素	Water Elemental C	80	880	0	7200	10%10D40+L6	0	Y	Short	Aggress	3	290	70	2	0	Water	10D10	0	0	0	0	0	40	"IceBlast,GM,10"	0	0	30	30	Imm	0	Imm	0	30	30	30	30	0
-79	次级土元素	Earth Elemental A	50	400	0	3000	20%10D30+L4Ore	0	N	Long	Aggress	3	110	70	0	0	Phys	7D10	0	0	0	0	0	20	"Blades,M,9"	0	0	10	0	10	Imm	Imm	0	10	10	10	10	0
-80	泥土元素	Earth Elemental B	65	617	0	4875	20%10D40+L5Ore	0	N	Long	Aggress	3	130	70	0	0	Phys	9D10	0	0	0	0	0	30	"Rock Blast,M,5"	0	0	20	0	20	Imm	Imm	0	20	20	20	20	0
-81	高等土元素	Earth Elemental C	80	880	0	7200	15%10D40+L6Ore	0	N	Med	Aggress	3	200	70	2	0	Phys	10D10	0	0	0	0	0	40	"Mass Distortion,GM,10"	0	0	30	0	30	Imm	Imm	0	30	30	30	30	0
+79	次级地元素	Earth Elemental A	50	400	0	3000	20%10D30+L4Ore	0	N	Long	Aggress	3	110	70	0	0	Phys	7D10	0	0	0	0	0	20	"Blades,M,9"	0	0	10	0	10	Imm	Imm	0	10	10	10	10	0
+80	地元素	Earth Elemental B	65	617	0	4875	20%10D40+L5Ore	0	N	Long	Aggress	3	130	70	0	0	Phys	9D10	0	0	0	0	0	30	"Rock Blast,M,5"	0	0	20	0	20	Imm	Imm	0	20	20	20	20	0
+81	高等地元素	Earth Elemental C	80	880	0	7200	15%10D40+L6Ore	0	N	Med	Aggress	3	200	70	2	0	Phys	10D10	0	0	0	0	0	40	"Mass Distortion,GM,10"	0	0	30	0	30	Imm	Imm	0	30	30	30	30	0
 82	次级风元素	Air Elemental A	50	400	0	3000	10%10D30+L4	0	Y	Long	Aggress	3	300	70	0	0	Air	7D10	0	0	0	0	0	20	"Sparks,M,9"	0	0	10	Imm	10	0	Imm	0	10	10	10	10	0
 83	风元素	Air Elemental B	65	617	0	4875	10%10D40+L5	0	Y	Long	Aggress	3	300	70	0	0	Air	9D10	0	0	0	0	0	30	"Lightning Bolt,M,9"	0	0	20	Imm	20	0	Imm	0	20	20	20	20	0
 84	高等风元素	Air Elemental C	80	880	0	7200	10%10D40+L6	0	Y	Med	Aggress	3	310	70	2	0	Air	10D10	0	0	0	0	0	40	"Implosion,GM,10"	0	0	30	Imm	30	0	Imm	0	30	30	30	30	0
@@ -99,7 +99,7 @@ Default Monster Data					Stats								Movement and Combat					Attack 1			Attack 
 95	蛇人长老	Serpentmen B	7	25	0	119	10%5d5+L1Ring	1	N	Med	Aggress	2	250	90	0	Poison3	Phys	3D6+2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 96	蛇人战士	Serpentmen C	11	45	0	231	10%5d5+L2Ring	1	N	Short	Suicidal	2	280	80	0	Poison3	Phys	3D8+4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 97	舞光	Will ' O Wisp A	15	67	11	375	25%10D15+L2Gem	0	Y	Free	Normal	4	240	80	0	0	Light	8D4	Light	0	0	0	0	0	0	0	0	5	0	0	0	Imm	0	0	Imm	0	0	0
-98	光影	Will ' O Wisp B	23	121	14	759	25%10D15+L3Gem	0	Y	Free	Normal	4	260	80	0	0	Light	14D4	Light	0	0	0	0	0	0	0	0	10	5	0	5	Imm	0	0	Imm	0	0	0
+98	幽光	Will ' O Wisp B	23	121	14	759	25%10D15+L3Gem	0	Y	Free	Normal	4	260	80	0	0	Light	14D4	Light	0	0	0	0	0	0	0	0	10	5	0	5	Imm	0	0	Imm	0	0	0
 99	鬼火	Will ' O Wisp C	38	258	19	1824	25%10D15+L4Gem	0	Y	Free	Normal	4	280	80	0	0	Light	20D4	Light	0	0	0	0	0	0	0	0	15	10	5	10	Imm	5	5	Imm	0	0	0
 100	半人马	Centaur A	11	45	6	231	35%5d6+L1Bow	1	N	Med	Aggress	3	275	100	x	0	Phys	2D4+2	ArrowF	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	15	0
 101	半人马战士	Centaur B	14	61	12	336	25%5d8+L2Bow	1	N	Med	Aggress	3	285	90	x	0	Phys	2D4+4	ArrowF	0	0	0	0	10	"Shield,E,4"	0	0	0	0	0	0	0	0	0	0	0	20	0
@@ -107,9 +107,9 @@ Default Monster Data					Stats								Movement and Combat					Attack 1			Attack 
 103	伊佛瑞士兵	Efreeti A	45	337	0	2475	50%10D20+L4Sword	0	Y	Med	Suicidal	2	300	70	0	0	Fire	7D8	0	0	0	0	0	10	"Fireball,M,5"	0	0	Imm	5	0	5	Imm	0	5	0	0	20	0
 104	伊佛瑞骑士	Efreeti B	55	467	0	3575	50%10D20+L4Sword	0	Y	Med	Suicidal	2	310	70	0	0	Fire	9D8	0	0	0	0	0	20	"Fireball,M,7"	0	0	Imm	10	0	10	Imm	0	10	0	0	30	0
 105	伊佛瑞大王	Efreeti C	65	617	0	4875	50%10D20+L5Sword	0	Y	Med	Suicidal	2	330	70	2	0	Fire	10D8	0	0	0	0	0	30	"Fireball,M,9"	0	0	Imm	20	0	20	Imm	0	20	0	0	40	0
-106	食人妖法师学徒	Ogre Mage A	20	100	14	600	25%10D4+L2Scroll	1	N	Med	Suicidal	3	200	100	0	0	Phys	4D4+4	0	30	Fire	4D4	Fire	20	"Fire Bolt,E,5"	0	0	5	5	5	5	5	5	5	0	5	0	0
+106	食人妖术士	Ogre Mage A	20	100	14	600	25%10D4+L2Scroll	1	N	Med	Suicidal	3	200	100	0	0	Phys	4D4+4	0	30	Fire	4D4	Fire	20	"Fire Bolt,E,5"	0	0	5	5	5	5	5	5	5	0	5	0	0
 107	食人妖法师	Ogre Mage B	28	162	18	1064	30%10D6+L3Scroll	1	N	Med	Suicidal	3	220	90	0	Curse	Phys	6D4+6	0	30	Water	6D4	Water	20	"Poison Spray,E,7"	0	0	10	10	10	10	10	10	10	0	10	0	0
-108	食人妖法师智者	Ogre Mage C	35	227	30	1575	35%10D10+L7Scroll	1	N	Short	Suicidal	3	240	80	0	Curse	Phys	9D4+8	0	30	Air	8D4	Air	20	"Lightning Bolt,M,7"	0	0	15	15	15	15	15	15	15	0	15	0	0
+108	食人妖智者	Ogre Mage C	35	227	30	1575	35%10D10+L7Scroll	1	N	Short	Suicidal	3	240	80	0	Curse	Phys	9D4+8	0	30	Air	8D4	Air	20	"Lightning Bolt,M,7"	0	0	15	15	15	15	15	15	15	0	15	0	0
 109	独角兽幼兽	Unicorn A	25	137	20	875	45%20D5+L1Ring	1	N	Med	Aggress	3	140	70	0	0	Water	5D6	Water	0	0	0	0	0	0	0	0	0	25	0	25	10	0	10	25	0	10	0
 110	独角兽	Unicorn B	35	227	30	1575	45%20D5+L2Amulet	1	N	Med	Aggress	3	160	60	0	0	Fire	6D6	Fire	0	0	0	0	0	0	0	0	0	35	0	35	20	0	20	35	0	20	0
 111	独角兽领袖	Unicorn C	45	337	40	2475	45%20D5+L3Gem	1	N	Short	Aggress	3	180	50	0	0	Air	7D6	Air	0	0	0	0	0	0	0	0	0	45	0	45	30	0	30	45	0	30	"shot,x3"
@@ -122,14 +122,14 @@ Default Monster Data					Stats								Movement and Combat					Attack 1			Attack 
 118	黄蜂工蜂	Wasp Warrior A	15	67	12	375	20%5d7+L1Dagger	0	Y	Long	Aggress	4	300	90	0	0	Phys	3D7+2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 119	黄蜂警戒蜂	Wasp Warrior B	18	86	14	504	20%5d9+L1Sword	0	Y	Long	Aggress	4	310	90	0	0	Phys	4D7+5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 120	黄蜂兵蜂	Wasp Warrior C	23	121	16	759	20%5d11+L2Sword	0	Y	Long	Suicidal	4	320	80	0	0	Phys	5D7+10	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-121	双角龙	Wyvern A	19	93	14	551	10D15	1	Y	Free	Normal	4	250	80	d	Poison2	Phys	7D6	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	15	0
-122	长角双角龙	Wyvern B	28	162	28	1064	10D20	1	Y	Long	Aggress	4	280	70	d	Poison3	Phys	9D6	0	0	0	0	0	0	0	0	0	5	0	5	0	5	0	5	0	0	20	0
-123	远古双角龙	Wyvern C	37	247	42	1739	10D30	1	Y	Med	Suicidal	4	320	60	d	Dead	Phys	12D6	0	0	0	0	0	0	0	0	0	10	5	10	5	10	5	10	0	0	25	0
+121	双足翼龙	Wyvern A	19	93	14	551	10D15	1	Y	Free	Normal	4	250	80	d	Poison2	Phys	7D6	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	15	0
+122	有角双足翼龙	Wyvern B	28	162	28	1064	10D20	1	Y	Long	Aggress	4	280	70	d	Poison3	Phys	9D6	0	0	0	0	0	0	0	0	0	5	0	5	0	5	0	5	0	0	20	0
+123	古双足翼龙	Wyvern C	37	247	42	1739	10D30	1	Y	Med	Suicidal	4	320	60	d	Dead	Phys	12D6	0	0	0	0	0	0	0	0	0	10	5	10	5	10	5	10	0	0	25	0
 124	黄铜魔牛	Gorgon A	25	137	20	875	5D20	1	N	Med	Normal	2	200	90	0	Paralyze	Phys	4D4+8	0	0	0	0	0	0	0	0	0	Imm	Imm	0	0	5	5	5	5	5	20	0
 125	青铜魔牛	Gorgon B	35	227	25	1575	10D20	1	N	Med	Aggress	2	220	90	0	Stone	Phys	5D4+10	0	0	0	0	0	0	0	0	0	Imm	Imm	0	0	10	10	10	10	10	25	0
 126	钢铁魔牛	Gorgon C	45	337	30	2475	15D20	1	N	Short	Suicidal	2	240	80	0	Stone	Phys	6D4+12	0	0	0	0	0	0	0	0	0	Imm	Imm	0	0	15	15	15	15	15	30	0
 127	火蛞蝓	Salamander A	29	171	30	1131	11D20	0	N	Long	Normal	2	250	90	0	0	Fire	6D7	0	0	0	0	0	10	"Fire Bolt,M,5"	0	0	Imm	10	0	10	10	0	10	5	5	10	0
-128	烈火蜥蜴	Salamander B	49	387	35	2891	17D20	0	N	Med	Aggress	2	260	80	0	0	Fire	8D7+5	0	0	0	0	0	20	"Fire Bolt,M,7"	0	0	Imm	15	0	15	15	0	15	5	5	15	0
+128	火蜥蜴	Salamander B	49	387	35	2891	17D20	0	N	Med	Aggress	2	260	80	0	0	Fire	8D7+5	0	0	0	0	0	20	"Fire Bolt,M,7"	0	0	Imm	15	0	15	15	0	15	5	5	15	0
 129	火炎蜥蜴	Salamander C	69	683	40	5451	21D20	0	N	Short	Suicidal	2	300	70	2	0	Fire	10D7+10	0	0	0	0	0	30	"Fire Bolt,M,9"	0	0	Imm	20	0	20	20	0	20	5	5	20	0
 130	火鸟	Phoenix A	39	269	30	1911	11D20	0	Y	Long	Normal	4	250	90	0	0	Fire	4D17+10	0	0	0	0	0	0	0	0	0	Imm	10	0	10	10	0	10	5	5	10	0
 131	凤凰	Phoenix B	59	525	35	4071	17D20	0	Y	Med	Aggress	4	260	80	0	0	Fire	5D17+5	0	0	0	0	0	0	0	0	0	Imm	15	0	15	15	0	15	5	5	15	0
@@ -156,7 +156,7 @@ Default Monster Data					Stats								Movement and Combat					Attack 1			Attack 
 152	畏怖	Nightmare B	70	700	80	5600	25%8D30+L4Ring	1	N	Short	Suicidal	3	200	70	2	Insane	Phys	8D8	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	Imm	0
 153	恶梦	Nightmare C	90	1080	100	9000	25%8D30+L5Ring	1	N	Short	Suicidal	3	200	70	3	Insane	Phys	10D8	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	Imm	0
 154	以太骑士	Ether Knight A	40	280	40	2000	30%10d25+L5Chain	1	N	Med	Normal	2	220	70	0	0	Phys	7D7	0	20	Air	3D10	Air	0	0	0	0	15	15	15	15	15	15	15	15	15	0	0
-155	以太勇士	Ether Knight B	58	510	50	3944	30%10d25+L5Plate	1	N	Med	Aggress	2	240	70	0	0	Phys	7D7+10	0	40	Water	4D10	Water	0	0	0	0	25	25	25	25	25	25	25	25	25	0	0
+155	以太英豪	Ether Knight B	58	510	50	3944	30%10d25+L5Plate	1	N	Med	Aggress	2	240	70	0	0	Phys	7D7+10	0	40	Water	4D10	Water	0	0	0	0	25	25	25	25	25	25	25	25	25	0	0
 156	以太亡者	Ether Knight C	71	717	60	5751	30%10d25+L5Sword	1	N	Short	Aggress	2	280	70	0	0	Phys	7D7+25	0	60	Fire	5D10	Fire	0	0	0	0	30	30	30	30	30	30	30	30	30	0	0
 157	冲撞者	Juggernaut A	45	337	35	2475	20%5D50+L1Ore	0	N	Long	Normal	2	250	80	0	BrkWeapon	Phys	3D10+20	0	0	0	0	0	0	0	0	0	0	0	0	Imm	Imm	0	0	0	0	50	0
 158	巨灵车	Juggernaut B	60	540	50	4200	30%10D50+L3Ore	0	N	Med	Aggress	2	260	70	0	BrkArmor	Phys	4D10+30	0	0	0	0	0	0	0	0	0	0	0	0	Imm	Imm	0	0	0	0	50	0
@@ -194,7 +194,7 @@ Default Monster Data					Stats								Movement and Combat					Attack 1			Attack 
 190	小龙	Wimpy Dragon A	15	67	40	375	4D8	0	Y	Med	Aggress	4	180	70	k	0	Water	5D10	Water	0	0	0	0	0	0	0	0	10	10	10	10	10	0	10	0	0	10	0
 191	幼龙	Wimpy Dragon B	35	227	50	1575	4D12	0	Y	Med	Aggress	4	160	70	k	0	Water	7D10	Water	0	0	0	0	0	0	0	0	15	15	15	15	15	0	15	0	0	15	0
 192	少龙	Wimpy Dragon C	60	540	60	4200	4D20	0	Y	Short	Aggress	4	140	70	k	0	Water	9D10	Water	0	0	0	0	0	0	0	0	20	20	20	20	20	0	20	0	0	20	0
-193	兵痞	Human Mercenary A	10	40	10	200	5d6	1	N	Long	Aggress	2	265	90	0	0	Phys	3D7+4	0	0	0	0	0	0	0	0	0	5	5	5	5	5	5	5	0	0	0	0
+193	寻宝战士	Human Mercenary A	10	40	10	200	5d6	1	N	Long	Aggress	2	265	90	0	0	Phys	3D7+4	0	0	0	0	0	0	0	0	0	5	5	5	5	5	5	5	0	0	0	0
 194	佣兵	Human Mercenary B	17	79	15	459	15%5d6+L2Sword	1	N	Med	Aggress	2	285	80	0	0	Phys	3D7+6	0	0	0	0	0	0	0	0	0	10	10	10	10	10	10	10	0	0	0	0
 195	佣兵队长	Human Mercenary C	24	129	20	816	25%5d6+L3Sword	1	N	Short	Aggress	2	300	70	0	0	Phys	3D7+8	0	0	0	0	0	0	0	0	0	15	15	15	15	15	15	15	0	0	0	0
 196	混沌守卫	Wimpy Plane Guardian A	50	400	60	3000	30%200D10+L5	0	N	Med	Suicidal	2	200	70	0	0	Phys	15D4	0	0	0	0	0	20	"Paralyze,M,9"	0	0	15	15	15	15	15	15	15	15	15	0	0
@@ -204,7 +204,7 @@ Default Monster Data					Stats								Movement and Combat					Attack 1			Attack 
 200	炽天使	Angel B	50	400	35	3000	10%75D20+L5Sword	1	Y	Free	Aggress	3	275	50	0	0	Phys	2D8+15	0	0	0	0	0	30	"Light Bolt,M,12"	50	"Day of Protection,M,12"	30	30	30	30	40	15	40	Imm	10	20	0
 201	大天使	Angel C	70	700	45	5600	15%100D20+L6Sword	1	Y	Free	Suicidal	3	300	40	2	0	Phys	2D8+20	0	0	0	0	0	30	"Light Bolt,G,16"	50	"Hour of Power,G,16"	40	40	40	40	50	15	50	Imm	10	20	0
 202	弓箭手	Archer A	9	35	14	171	5%3D20+L1Bow	1	N	Short	Normal	4	140	90	AR	0	Phys	2D6+2	Arrow	10	Fire	3D6+2	FireAr	0	0	50	"Shield,N,4"	5	5	5	5	10	10	10	0	0	5	0
-203	高级射手	Archer B	19	93	16	551	5%6D20+L2Bow	1	N	Short	Aggress	4	150	90	AR	0	Phys	3D6+3	Arrow	10	Fire	4D6+3	FireAr	20	"Lightning Bolt,E,4"	50	"Shield,E,8"	10	10	10	10	15	10	15	0	0	10	0
+203	高级弓箭手	Archer B	19	93	16	551	5%6D20+L2Bow	1	N	Short	Aggress	4	150	90	AR	0	Phys	3D6+3	Arrow	10	Fire	4D6+3	FireAr	20	"Lightning Bolt,E,4"	50	"Shield,E,8"	10	10	10	10	15	10	15	0	0	10	0
 204	神射手	Archer C	29	171	22	1131	10%10D20+L3Bow	1	N	Short	Aggress	4	160	80	AR	0	Phys	3D7+3	Arrow	15	Fire	4D7+3	FireAr	20	"Lightning Bolt,M,8"	50	"Shield,M,12"	15	15	15	15	20	10	20	0	0	15	0
 205	大蝙蝠	Bat A	3	9	5	39	0	1	Y	Free	Normal	3	280	50	0	Disease1	Phys	1D3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 206	吸血蝙蝠	Bat B	6	21	8	96	5%L1Ring	1	Y	Free	Normal	3	300	50	0	Disease1	Phys	1D3+2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
@@ -221,9 +221,9 @@ Default Monster Data					Stats								Movement and Combat					Attack 1			Attack 
 217	太阳教教徒	Cleric Sun A	10	40	10	200	5%5D10+L2Cape	1	N	Med	Normal	2	160	90	CP	0	Phys	2D4	Fire	0	0	0	0	30	"Light Bolt,N,4"	0	0	5	5	5	5	5	0	5	Imm	0	10	0
 218	太阳教牧师	Cleric Sun B	20	100	15	600	5%10D10+L3Cape	1	N	Med	Normal	2	180	90	CP	0	Phys	2D4+4	Fire	0	0	0	0	30	"Mind Blast,E,7"	10	"Bless,E,7"	10	10	10	10	10	0	10	Imm	0	15	0
 219	太阳教主教	Cleric Sun C	30	180	25	1200	10%20D10+L4Cape	1	N	Med	Aggress	2	200	80	CP	0	Phys	2D4+8	Light	0	0	0	0	30	"Light Bolt,N,10"	33	"Power Cure,G,10"	15	15	15	15	15	0	15	Imm	0	20	0
-220	魔鬼劳工	Devil A	30	180	25	1200	0	1	N	Med	Suicidal	2	200	60	0	Disease2	Phys	2D6+8	Fire	0	0	0	0	20	"Fireball,E,6"	0	0	Imm	20	20	20	Imm	25	20	20	20	20	0
-221	魔鬼勇士	Devil B	50	400	35	3000	0	1	N	Med	Aggress	2	250	50	0	Disease3	Phys	2D6+14	Fire	0	0	0	0	20	"Fireball,E,8"	15	"Meteor Shower,M,8"	Imm	30	30	30	Imm	25	30	30	30	30	0
-222	魔鬼首领	Devil C	70	700	45	5600	0	1	N	Short	Aggress	2	300	40	0	DrainSP	Phys	2D6+20	Fire	0	0	0	0	20	"Incinerate,M,12"	15	"Meteor Shower,M,12"	Imm	40	40	40	Imm	25	40	40	40	40	0
+220	恶魔工人	Devil A	30	180	25	1200	0	1	N	Med	Suicidal	2	200	60	0	Disease2	Phys	2D6+8	Fire	0	0	0	0	20	"Fireball,E,6"	0	0	Imm	20	20	20	Imm	25	20	20	20	20	0
+221	恶魔战士	Devil B	50	400	35	3000	0	1	N	Med	Aggress	2	250	50	0	Disease3	Phys	2D6+14	Fire	0	0	0	0	20	"Fireball,E,8"	15	"Meteor Shower,M,8"	Imm	30	30	30	Imm	25	30	30	30	30	0
+222	恶魔首领	Devil C	70	700	45	5600	0	1	N	Short	Aggress	2	300	40	0	DrainSP	Phys	2D6+20	Fire	0	0	0	0	20	"Incinerate,M,12"	15	"Meteor Shower,M,12"	Imm	40	40	40	Imm	25	40	40	40	40	0
 223	绿龙	ADragon A	80	880	60	7200	250D10+L6	1	Y	Long	Aggress	4	240	70	2	0	Air	12D8	Air	0	0	0	0	0	0	0	0	50	Imm	50	50	50	15	Imm	30	30	50	0
 224	蓝龙	ADragon B	90	1080	80	9000	250D12+L6	1	Y	Med	Aggress	4	260	65	3	0	Water	14D8	Water	0	0	0	0	0	0	0	0	50	50	Imm	50	50	15	Imm	30	30	50	0
 225	红龙	ADragon C	100	1300	100	11000	250D16+L6	1	Y	Short	Aggress	4	300	60	4	BrkArmor	Fire	16D8	Fire	0	0	0	0	0	0	0	0	Imm	70	70	70	70	15	Imm	30	30	70	0
@@ -238,10 +238,10 @@ Default Monster Data					Stats								Movement and Combat					Attack 1			Attack 
 234	风元素	Elemental Air C	33	207	14	1419	0	0	Y	Free	Suicidal	3	260	80	0	0	Air	8D6	Air	0	0	0	0	20	"Sparks,G,12"	20	"Lightning Bolt,G,12"	20	Imm	20	20	Imm	Imm	Imm	5	5	20	0
 235	泥妖	Elemental Earth A	25	137	20	875	30%L3Gem	0	N	Free	Suicidal	2	220	90	0	0	Phys	10D3	Earth	0	0	0	0	25	"Blades,E,6"	50	"Stone Skin,E,4"	10	10	10	Imm	Imm	Imm	Imm	5	5	10	0
 236	石妖	Elemental Earth B	30	180	25	1200	35%L4Gem	0	N	Free	Suicidal	2	240	90	0	BrkArmor	Phys	15D3	Earth	0	0	0	0	25	"Rock Blast,M,8"	50	"Stone Skin,M,8"	15	15	15	Imm	Imm	Imm	Imm	5	5	15	0
-237	泥土元素	Elemental Earth C	40	280	30	2000	40%L5Gem	0	N	Free	Suicidal	2	260	80	0	Uncon	Phys	25D3	Earth	0	0	0	0	25	"Blades,G,12"	50	"Stone Skin,G,12"	20	20	20	Imm	Imm	Imm	Imm	5	5	20	0
+237	土元素	Elemental Earth C	40	280	30	2000	40%L5Gem	0	N	Free	Suicidal	2	260	80	0	Uncon	Phys	25D3	Earth	0	0	0	0	25	"Blades,G,12"	50	"Stone Skin,G,12"	20	20	20	Imm	Imm	Imm	Imm	5	5	20	0
 238	火精灵	Elemental Fire A	13	55	12	299	0	0	Y	Free	Suicidal	3	220	90	0	0	Fire	2D8	Fire	0	0	0	0	20	"Fire Bolt,E,6"	50	"Haste,E,4"	Imm	10	10	10	Imm	Imm	Imm	5	5	10	0
 239	烈火精灵	Elemental Fire B	26	145	15	936	0	0	Y	Free	Suicidal	3	240	90	0	0	Fire	5D8	Fire	0	0	0	0	20	"Fireball,M,8"	50	"Haste,M,8"	Imm	15	15	15	Imm	Imm	Imm	5	5	15	0
-240	烈火元素	Elemental Fire C	39	269	18	1911	0	0	Y	Free	Suicidal	3	260	80	0	0	Fire	8D8	Fire	0	0	0	0	20	"Incinerate,G,12"	50	"Haste,G,12"	Imm	20	20	20	Imm	Imm	Imm	5	5	20	0
+240	火元素	Elemental Fire C	39	269	18	1911	0	0	Y	Free	Suicidal	3	260	80	0	0	Fire	8D8	Fire	0	0	0	0	20	"Incinerate,G,12"	50	"Haste,G,12"	Imm	20	20	20	Imm	Imm	Imm	5	5	20	0
 241	低级光元素	Elemental Light A	15	67	11	375	0	0	Y	Free	Suicidal	3	240	80	0	0	Light	4D4	Light	0	0	0	0	0	0	0	0	10	10	10	10	Imm	Imm	Imm	Imm	5	10	"explode,5D8,light"
 242	中级光元素	Elemental Light B	23	121	14	759	0	0	Y	Free	Suicidal	3	260	80	0	0	Light	9D4	Light	0	0	0	0	0	0	0	0	15	15	15	15	Imm	Imm	Imm	Imm	5	15	"explode,5D8,light"
 243	光元素	Elemental Light C	38	258	19	1824	0	0	Y	Free	Suicidal	3	280	80	0	0	Light	14D4	Light	0	0	0	0	0	0	0	0	20	20	20	20	Imm	Imm	Imm	Imm	5	20	"explode,5D8,light"
@@ -250,34 +250,34 @@ Default Monster Data					Stats								Movement and Combat					Attack 1			Attack 
 246	水元素	Elemental Water C	36	237	16	1656	0	0	N	Free	Suicidal	2	260	80	0	0	Water	6D12	Water	0	0	0	0	30	"IceBlast,G,12"	0	0	20	20	Imm	20	Imm	Imm	Imm	5	5	20	0
 247	精灵弓箭手	Elf Archer A	11	45	12	231	5%6D10+L2Bow	1	N	Short	Normal	4	160	70	H	0	Phys	4D2+2	Arrow	0	0	0	0	0	0	0	0	10	10	10	10	5	5	5	0	0	5	0
 248	精灵侦察兵	Elf Archer B	23	121	14	759	5%12D10+L3Bow	1	N	Short	Aggress	4	170	70	H	0	Phys	6D2+4	Arrow	0	0	0	0	0	0	0	0	15	15	15	15	10	5	10	0	0	10	0
-249	精灵游骑兵	Elf Archer C	35	227	20	1575	10%20D10+L4Bow	1	N	Short	Aggress	4	180	60	H	0	Phys	8D2+6	Arrow	0	0	0	0	0	0	0	0	20	20	20	20	15	5	15	0	0	15	"shot,x2"
+249	精灵游侠	Elf Archer C	35	227	20	1575	10%20D10+L4Bow	1	N	Short	Aggress	4	180	60	H	0	Phys	8D2+6	Arrow	0	0	0	0	0	0	0	0	20	20	20	20	15	5	15	0	0	15	"shot,x2"
 250	精灵战士	Elf Spearman A	14	61	15	336	10%8D10+L2Spear	1	N	Long	Normal	2	240	80	H	0	Phys	2D4+4	0	0	0	0	0	0	0	0	0	10	10	10	10	5	5	5	0	0	5	0
 251	精灵卫士	Elf Spearman B	22	114	20	704	15%16D10+L3Spear	1	N	Long	Aggress	2	260	70	H	0	Phys	3D4+6	0	0	0	0	0	0	0	0	0	15	15	15	15	10	5	10	0	0	10	0
 252	精灵勇士	Elf Spearman C	30	180	28	1200	25%25D10+L4Spear	1	N	Med	Aggress	2	280	60	H	0	Phys	4D4+8	0	0	0	0	0	0	0	0	0	20	20	20	20	15	5	15	0	0	15	0
 253	士兵	Fighter Chain A	14	61	18	336	5%10D10+L1Chain	1	N	Long	Normal	2	220	90	XE	0	Phys	3D3+6	0	0	0	0	0	0	0	0	0	10	10	10	10	15	10	15	0	0	10	0
 254	战士	Fighter Chain B	24	129	24	816	5%20D10+L2Chain	1	N	Long	Aggress	2	240	80	XE	0	Phys	3D3+10	0	0	0	0	0	0	0	0	0	20	20	20	20	25	10	25	0	0	20	0
-255	斗士	Fighter Chain C	35	227	30	1575	10%30D10+L3Chain	1	N	Med	Aggress	2	260	70	XE	Brkweapon	Phys	3D3+14	0	0	0	0	0	0	0	0	0	30	30	30	30	35	10	35	0	0	30	0
+255	勇士	Fighter Chain C	35	227	30	1575	10%30D10+L3Chain	1	N	Med	Aggress	2	260	70	XE	Brkweapon	Phys	3D3+14	0	0	0	0	0	0	0	0	0	30	30	30	30	35	10	35	0	0	30	0
 256	劫匪	Fighter Leather A	8	30	12	144	5%3D20+L1Leather	1	N	Long	Normal	2	200	100	E	0	Phys	2D4+1	0	0	0	0	0	0	0	0	0	5	5	5	5	10	10	10	0	0	5	0
 257	强盗	Fighter Leather B	14	61	14	336	5%5D20+L2Leather	1	N	Long	Aggress	2	220	90	E	0	Phys	2D4+5	0	0	0	0	0	0	0	0	0	10	10	10	10	15	10	15	0	0	10	0
 258	大盗	Fighter Leather C	22	114	16	704	10%10D20+L3Leather	1	N	Med	Aggress	2	240	80	E	0	Phys	2D4+10	0	0	0	0	0	0	0	0	0	15	15	15	15	20	10	20	0	0	15	0
 259	剑士	Fighter Plate A	40	280	45	2000	10%10D100+L4Plate	1	N	Long	Normal	2	250	80	XK	0	Phys	4D5+20	0	0	0	0	0	33	"Bless,N,3"	33	"Heroism,N,3"	20	20	20	20	30	10	30	5	5	20	0
 260	剑客	Fighter Plate B	60	540	65	4200	10%20D100+L5Plate	1	N	Med	Aggress	2	300	70	XK	0	Phys	4D5+30	0	0	0	0	0	33	"Bless,E,6"	33	"Heroism,E,6"	30	30	30	30	40	10	40	5	5	30	0
 261	剑侠	Fighter Plate C	80	880	85	7200	30%40D100+L6Plate	1	N	Short	Aggress	2	350	50	XK	0	Phys	4D5+40	0	0	0	0	0	33	"Bless,M,9"	33	"Heroism,M,9"	50	50	50	50	60	10	60	5	5	50	0
-262	岩石恶兽	Gargoyle A	16	73	18	416	5%5D10+L2Amulet	0	Y	Long	Aggress	3	300	80	0	Weak	Phys	2D12	0	0	0	0	0	0	0	0	0	20	20	20	40	Imm	Imm	Imm	0	0	20	0
-263	大理石恶兽	Gargoyle B	22	114	22	704	10%10D10+L2Amulet	0	Y	Long	Aggress	3	320	80	0	Paralyze	Phys	2D12+4	0	0	0	0	0	0	0	0	0	30	30	30	50	Imm	Imm	Imm	0	0	40	0
+262	石像鬼	Gargoyle A	16	73	18	416	5%5D10+L2Amulet	0	Y	Long	Aggress	3	300	80	0	Weak	Phys	2D12	0	0	0	0	0	0	0	0	0	20	20	20	40	Imm	Imm	Imm	0	0	20	0
+263	大理石像鬼	Gargoyle B	22	114	22	704	10%10D10+L2Amulet	0	Y	Long	Aggress	3	320	80	0	Paralyze	Phys	2D12+4	0	0	0	0	0	0	0	0	0	30	30	30	50	Imm	Imm	Imm	0	0	40	0
 264	石像怪	Gargoyle C	33	207	26	1419	20%25D10+L3Amulet	0	Y	Med	Suicidal	3	350	70	0	Paralyze	Phys	2D12+8	0	0	0	0	0	0	0	0	0	50	50	50	70	Imm	Imm	Imm	0	0	Imm	0
 265	神怪	Genie A	33	207	35	1419	30%L4	0	Y	Free	Aggress	3	200	60	M	0	Water	8D4+8	Water	0	0	0	0	25	"Acid Burst,M,8"	0	0	30	30	Imm	30	50	0	50	10	10	30	0
-266	灯怪	Genie B	44	325	45	2376	30%L5	0	Y	Free	Aggress	3	220	50	M	Asleep	Fire	10D4+10	Fire	0	0	0	0	25	"Fireball,M,8"	0	0	Imm	30	30	30	50	0	50	10	10	30	0
-267	魔怪	Genie C	55	467	55	3575	30%L6	0	Y	Free	Aggress	3	250	40	M	Afraid	Air	12D4+12	Air	0	0	0	0	25	"Lightning Bolt,M,10"	0	0	50	Imm	50	50	50	0	50	10	10	50	0
+266	神灯精灵	Genie B	44	325	45	2376	30%L5	0	Y	Free	Aggress	3	220	50	M	Asleep	Fire	10D4+10	Fire	0	0	0	0	25	"Fireball,M,8"	0	0	Imm	30	30	30	50	0	50	10	10	30	0
+267	火精灵	Genie C	55	467	55	3575	30%L6	0	Y	Free	Aggress	3	250	40	M	Afraid	Air	12D4+12	Air	0	0	0	0	25	"Lightning Bolt,M,10"	0	0	50	Imm	50	50	50	0	50	10	10	50	0
 268	鬼魂	Ghost A	9	35	25	171	5%L2	0	Y	Free	Normal	3	240	100	CP	Afraid	Phys	1D6+6	0	0	0	0	0	0	0	0	0	10	10	Imm	10	Imm	10	Imm	0	30	10	0
 269	幽灵	Ghost B	13	55	30	299	10%L3	0	Y	Long	Normal	3	260	90	CP	Agex2	Phys	2D6+6	0	0	0	0	0	0	0	0	0	15	15	Imm	15	Imm	15	Imm	0	30	15	0
-270	鬼魂	Ghost C	19	93	35	551	20%L4	0	Y	Med	Suicidal	3	300	90	CP	Uncon	Phys	3D6+6	0	0	0	0	0	0	0	0	0	20	20	Imm	20	Imm	20	Imm	0	30	20	0
+270	阴魂	Ghost C	19	93	35	551	20%L4	0	Y	Med	Suicidal	3	300	90	CP	Uncon	Phys	3D6+6	0	0	0	0	0	0	0	0	0	20	20	Imm	20	Imm	20	Imm	0	30	20	0
 271	大耳怪	Goblin A	4	13	6	56	4D4	1	N	Med	Normal	1	160	100	W	0	Phys	1D9	0	10	Phys	4D2	Arrow	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 272	大耳怪首领	Goblin B	6	21	10	96	8D4	1	N	Med	Normal	1	170	100	W	0	Phys	1D9+2	0	15	Phys	4D2+1	Arrow	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 273	大耳怪王	Goblin C	10	40	14	200	10%15D4+L1	1	N	Short	Aggress	1	180	90	W	0	Phys	1D9+4	0	25	Phys	4D2+4	Arrow	0	0	0	0	10	10	10	10	10	0	10	0	0	10	0
 274	小哥魔	AGog A	7	25	6	119	0	1	N	Short	Normal	2	200	90	S	0	Fire	1D10+2	Fire	0	0	0	0	0	0	0	0	Imm	10	10	10	10	5	10	0	0	10	"explode,2D10,fire"
 275	哥魔	AGog B	11	45	10	231	0	1	N	Short	Normal	2	220	85	S	0	Fire	1D10+6	Fire	0	0	0	0	0	0	0	0	Imm	15	15	15	15	5	15	0	0	15	"explode,2D10,fire"
-276	大哥魔	AGog C	18	86	14	504	0	1	N	Short	Aggress	2	240	80	S	0	Fire	2D10+8	Fire	0	0	0	0	0	0	0	0	Imm	20	20	20	20	5	20	0	0	20	"explode,2D10,fire"
+276	马哥魔	AGog C	18	86	14	504	0	1	N	Short	Aggress	2	240	80	S	0	Fire	2D10+8	Fire	0	0	0	0	0	0	0	0	Imm	20	20	20	20	5	20	0	0	20	"explode,2D10,fire"
 277	黄铜人	Golem A	22	114	40	704	20D8	0	N	Short	Suicidal	1	160	100	0	BrkArmor	Phys	5D6+20	0	10	Phys	5D4	Arrow	0	0	0	0	20	20	20	Imm	Imm	Imm	Imm	30	0	30	"explode,4D10,earth"
 278	青铜人	Golem B	35	227	60	1575	30D8	0	N	Short	Suicidal	1	170	90	0	Brkweapon	Phys	7D6+25	0	15	Phys	5D4+4	Arrow	0	0	0	0	30	30	30	Imm	Imm	Imm	Imm	30	0	30	"explode,4D10,earth"
 279	金人	Golem C	50	400	80	3000	50D8	0	N	Short	Suicidal	1	180	80	0	BrkItem	Phys	9D6+30	0	20	Phys	5D4+8	Arrow	0	0	0	0	40	40	40	Imm	Imm	Imm	Imm	30	0	50	"explode,4D10,earth"
@@ -285,7 +285,7 @@ Default Monster Data					Stats								Movement and Combat					Attack 1			Attack 
 281	大狮鹫	Griffin B	23	121	22	759	15D6	1	Y	Long	Aggress	3	300	60	0	0	Phys	2D8+6	0	0	0	0	0	0	0	0	0	5	5	5	5	5	5	5	30	0	10	0
 282	皇家狮鹫	Griffin C	30	180	30	1200	30D6	1	Y	Med	Suicidal	3	320	70	0	0	Phys	3D8+10	0	0	0	0	0	0	0	0	0	10	10	10	10	10	10	10	30	0	15	0
 283	鹰身女妖	Harpy A	14	61	12	336	4D10	1	Y	Long	Aggress	3	250	90	X	Drunk	Phys	2D7+2	0	0	0	0	0	0	0	0	0	5	5	5	5	5	5	5	0	0	5	0
-284	鹰身魔女	Harpy B	17	79	14	459	6D10	1	Y	Long	Aggress	3	300	90	X	Cursex2	Phys	2D7+5	0	0	0	0	0	0	0	0	0	5	5	5	5	5	5	5	0	0	10	0
+284	鹰身女巫	Harpy B	17	79	14	459	6D10	1	Y	Long	Aggress	3	300	90	X	Cursex2	Phys	2D7+5	0	0	0	0	0	0	0	0	0	5	5	5	5	5	5	5	0	0	10	0
 285	鹰身女皇	Harpy C	19	93	16	551	20%10D10+L2Ring	1	Y	Long	Suicidal	3	350	80	X	Agex3	Phys	2D7+10	0	0	0	0	0	0	0	0	0	10	10	10	10	10	10	10	0	0	15	0
 286	烈火九头怪	Hydra A	45	337	22	2475	50D10+L3	1	N	Med	Aggress	2	220	80	0	0	Fire	15D5	Fire	0	0	0	0	0	0	0	0	20	20	20	20	10	10	10	5	5	20	0
 287	暴风九头怪	Hydra B	55	467	44	3575	100D10+L4	1	N	Med	Aggress	2	240	80	0	0	Air	20D5	Air	0	0	0	0	0	0	0	0	30	30	30	30	20	20	20	5	5	30	0
@@ -293,20 +293,20 @@ Default Monster Data					Stats								Movement and Combat					Attack 1			Attack 
 289	巫妖	Lich A	20	100	15	600	10%10D20+L3Misc	0	N	Med	Aggress	4	180	90	DC	0	Fire	3D8+6	Fire	0	0	0	0	20	"Toxic Cloud,E,4"	0	0	20	20	20	20	Imm	0	Imm	0	30	20	0
 290	强力巫妖	Lich B	30	180	20	1200	10%15D20+L4Misc	0	N	Med	Aggress	4	200	80	DC	0	Air	4D8+12	Air	0	0	0	0	20	"Shrapmetal,M,8"	0	0	25	25	25	25	Imm	0	Imm	0	30	25	0
 291	巫妖王	Lich C	40	280	25	2000	30%30D20+L5Misc	0	N	Short	Suicidal	4	220	70	DC	Insane	Dark	5D8+20	Dark	0	0	0	0	30	"Dragon Breath,M,12"	50	"Pain Reflection,M,12"	30	30	30	30	Imm	0	Imm	0	30	30	0
-292	巫师	Mage A	25	137	14	875	10%15D12+L3Staff	1	N	Med	Aggress	4	200	90	0	0	Light	9D4	Light	0	0	0	0	20	"Dispel Magic,E,4"	0	0	20	20	20	20	15	5	15	Imm	5	10	"Summon,air,Elemental Light A"
+292	妖术师	Mage A	25	137	14	875	10%15D12+L3Staff	1	N	Med	Aggress	4	200	90	0	0	Light	9D4	Light	0	0	0	0	20	"Dispel Magic,E,4"	0	0	20	20	20	20	15	5	15	Imm	5	10	"Summon,air,Elemental Light A"
 293	法师	Mage B	35	227	18	1575	10%25D12+L4Staff	1	N	Med	Aggress	4	220	80	0	0	Light	12D4	Light	0	0	0	0	30	"Dispel Magic,M,8"	50	"Hour of Power,M,8"	30	30	30	30	20	10	20	Imm	5	20	"Summon,air,Elemental Light B"
 294	大法师	Mage C	50	400	30	3000	30%40D12+L5Staff	1	N	Short	Aggress	4	240	70	0	0	Ener	16D4	Ener	0	0	0	0	33	"Hour of Power,M,12"	33	"Day of Protection,M,12"	40	40	40	40	25	15	25	Imm	5	30	"Summon,air,Elemental Light C"
 295	蝎狮	Manticore A	18	86	18	504	0	1	N	Long	Normal	3	260	90	DR	Poison2	Phys	1D12+4	Water	0	0	0	0	0	0	0	0	10	10	10	10	10	10	10	10	10	10	0
 296	蝎狮怪	Manticore B	27	153	25	999	0	1	N	Med	Aggress	3	280	80	DR	Poison3	Phys	1D12+8	Water	0	0	0	0	0	0	0	0	20	20	20	20	20	20	20	20	20	20	0
 297	毒蝎狮	Manticore C	36	237	32	1656	0	1	N	Short	Suicidal	3	300	70	DR	Poison3x2	Phys	2D12+10	Water	0	0	0	0	0	0	0	0	30	30	30	30	30	30	30	30	30	30	0
-298	美杜莎女妖	Medusa A	35	227	20	1575	10%10D20+L3Misc	1	N	Med	Normal	2	200	80	0	Paralyze	Phys	4D4+8	Arrow	0	0	0	0	0	0	0	0	Imm	Imm	Imm	Imm	Imm	Imm	Imm	Imm	Imm	0	0
+298	蛇发女妖	Medusa A	35	227	20	1575	10%10D20+L3Misc	1	N	Med	Normal	2	200	80	0	Paralyze	Phys	4D4+8	Arrow	0	0	0	0	0	0	0	0	Imm	Imm	Imm	Imm	Imm	Imm	Imm	Imm	Imm	0	0
 299	美杜莎女王	Medusa B	40	280	25	2000	10%15D20+L4Misc	1	N	Med	Aggress	2	220	80	0	Stone	Phys	5D4+10	Arrow	0	0	0	0	0	0	0	0	Imm	Imm	Imm	Imm	Imm	Imm	Imm	Imm	Imm	0	0
 300	美杜莎女皇	Medusa C	45	337	30	2475	30%30D20+L5Misc	1	N	Short	Suicidal	2	240	70	0	Stone	Phys	6D4+12	Arrow	0	0	0	0	0	0	0	0	Imm	Imm	Imm	Imm	Imm	Imm	Imm	Imm	Imm	0	0
 301	牛头人	AMinotaur A	39	269	30	1911	10%10D20+L4Axe	1	N	Long	Normal	2	250	80	0	0	Phys	3D7+25	0	0	0	0	0	0	0	0	0	10	10	10	10	10	5	10	5	5	10	0
-302	牛头人首领	AMinotaur B	59	525	35	4071	10%20D20+L5Axe	1	N	Med	Aggress	2	260	70	0	Insane	Phys	3D7+40	0	0	0	0	0	0	0	0	0	20	20	20	20	20	10	20	10	10	20	0
+302	牛头人刽子手	AMinotaur B	59	525	35	4071	10%20D20+L5Axe	1	N	Med	Aggress	2	260	70	0	Insane	Phys	3D7+40	0	0	0	0	0	0	0	0	0	20	20	20	20	20	10	20	10	10	20	0
 303	牛头王	AMinotaur C	79	861	40	7031	20%50D20+L6Axe	1	N	Short	Suicidal	2	300	60	0	Dead	Phys	3D7+60	0	0	0	0	0	0	0	0	0	30	30	30	30	30	15	30	15	15	30	0
 304	僧侣	Monk A	8	30	16	144	5%L1Misc	1	N	Long	Normal	2	200	100	M	0	Phys	2D8+4	0	0	0	0	0	10	"Fate,N,3"	50	"Hammerhands,E,3"	5	5	5	5	10	5	10	30	0	5	0
-305	修士	Monk B	16	73	19	416	5%L2Misc	1	N	Long	Aggress	2	220	90	M	0	Phys	2D8+12	0	0	0	0	0	10	"Harm,E,6"	50	"Hammerhands,E,6"	10	10	10	10	15	10	15	30	0	10	0
+305	隐士	Monk B	16	73	19	416	5%L2Misc	1	N	Long	Aggress	2	220	90	M	0	Phys	2D8+12	0	0	0	0	0	10	"Harm,E,6"	50	"Hammerhands,E,6"	10	10	10	10	15	10	15	30	0	10	0
 306	智者	Monk C	27	153	28	999	10%L3Misc	1	N	Long	Suicidal	2	240	80	M	0	Phys	2D8+20	0	0	0	0	0	10	"Mind Blast,E,9"	50	"Hammerhands,E,9"	15	15	15	15	25	15	25	30	0	15	0
 307	巫师	Necromancer A	25	137	14	875	10%15D12+L3Boots	1	N	Med	Aggress	4	200	90	P	0	Dark	9D4	Dark	0	0	0	0	20	"Toxic Cloud,E,4"	0	0	20	20	20	20	15	5	15	0	Imm	10	"Summon,ground,Ghost A"
 308	大巫师	Necromancer B	35	227	18	1575	10%25D12+L4Boots	1	N	Med	Aggress	4	220	80	P	0	Dark	12D4	Dark	0	0	0	0	30	"Shrapmetal,M,8"	0	0	30	30	30	30	20	10	20	0	Imm	20	"Summon,ground,Ghost B"
@@ -386,29 +386,29 @@ Default Monster Data					Stats								Movement and Combat					Attack 1			Attack 
 382	农夫	Peasant Human2 FemaleC A	1	3	3	11	2D6	1	N	Long	Wimp	4	140	100	0	0	Phys	2D2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 383	农夫	Peasant Human2 FemaleC B	2	6	5	24	3D6	1	N	Long	Wimp	4	140	100	0	0	Phys	2D2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 384	农夫	Peasant Human2 FemaleC C	3	9	6	39	4D6	1	N	Long	Wimp	4	140	100	0	0	Phys	2D2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-385	巨型老鼠	Rat A	2	6	4	24	2%L1Ring	1	N	Free	Normal	2	250	75	0	Disease1	Phys	1D8	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+385	巨鼠	Rat A	2	6	4	24	2%L1Ring	1	N	Free	Normal	2	250	75	0	Disease1	Phys	1D8	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 386	闪电鼠	Rat B	4	13	5	56	2%L1Ring	1	N	Free	Normal	2	250	75	0	Disease1	Phys	1D8+2	0	10	Air	2D4	Air	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 387	火焰鼠	Rat C	6	21	8	96	2%L1Ring	1	N	Free	Aggress	2	250	75	0	Disease2	Phys	1D8+6	0	15	Fire	2D5	Fire	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 388	机械人	Robot A	50	400	60	3000	0	0	N	Med	Suicidal	4	200	50	0	0	Ener	10D5+10	Ener	0	0	0	0	0	0	0	0	30	10	10	30	Imm	Imm	Imm	25	25	20	"shot,x3"
 389	机械守卫	Robot B	70	700	80	5600	0	0	N	Short	Suicidal	4	200	50	0	0	Ener	12D5+15	Ener	0	0	0	0	0	0	0	0	40	20	20	40	Imm	Imm	Imm	25	25	30	"shot,x3"
 390	机械杀手	Robot C	90	1080	100	9000	0	0	N	Short	Suicidal	4	200	50	0	0	Ener	20D5+20	Ener	0	0	0	0	0	0	0	0	60	30	30	60	Imm	Imm	Imm	25	25	50	"shot,x3"
-391	大雕	Roc A	27	153	20	999	10D8	1	Y	Free	Normal	3	275	80	0	0	Phys	3D10+20	0	0	0	0	0	0	0	0	0	10	10	10	10	10	5	10	0	0	20	0
-392	巨雕	Roc B	39	269	30	1911	20D8	1	Y	Long	Aggress	3	300	70	0	0	Phys	4D10+25	0	0	0	0	0	0	0	0	0	20	20	20	20	20	5	20	5	5	30	0
+391	大鹏	Roc A	27	153	20	999	10D8	1	Y	Free	Normal	3	275	80	0	0	Phys	3D10+20	0	0	0	0	0	0	0	0	0	10	10	10	10	10	5	10	0	0	20	0
+392	巨鹏	Roc B	39	269	30	1911	20D8	1	Y	Long	Aggress	3	300	70	0	0	Phys	4D10+25	0	0	0	0	0	0	0	0	0	20	20	20	20	20	5	20	5	5	30	0
 393	雷鸟	Roc C	51	413	40	3111	35D8	1	Y	Med	Suicidal	3	325	60	0	BrkArmor	Phys	5D10+30	0	0	0	0	0	0	0	0	0	30	Imm	30	30	30	5	30	10	10	40	0
 394	鲨鱼	Sea Monster A	28	162	30	1064	0	0	Y	Free	Aggress	4	200	90	0	0	Water	1D20+25	Water	0	0	0	0	0	0	0	0	0	0	Imm	0	0	0	0	0	0	30	0
 395	大鲨鱼	Sea Monster B	36	237	35	1656	0	0	Y	Free	Aggress	4	200	90	0	0	Water	1D20+35	Water	0	0	0	0	0	0	0	0	0	0	Imm	0	0	0	0	0	0	40	0
 396	巨鲨	Sea Monster C	48	374	40	2784	0	0	Y	Free	Aggress	4	200	80	0	Afraid	Water	1D20+45	Water	0	0	0	0	0	0	0	0	0	0	Imm	0	0	0	0	0	0	50	0
 397	骷髅	Skeleton Warrior A	6	21	8	96	4D6	0	N	Med	Aggress	2	220	100	0	0	Phys	3D4	0	0	0	0	0	0	0	0	0	0	0	0	0	Imm	0	Imm	0	30	5	0
 398	骷髅勇士	Skeleton Warrior B	10	40	10	200	7D6	0	N	Med	Aggress	2	250	90	0	Afraid	Phys	3D4+2	0	0	0	0	0	0	0	0	0	0	0	0	0	Imm	0	Imm	0	30	5	0
-399	骷髅爵士	Skeleton Warrior C	14	61	14	336	5%10D6+L2Sword	0	N	Short	Suicidal	2	280	80	0	Curse	Phys	3D4+4	0	0	0	0	0	0	0	0	0	0	0	0	0	Imm	0	Imm	0	30	5	0
-400	巨型蜘蛛	Spider A	5	17	10	75	0	1	N	Med	Normal	2	300	90	0	Poison1	Phys	3D2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+399	骷髅王	Skeleton Warrior C	14	61	14	336	5%10D6+L2Sword	0	N	Short	Suicidal	2	280	80	0	Curse	Phys	3D4+4	0	0	0	0	0	0	0	0	0	0	0	0	0	Imm	0	Imm	0	30	5	0
+400	巨蜘蛛	Spider A	5	17	10	75	0	1	N	Med	Normal	2	300	90	0	Poison1	Phys	3D2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 401	毒蜘蛛	Spider B	8	30	12	144	0	1	N	Med	Aggress	2	280	90	0	Poison2	Phys	3D2+3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 402	蜘蛛王	Spider C	12	50	16	264	0	1	N	Short	Aggress	2	260	90	0	Poison3	Phys	3D2+6	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 403	剑士	Swordsman A	10	40	10	200	10d6	1	N	Long	Aggress	4	220	90	T	0	Phys	3D7+4	0	0	0	0	0	0	0	0	0	5	5	5	5	5	5	5	0	0	5	0
-404	士兵	Swordsman B	17	79	15	459	5%15D6+L2Sword	1	N	Med	Aggress	4	250	80	T	0	Phys	3D7+6	0	0	0	0	0	0	0	0	0	10	10	10	10	10	5	10	0	0	10	0
+404	守卫	Swordsman B	17	79	15	459	5%15D6+L2Sword	1	N	Med	Aggress	4	250	80	T	0	Phys	3D7+6	0	0	0	0	0	0	0	0	0	10	10	10	10	10	5	10	0	0	10	0
 405	探险家	Swordsman C	24	129	20	816	10%30D6+L2Sword	1	N	Short	Aggress	4	280	70	T	Brkweapon	Phys	3D7+8	0	0	0	0	0	0	0	0	0	15	15	15	15	15	5	15	0	0	15	0
-406	盗贼	Thief A	8	30	10	144	5%3D10+L1	1	N	Med	Normal	2	250	60	P	Stealx2	Phys	3D4+3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-407	歹徒	Thief B	12	50	14	264	10%4D10+L1	1	N	Med	Normal	2	260	60	P	Stealx2	Phys	3D4+6	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+406	小偷	Thief A	8	30	10	144	5%3D10+L1	1	N	Med	Normal	2	250	60	P	Stealx2	Phys	3D4+3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+407	飞贼	Thief B	12	50	14	264	10%4D10+L1	1	N	Med	Normal	2	260	60	P	Stealx2	Phys	3D4+6	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 408	神偷	Thief C	18	86	20	504	20%5D10+L2	1	N	Med	Aggress	2	270	60	P	Stealx2	Phys	3D4+12	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 409	泰坦	Titan A	65	617	60	4875	40%200D10+L5	1	N	Short	Aggress	4	200	70	O	BrkArmor	Air	2D20+60	Air	0	0	0	0	20	"Psychic Shock,M,8"	10	"Sparks,M,8"	30	Imm	30	30	Imm	15	30	30	30	30	0
 410	泰坦首领	Titan B	75	787	70	6375	250D12L5	1	N	Short	Aggress	4	200	70	O	Brkweapon	Air	2D20+80	Air	0	0	0	0	20	"Psychic Shock,M,12"	10	"Sparks,M,12"	50	Imm	50	50	Imm	15	50	30	30	50	0
@@ -419,15 +419,15 @@ Default Monster Data					Stats								Movement and Combat					Attack 1			Attack 
 415	吸血鬼	Vampire A	20	100	25	600	30%6D8+L2Cape	1	N	Med	Aggress	2	220	80	OC	Disease2	Phys	3D8+15	0	0	0	0	0	0	0	0	0	5	10	Imm	10	Imm	0	Imm	0	30	10	0
 416	吸血怪	Vampire B	33	207	35	1419	40%12D8+L3Cape	1	N	Med	Aggress	2	240	70	OC	DrainSP	Phys	3D8+25	0	0	0	0	0	0	0	0	0	10	20	Imm	20	Imm	0	Imm	0	30	20	0
 417	吸血王	Vampire C	48	374	45	2784	50%16D8+L4Cape	1	N	Short	Suicidal	2	260	60	OC	DrainSP	Phys	3D8+35	0	0	0	0	0	0	0	0	0	15	30	Imm	30	Imm	0	Imm	0	30	30	0
-418	火邪术师	Warlock A	25	137	14	875	10%7D9+L2Wand	1	N	Med	Aggress	4	200	90	0	0	Fire	9D4	Fire	0	0	0	0	20	"Fireball,E,6"	0	0	30	30	30	30	10	10	10	0	10	10	0
-419	水邪术师	Warlock B	35	227	18	1575	15%15D9+L3Wand	1	N	Med	Aggress	4	220	80	0	0	Water	12D4	Water	0	0	0	0	20	"Acid Burst,M,9"	0	0	40	40	40	40	20	10	20	0	10	20	0
-420	空气邪术师	Warlock C	50	400	30	3000	25%25D9+L4Wand	1	N	Short	Aggress	4	240	70	0	0	Air	16D4	Air	0	0	0	0	20	"Lightning Bolt,M,12"	0	0	50	50	50	50	30	10	30	0	10	30	0
+418	火魔法师	Warlock A	25	137	14	875	10%7D9+L2Wand	1	N	Med	Aggress	4	200	90	0	0	Fire	9D4	Fire	0	0	0	0	20	"Fireball,E,6"	0	0	30	30	30	30	10	10	10	0	10	10	0
+419	水魔法师	Warlock B	35	227	18	1575	15%15D9+L3Wand	1	N	Med	Aggress	4	220	80	0	0	Water	12D4	Water	0	0	0	0	20	"Acid Burst,M,9"	0	0	40	40	40	40	20	10	20	0	10	20	0
+420	空气魔法师	Warlock C	50	400	30	3000	25%25D9+L4Wand	1	N	Short	Aggress	4	240	70	0	0	Air	16D4	Air	0	0	0	0	20	"Lightning Bolt,M,12"	0	0	50	50	50	50	30	10	30	0	10	30	0
 421	野鬼	Wight A	14	61	15	336	10%L2Dagger	0	N	Short	Suicidal	2	180	90	0	Afraid	Phys	2D5+6	0	0	0	0	0	0	0	0	0	10	10	Imm	10	Imm	0	Imm	0	30	10	0
 422	鬼怪	Wight B	19	93	20	551	10%L3Dagger	0	N	Short	Suicidal	2	200	80	0	DrainSP	Phys	2D5+12	0	0	0	0	0	0	0	0	0	20	20	Imm	20	Imm	0	Imm	0	30	20	0
 423	游魂	Wight C	26	145	25	936	20%L4Dagger	0	N	Short	Suicidal	2	220	70	0	Agex2	Phys	4D5+12	0	0	0	0	0	0	0	0	0	30	30	Imm	30	Imm	0	Imm	0	30	30	0
-424	双角龙	AWyvern A	19	93	14	551	10%25D8+L3	1	Y	Free	Normal	3	250	80	DR	Poison2	Phys	7D6	0	0	0	0	0	0	0	0	0	10	10	10	10	10	5	10	5	5	10	0
-425	长角双角龙	AWyvern B	28	162	28	1064	10%50D8+L4	1	Y	Long	Aggress	3	280	70	DR	Poison3	Phys	9D6	0	0	0	0	0	0	0	0	0	20	20	20	20	20	5	20	5	5	20	0
-426	远古双角龙	AWyvern C	37	247	42	1739	15%100D8+L4	1	Y	Med	Suicidal	3	320	60	DR	Dead	Phys	12D6	0	0	0	0	0	0	0	0	0	30	30	30	30	30	5	30	5	5	30	0
+424	双足龙	AWyvern A	19	93	14	551	10%25D8+L3	1	Y	Free	Normal	3	250	80	DR	Poison2	Phys	7D6	0	0	0	0	0	0	0	0	0	10	10	10	10	10	5	10	5	5	10	0
+425	双足角龙	AWyvern B	28	162	28	1064	10%50D8+L4	1	Y	Long	Aggress	3	280	70	DR	Poison3	Phys	9D6	0	0	0	0	0	0	0	0	0	20	20	20	20	20	5	20	5	5	20	0
+426	双足古龙	AWyvern C	37	247	42	1739	15%100D8+L4	1	Y	Med	Suicidal	3	320	60	DR	Dead	Phys	12D6	0	0	0	0	0	0	0	0	0	30	30	30	30	30	5	30	5	5	30	0
 427	腐尸	Zombie A	9	35	8	171	10%5D4	0	N	Med	Aggress	1	160	110	0	Disease1	Phys	1D7	0	0	0	0	0	0	0	0	0	5	5	5	5	Imm	0	Imm	0	30	10	0
 428	丧尸	Zombie B	13	55	14	299	10%7D4	0	N	Med	Aggress	1	180	100	0	Disease2	Phys	2D7+2	0	0	0	0	0	0	0	0	0	10	10	10	10	Imm	0	Imm	0	30	20	0
 429	僵尸	Zombie C	17	79	20	459	25%12D4	0	N	Med	Suicidal	1	200	90	0	Disease2	Phys	3D7+4	0	0	0	0	0	0	0	0	0	15	15	15	15	Imm	0	Imm	0	30	30	0
@@ -481,7 +481,7 @@ Default Monster Data					Stats								Movement and Combat					Attack 1			Attack 
 477	火弩手	BArcher C	29	171	22	1131	10%10D20+L3Bow	1	N	Short	Aggress	4	160	80	0	0	Phys	3D6+3	Arrow	30	Fire	4D6	ArrowF	40	"Fireball,N,5"	0	0	30	30	30	30	10	10	10	10	10	0	0
 478	马扎尔人	Barbarian A	14	61	16	336	5%5D10+L2Misc	1	N	Long	Aggress	4	260	80	0	0	Phys	3D7+3	0	0	0	0	0	0	0	0	0	20	20	20	20	0	0	0	0	0	10	0
 479	马扎尔士兵	Barbarian B	25	137	22	875	5%10D10+L3Misc	1	N	Med	Aggress	4	280	70	0	0	Phys	3D7+6	0	10	Phys	3D7+18	0	0	0	0	0	30	30	30	30	0	0	0	0	0	20	0
-480	马扎尔首领	Barbarian C	37	247	28	1739	10%20D10+L4Misc	1	N	Med	Suicidal	4	300	60	0	0	Phys	3D7+12	0	20	Air	7D8	Air	0	0	0	0	50	50	50	50	0	0	0	0	0	30	0
+480	马扎尔总督	Barbarian C	37	247	28	1739	10%20D10+L4Misc	1	N	Med	Suicidal	4	300	60	0	0	Phys	3D7+12	0	20	Air	7D8	Air	0	0	0	0	50	50	50	50	0	0	0	0	0	30	0
 481	蝙蝠	BBat A	3	9	5	39	0	1	Y	Free	Normal	4	280	50	0	Disease1	Phys	1D3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 482	大蝙蝠	BBat B	6	21	8	96	5%L1Ring	1	Y	Free	Normal	4	300	50	0	Disease1	Phys	1D3+2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 483	吸血蝙蝠	BBat C	9	35	10	171	5%L2Ring	1	Y	Free	Aggress	4	320	50	0	Disease2	Phys	2D3+2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
@@ -490,7 +490,7 @@ Default Monster Data					Stats								Movement and Combat					Attack 1			Attack 
 486	狂乱之眼	BBeholder C	50	400	35	3000	30%L6Ring	1	Y	Short	Suicidal	4	180	50	0	Insane	Air	7D6	Air	0	0	0	0	20	"Dispel Magic,N,10"	0	0	50	Imm	50	50	Imm	Imm	Imm	Imm	Imm	50	0
 487	吸血者	Bloodsucker A	2	6	6	24	0	1	Y	Free	Normal	4	300	50	0	Disease1x2	Phys	1D2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 488	嗜脑髓者	Bloodsucker B	4	13	8	56	5%L1Ring	1	Y	Free	Aggress	4	350	50	0	Disease1x5	Phys	1D2+2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-489	摄魂者	Bloodsucker C	8	30	10	144	5%L2Ring	1	Y	Free	Suicidal	4	400	50	0	Disease2x2	Phys	2D2+2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+489	招魂者	Bloodsucker C	8	30	10	144	5%L2Ring	1	Y	Free	Suicidal	4	400	50	0	Disease2x2	Phys	2D2+2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 490	羊鸣教僧徒	Cleric A	8	30	14	144	5%5D10+L1Mace	1	N	Med	Normal	4	160	90	0	0	Air	2D4	Air	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 491	羊鸣教牧师	Cleric B	15	67	18	375	5%10D10+L2Mace	1	N	Med	Normal	4	180	90	0	0	Air	2D4+4	Air	0	0	0	0	20	"Harm,N,3"	0	0	0	0	0	0	0	0	0	0	0	0	0
 492	羊鸣教教父	Cleric C	25	137	22	875	10%20D10+L3Misc	1	N	Med	Aggress	4	200	80	0	0	Air	2D4+8	Air	0	0	0	0	30	"Flying Fist,N,5"	0	0	0	0	0	0	0	0	0	0	0	0	0
@@ -509,24 +509,24 @@ Default Monster Data					Stats								Movement and Combat					Attack 1			Attack 
 505	烈火蜥蜴	DragonCave A	40	280	40	2000	20%100D10+L4	1	N	Med	Aggress	4	200	70	2	0	Fire	10D6	Fire	0	0	0	0	0	0	0	0	Imm	30	30	30	30	30	30	30	30	20	0
 506	闪电蜥蜴	DragonCave B	50	400	50	3000	20%150D10+L5	1	N	Short	Aggress	4	220	65	2	BrkItem	Air	12D6	Air	0	0	0	0	0	0	0	0	40	Imm	40	40	40	40	40	40	40	30	0
 507	雷霆蜥蜴	DragonCave C	60	540	60	4200	20%200D10+L5	1	N	Short	Aggress	4	240	60	2	BrkItem	Water	14D6	Water	0	0	0	0	0	0	0	0	50	50	Imm	50	50	50	50	50	50	40	0
-508	火亚龙	BDragonFly A	24	129	20	816	10%30D10+L3	1	Y	Free	Aggress	4	240	70	0	0	Fire	10D4	Fire	0	0	0	0	0	0	0	0	Imm	10	10	30	10	10	10	10	10	20	0
-509	冰亚龙	BDragonFly B	28	162	25	1064	10%60D10+L4	1	Y	Long	Aggress	4	260	60	0	0	Water	12D4	Water	0	0	0	0	0	0	0	0	10	10	Imm	10	10	10	10	10	10	30	0
-510	能量亚龙	BDragonFly C	32	198	30	1344	20%100D10+L5	1	Y	Med	Suicidal	4	280	50	0	BrkItem	Ener	15D4	Ener	0	0	0	0	0	0	0	0	20	20	20	10	10	10	10	10	10	40	0
+508	火焰杜雷克	BDragonFly A	24	129	20	816	10%30D10+L3	1	Y	Free	Aggress	4	240	70	0	0	Fire	10D4	Fire	0	0	0	0	0	0	0	0	Imm	10	10	30	10	10	10	10	10	20	0
+509	冰霜杜雷克	BDragonFly B	28	162	25	1064	10%60D10+L4	1	Y	Long	Aggress	4	260	60	0	0	Water	12D4	Water	0	0	0	0	0	0	0	0	10	10	Imm	10	10	10	10	10	10	30	0
+510	能量杜雷克	BDragonFly C	32	198	30	1344	20%100D10+L5	1	Y	Med	Suicidal	4	280	50	0	BrkItem	Ener	15D4	Ener	0	0	0	0	0	0	0	0	20	20	20	10	10	10	10	10	10	40	0
 511	威猛兽	DragonLand A	50	400	40	3000	100D10+L5	1	N	Med	Aggress	4	180	70	2	Pois2	Water	10D10	Water	0	0	0	0	0	0	0	0	30	30	30	Imm	30	30	30	30	30	30	0
 512	巨型威猛兽	DragonLand B	60	540	50	4200	150D10+L5	1	N	Med	Aggress	4	160	70	3	Pois3	Water	10D10	Water	0	0	0	0	0	0	0	0	40	40	40	Imm	40	40	40	40	40	40	0
 513	超级威猛兽	DragonLand C	70	700	60	5600	200D10+L6	1	N	Short	Aggress	4	140	70	4	Pois3	Water	10D10	Water	0	0	0	0	0	0	0	0	50	50	50	Imm	50	50	50	50	50	50	0
 514	红龙	DragonCover A	80	880	60	7200	250D10+L6	1	Y	Long	Aggress	4	240	70	4	0	Fire	12D8	Fire	0	0	0	0	0	0	0	0	Imm	50	30	50	50	50	50	50	50	50	0
 515	蓝龙	DragonCover B	90	1080	80	9000	250D12+L6	1	Y	Med	Aggress	4	260	65	4	BrkItem	Water	14D8	Water	0	0	0	0	0	0	0	0	30	70	Imm	70	70	70	70	70	70	70	0
 516	金龙	DragonCover C	100	1300	100	11000	250D16+L6	1	Y	Short	Aggress	4	300	60	4	BrkItem	Ener	16D8	Ener	0	0	0	0	0	0	0	0	90	90	90	90	Imm	Imm	Imm	90	90	90	0
-517	德鲁伊	Druidess A	10	40	12	200	5%10D10+L1Misc	1	N	Med	Normal	4	160	90	0	0	Fire	2D4+3	Fire	0	0	0	0	40	"Harm,N,2"	0	0	10	10	10	10	10	10	10	10	10	0	0
-518	高级德鲁伊	Druidess B	16	73	16	416	10%20D10+L2Misc	1	N	Med	Aggress	4	180	90	0	0	Water	2D4+6	Water	0	0	0	0	40	"Deadly Swarm,N,3"	0	0	20	20	20	20	20	20	20	20	20	0	0
-519	大德鲁伊	Druidess C	28	162	22	1064	20%50D10+L3Misc	1	N	Short	Aggress	4	200	80	2	DrainSP	Earth	2D4+12	Earth	0	0	0	0	30	"Fireball,M,6"	0	0	30	30	30	30	30	30	30	30	30	0	0
+517	德鲁伊教徒	Druidess A	10	40	12	200	5%10D10+L1Misc	1	N	Med	Normal	4	160	90	0	0	Fire	2D4+3	Fire	0	0	0	0	40	"Harm,N,2"	0	0	10	10	10	10	10	10	10	10	10	0	0
+518	大德鲁伊教士	Druidess B	16	73	16	416	10%20D10+L2Misc	1	N	Med	Aggress	4	180	90	0	0	Water	2D4+6	Water	0	0	0	0	40	"Deadly Swarm,N,3"	0	0	20	20	20	20	20	20	20	20	20	0	0
+519	大德鲁伊教士长	Druidess C	28	162	22	1064	20%50D10+L3Misc	1	N	Short	Aggress	4	200	80	2	DrainSP	Earth	2D4+12	Earth	0	0	0	0	30	"Fireball,M,6"	0	0	30	30	30	30	30	30	30	30	30	0	0
 520	矮人	BDwarf A	10	40	6	200	5%5D10+L1	1	N	Med	Normal	4	160	70	0	0	Phys	4D2+4	0	20	Phys	8D2+8	0	0	0	0	0	20	20	20	Imm	30	30	30	30	30	0	0
 521	矮人勇士	BDwarf B	20	100	12	600	10%10D10L2Axe	1	N	Med	Aggress	4	180	80	0	0	Phys	4D2+8	0	20	Phys	8D2+16	0	0	0	0	0	30	30	30	Imm	40	40	40	40	40	0	0
 522	矮人爵士	BDwarf C	30	180	20	1200	25%20D10+L3Axe	1	N	Short	Suicidal	4	200	80	0	BrkArmor x2	Phys	4D2+16	0	20	Phys	8D2+32	0	0	0	0	0	40	40	40	Imm	50	50	50	50	50	0	0
 523	尘土恶魔	ElemAir A	16	73	10	416	0	0	Y	Free	Suicidal	4	220	90	0	0	Air	3D6	Air	0	0	0	0	0	0	0	0	10	Imm	10	10	Imm	Imm	Imm	50	50	10	0
 524	陆龙卷	ElemAir B	22	114	12	704	0	0	Y	Free	Suicidal	4	240	90	0	0	Air	5D6	Air	0	0	0	0	0	0	0	0	10	Imm	10	10	Imm	Imm	Imm	50	50	10	0
-525	风元素	ElemAir C	33	207	14	1419	0	0	Y	Free	Suicidal	4	260	80	0	BrkItem	Air	8D6	Air	0	0	0	0	0	0	0	0	10	Imm	10	10	Imm	Imm	Imm	50	50	10	0
+525	空气元素	ElemAir C	33	207	14	1419	0	0	Y	Free	Suicidal	4	260	80	0	BrkItem	Air	8D6	Air	0	0	0	0	0	0	0	0	10	Imm	10	10	Imm	Imm	Imm	50	50	10	0
 526	石兽	ElemEarth A	25	137	20	875	10D20	0	N	Free	Suicidal	4	220	90	0	0	Phys	10D3	0	40	Phys	8D3	Rock	0	0	0	0	10	10	10	Imm	Imm	Imm	Imm	50	50	10	0
 527	泥土精灵	ElemEarth B	30	180	25	1200	15D20	0	N	Free	Suicidal	4	240	90	0	BrkArmor	Phys	15D3	0	40	Phys	12D3	Rock	0	0	0	0	10	10	10	Imm	Imm	Imm	Imm	50	50	10	0
 528	泥土元素	ElemEarth C	40	280	30	2000	30D20	0	N	Free	Suicidal	4	260	80	0	Uncon	Phys	25D3	0	40	Phys	20D3	Rock	0	0	0	0	10	10	10	Imm	Imm	Imm	Imm	50	50	10	0
@@ -547,19 +547,19 @@ Default Monster Data					Stats								Movement and Combat					Attack 1			Attack 
 543	钻石怪兽	BGargoyle C	33	207	26	1419	20%25D10+L3Amulet	0	Y	Med	Suicidal	4	350	70	0	Paralyze	Phys	2D12+8	0	0	0	0	0	0	0	0	0	10	10	10	Imm	20	20	20	20	20	Imm	0
 544	灯怪	BGenie A	33	207	35	1419	30%L4	0	Y	Free	Aggress	4	200	60	0	0	Water	8D4+8	Water	0	0	0	0	20	"IceBolt,M,10"	0	0	0	30	Imm	30	Imm	30	Imm	30	30	30	0
 545	神怪	BGenie B	44	325	45	2376	30%L5	0	Y	Free	Aggress	4	220	50	0	Asleep	Air	10D4+10	Air	0	0	0	0	20	"Lightning Bolt,M,12"	0	0	30	Imm	30	0	Imm	30	Imm	30	30	30	0
-546	魔怪	BGenie C	55	467	55	3575	30%L6	0	Y	Free	Aggress	4	250	40	0	Afraid	Fire	12D4+12	Fire	0	0	0	0	20	"Fireball,M,15"	0	0	Imm	30	0	30	Imm	30	Imm	30	30	30	0
+546	神魔	BGenie C	55	467	55	3575	30%L6	0	Y	Free	Aggress	4	250	40	0	Afraid	Fire	12D4+12	Fire	0	0	0	0	20	"Fireball,M,15"	0	0	Imm	30	0	30	Imm	30	Imm	30	30	30	0
 547	鬼魂	BGhost A	9	35	25	171	5%L2Ring	0	Y	Free	Normal	4	240	100	0	Afraid	Dark	1D6+6	0	0	0	0	0	0	0	0	0	10	10	10	Imm	Imm	Imm	Imm	0	10	10	0
 548	邪恶精灵	BGhost B	13	55	30	299	10%L3Ring	0	Y	Long	Normal	4	260	90	0	Agex2	Dark	2D6+6	0	0	0	0	0	0	0	0	0	15	15	15	Imm	Imm	Imm	Imm	0	15	15	0
 549	幽灵	BGhost C	19	93	35	551	20%L4Ring	0	Y	Med	Suicidal	4	300	90	0	Uncon	Dark	3D6+6	0	0	0	0	0	0	0	0	0	20	20	20	Imm	Imm	Imm	Imm	0	20	20	0
 550	大耳怪	BGoblin A	4	13	6	56	4D4	1	N	Med	Normal	4	160	100	0	0	Phys	1D9	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-551	大耳怪萨满	BGoblin B	6	21	10	96	8D4	1	N	Med	Normal	4	170	100	0	0	Phys	1D9+2	0	0	0	0	0	10	"Fire Bolt,N,1"	0	0	0	0	0	0	0	0	0	0	0	0	0
+551	高级大耳怪	BGoblin B	6	21	10	96	8D4	1	N	Med	Normal	4	170	100	0	0	Phys	1D9+2	0	0	0	0	0	10	"Fire Bolt,N,1"	0	0	0	0	0	0	0	0	0	0	0	0	0
 552	大耳怪之王	BGoblin C	10	40	14	200	10%15D4+L1	1	N	Short	Aggress	4	180	90	0	BrkItem	Phys	1D9+4	0	0	0	0	0	30	"Fire Bolt,N,2"	0	0	10	10	10	10	10	10	10	10	10	10	0
 553	士兵	Guard A	11	45	16	231	5%3D20+L1Armor	1	N	Short	Normal	4	200	90	0	0	Phys	3D3+5	0	0	0	0	0	0	0	0	0	5	5	5	5	5	5	5	5	5	5	0
 554	中尉	Guard B	19	93	24	551	5%5D20+L2Armor	1	N	Short	Normal	4	220	90	0	0	Phys	3D3+10	0	10	Phys	3D3+20	0	0	0	0	0	10	10	10	10	10	10	10	10	10	10	0
 555	上尉	Guard C	33	207	32	1419	10%10D20+L3Armor	1	N	Short	Aggress	4	240	80	0	BrkArmor	Phys	3D3+20	0	10	Phys	3D3+40	0	0	0	0	0	20	20	20	20	20	20	20	20	20	20	0
 556	鹰身女妖	BHarpy A	14	61	12	336	4D10	1	Y	Long	Aggress	4	250	90	0	Drunk	Phys	2D7+2	0	0	0	0	0	0	0	0	0	0	0	0	0	10	10	10	10	10	0	0
-557	鹰身魔女	BHarpy B	17	79	14	459	6D10	1	Y	Long	Aggress	4	300	90	0	Cursex3	Phys	2D7+5	0	0	0	0	0	0	0	0	0	0	0	0	0	20	20	20	20	20	0	0
-558	鹰身巫婆	BHarpy C	19	93	16	551	20%10D10+L2Ring	1	Y	Long	Suicidal	4	350	80	0	Agex3	Phys	2D7+10	0	0	0	0	0	10	"Mass Curse,N,3"	0	0	0	0	0	0	30	30	30	30	30	0	0
+557	鹰身女巫	BHarpy B	17	79	14	459	6D10	1	Y	Long	Aggress	4	300	90	0	Cursex3	Phys	2D7+5	0	0	0	0	0	0	0	0	0	0	0	0	0	20	20	20	20	20	0	0
+558	鹰身女魔	BHarpy C	19	93	16	551	20%10D10+L2Ring	1	Y	Long	Suicidal	4	350	80	0	Agex3	Phys	2D7+10	0	0	0	0	0	10	"Mass Curse,N,3"	0	0	0	0	0	0	30	30	30	30	30	0	0
 559	海蛇怪	BHydra A	45	337	22	2475	50D10+L3	1	N	Med	Aggress	4	220	80	2	0	Phys	15D5	0	30	Fire	8D5	Fire	0	0	0	0	Imm	10	10	10	10	10	10	10	10	10	0
 560	剧毒海蛇怪	BHydra B	55	467	44	3575	100D10+L4	1	N	Med	Aggress	4	240	80	2	Poison3	Phys	20D5	0	30	Water	10D5	Water	0	0	0	0	20	20	20	Imm	20	20	20	20	20	20	0
 561	巨型海蛇怪	BHydra C	65	617	66	4875	200D10+L5	1	N	Short	Aggress	4	260	80	3	BrkItem	Phys	20D5	0	40	Ener	10D5	Ener	0	0	0	0	30	30	30	30	30	30	30	30	30	30	0
@@ -581,13 +581,13 @@ Default Monster Data					Stats								Movement and Combat					Attack 1			Attack 
 577	农夫	Merchant A	4	13	4	56	5D20	1	N	Med	Wimp	4	140	50	0	0	Phys	2D2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 578	农夫	Merchant B	5	17	6	75	7D20	1	N	Med	Normal	4	140	50	0	0	Phys	2D2+2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 579	农夫	Merchant C	6	21	8	96	10D20	1	N	Med	Normal	4	140	50	0	0	Phys	2D2+4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-580	牛头人	BMinotaur A	39	269	30	1911	10%10D20+L4Axe	1	N	Long	Normal	4	250	80	0	0	Phys	3D7+25	0	0	0	0	0	0	0	0	0	10	10	10	10	10	10	10	10	10	10	0
+580	牛头怪	BMinotaur A	39	269	30	1911	10%10D20+L4Axe	1	N	Long	Normal	4	250	80	0	0	Phys	3D7+25	0	0	0	0	0	0	0	0	0	10	10	10	10	10	10	10	10	10	10	0
 581	牛头魔法师	BMinotaur B	59	525	35	4071	10%20D20+L5Axe	1	N	Med	Aggress	4	260	70	0	0	Phys	3D7+40	0	0	0	0	0	20	"Lightning Bolt,M,12"	0	0	20	20	20	20	20	20	20	20	20	20	0
 582	牛头国王	BMinotaur C	79	861	40	7031	20%50D20+L6Axe	1	N	Short	Suicidal	4	300	60	2	0	Phys	3D7+60	0	0	0	0	0	20	"Finger of Death,N,14"	0	0	30	30	30	30	30	30	30	30	30	30	0
 583	初级僧侣	BMonk A	8	30	16	144	5%L1Amulet	1	N	Long	Normal	4	200	100	0	0	Fire	2D4+2	Fire	0	0	0	0	20	"Fire Bolt,N,2"	0	0	10	0	0	0	0	0	0	0	0	0	0
 584	低级僧侣	BMonk B	16	73	19	416	5%L2Amulet	1	N	Long	Aggress	4	220	90	0	0	Air	2D4+8	Air	0	0	0	0	20	"Lightning Bolt,N,3"	0	0	0	10	0	0	0	0	0	0	0	0	0
 585	高级僧侣	BMonk C	27	153	28	999	10%L3Amulet	1	N	Long	Suicidal	4	240	80	0	Weak	Water	2D4+16	Water	0	0	0	0	20	"IceBolt,M,6"	0	0	5	5	20	5	Imm	Imm	Imm	50	50	0	0
-586	剑士	Nobleman A	10	40	10	200	5%10d10+L1Sword	1	N	Long	Aggress	4	220	90	0	0	Phys	3D7+4	0	0	0	0	0	0	0	0	0	5	5	5	5	5	5	5	5	5	5	0
+586	剑术家	Nobleman A	10	40	10	200	5%10d10+L1Sword	1	N	Long	Aggress	4	220	90	0	0	Phys	3D7+4	0	0	0	0	0	0	0	0	0	5	5	5	5	5	5	5	5	5	5	0
 587	剑术专家	Nobleman B	17	79	15	459	5%15D10+L2Sword	1	N	Med	Aggress	4	250	80	0	0	Phys	3D7+6	0	0	0	0	0	0	0	0	0	10	5	5	5	5	5	5	5	5	5	0
 588	剑术大师	Nobleman C	24	129	20	816	10%30D10+L3Sword	1	N	Short	Aggress	4	280	70	2	Brkweapon	Phys	3D7+8	0	20	Phys	3D7+20	0	0	0	0	0	15	10	10	10	10	10	10	10	10	10	0
 589	粘土怪	BOoze A	12	50	8	264	5%L2	0	N	Free	Normal	4	120	100	2	Poison1x2	Water	1D6	0	0	0	0	0	0	0	0	0	0	0	0	0	Imm	0	0	0	0	Imm	0
@@ -623,9 +623,9 @@ Default Monster Data					Stats								Movement and Combat					Attack 1			Attack 
 619	老鼠	BRat A	2	6	4	24	2%L1Ring	1	N	Free	Normal	4	250	75	0	Disease1x2	Phys	1D8	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 620	大老鼠	BRat B	4	13	5	56	2%L1Ring	1	N	Free	Normal	4	250	75	0	Disease1x2	Phys	1D8+2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 621	巨型老鼠	BRat C	6	21	8	96	2%L1Ring	1	N	Free	Aggress	4	250	75	0	Disease2x2	Phys	1D8+6	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-622	巡逻者	BRobot A	50	400	60	3000	0	0	Y	Med	Aggress	4	200	50	0	BrkItem	Ener	10D5+10	Ener	0	0	0	0	0	0	0	0	30	30	30	30	Imm	Imm	30	30	30	20	0
-623	执行者	BRobot B	70	700	80	5600	0	0	Y	Short	Suicidal	4	200	50	0	BrkItem	Ener	12D5+15	Ener	0	0	0	0	0	0	0	0	40	40	40	40	Imm	Imm	40	40	40	30	0
-624	终结者	BRobot C	90	1080	100	9000	0	0	Y	Short	Suicidal	4	200	50	0	Errad	Ener	20D5+20	Ener	0	0	0	0	0	0	0	0	60	60	60	60	Imm	Imm	60	60	60	50	0
+622	巡逻队	BRobot A	50	400	60	3000	0	0	Y	Med	Aggress	4	200	50	0	BrkItem	Ener	10D5+10	Ener	0	0	0	0	0	0	0	0	30	30	30	30	Imm	Imm	30	30	30	20	0
+623	强制执行部队	BRobot B	70	700	80	5600	0	0	Y	Short	Suicidal	4	200	50	0	BrkItem	Ener	12D5+15	Ener	0	0	0	0	0	0	0	0	40	40	40	40	Imm	Imm	40	40	40	30	0
+624	终结者部队	BRobot C	90	1080	100	9000	0	0	Y	Short	Suicidal	4	200	50	0	Errad	Ener	20D5+20	Ener	0	0	0	0	0	0	0	0	60	60	60	60	Imm	Imm	60	60	60	50	0
 625	海妖	SeaSerpent A	28	162	30	1064	0	1	N	Free	Aggress	4	200	90	0	0	Water	2D20+25	Water	0	0	0	0	0	0	0	0	5	0	Imm	0	5	5	5	5	5	0	0
 626	海怪	SeaSerpent B	36	237	35	1656	0	1	N	Free	Aggress	4	200	90	0	0	Water	2D20+35	Water	0	0	0	0	0	0	0	0	10	0	Imm	0	10	10	10	10	10	0	0
 627	海魔	SeaSerpent C	48	374	40	2784	0	1	N	Free	Aggress	4	200	80	2	Afraid	Water	2D20+45	Water	0	0	0	0	0	0	0	0	20	0	Imm	0	10	10	10	10	10	0	0
@@ -634,7 +634,7 @@ Default Monster Data					Stats								Movement and Combat					Attack 1			Attack 
 630	骷髅爵士	Skeleton C	14	61	14	336	5%10D6+L2Sword	0	N	Short	Suicidal	4	280	80	0	Cursex2	Phys	3D4+6	0	0	0	0	0	0	0	0	0	0	0	0	Imm	Imm	Imm	Imm	0	20	0	0
 631	巫师	Sorcerer A	25	137	14	875	10%10D10+L2Staff	1	N	Med	Aggress	4	200	90	0	0	Air	9D4	Air	0	0	0	0	20	"Lightning Bolt,M,8"	0	0	10	Imm	10	10	10	10	10	10	10	0	0
 632	魔术师	Sorcerer B	35	227	18	1575	10%20D10+L3Staff	1	N	Med	Aggress	4	220	80	2	0	Air	12D4	Air	0	0	0	0	20	"Lightning Bolt,M,12"	0	0	20	Imm	20	20	20	20	20	20	20	0	0
-633	邪术师	Sorcerer C	50	400	30	3000	20%40D10+L5Staff	1	N	Short	Aggress	4	240	70	2	Insane	Ener	16D4	Ener	0	0	0	0	20	"Lightning Bolt,M,16"	0	0	30	Imm	30	30	30	30	30	30	30	0	0
+633	邪恶法师	Sorcerer C	50	400	30	3000	20%40D10+L5Staff	1	N	Short	Aggress	4	240	70	2	Insane	Ener	16D4	Ener	0	0	0	0	20	"Lightning Bolt,M,16"	0	0	30	Imm	30	30	30	30	30	30	30	0	0
 634	蜘蛛	BSpider A	5	17	10	75	0	1	N	Med	Normal	4	300	90	0	Poison1x5	Phys	3D2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 635	巨型蜘蛛	BSpider B	8	30	12	144	0	1	N	Med	Aggress	4	280	90	0	Poison2x3	Phys	3D2+3	0	10	Pois	3D2	Water	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 636	超巨型蜘蛛	BSpider C	12	50	16	264	0	1	N	Short	Aggress	4	260	90	0	Poison3x2	Phys	3D2+6	0	20	Pois	4D2	Water	0	0	0	0	0	5	5	5	5	5	5	5	5	0	0

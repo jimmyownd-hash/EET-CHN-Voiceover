@@ -41,7 +41,7 @@ SetMapMetadata({
     [23] = { kind = "open_chest", source = "opcode", chestIds = {7} },
     [24] = { kind = "open_chest", source = "opcode", chestIds = {8} },
     [30] = { kind = "open_door", source = "opcode" },
-    [31] = { kind = "passage", source = "opcode", targetMap = "sewer.blv", targetName = "自由港下水道" },
+    [31] = { kind = "passage", source = "opcode", targetMap = "sewer.blv", targetName = "自由天堂的下水道" },
     [32] = { kind = "generic_event", source = "opcode" },
     [34] = { kind = "secret_event", source = "heuristic", hidden = true },
     [35] = { kind = "leave_dungeon", source = "opcode", targetMap = "outa3.odm", targetName = "隐士岛" },

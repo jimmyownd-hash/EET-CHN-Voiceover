@@ -113,7 +113,7 @@ SetMapMetadata({
     [219] = { kind = "enter_house", source = "opcode", houseId = 685, targetName = "空屋" },
     [223] = { kind = "enter_house", source = "opcode", houseId = 696, targetName = "格里文之家" },
     [451] = { kind = "generic_event", source = "opcode" },
-    [505] = { kind = "leave_dungeon", source = "opcode", targetMap = "out01.odm", targetName = "刀伤岛" },
+    [505] = { kind = "leave_dungeon", source = "opcode", targetMap = "out01.odm", targetName = "匕伤群岛" },
     },
     textureNames = {},
     spriteNames = {},

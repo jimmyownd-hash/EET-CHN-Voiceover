@@ -47,7 +47,7 @@ SetMapMetadata({
     [77] = { kind = "open_chest", source = "opcode", chestIds = {3} },
     [78] = { kind = "open_chest", source = "opcode", chestIds = {4} },
     [79] = { kind = "open_chest", source = "opcode", chestIds = {5} },
-    [90] = { kind = "enter_house", source = "opcode", houseId = 434, targetName = "银盔前哨" },
+    [90] = { kind = "enter_house", source = "opcode", houseId = 434, targetName = "银舵前哨" },
     [91] = { kind = "teleport", source = "heuristic" },
     [92] = { kind = "teleport", source = "heuristic" },
     [101] = { kind = "generic_event", source = "opcode" },
