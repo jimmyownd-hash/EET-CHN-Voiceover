@@ -125,94 +125,102 @@ std::optional<Pattern> parsePattern(const std::string &key, const std::string &v
 
 std::string translateLocked(Overrides &data, const std::string &text, int depth);
 
-// Matches text against a pattern; placeholders take the shortest text that lets the following literal match.
-bool matchPattern(const Pattern &pattern, const std::string &text, std::unordered_map<std::string, std::string> &captures)
+// A placeholder whose name ends in '#' ({n#}) stands for a number (a count, a price, a level): digits with their
+// punctuation, percent signs and colour codes. Any other text fails the pattern, so a short pattern such as
+// "{a#} of {b#}" never rewrites an item name.
+bool numericCaptureOk(const std::string &capture)
 {
-    size_t position = 0;
+    bool digit = false;
+
+    for (const char c : capture)
+    {
+        const bool ok = std::isdigit(static_cast<unsigned char>(c)) || c == ' ' || c == '.' || c == ',' || c == '%'
+            || c == '+' || c == '-' || c == '/' || c == 'x' || c == '\f';
+        digit = digit || std::isdigit(static_cast<unsigned char>(c));
+
+        if (!ok)
+        {
+            return false;
+        }
+    }
+
+    return digit;
+}
+
+bool matchFrom(
+    const Pattern &pattern,
+    const std::string &text,
+    size_t index,
+    size_t position,
+    std::unordered_map<std::string, std::string> &captures)
+{
     const size_t count = pattern.parts.size();
 
-    for (size_t index = 0; index < count; ++index)
+    if (index == count)
     {
-        const PatternPart &part = pattern.parts[index];
+        return position == text.size();
+    }
 
-        if (!part.placeholder)
-        {
-            if (text.compare(position, part.text.size(), part.text) != 0)
-            {
-                return false;
-            }
+    const PatternPart &part = pattern.parts[index];
 
-            position += part.text.size();
-            continue;
-        }
-
-        size_t end = text.size();
-
-        if (index + 1 < count)
-        {
-            // The next part is a literal (placeholders never touch).
-            const std::string &next = pattern.parts[index + 1].text;
-            const bool last = index + 2 == count;
-
-            if (last)
-            {
-                if (text.size() < position + next.size() || text.compare(text.size() - next.size(), next.size(), next) != 0)
-                {
-                    return false;
-                }
-
-                end = text.size() - next.size();
-            }
-            else
-            {
-                const size_t found = text.find(next, position);
-
-                if (found == std::string::npos)
-                {
-                    return false;
-                }
-
-                end = found;
-            }
-        }
-
-        if (end < position)
+    if (!part.placeholder)
+    {
+        if (text.compare(position, part.text.size(), part.text) != 0)
         {
             return false;
         }
 
-        std::string capture = text.substr(position, end - position);
+        return matchFrom(pattern, text, index + 1, position + part.text.size(), captures);
+    }
 
-        // A placeholder whose name ends in '#' ({n#}) stands for a number (a count, a price, a level): digits with
-        // their punctuation, percent signs and colour codes. Any other text fails the pattern, so a short pattern
-        // such as "{a#} of {b#}" never rewrites an item name.
-        if (!part.text.empty() && part.text.back() == '#')
+    const bool numeric = !part.text.empty() && part.text.back() == '#';
+
+    if (index + 1 == count)
+    {
+        std::string capture = text.substr(position);
+
+        if (numeric && !numericCaptureOk(capture))
         {
-            bool digit = false;
-
-            for (const char c : capture)
-            {
-                const bool ok = std::isdigit(static_cast<unsigned char>(c)) || c == ' ' || c == '.' || c == ','
-                    || c == '%' || c == '+' || c == '-' || c == '/' || c == 'x' || c == '\f';
-                digit = digit || std::isdigit(static_cast<unsigned char>(c));
-
-                if (!ok)
-                {
-                    return false;
-                }
-            }
-
-            if (!digit)
-            {
-                return false;
-            }
+            return false;
         }
 
         captures[part.text] = std::move(capture);
-        position = end;
+        return true;
     }
 
-    return position == text.size();
+    // The next part is a literal (placeholders never touch). Take the shortest text that lets the rest match, and
+    // try later occurrences of that literal when the rest does not.
+    const std::string &next = pattern.parts[index + 1].text;
+
+    for (size_t from = position;;)
+    {
+        const size_t found = text.find(next, from);
+
+        if (found == std::string::npos)
+        {
+            return false;
+        }
+
+        std::string capture = text.substr(position, found - position);
+
+        if (!numeric || numericCaptureOk(capture))
+        {
+            captures[part.text] = std::move(capture);
+
+            if (matchFrom(pattern, text, index + 2, found + next.size(), captures))
+            {
+                return true;
+            }
+        }
+
+        from = found + 1;
+    }
+}
+
+// Matches text against a pattern; placeholders take the shortest text that lets the following literal match.
+bool matchPattern(const Pattern &pattern, const std::string &text, std::unordered_map<std::string, std::string> &captures)
+{
+    return matchFrom(pattern, text, 0, 0, captures);
 }
 
 std::string translateLocked(Overrides &data, const std::string &text, int depth)

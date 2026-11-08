@@ -7158,3 +7158,13 @@ refilled	已刷新
 reward	奖励
 bounty	悬赏
 dimension	异界
+You need at least {m} skill in {s} to open the book	你需要至少达到{m}的{s}技能，才能打开这本书
++{n#} per point	每点 +{n#}
+{n#} points per +1	每 {n#} 点 +1
+1 point per +1	每 1 点 +1
+max {n#}	上限 {n#}
+At least {m}: {s}	至少{m}：{s}
+{n#} stack	{n#} 层
+{n#} stacks	{n#} 层
+Not held:	未持有：
+Attacks heal part of the damage dealt	攻击会按造成伤害的一部分回复生命
