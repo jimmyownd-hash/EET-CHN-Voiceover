@@ -7232,3 +7232,4 @@ No {item} left	{item}已经用完了
 {h#}:{m#} am	上午 {h#}:{m#}
 {h#}:{m#} pm	下午 {h#}:{m#}
 {g} - Day {n#}	{g} · 第 {n#} 天
+Master Necromancer	死灵大师
