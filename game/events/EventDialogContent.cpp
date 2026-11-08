@@ -1843,6 +1843,7 @@ EventDialogContent buildEventDialogContent(
             {
                 const std::vector<std::string> wrappedNews = wrapDialogText(*newsText, MaxLineWidth);
                 dialog.lines.insert(dialog.lines.end(), wrappedNews.begin(), wrappedNews.end());
+                dialog.voiceKey = "npc_news_" + std::to_string(context.newsId);
             }
         }
     }
