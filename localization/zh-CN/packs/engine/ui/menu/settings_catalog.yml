@@ -618,31 +618,31 @@ settings:
   desc: 开始时选定一次；固定用于整个冒险。
 - id: ruleset_homing
   section: game
-  group: 偏好
+  group: Preferences
   name: 制导投射物
   type: toggle
   desc: 你的投射物会追踪目标。
 - id: ruleset_friendly_fire
   section: game
-  group: 偏好
+  group: Preferences
   name: 友军伤害
   type: toggle
   desc: 你的攻击和法术会伤到和平的镇民与卫兵。
 - id: ruleset_trainer_hints
   section: game
-  group: 偏好
+  group: Preferences
   name: 导师提示
   type: toggle
   desc: 技能提示会指出下一级精通最近的导师。
 - id: ruleset_bow
   section: game
-  group: 偏好
+  group: Preferences
   name: 弓箭
   type: toggle
   desc: '关闭：弓、弩和龙息都不会射击。纯近战挑战。'
 - id: ruleset_loot_filter
   section: game
-  group: 偏好
+  group: Preferences
   name: 战利品过滤
   type: window
   options:
@@ -657,7 +657,7 @@ settings:
 # above keep their places when it is hidden.
 - id: ruleset_disintegrate
   section: game
-  group: 偏好
+  group: Preferences
   name: 湮灭
   type: toggle
   desc: 彻底死亡（远超复活界限）的同伴会离开队伍前往冒险者旅馆。
