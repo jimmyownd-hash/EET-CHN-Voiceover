@@ -654,7 +654,7 @@ end)
 RegisterGlobalEvent(54, "Cure", function()
     evt.ForPlayer(Players.All)
     if not HasItem(623) then -- Gem of Restoration
-        evt.SetMessage("也许太阳的牧师们有办法治好我——他们是唯一懂得如何驱散折磨我的黑暗魔法的人。我在渡鸦海滨有位朋友，名叫德维什·谢弗伦。他多年前离开太阳神殿，独自研究贾丹姆的种种奥秘。\n也许他知道疗法，甚至就带在身上。\n他若帮不了你，答应我，一定要回来杀了我，好让我终于安息！")
+        evt.SetMessage("也许太阳的牧师们有办法治好我——他们是唯一懂得如何驱散折磨我的暗黑魔法的人。我在渡鸦海滨有位朋友，名叫德维什·谢弗伦。他多年前离开太阳神殿，独自研究贾丹姆的种种奥秘。\n也许他知道疗法，甚至就带在身上。\n他若帮不了你，答应我，一定要回来杀了我，好让我终于安息！")
         SetQBit(QBit(72)) -- Inquire about a cure for Blazen Stormlance from Dervish Chevron in Ravenshore.
         return
     end
@@ -3006,7 +3006,7 @@ RegisterGlobalEvent(226, "Quest", function()
 end)
 
 RegisterGlobalEvent(227, "骨头的历史", function()
-    evt.SetMessage("在几乎被遗忘的时代，一位名叫撒迦利亚的强大死灵法师几乎统治了整个贾丹姆。\n他对死灵黑暗技艺与元素魔法的精通，结合着对黑暗能量非自然的强大亲和力。他的不死军团帮他奴役了所有民族，包括阿尔瓦的黑暗精灵。\n太阳神殿制定了击败撒迦利亚的计划。\n他们集合神殿全体牧师之力，铸造了那把名叫索尔克里斯的剑。\n神殿暗精尊者率领太阳军团对抗撒迦利亚的部众。\n战事迁延多年，太阳神殿的军队最终打到可怕的阴影塔脚下。\n在那儿，暗精尊者与撒迦利亚一对一决战。战斗结束时，暗精尊者与撒迦利亚双双倒地身亡。\n暗精尊者斩下了撒迦利亚的左臂，而死灵法师最后一道法术也停了暗精尊者的心脏。\n索尔克里斯剑的力量瞬间斩杀了死灵法师。\n战后的混乱中，索尔克里斯与撒迦利亚的手臂一同永远消失了。\n这只手臂上的骨头浸透了黑暗魔法，因而被称为末日之骨。")
+    evt.SetMessage("在几乎被遗忘的时代，一位名叫撒迦利亚的强大死灵法师几乎统治了整个贾丹姆。\n他对死灵黑暗技艺与元素魔法的精通，结合着对黑暗能量非自然的强大亲和力。他的不死军团帮他奴役了所有民族，包括阿尔瓦的黑暗精灵。\n太阳神殿制定了击败撒迦利亚的计划。\n他们集合神殿全体牧师之力，铸造了那把名叫索尔克里斯的剑。\n神殿暗精尊者率领太阳军团对抗撒迦利亚的部众。\n战事迁延多年，太阳神殿的军队最终打到可怕的阴影塔脚下。\n在那儿，暗精尊者与撒迦利亚一对一决战。战斗结束时，暗精尊者与撒迦利亚双双倒地身亡。\n暗精尊者斩下了撒迦利亚的左臂，而死灵法师最后一道法术也停了暗精尊者的心脏。\n索尔克里斯剑的力量瞬间斩杀了死灵法师。\n战后的混乱中，索尔克里斯与撒迦利亚的手臂一同永远消失了。\n这只手臂上的骨头浸透了暗黑魔法，因而被称为末日之骨。")
 end)
 
 RegisterGlobalEvent(228, "太好了！", function()
@@ -3950,7 +3950,7 @@ RegisterGlobalEvent(278, "冰锅", function()
 end)
 
 RegisterGlobalEvent(279, "电光大锅", function()
-    evt.StatusText("气系抗性 +2（永久）")
+    evt.StatusText("空气抗性 +2（永久）")
     AddValue(AirResistance, 2)
     SetAutonote(26) -- Shocking liquid grants Air Resistance.
     evt.ChangeEvent(276)
@@ -4646,7 +4646,7 @@ RegisterGlobalEvent(452, "Burn", function()
 end)
 
 RegisterGlobalEvent(453, "Reshie", function()
-    evt.SetMessage("蕾希在匕伤群岛的家中教授气系魔法专家技能。")
+    evt.SetMessage("蕾希在匕伤群岛的家中教授空气魔法专家技能。")
     SetAutonote(128) -- Reshie teaches the Expert skill of Air Magic from his home on the Dagger Wound Islands.
 end)
 
@@ -4656,7 +4656,7 @@ RegisterGlobalEvent(454, "荷力司·暴风眼", function()
 end)
 
 RegisterGlobalEvent(455, "克劳德·耐德龙", function()
-    evt.SetMessage("云·内德伦曾想与气之领主做交易。\n他动身寻找进入气元素位面的路，以为在那里能学清气系魔法中所有他仍不明了的地方。\n你得亲自去一趟气元素位面，看看他是否成功了。")
+    evt.SetMessage("云·内德伦曾想与气之领主做交易。\n他动身寻找进入气元素位面的路，以为在那里能学懂空气魔法中所有他仍不明了的地方。\n你得亲自去一趟气元素位面，看看他是否成功了。")
     SetAutonote(130) -- Cloud Nedlon, the Grand Master of Air may be found on the Plane of Air.
 end)
 
@@ -4691,17 +4691,17 @@ RegisterGlobalEvent(461, "Griven", function()
 end)
 
 RegisterGlobalEvent(462, "史拉顿·何索恩", function()
-    evt.SetMessage("斯特拉顿·霍桑能把你提升到精神魔法专家境界。他把家安在港城渡鸦海滨。")
+    evt.SetMessage("斯特拉顿·霍桑能把你提升到灵魂魔法专家境界。他把家安在港城渡鸦海滨。")
     SetAutonote(137) -- Straton Hawthorne can raise you to Expert level in the arts of Spirit Magic. He makes his home in the port city of Ravenshore.
 end)
 
 RegisterGlobalEvent(463, "贝索德·科恩", function()
-    evt.SetMessage("大师贝特霍尔德·科恩，效力于骑士查尔斯·奇克奥征讨绞刑峡谷一带龙族的十字军。\n去那边的屠龙者营地找他。\n你若运气好，他会有空教你精神魔法大师。")
+    evt.SetMessage("大师贝特霍尔德·科恩，效力于骑士查尔斯·奇克奥征讨绞刑峡谷一带龙族的十字军。\n去那边的屠龙者营地找他。\n你若运气好，他会有空教你灵魂魔法大师。")
     SetAutonote(138) -- Spirit Magic Master instructor, Bethold Kern, can be found in the Garrote Gorge Dragon Hunter's Camp.
 end)
 
 RegisterGlobalEvent(464, "来西特·鸦眼", function()
-    evt.SetMessage("拉西特·鸦视是精神魔法宗师。\n他住在低语森林、靠近太阳神殿处，在那里继续研究精神的本质。\n他能把你的精神魔法提升到宗师。")
+    evt.SetMessage("拉西特·鸦视是灵魂魔法宗师。\n他住在低语森林、靠近太阳神殿处，在那里继续研究精神的本质。\n他能把你的灵魂魔法提升到宗师。")
     SetAutonote(139) -- Lasiter Ravensight, is the Grand Master teacher of Spirit Magic. He lives in the Murmurwoods close to the Temple of the Sun.
 end)
 
@@ -4751,17 +4751,17 @@ RegisterGlobalEvent(473, "艾德林·明眼", function()
 end)
 
 RegisterGlobalEvent(474, "帕特温·达肯摩尔", function()
-    evt.SetMessage("帕特温·暗森，黑暗魔法之道的专家导师，与阿尔瓦的黑暗精灵们住在一起。\n")
+    evt.SetMessage("帕特温·暗森，暗黑魔法之道的专家导师，与阿尔瓦的黑暗精灵们住在一起。\n")
     SetAutonote(149) -- Patwin Darkenmore, Expert teacher of the ways of Dark Magic, lives among the Dark Elves of Alvar.
 end)
 
 RegisterGlobalEvent(475, "卡拉·安伯普尔", function()
-    evt.SetMessage("黑暗魔法大师卡拉·棕池追随过西斯库斯·影行者——黑暗宗师——的足迹，如今与阴影塔的死灵法师们住在一起。")
+    evt.SetMessage("暗黑魔法大师卡拉·棕池追随过西斯库斯·影行者——黑暗宗师——的足迹，如今与阴影塔的死灵法师们住在一起。")
     SetAutonote(150) -- Dark Magic Master Carla Umberpool has a home in the village of Twilight at the base of the Shadowspire.
 end)
 
 RegisterGlobalEvent(476, "西西克斯·影跑者", function()
-    evt.SetMessage("西斯库斯·影行者，黑暗魔法艺术宗师，已在雷格那岛上安家。\n海盗船长们出击前会来这里求取她对船只的祝福。\n她能教你黑暗魔法宗师。")
+    evt.SetMessage("西斯库斯·影行者，暗黑魔法艺术宗师，已在雷格那岛上安家。\n海盗船长们出击前会来这里求取她对船只的祝福。\n她能教你暗黑魔法宗师。")
     SetAutonote(151) -- Sithicus Shadowrunner, the Grand Master Dark Magic instructor, lives on the island of Regna.
 end)
 
@@ -5194,11 +5194,11 @@ RegisterGlobalEvent(538, "献祭祭坛", function()
     evt.CastSpell(8, 5, 4, 0, 0, 0, 0, 0, 0) -- Immolation
 end)
 
-RegisterGlobalEvent(539, "精神抗性祭坛", function()
+RegisterGlobalEvent(539, "心智抗性祭坛", function()
     evt.CastSpell(58, 5, 4, 0, 0, 0, 0, 0, 0) -- Mind Resistance
 end)
 
-RegisterGlobalEvent(540, "身体抗性祭坛", function()
+RegisterGlobalEvent(540, "肢体抗性祭坛", function()
     evt.CastSpell(69, 5, 4, 0, 0, 0, 0, 0, 0) -- Body Resistance
 end)
 
@@ -5206,7 +5206,7 @@ RegisterGlobalEvent(541, "石肤祭坛", function()
     evt.CastSpell(38, 5, 4, 0, 0, 0, 0, 0, 0) -- Stone Skin
 end)
 
-RegisterGlobalEvent(542, "气系抗性祭坛", function()
+RegisterGlobalEvent(542, "空气抗性祭坛", function()
     evt.CastSpell(14, 5, 4, 0, 0, 0, 0, 0, 0) -- Air Resistance
 end)
 
@@ -6293,7 +6293,7 @@ RegisterGlobalEvent(679, "Cheese", function()
 end)
 
 RegisterGlobalEvent(680, "土之王", function()
-    evt.SetMessage("我们这儿问题一大堆，除此之外，我们位面之主“残酷者格拉尔柯”失踪了。他是强大的存在，无疑能对抗侵袭这个位面的黑暗魔法。")
+    evt.SetMessage("我们这儿问题一大堆，除此之外，我们位面之主“残酷者格拉尔柯”失踪了。他是强大的存在，无疑能对抗侵袭这个位面的暗黑魔法。")
 end)
 
 RegisterGlobalEvent(681, "土元素界", function()
@@ -10985,12 +10985,12 @@ RegisterGlobalEvent(1088, nil, function()
 end)
 
 RegisterGlobalEvent(1089, nil, function()
-    evt.SetMessage("气系魔法大师导师里斯林·绿风暴，住在精灵领地埃里。\n他的家在东北部的城里。")
+    evt.SetMessage("空气魔法大师导师里斯林·绿风暴，住在精灵领地埃里。\n他的家在东北部的城里。")
     SetAutonote(347) -- The Master tutor of Air Magic, Rislyn Greenstorm, lives in the elven territory of Avlee. His home is in the city in the northeast.
 end)
 
 RegisterGlobalEvent(1090, nil, function()
-    evt.SetMessage("气系魔法宗师盖尔，可在布拉卡达沙漠北部地区一道山脊上的一座塔里找到。")
+    evt.SetMessage("空气魔法宗师盖尔，可在布拉卡达沙漠北部地区一道山脊上的一座塔里找到。")
     SetAutonote(348) -- The Grandmaster of Air Magic, Gayle, can be found in a tower in the Bracada desert, on a ridge in the northern region.
 end)
 
@@ -11015,12 +11015,12 @@ RegisterGlobalEvent(1094, nil, function()
 end)
 
 RegisterGlobalEvent(1095, nil, function()
-    evt.SetMessage("教过我的导师希瑟·梦匠，把家安在埃拉西亚首都斯坦德威克某处。\n在那里可进一步学习精神魔法。")
+    evt.SetMessage("教过我的导师希瑟·梦匠，把家安在埃拉西亚首都斯坦德威克某处。\n在那里可进一步学习灵魂魔法。")
     SetAutonote(353) -- The Master who taught me, Heather Dreamwright, makes her home in Erathia, somewhere in the capitol city of Steadwick. Further knowledge of Spirit Magic can be gained there.
 end)
 
 RegisterGlobalEvent(1096, nil, function()
-    evt.SetMessage("精神魔法之道的至高导师中庸者本杰明，可在图拉林森林的精灵领地找到。\n他的家在皮尔庞特城。")
+    evt.SetMessage("灵魂魔法之道的至高导师中庸者本杰明，可在图拉林森林的精灵领地找到。\n他的家在皮尔庞特城。")
     SetAutonote(354) -- The ultimate teacher in the ways of Spirit Magic, Benjamin the Balanced, can be found in the elven territory of the Tularean Forest. His home is in the city of Pierpont.
 end)
 
@@ -11195,12 +11195,12 @@ RegisterGlobalEvent(1130, nil, function()
 end)
 
 RegisterGlobalEvent(1131, nil, function()
-    evt.SetMessage("黑暗魔法大师塞思·暗影，可在迪雅下方的深渊找到！")
+    evt.SetMessage("暗黑魔法大师塞思·暗影，可在迪雅下方的深渊找到！")
     SetAutonote(389) -- The Master of Dark, Seth Darkenmore, can be found in The Pit beneath Deyja!
 end)
 
 RegisterGlobalEvent(1132, nil, function()
-    evt.SetMessage("黑暗魔法宗师可在死灵法师城堡黄昏城堡找到。\n有时人们会见到阿基巴德动身前往科兰克实验室。")
+    evt.SetMessage("暗黑魔法宗师可在死灵法师城堡黄昏城堡找到。\n有时人们会见到阿基巴德动身前往科兰克实验室。")
     SetAutonote(390) -- The Grand Master of Dark Magic can be found in the necromancer castle, Castle Gloaming. At times Archibald has been know to take the journey to Clankers Lab.
 end)
 
@@ -11276,7 +11276,7 @@ RegisterGlobalEvent(1143, nil, function()
 end)
 
 RegisterGlobalEvent(1144, nil, function()
-    evt.StatusText("气系抗性 +2（永久）")
+    evt.StatusText("空气抗性 +2（永久）")
     AddValue(AirResistance, 2)
     SetAutonote(298) -- Shocking liquid grants Air Resistance.
     evt.ChangeEvent(1141)
@@ -13566,7 +13566,7 @@ RegisterGlobalEvent(1373, nil, function()
         evt.SetMessage("抱歉，我还是没记起你们到底需要什么。\n我知道你们得搜科拉贡庄园。\n")
         return
     end
-    evt.SetMessage("好消息！\n我记起你们要找什么了！\n德里克斯水晶！\n哦，你们好像已经找到了。\n那好极了！\n那我就能训练你们成为大法师了。\n第一位大法师德里克斯曾用这颗水晶掌握元素。\n火、土、水、风共同铸成它，他通过分析它学到了大量元素魔法知识。\n此外，它对光的效应引导他发现了光明与黑暗魔法。\n自那时起，研究这颗水晶便指引着每一位新大法师。\n让我向你们展示水晶的秘密。")
+    evt.SetMessage("好消息！\n我记起你们要找什么了！\n德里克斯水晶！\n哦，你们好像已经找到了。\n那好极了！\n那我就能训练你们成为大法师了。\n第一位大法师德里克斯曾用这颗水晶掌握元素。\n火、土、水、风共同铸成它，他通过分析它学到了大量元素魔法知识。\n此外，它对光的效应引导他发现了光明与暗黑魔法。\n自那时起，研究这颗水晶便指引着每一位新大法师。\n让我向你们展示水晶的秘密。")
     AddValue(Experience, 30000)
     for _, player in ipairs(PartyMembers()) do
         evt.ForPlayer(player)
@@ -15461,7 +15461,7 @@ RegisterGlobalEvent(1585, nil, function()
 end)
 
 RegisterGlobalEvent(1586, nil, function()
-    evt.SetMessage("卡奥·塞勒姆在浓雾岛能教你们更多气系魔法的诀窍。")
+    evt.SetMessage("卡奥·塞勒姆在浓雾岛能教你们更多空气魔法的诀窍。")
 end)
 
 RegisterGlobalEvent(1587, nil, function()
@@ -15485,11 +15485,11 @@ RegisterGlobalEvent(1591, nil, function()
 end)
 
 RegisterGlobalEvent(1592, nil, function()
-    evt.SetMessage("光系魔法是难学的技艺，而大宗师纪洛内只在阿拉莫斯城堡附近某处能找到。")
+    evt.SetMessage("光明魔法是难学的技艺，而大宗师纪洛内只在阿拉莫斯城堡附近某处能找到。")
 end)
 
 RegisterGlobalEvent(1593, nil, function()
-    evt.SetMessage("苏郎满楚曾是我黑暗魔法的老师。\n他在天堂谷一座村里有间小屋。")
+    evt.SetMessage("苏郎满楚曾是我暗黑魔法的老师。\n他在天堂谷一座村里有间小屋。")
 end)
 
 RegisterGlobalEvent(1594, nil, function()
@@ -16268,14 +16268,14 @@ RegisterGlobalEvent(1723, nil, function()
 end)
 
 RegisterGlobalEvent(1724, nil, function()
-    evt.StatusText("你确定要改变自己的道路吗？黑暗系法术将从你的法术书中消失，黑暗魔法也将从你的脑海中抹去。（是/否）")
+    evt.StatusText("你确定要改变自己的道路吗？暗黑法术将从你的法术书中消失，暗黑魔法也将从你的脑海中抹去。（是/否）")
     AddValue(BaseAccuracy, 1)
     SetAutonote(484) -- Yellow liquid grants Accuracy.
     evt.ChangeEvent(1722)
 end)
 
 RegisterGlobalEvent(1725, nil, function()
-    evt.StatusText("你确定要改变自己的道路吗？光明系法术将从你的法术书中消失，光明魔法也将从你的脑海中抹去。（是/否）")
+    evt.StatusText("你确定要改变自己的道路吗？光明法术将从你的法术书中消失，光明魔法也将从你的脑海中抹去。（是/否）")
     AddValue(BasePersonality, 1)
     SetAutonote(482) -- Blue liquid grants Personality.
     evt.ChangeEvent(1722)

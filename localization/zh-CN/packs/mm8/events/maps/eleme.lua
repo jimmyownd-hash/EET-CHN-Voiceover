@@ -515,7 +515,7 @@ RegisterEvent(401, "离开大地位面之门", nil, "离开大地位面之门")
 RegisterEvent(451, "喝一口", function()
     if not IsAtLeast(EarthResistance, 10) then
         AddValue(EarthResistance, 2)
-        evt.StatusText("大地抗性+10（永久）")
+        evt.StatusText("土系抗性+10（永久）")
         SetAutonote(228) -- Well in the Plane of Earth gives a permanent Earth Resistance bonus up to an Earth Resistance of 10.
         return
     end

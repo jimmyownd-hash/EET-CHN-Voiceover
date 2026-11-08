@@ -11,7 +11,7 @@ local learnedEffects = {
     {event = 275, autonote = 23, effect = "+2 幸运"}, -- White Barrel
     {event = 277, autonote = 24, effect = "+2 火系抗性"}, -- Steaming Cauldron
     {event = 278, autonote = 25, effect = "+2 水系抗性"}, -- Frosty Cauldron
-    {event = 279, autonote = 26, effect = "+2 气系抗性"}, -- Shocking Cauldron
+    {event = 279, autonote = 26, effect = "+2 空气抗性"}, -- Shocking Cauldron
     {event = 280, autonote = 27, effect = "+2 土系抗性"}, -- Dirty Cauldron
 }
 

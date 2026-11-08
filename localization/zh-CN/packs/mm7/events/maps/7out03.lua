@@ -502,7 +502,7 @@ RegisterEvent(204, "饮用井水", function()
         end
         AddValue(BodyResistanceBonus, 20)
         SetPlayerBit(PlayerBit(5))
-        evt.StatusText("身体抗性+20（临时）")
+        evt.StatusText("肢体抗性+20（临时）")
         return
     end
     evt.StatusText("精神焕发！")

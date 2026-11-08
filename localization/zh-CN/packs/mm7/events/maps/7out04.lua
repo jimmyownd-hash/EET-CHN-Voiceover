@@ -421,7 +421,7 @@ RegisterEvent(204, "饮用喷泉", function()
         end
         AddValue(EarthResistanceBonus, 50)
         SetPlayerBit(PlayerBit(8))
-        evt.StatusText("大地抗性+50（临时）")
+        evt.StatusText("土系抗性+50（临时）")
         return
     end
     evt.StatusText("精神焕发！")

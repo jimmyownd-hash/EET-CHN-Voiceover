@@ -10,7 +10,7 @@ Hit Points	生命值
 Spell Points	魔法值
 Armor Class	防御等级
 Fire Resistance	火系抗性
-Air Resistance	风系抗性
+Air Resistance	空气抗性
 Water Resistance	水系抗性
 Earth Resistance	土系抗性
 Mind Resistance	心系抗性
@@ -63,7 +63,7 @@ of great Might	巨力
 +15 Endurance and +5 Armor.	耐力 +15，护甲 +5。
 +15 Endurance and Regenerate Hit points over time.	耐力 +15，并持续回复生命。
 +15 Luck and Regenerate Spell points over time.	幸运 +15，并持续回复法术。
-+20 Air Resistance and Shielding.	风系抗性 +20，并获得护盾。
++20 Air Resistance and Shielding.	空气抗性 +20，并获得护盾。
 +3 ID Item and ID Monster skills.	物品鉴定、怪物鉴定 +3。
 +3 Stealing and Disarm skills.	偷窃术、解除陷阱 +3。
 +3 Unarmed and Dodging skills.	徒手格斗、闪避 +3。
@@ -100,9 +100,9 @@ Increased Knockback.	击退效果增强。
 Increased Value.	价值提升。
 Increased Weapon speed.	武器速度提升。
 Increases chance of Disarming.	提高解除陷阱的成功率。
-Increases effect of all Air spells.	增强所有风系法术的效果。
+Increases effect of all Air spells.	增强所有空气法术的效果。
 Increases effect of all Body spells.	增强所有肢体法术的效果。
-Increases effect of all Dark spells.	增强所有黑暗法术的效果。
+Increases effect of all Dark spells.	增强所有暗黑法术的效果。
 Increases effect of all Earth spells.	增强所有土系法术的效果。
 Increases effect of all Fire spells.	增强所有火系法术的效果。
 Increases effect of all Light spells.	增强所有光明法术的效果。
@@ -138,13 +138,13 @@ Vampiric	吸血
 Warriors'	战士
 Wizards'	法师
 of Acid	强酸
-of Air Magic	气系法术
+of Air Magic	空气法术
 of Alarms	警醒
 of Antidotes	解毒
 of Body Magic	肢体法术
 of Carnage	杀戮
 of Cold	寒冰
-of Dark Magic	黑暗法术
+of Dark Magic	暗黑法术
 of Darkness	幽暗
 of Doom	厄运
 of Earth	大地
@@ -255,7 +255,7 @@ UNUSED x2 damage on all Titans	（未启用）对所有泰坦造成 2 倍伤害
 Regenerate 1 hp/x and 1 sp/x while walking, etc.	行走时每单位时间回复 1 点生命与 1 点法术，等等
 (5) pois damage and +2 Disarm skill	（5）毒素伤害，解除陷阱 +2
 (6-8) cold damage and +5 AC	（6-8）寒冷伤害，护甲 +5
-+20 Air Resistance and 1/2 damage from missile attacks	风系抗性 +20，远程攻击伤害减半
++20 Air Resistance and 1/2 damage from missile attacks	空气抗性 +20，远程攻击伤害减半
 +10 Water Resistance and +2 Alchemy skill	水系抗性 +10，炼金术 +2
 Character with item takes no damage from drowning	携带者免疫溺水伤害
 Character with item takes no damage from falling	携带者免疫坠落伤害
@@ -2172,7 +2172,7 @@ _nrh__tf__cehr__	。大在东
 +1 Magic resistance permanent	+1 魔法抗性（永久）
 +1 Poison resistance permanent	+1 毒素抗性（永久）
 +2 Accuracy permanent	+2 精确（永久）
-+2 Air Resistance permanent	+2 风系抗性（永久）
++2 Air Resistance permanent	+2 空气抗性（永久）
 +2 Earth Resistance permanent	+2 土系抗性（永久）
 +2 Endurance permanent	+2 耐力（永久）
 +2 Fire Resistance permanent	+2 火系抗性（永久）
@@ -2183,8 +2183,8 @@ _nrh__tf__cehr__	。大在东
 +2 Speed permanent	+2 速度（永久）
 +2 Water Resistance permanent	+2 水系抗性（永久）
 Allow me to introduce myself.\nMy name is Mr. Malwick.\nI represent a group of, shall we say, "investors in the future".\nI have been observing you since you arrived on this island, and I believe your values and goals have much in common with ours.\nI am empowered to grant you a fireball wand to help you win the Hunt today, in exchange for a favor in the future.\nWhat do you say?	请允许我自我介绍一下。\n我叫马尔维克。\n我代表一群——我们不妨这么说——“投资未来者”。\n自从你们来到这座岛上，我就一直在观察你们，我认为你们的价值观和目标与我们有许多共同之处。\n我奉命把这根连珠火球魔杖赠予你们，助你们赢得今天的寻宝竞赛；作为交换，你们将来得还我们一个人情。\n怎么样，意下如何？
-Are you sure, you want to change your path? Dark spells will be vanished from your spellbook and dark magic will be erased from your mind. (Yes/No)	你确定要改变自己的道路吗？暗系法术将从你的法术书中消失，黑暗魔法也会从你脑海中抹去。（是/否）
-Are you sure, you want to change your path? Light spells will be vanished from your spellbook and light magic will be erased from your mind. (Yes/No)	你确定要改变自己的道路吗？光系法术将从你的法术书中消失，光明魔法也会从你脑海中抹去。（是/否）
+Are you sure, you want to change your path? Dark spells will be vanished from your spellbook and dark magic will be erased from your mind. (Yes/No)	你确定要改变自己的道路吗？暗黑法术将从你的法术书中消失，暗黑魔法也会从你脑海中抹去。（是/否）
+Are you sure, you want to change your path? Light spells will be vanished from your spellbook and light magic will be erased from your mind. (Yes/No)	你确定要改变自己的道路吗？光明法术将从你的法术书中消失，光明魔法也会从你脑海中抹去。（是/否）
 Darkness wait and it's patience is eternal. Choose dark side.	黑暗在等待，而它的耐心永恒无尽。选择黑暗吧。
 Disease!	疾病！
 Diseased!	患病！
@@ -2253,7 +2253,7 @@ You probably shouldn't do that.	你最好别那么做。
 +5 Personality (Temporary)	个性 +5（临时）
 +50 Might (Temporary)	力量 +50（临时）
 Disease Cured	疾病已治愈
-+10 Water, Fire, and Air Resistance(Permanent)	水系、火系与风系抗性 +10（永久）
++10 Water, Fire, and Air Resistance(Permanent)	水系、火系与空气抗性 +10（永久）
 +50 Earth Resistance (Temporary)	土系抗性 +50（临时）
 +10 Fire Resistance (Temporary)	火系抗性 +10（临时）
 +10 Mind, Earth, and Body Resistance(Permanent)	心智、土系与体系抗性 +10（永久）
@@ -2269,7 +2269,7 @@ You make a wish	你许了个愿
 hmmm, You decide against it.	嗯……你决定算了。
 +2 Speed (Permanent)	速度 +2（永久）
 +20 AC (Temporary)	护甲 +20（临时）
-+20 Air Resistance (Temporary)	风系抗性 +20（临时）
++20 Air Resistance (Temporary)	空气抗性 +20（临时）
 You decide it would be a bad idea to try that again.	你觉得再试一次不是个好主意。
 You do not feel well.	你感觉不太舒服。
 Nothing Seems to have happened	似乎什么也没发生
@@ -2288,7 +2288,7 @@ The ship begins to sink	船开始下沉
 You found nothing of interest	你没找到任何感兴趣的东西
 You have Killed all of the Basilisks in this Ancient Troll Home	你杀死了这座巨魔古居里所有的石化蜥蜴
 You found nothing useful	你没找到任何有用的东西
-Air Resistance +10 (Permanent)	风系抗性 +10（永久）
+Air Resistance +10 (Permanent)	空气抗性 +10（永久）
 Earth Resistance +10 (Permanent)	土系抗性 +10（永久）
 Fire Resistance +25 (Temporary)	火系抗性 +25（临时）
 Water Resistance +10 (Permanent)	水系抗性 +10（永久）
@@ -4455,8 +4455,8 @@ Cond	状态
 Dmg	伤害
 QSpell	快捷法术
 Quick Spell:	快捷法术：
-Air	气
-Body	身体
+Air	空气
+Body	肢体
 Dark	暗
 Earth	土
 Fire	火
@@ -4464,7 +4464,7 @@ Light	光
 Magic	魔法
 Mind	心智
 Physical	物理
-Spirit	精神
+Spirit	灵魂
 Antagarich	安塔加里奇
 Enroth	恩洛斯
 Jadame	贾达梅
@@ -6464,7 +6464,7 @@ The item is gone	物品已不存在
 +{n#} Speed!	速度 +{n#}！
 +{n#} Luck!	运气 +{n#}！
 +{n#} Fire Resistance!	火系抗性 +{n#}！
-+{n#} Air Resistance!	气系抗性 +{n#}！
++{n#} Air Resistance!	空气抗性 +{n#}！
 +{n#} Water Resistance!	水系抗性 +{n#}！
 +{n#} Earth Resistance!	土系抗性 +{n#}！
 +{n#} Body Resistance!	肢体抗性 +{n#}！
@@ -6481,8 +6481,8 @@ Humans only	仅限人类
 Dwarves only	仅限矮人
 Men only	仅限男性
 Women only	仅限女性
-Light Resistance	光系抗性
-Dark Resistance	暗系抗性
+Light Resistance	光明抗性
+Dark Resistance	暗黑抗性
 Spirit Resistance	灵魂抗性
 Magic Resistance	魔法抗性
 Physical Resistance	物理抗性

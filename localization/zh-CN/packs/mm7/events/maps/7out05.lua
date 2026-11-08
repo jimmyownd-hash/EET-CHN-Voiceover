@@ -451,7 +451,7 @@ RegisterEvent(452, "祭坛", function()
         AddValue(EarthResistance, 10)
         AddValue(BodyResistance, 10)
         SetPlayerBit(PlayerBit(26))
-        evt.StatusText("精神、大地与身体抗性+10（永久）")
+        evt.StatusText("精神、大地与肢体抗性+10（永久）")
         return
     end
     evt.StatusText("你祈祷")

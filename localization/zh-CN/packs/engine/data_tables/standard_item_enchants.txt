@@ -14,10 +14,10 @@ Spell Points	之魔力	10	5	10	0	10	10	10	10	10
 Armor Class	之防御	20	20	10	0	10	10	5	10	10
 Fire Resistance	之火焰抗性	10	10	5	0	10	15	5	10	10
 Air Resistance	之空气抗性	10	10	5	0	10	15	5	10	10
-Water Resistance	之水抗性	10	10	5	0	10	15	5	10	10					
-Earth Resistance	之大地抗性	10	10	5	0	10	15	5	10	10					
-Mind Resistance	之精神抗性	10	10	5	0	10	15	5	10	10					
-Body Resistance	之身体抗性	10	10	5	0	10	15	5	10	10					
+Water Resistance	之水系抗性	10	10	5	0	10	15	5	10	10					
+Earth Resistance	之土系抗性	10	10	5	0	10	15	5	10	10					
+Mind Resistance	之心智抗性	10	10	5	0	10	15	5	10	10					
+Body Resistance	之肢体抗性	10	10	5	0	10	15	5	10	10					
 Alchemy skill	之炼金术	0	0	0	5	5	0	5	10	15					
 Stealing skill	之盗窃术	0	0	0	0	0	0	0	0	0					
 Disarm skill	之拆除陷阱	0	0	5	5	5	20	5	15	5					
