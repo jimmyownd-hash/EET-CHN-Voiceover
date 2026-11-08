@@ -355,7 +355,7 @@ std::string translateLocked(Overrides &data, const std::string &text, int depth)
         const auto flush = [&](size_t end)
         {
             const std::string segment = text.substr(segmentStart, end - segmentStart);
-            const std::string translated = segment.size() <= 160 ? translateLocked(data, segment, depth + 1) : segment;
+            const std::string translated = segment.size() <= 4000 ? translateLocked(data, segment, depth + 1) : segment;
             changed = changed || translated != segment;
             result += translated;
         };

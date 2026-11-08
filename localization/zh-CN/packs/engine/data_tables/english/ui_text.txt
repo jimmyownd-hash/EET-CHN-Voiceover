@@ -7069,7 +7069,6 @@ Currently Active Legendary effects:	当前生效的传奇效果：
 Currently Active Legendary effects: none	当前生效的传奇效果：无
 Magical Leech also includes damage done with weapon enchantments.	魔法吸取也计入武器附魔造成的伤害。
 Leech done with bow is halved.	用弓造成的吸取效果减半。
-Leech counts health bars, not damage: take away 50% of a monster's health with 10% leech, and you heal 5% of your own. Every monster is measured with the bar of the middle variant of its family: weak variants leech for less, strong ones and bosses for more.	吸取按生命条的比例计算，而不是按伤害：用 10% 的吸取削去怪物 50% 的生命，你会回复自身 5% 的生命。每种怪物都按其家族中间变体的生命条计算：弱小的变体吸取更少，强大的变体和首领吸取更多。
 drinks  ·  ready	饮用 · 就绪
 drinks  ·  recovering	饮用 · 恢复中
 drinks  ·  nobody ready	饮用 · 无人就绪
@@ -7168,3 +7167,6 @@ At least {m}: {s}	至少{m}：{s}
 {n#} stacks	{n#} 层
 Not held:	未持有：
 Attacks heal part of the damage dealt	攻击会按造成伤害的一部分回复生命
+
+Leech counts health bars, not damage: take away 50% of a monster's health with 10% leech, and you heal 5% of your own. Every monster is measured with the bar of the middle variant of its family: weak variants leech for less, strong ones and bosses for more.	吸取按生命条比例计算，而不是按伤害：用 10% 的吸取削去怪物 50% 的生命，你会回复自身 5% 的生命。每只怪物都以其同族中间档的生命条为准：弱小的变种吸取较少，强大的变种和首领吸取更多。
+{a}\nLeech counts health bars, not damage: take away 50% of a monster's health with 10% leech, and you heal 5% of your own. Every monster is measured with the bar of the middle variant of its family: weak variants leech for less, strong ones and bosses for more.	{a}\n吸取按生命条比例计算，而不是按伤害：用 10% 的吸取削去怪物 50% 的生命，你会回复自身 5% 的生命。每只怪物都以其同族中间档的生命条为准：弱小的变种吸取较少，强大的变种和首领吸取更多。
