@@ -5093,7 +5093,7 @@ I try to sell things like this {item} for {listed} gold. But we both know it's r
 Ordinarily I sell things like this {item} for {listed} gold. But you drive a hard bargain-- I'll sell it to you for {price}.	这样的{item}平常我卖 {listed} 金币。不过你真会砍价——{price} 金币卖你了。
 Imported 1 save.	已导入 1 个存档。
 Imported {count} saves.	已导入 {count} 个存档。
-No saves were found in that folder or in a "saves" folder inside it.	那个文件夹里（以及其中的 "saves" 文件夹里）都没有找到存档。
+No saves were found in that folder or in a "saves" folder inside it.	那个文件夹里（以及其中的 「saves」 文件夹里）都没有找到存档。
 {count} skipped: a save with the same name already exists.	跳过 {count} 个：已有同名存档。
 {count} could not be copied.	{count} 个无法复制。
 Permanently delete "{name}"?	永久删除「{name}」？
@@ -5616,7 +5616,7 @@ Discovered: {item}!	发现了{item}！
 Brewed {count} x {item}	炼制了 {count} 份{item}
 Brewing stopped after {steps}.	炼制在 {steps} 步后停止。
 Immune to {effects}	免疫{effects}
-Quality +{percent} %	品质 +{percent} %
+Quality +{percent} %	品质 +{percent}%
 Damage {min}-{max}	伤害 {min}-{max}
 +50% skill in {school}	{school}技能 +50%
 Artifact level: {level}	神器等级：{level}
@@ -5647,7 +5647,7 @@ Quick save failed!	快速保存失败！
 You can't save here!	这里不能保存！
  Press again to load.	 再按一次读取。
 NPC interaction UI is not implemented yet.	NPC 交互界面尚未实现。
-No saves were found in that folder or in a \"saves\" folder inside it.	那个文件夹里、以及其中的 \"saves\" 文件夹里都没有找到存档。
+No saves were found in that folder or in a \"saves\" folder inside it.	那个文件夹里、以及其中的 \「saves\」 文件夹里都没有找到存档。
 Permanently delete \"{name}\"?	要彻底删除「{name}」吗？
 No notes match \"{search}\".	没有与「{search}」匹配的笔记。
 With your skills, you should be working here as a teacher\n\n	以你的本领，本该在这里当老师\n\n
@@ -5850,7 +5850,7 @@ Already has a second enchantment	已经有第二条附魔了
 Adds {stat} +{strength}	添加 {stat} +{strength}
 Only weapons and armour can be refined	只有武器和防具可以精炼
 Item quality reached its limit	物品品质已达上限
-Quality {quality} %	品质 {quality} %
+Quality {quality} %	品质 {quality}%
 Becomes a copy	变成复制品
 Already the strongest of its kind	已经是同类中最强的了
 Becomes {item}	变成{item}
@@ -5881,7 +5881,7 @@ Monsters are weakened and can no longer resurrect	怪物已被削弱，无法再
 Madness is not a place for cowards	疯狂之地不是懦夫该来的地方
 Your packs are too full to take the map.	背包太满，拿不了这张地图。
 {skill} learned	学会了{skill}
-Chance to paralyse vs level {level}: {percent} %	对 {level} 级目标的麻痹几率：{percent} %
+Chance to paralyse vs level {level}: {percent} %	对 {level} 级目标的麻痹几率：{percent}%
 Damage per second of weapon blows against monsters of level {level}: the average 	对 {level} 级怪物每次武器攻击的每秒伤害：平均值
 Damage per second of the attack or quick spell against monsters of level {level}, 	对 {level} 级怪物的攻击或备用魔法每秒伤害，
 \nMagical Leech also includes damage done with weapon enchantments.\n	\n魔法吸取也计入武器附魔造成的伤害。\n
@@ -6266,7 +6266,7 @@ Never learnable for this class	此职业无法学习
 +3 to {skills}, and +1 more per 10 skill levels.	{skills} +3，此后每 10 级技能再 +1。
 Off: bows, crossbows and dragon breath do not shoot. A melee-only challenge.	关闭：弓、弩和龙息不会射击。纯近战挑战。
 Drops you would rather not carry turn into gold. The pause menu's Settings show what each preset filters.	你不想携带的掉落物会自动换成金币。暂停菜单的设置里可查看各预设的过滤内容。
-Grandmaster: *	宗师: 
+Grandmaster: *	宗师：
 
 # ===== Fable 批次 =====
 # ===== 商店 / 服务对话（HouseServiceRuntime）=====
@@ -6411,8 +6411,8 @@ Town Portal to {place}	城镇传送前往{place}
 Set {loc1} over {loc2}	用{loc1}覆盖{loc2}
 {slot} set to {spell}	{slot}已设为{spell}
 Inventory full.	背包已满。
-Press New Game again to abandon current progress.	再按一次"新游戏"将放弃当前进度。
-Press Quit again to exit.	再按一次"退出"将离开游戏。
+Press New Game again to abandon current progress.	再按一次「新游戏」将放弃当前进度。
+Press Quit again to exit.	再按一次「退出」将离开游戏。
 To confirm {who} dismissal press the button again...	再按一次按钮以确认解散{who}……
 Not enough room to sort.	空间不足，无法整理。
 All bags of the party sorted	全队的背包都已整理
@@ -6620,7 +6620,7 @@ Quality +{n#} %	品质 +{n#}%
 Value {n#}	价值 {n#}
 Merge {a#} x {from} into {b#} x {to}?	将 {a#} 个{from}合并为 {b#} 个{to}？
 Merge {a#} x {from} into 1 x {to}: {n#} possible.	将 {a#} 个{from}合并为 1 个{to}：可合并 {n#} 次。
-with no item chosen, Merge turns {n#} x T{a#} into 1 x T{b#}	未选物品时，"合并"会把 {n#} 个 T{a#} 变成 1 个 T{b#}
+with no item chosen, Merge turns {n#} x T{a#} into 1 x T{b#}	未选物品时，「合并」会把 {n#} 个 T{a#} 变成 1 个 T{b#}
 whole party, click or drag to place	全队，点击或拖动放置
 Adds {what} +{n#}	附加{what} +{n#}
 Adds {what}	附加{what}
@@ -6820,7 +6820,7 @@ Normal mode (1x)	正常模式（1 倍）
 The {r} ruleset does not allow that change.	{r}规则集不允许此更改。
 OpenYAMM - {r}	OpenYAMM - {r}
 Key Already Assigned	按键已被占用
-{k} is assigned to {act}. Swap the two actions?	{k}已分配给"{act}"。交换这两个操作吗？
+{k} is assigned to {act}. Swap the two actions?	{k}已分配给「{act}」。交换这两个操作吗？
 Swap	交换
 Later	稍后
 Restart Now	立即重启
