@@ -133,6 +133,9 @@ struct EventDialogContent
     std::string houseTitle;
     std::string title;
     std::vector<std::string> lines;
+    // Name of the recorded line spoken with `lines` (npc_greet_<greeting id>_<1|2>); empty when none. The gameplay
+    // screen plays the sound of that name from the world's audio folder after a short delay, if a file exists.
+    std::string voiceKey;
     // The party's sentence the reply in `lines` answers (MM9 talk): quoted above it on the conversation bar.
     std::string echo;
     std::vector<EventDialogAction> actions;

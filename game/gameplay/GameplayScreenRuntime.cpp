@@ -38,6 +38,9 @@ namespace OpenYAMM::Game
 {
 namespace
 {
+// Seconds a recorded NPC line waits after its text appears, so the party's own hello is over first.
+constexpr float NpcVoiceDelaySeconds = 1.0f;
+
 constexpr uint32_t MinimapFactRefreshMilliseconds = 100;
 constexpr int GameplayMinimapMinZoomStep = 0;
 constexpr int GameplayMinimapDefaultZoomStep = 1;
@@ -3089,6 +3092,77 @@ void GameplayScreenRuntime::updateDelayedSpeechReactions(float deltaSeconds)
     }
 
     m_delayedSpeechReaction.reset();
+}
+
+void GameplayScreenRuntime::requestNpcTopicVoice(uint32_t topicId)
+{
+    if (topicId == 0)
+    {
+        return;
+    }
+
+    m_npcDialogueVoice.pendingKey = "npc_topic_" + std::to_string(topicId);
+    m_npcDialogueVoice.remainingSeconds = NpcVoiceDelaySeconds;
+
+    if (m_pAudioSystem != nullptr && m_npcDialogueVoice.instanceId != 0)
+    {
+        m_pAudioSystem->stopSoundInstance(m_npcDialogueVoice.instanceId);
+        m_npcDialogueVoice.instanceId = 0;
+    }
+}
+
+void GameplayScreenRuntime::updateNpcDialogueVoice(float deltaSeconds)
+{
+    NpcDialogueVoice &voice = m_npcDialogueVoice;
+    const EventDialogContent &dialog = activeEventDialog();
+
+    if (!dialog.isActive || currentHudScreenState() != GameplayHudScreenState::Dialogue)
+    {
+        if (m_pAudioSystem != nullptr && voice.instanceId != 0)
+        {
+            m_pAudioSystem->stopSoundInstance(voice.instanceId);
+        }
+
+        voice = NpcDialogueVoice{};
+        return;
+    }
+
+    if (!dialog.voiceKey.empty() && dialog.voiceKey != voice.shownGreetingKey)
+    {
+        voice.shownGreetingKey = dialog.voiceKey;
+        voice.pendingKey = dialog.voiceKey;
+        voice.remainingSeconds = NpcVoiceDelaySeconds;
+
+        if (m_pAudioSystem != nullptr && voice.instanceId != 0)
+        {
+            m_pAudioSystem->stopSoundInstance(voice.instanceId);
+            voice.instanceId = 0;
+        }
+    }
+
+    if (voice.pendingKey.empty())
+    {
+        return;
+    }
+
+    voice.remainingSeconds -= std::max(0.0f, deltaSeconds);
+
+    if (voice.remainingSeconds > 0.0f)
+    {
+        return;
+    }
+
+    if (m_pAudioSystem != nullptr)
+    {
+        voice.instanceId = m_pAudioSystem->playSoundInstanceByName(
+            voice.pendingKey,
+            GameAudioSystem::PlaybackGroup::HouseSpeech,
+            SoundScope::World,
+            std::nullopt,
+            false);
+    }
+
+    voice.pendingKey.clear();
 }
 
 void GameplayScreenRuntime::playHouseSound(uint32_t soundId)

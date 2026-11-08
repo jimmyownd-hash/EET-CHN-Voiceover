@@ -214,6 +214,7 @@ void GameplayScreenController::updateSharedFrameState(
     dropBagOverflow(context);
     context.updatePartyPortraitAnimations(deltaSeconds);
     context.updateDelayedSpeechReactions(deltaSeconds);
+    context.updateNpcDialogueVoice(deltaSeconds);
     context.consumePendingPartyAudioRequests();
 
     GameplayUiController::JournalScreenState &journalScreen = context.journalScreenState();

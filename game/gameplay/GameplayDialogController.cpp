@@ -4048,6 +4048,11 @@ GameplayDialogController::Result GameplayDialogController::executeActiveDialogAc
         const uint32_t npcId = context.activeEventDialog.sourceId;
         const std::optional<EventRuntimeState::PendingDialogueContext> previousPendingDialogueContext =
             context.eventRuntimeState.pendingDialogueContext;
+        if (context.pScreenRuntime != nullptr)
+        {
+            context.pScreenRuntime->requestNpcTopicVoice(action.secondaryId != 0 ? action.secondaryId : action.id);
+        }
+
         bool executed = executeBuiltInNpcTopic(context, action.id);
 
         if (!executed && action.textOnly && context.pNpcDialogTable != nullptr)

@@ -323,6 +323,10 @@ public:
     void playCantRestHereReaction();
     void queueDelayedSpeechReaction(size_t memberIndex, SpeechId speechId, float delaySeconds);
     void updateDelayedSpeechReactions(float deltaSeconds);
+    // A recorded NPC line (a world audio file named npc_greet_<id>_<1|2> or npc_topic_<id>) plays NpcVoiceDelaySeconds
+    // after its text appears, so the party's own hello is over first; closing or changing the dialogue stops it.
+    void updateNpcDialogueVoice(float deltaSeconds);
+    void requestNpcTopicVoice(uint32_t topicId);
     void playHouseSound(uint32_t soundId);
     void playCommonUiSound(SoundId soundId);
     void stopAllAudioPlayback();
@@ -568,6 +572,14 @@ private:
     DialogueCloseCallback m_pendingMapMoveDialogClose;
     std::optional<EventDialogAction> m_dialogActionOverride;
     std::optional<DelayedSpeechReaction> m_delayedSpeechReaction;
+    struct NpcDialogueVoice
+    {
+        std::string shownGreetingKey;
+        std::string pendingKey;
+        float remainingSeconds = 0.0f;
+        uint64_t instanceId = 0;
+    };
+    NpcDialogueVoice m_npcDialogueVoice;
     uint64_t m_lastSpellFailSoundTicks = 0;
     mutable std::optional<std::string> m_resolvedInteractiveAssetName;
     mutable IGameplayWorldRuntime *m_pCachedMinimapWorldRuntime = nullptr;

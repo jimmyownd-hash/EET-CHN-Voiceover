@@ -1459,6 +1459,8 @@ EventDialogContent buildEventDialogContent(
                 if (!greetingText.empty())
                 {
                     dialog.lines = wrapDialogText(greetingText, MaxLineWidth);
+                    dialog.voiceKey = "npc_greet_" + std::to_string(pGreeting->id) + '_'
+                        + (greetingDisplayCount == 0 || pGreeting->greetingSecondary.empty() ? "1" : "2");
                     eventRuntimeState.npcGreetingDisplayCounts[dialog.sourceId] = greetingDisplayCount + 1;
                 }
             }
