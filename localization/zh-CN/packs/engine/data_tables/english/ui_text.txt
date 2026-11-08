@@ -7170,3 +7170,13 @@ Attacks heal part of the damage dealt	攻击会按造成伤害的一部分回复
 
 Leech counts health bars, not damage: take away 50% of a monster's health with 10% leech, and you heal 5% of your own. Every monster is measured with the bar of the middle variant of its family: weak variants leech for less, strong ones and bosses for more.	吸取按生命条比例计算，而不是按伤害：用 10% 的吸取削去怪物 50% 的生命，你会回复自身 5% 的生命。每只怪物都以其同族中间档的生命条为准：弱小的变种吸取较少，强大的变种和首领吸取更多。
 {a}\nLeech counts health bars, not damage: take away 50% of a monster's health with 10% leech, and you heal 5% of your own. Every monster is measured with the bar of the middle variant of its family: weak variants leech for less, strong ones and bosses for more.	{a}\n吸取按生命条比例计算，而不是按伤害：用 10% 的吸取削去怪物 50% 的生命，你会回复自身 5% 的生命。每只怪物都以其同族中间档的生命条为准：弱小的变种吸取较少，强大的变种和首领吸取更多。
+Common 	普通 
+Uncommon 	优秀 
+Rare 	稀有 
+Epic 	史诗 
+Legendary 	传奇 
+Ancient 	远古 
+Primordial 	太初 
+Celestial 	天界 
+experience and gold	经验和金币
+experience, gold, materials	经验、金币和材料
