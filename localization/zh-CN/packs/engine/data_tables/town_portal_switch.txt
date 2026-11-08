@@ -21,9 +21,9 @@
 4	146	13146	-9194	1	0	0	TPSlvrcv	434	138			314	银湾镇
 5	143	-9138	14518	97	0	0	TPWhtC	263	95			315	冰冻高原
 @	TPGlobal	309											
-0	0	0	0	0	0	0	TPJadam1	0	46			309	贾丹姆
+0	0	0	0	0	0	0	TPJadam1	0	46			309	Jadame
 1	0	0	0	0	0	0	none	0	0			309	
-2	0	0	0	0	0	0	TPAntag1	180	46			309	安塔格里克
+2	0	0	0	0	0	0	TPAntag1	180	46			309	Antagarich
 3	0	0	0	0	0	0	none	0	0			309	
-4	0	0	0	0	0	0	TPEnroth1	180	0			309	恩洛斯
+4	0	0	0	0	0	0	TPEnroth1	180	0			309	Enroth
 5	0	0	0	0	0	0	none	0	0			309	
