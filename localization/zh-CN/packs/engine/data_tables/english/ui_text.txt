@@ -7338,3 +7338,26 @@ Dimension runs	异界挑战
 Current run	当前挑战
 Bounties	悬赏
 {n} SP	{n} 法术值
+# v1.8b 光环界面队伍行
+Light around the party power {n#}	队伍周围的光亮 强度 {n#}
+Weapons and arrows burn {n#} % of level damage	武器与箭矢灼烧 等级伤害的 {n#} %
+Weapons and arrows burn {n#}% of level damage	武器与箭矢灼烧 等级伤害的 {n#}%
+Burns nearby monsters 10 + 1-30 per skill point	灼烧附近怪物 10 + 每技能点 1-30
+minimap monsters and points of interest	小地图显示怪物与兴趣点
+Minimap monsters and points of interest	小地图显示怪物与兴趣点
+Walking on water the whole party	全队水上行走
+Death delayed at massive hit point loss	大量失血时延缓死亡
+spell points regained over time	魔法值随时间恢复
+hit points regained over time	生命值随时间恢复
+Immune to poison, disease, stone, death	免疫中毒、疾病、石化、死亡
+Attacks heal part of the damage dealt	攻击可治疗造成伤害的一部分
+Monsters that hit take what they inflict	击中你的怪物会承受同等伤害
+Effect party-wide	全队生效
+{n#} spell points reserved	已保留 {n#} 点魔法值
+{n#} hit points reserved	已保留 {n#} 点生命值
+{n#} spell points and {m#} hit points reserved	已保留 {n#} 点魔法值和 {m#} 点生命值
+{n#} spell points	{n#} 点魔法值
+{n#} hit points	{n#} 点生命值
+{n#} aura held	持有 {n#} 个光环
+{n#} auras held	持有 {n#} 个光环
+no spell points	无魔法值
