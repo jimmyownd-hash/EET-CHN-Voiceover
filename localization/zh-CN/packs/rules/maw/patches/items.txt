@@ -24,10 +24,10 @@ key	column	value
 120	Mod2	8
 121	Mod1	1
 121	Mod2	11
-224	Name	治愈虚弱
-225	Name	治愈疾病
-226	Name	解毒药剂
-227	Name	催醒奇术
+224	Name	活力药剂
+225	Name	解毒剂
+226	Name	破咒药剂
+227	Name	清醒药剂
 231	Name	防护药剂
 232	Name	冥想药剂
 233	Name	再生药剂

@@ -1,8 +1,8 @@
 key	column	value
-224	Notes	治愈虚弱
-225	Notes	治愈疾病
-226	Notes	解毒药剂
-227	Notes	催醒奇术
+224	Notes	活力药剂
+225	Notes	解毒剂
+226	Notes	破咒药剂
+227	Notes	清醒药剂
 231	Notes	防护药剂
 232	Notes	灵智药剂
 233	Drinkable	x

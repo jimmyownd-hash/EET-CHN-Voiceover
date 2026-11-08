@@ -124,7 +124,7 @@ Ground Wyvern Horn	obj302	121	64	64	0	0	129	0x00000000	0	0	0	Bounce
 Ogre Ear	obj303	122	64	64	0	0	130	0x00000000	0	0	0	Bounce
 Wasp Stingers	obj304	123	64	64	0	0	131	0x00000000	0	0	0	Bounce
 Green Apple	obj305	124	64	64	0	0	132	0x00000000	0	0	0	Bounce
-马蹄铁	obj284	125	64	64	0	0	115	0x00000000	0	0	0	Bounce
+Horseshoe	obj284	125	64	64	0	0	115	0x00000000	0	0	0	Bounce
 Enchanted Amulet	obj306	126	64	64	0	0	133	0x00000000	0	0	0	Bounce
 Wheel of Frelandeau	obj307	127	64	64	0	0	134	0x00000000	0	0	0	Bounce
 Log of Eldenbrie	obj308	128	64	64	0	0	135	0x00000000	0	0	0	Bounce
@@ -275,7 +275,7 @@ Golem parts	7obj283d	272	64	64	0	0	7746	0x00000000	0	0	0	Bounce
 Golem parts	7obj283e	273	64	64	0	0	7747	0x00000000	0	0	0	Bounce
 Golem parts	7obj283f	274	64	64	0	0	7748	0x00000000	0	0	0	Bounce
 Golem parts	7obj283g	275	64	64	0	0	7749	0x00000000	0	0	0	Bounce
-马蹄铁	7obj284	276	64	64	0	0	7750	0x00000000	0	0	0	Bounce
+Horseshoe	7obj284	276	64	64	0	0	7750	0x00000000	0	0	0	Bounce
 Reptilian Egg	7obj285	277	64	64	0	0	7751	0x00000000	0	0	0	Bounce
 Lantern	7obj286	278	64	64	0	0	7752	0x00000000	0	0	0	Bounce
 Rope	7obj287	279	64	64	0	0	7753	0x00000000	0	0	0	Bounce

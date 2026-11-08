@@ -248,7 +248,7 @@
 9074	Dark Passageway	darkpassageway.odm	0	0	20	150	0	0	20	18	5	30	10	10	80	MM9 Colloidal	MM9 Colloidal			MM9 Terror	MM9 Terror			MM9 Ghost	MM9 Ghost			90017	CAVE			0	-	mm9	74	DarkPassageway	17	3	0					12	A10	-1	2
 9076	The Bathhouse	bathhouse.odm	0	0	15	300	0	0	15	18	5	25	100	0	0	MM9 Colloidal	MM9 Colloidal											90005	CAVE			9001	-	mm9	76	Bathhouse	5	3	0					9	A10	1	0
 9077	Hall of the Gods	hallofthegods.odm	0	0	18	150	0	0	18	18	4	0	0	0	0			0	0			0	0			0	0	90008	PLAINS			0	x	mm9	77	HallOfTheGods	8	3	0			0	0	7	A10	14	0
-9079	Dragon's Lair	dragonstadium.odm	0	0	20	600	0	0	20	20	6	0	0	0	0													90011	CAVE			0	-	mm9	79	DragonStadium	11	3	0					2			2
+9079	龙之巢穴	dragonstadium.odm	0	0	20	600	0	0	20	20	6	0	0	0	0													90011	CAVE			0	-	mm9	79	DragonStadium	11	3	0					2			2
 9080	Ravensford	bootcamp.odm	0	0	0	600	0	0	0	0	0	0	0	0	0													90007	PLAINS			0	x	mm9	80	BootCamp	7	3	0					6
 	
 	
