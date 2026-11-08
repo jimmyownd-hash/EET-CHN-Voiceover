@@ -347,7 +347,7 @@ elements:
   - id: CreditsTranslator
     anchor: top_left
     offset_x: 300.0
-    offset_y: 416.0
+    offset_y: 404.0
     width: 300.0
     height: 18.1835
     z_index: 10
@@ -355,6 +355,23 @@ elements:
     interactive: false
     text:
       value: 汉化：考拉粑粑
+      font: menu_arrus
+      color: '#c9c9b6'
+      align_x: left
+      align_y: middle
+      scale: 0.74105
+      pad_x: 0.0
+  - id: CreditsTranslatorRef
+    anchor: top_left
+    offset_x: 300.0
+    offset_y: 424.0
+    width: 340.0
+    height: 18.1835
+    z_index: 10
+    visible: true
+    interactive: false
+    text:
+      value: 校对参考：魔法门678整合版（青衫）
       font: menu_arrus
       color: '#c9c9b6'
       align_x: left

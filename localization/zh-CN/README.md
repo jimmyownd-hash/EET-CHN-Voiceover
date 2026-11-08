@@ -1,6 +1,7 @@
 # Simplified Chinese localization (OpenYAMM 1.21)
 
 Translator credit shown in game: 汉化：考拉粑粑
+Name proofreading reference: 魔法门678整合版 Chinese translation by 青衫 (credited in game as 校对参考：魔法门678整合版（青衫）).
 
 `packs/` holds only the files that differ from the English content, laid out like the content packs:
 
