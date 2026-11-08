@@ -227,7 +227,7 @@ elements:
     visible: true
     interactive: false
     text:
-      value: 安塔格利希
+      value: 安塔格里克
       font: fondamento
       color: '#e6d1a8'
       align_x: center
@@ -302,7 +302,7 @@ elements:
     visible: true
     interactive: false
     text:
-      value: 加达梅
+      value: 贾丹姆
       font: fondamento
       color: '#e6d1a8'
       align_x: center

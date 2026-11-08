@@ -305,7 +305,7 @@ Q Bit	Quest Note Text	Notes	Owner
 304	传送增益：雷格那	TP Buff Regna	
 305	传送增益：影旋山脉	TP Buff Shadowspire	
 306	传送增益：匕伤群岛	TP Buff Daggerwound islands	
-307	传送开关：安塔加利奇	TP Switch Antagrich	
+307	传送开关：安塔格里克	TP Switch Antagrich	
 308	传送开关：恩洛斯	TP Switch Enroth	
 309	传送开关：全局	TP Switch Global	
 310	传送增益：黑郡	TP Buff Blackshire	

@@ -4465,9 +4465,9 @@ Magic	魔法
 Mind	心智
 Physical	物理
 Spirit	灵魂
-Antagarich	安塔加里奇
+Antagarich	安塔格里克
 Enroth	恩洛斯
-Jadame	贾达梅
+Jadame	贾丹姆
 Begin in Dagger Wound Islands	从匕痕群岛开始
 Begin in Emerald Island	从翡翠岛开始
 Begin in New Sorpigal	从新索匹格开始
@@ -5002,8 +5002,8 @@ Very strict	极严格
 {count} unapplied changes	还有 {count} 项改动未应用
 {key} is assigned to {action}. Swap the two actions?	{key} 已分配给{action}。要对调这两个操作吗？
 {action}\nPress a key, mouse button, or scroll the wheel.	{action}\n请按一个按键、鼠标按钮，或滚动滚轮。
-Left	左移
-Right	右移
+Left	左
+Right	右
 Yell	喊话
 Cast Ready	准备施法
 Trigger	触发
@@ -7001,8 +7001,8 @@ Grand	宗师
 Not skilled enough	技能不足
 Need character target	需要选择队员目标
 Select item target	选择目标物品
-Antagrich	安塔格里奇
-Jadam	加达曼
+Antagrich	安塔格里克
+Jadam	贾丹姆
 Disarm	解除陷阱
 Diplomacy	外交
 Thievery	盗窃
@@ -7044,7 +7044,7 @@ Missile	远程武器
 Reagent	原料
 Player	玩家
 Recruits	可招募者
-Tab	标签页
+Tab	Tab键
 {skill} Expert	{skill} 专家
 {skill} Master	{skill} 大师
 {skill} Grand	{skill} 宗师
@@ -7233,10 +7233,6 @@ No {item} left	{item}已经用完了
 {h#}:{m#} pm	下午 {h#}:{m#}
 {g} - Day {n#}	{g} · 第 {n#} 天
 Master Necromancer	死灵大师
-N	普
-E	专
-M	大
-G	宗
 Hum	人类
 Dwa	矮人
 Dar	黑精

@@ -93,13 +93,13 @@ race_class_availability:
 new_game_continents:
   - id: 1
     key: jadame
-    name: 加达曼
+    name: 贾丹姆
     available_class_ids: [5, 8, 10, 16, 20, 38, 40, 44]
     available_race_ids: [0, 1, 2, 3, 4, 5, 7, 8, 9]
     portrait_exceptions: []
   - id: 2
     key: antagarich
-    name: 安塔格里奇
+    name: 安塔格里克
     available_class_ids: [0, 4, 12, 16, 22, 26, 30, 34, 42]
     available_race_ids: [0, 3, 7, 8, 9]
     portrait_exceptions: []

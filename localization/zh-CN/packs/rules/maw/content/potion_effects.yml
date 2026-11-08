@@ -50,22 +50,22 @@ potions:
     effects:
       - restore: {pool: sp, amount: {pool_share: {pool: sp, flat: 10, share: 0.25}}}
   224:
-    name: 治愈虚弱
+    name: 活力药剂
     effects:
       - cure: [Weak, Asleep]
       - immunity: [Weak, Asleep]
   225:
-    name: 治愈疾病
+    name: 解毒剂
     effects:
       - cure: [DiseaseWeak, DiseaseMedium, DiseaseSevere, PoisonWeak, PoisonMedium, PoisonSevere]
       - immunity: [Disease, Poison]
   226:
-    name: 解毒药剂
+    name: 破咒药剂
     effects:
       - cure: [Cursed, Paralyzed]
       - immunity: [Cursed, Paralyzed]
   227:
-    name: 催醒奇术
+    name: 清醒药剂
     effects:
       - cure: [Fear, Insane]
       - immunity: [Fear, Insane]
@@ -111,13 +111,13 @@ potions:
     effects:
       - aura_buff: {spell: 38}
   235:
-    name: 水下呼吸药剂
+    name: 水中呼吸药剂
     min_power: 20
     charges: 5
     effects:
       - buff: {id: WaterBreathing, strength: 5}
   236:
-    name: 硬化物品药剂
+    name: 强化物品药剂
     item: {action: harden}
   # Protection from Magic for the whole party while it lasts, recharged like the aura; the drinker cannot be knocked
   # unconscious.

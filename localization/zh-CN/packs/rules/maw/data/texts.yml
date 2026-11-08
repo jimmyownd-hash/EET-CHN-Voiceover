@@ -940,7 +940,7 @@ stats:
     append: "对等级 <value>{reference_level}</> 怪物的<value>近战命中率</>：<good>{hit_chance:1}</>%。"
   Level:
     append: >-
-      <value>累计等级</>：总计 <value>{levels_total:1}</>；恩洛斯 <value>{levels_mm6:1}</>、安塔加里奇 <value>{levels_mm7:1}</>、贾达美 <value>{levels_mm8:1}</>。怪物随其他世界累计的等级成长：恩洛斯强化等级 <value>{bolster_mm6}</>、安塔加里奇 <value>{bolster_mm7}</>、贾达美 <value>{bolster_mm8}</>。
+      <value>累计等级</>：总计 <value>{levels_total:1}</>；恩洛斯 <value>{levels_mm6:1}</>、安塔格里克 <value>{levels_mm7:1}</>、贾达美 <value>{levels_mm8:1}</>。怪物随其他世界累计的等级成长：恩洛斯强化等级 <value>{bolster_mm6}</>、安塔格里克 <value>{bolster_mm7}</>、贾达美 <value>{bolster_mm8}</>。
   FireResistance:
     append: "面对等级 <value>{reference_level}</> 的怪物，火焰抗性削减火焰攻击 <good>{fire_cut:1}</>%。"
   AirResistance:
