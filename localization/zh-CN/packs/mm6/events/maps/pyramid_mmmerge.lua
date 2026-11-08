@@ -41,7 +41,7 @@ local function registerCrewCodeEvent(eventId, itemId, mapVarIndex, qbit, answer,
         end
 
         evt.SimpleMessage(promptText)
-        evt.AskQuestion(eventId, 5, 44, 9, answerTextId, answerTextId, "答案？", {answer, answer})
+        evt.AskQuestion(eventId, 5, 44, 9, answerTextId, answerTextId, "答案？（请用英文作答）", {answer, answer})
         return nil
     end, "净化池")
 end
@@ -82,7 +82,7 @@ ReplaceMapEvent(1, "VARN 井", function(continueStep)
     end
 
     evt.SimpleMessage("船长的密码是什么？")
-    evt.AskQuestion(1, 10, 44, 14, 43, 43, "答案？", {"kriK", "kriK"})
+    evt.AskQuestion(1, 10, 44, 14, 43, 43, "答案？（请用英文作答）", {"kriK", "kriK"})
     return nil
 end, "VARN之井")
 

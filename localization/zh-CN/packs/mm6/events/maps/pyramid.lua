@@ -90,7 +90,7 @@ RegisterEvent(1, "VARN之井", function(continueStep)
         return
     end
     evt.SetMessage("船长的密码是什么？")
-    evt.AskQuestion(1, 10, 44, 14, 43, 43, "答案？", {"kriK", "kriK"})
+    evt.AskQuestion(1, 10, 44, 14, 43, 43, "答案？（请用英文作答）", {"kriK", "kriK"})
     return nil
 end, "VARN之井")
 
@@ -278,7 +278,7 @@ RegisterEvent(21, "净化池", function(continueStep)
     SetValue(MapVar(2), 0)
     if not HasItem(2158) then return end -- First Mate's Code
     evt.SetMessage("大副的密码是什么？")
-    evt.AskQuestion(21, 5, 44, 9, 33, 33, "答案？", {"kcopS", "kcopS"})
+    evt.AskQuestion(21, 5, 44, 9, 33, 33, "答案？（请用英文作答）", {"kcopS", "kcopS"})
     return nil
 end, "净化池")
 
@@ -303,7 +303,7 @@ RegisterEvent(22, "净化池", function(continueStep)
     SetValue(MapVar(2), 0)
     if not HasItem(2159) then return end -- Navigator's Code
     evt.SetMessage("领航员的密码是什么？")
-    evt.AskQuestion(22, 5, 44, 9, 35, 35, "答案？", {"uluS", "uluS"})
+    evt.AskQuestion(22, 5, 44, 9, 35, 35, "答案？（请用英文作答）", {"uluS", "uluS"})
     return nil
 end, "净化池")
 
@@ -328,7 +328,7 @@ RegisterEvent(23, "净化池", function(continueStep)
     SetValue(MapVar(2), 0)
     if not HasItem(2160) then return end -- Communication Officer's Code
     evt.SetMessage("通讯官的密码是什么？")
-    evt.AskQuestion(23, 5, 44, 9, 37, 37, "答案？", {"aruhU", "aruhU"})
+    evt.AskQuestion(23, 5, 44, 9, 37, 37, "答案？（请用英文作答）", {"aruhU", "aruhU"})
     return nil
 end, "净化池")
 
@@ -353,7 +353,7 @@ RegisterEvent(24, "净化池", function(continueStep)
     SetValue(MapVar(2), 0)
     if not HasItem(2161) then return end -- Engineer's Code
     evt.SetMessage("工程师的密码是什么？")
-    evt.AskQuestion(24, 5, 44, 9, 39, 39, "答案？", {"yttocS", "yttocS"})
+    evt.AskQuestion(24, 5, 44, 9, 39, 39, "答案？（请用英文作答）", {"yttocS", "yttocS"})
     return nil
 end, "净化池")
 
@@ -378,7 +378,7 @@ RegisterEvent(25, "净化池", function(continueStep)
     SetValue(MapVar(2), 0)
     if not HasItem(2162) then return end -- Doctor's Code
     evt.SetMessage("医生的密码是什么？")
-    evt.AskQuestion(25, 5, 44, 9, 41, 41, "答案？", {"yoccM", "yoccM"})
+    evt.AskQuestion(25, 5, 44, 9, 41, 41, "答案？（请用英文作答）", {"yoccM", "yoccM"})
     return nil
 end, "净化池")
 

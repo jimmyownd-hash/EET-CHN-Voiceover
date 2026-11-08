@@ -419,7 +419,7 @@ RegisterEvent(61, "魔法门", function(continueStep)
     end
     if continueStep ~= nil then return end
     evt.SetMessage("你看不见我，听不到我，也摸不着我。我藏在星辰背后，改变真实，我是你最深的恐惧，闭上双眼我便靠近。我是什么？")
-    evt.AskQuestion(61, 2, 21, 4, 19, 20, "答案？", {"dark", "darkness", "黑暗", "暗", "黑"})
+    evt.AskQuestion(61, 2, 21, 4, 19, 20, "答案？（请用英文作答）", {"dark", "darkness", "黑暗", "暗", "黑"})
     return nil
 end, "魔法门")
 
@@ -433,7 +433,7 @@ RegisterEvent(62, "魔法门", function(continueStep)
     end
     if continueStep ~= nil then return end
     evt.SetMessage("我能穿过苹果，也能为你指明方向；我装在弓上，停在靶上。我是什么？")
-    evt.AskQuestion(62, 2, 21, 4, 24, 25, "答案？", {"arrow", "an arrow", "箭", "一支箭", "箭矢"})
+    evt.AskQuestion(62, 2, 21, 4, 24, 25, "答案？（请用英文作答）", {"arrow", "an arrow", "箭", "一支箭", "箭矢"})
     return nil
 end, "魔法门")
 
@@ -447,7 +447,7 @@ RegisterEvent(63, "魔法门", function(continueStep)
     end
     if continueStep ~= nil then return end
     evt.SetMessage("什么能吞噬岩石、夷平高山、摧毁树木、驱云过天，还能让少年变老？")
-    evt.AskQuestion(63, 2, 21, 4, 27, 27, "答案？", {"time", "time", "时间", "光阴", "时光"})
+    evt.AskQuestion(63, 2, 21, 4, 27, 27, "答案？（请用英文作答）", {"time", "time", "时间", "光阴", "时光"})
     return nil
 end, "魔法门")
 
@@ -461,7 +461,7 @@ RegisterEvent(64, "魔法门", function(continueStep)
     end
     if continueStep ~= nil then return end
     evt.SetMessage("无呼吸而生，冷如死亡；从不口渴却不停喝水，身披铠甲从不作响，永远旅行从不行走，嘴巴不停张合从不说话。我是什么？")
-    evt.AskQuestion(64, 2, 21, 4, 29, 30, "答案？", {"fish", "a fish", "鱼", "一条鱼"})
+    evt.AskQuestion(64, 2, 21, 4, 29, 30, "答案？（请用英文作答）", {"fish", "a fish", "鱼", "一条鱼"})
     return nil
 end, "魔法门")
 

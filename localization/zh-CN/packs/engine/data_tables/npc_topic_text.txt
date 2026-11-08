@@ -3021,8 +3021,8 @@
 2101	这儿没什么东西！		
 2102	光明之路	Enroth dark arts	
 2103	黑暗之路	Enroth dark arts	
-2104	你确定要更改路线吗？暗黑魔法将从你的魔法全书中消失，暗黑魔法技能将从你的脑海中消除。（Yes：是/No：否）	Enroth dark arts	
-2105	你确定要更改路线吗？光明魔法将从你的魔法全书中消失，光明魔法技能将从你的脑海中消除。（Yes：是/No：否）	Enroth dark arts	
+2104	你确定要更改路线吗？暗黑魔法将从你的魔法全书中消失，暗黑魔法技能将从你的脑海中消除。（输入 yes 确认）	Enroth dark arts	
+2105	你确定要更改路线吗？光明魔法将从你的魔法全书中消失，光明魔法技能将从你的脑海中消除。（输入 yes 确认）	Enroth dark arts	
 2106	孩子，浪子回头永远不迟。选择光明之路吧。	Enroth dark arts	
 2107	黑暗耐心而永恒地等待着你。选择黑暗之路吧。	Enroth dark arts	
 2108	是	Enroth dark arts	

@@ -1975,7 +1975,7 @@ RegisterGlobalEvent(164, "谜题一", function(continueStep)
     end
     if continueStep ~= nil then return end
     if not IsQBitSet(QBit(94)) then -- Escaton, riddle one answered correctly.
-        evt.AskQuestion(164, 2, 595, 4, 100, 101, "何处服役以偿债，\n不得自由离开，\n离开之时却是自由身？", {"prison", "jail", "监狱", "牢房", "牢狱"})
+        evt.AskQuestion(164, 2, 595, 4, 100, 101, "何处服役以偿债，\n不得自由离开，\n离开之时却是自由身？\n（请用英文作答）", {"prison", "jail", "监狱", "牢房", "牢狱"})
         return nil
     end
     evt.SetMessage("监狱、牢房与囚室有种种形态。我们听过所谓“心灵的牢笼”。可我怀疑。这则谜语说的似乎是一座有形的监狱。你怎么看？")
@@ -2063,7 +2063,7 @@ RegisterGlobalEvent(165, "谜题二", function(continueStep)
     end
     if continueStep ~= nil then return end
     if not IsQBitSet(QBit(95)) then -- Escaton, riddle two answered correctly.
-        evt.AskQuestion(165, 2, 599, 4, 102, 103, "你走进房间时，\n那里便有它，\n它却无法留在室外，\n纵然你把门敞开？", {"in", "inside", "里面", "里", "内"})
+        evt.AskQuestion(165, 2, 599, 4, 102, 103, "你走进房间时，\n那里便有它，\n它却无法留在室外，\n纵然你把门敞开？\n（请用英文作答）", {"in", "inside", "里面", "里", "内"})
         return nil
     end
     evt.SetMessage("里面。什么的里面？又是什么在里面？既然问了……为什么？")
@@ -2151,7 +2151,7 @@ RegisterGlobalEvent(166, "谜题三", function(continueStep)
     end
     if continueStep ~= nil then return end
     if not IsQBitSet(QBit(96)) then -- Escaton, riddle three answered correctly.
-        evt.AskQuestion(166, 2, 603, 4, 104, 105, "一只月白色的盒子，\n只能从里面打开，\n守护着日金色的\n生命之宝。\n那是什么？", {"egg", "an egg", "蛋", "鸡蛋", "一个蛋"})
+        evt.AskQuestion(166, 2, 603, 4, 104, 105, "一只月白色的盒子，\n只能从里面打开，\n守护着日金色的\n生命之宝。\n那是什么？\n（请用英文作答）", {"egg", "an egg", "蛋", "鸡蛋", "一个蛋"})
         return nil
     end
     evt.SetMessage("“蛋”，对。又或者，“蛋们”。蛋是生命之源，某种种子。它们形状也不寻常，别处少见。也许把答案放进上下文，会给出线索或方向。")

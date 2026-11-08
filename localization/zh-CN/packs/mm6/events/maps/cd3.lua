@@ -124,7 +124,7 @@ RegisterEvent(13, "克里格斯皮尔守护者", function(continueStep)
     if continueStep ~= nil then return end
     if not IsQBitSet(QBit(1364)) then -- NPC
         evt.SetMessage("克里格斯的守卫宣称：『付五万金币，秘密自会揭晓！』")
-        evt.AskQuestion(13, 3, 10, 5, 11, 12, "接受（是/否）？", {"Yes", "Y", "是", "是的"})
+        evt.AskQuestion(13, 3, 10, 5, 11, 12, "接受吗？（输入 Y 表示接受）", {"Yes", "Y", "是", "是的"})
         return nil
     end
     evt.MoveToMap(13487, 3117, 673, 0, 0, 0, 0, 0)
@@ -246,7 +246,7 @@ RegisterEvent(27, "克里格斯皮尔馆长", function(continueStep)
     end
     if continueStep ~= nil then return end
     evt.SetMessage("克里格斯的管理者宣称：『付一万金币，你将被治愈。』")
-    evt.AskQuestion(27, 2, 10, 4, 11, 12, "接受（是/否）？", {"Yes", "Y", "是", "是的"})
+    evt.AskQuestion(27, 2, 10, 4, 11, 12, "接受吗？（输入 Y 表示接受）", {"Yes", "Y", "是", "是的"})
     return nil
 end, "克里格斯拜尔馆主")
 
