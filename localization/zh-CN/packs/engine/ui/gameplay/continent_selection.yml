@@ -145,7 +145,7 @@ elements:
   - id: ContinentSelectionEnrothName
     anchor: top_left
     offset_x: 103.7333
-    offset_y: 325.5000
+    offset_y: 329.0000
     width: 191.1083
     height: 23.6752
     z_index: 13
@@ -162,7 +162,7 @@ elements:
   - id: ContinentSelectionEnrothGame
     anchor: top_left
     offset_x: 145.0752
-    offset_y: 309.5000
+    offset_y: 307.0000
     width: 108.4251
     height: 11.6
     z_index: 13
@@ -220,7 +220,7 @@ elements:
   - id: ContinentSelectionAntagarichName
     anchor: top_left
     offset_x: 331.1083
-    offset_y: 325.5000
+    offset_y: 329.0000
     width: 191.1083
     height: 23.6752
     z_index: 13
@@ -237,7 +237,7 @@ elements:
   - id: ContinentSelectionAntagarichGame
     anchor: top_left
     offset_x: 370.2165
-    offset_y: 309.5000
+    offset_y: 307.0000
     width: 112.8832
     height: 11.6
     z_index: 13
@@ -295,7 +295,7 @@ elements:
   - id: ContinentSelectionJadameName
     anchor: top_left
     offset_x: 558.4832
-    offset_y: 325.5000
+    offset_y: 329.0000
     width: 191.1168
     height: 23.6752
     z_index: 13
@@ -312,7 +312,7 @@ elements:
   - id: ContinentSelectionJadameGame
     anchor: top_left
     offset_x: 595.3749
-    offset_y: 309.5000
+    offset_y: 307.0000
     width: 117.3333
     height: 11.6
     z_index: 13

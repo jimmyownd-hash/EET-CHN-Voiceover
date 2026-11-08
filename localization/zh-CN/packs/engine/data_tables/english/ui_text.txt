@@ -7233,3 +7233,19 @@ No {item} left	{item}已经用完了
 {h#}:{m#} pm	下午 {h#}:{m#}
 {g} - Day {n#}	{g} · 第 {n#} 天
 Master Necromancer	死灵大师
+N	普
+E	专
+M	大
+G	宗
+Hum	人类
+Dwa	矮人
+Dar	黑精
+Min	牛头
+Tro	巨魔
+Vam	吸血
+Dra	龙族
+Gob	地精
+Liz	蜥蜴
+Ogr	食人
+Gno	侏儒
+Hal	半身
