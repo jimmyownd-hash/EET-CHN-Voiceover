@@ -7180,3 +7180,8 @@ Primordial 	太初
 Celestial 	天界 
 experience and gold	经验和金币
 experience, gold, materials	经验、金币和材料
+{a} inflicts {p} points killing {b}!{crit}	{a}造成 {p} 点伤害，击杀了{b}！{crit}
+{a} inflicts {p} points killing {b}!	{a}造成 {p} 点伤害，击杀了{b}！
+{a} inflicts {p} points killing {b}	{a}造成 {p} 点伤害，击杀了{b}
+CRIT!	暴击！
+(CRIT!)	（暴击！）
