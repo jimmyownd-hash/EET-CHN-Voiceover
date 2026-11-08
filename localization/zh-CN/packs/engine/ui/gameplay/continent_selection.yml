@@ -57,7 +57,7 @@ elements:
     visible: true
     interactive: false
     text:
-      value: 魔法门宇宙
+      value: OpenYAMM
       font: menu_lucida
       color: '#e9d4a6'
       align_x: left
@@ -74,7 +74,7 @@ elements:
     visible: true
     interactive: false
     text:
-      value: 六七八整合版
+      value: 魔法门六七八整合版
       font: menu_arrus
       color: '#c2b69b'
       align_x: left

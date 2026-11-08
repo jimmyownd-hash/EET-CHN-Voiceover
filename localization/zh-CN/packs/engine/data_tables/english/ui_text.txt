@@ -4142,11 +4142,11 @@ Spend all bonus points before beginning.	开始前请分配完所有奖励点数
 Your party is ready.	队伍已就绪。
 Assign bonus points and starting skills to each adventurer.	为每位冒险者分配奖励点数与初始技能。
 No additional skills to choose	没有可选择的额外技能
-Standard MMMerge	标准 MMMerge
+Standard MMMerge	MMMerge 整合版
 The merged Might and Magic VI-VIII rules.	合并魔法门 VI-VIII 的规则。
 Might and Magic rebalance: monsters scale with the expected party, difficulty from Easy to Nightmare, free or horizontal progression, new loot rarities, skills, spells, classes and crafting.	魔法门重平衡：怪物随队伍预期强度成长，难度从简单到噩梦，自由或横向成长曲线，全新的掉落稀有度、技能、法术、职业与合成。
 Might and Magic rebalance	魔法门重平衡
-MAW rebalances monsters, items, skills and spells.	MAW 重新平衡了怪物、物品、技能与法术。
+MAW rebalances monsters, items, skills and spells.	MAW（Monster Arts and Wonders，怪物·技艺·奇迹）重铸版重新平衡了怪物、物品、技能与法术。
 {difficulty} difficulty · {progression} progression	{difficulty} 难度 · {progression} 成长
 {challenge_name} sets the difficulty for the whole adventure; preferences can change.	{challenge_name} 将为整个冒险固定难度；偏好设置仍可更改。
 {difficulty} cannot be lowered later; progression and preferences can change.	{difficulty} 之后无法下调；成长曲线与偏好设置仍可更改。
@@ -4162,7 +4162,7 @@ Monster HP	怪物生命
 Monster dmg	怪物伤害
 Groups	怪物数量
 Loot	掉落加成
-MAW Rules	MAW 规则
+MAW Rules	MAW 重铸版规则
 Challenge	挑战
 Coming in a later update	将在后续更新中推出
 Drops you would rather not carry turn into gold. The pause menu's Settings show what each preset filters.	不想携带的掉落物自动换成金币。暂停菜单的设置界面会列出每个预案过滤掉的内容。
@@ -6022,7 +6022,7 @@ SpellName: Wing Buffet	翼击
 AI Advice	AI建议
 AI advice copied to the clipboard.	已复制 AI 建议到剪贴板，粘贴给任意 AI 即可。
 No party yet: start a game before asking for advice.	还没有队伍：先开始游戏再生成 AI 建议。
-Standard MMerge	标准 MMerge
+Standard MMerge	MMMerge 整合版
 Party covers {a} of {b} reachable skills · {c} to Grandmaster · {d} / 5 adventurers · {e} ready	队伍覆盖 {a}/{b} 项可达技能 · {c} 项可达宗师 · {d}/5 名冒险者 · {e} 人就绪
 {d} / 5 adventurers · {e} ready	{d}/5 名冒险者 · {e} 人就绪
 + Add adventurer	+ 添加冒险者
@@ -7245,3 +7245,4 @@ Liz	蜥蜴
 Ogr	食人
 Gno	侏儒
 Hal	半身
+MAW	MAW 重铸版

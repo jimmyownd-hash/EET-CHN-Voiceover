@@ -74,7 +74,7 @@ elements:
     visible: true
     interactive: false
     text:
-      value: 魔法门宇宙
+      value: OpenYAMM
       font: menu_arrus
       color: '#c2b69b'
       align_x: left
