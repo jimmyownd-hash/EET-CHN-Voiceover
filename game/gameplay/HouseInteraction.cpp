@@ -28,6 +28,12 @@ namespace OpenYAMM::Game
 {
 namespace
 {
+
+// Localized tables translate names this code keys on; accept the Simplified Chinese name too.
+inline bool localizedNameIs(const std::string &name, const char *pEnglish, const char *pChinese)
+{
+    return name == pEnglish || name == pChinese;
+}
 constexpr int MinutesPerDay = 24 * 60;
 // Waiting for a stable's or boat's departure eats one food a day, about what waiting until morning and resting
 // costs (user, 2026-11-04).
@@ -104,8 +110,8 @@ bool trainingHouseUsesExtendedOeTrainingTime(const HouseEntry &houseEntry)
         || houseEntry.id == Mm7MountNighonTrainingHouseId
         || houseEntry.id == OeMm7PitTrainingHouseId
         || houseEntry.id == OeMm7MountNighonTrainingHouseId
-        || houseEntry.name == "Perdition's Flame"
-        || houseEntry.name == "Applied Instruction";
+        || localizedNameIs(houseEntry.name, "Perdition's Flame", "\xe6\xaf\x81\xe7\x81\xad\xe4\xb9\x8b\xe7\x81\xab")
+        || localizedNameIs(houseEntry.name, "Applied Instruction", "\xe5\xba\x94\xe7\x94\xa8\xe8\xae\xad\xe7\xbb\x83\xe9\xa6\x86");
 }
 
 float oeTrainingDurationMinutes(const HouseEntry &houseEntry, float currentGameMinutes)
@@ -347,32 +353,32 @@ uint32_t guildMembershipRuntimeVariableKey(uint32_t guildType)
 
 std::optional<uint32_t> skillGuildMembershipType(const HouseEntry &houseEntry)
 {
-    if (houseEntry.name == "Buccaneers' Lair")
+    if (localizedNameIs(houseEntry.name, "Buccaneers' Lair", "\xe6\xb5\xb7\xe7\x9b\x97\xe5\xb7\xa2\xe7\xa9\xb4"))
     {
         return 16;
     }
 
-    if (houseEntry.name == "Protection Services")
+    if (localizedNameIs(houseEntry.name, "Protection Services", "\xe6\x8a\xa4\xe5\x8d\xab\xe6\x9c\x8d\xe5\x8a\xa1"))
     {
         return 17;
     }
 
-    if (houseEntry.name == "Smugglers' Guild")
+    if (localizedNameIs(houseEntry.name, "Smugglers' Guild", "\xe8\xb5\xb0\xe7\xa7\x81\xe8\xb4\xa9\xe8\xa1\x8c\xe4\xbc\x9a"))
     {
         return 18;
     }
 
-    if (houseEntry.name == "Blades' End")
+    if (localizedNameIs(houseEntry.name, "Blades' End", "\xe5\x88\x80\xe9\x94\x8b\xe7\xbb\x88\xe7\x82\xb9"))
     {
         return 19;
     }
 
-    if (houseEntry.name == "Duelists' Edge")
+    if (localizedNameIs(houseEntry.name, "Duelists' Edge", "\xe5\x86\xb3\xe6\x96\x97\xe8\x80\x85\xe4\xb9\x8b\xe9\x94\x8b"))
     {
         return 20;
     }
 
-    if (houseEntry.name == "Berserkers' Fury")
+    if (localizedNameIs(houseEntry.name, "Berserkers' Fury", "\xe7\x8b\x82\xe6\x88\x98\xe5\xa3\xab\xe4\xb9\x8b\xe6\x80\x92"))
     {
         return 21;
     }

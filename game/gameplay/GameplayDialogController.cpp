@@ -49,6 +49,12 @@ namespace OpenYAMM::Game
 {
 namespace
 {
+
+// Localized tables translate names this code keys on; accept the Simplified Chinese name too.
+inline bool localizedNameIs(const std::string &name, const char *pEnglish, const char *pChinese)
+{
+    return name == pEnglish || name == pChinese;
+}
 constexpr uint32_t DefaultAdventurersInnHouseId = 185;
 constexpr uint32_t ArcomageRulesTextId = 136;
 constexpr uint32_t AutoNoteVariableTag = 0x00E1u;
@@ -969,7 +975,7 @@ bool isAdventurersInnHouse(const GameplayDialogController::Context &context, uin
     }
 
     const HouseEntry *pHouseEntry = context.pHouseTable->get(houseId);
-    return pHouseEntry != nullptr && pHouseEntry->name == "The Adventurer's Inn";
+    return pHouseEntry != nullptr && localizedNameIs(pHouseEntry->name, "The Adventurer's Inn", "\xe5\x86\x92\xe9\x99\xa9\xe8\x80\x85\xe6\x97\x85\xe5\xba\x97");
 }
 
 uint32_t defaultAdventurersInnHouseId(const GameplayDialogController::Context &context)
@@ -980,7 +986,7 @@ uint32_t defaultAdventurersInnHouseId(const GameplayDialogController::Context &c
 
         for (const auto &[candidateHouseId, houseEntry] : context.pHouseTable->entries())
         {
-            if (houseEntry.name == "The Adventurer's Inn")
+            if (localizedNameIs(houseEntry.name, "The Adventurer's Inn", "\xe5\x86\x92\xe9\x99\xa9\xe8\x80\x85\xe6\x97\x85\xe5\xba\x97"))
             {
                 if (!selectedHouseId.has_value() || candidateHouseId < *selectedHouseId)
                 {

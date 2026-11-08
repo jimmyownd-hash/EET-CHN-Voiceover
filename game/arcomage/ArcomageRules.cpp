@@ -9,6 +9,12 @@ namespace OpenYAMM::Game
 {
 namespace
 {
+
+// Localized tables translate names this code keys on; accept the Simplified Chinese name too.
+inline bool localizedNameIs(const std::string &name, const char *pEnglish, const char *pChinese)
+{
+    return name == pEnglish || name == pChinese;
+}
 void appendShownCard(const ArcomagePlayedCard &card, ArcomageState &state)
 {
     for (std::optional<ArcomagePlayedCard> &shownCard : state.shownCards)
@@ -61,7 +67,7 @@ ArcomageRules::SpecialCardEffect ArcomageRules::specialCardEffect(
 {
     SpecialCardEffect effect = {};
 
-    if (card.name == "Flood Water")
+    if (localizedNameIs(card.name, "Flood Water", "\xe6\xb4\xaa\xe6\xb0\xb4"))
     {
         // The side with the lower wall loses 1 dungeon and 2 tower; equal walls hit both sides.
         if (player.wall <= enemy.wall)
@@ -76,7 +82,7 @@ ArcomageRules::SpecialCardEffect ArcomageRules::specialCardEffect(
             effect.enemyTower = clampedLoss(enemy.tower, 2);
         }
     }
-    else if (card.name == "Shift")
+    else if (localizedNameIs(card.name, "Shift", "\xe7\xa7\xbb\xe5\xbd\xa2\xe6\x8d\xa2\xe4\xbd\x8d"))
     {
         effect.playerWall = enemy.wall - player.wall;
         effect.enemyWall = player.wall - enemy.wall;
