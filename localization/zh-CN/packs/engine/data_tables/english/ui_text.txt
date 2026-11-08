@@ -7293,3 +7293,37 @@ Chance to...	命中率…
 Chance to…	命中率…
 Chance to hit...	命中率…
 Chance to hit…	命中率…
+# v1.8: 装备稀有度前缀、存档日期时间、建人物属性缩写
+Mig	力量
+Spe	速度
+Luc	运气
+Ancient *	远古 
+Primordial *	太初 
+Legendary *	传奇 
+Celestial *	天界 
+{d} January {y}	{y}年1月{d}日
+{d} February {y}	{y}年2月{d}日
+{d} March {y}	{y}年3月{d}日
+{d} April {y}	{y}年4月{d}日
+{d} May {y}	{y}年5月{d}日
+{d} June {y}	{y}年6月{d}日
+{d} July {y}	{y}年7月{d}日
+{d} August {y}	{y}年8月{d}日
+{d} September {y}	{y}年9月{d}日
+{d} October {y}	{y}年10月{d}日
+{d} November {y}	{y}年11月{d}日
+{d} December {y}	{y}年12月{d}日
+Monday {h}:{m}AM	星期一 上午{h}:{m}
+Monday {h}:{m}PM	星期一 下午{h}:{m}
+Tuesday {h}:{m}AM	星期二 上午{h}:{m}
+Tuesday {h}:{m}PM	星期二 下午{h}:{m}
+Wednesday {h}:{m}AM	星期三 上午{h}:{m}
+Wednesday {h}:{m}PM	星期三 下午{h}:{m}
+Thursday {h}:{m}AM	星期四 上午{h}:{m}
+Thursday {h}:{m}PM	星期四 下午{h}:{m}
+Friday {h}:{m}AM	星期五 上午{h}:{m}
+Friday {h}:{m}PM	星期五 下午{h}:{m}
+Saturday {h}:{m}AM	星期六 上午{h}:{m}
+Saturday {h}:{m}PM	星期六 下午{h}:{m}
+Sunday {h}:{m}AM	星期日 上午{h}:{m}
+Sunday {h}:{m}PM	星期日 下午{h}:{m}
