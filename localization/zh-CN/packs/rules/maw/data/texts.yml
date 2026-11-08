@@ -754,16 +754,16 @@ skills:
     grandmaster: "允许制作黑色药剂。混合时药力每技能点提升至 2，并每技能点使药剂持续时间增加 6 分钟。允许怪物掉落无限药剂，其药力由炼金术等级决定。"
   Cover:
     append: >-
-      当前掩护几率：<good>{cover_chance}</>%。掌握度在 <value>{ladder_expert}</>、<value>{ladder_master}</>、<value>{ladder_grandmaster}</> 点自行达成。在技能页按 P 切换：{cover_state}。
+      当前掩护几率：<good>{cover_chance}</>%。掌握度在 {ladder_expert}、{ladder_master}、{ladder_grandmaster} 点自行达成。在技能页按 P 切换：{cover_state}。
   ManaShield:
     append: >-
       现在每点魔力吸收 <mana>{mana_efficiency:2}</> 点伤害。在技能页按 M 切换：{mana_shield_state}。
   Enlightenment:
     append: >-
-      掌握度在 <value>{ladder_expert}</>、<value>{ladder_master}</>、<value>{ladder_grandmaster}</> 点自行达成。
+      掌握度在 {ladder_expert}、{ladder_master}、{ladder_grandmaster} 点自行达成。
   Retaliation:
     append: >-
-      掌握度在 <value>{ladder_expert}</>、<value>{ladder_master}</>、<value>{ladder_grandmaster}</> 点自行达成。其伤害为技能乘以两个系数：近战之力 <bad>{retaliation_power}</> 与活力 <bad>{retaliation_vitality}</>，当前 <bad>{retaliation_damage}</> 点伤害。平衡之力与活力收益最高。
+      掌握度在 {ladder_expert}、{ladder_master}、{ladder_grandmaster} 点自行达成。其伤害为技能乘以两个系数：近战之力 <bad>{retaliation_power}</> 与活力 <bad>{retaliation_vitality}</>，当前 <bad>{retaliation_damage}</> 点伤害。平衡之力与活力收益最高。
 class_skills:
   death_knight:
     WaterMagic:
