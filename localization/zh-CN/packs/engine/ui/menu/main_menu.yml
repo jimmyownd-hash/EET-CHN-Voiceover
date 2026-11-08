@@ -70,23 +70,6 @@ elements:
       align_y: middle
       scale: 0.74105
       pad_x: 0.0
-  - id: MainMenuTranslator
-    anchor: top_left
-    offset_x: 549.8666
-    offset_y: 184.0
-    width: 261.3333
-    height: 14.0752
-    z_index: 10
-    visible: true
-    interactive: false
-    text:
-      value: 汉化：考拉粑粑
-      font: menu_lucida
-      color: '#dbc59e'
-      align_x: center
-      align_y: middle
-      scale: 0.74105
-      pad_x: 0.0
   - id: MainMenuActionPanel
     anchor: top_left
     offset_x: 563.2
