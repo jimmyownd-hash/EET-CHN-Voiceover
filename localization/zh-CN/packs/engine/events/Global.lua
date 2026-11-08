@@ -61,7 +61,7 @@ RegisterGlobalEvent(8, "岩石传送门", function()
     evt.SetNPCTopic(1, 1, 21) -- Brekish Onefang topic 1: Quest
 end)
 
-RegisterGlobalEvent(9, "佛得瑞克·塔力米尔", function()
+RegisterGlobalEvent(9, "费德瑞克·塔力米尔", function()
     evt.SetMessage("一位名叫弗雷德里克·泰利米尔的牧师，过去几年一直和我们住在一起。\n他一直在研究石头传送门和那座废弃神殿的外围废墟。\n也许他懂得怎么让传送门重新运转！\n找到他，请他帮忙！")
 end)
 
@@ -125,7 +125,7 @@ RegisterGlobalEvent(15, "岩石传送门", function()
     evt.SetMessage("你们修好了石头传送门？\n真是天大的好消息！\n快去找我弟弟伊斯西里克，叫他回家！")
 end)
 
-RegisterGlobalEvent(16, "佛得瑞克·塔力米尔", function()
+RegisterGlobalEvent(16, "费德瑞克·塔力米尔", function()
     evt.SetMessage("那个粗鲁的男人？\n他只关心那座废弃神殿，对身边的世事一概不闻不问！\n我祖母早就警告过他，那座神殿是至邪之地。\n他从来不听。\n如今祖母不在了，除了布拉克许·单牙，再没人记得从前的事。")
 end)
 

@@ -70,7 +70,7 @@ Q Bit	Quest Note Text	Notes	Owner
 69	已找到远古巨魔家园	Ancient Troll Homeland Found	James
 70	找到布拉森·暴风枪以及那柄黑木之矛。完成任务之后去绞刑峡谷找连恩·暴风枪，并且将黑木之矛交给查尔斯·吉科德。		James
 71	已找到布雷曾·斯托姆兰斯并找回黑曜石	Found Blazen Stormlance and recovered Ebonest	James
-72	去渡鸦海滨找代为瑞许·其佛龙询问有关治疗布拉森·暴风枪的药方。		James
+72	去渡鸦海滨找戴维许·契夫龙询问有关治疗布拉森·暴风枪的药方。		James
 73	已获得布雷曾·斯托姆兰斯的解药	Received Cure for Blazen Stormlance	James
 74	杀光所有的屠龙者，并且将惠索朋之剑交给绞刑峡谷的达夫克劳·红斧。	 	James
 75	已杀死区域 5 西南营地的全部屠龙者	Killed all Dragon Slayers in southwest encampment in Area 5	James

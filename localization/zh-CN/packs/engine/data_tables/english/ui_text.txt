@@ -1099,7 +1099,7 @@ Eversmyle Hall	艾佛斯麦的大厅
 Moore Cottage	摩尔的小屋
 House of Krewlen	克鲁兰的屋子
 Darkenmoore Hall	达肯摩尔的大厅
-Dervish Estate	代为瑞许的豪宅
+Dervish Estate	戴维许的豪宅
 Agraynel Hall	爱格瑞尼尔的大厅
 House of Lightfinger	来特芬格的屋子
 Nightwalker Cottage	夜行者的小屋
@@ -1251,7 +1251,7 @@ Nelix's House	耐力克斯的屋子
 Tempus' House	坦普斯之屋
 Verish's House	维瑞许的屋子
 Flamdring's Cave	佛蓝林的洞穴
-Brimstone's Cave	布尔斯通的洞穴
+Brimstone's Cave	布林史东的洞穴
 Duroth's Cave	土洛斯的洞穴
 Council Chamber Door	议会
 Overdune's House	欧瓦都的房间
@@ -1288,7 +1288,7 @@ Applebee Estate	苹蜂的屋子
 Menasaur's House	曼纳梭尔的屋子
 Archibald's Home	阿基巴德的家
 Husk's Hut	哈斯克的屋子
-Arius' House	艾瑞恶斯的屋子
+Arius' House	艾瑞斯的屋子
 Talimere's Hut	塔力米尔的小屋
 Deerhunter's House	猎鹿人的屋子
 House of Reshie	瑞西的房子
@@ -1320,7 +1320,7 @@ Lott's Family Home	拉兹一家人的房子
 House of Nosewort	诺斯沃的屋子
 Hall of the Tracker	追迹者的大厅
 Hunter's Hovel	韩特的小屋
-Dervish's Cottage	代为瑞许的小屋
+Dervish's Cottage	戴维许的小屋
 Dotes Family Hovel	多兹一家人的陋居
 Guthwulf's Home	古斯渥夫的住处
 Wolverton Residence	渥夫顿的住处

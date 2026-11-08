@@ -27,7 +27,7 @@ NPC Data (Special)			Group			Current	Profession	Greet	Join	Event	Event	Event	Eve
 25	土之王	1087	0	0	0	663	0	52	0	169	0	0	0	0	0	(14) Prison of the Lord of Earth
 26	夏尔温	1090	0	0	0	661	0	50	0	167	0	0	0	0	0	(14) Prison of the Lord of Air
 27	色顿	1477	0	0	0	0	0	1	0	1	2	3	0	0	0	"(1) Outside, Lizardman Journeyman Merchant of Alvar"
-28	佛得瑞克·塔力米尔	1060	0	0	0	866	0	5	0	10	11	0	0	0	0	"(1) Cleric House, Cleric PC that joins party"
+28	费德瑞克·塔力米尔	1060	0	0	0	866	0	5	0	10	11	0	0	0	0	"(1) Cleric House, Cleric PC that joins party"
 29	罗特奈克斯	1466	0	0	0	776	0	6	0	14	15	16	17	0	0	"(1) Peasant House, Find Brother Secondary Quest"
 30	派赛拉·提斯克	1463	0	0	0	784	0	7	0	18	19	584	0	0	0	"(1) Peasant House, Prophecies of the Snake Secondary Quest"
 31	布瑞克许·单牙	0	0	0	0	0	0	0	0	0	0	0	0	0	0	STILL USED?
@@ -49,7 +49,7 @@ NPC Data (Special)			Group			Current	Profession	Greet	Join	Event	Event	Event	Eve
 47	法希尔·弹指	1365	0	0	0	0	0	17	0	0	0	0	0	0	0	"(4) 2D Loc set in event 42, Event 47 set in event 46 "
 48	冉索拉	1240	0	0	0	0	0	0	0	0	0	0	0	0	0	"(6) Mad Necromancer's Lair, Mad Necromancer"
 49	林恩·暴风枪	1295	0	0	0	538	0	0	0	52	0	51	0	0	0	"(5) House at Dragon Hunter fort, Knight Promo Start"
-50	代为瑞许·其佛龙	1058	0	0	0	908	0	0	0	50	659	0	0	0	0	"(2) Cleric, Rescue Blazen Stormlance Secondary Quest"
+50	戴维许·契夫龙	1058	0	0	0	908	0	0	0	50	659	0	0	0	0	"(2) Cleric, Rescue Blazen Stormlance Secondary Quest"
 51	盖瑞特·大夫罗	1301	0	0	0	0	0	0	0	735	0	0	0	0	0	(5) Quixote's Chamber (179) after Quixote goes to w 175
 52	查尔斯·科切特爵士	1089	0	0	0	0	0	23	0	0	0	58	0	0	0	"(2) Merchanthouse, Council Chamber"
 53	达夫克劳·红斧	1088	0	0	0	0	0	25	0	123	60	62	0	0	0	"(2) Merchanthouse, Council Chamber"
@@ -261,13 +261,13 @@ NPC Data (Special)			Group			Current	Profession	Greet	Join	Event	Event	Event	Eve
 259	瓦波	1141	0	0	0	666	0	66	0	683	0	0	0	0	0	Hint NPC in Plane of Air
 260	河玻璃	1135	0	0	0	691	0	67	0	684	0	0	0	0	0	Hint NPC in Plane of Water
 261	清溪	1136	0	0	0	692	0	68	0	685	0	0	0	0	0	Hint NPC in Plane of Water
-262	代为林·阿肯那斯	0	0	0	0	0	0	0	0	601	0	0	0	0	0	Roster PC
-263	佛得瑞克·塔力米尔	0	0	0	0	0	0	0	0	602	0	0	0	0	0	Roster PC
+262	戴维林·阿肯那斯	0	0	0	0	0	0	0	0	601	0	0	0	0	0	Roster PC
+263	费德瑞克·塔力米尔	0	0	0	0	0	0	0	0	602	0	0	0	0	0	Roster PC
 264	赛蒙·谭普勒	1064	0	0	0	0	0	103	0	603	0	0	0	0	0	Roster PC
 265	欧瓦都·弹指	0	0	0	0	0	0	0	0	604	0	0	0	0	0	Roster PC
-266	艾瑞恶斯	1044	0	0	0	861	0	71	0	605	0	0	0	0	0	Roster PC
+266	艾瑞斯	1044	0	0	0	861	0	71	0	605	0	0	0	0	0	Roster PC
 267	罗哈尼·欧斯克理顿	1047	0	0	0	531	0	72	0	606	0	0	0	0	0	Roster PC
-268	艾尔斯被斯·拉曼提亚	0	0	0	0	0	0	0	0	607	0	0	0	0	0	Roster PC
+268	艾尔斯贝斯·拉曼提亚	0	0	0	0	0	0	0	0	607	0	0	0	0	0	Roster PC
 269	伊斯希尔歌尔	1040	0	0	0	573	0	73	0	608	0	0	0	0	0	Roster PC
 270	卡蓝雅·麦莫瑞亚	1055	0	0	0	902	0	74	0	706	0	0	0	0	0	Roster PC
 271	麦兰德	1058	0	0	0	877	0	75	0	707	0	0	0	0	0	Roster PC
@@ -284,9 +284,9 @@ NPC Data (Special)			Group			Current	Profession	Greet	Join	Event	Event	Event	Eve
 282	瑞欧耐尔	1044	0	0	0	630	0	84	0	692	0	0	0	0	0	Roster PC
 283	艾瑞克·史塔拉尔	1046	0	0	0	534	0	85	0	693	0	0	0	0	0	Roster PC
 284	因佛史塔斯	1051	0	0	0	590	0	86	0	694	0	0	0	0	0	Roster PC
-285	布尔斯通	1040	0	0	0	703	0	87	0	695	0	0	0	0	0	Roster PC
+285	布林史东	1040	0	0	0	703	0	87	0	695	0	0	0	0	0	Roster PC
 286	维崔那斯·塔尔希尔	0439	0	0	0	0	0	0	0	625	0	0	0	0	0	(6) Necro Promo
-287	代为瑞许·其佛龙	1058	0	0	0	0	0	0	0	626	0	0	0	0	0	(2) Eclipse secondary quest
+287	戴维许·契夫龙	1058	0	0	0	0	0	0	0	626	0	0	0	0	0	(2) Eclipse secondary quest
 288	坦帕斯	1062	0	0	0	700	0	88	0	696	0	0	0	0	0	Roster PC
 289	索恩·石下	1041	0	0	0	697	0	89	0	697	0	0	0	0	0	Roster PC
 290	乌布理契	1043	0	0	0	634	0	90	0	698	0	0	0	0	0	Roster PC

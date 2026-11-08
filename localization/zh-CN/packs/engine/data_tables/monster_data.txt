@@ -73,7 +73,7 @@ Default Monster Data					Stats								Movement and Combat					Attack 1			Attack 
 69	牛头人农民	Minotaur Pesant C	6	21	0	96	4D6	1	N	Short	Wimp	4	280	80	0	0	Phys	3D4+4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 70	飞龙	Dragon A	70	700	60	5600	250D10+L6	1	Y	Long	Suicidal	4	240	70	0	0	Fire	12D8	Fire	0	0	0	0	0	0	0	0	35	35	35	35	35	35	35	10	10	10	0
 71	飞龙领袖	Dragon B	85	977	80	8075	250D12+L6	1	Y	Med	Suicidal	4	260	65	0	0	Water	14D8	Fire	0	0	0	0	0	0	0	0	40	40	40	40	40	40	40	15	15	20	0
-72	超级威猛兽	Dragon C	100	1300	100	11000	250D16+L6	1	Y	Short	Suicidal	4	300	60	0	0	Air	16D8	Fire	0	0	0	0	0	0	0	0	45	45	45	45	45	45	45	20	20	30	0
+72	巨龙	Dragon C	100	1300	100	11000	250D16+L6	1	Y	Short	Suicidal	4	300	60	0	0	Air	16D8	Fire	0	0	0	0	0	0	0	0	45	45	45	45	45	45	45	20	20	30	0
 73	次级火元素	Fire Elemental A	50	400	0	3000	15%10D30+L4	0	Y	Long	Aggress	3	300	70	0	0	Fire	7D10	0	0	0	0	0	20	"Fireball,M,9"	0	0	Imm	10	0	10	Imm	0	10	10	10	10	0
 74	火元素	Fire Elemental B	65	617	0	4875	15%10D40+L5	0	Y	Med	Aggress	3	310	70	0	0	Fire	9D10	0	0	0	0	0	30	"Haste,M,9"	0	0	Imm	20	0	20	Imm	0	20	20	20	20	0
 75	高等火元素	Fire Elemental C	80	880	0	7200	15%10D40+L6	0	Y	Med	Aggress	3	330	70	2	0	Fire	10D10	0	0	0	0	0	40	"Incinerate,GM,10"	0	0	Imm	30	0	30	Imm	0	30	30	30	30	0
@@ -114,8 +114,8 @@ Default Monster Data					Stats								Movement and Combat					Attack 1			Attack 
 110	独角兽	Unicorn B	35	227	30	1575	45%20D5+L2Amulet	1	N	Med	Aggress	3	160	60	0	0	Fire	6D6	Fire	0	0	0	0	0	0	0	0	0	35	0	35	20	0	20	35	0	20	0
 111	独角兽领袖	Unicorn C	45	337	40	2475	45%20D5+L3Gem	1	N	Short	Aggress	3	180	50	0	0	Air	7D6	Air	0	0	0	0	0	0	0	0	0	45	0	45	30	0	30	45	0	30	"shot,x3"
 112	翡翠龙	Crystal Dragon A	75	787	60	6375	250D10+L6	0	N	Long	Aggress	4	240	70	2	0	Ener	12D8	Ener	50	Ener	12D8	Ener	0	0	0	0	15	15	15	15	15	15	15	10	10	20	0
-113	蓝晶龙	Crystal Dragon B	100	1300	80	11000	250D12+L6	0	N	Med	Aggress	4	260	65	2	0	Ener	14D8	Ener	50	Ener	14D8	Ener	0	0	0	0	20	20	20	20	20	20	20	15	15	30	0
-114	红晶龙	Crystal Dragon C	125	1937	100	16875	250D16+L6	0	N	Short	Aggress	4	300	60	2	0	Ener	16D8	Ener	50	Ener	16D8	Ener	0	0	0	0	30	30	30	30	30	30	30	20	20	40	0
+113	蓝宝龙	Crystal Dragon B	100	1300	80	11000	250D12+L6	0	N	Med	Aggress	4	260	65	2	0	Ener	14D8	Ener	50	Ener	14D8	Ener	0	0	0	0	20	20	20	20	20	20	20	15	15	30	0
+114	红宝龙	Crystal Dragon C	125	1937	100	16875	250D16+L6	0	N	Short	Aggress	4	300	60	2	0	Ener	16D8	Ener	50	Ener	16D8	Ener	0	0	0	0	30	30	30	30	30	30	30	20	20	40	0
 115	雾鹰	Thunderbird A	39	269	30	1911	20D30	1	Y	Long	Normal	4	250	90	0	0	Air	6D7	0	0	0	0	0	10	"Lightning Bolt,M,5"	0	0	5	Imm	5	0	5	0	5	5	5	5	0
 116	暴风之鹰	Thunderbird B	59	525	35	4071	25D30	1	Y	Med	Aggress	4	260	80	0	0	Air	8D7+5	0	0	0	0	0	20	"Lightning Bolt,M,7"	0	0	10	Imm	10	0	10	0	10	5	5	10	0
 117	雷鸟	Thunderbird C	79	861	40	7031	30D30	1	Y	Short	Suicidal	4	300	70	2	0	Air	10D7+10	0	0	0	0	0	30	"Lightning Bolt,M,9"	0	0	20	Imm	20	0	20	0	20	5	5	20	0
@@ -299,7 +299,7 @@ Default Monster Data					Stats								Movement and Combat					Attack 1			Attack 
 295	蝎狮	Manticore A	18	86	18	504	0	1	N	Long	Normal	3	260	90	DR	Poison2	Phys	1D12+4	Water	0	0	0	0	0	0	0	0	10	10	10	10	10	10	10	10	10	10	0
 296	蝎狮怪	Manticore B	27	153	25	999	0	1	N	Med	Aggress	3	280	80	DR	Poison3	Phys	1D12+8	Water	0	0	0	0	0	0	0	0	20	20	20	20	20	20	20	20	20	20	0
 297	毒蝎狮	Manticore C	36	237	32	1656	0	1	N	Short	Suicidal	3	300	70	DR	Poison3x2	Phys	2D12+10	Water	0	0	0	0	0	0	0	0	30	30	30	30	30	30	30	30	30	30	0
-298	蛇发女妖	Medusa A	35	227	20	1575	10%10D20+L3Misc	1	N	Med	Normal	2	200	80	0	Paralyze	Phys	4D4+8	Arrow	0	0	0	0	0	0	0	0	Imm	Imm	Imm	Imm	Imm	Imm	Imm	Imm	Imm	0	0
+298	美杜莎	Medusa A	35	227	20	1575	10%10D20+L3Misc	1	N	Med	Normal	2	200	80	0	Paralyze	Phys	4D4+8	Arrow	0	0	0	0	0	0	0	0	Imm	Imm	Imm	Imm	Imm	Imm	Imm	Imm	Imm	0	0
 299	美杜莎女王	Medusa B	40	280	25	2000	10%15D20+L4Misc	1	N	Med	Aggress	2	220	80	0	Stone	Phys	5D4+10	Arrow	0	0	0	0	0	0	0	0	Imm	Imm	Imm	Imm	Imm	Imm	Imm	Imm	Imm	0	0
 300	美杜莎女皇	Medusa C	45	337	30	2475	30%30D20+L5Misc	1	N	Short	Suicidal	2	240	70	0	Stone	Phys	6D4+12	Arrow	0	0	0	0	0	0	0	0	Imm	Imm	Imm	Imm	Imm	Imm	Imm	Imm	Imm	0	0
 301	牛头人	AMinotaur A	39	269	30	1911	10%10D20+L4Axe	1	N	Long	Normal	2	250	80	0	0	Phys	3D7+25	0	0	0	0	0	0	0	0	0	10	10	10	10	10	5	10	5	5	10	0
