@@ -90,7 +90,7 @@ ReplaceMapEvent(210, nil, function(continueStep)
         13,
         "精神焕发！",
         {
-            {Answer = "王子被绑架了！在危机解决之前，谢绝一切来访！", Step = 9},
+            {Answer = "The prince has been kidnapped!  No visitors will be admitted until this crisis has been resolved!", Step = 9},
             {Answer = "Crate", Step = 14},
         })
     return nil

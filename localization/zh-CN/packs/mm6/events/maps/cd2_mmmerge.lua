@@ -22,7 +22,7 @@ local function replaceSarcophagus(eventId, mapVarIndex, itemId)
         end
 
         evt.SimpleMessage("要偷窃死者身上的东西吗？")
-        evt.AskQuestion(eventId, 3, 21, 4, 22, 23, "要偷窃（是/否）？", {"Yes", "Y"})
+        evt.AskQuestion(eventId, 3, 21, 4, 22, 23, "要偷窃（是/否）？", {"Yes", "Y", "是", "是的"})
         return nil
     end, "石棺")
 end

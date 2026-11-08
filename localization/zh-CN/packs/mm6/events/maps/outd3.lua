@@ -436,11 +436,11 @@ RegisterEvent(210, nil, function(continueStep)
         evt._PressAnyKey(210, 7)
     end
     if continueStep == 7 then
-        evt.AskQuestion(210, 8, 8, 9, 9, 9, "精神焕发！", {"王子被绑架了！在危机解决之前，谢绝一切来访！", "王子被绑架了！在危机解决之前，谢绝一切来访！"})
+        evt.AskQuestion(210, 8, 8, 9, 9, 9, "精神焕发！", {"The prince has been kidnapped!  No visitors will be admitted until this crisis has been resolved!", "The prince has been kidnapped!  No visitors will be admitted until this crisis has been resolved!"})
         return nil
     end
     if continueStep == 8 then
-        evt.AskQuestion(210, 9, 8, 14, 10, 10, "精神焕发！", {"木箱", "木箱"})
+        evt.AskQuestion(210, 9, 8, 14, 10, 10, "精神焕发！", {"Crate", "Crate"})
         return nil
     end
     if continueStep == 9 then

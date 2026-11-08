@@ -542,7 +542,7 @@ RegisterEvent(61, "石棺", function(continueStep)
     if continueStep ~= nil then return end
     if IsAtLeast(MapVar(11), 1) then return end
     evt.SetMessage("要盗取死者之物吗？")
-    evt.AskQuestion(61, 3, 21, 4, 22, 23, "要偷窃（是/否）？", {"Yes", "Y"})
+    evt.AskQuestion(61, 3, 21, 4, 22, 23, "要偷窃（是/否）？", {"Yes", "Y", "是", "是的"})
     return nil
 end, "石棺")
 
@@ -558,7 +558,7 @@ RegisterEvent(62, "石棺", function(continueStep)
     if continueStep ~= nil then return end
     if IsAtLeast(MapVar(12), 1) then return end
     evt.SetMessage("要盗取死者之物吗？")
-    evt.AskQuestion(62, 3, 21, 4, 22, 23, "要偷窃（是/否）？", {"Yes", "Y"})
+    evt.AskQuestion(62, 3, 21, 4, 22, 23, "要偷窃（是/否）？", {"Yes", "Y", "是", "是的"})
     return nil
 end, "石棺")
 
@@ -574,7 +574,7 @@ RegisterEvent(63, "石棺", function(continueStep)
     if continueStep ~= nil then return end
     if IsAtLeast(MapVar(13), 1) then return end
     evt.SetMessage("要盗取死者之物吗？")
-    evt.AskQuestion(63, 3, 21, 4, 22, 23, "要偷窃（是/否）？", {"Yes", "Y"})
+    evt.AskQuestion(63, 3, 21, 4, 22, 23, "要偷窃（是/否）？", {"Yes", "Y", "是", "是的"})
     return nil
 end, "石棺")
 

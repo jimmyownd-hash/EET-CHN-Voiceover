@@ -622,7 +622,7 @@ local function changePath(path, continueStep)
         path.topic,
         PathDeclinedStep,
         Game.NPCText[path.warningText],
-        {{Answer = Game.NPCText[2108], Step = PathYesAnswerStep}})
+        {{Answer = Game.NPCText[2108], Step = PathYesAnswerStep}, {Answer = "yes", Step = PathYesAnswerStep}, {Answer = "y", Step = PathYesAnswerStep}})
 end
 
 local pathOfLight = {
