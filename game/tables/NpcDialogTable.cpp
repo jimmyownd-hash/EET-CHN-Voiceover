@@ -124,7 +124,9 @@ bool isTeacherHintTopicRow(const std::vector<std::string> &row)
 
 bool isRosterJoinTopicLabel(const NpcTopicEntry &entry)
 {
-    return entry.topic == "Roster Join Event" || entry.topic == "Join";
+    // The Chinese pack renames these table labels, so match the translated names too.
+    return entry.topic == "Roster Join Event" || entry.topic == "Join"
+        || entry.topic == "加入队员清单事件" || entry.topic == "加入";
 }
 
 std::optional<NpcDialogTable::RosterJoinOffer> buildRosterJoinOffer(
