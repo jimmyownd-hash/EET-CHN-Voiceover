@@ -1,0 +1,588 @@
+# 魔法门9攻略术语表（英文<TAB>中文）。上半部分取自官方中文语言包，必须照用。
+# ---- 地名（官方） ----
+Chedian	切迪安
+Ravensford	雷文斯福德
+Isle of Ashes	灰烬岛
+Sturmford	斯特姆福德
+Sturmford City	斯特姆福德城
+Drangheim	德朗海姆
+Drangheim City	德朗海姆城
+Drangheim Village	德朗海姆村
+Guberland	古伯兰
+Guberland City	古伯兰城
+Thjorgard	索加德
+Thjorgard City	索加德城
+Frosgard	弗罗斯加德
+Frosgard City	弗罗斯加德城
+Thronheim	索恩海姆
+Thronheim City	索恩海姆城
+Yorwick	约威克
+Lindisfarne	林迪斯法恩
+Lindisfarne Monastery	林迪斯法恩修道院
+Arslegard	阿瑟加德
+Arslegard City	阿瑟加德城
+Mountain Pass	山口
+Verhoffin Ruins	维霍芬遗迹
+Connecting Tunnel	连接隧道
+Connecting Tunnels	连接隧道
+Thjorad Mine	索拉德矿场
+Training Hall	训练场
+Ruined Temple	废墟神庙
+Anskram Keep	安斯克拉姆要塞
+Beet Hoven	贝特霍文
+Kluso's House	克鲁索的屋子
+Drangheim Prison	德朗海姆监狱
+Chasm of the Dead	亡者裂谷
+Temple of Honk	霍恩克神庙
+Dook's Castle	杜克城堡
+Dungeon of Secrets	秘密地牢
+Inventa Storca	因文塔·斯托卡
+Ta'Sar Academy	塔萨尔学院
+Lich Lab	巫妖实验室
+Wizard's Lab	巫师实验室
+The Afterworld	冥界
+Dark Passageway	黑暗通道
+The Bathhouse	浴场
+Hall of the Gods	众神之殿
+Dragon's Lair	龙之巢穴
+The Arena	竞技场
+Arena Master	竞技场主人
+# ---- 地名（补充） ----
+Yanmir's Sky Fort	扬米尔的天空堡垒
+Yanmir's Fort	扬米尔的堡垒
+Tomb of a Thousand Terrors	千惧之墓
+Great Gate	大门
+Arslegard's Great Gate	阿瑟加德大门
+East Mine	东矿
+West Mine	西矿
+Refinery	精炼厂
+Town Hall	市政厅
+City Hall	市政厅
+Bembridge University	本布里奇大学
+The Gathering	集会场
+Temple of Ratatosk	拉塔托斯克神庙
+Beldonia	贝尔多尼亚
+# ---- 称号、组织、剧情词 ----
+Jarl	领主
+Jarls	领主们
+Six Clans	六大部族
+Beldonian Horde	贝尔多尼亚大军
+Beldonian Hordes	贝尔多尼亚大军
+War Council	战争会议
+Thing	庭会
+Writ of Fate	命运之书
+Wyrde	命运女神
+Wyrde of the Unknown	未知的命运女神
+Great Cataclysm	大灾变
+Six Fires of Penance	六道赎罪之火
+Capstone of Order	秩序顶石
+Book of Rules	规则之书
+Peace Treaty	和平条约
+Victory Certificate	胜利证书
+Visitor's Pass	访客通行证
+Three Crusades	三次圣战
+Gladiatorial Labour	角斗士试炼
+Assassin's Trial	刺客试炼
+Ranger's Trial	游骑兵试炼
+Honk	霍恩克
+Honky	霍恩克教徒
+Honkies	霍恩克教徒
+Elder Honk	霍恩克长老
+Great Honk	大霍恩克
+Golden Honk	黄金霍恩克
+Super Guber Award	超级古伯奖
+Boat Race	赛船
+Chapter I	第一章
+Chapter II	第二章
+Chapter III	第三章
+Prologue	序章
+# ---- 职业（官方） ----
+Fighter	战士
+Knight	骑士
+Thief	盗贼
+Archer	弓箭手
+Paladin	圣武士
+Ranger	游骑兵
+Monk	僧侣
+Sorcerer	巫师
+Cleric	牧师
+Druid	德鲁伊
+Mercenary	佣兵
+Crusader	十字军
+Gladiator	角斗士
+Assassin	刺客
+Scholar	学者
+Mage	魔法师
+Healer	医师
+Priest	神甫
+Lich	巫妖
+Cavalier	豪侠
+Champion	冠军骑士
+Rogue	神偷
+Warrior Mage	魔法战士
+Master Archer	神箭手
+Hunter	猎手
+Ranger Lord	游骑领主
+Hero	英雄
+Initiate	修士
+Master	智者
+Wizard	法师
+Arch Mage	大法师
+Great Druid	大德鲁伊
+Arch Druid	德鲁伊长老
+Priest of Light	光明主教
+Nosferatu	诺斯费拉图
+Patriarch	尊者
+Minotaur	牛头人
+Minotaur Lord	牛头人领主
+Troll	巨魔
+War Troll	战争巨魔
+Dragon	龙
+Great Wyrm	超级威猛兽
+Dark Elf	黑暗精灵
+Vampire	吸血鬼
+# ---- 属性、技能、法术（官方） ----
+Might	力量
+Intellect	智力
+Speed	速度
+Perception	侦查
+Disarm Trap	拆除陷阱
+Disarm Traps	拆除陷阱
+Identify Item	物品鉴定术
+Lloyd's Beacon	时空道标
+Town Portal	时空之门
+Wizard Eye	魔力神眼
+Sparks	遍地开花
+Fire Spike	烈火爆雷
+Dispel Magic	驱散魔法
+Lightning Bolt	霹雳闪电
+Slow	迟缓术
+Fireball	火球术
+Grandmaster	宗师
+# ---- 怪物 ----
+Basilisk	石化蜥蜴
+King Basilisk	石化蜥蜴王
+Fibrase	菲布拉斯
+Ghoul	食尸鬼
+Bandit	大盗
+Cutpurse	扒手
+Skeleton	骷髅
+Zombie	僵尸
+Banshee	女妖
+Specter	幽灵
+Spectre	幽灵
+Apparition	幻影
+Petrified Mummy	石化木乃伊
+Mummy	木乃伊
+Bone Thrasher	碎骨者
+Dragonfly	龙蝇
+Fire Dragonfly	火龙蝇
+Dragonfly Mite	龙蝇幼虫
+Imp	小恶魔
+Imp Elder	小恶魔长老
+Lesser Demon	低等恶魔
+Greater Demon	高等恶魔
+Frost Giant	冰霜巨人
+Forest Giant	森林巨人
+Bigfoot	大脚怪
+Gezzampt	盖赞普特
+Skeletoid	类骷髅
+Colloidal Warrior	胶体战士
+Jellyspore	凝胶孢子
+Concubine	妃妾
+Guard Captain	卫兵队长
+Winged Mutant	有翼变异体
+Magreeb	马格里布兽
+Evil Sorcerer	邪恶巫师
+Thrall Master	奴隶主
+Elemental Thjorad	元素索拉德
+Dragon King	龙王
+Lich King	巫妖王
+Terror	惧魔
+# ---- 人物 ----
+Old Man	老人
+Yrsa the Troll	巨魔伊尔莎
+Yrsa	伊尔莎
+Bikki Yrsadotir	比琪·伊尔莎多蒂尔
+Bikki	比琪
+Forad Darre	福拉德·达雷
+Forad	福拉德
+Tamur Leng	塔穆尔·冷
+Tamur	塔穆尔
+Njam the Meddler	搅局者尼亚姆
+Njam	尼亚姆
+Krohn	克罗恩
+Fre	芙蕾
+Hanndl	汉德尔
+Skraelos	斯克雷洛斯
+Bjarni Thorvaldssen	比亚尼·索瓦尔德森
+Bjarni Herjolfssen	比亚尼·赫约尔夫森
+Bjarni	比亚尼
+Sigmund the Stressed	焦虑者西格蒙德
+Sigmund	西格蒙德
+Markel the Great	伟大的马克尔
+Markel	马克尔
+Sven Forkbeard	叉须斯文
+Sven	斯文
+Tryygva Ravenlocks	鸦发特里格瓦
+Tryggva Ravenlocks	鸦发特里格瓦
+Tryygva	特里格瓦
+Tryggva	特里格瓦
+Kira the Cold	冷酷的基拉
+Kira	基拉
+Yanmir the Frost Giant	冰霜巨人扬米尔
+Yanmir	扬米尔
+Ivsar Forktooth	叉牙伊夫萨
+Ivsar	伊夫萨
+Ivan the Smart	聪明的伊万
+Ivan	伊万
+Gudrek the Miner	矿工古德雷克
+Gudrek	古德雷克
+Ketil Strongpick	强镐凯蒂尔
+Ketil	凯蒂尔
+Dain Swordstrong	强剑戴恩
+Dain	戴恩
+Gunnar Thjorsmith	贡纳·索尔史密斯
+Gunnar	贡纳
+Hjarrand the Fixer	修理匠希亚兰德
+Hjarrand Fixer	修理匠希亚兰德
+Hjarrand	希亚兰德
+Thorolf Ratatoskssen	索洛夫·拉塔托斯克森
+Thorir Mouth	大嘴索里尔
+Njal Bjarnissen	尼亚尔·比亚尼森
+Bodvar Elvissen	伯德瓦·埃尔维森
+Bodvar	伯德瓦
+Aymril Banito	艾姆里尔·巴尼托
+Mata Abyomi	玛塔·阿比奥米
+Moenach	莫纳赫
+Mendossus	门多苏斯
+Antoni	安东尼
+Brother Kennet	肯尼特修士
+Comgghan A'Feslo	康根·阿费斯洛
+Emperor Trislan	特里斯兰皇帝
+Ursanian	乌萨尼亚
+Johannes Verhoffin	约翰内斯·维霍芬
+Verhoffin	维霍芬
+Randver the Storm	风暴兰德维尔
+Randver	兰德维尔
+Ludwig Van	路德维希·凡
+Ludwig	路德维希
+Greudach A'Dorad	格鲁达赫·阿多拉德
+Greudach	格鲁达赫
+Marsaili A'Lanth	玛赛莉·阿兰斯
+Marsaili	玛赛莉
+Nicolai Ironfist	尼古莱·铁拳
+Nicolai	尼古莱
+Snorri the Fist	铁拳斯诺里
+Snorri	斯诺里
+Brewmaster Smith	酿酒大师史密斯
+Brewmaster	酿酒大师
+Aklai Dorka	阿克莱·多卡
+Ealusaid A'Norta a'thrakan	伊露赛德·阿诺塔·阿斯拉坎
+Ealusaid	伊露赛德
+Mad Wizard Robinssen	疯巫师罗宾森
+Robinssen	罗宾森
+Ramnivar	拉姆尼瓦
+Dagfari the Peevish	暴躁的达格法里
+Dagfari	达格法里
+Erlend the Nay-sayer	唱反调的埃尔伦德
+Erlend	埃尔伦德
+Brynhildr the Money-wise	精于理财的布琳希尔德
+Brynhildr	布琳希尔德
+Ragnar Gjalpssen	拉格纳·吉亚尔普森
+Herdis the Stout	壮实的赫迪丝
+Hlif Ingimundssen	赫莉芙·英吉蒙德森
+Ottar Gizurssen	奥塔·吉祖尔森
+Fiachna A'Lanth	菲亚赫纳·阿兰斯
+Abbot Leffery Caid	修道院长莱弗里·凯德
+Leffery	莱弗里
+The Dook	杜克
+Dook	杜克
+Ebora	伊波拉
+Jokull the Ugly	丑陋的约库尔
+Jokull	约库尔
+Atli Sigmundssen	阿特利·西格蒙德森
+Atli the Quick	快手阿特利
+Atli	阿特利
+Hungerda	洪格达
+Thorfinn Skullsplitter	碎颅者索芬
+Olaf Ullson	奥拉夫·乌尔森
+Keith Bloodaxe	血斧基斯
+Keith	基斯
+Hring the Plowhands	犁手赫林
+Hring	赫林
+Ragnheid Lifegiver	赐生者拉格海德
+Ragnheid	拉格海德
+Tyock A'Norta a'leipshi	泰约克·阿诺塔·阿莱普希
+Tyock	泰约克
+Iosobail	伊索贝尔
+Yobboe	约博
+Yobboes	约博帮
+Yobboe Gang	约博帮
+Fridleif Gjukissen	弗里德莱夫·吉乌基森
+Fridleif	弗里德莱夫
+Lord Kluso	克鲁索领主
+Kluso	克鲁索
+Guaire A'Velsi	盖尔·阿维尔西
+Guaire	盖尔
+Fenja Tree-friend	树友芬雅
+Fenja	芬雅
+Chadwick Boorsley	查德威克·布尔斯利
+Chadwick	查德威克
+Grehgknak the Right	正义者格雷格纳克
+Grehgknak	格雷格纳克
+Byri the Scarred	刀疤拜里
+Byri	拜里
+Harris Willington	哈里斯·威灵顿
+Harris	哈里斯
+Hatlati Oord	哈特拉蒂·奥德
+Hatlati	哈特拉蒂
+Itlor Oord	伊特洛·奥德
+Itlor	伊特洛
+Oord	奥德
+Yoltzin	约尔琴
+Cetzpal	塞茨帕尔
+Mazat	马扎特
+Injor Gostat	因约尔·戈斯塔特
+Injor	因约尔
+Tymon the Nord	北方人泰蒙
+Tymon	泰蒙
+Johannes Bem	约翰内斯·本
+Johannes	约翰内斯
+Tjolnir the Super-neat	超级整洁的提约尼尔
+Tjolnir	提约尼尔
+Nutty Nurtigan	疯子努尔蒂根
+Nurtigan	努尔蒂根
+Skarphedinn Njalssen	斯卡菲丁·尼亚尔森
+Skarphedinn	斯卡菲丁
+Hjordisa the Hag	老巫婆希约迪莎
+Old Hag	老巫婆
+Gray Slemnir	灰袍斯莱姆尼尔
+Robert Aefgil	罗伯特·艾夫吉尔
+Nath'i A'Mor	纳西·阿莫尔
+Menja Ketildotir	门雅·凯蒂尔多蒂尔
+Menja	门雅
+The Green Man	绿人
+Green Man	绿人
+Fland de Allasan	弗兰德·德·阿拉桑
+Fland	弗兰德
+Soxolf Tryygvassen	索克索夫·特里格瓦森
+Soxolf	索克索夫
+Flosi Stickpoker	弗洛西·斯蒂克波克
+Gudrun Fyridotir	古德伦·菲里多蒂尔
+Pules Haji	普列斯·哈吉
+Goti Egilssen	戈蒂·埃吉尔森
+Goti	戈蒂
+Tuathal A'Ghrie	图阿塔尔·阿格里
+Tjorvi the Bold	勇敢的提约尔维
+Jozka Dorcan	约兹卡·多尔坎
+Rannveig the Elvish	精灵般的兰薇格
+Erik the Fish-head	鱼头埃里克
+Hjalnek the Orc-faced	兽人脸希亚尔内克
+Fyri the Black-heart	黑心菲里
+Skulkil the Dark	黑暗的斯库尔基尔
+# ---- 船与交通 ----
+Sea's Fang	海牙号
+The Raider	掠袭者号
+The Flying Bird	飞鸟号
+Black Hammer	黑锤号
+The Racing Fire	疾火号
+Dragon Passage	龙之航道
+# ---- 物品 ----
+Everstrike	永击
+Gungnir	冈格尼尔
+Saint's Relic	圣徒遗物
+Black Orb of Knowledge	知识黑球
+Orb of Linking	连接宝珠
+Orbs of Linking	连接宝珠
+Scroll of Bad News	坏消息卷轴
+Keg of Strange Brew	一桶怪酒
+Love Letter	情书
+Kira's Shield	基拉的盾
+Basilisk Skin	石化蜥蜴皮
+King Basilisk Skin	石化蜥蜴王皮
+Black's Heart	黑心
+Chedian Chain	切迪安锁甲
+Eye of the Storm	风暴之眼
+Verhoffin's Book	维霍芬之书
+Verhoffin's Diary	维霍芬日记
+Book Key	书钥匙
+Lock of Hair	一绺头发
+Tree of Life	生命之树
+Ritual of Consecration	祝圣仪式
+Lich Instructions	巫妖说明
+Elixir of Defedation	污秽药剂
+Elixir Ingredients	药剂原料
+Elixir Fluid	药剂液
+Transmutation Engine	转化引擎
+Farmer's Plow	农夫的犁
+Midwife's Bag of Herbs	接生婆的药草袋
+Dolly	玩偶
+Sage's Diary	贤者日记
+Njam's Key	尼亚姆的钥匙
+Turret Key	塔楼钥匙
+Trap Key	陷阱钥匙
+Maze Key	迷宫钥匙
+Stairs Key	楼梯钥匙
+Crona Kiga	克罗纳·基加
+Frost Shell	冰霜贝壳
+Strategy Tips	策略提示
+Broken Slag Extractor	损坏的炉渣提取器
+Slag Extractor	炉渣提取器
+# ---- 店名 ----
+Magical Touches	魔法之触
+Hreidmar's Stuff	赫雷德玛杂货
+The Golden Dryad	黄金树妖
+Stonecaster's Scrolls	掷石者卷轴店
+Gunnar's Accoutrements	贡纳的装备店
+Eye of Newt	蝾螈之眼
+Akl'ai's Spirits	阿克莱酒铺
+The Dancing Bard	起舞的吟游诗人
+Drunken Berserker	醉酒狂战士
+Trellborg's Fight	特雷尔堡之战
+The Stumbling Hero	蹒跚英雄
+Great White North	大白北
+Idiot's Box	傻子小屋
+# ---- 翻译过程中新增（任务名、机关、书名等） ----
+Thjorad	索拉德
+Sven Svenssen	斯文·斯文森
+Troglodyte	穴居人
+Troglodyte Gnoll	穴居豺狼人
+Hallenhalt	哈伦哈特
+Hubris	休布里斯
+Ursanian Empire	乌萨尼亚帝国
+Yanmir's Key	扬米尔的钥匙
+Lump	碎块
+Chunk	大块
+Lode	矿脉
+Weapons of the Ursanian Empire	乌萨尼亚帝国的武器
+A Study in Tactical Strategy	战术策略研究
+Fortifications and their Use	防御工事及其运用
+Methodology of Acquiring Information	情报获取方法论
+Interface I	界面 I
+Interface II	界面 II
+Spells	法术
+Skills	技能
+Classes	职业
+Notes	笔记
+Shopkeepers	商店老板
+Movement I	移动 I
+Movement II	移动 II
+Combat	战斗
+Unite the Clans	联合各部族
+Find a way off the island	找到离开这座岛的办法
+Moenach A'Tryht	莫纳赫·阿特赖特
+Muiredach A'Lanth	缪雷达赫·阿兰斯
+Yoltzin Tor	约尔琴·托尔
+Thorolf	索洛夫
+Thorir	索里尔
+Dagrell	达格雷尔
+Spectre Dagrell	幽灵达格雷尔
+Annelid	环节虫
+Bloodsucker	吸血虫
+Spencer's Obedience	斯宾塞的服从
+The Battlefield	战场
+Huckster	小贩
+Game Instructions	游戏说明
+Ding the Bell	敲钟
+Strongarm the Half-orc	掰倒半兽人
+Whack-a-Honky	打霍恩克教徒
+Stones	石子棋
+Runestones	符文石
+Runes	符文
+Scrap of Book	书的残页
+Scrap of Diary	日记残页
+Lab Room	实验室
+Njam's Struggle	尼亚姆的奋斗
+Guilt	罪责
+Confession	忏悔
+Suffering	苦难
+Retribution	惩罚
+Absolution	赦免
+Rebirth	重生
+Questioner	审问者
+Battle of Frosgard	弗罗斯加德之战
+Lori	洛莉
+Hat'lai	哈特莱
+Oor'ds	奥德一家
+Lord (Arena level)	爵士级
+Priest Light	光明主教
+Sun Button	太阳按钮
+Star Button	星形按钮
+Diamond Button	菱形按钮
+Moon Button	月亮按钮
+Main Button	主按钮
+Prison Button	监牢按钮
+Left Door	左门
+Door 5	5 号门
+Level A	A 层
+Level B	B 层
+Level C	C 层
+Jar	罐子
+Elixir Instructions	药剂说明
+Lich's Transmutation	巫妖转化
+The Green Man (amulet)	“绿人”护身符
+maypole	五朔节花柱
+runestone	符文石
+Speak to Atli Sigmundssen	与阿特利·西格蒙德森交谈
+Guard Atli Sigmundssen's Boat	守卫阿特利·西格蒙德森的船
+Defeat the Yobboes	击败约博帮
+Return the Plow	归还犁
+Return the Dolly	归还玩偶
+Return the Herbs	归还药草
+Kill a basilisk	杀死一只石化蜥蜴
+Get Kira's shield	取得基拉的盾
+Win in the Arena	在竞技场获胜
+Steal the knife	偷取匕首
+Kill Guaire A'Velsi	杀死盖尔·阿维尔西
+Find Everstrike	寻找永击
+Pass through Dungeon of Secrets	通过秘密地牢
+Stop Jarl Sven's assassination	阻止刺杀斯文领主
+Find Harris Willington	找到哈里斯·威灵顿
+Arrest the thief	逮捕小偷
+Help the Oor'ds help themselves	帮奥德一家自力更生
+Find Itlor a job	给伊特洛找份工作
+Study a Magreeb	研究马格里布兽
+Find Verhoffin's Diary	寻找维霍芬日记
+Heal Nutty Nurtigan	治好疯子努尔蒂根
+Find a new priest for the new temple	为新神庙找一位新神甫
+Find a new Tree of Life	寻找新的生命之树
+Learn the Ritual of Consecration	学习祝圣仪式
+Find the Green Man	寻找绿人
+Fix the maypole in the center of town	修好镇中心的五朔节花柱
+Get a promise from Frosgard	取得弗罗斯加德的承诺
+Get Tryygva to erect a runestone	让特里格瓦立一块符文石
+Become a Lich	成为巫妖
+Find the saboteur	找出破坏者
+Retrieve Ludwig's Manuscript	取回路德维希的手稿
+Find out who is spreading gossip	查出是谁在散播流言
+Get Nicolai a job	给尼古莱找份工作
+Survive the Training Hall	闯过训练场
+Sell Brewmaster Smith's new concoction to Guberland	把酿酒大师史密斯的新酒卖到古伯兰
+Get Black Orb of Knowledge	取得知识黑球
+Take the news to the Temple of Ratatosk	把消息送到拉塔托斯克神庙
+Get the Orbs of Linking	取得连接宝珠
+Slay the Dragon	屠龙
+Retrieve the missing relic	取回失踪的遗物
+Take love letter to Kira the Cold	把情书送给冷酷的基拉
+Convince the Dook to leave Guberland	劝杜克离开古伯兰
+Steal the Golden Honk	偷取黄金霍恩克
+Clean out the Bathhouse	清理浴场
+Find Gungnir	寻找冈格尼尔
+My Evermore Beloved	我永远的挚爱
+Sturmfordians	斯特姆福德人
+Herjolfssen	赫约尔夫森
+Jarl's palace	领主宫殿
+land gate	陆门
+Kira's hall	基拉的大厅
+accountant's key	会计的钥匙
+Ladder Door	梯子门
+Falling Bookcase Switch	倒塌书架开关
+Secret Switch 1	秘密开关 1
+Secret Panel 1	秘密面板 1
+Switch 0	开关 0
+Teleporter 1	传送器 1
+Warning: Heat Valve	警告：热力阀
+The Dragon	巨龙号
+Fre's Rain	芙蕾之雨
+Dragon Passage (dock)	龙之航道（码头）
