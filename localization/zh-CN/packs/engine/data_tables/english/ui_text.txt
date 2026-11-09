@@ -7820,3 +7820,7 @@ needs Grandmaster	需要宗师
 {place}: won	{place}：已获胜
 Won	已获胜
 Not won yet	尚未获胜
+ Learned automatically at skill {n#}.	技能达到 {n#} 级时自动习得。
+ Requires a class promotion first.	需要先完成职业晋升。
+ No trainer found.	没有找到导师。
+ No trainer known yet: a tavern sells the Ledger of Teachers.	尚无已知导师：酒馆出售导师名册。
