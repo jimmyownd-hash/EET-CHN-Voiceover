@@ -1,0 +1,90 @@
+commit 0b298e87f7cfa0c9daa60d09769f89567bdd7e7d
+Author: Claude <noreply@anthropic.com>
+Date:   Mon Nov 9 14:29:16 2026 +0000
+
+    zh-CN: translate bench delete lines, slot names, item count, monster effect names, bounty boss affix
+    
+    Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>
+    Claude-Session: https://claude.ai/code/session_01UHe1A2Bvv4nqaoT77tYvDB
+
+diff --git a/game/gameplay/BountyHuntRuntime.cpp b/game/gameplay/BountyHuntRuntime.cpp
+index 1daa391..cce35b0 100644
+--- a/game/gameplay/BountyHuntRuntime.cpp
++++ b/game/gameplay/BountyHuntRuntime.cpp
+@@ -5,6 +5,8 @@
+ #include "game/gameplay/ReputationRuntime.h"
+ #include "game/rules/GameRules.h"
+ #include "game/rules/MonsterRules.h"
++#include "game/rules/maw/MawMonsterRules.h"
++#include "game/ui/UiText.h"
+ #include "game/party/Party.h"
+ #include "game/tables/NpcDialogTable.h"
+ 
+@@ -86,6 +88,12 @@ MonsterTable::MonsterStatsEntry bountyNamedStats(
+         ActorRulesetFacts facts;
+         facts.bossAffix = bossAffix;
+         named.name = gameRulesFor(pParty).monsters.actorDisplayName(facts, stats.name);
++        const std::string affixName = mawBossAffixName(MawBossAffix(bossAffix));
++
++        if (!affixName.empty() && named.name.compare(0, affixName.size(), affixName) == 0)
++        {
++            named.name = UiText::translate(affixName) + named.name.substr(affixName.size());
++        }
+     }
+ 
+     return named;
+diff --git a/game/ui/GameplayCraftingBenchRenderer.cpp b/game/ui/GameplayCraftingBenchRenderer.cpp
+index 8a5fa7c..034dd13 100644
+--- a/game/ui/GameplayCraftingBenchRenderer.cpp
++++ b/game/ui/GameplayCraftingBenchRenderer.cpp
+@@ -9,6 +9,7 @@
+ #include "game/ui/GameplayAlchemyBenchView.h"
+ #include "game/ui/GameplayBenchPainter.h"
+ #include "game/ui/GameplayCraftingBenchView.h"
++#include "game/ui/UiText.h"
+ 
+ #include <SDL3/SDL.h>
+ 
+@@ -453,7 +454,7 @@ void GameplayCraftingBenchRenderer::render(GameplayScreenRuntime &context, const
+             {
+                 if (!contains(after, line.text))
+                 {
+-                    lineY = painter.paragraph("CraftingBenchCompare", "- " + line.text, GameplayUiSkin::Penalty, lineY);
++                    lineY = painter.paragraph("CraftingBenchCompare", "- " + UiText::translate(line.text), GameplayUiSkin::Penalty, lineY);
+                 }
+             }
+ 
+diff --git a/game/ui/GameplayCraftingBenchView.cpp b/game/ui/GameplayCraftingBenchView.cpp
+index f125a77..f6c1868 100644
+--- a/game/ui/GameplayCraftingBenchView.cpp
++++ b/game/ui/GameplayCraftingBenchView.cpp
+@@ -7,6 +7,7 @@
+ #include "game/tables/ItemTable.h"
+ #include "game/tables/MergedBaseTables.h"
+ #include "game/ui/GameplayAlchemyBenchView.h"
++#include "game/ui/UiText.h"
+ 
+ #include <algorithm>
+ #include <cmath>
+@@ -229,7 +230,7 @@ std::optional<GameplayCraftingBenchModel> GameplayCraftingBenchView::buildModel(
+         const CraftTargetEntry &target = model.targets[*model.selectedTarget];
+         const Character *pOwner = pParty->member(target.ref.memberIndex);
+         model.ownerText = (pOwner != nullptr ? pOwner->name + ", level " + std::to_string(pOwner->level) : "")
+-            + (target.ref.worn ? ", " + slotName(target.ref.slot) : ", in the pack");
++            + (target.ref.worn ? ", " + UiText::translate(slotName(target.ref.slot)) : ", in the pack");
+     }
+ 
+     if (model.selectedTarget && model.selectedMaterial)
+diff --git a/game/ui/GameplayPartyOverlayRenderer.cpp b/game/ui/GameplayPartyOverlayRenderer.cpp
+index 4feafc2..15d48e7 100644
+--- a/game/ui/GameplayPartyOverlayRenderer.cpp
++++ b/game/ui/GameplayPartyOverlayRenderer.cpp
+@@ -11456,7 +11456,7 @@ void GameplayPartyOverlayRenderer::renderActorInspectOverlay(GameplayScreenRunti
+                 return;
+             }
+ 
+-            activeEffects.push_back(std::string(pName) + " "
++            activeEffects.push_back(UiText::translate(pName) + " "
+                 + GameplayHudOverlaySupport::formatRemainingDuration(std::ceil(remainingSeconds)));
+         };
+ 

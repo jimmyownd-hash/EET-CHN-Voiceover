@@ -1,0 +1,24 @@
+commit 9b2cab404ac13bed509ec357ec9a39a0d6aeea98
+Author: Claude <noreply@anthropic.com>
+Date:   Mon Nov 9 04:04:31 2026 +0000
+
+    Roster join topics: also match Chinese topic labels (fixes 'topic has no event' in zh-CN)
+    
+    Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>
+    Claude-Session: https://claude.ai/code/session_01UHe1A2Bvv4nqaoT77tYvDB
+
+diff --git a/game/tables/NpcDialogTable.cpp b/game/tables/NpcDialogTable.cpp
+index 5d8d092..10b9ed4 100644
+--- a/game/tables/NpcDialogTable.cpp
++++ b/game/tables/NpcDialogTable.cpp
+@@ -124,7 +124,9 @@ bool isTeacherHintTopicRow(const std::vector<std::string> &row)
+ 
+ bool isRosterJoinTopicLabel(const NpcTopicEntry &entry)
+ {
+-    return entry.topic == "Roster Join Event" || entry.topic == "Join";
++    // The Chinese pack renames these table labels, so match the translated names too.
++    return entry.topic == "Roster Join Event" || entry.topic == "Join"
++        || entry.topic == "加入队员清单事件" || entry.topic == "加入";
+ }
+ 
+ std::optional<NpcDialogTable::RosterJoinOffer> buildRosterJoinOffer(
