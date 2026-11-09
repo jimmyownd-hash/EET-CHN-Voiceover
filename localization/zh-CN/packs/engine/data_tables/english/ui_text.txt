@@ -5137,6 +5137,68 @@ Skill bonus: +{points}	技能加成：+{points}
 Skill bonus: 	技能加成：
 Awards earned: {count}	获得荣誉：{count}
 {time} remaining	剩余 {time}
+Special:  +{n#} to all Resistances.	特殊：所有抗性 +{n#}。
+ +{n#} to all Resistances.	所有抗性 +{n#}。
+Special:  +{n#} to all Seven Statistics.	特殊：七项属性全部 +{n#}。
+ +{n#} to all Seven Statistics.	七项属性全部 +{n#}。
+Special:  +{n#} Hit points and Regenerate Hit points over time.	特殊：生命值 +{n#}，并随时间再生生命值。
+ +{n#} Hit points and Regenerate Hit points over time.	生命值 +{n#}，并随时间再生生命值。
+Special:  +{n#} Speed and Accuracy.	特殊：速度与准确 +{n#}。
+ +{n#} Speed and Accuracy.	速度与准确 +{n#}。
+Special:  +{n#} Endurance and +{m} Armor.	特殊：耐力 +{n#}，护甲 +{m}。
+ +{n#} Endurance and +{m} Armor.	耐力 +{n#}，护甲 +{m}。
+Special:  +{n#} Intellect and Luck.	特殊：智力与运气 +{n#}。
+ +{n#} Intellect and Luck.	智力与运气 +{n#}。
+Special:  +{n#} Fire Resistance and Regenerate Hit points over time.	特殊：火系抗性 +{n#}，并随时间再生生命值。
+ +{n#} Fire Resistance and Regenerate Hit points over time.	火系抗性 +{n#}，并随时间再生生命值。
+Special:  +{n#} Endurance and Accuracy.	特殊：耐力与准确 +{n#}。
+ +{n#} Endurance and Accuracy.	耐力与准确 +{n#}。
+Special:  +{n#} Might and Personality.	特殊：力量与个性 +{n#}。
+ +{n#} Might and Personality.	力量与个性 +{n#}。
+Special:  +{n#} Endurance and Regenerate Hit points over time.	特殊：耐力 +{n#}，并随时间再生生命值。
+ +{n#} Endurance and Regenerate Hit points over time.	耐力 +{n#}，并随时间再生生命值。
+Special:  +{n#} Might and Endurance.	特殊：力量与耐力 +{n#}。
+ +{n#} Might and Endurance.	力量与耐力 +{n#}。
+Special:  +{n#} Intellect and Personality.	特殊：智力与个性 +{n#}。
+ +{n#} Intellect and Personality.	智力与个性 +{n#}。
+Special:  +{n#} Personality and Accuracy.	特殊：个性与准确 +{n#}。
+ +{n#} Personality and Accuracy.	个性与准确 +{n#}。
+Special:  +{n#} Intellect and Might.	特殊：智力与力量 +{n#}。
+ +{n#} Intellect and Might.	智力与力量 +{n#}。
+Special:  +{n#} Intellect and Accuracy.	特殊：智力与准确 +{n#}。
+ +{n#} Intellect and Accuracy.	智力与准确 +{n#}。
+Special:  +{n#} Body and mind Resistances.	特殊：肢体与心智抗性 +{n#}。
+ +{n#} Body and mind Resistances.	肢体与心智抗性 +{n#}。
+Special:  +{n#} to Seven Stats, HP, SP, Armor, Resistances.	特殊：七项属性、生命、法术点、护甲、抗性全部 +{n#}。
+ +{n#} to Seven Stats, HP, SP, Armor, Resistances.	七项属性、生命、法术点、护甲、抗性全部 +{n#}。
+Special:  +{n#} to Endurance, Armor, Hit points.	特殊：耐力、护甲、生命值 +{n#}。
+ +{n#} to Endurance, Armor, Hit points.	耐力、护甲、生命值 +{n#}。
+Special:  +{n#} Spell points and Meditation Skill +{m}	特殊：法术点 +{n#}，冥想术 +{m}
+ +{n#} Spell points and Meditation Skill +{m}	法术点 +{n#}，冥想术 +{m}
+Special:  +{n#} Spell points, Speed, Intellect.	特殊：法术点、速度、智力 +{n#}。
+ +{n#} Spell points, Speed, Intellect.	法术点、速度、智力 +{n#}。
+Special:  +{n#} Luck and Meditation Skill +{m}	特殊：运气 +{n#}，冥想术 +{m}
+ +{n#} Luck and Meditation Skill +{m}	运气 +{n#}，冥想术 +{m}
+Special:  +{n#} Might, Intellect and Personality.	特殊：力量、智力与个性 +{n#}。
+ +{n#} Might, Intellect and Personality.	力量、智力与个性 +{n#}。
+Special:  +{n#} Elemental Resistances.	特殊：元素抗性 +{n#}。
+ +{n#} Elemental Resistances.	元素抗性 +{n#}。
+Special: Air Magic Skill +{n#}	特殊：空气魔法技能 +{n#}
+Special: Body Magic Skill +{n#}	特殊：肢体魔法技能 +{n#}
+Special: Dark Magic Skill +{n#}	特殊：暗黑魔法技能 +{n#}
+Special: Earth Magic Skill +{n#}	特殊：土系魔法技能 +{n#}
+Special: Fire Magic Skill +{n#}	特殊：火系魔法技能 +{n#}
+Special: Light Magic Skill +{n#}	特殊：光明魔法技能 +{n#}
+Special: Spirit Magic Skill +{n#}	特殊：灵魂魔法技能 +{n#}
+Special: Mind Magic Skill +{n#}	特殊：心智魔法技能 +{n#}
+Special: Water Magic Skill +{n#}	特殊：水系魔法技能 +{n#}
+Special: Meditation Skill +{n#}	特殊：冥想术 +{n#}
+Special: Regenerates Hit Points and Meditation Skill +{n#}	特殊：生命值再生，冥想术 +{n#}
+Special: Leech 10% of magical damage, increases cast speed (does not stack).	特殊：吸取 10% 的魔法伤害，提高施法速度（不可叠加）。
+Dimension quest 	异界任务 
+Dimension runs 	异界挑战 
+Current run 	当前挑战 
+Bounties 	悬赏 
 Special: {text}	特殊：{text}
 Set: {name} ({owned}/{total}, {state})	套装：{name}（{owned}/{total}，{state}）
 active	已激活
@@ -5600,6 +5662,7 @@ Reward: {reward}	奖励：{reward}
 paid	已领取
 +{points} Tech Points!	+{points} 科技点数！
 Congratulations! You have won {gold} gold.	恭喜！你赢得了 {gold} 金币。
+{n#} cleared	已通关 {n#} 次
 {slot} cleared	{slot}已清空
 Quick spell set to {spell}	备用魔法设为{spell}
 Attack spell set to {spell}	攻击魔法设为{spell}
