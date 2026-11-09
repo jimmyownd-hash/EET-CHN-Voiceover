@@ -1,290 +1,290 @@
 Q Bit	Quest Note Text	Notes	Owner
-1	激活区域 1 的 3 号和 4 号传送点。	Activate Area 1 teleporters 3 and 4.	Riki
-2	激活区域 1 的 5 号和 6 号传送点。	Activate Area 1 teleporters 5 and 6.	Riki
+1		Activate Area 1 teleporters 3 and 4.	Riki
+2		Activate Area 1 teleporters 5 and 6.	Riki
 3	将达德洛斯的信送给渡鸦海滨商人之家中的艾德加·费尔蒙	Given by Dadeross in Dagger Wound. Taken by Fellmoon in Ravenshore.	TomO
-4	任务点 3 的信已送达。	Letter from Q Bit 3 delivered.	TomO
+4		Letter from Q Bit 3 delivered.	TomO
 5	杀死匕伤岛上雷格那海盗前哨站站的首领	Given by the alliance council at Ravenshore along with quest 31. Starts Pirate Timer.	TomO
-6	已杀死匕伤岛海盗前哨站站的海盗首领（任务点 5 给予）。终结匕伤岛上海盗与蜥蜴人的战争。关闭海盗计时器。	Pirate Leader in Dagger Wound Pirate Outpost killed (quest given at Q Bit 5). Ends pirate/lizardman war on Dagger Wound. Shuts off pirate timer.	TomO
+6		Pirate Leader in Dagger Wound Pirate Outpost killed (quest given at Q Bit 5). Ends pirate/lizardman war on Dagger Wound. Shuts off pirate timer.	TomO
 7	将布拉克许·单牙的传送水晶带回给费德瑞克·塔力米尔	Brekish Onefang asks player to bring a power crystal to Fredrick Talimere	TomO
-8	玩家携带水晶拜访了费德瑞克·塔力米尔。	Fredrick Talimere visited by player with crystal in their possesion.	TomO
+8		Fredrick Talimere visited by player with crystal in their possesion.	TomO
 9	"将费尔蒙的黑函交给半鼠人走私集团的首领艾瑞安·韩特，并将结果回报至艾尔加·费尔蒙"	"Given and taken by Elgar Fellmoon (w503, area 2)."	TomO
-10	任务点 9 的信已送达。	Letter from Q Bit 9 delivered.	TomO
+10		Letter from Q Bit 9 delivered.	TomO
 11	"将消息报告至阿尔瓦商人公会会长巴斯沉·卢德林"	"Given By Elgar Fellmoon (w503, area 2). Taken by Bastian Loudrin (area 3)."	TomO
-12	任务 11 已完成。	Quest 11 is done.	TomO
+12		Quest 11 is done.	TomO
 13	在贾丹姆大陆的主要势力之间结盟	Given by Bastian Lourdrin (area 3). Activates Merchanthouse in Alvar. Checked as each alliance is formed. Taken when three are formed. 	TomO
 14	和影旋山脉区域的死灵法师公会结盟	Given by Bastian Lourdrin (area 3). Activates Merchanthouse in Alvar. Taken by Sandro (area 6) or when quest 15 is done.	TomO
 15	和低语之森的太阳神庙结盟	"Given by Bastian Lourdrin (area 3). Activates Merchanthouse in Alvar. Taken by Oskar Tyre (area 7), or when quest 27 is done."	TomO
 16	和绞刑峡谷的猎龙人结盟	Given by Bastian Lourdrin (area 3). Activates Merchanthouse in Alvar. Taken when Dragon Egg (item 605) delivered to Charles Quixote or dragon leader.	TomO
 17	和绞刑峡谷的飞龙们结盟	Given by Bastian Lourdrin (area 3). Activates Merchanthouse in Alvar. Taken when Dragon Egg (item 605) delivered to Charles Quixote or dragon leader.	TomO
 18	和残破镇的牛头人结盟	Given by Bastian Lourdrin (area 3). Activates Merchanthouse in Alvar. Taken when minotaurs rescued.	TomO
-19	已与死灵法师公会结盟。已偷取夜影香炉。	Allied with Necromancers Guild. Steal Nightshade Brazier done.	TomO
-20	已与太阳神庙结盟。已摧毁骷髅转化器。	Allied with Temple of the Sun. Destroy the Skeleton Transformer done.	TomO
-21	已与查尔斯·基克索特的猎龙人结盟。已将龙蛋归还给基克索特。	Allied with Charles Quioxte's Dragon Hunters. Return Dragon Egg to Quixote done.	TomO
-22	已与巨龙结盟。已将龙蛋归还给巨龙。	Allied with Dragons. Return Dragon Egg to Dragons done.	TomO
-23	已与牛头人结盟。已营救牛头人。	Allied with Minotaurs. Rescue the Minotaurs done.	TomO
-24	因完成任务 9 而从艾尔加·费尔蒙处获得奖励。	Received Reward from Elgar Fellmoon for completing quest 9.	TomO
+19		Allied with Necromancers Guild. Steal Nightshade Brazier done.	TomO
+20		Allied with Temple of the Sun. Destroy the Skeleton Transformer done.	TomO
+21		Allied with Charles Quioxte's Dragon Hunters. Return Dragon Egg to Quixote done.	TomO
+22		Allied with Dragons. Return Dragon Egg to Dragons done.	TomO
+23		Allied with Minotaurs. Rescue the Minotaurs done.	TomO
+24		Received Reward from Elgar Fellmoon for completing quest 9.	TomO
 25	找到一个目击火湖形成的证人，并且将它带回阿尔瓦的商人公会。	Given and taken by Bastian Lourdrin (area 3).	TomO
 26	找到影旋山脉的死灵法师公会中的骷髅转换器，摧毁它之后回去找奥斯卡·提尔报到。	Given and taken by Oskar Tyre (area 7). Taken when Qbit 29 set.	TomO
-27	骷髅转化器已被摧毁。	Skeleton Transformer Destroyed.	TomO
+27		Skeleton Transformer Destroyed.	TomO
 28	"将龙葵灯炉带给死灵法师公会的领导者山德罗。龙葵灯炉就在太阳神庙之中。"	Given and taken by Sandro (area 6). Taken when Qbit 27 set.	TomO
-29	夜影香炉已被偷走。	Nightshade Brazier Stolen.	TomO
+29		Nightshade Brazier Stolen.	TomO
 30	救出被困在残破镇的巢穴中的牛头人。	Given by MINOTAUR CLUE GUY (area 8). Turned off when minotaur leader is reached in Minotaur lair dungeon.	TomO
 31	从残破镇旁索格的要塞中找出龙蛋，并且带回去给绞刑峡谷的查尔斯·吉科德。	Given and taken by Quixote (area 5)	TomO
-32	任务 31 已完成。	Quest 31 is done.	TomO
+32		Quest 31 is done.	TomO
 33	"找到龙蛋，并且带回去给飞龙的领袖，达夫克劳·红斧。"	Given and taken by DRAGON LEADER (area 5)	TomO
-34	联盟议会已成立。任务 13 已完成。	Alliance Council formed. Quest 13 done.	TomO
-35	任务 33 已完成。	Quest 33 is done.	TomO
+34		Alliance Council formed. Quest 13 done.	TomO
+35		Quest 33 is done.	TomO
 36	把雷格那的舰队弄沉，回到渡鸦海滨的议会报告。	Given and taken at Ravenshore council chamber. 	TomO
-37	雷格那海盗舰队已被击沉。	Regnan Pirate Fleet is sunk.	TomO
-38	任务 36 已完成。	Quest 36 is done.	TomO
+37		Regnan Pirate Fleet is sunk.	TomO
+38		Quest 36 is done.	TomO
 39	找到考瑞·黑王座。提示：大家只知道她最后一次拜访过的人是低语之森的丹提理安，从此之后便杳无音信。	Dark Elf Promotion to Patriarch	James
-40	已找到并营救考里·布莱克索恩	Found and Rescued Cauri Blackthorne	James
+40		Found and Rescued Cauri Blackthorne	James
 41	将水之心从水元素界带回来给萨索尔。	Given by XANTHOR. Taken when 41-44 done simultaneously.	TomO
 42	将风之心从风元素界带回来给萨索尔。	Given by XANTHOR. Taken when 41-44 done simultaneously.	TomO
 43	将地之心从地元素界带回来给萨索尔。	Given by XANTHOR. Taken when 41-44 done simultaneously.	TomO
 44	将火之心从火元素界带回来给萨索尔。	Given by XANTHOR. Taken when 41-44 done simultaneously.	TomO
-45	任务 41-44 已完成。已将 41-44 的物品交给赞瑟。	Quests 41-44 done. Items from 41-44 given to XANTHOR.	TomO
+45		Quests 41-44 done. Items from 41-44 given to XANTHOR.	TomO
 46	穿过水晶传送门，找到大灾变发生的根源。	Given by XANTHOR. Taken by Eschaton.	TomO
-47	任务 46 已完成。用于允许进入元素领主监牢。现在玩家需要物品 629。	Quest 46 done. Used to allow entrance to elemental lord prisons. Now player needs item 629.	TomO
+47		Quest 46 done. Used to allow entrance to elemental lord prisons. Now player needs item 629.	TomO
 48	"救出火之王。"	Given by Eschaton. Taken by rescue of Pyrannaste.	TomO
-49	任务 48 已完成。	Quest 48 done.	TomO
+49		Quest 48 done.	TomO
 50	"救出土之王。"	Given by Eschaton. Taken by rescue of Gralkor.	TomO
-51	任务 50 已完成。	Quest 50 done.	TomO
+51		Quest 50 done.	TomO
 52	"救出水之王。"	Given by Eschaton. Taken by rescue of Acwalander.	TomO
-53	任务 52 已完成。	Quest 52 done.	TomO
+53		Quest 52 done.	TomO
 54	"救出风之王。"	Given by Eschaton. Taken by rescue of Shalwend.	TomO
-55	任务 54 已完成。	Quest 54 done.	TomO
-56	任务 48、50、52、54 的领主已全部获救。	"All Lords from quests 48, 50, 52, 54 rescued."	TomO
-57	海盗入侵了渡鸦海滨	The Pirates invaded Ravenshore	TomO
-58	入侵渡鸦海滨的海盗现已全部死亡 )	The Pirates that invaded Ravenshore are all dead now )	TomO
-59	与奥弗杜恩一同回到阿尔瓦的商人公会。任务 25 已完成。	Returned to the Merchant guild in Alvar with overdune. Quest 25 done.	TomO
-60	任务点 25 设置后，队伍前往铁砂。	Party visits Ironsand After QuestBit 25 set.	TomO
+55		Quest 54 done.	TomO
+56		"All Lords from quests 48, 50, 52, 54 rescued."	TomO
+57		The Pirates invaded Ravenshore	TomO
+58		The Pirates that invaded Ravenshore are all dead now )	TomO
+59		Returned to the Merchant guild in Alvar with overdune. Quest 25 done.	TomO
+60		Party visits Ironsand After QuestBit 25 set.	TomO
 61	将弹指兄弟维尔拜的骨灰葬到村庄的墓穴之中，并回来找弹指。	"Given and taken by Overdune, NPC 7, w177. "	TomO
-62	已把毒咬者之灰（物品 603）放入食人妖墓穴。	Vilebites Ashes (item603) placed in troll tomb.	TomO
-63	任务 61 已完成。	Quest 61 done.	TomO
-64	正在进行营救鼠人的任务	On the rescue the wererats quest	TomO
-65	已完成营救鼠人的任务	Finished the Rescue the wererats quest	TomO
-66	正在进行杀死食人魔堡垒食人魔的任务	On the Quest to kill the Ogres in the Ogre Fort	TomO
-67	我已杀死食人魔堡垒中的全部食人魔	I have killed all the oges in the ogre fort	TomO
+62		Vilebites Ashes (item603) placed in troll tomb.	TomO
+63		Quest 61 done.	TomO
+64		On the rescue the wererats quest	TomO
+65		Finished the Rescue the wererats quest	TomO
+66		On the Quest to kill the Ogres in the Ogre Fort	TomO
+67		I have killed all the oges in the ogre fort	TomO
 68	找到食人妖古老家园，并回到铁沙漠找瓦络德·沙风解释。	Given By ? In area 4	James
-69	已找到远古巨魔家园	Ancient Troll Homeland Found	James
+69		Ancient Troll Homeland Found	James
 70	找到布拉森·暴风枪以及那柄黑木之矛。完成任务之后去绞刑峡谷找连恩·暴风枪，并且将黑木之矛交给查尔斯·吉科德。		James
-71	已找到布雷曾·斯托姆兰斯并找回黑曜石	Found Blazen Stormlance and recovered Ebonest	James
+71		Found Blazen Stormlance and recovered Ebonest	James
 72	去渡鸦海滨找戴维许·契夫龙询问有关治疗布拉森·暴风枪的药方。		James
-73	已获得布雷曾·斯托姆兰斯的解药	Received Cure for Blazen Stormlance	James
+73		Received Cure for Blazen Stormlance	James
 74	杀光所有的屠龙者，并且将惠索朋之剑交给绞刑峡谷的达夫克劳·红斧。	 	James
-75	已杀死区域 5 西南营地的全部屠龙者	Killed all Dragon Slayers in southwest encampment in Area 5	James
+75		Killed all Dragon Slayers in southwest encampment in Area 5	James
 76	"找到位于黑暗矮人矿坑中的巴尔萨煞之斧。然后请达德洛斯认证那柄斧头是真货，接着再把这柄斧头带回去给牛头人首领的继承人泰沙拉。"	 	James
-77	已找到巴尔萨扎之斧。	Found the Axe of Balthazar.	James
+77		Found the Axe of Balthazar.	James
 78	"在废弃神殿中找到太阳预言，并且带回去给史蒂芬。"		James
-79	已在废弃神殿找到太阳预言并将其归还太阳神庙	Found the Prophecies of the Sun in the Abandoned Temple and returned them to the Temple of the Sun	James
+79		Found the Prophecies of the Sun in the Abandoned Temple and returned them to the Temple of the Sun	James
 80	找到可布的石棺和尸骸，并且将这些东西带回去给影旋山脉地区的拉席安。	 	James
-81	已找到科尔布石棺	Found the Sarcophagus of Korbu	James
+81		Found the Sarcophagus of Korbu	James
 82	找到失落的凯尔之书，并且带回去给影旋山脉的维崔那斯。		James
-83	已找到凯尔失落之书	Found the Lost Book of Khel	James
-84	考里·布莱克索恩已复原	Cauri Blackthorne restored	James
+83		Found the Lost Book of Khel	James
+84		Cauri Blackthorne restored	James
 85	"找到达德洛斯，也就是负责管理你们商队的牛头人。上次你看见他的时候，他正准备要和村庄中的长老谈话。"	"Given at the start of the game, taken by dadeross when he gives you the deliver letter quest."	
-86	净化仪式已经开始，牛头人晋升已完成	"Rite's of Purity have begun, Mino promo complete"	James
+86		"Rite's of Purity have begun, Mino promo complete"	James
 87		0	0
-88	太阳预言已送达太阳神庙	Prophecies of the Sun deliverd to the Temple of the Sun	James
-89	戴森·利兰向你谈起死灵法师的事。用于全局事件 97-100。	Dyson Leland talks to you about the Necromancers. For global event 97-100.	TomO
-90	戴森·利兰向你谈起太阳神庙的事。用于全局事件 97-100。	Dyson Leland talks to you about the Temple of the Sun. For Global event 97-100.	TomO
+88		Prophecies of the Sun deliverd to the Temple of the Sun	James
+89		Dyson Leland talks to you about the Necromancers. For global event 97-100.	TomO
+90		Dyson Leland talks to you about the Temple of the Sun. For Global event 97-100.	TomO
 91	"和艾恩法斯特王朝的智者萨索尔请教有关渡鸦海滨水晶的问题。"	"Given by NPC 53 (Fellmoon), taken by XANTHOR."	TomO
-92	任务 91 已完成。	Quest 91 done.	TomO
-93	你已进入 out02.odm，这是你的新起点	"You have entered out02.odm, this is your new starting place"	TomO
-94	艾斯卡顿，谜题一回答正确。	"Escaton, riddle one answered correctly."	TomO
-95	艾斯卡顿，谜题二回答正确。	"Escaton, riddle two answered correctly."	TomO
-96	艾斯卡顿，谜题三回答正确。	"Escaton, riddle three answered correctly."	TomO
-97	艾斯卡顿，全部谜题回答正确。	"Escaton, all riddles answered correctly."	TomO
-98	艾斯卡顿，已听到全局事件 163 的第一条消息	"Escaton, heard the first message in global event 163"	TomO
-99	马苏尔给了队伍食物。	Masul gave party food.	TomO
+92		Quest 91 done.	TomO
+93		"You have entered out02.odm, this is your new starting place"	TomO
+94		"Escaton, riddle one answered correctly."	TomO
+95		"Escaton, riddle two answered correctly."	TomO
+96		"Escaton, riddle three answered correctly."	TomO
+97		"Escaton, all riddles answered correctly."	TomO
+98		"Escaton, heard the first message in global event 163"	TomO
+99		Masul gave party food.	TomO
 100		Arcomage Champion for bob	James
 101	将治愈疾病的卷轴送到匕伤岛外围群岛的六个小屋中。接着回到匕伤岛上去找埃斯蓝。		James
-102	已将解药送到小屋 1	Delivered cure to hut 1	James
-103	已将解药送到小屋 2	Delivered cure to hut 2	James
-104	已将解药送到小屋 3	Delivered cure to hut 3	James
-105	已将解药送到小屋 4	Delivered cure to hut 4	James
-106	已将解药送到小屋 5	Delivered cure to hut 5	James
-107	已将解药送到小屋 6	Delivered cure to hut 6	James
-108	黄热病疫情已治愈！	Yellow Fever epidemic cured!	James
+102		Delivered cure to hut 1	James
+103		Delivered cure to hut 2	James
+104		Delivered cure to hut 3	James
+105		Delivered cure to hut 4	James
+106		Delivered cure to hut 5	James
+107		Delivered cure to hut 6	James
+108		Yellow Fever epidemic cured!	James
 109	找到神选之药剂，并且将它带回去给匕伤岛的蓝贵德。		James
-110	已从供水系统中清除毒素！	Poison removed from water supply!	James
+110		Poison removed from water supply!	James
 111	将废弃神殿中所找到的蛇之圣像带回去给匕伤岛的希斯。	 	James
-112	已找到毒蛇偶像	Found Idol of the Snake	James
+112		Found Idol of the Snake	James
 113	将纯粹速度药剂所需要的药材带给匕伤岛上的系斯妥。		James
-114	已归还纯速药水的配料	returned ingredients for a potion of Pure Speed	James
+114		returned ingredients for a potion of Pure Speed	James
 115	将纯粹运气药剂所需要的药材带去给阿尔瓦的瑞汉西。		James
-116	已归还纯运药水的配料	returned ingredients for a potion of Pure Luck	James
+116		returned ingredients for a potion of Pure Luck	James
 117	将假的报告带回去给雷格那岛上的海盗休息站酒吧给恐怖海盗史坦力。	 	James
-118	已将假报告送给斯坦利	Delivered false report to Stanley	James
+118		Delivered false report to Stanley	James
 119	将艾瑞安·韩特的女儿从阿尔瓦的食人妖要塞中救出。	 	James
-120	已营救走私者首领的家人	Rescued Smuggler Leader's Familly 	James
+120		Rescued Smuggler Leader's Familly 	James
 121	将纯粹耐力药剂的药材带给铁沙漠中的塔力安。		James
-122	已归还纯耐力药水的配料	returned ingredients for a potion of Pure Endurance	James
+122		returned ingredients for a potion of Pure Endurance	James
 123	将纯粹智力药剂所需要的药材带去给影旋山脉地区的凯尔文。		James
-124	已归还纯智力药水的配料	returned ingredients for a potion of Pure Intellect	James
+124		returned ingredients for a potion of Pure Intellect	James
 125	将纯粹个性药剂的药材带给低语之森的卡斯提盖尔。		James
-126	已归还纯个性药水的配料	returned ingredients for a potion of Pure Personallity	James
+126		returned ingredients for a potion of Pure Personallity	James
 127	"替渡鸦海滨的拉西亚斯找到名为日蚀的盾牌。"	 	James
-128	已为拉西厄斯找回蚀月盾	"Recovered the the Shield, Eclipse for Lathius"	James
+128		"Recovered the the Shield, Eclipse for Lathius"	James
 129	杀死阿尔瓦峡谷地区和食人妖要塞中的所有食人妖，然后回到阿尔瓦找凯尔顿。	 	James
-130	已杀死阿尔瓦峡谷地区和食人魔堡垒的全部食人魔	Killed all Ogres in Alvar canyon area and in Ogre Fortress	James
+130		Killed all Ogres in Alvar canyon area and in Ogre Fortress	James
 131		Ogre Questbit set for Riki	Riki
 132	将纯粹准确药剂所需要的药材带给残破镇的加文那斯。		James
-133	已归还纯准度药水的配料	returned ingredients for a potion of Pure Accuracy	James
-134	已将复原宝石交给布雷曾·斯托姆兰斯	Gave Gem of Restoration to Blazen Stormlance	James
+133		returned ingredients for a potion of Pure Accuracy	James
+134		Gave Gem of Restoration to Blazen Stormlance	James
 135	替派赛拉·提斯克找到蛇之预言。	 	James
-136	已找到毒蛇预言	Found Prophiecies of the Snake	James
+136		Found Prophiecies of the Snake	James
 137	"替罗特奈克斯找到他的兄弟利舌埃斯瑞克。完成任务之后回去匕伤岛的血滴镇找罗特奈克斯。"	 	 James
-138	已找到毒舌伊斯思里克	Found Isthric the Tongue	James
+138		Found Isthric the Tongue	James
 139	杀死所有渡鸦海滨地区的猛狼，完成任务之后回去渡鸦海滨找马帝刚。	 	James
-140	已杀死渡鸦海滨的全部凶狼	Killed all Dire Wolves in Ravenshore	James
+140		Killed all Dire Wolves in Ravenshore	James
 141		Dire Wolf Questbit for Riki	Riki
 142	将御火药剂送到铁锈镇六个最南边的屋子里面。完成任务之后回去找铁锈镇的贺伯特。		James
-143	已将药水送到房屋 1	Delivered potion to house 1	James
-144	已将药水送到房屋 2	Delivered potion to house 2	James
-145	已将药水送到房屋 3	Delivered potion to house 3	James
-146	已将药水送到房屋 4	Delivered potion to house 4	James
-147	已将药水送到房屋 5	Delivered potion to house 5	James
-148	已将药水送到房屋 6	Delivered potion to house 6	James
-149	锈镇南部的房屋全部有火焰抗性药水。	Southern houses of Rust all have Potions of Fire Resistance.	James
+143		Delivered potion to house 1	James
+144		Delivered potion to house 2	James
+145		Delivered potion to house 3	James
+146		Delivered potion to house 4	James
+147		Delivered potion to house 5	James
+148		Delivered potion to house 6	James
+149		Southern houses of Rust all have Potions of Fire Resistance.	James
 150	替绞刑峡谷的卡林最尔找一朵灭龙花。	 	James
-151	已为猎龙人找到屠龙剑	Found Dragonbane for Dragon Hunters	James
+151		Found Dragonbane for Dragon Hunters	James
 152	替绞刑峡谷龙穴中的巴力安·泪翼找一朵灭龙花。	 	James
-153	已为巨龙找到屠龙剑	Found Dragonbane for Dragons	James
+153		Found Dragonbane for Dragons	James
 154	杀死所有绞刑峡谷野外的飞龙，完成任务之后去找绞刑峡谷的阿瓦龙。	 	James
-155	已杀死绞刑峡谷地区的全部巨龙	Killed all Dragons in Garrote Gorge Area	James
+155		Killed all Dragons in Garrote Gorge Area	James
 156		Questbit set for Riki	James
 157	杀死所有绞刑峡谷野外地区的猎龙人，完成任务之后去找绞刑峡谷龙穴的杰林·炎眼。	 	James
-158	已杀死绞刑峡谷荒野地区的全部猎龙人	Killed all Dragon Hunters in Garrote Gorge wilderness area	James
+158		Killed all Dragon Hunters in Garrote Gorge wilderness area	James
 159		Questbit set for Riki	James
 160	找到传说中的胜利之鼓，完成任务之后去找绞刑峡谷的赛林姆。	 	James
-161	已找到胜利之鼓	Found the Drum of Victory	James
+161		Found the Drum of Victory	James
 162	替影旋山脉的班耐费斯找寻机关盒。	 	James
-163	已找到伊塞尔迪尔的谜盒	Found  Iseldir's Puzzle Box	James
+163		Found  Iseldir's Puzzle Box	James
 164	找到墓土之瓶，完成任务之后去找影旋山脉地区的海林安。	 	James
-165	已找到墓土小瓶	Found Vial of Grave Dirt	James
+165		Found Vial of Grave Dirt	James
 166	替影旋山脉地区的坦尼林安找到毁灭之骨。	 	James
-167	已找到厄运之骨	Found Bone of Doom	James
-168	已找到恐怖海盗斯坦利的宝藏！	Found the treasure of the Dread Pirate Stanley!	James
-169	被赏金猎人公会授予初级赏金猎人称号	Named Novice Bounty Hunter by the Guild of Bounty Hunters	James
-170	被赏金猎人公会授予熟练赏金猎人称号	Named Journeyman Bounty Hunter by the Guild of Bounty Hunters	James
-171	被赏金猎人公会授予初级猎人大师称号	Named Novice Master Hunter by the Guild of Bounty Hunters	James
+167		Found Bone of Doom	James
+168		Found the treasure of the Dread Pirate Stanley!	James
+169		Named Novice Bounty Hunter by the Guild of Bounty Hunters	James
+170		Named Journeyman Bounty Hunter by the Guild of Bounty Hunters	James
+171		Named Novice Master Hunter by the Guild of Bounty Hunters	James
 172	在贾丹姆大陆上每个酒吧进行魔幻牌挑战。	 	James
 173	"在贾丹姆大陆上所有十一家酒吧中赢得至少一场魔幻牌游戏，然后返回渡鸦海滨找汤克·蓝天鹅。"	 	James
-174	赢得了全部阿卡玛吉对局	Won all Arcomage games	James
-175	已完成阿卡玛吉任务——取得宝藏	Finished ArcoMage Quest - Get the treasure	James
+174		Won all Arcomage games	James
+175		Finished ArcoMage Quest - Get the treasure	James
 176	找到一块独角兽奶酪，并且带回去交给阿尔瓦的阿萨尔·福罗马哥。		TomO
 177	找到一块艾顿布理奶酪，并且带回去交给阿尔瓦的阿萨尔·福罗马哥。		TomO
 178	找到一块登达克奶酪，并且带回去交给阿尔瓦的阿萨尔·福罗马哥。		TomO
-179	任务 176-178 已完成。	Quests 176-178 done.	TomO
-180	渡鸦海滨传送门	Ravenshore Town Portal	Riki
-181	阿尔瓦传送门	Alvar Town Portal	Riki
-182	特维灵传送门	Twiling Town Portal	Riki
-183	哈雷克堡传送门	Hareckburg Town Portal	Riki
-184	巴尔萨扎传送门	Balthazar Town Portal	Riki
-185	血滴镇传送门	Blood Drop Town Portal	Riki
-186	区域 1 方尖碑	Obelisk Area 1	Riki
-187	区域 2 方尖碑	Obelisk Area 2	Riki
-188	区域 3 方尖碑	Obelisk Area 3	Riki
-189	区域 4 方尖碑	Obelisk Area 4	Riki
-190	区域 5 方尖碑	Obelisk Area 5	Riki
-191	区域 6 方尖碑	Obelisk Area 6	Riki
-192	区域 7 方尖碑	Obelisk Area 7	Riki
-193	区域 8 方尖碑	Obelisk Area 8	Riki
-194	区域 13 方尖碑	Obelisk Area 13	Riki
-195	然后杀死独角兽之王（只发生一次）	Kill then unicorn King(only happens once)	Riki
-196	在区域一的废弃神殿与主角相遇	Met the PC in the Abandoned temple in area one	Riki
-197	北瞭望塔通往雷格那地下通道的门已解锁	Door to the passage under regna from the northern watch tower is unlocked	0
-198	南瞭望塔通往雷格那地下通道的门已解锁	Door to the passage under regna from the southern watch tower is unlocked	0
-199	黑曜石 - 我弄丢了它	Ebonest - I lost it	
-200	威斯尔伯恩之剑 - 我弄丢了它	Sword of Whistlebone - I lost it	
-201	巴尔萨扎之斧 - 我弄丢了它	Axe of Baltahzar - I lost it	
-202	骨灰瓮 - 我弄丢了它	Urn of Ashes - I lost it	
-203	夜影香炉 - 我弄丢了它	Nightshade Brazier - I lost it	
-204	龙首领之蛋 - 我弄丢了它，事件 g49、g64 已取走	"Dragon Leader's Egg - I lost it, taken event g49, g64"	
-205	火之心 - 我弄丢了它	Heart of Fire - I lost it	
-206	水之心 - 我弄丢了它	Heart of Water - I lost it	
-207	风之心 - 我弄丢了它	Heart of Air - I lost it	
-208	土之心 - 我弄丢了它	Heart of Earth - I lost it	
-209	汇聚之钥 - 我弄丢了它	Conflux Key - I lost it	
-210	凯尔失落之书 - 我弄丢了它	Lost Book of Kehl - I lost it	
-211	科尔布石棺 - 我弄丢了它	Sarcophagus of Korbu - I lost it	
-212	能量石 - 我弄丢了它	Power Stone - I lost it	
-213	能量石 - 我弄丢了它	Power Stone - I lost it	
-214	海盗首领之钥 - 我弄丢了它	Pirate Leader's Key - I lost it	
-215	监狱钥匙 - 我弄丢了它	Prison Key - I lost it	
-216	监狱钥匙 - 我弄丢了它	Prison Key - I lost it	
-217	复原宝石 - 我弄丢了它	Gem of Restoration - I lost it	
-218	太阳预言 - 我弄丢了它	Prophesies of the Sun - I lost it	
-219	科尔布遗骸 - 我弄丢了它	Remains of Korbu - I lost it	
-220	钥匙环 - 我弄丢了它	Ring of Keys - I lost it	
-221	达德洛斯给费尔蒙的信 - 我弄丢了它，事件 g28 已取走	"Dadeross' Letter to Fellmoon - I lost it, taken event g 28"	
-222	敲诈信 - 我弄丢了它，事件 g32 已取走	"Blackmail Letter - I lost it, taken event g 32"	
-223	已把潜艇开到雷格那	Took Sub to Regna	TomO
-224	统治炮弹 - 我弄丢了它	Cannonball of Dominion - I lost it	
+179		Quests 176-178 done.	TomO
+180		Ravenshore Town Portal	Riki
+181		Alvar Town Portal	Riki
+182		Twiling Town Portal	Riki
+183		Hareckburg Town Portal	Riki
+184		Balthazar Town Portal	Riki
+185		Blood Drop Town Portal	Riki
+186		Obelisk Area 1	Riki
+187		Obelisk Area 2	Riki
+188		Obelisk Area 3	Riki
+189		Obelisk Area 4	Riki
+190		Obelisk Area 5	Riki
+191		Obelisk Area 6	Riki
+192		Obelisk Area 7	Riki
+193		Obelisk Area 8	Riki
+194		Obelisk Area 13	Riki
+195		Kill then unicorn King(only happens once)	Riki
+196		Met the PC in the Abandoned temple in area one	Riki
+197		Door to the passage under regna from the northern watch tower is unlocked	0
+198		Door to the passage under regna from the southern watch tower is unlocked	0
+199		Ebonest - I lost it	
+200		Sword of Whistlebone - I lost it	
+201		Axe of Baltahzar - I lost it	
+202		Urn of Ashes - I lost it	
+203		Nightshade Brazier - I lost it	
+204		"Dragon Leader's Egg - I lost it, taken event g49, g64"	
+205		Heart of Fire - I lost it	
+206		Heart of Water - I lost it	
+207		Heart of Air - I lost it	
+208		Heart of Earth - I lost it	
+209		Conflux Key - I lost it	
+210		Lost Book of Kehl - I lost it	
+211		Sarcophagus of Korbu - I lost it	
+212		Power Stone - I lost it	
+213		Power Stone - I lost it	
+214		Pirate Leader's Key - I lost it	
+215		Prison Key - I lost it	
+216		Prison Key - I lost it	
+217		Gem of Restoration - I lost it	
+218		Prophesies of the Sun - I lost it	
+219		Remains of Korbu - I lost it	
+220		Ring of Keys - I lost it	
+221		"Dadeross' Letter to Fellmoon - I lost it, taken event g 28"	
+222		"Blackmail Letter - I lost it, taken event g 32"	
+223		Took Sub to Regna	TomO
+224		Cannonball of Dominion - I lost it	
 225		dead questbit for internal use(bling)	Riki
 226		game Init stuff in area one	Riki
-227	开启区域一的寺庙旁路传送	Turn on Temple Bypass tele in area one	Riki
-228	你已经看过结局动画	You have seen the Endgame movie	Riki
-229	你已经激怒了死灵法师	You have Pissed off the Necros	0
-230	你已经激怒了牧师们	You have Pissed off the clerics	0
-231	鼠人很生你的气	The were-rats are mad at you	0
-232	在你与色顿交谈时设置	Set when you talk to S'ton	0
-233	你已经激怒了巨龙	You have Pissed of the Dragons	0
-234	你已经激怒了猎龙人	You have Pissed of the Dragon hunters	0
-235	已与艾斯卡顿交谈	Have talked to Escaton	TomO
+227		Turn on Temple Bypass tele in area one	Riki
+228		You have seen the Endgame movie	Riki
+229		You have Pissed off the Necros	0
+230		You have Pissed off the clerics	0
+231		The were-rats are mad at you	0
+232		Set when you talk to S'ton	0
+233		You have Pissed of the Dragons	0
+234		You have Pissed of the Dragon hunters	0
+235		Have talked to Escaton	TomO
 236	找到恐怖海盗史坦力的宝藏。	 	James
-237	你得到了一支长笛	You got a flute	0
-238	在结盟前与马苏尔交谈过	Talked to Masul before the alliance	TomO
+237		You got a flute	0
+238		Talked to Masul before the alliance	TomO
 239		for riki	0
 240		for riki	0
-241	已获得水之心	Got the heart of water	Riki
-242	已获得火之心	Got the heart of fire	Riki
-243	已获得风之心	Got the heart of air	Riki
-244	已获得土之心	Got the heart of earth	Riki
-245	圣膏药水 - 我弄丢了它！	Annointed Herb Potion - I lost it!	 
-246	胜利之鼓 - 我弄丢了它！	Drum of Victory - I lost it!	 
-247	厄运之骨 - 我弄丢了它！	Bone of Doom - I lost it!	 
-248	墓土小瓶 - 我弄丢了它！	Vial of Grave Dirt - I lost it!	 
-249	谜盒 - 我弄丢了它！	Puzzle Box - I lost it!	 
-250	已购买物品：水果	Bought Item fruit	0
-251	已购买物品：果浆	Bought Item pulp	0
-252	已购买物品：白兰地	Bought Item brandy	0
-253	已购买心材	Bought heartwood	0
-254	已购买护身符	Bought amulets	0
-255	已购买太阳鱼	Bought Sunfish	0
-256	已购买物品：海之银尘	Bought Item Silver Dust of the Sea	0
-257	已购买物品：伪造信用券	Bought Item Forged Credit Vouchers	0
-258	已购买物品：研磨的双足飞龙角	Bought Item Ground Wyvern Horn	0
-259	不能再买水果了	Can't keep buying fruit	0
-260	不能再买果浆了	Can't keep buying pulp	0
-261	不能再买白兰地了	Can't keep buying brandy	0
-262	不能再买心材了	Can't keep buying heartwood	0
-263	不能再买护身符了	Can't keep buying amulets	0
-264	不能再买太阳鱼了	Can't keep buying sinfish	0
-265	不能再买海之银尘了	Can't keep buying Silver Dust of the Sea	0
-266	不能再买伪造信用券了	Can't keep buying Forged Credit Vouchers	0
-267	不能再买研磨的双足飞龙角了	Can't keep buying Ground Wyvern horn	0
-268	区域 1 浮标	Area 1 buoy	0
-269	区域 1 浮标	Area 1 buoy	0
-270	区域 1 试剂喷口	Reagent spout area 1	0
-271	区域 1 试剂喷口	Reagent spout area 1	0
-272	区域 2 试剂喷口	Reagant spout area 2	0
-273	区域 2 试剂喷口	Reagant spout area 2	0
-274	区域 2 浮标	Area 2 buoy	0
-275	区域 3 试剂喷口	Reagant spout area 3	0
-276	区域 3 试剂喷口	Reagant spout area 3	0
-277	区域 4 试剂喷口	Reagant spout area 4	0
-278	区域 4 试剂喷口	Reagant spout area 4	0
-279	区域 6 试剂喷口	Reagant spout area 6	0
-280	区域 6 试剂喷口	Reagant spout area 6	0
-281	区域 6 试剂喷口	Reagant spout area 6	0
-282	假报告 - 我弄丢了它！	False Report - I lost it!	0
-283	蚀月盾 - 我弄丢了它！	Eclipse - I lost it!	0
+241		Got the heart of water	Riki
+242		Got the heart of fire	Riki
+243		Got the heart of air	Riki
+244		Got the heart of earth	Riki
+245		Annointed Herb Potion - I lost it!	 
+246		Drum of Victory - I lost it!	 
+247		Bone of Doom - I lost it!	 
+248		Vial of Grave Dirt - I lost it!	 
+249		Puzzle Box - I lost it!	 
+250		Bought Item fruit	0
+251		Bought Item pulp	0
+252		Bought Item brandy	0
+253		Bought heartwood	0
+254		Bought amulets	0
+255		Bought Sunfish	0
+256		Bought Item Silver Dust of the Sea	0
+257		Bought Item Forged Credit Vouchers	0
+258		Bought Item Ground Wyvern Horn	0
+259		Can't keep buying fruit	0
+260		Can't keep buying pulp	0
+261		Can't keep buying brandy	0
+262		Can't keep buying heartwood	0
+263		Can't keep buying amulets	0
+264		Can't keep buying sinfish	0
+265		Can't keep buying Silver Dust of the Sea	0
+266		Can't keep buying Forged Credit Vouchers	0
+267		Can't keep buying Ground Wyvern horn	0
+268		Area 1 buoy	0
+269		Area 1 buoy	0
+270		Reagent spout area 1	0
+271		Reagent spout area 1	0
+272		Reagant spout area 2	0
+273		Reagant spout area 2	0
+274		Area 2 buoy	0
+275		Reagant spout area 3	0
+276		Reagant spout area 3	0
+277		Reagant spout area 4	0
+278		Reagant spout area 4	0
+279		Reagant spout area 6	0
+280		Reagant spout area 6	0
+281		Reagant spout area 6	0
+282		False Report - I lost it!	0
+283		Eclipse - I lost it!	0
 284	"回去找阿尔瓦的费尔蒙报到，并且解释你已经成功的勒索了走私贩子艾瑞安·韩特。"		TomO
-285	已获得区域 13 的传送卷轴	Got the Tele scroll in area 13	Riki
-286	已完成汇聚之钥任务	Did the conflux key quest	Riki
+285		Got the Tele scroll in area 13	Riki
+286		Did the conflux key quest	Riki
 287	0	0	0
 288	0	0	0
 289	0	0	0
@@ -298,22 +298,22 @@ Q Bit	Quest Note Text	Notes	Owner
 297	0	0	0
 298	0	0	0
 299	0	0	0
-300	传送开关：贾丹姆	TP Switch Jadam	
-301	传送增益：阿尔瓦	TP Buff Alvar	
-302	传送增益：渡鸦海滨	TP Buff Ravenshore	
-303	传送增益：巴尔萨扎巢穴	TP Buff Baltazar's Lair	
-304	传送增益：雷格那	TP Buff Regna	
-305	传送增益：影旋山脉	TP Buff Shadowspire	
-306	传送增益：匕伤群岛	TP Buff Daggerwound islands	
-307	传送开关：安塔格里克	TP Switch Antagrich	
-308	传送开关：恩洛斯	TP Switch Enroth	
-309	传送开关：全局	TP Switch Global	
-310	传送增益：黑郡	TP Buff Blackshire	
-311	传送增益：自由天堂	TP Buff Free Haven	
-312	传送增益：迷雾群岛	TP Buff Misty Islands	
-313	传送增益：新索匹格	TP Buff New Sorpigal	
-314	传送增益：银湾	TP Buff Silver Cove	
-315	传送增益：寒冰高地	TP Buff Frozen Highlands	
+300		TP Switch Jadam	
+301		TP Buff Alvar	
+302		TP Buff Ravenshore	
+303		TP Buff Baltazar's Lair	
+304		TP Buff Regna	
+305		TP Buff Shadowspire	
+306		TP Buff Daggerwound islands	
+307		TP Switch Antagrich	
+308		TP Switch Enroth	
+309		TP Switch Global	
+310		TP Buff Blackshire	
+311		TP Buff Free Haven	
+312		TP Buff Misty Islands	
+313		TP Buff New Sorpigal	
+314		TP Buff Silver Cove	
+315		TP Buff Frozen Highlands	
 316	0	0	0
 317	0	0	0
 318	0	0	0
@@ -398,56 +398,56 @@ Q Bit	Quest Note Text	Notes	Owner
 397	0	0	0
 398	0	0	0
 399	0	0	0
-400	小队角色 1	Roster Character In Party 1	0
-401	小队角色 2	Roster Character In Party 2	0
-402	小队角色 3	Roster Character In Party 3	0
-403	小队角色 4	Roster Character In Party 4	0
-404	小队角色 5	Roster Character In Party 5	0
-405	小队角色 6	Roster Character In Party 6	0
-406	小队角色 7	Roster Character In Party 7	0
-407	小队角色 8	Roster Character In Party 8	0
-408	小队角色 9	Roster Character In Party 9	0
-409	小队角色 10	Roster Character In Party 10	0
-410	小队角色 11	Roster Character In Party 11	0
-411	小队角色 12	Roster Character In Party 12	0
-412	小队角色 13	Roster Character In Party 13	0
-413	小队角色 14	Roster Character In Party 14	0
-414	小队角色 15	Roster Character In Party 15	0
-415	小队角色 16	Roster Character In Party 16	0
-416	小队角色 17	Roster Character In Party 17	0
-417	小队角色 18	Roster Character In Party 18	0
-418	小队角色 19	Roster Character In Party 19	0
-419	小队角色 20	Roster Character In Party 20	0
-420	小队角色 21	Roster Character In Party 21	0
-421	小队角色 22	Roster Character In Party 22	0
-422	小队角色 23	Roster Character In Party 23	0
-423	小队角色 24	Roster Character In Party 24	0
-424	小队角色 25	Roster Character In Party 25	0
-425	小队角色 26	Roster Character In Party 26	0
-426	小队角色 27	Roster Character In Party 27	0
-427	小队角色 28	Roster Character In Party 28	0
-428	小队角色 29	Roster Character In Party 29	0
-429	小队角色 30	Roster Character In Party 30	0
-430	小队角色 31	Roster Character In Party 31	0
-431	小队角色 32	Roster Character In Party 32	0
-432	小队角色 33	Roster Character In Party 33	0
-433	小队角色 34	Roster Character In Party 34	0
-434	小队角色 35	Roster Character In Party 35	0
-435	小队角色 36	Roster Character In Party 36	0
-436	小队角色 37	Roster Character In Party 37	0
-437	小队角色 38	Roster Character In Party 38	0
-438	小队角色 39	Roster Character In Party 39	0
-439	小队角色 40	Roster Character In Party 40	0
-440	小队角色 41	Roster Character In Party 41	0
-441	小队角色 42	Roster Character In Party 42	0
-442	小队角色 43	Roster Character In Party 43	0
-443	小队角色 44	Roster Character In Party 44	0
-444	小队角色 45	Roster Character In Party 45	0
-445	小队角色 46	Roster Character In Party 46	0
-446	小队角色 47	Roster Character In Party 47	0
-447	小队角色 48	Roster Character In Party 48	0
-448	小队角色 49	Roster Character In Party 49	0
-449	小队角色 50	Roster Character In Party 50	0
+400		Roster Character In Party 1	0
+401		Roster Character In Party 2	0
+402		Roster Character In Party 3	0
+403		Roster Character In Party 4	0
+404		Roster Character In Party 5	0
+405		Roster Character In Party 6	0
+406		Roster Character In Party 7	0
+407		Roster Character In Party 8	0
+408		Roster Character In Party 9	0
+409		Roster Character In Party 10	0
+410		Roster Character In Party 11	0
+411		Roster Character In Party 12	0
+412		Roster Character In Party 13	0
+413		Roster Character In Party 14	0
+414		Roster Character In Party 15	0
+415		Roster Character In Party 16	0
+416		Roster Character In Party 17	0
+417		Roster Character In Party 18	0
+418		Roster Character In Party 19	0
+419		Roster Character In Party 20	0
+420		Roster Character In Party 21	0
+421		Roster Character In Party 22	0
+422		Roster Character In Party 23	0
+423		Roster Character In Party 24	0
+424		Roster Character In Party 25	0
+425		Roster Character In Party 26	0
+426		Roster Character In Party 27	0
+427		Roster Character In Party 28	0
+428		Roster Character In Party 29	0
+429		Roster Character In Party 30	0
+430		Roster Character In Party 31	0
+431		Roster Character In Party 32	0
+432		Roster Character In Party 33	0
+433		Roster Character In Party 34	0
+434		Roster Character In Party 35	0
+435		Roster Character In Party 36	0
+436		Roster Character In Party 37	0
+437		Roster Character In Party 38	0
+438		Roster Character In Party 39	0
+439		Roster Character In Party 40	0
+440		Roster Character In Party 41	0
+441		Roster Character In Party 42	0
+442		Roster Character In Party 43	0
+443		Roster Character In Party 44	0
+444		Roster Character In Party 45	0
+445		Roster Character In Party 46	0
+446		Roster Character In Party 47	0
+447		Roster Character In Party 48	0
+448		Roster Character In Party 49	0
+449		Roster Character In Party 50	0
 450	0	0	0
 451	0	0	0
 452	0	0	0
@@ -517,25 +517,25 @@ Q Bit	Quest Note Text	Notes	Owner
 516	找到一块地砖，然后交给翡翠岛的竞赛组织者。	0	Bryan
 517	找到一件乐器，然后交给翡翠岛的竞赛组织者。	0	Bryan
 518	找到一顶漂亮帽子，然后交给翡翠岛的竞赛组织者。	0	Bryan
-519	已完成寻宝游戏	Finished Scavenger Hunt	Bryan
-520	已带来红色药水	Brought red potion	Bryan
-521	已带来贝壳	Brought seashell	Bryan
-522	已带来长弓	Brought longbow	Bryan
-523	已带来瓷砖	Brought tile	Bryan
-524	已带来乐器	Brought instrument	Bryan
-525	已带来帽子	Brought hat	Bryan
-526	已从马尔威克处接受火球魔杖	Accepted Fireball wand from Malwick	Bryan
-527	可以使用小船离开翡翠岛	Able to use boat to get off Emerald Island	Bryan
+519		Finished Scavenger Hunt	Bryan
+520		Brought red potion	Bryan
+521		Brought seashell	Bryan
+522		Brought longbow	Bryan
+523		Brought tile	Bryan
+524		Brought instrument	Bryan
+525		Brought hat	Bryan
+526		Accepted Fireball wand from Malwick	Bryan
+527		Able to use boat to get off Emerald Island	Bryan
 528	找到有关失踪的参赛者的线索，然后交给翡翠岛的竞赛组织者。	0	Bryan
-529	不再有讲解员唠叨	No more docent babble	Bryan
+529		No more docent babble	Bryan
 530	"进入马克汉姆在泰塔利亚的府邸，偷走那儿的花瓶，回到伊拉西亚的下水道，把花瓶交给比尔·拉斯克。"	0	Bryan
 531	"潜入迪雅的6号哨塔，把塔顶的顶门石移到塔的底层，然后回伊拉西亚城下水道见比尔·拉斯克。"	0	Bryan
-532	瞭望塔 6。将砝码放入对应的箱子。对全局事件 47（间谍晋升）很重要	Watchtower 6.  Weight in the appropriate box.  Important for Global event 47 (Spy promotion)	
+532		Watchtower 6.  Weight in the appropriate box.  Important for Global event 47 (Spy promotion)	
 533	去赛勒斯提的通天院干掉卡米尔，把她身上的匕首交给迪雅的塞克尼特·恩德斯。	0	Bryan
 534	"到泰塔利亚杀死巨龙劳斯莱克，然后去找查尔斯·科切特。"	0	Bryan
-535	执行十字军任务时杀死了巨龙	Killed dragon when on Crusader quest	Bryan
+535		Killed dragon when on Crusader quest	Bryan
 536	把埃莉斯·哈格从迪雅的威廉姆的塔里救出来，然后去找查尔斯·科切特。	0	Bryan
-537	区域 5 的小型地下城。已营救/俘获爱丽丝·哈格里夫斯。	Mini-dungeon Area 5.  Rescued/Captured Alice Hargreaves.	Bryan
+537		Mini-dungeon Area 5.  Rescued/Captured Alice Hargreaves.	Bryan
 538	到狮鹫心城堡绑架埃莉斯·哈格，并将她带到迪雅的威廉姆的塔里。	0	Bryan
 539	在拜尔德斯找到冥想之地。	0	Bryan
 540	"到埃里的羊鸣教神庙铲除羊鸣教高级神甫，然后回到和谐谷找巴斯洛缪·海墨尔。"	0	Bryan
@@ -550,239 +550,239 @@ Q Bit	Quest Note Text	Notes	Owner
 549	设法找到神仙冈的秘密出口，然后去里面和仙帝交谈。	0	Bryan
 550	"设法完成市政厅的赏金任务，赚到10,000个金币，然后回到图拉利昂森林找埃伯登泽·索渥。"	0	Bryan
 551	去泰塔利亚的雇佣兵行会夺回古树之心，把它还给图拉利昂森林里的老树。	0	Bryan
-552	已与最古老的树交谈	Talked to the Oldest Tree	Bryan
-553	已完成树的任务	Solved Tree quest	Bryan
+552		Talked to the Oldest Tree	Bryan
+553		Solved Tree quest	Bryan
 554	去埃弗蒙岛捣毁月亮神庙的祭坛，然后回到赛勒斯提找蕾贝卡·迪万。	0	Bryan
 555	去泰塔利亚的潮穴找到海盗的地图，然后回到迪雅找达德拉斯·福克。	0	Bryan
 556	去埃弗蒙岛捣毁太阳神庙的祭坛，然后回到迪雅找达德拉斯·福克。	0	Bryan
 557	"找到人偶肢体的六个部分，把它拼成人形，然后去魔法学院把人偶交给托马斯·格雷。"	0	Bryan
-558	玩家城堡。魔像应出现在城堡区域。	Player Castle.  Golem should appear in castle bit.	Bryan
+558		Player Castle.  Golem should appear in castle bit.	Bryan
 559	去地狱城的再生之地找到普渡众生魔法，然后回到魔法学院把它交给托马斯·格雷。	0	Bryan
 560	去赛勒斯提的净心堂夺回灵魂之坛，然后到地狱城把它交给哈夫·维克。	0	Bryan
 561	"去泰塔利亚、埃弗蒙岛和埃里三个地方分别找到石圈，然后到图拉利昂森林找安东尼·格林。"	0	Bryan
-562	已参观全部巨石阵	Visited all stonehenges	
-563	已参观巨石阵 1（区域 9）	Visited stonehenge 1 (area 9)	
-564	已参观巨石阵 2（区域 13）	Visited stonehenge 2 (area 13)	
-565	已参观巨石阵 3（区域 14）	Visited stonehenge 3 (area 14)	
+562		Visited all stonehenges	
+563		Visited stonehenge 1 (area 9)	
+564		Visited stonehenge 2 (area 13)	
+565		Visited stonehenge 3 (area 14)	
 566	"去石头城与尼根之间的隧道里找到矮人国王的尸骨，把它带到拜尔德斯妥善安葬，然后到图拉利昂森林找安东尼·格林。"	0	Bryan
 567	去巨人领地的龙穴找龙蛋，然后把它带回尼根见托尔·安文。	0	Bryan
-568	瞭望塔 6。已从上城门取走砝码。间谍晋升任务	Watchtower 6.  Taken the weight from the upper gatehouse.  Spy promo quest	
-569	已解开密码谜题。忍者晋升任务	Solved the code puzzle.  Ninja promo quest	
-570	已摧毁地下城中的生物发生器。魔法战士晋升任务。	Destroyed critter generator in dungeon.  Warrior Mage promo quest.	
-571	已在[某种]难度级别赢得五次竞技场冠军。冠军晋升任务。	Won five arena championships at [something] difficulty level.  Champion promo quest.	Bryan
-572	已洗劫精灵宝库。黑骑士晋升任务。	Robbed Elven treasury.  Black Knight promo quest.	
-573	已收集 10000 金币的赏金。赏金猎人晋升任务。	Collected 10000 gold in bounties.  Bounty Hunter promo quest.	Bryan
-574	已净化邪恶祭坛。光明牧师晋升任务。	Purified the Altar of Evil.  Priest of Light promo quest.	
-575	已玷污善良祭坛。黑暗牧师晋升任务。	Defaced the Altar of Good.  Priest of Dark promo quest.	
-576	激活前往区域 9 的小船。牧师晋升任务	Activate boat to area 9.  Priest promo quest	
-577	古墓丘陵。已归还矮人王的骨骸。首席德鲁伊晋升任务。	Barrow downs.   Returned the bones of the Dwarf King.  Arch Druid promo quest.	
-578	已放置魔像躯干	Placed Golem torso	Bryan
-579	已放置魔像左腿	Placed Golem left leg	Bryan
-580	已放置魔像右腿	Placed Golem right leg	Bryan
-581	已放置魔像左臂	Placed Golem left arm	Bryan
-582	已放置魔像左腿	Placed Golem left leg	Bryan
-583	已放置魔像头部	Placed Golem head	Bryan
-584	已放置魔像修道院标准头部	Placed Golem Abbey normal head	Bryan
-585	已用修道院标准头部完成魔像建造	Finished constructing Golem with Abbey normal head	Bryan
-586	已用标准头部完成魔像建造	Finished constructing Golem with normal head	Bryan
+568		Watchtower 6.  Taken the weight from the upper gatehouse.  Spy promo quest	
+569		Solved the code puzzle.  Ninja promo quest	
+570		Destroyed critter generator in dungeon.  Warrior Mage promo quest.	
+571		Won five arena championships at [something] difficulty level.  Champion promo quest.	Bryan
+572		Robbed Elven treasury.  Black Knight promo quest.	
+573		Collected 10000 gold in bounties.  Bounty Hunter promo quest.	Bryan
+574		Purified the Altar of Evil.  Priest of Light promo quest.	
+575		Defaced the Altar of Good.  Priest of Dark promo quest.	
+576		Activate boat to area 9.  Priest promo quest	
+577		Barrow downs.   Returned the bones of the Dwarf King.  Arch Druid promo quest.	
+578		Placed Golem torso	Bryan
+579		Placed Golem left leg	Bryan
+580		Placed Golem right leg	Bryan
+581		Placed Golem left arm	Bryan
+582		Placed Golem left leg	Bryan
+583		Placed Golem head	Bryan
+584		Placed Golem Abbey normal head	Bryan
+585		Finished constructing Golem with Abbey normal head	Bryan
+586		Finished constructing Golem with normal head	Bryan
 587	"把和谐谷城堡里面的怪物消灭干净，然后去镇子上的客栈找管家。"	Given by butler at the door to the player castle.	
 588	营救红矮人矿井的矮人，然后到拜尔德斯的石头城找矮人国王。		Bryan
 589	设法拿到利文斯德要塞的设计图，然后到图拉利昂森林的那文城堡找帕尔森国王。		Bryan
 590	去图拉利昂森林中的洞穴内设法把劳伦·斯迪尔搭救出来，然后把他带回伊拉西亚见凯瑟琳王后。		Bryan
 591	去图拉利昂森林设法夺回格芬哈特号角，把它交给你要帮助的一方。		Bryan
-592	已把计划书交给精灵王	Gave plans to elfking	Bryan
-593	已把洛伦剑交给凯瑟琳	Gave Loren to Catherine	Bryan
-594	已把假计划书交给精灵王（背叛）	Gave false plans to elfking (betray)	Bryan
-595	已把假洛伦剑交给凯瑟琳（背叛）	Gave false Loren to Catherine (betray)	Bryan
-596	已把神器交给人类	Gave artifact to humans	Bryan
-597	已把神器交给精灵	Gave artifact to elves	Bryan
-598	已把武器交给人类	Gave weapons to humans	Bryan
-599	已把武器交给精灵	Gave weapons to elves	Bryan
-600	已与凯瑟琳交谈	Talked to Catherine	Bryan
-601	已与精灵王交谈	Talked to elfking	Bryan
-602	已告诉凯瑟琳关于假囚犯的事	Told Catherine about fake prisoner	Bryan
-603	已告诉精灵王关于假计划书的事	Told Elfking about fake plans	Bryan
-604	河畔堡。已打开装有计划书的箱子	Fort Riverstride.  Opened chest with plans	
-605	土拉立安洞穴。已获得洛伦剑	Tularean Caves.  Got Loren	
+592		Gave plans to elfking	Bryan
+593		Gave Loren to Catherine	Bryan
+594		Gave false plans to elfking (betray)	Bryan
+595		Gave false Loren to Catherine (betray)	Bryan
+596		Gave artifact to humans	Bryan
+597		Gave artifact to elves	Bryan
+598		Gave weapons to humans	Bryan
+599		Gave weapons to elves	Bryan
+600		Talked to Catherine	Bryan
+601		Talked to elfking	Bryan
+602		Told Catherine about fake prisoner	Bryan
+603		Told Elfking about fake plans	Bryan
+604		Fort Riverstride.  Opened chest with plans	
+605		Tularean Caves.  Got Loren	
 606	去图拉利昂森林的那文城堡，把伪造的要塞设计图交给帕尔森国王。		Bryan
 607	去伊拉西亚的狮鹫心城堡，把假冒的劳伦交给凯瑟琳王后。		Bryan
-608	已将城堡建到 3 级（善良）不再使用（Riki）	Built Castle to Level 3 (good)NO LONGER USED(Riki)	Bryan
-609	已将城堡建到 3 级（邪恶）不再使用（Riki）	Built Castle to Level 3 (evil)NO LONGER USED(Riki)	Bryan
-610	已将城堡建到 2 级（营救了矮人）	Built Castle to Level 2 (rescued dwarf guy)	Bryan
-611	已选择光明之路	Chose the path of Light	Bryan
-612	已选择黑暗之路	Chose the path of Dark	Bryan
+608		Built Castle to Level 3 (good)NO LONGER USED(Riki)	Bryan
+609		Built Castle to Level 3 (evil)NO LONGER USED(Riki)	Bryan
+610		Built Castle to Level 2 (rescued dwarf guy)	Bryan
+611		Chose the path of Light	Bryan
+612		Chose the path of Dark	Bryan
 613	穿过迷雾之墙并且不杀一人，事成之后去赛勒斯提的光辉城堡找格文·马格努斯。		Bryan
-614	未杀死任何生物就完成了试炼场	Completed Proving Grounds without killing a single creature	Bryan
+614		Completed Proving Grounds without killing a single creature	Bryan
 615	分别去赛勒斯提的光明神庙和地狱城的暗黑神庙收集到圣坛碎片，把它们交给赛勒斯提光辉城堡里的瑞瑟雷克特。		Bryan
 616	去巨人领地的星座之地杀死赞诺费克斯，然后到赛勒斯提的光辉城堡找瑞瑟雷克特。	0	Bryan
-617	已杀死泽赞诺费克斯	Slayed Xenofex	0
+617		Slayed Xenofex	0
 618	去泰塔利亚探索酒窖，然后到赛勒斯提的光辉城堡找克拉格·汉克。	0	Bryan
-619	已杀死吸血鬼	Slayed the vampire	0
+619		Slayed the vampire	0
 620	去地狱城的黄昏城堡抢夺灵魂之坛，并把它们交给赛勒斯提的范·卡格汉。	0	Bryan
 621	去地狱城杀死托尔伯蒂，把他身上的控制晶片交给赛勒斯提的智者罗伯特。	0	Bryan
-622	已完成死灵法师试炼场	Finished Necro Proving Grounds	Bryan
-623	已完成死灵法师任务 2 - 光明神庙	Finished Necro Task 2 - Temple of Light	Bryan
-624	已完成死灵法师任务 3 - 灵魂罐	Finished Necro Task 3 - Soul Jars	Bryan
-625	已完成死灵法师任务 4 - 克兰克的实验室	Finished Necro Task 4 - Clanker's Lab	Bryan
-626	已完成巫师试炼场	Finished Wizard Proving Grounds	Bryan
-627	已完成巫师任务 2 - 黑暗神庙	Finished Wizard Task 2 - Temple of Dark	Bryan
-628	已完成巫师任务 3 - 酒窖	Finished Wizard Task 3 - Wine Cellar	Bryan
-629	已完成巫师任务 4 - 灵魂罐	Finished Wizard Task 4 - Soul Jars	Bryan
-630	已杀死善良的魔法门3角色	Killed Good MM3 Person	Bryan
-631	已杀死邪恶的魔法门3角色	Killed Evil MM3 Person	Bryan
-632	已获得蜂巢部件	Got Hive part	Bryan
-633	已获得科幻部件	Got the sci-fi part	Bryan
+622		Finished Necro Proving Grounds	Bryan
+623		Finished Necro Task 2 - Temple of Light	Bryan
+624		Finished Necro Task 3 - Soul Jars	Bryan
+625		Finished Necro Task 4 - Clanker's Lab	Bryan
+626		Finished Wizard Proving Grounds	Bryan
+627		Finished Wizard Task 2 - Temple of Dark	Bryan
+628		Finished Wizard Task 3 - Wine Cellar	Bryan
+629		Finished Wizard Task 4 - Soul Jars	Bryan
+630		Killed Good MM3 Person	Bryan
+631		Killed Evil MM3 Person	Bryan
+632		Got Hive part	Bryan
+633		Got the sci-fi part	Bryan
 634	分别去赛勒斯提的光明神庙和地狱城的暗黑神庙收集到圣坛碎片，把它们交给地狱城里的卡斯托。	0	Bryan
 635	去巨人领地的星座之地杀死赞诺费克斯，然后到地狱城找卡斯托。	0	Bryan
 636	去桑达非斯山从邪术师那里抢夺灵魂之坛，然后把它们交给地狱城的马克西姆。	0	Bryan
 637	破坏科兰克实验室里的魔法防御系统，然后到地狱城找达克·谢德。	0	Bryan
-638	已摧毁克兰克实验室中的魔法防御	Destroyed the magical defenses in Clanker's Lab	0
+638		Destroyed the magical defenses in Clanker's Lab	0
 639	去赛勒斯提杀死智者罗伯特，然后到地狱城找托尔伯蒂。	0	Bryan
 640	顺利穿过再生之地，回地狱城找阿基巴德。	0	Bryan
-641	已完成培育坑。	Completed Breeding Pit.	0
+641		Completed Breeding Pit.	0
 642	去埃里西面的海里进入林肯号，找到船上的振荡器，把它交给赛勒斯提的瑞瑟雷克特。	0	0
 643	去埃里西面的海里进入林肯号，找到船上的振荡器，把它交给地狱城的卡斯托。	0	0
-644	管家只出现一次（区域 2）	Butler only shows up once (area 2)	Pete
-645	玩家城堡计时器只触发一次	Player castle timer only happens once	Pete
-646	仲裁者信使只出现一次	Arbiter Messenger only happens once	Pete
-647	玩家城堡的哥布林已全部死亡	Player castle goblins are all dead	Riki
-648	队伍不再回到 Out01 神庙	Party doesn't come back to Out01 temple anymore	Bryan
-649	神器信使只出现一次	Artifact Messenger only happens once	Riki
-650	已杀死特定怪物（武器大师大师级任务）- 对 Bob 很重要	Killed specific monster (Armsmaster GM quest) - important for Bob	Bryan
-651	已完成喷泉任务（水系魔法大师级）- 对 Bob 很重要	Completed fountain quest (Water Magic GM) - important for Bob	Bryan
-652	已清理闹鬼宅邸（骑士晋升）	Cleaned out the haunted mansion (Cavalier promo)	Bryan
-653	只给一次马卡姆的花瓶（马卡姆庄园，盗贼晋升）。	"Only give Markham's vase once (Markham's manor, Thief promo)."	Bryan
-654	已杀死闹鬼宅邸中的全部怪物	Killed all monsters in Haunted mansion	Bryan
-655	已杀死强盗窝中的全部怪物	Killed all monsters in Bandit cave	Bryan
-656	爱丽丝·哈格里夫斯只在建筑中出现一次	Alice Hargreaves in building only once	Bryan
-657	获得魔法学校卷轴店会员资格	Membership to the School of Sorcery Scroll Shop	Bryan
+644		Butler only shows up once (area 2)	Pete
+645		Player castle timer only happens once	Pete
+646		Arbiter Messenger only happens once	Pete
+647		Player castle goblins are all dead	Riki
+648		Party doesn't come back to Out01 temple anymore	Bryan
+649		Artifact Messenger only happens once	Riki
+650		Killed specific monster (Armsmaster GM quest) - important for Bob	Bryan
+651		Completed fountain quest (Water Magic GM) - important for Bob	Bryan
+652		Cleaned out the haunted mansion (Cavalier promo)	Bryan
+653		"Only give Markham's vase once (Markham's manor, Thief promo)."	Bryan
+654		Killed all monsters in Haunted mansion	Bryan
+655		Killed all monsters in Bandit cave	Bryan
+656		Alice Hargreaves in building only once	Bryan
+657		Membership to the School of Sorcery Scroll Shop	Bryan
 658	去拜尔德斯的石头城和矮人交谈，设法使它们帮助你修复和谐谷城堡。	0	0
-659	已把神器交给仲裁者	Gave artifact to arbiter	Bryan
-660	已从迷雾之墙获得巫妖罐	Got Lich Jar from Walls of Mist	Bryan
-661	已从雷拳山获得巫妖罐	Got Lich Jar from Thunderfist Mountain	Bryan
-662	已从幽暮城堡获得巫妖罐	Got Lich Jar from Castle Gloaming	Bryan
+659		Gave artifact to arbiter	Bryan
+660		Got Lich Jar from Walls of Mist	Bryan
+661		Got Lich Jar from Thunderfist Mountain	Bryan
+662		Got Lich Jar from Castle Gloaming	Bryan
 663	"从迪雅的地狱城大厅进入地狱城，到那里的黄昏城堡和阿基巴德交谈。"	0	0
 664	"使用布拉卡达的远距离传送器进入赛勒斯提，到光辉城堡和格文·马格努斯交谈。"	0	0
 665	为仲裁人格瑞找个继任者。	0	0
-666	已获得波涛卷轴	Got Scroll of Waves	0
+666		Got Scroll of Waves	0
 667	从拜尔德斯找回光明灯，把它交给和谐谷的忒林维泽。	Barrow Lantern Quest	James
 668	去尼根从迷宫里找到哈尔代尔的尸骨，把它交给尼根的马吉姆·达斯克。	Haldar's Remains Quest	James
 669	去伊拉西亚东北面的强盗窝夺回德弗里克·派尔丁的戒指印章，并到和谐谷把戒指还给他。	Davrik's Ring Quest	James
 670	去泰塔利亚为诺伯特·西拉丝把一封信转交给马克汉姆爵士。		James
 671	去伊拉西亚把帕尔森的羽毛笔交给诺伯特·西拉丝。		James
-672	已从箱子中取得印章戒指	Got Signet ring out of chest	Tim
-673	已从箱子中取得魔法尘	Got magic dust out of chest 	Tim
-674	已获得光明之灯	Got lantern of light	Tim
-675	已从箱子中取得完美之弓	Got perfect bow out of chest	Tim
-676	已参观区域 2 的方尖碑	Visited Obelisk in Area 2	Riki
-677	已参观区域 3 的方尖碑	Visited Obelisk in Area 3	Riki
-678	已参观区域 4 的方尖碑	Visited Obelisk in Area 4	Riki
-679	已参观区域 5 的方尖碑	Visited Obelisk in Area 5	Riki
-680	已参观区域 6 的方尖碑	Visited Obelisk in Area 6	Riki
-681	已参观区域 7 的方尖碑	Visited Obelisk in Area 7	Riki
-682	已参观区域 8 的方尖碑	Visited Obelisk in Area 8	Riki
-683	已参观区域 9 的方尖碑	Visited Obelisk in Area 9	Riki
-684	已参观区域 10 的方尖碑	Visited Obelisk in Area 10	Riki
-685	已参观区域 11 的方尖碑	Visited Obelisk in Area 11	Riki
-686	已参观区域 12 的方尖碑	Visited Obelisk in Area 12	Riki
-687	已参观区域 13 的方尖碑	Visited Obelisk in Area 13	Riki
-688	已参观区域 14 的方尖碑	Visited Obelisk in Area 14	Riki
-689	已参观区域 39 的方尖碑	Visited Obelisk in Area 39	Riki
-690	打开最终的方尖碑宝箱	Open final Obelisk Chest	Riki
+672		Got Signet ring out of chest	Tim
+673		Got magic dust out of chest 	Tim
+674		Got lantern of light	Tim
+675		Got perfect bow out of chest	Tim
+676		Visited Obelisk in Area 2	Riki
+677		Visited Obelisk in Area 3	Riki
+678		Visited Obelisk in Area 4	Riki
+679		Visited Obelisk in Area 5	Riki
+680		Visited Obelisk in Area 6	Riki
+681		Visited Obelisk in Area 7	Riki
+682		Visited Obelisk in Area 8	Riki
+683		Visited Obelisk in Area 9	Riki
+684		Visited Obelisk in Area 10	Riki
+685		Visited Obelisk in Area 11	Riki
+686		Visited Obelisk in Area 12	Riki
+687		Visited Obelisk in Area 13	Riki
+688		Visited Obelisk in Area 14	Riki
+689		Visited Obelisk in Area 39	Riki
+690		Open final Obelisk Chest	Riki
 691	到埃里的一个小山下面的大厅里把一封信交给仙帝。		Bryan
 692	去图拉利昂森林把仙笛交给乔安·卡里德。		Bryan
 693	在两个星期之内去泰塔利亚的雇佣兵行会和尼尔斯·斯坦利交谈。	Goto Merc Guild	Bryan
 694	到你的盟友所在的城堡偷得挂毯，然后到泰塔利亚把它交给雇佣兵行会的尼尔斯·斯坦利。	Do the Merc Guild Quest	Bryan
-695	未能前往或完成公会任务	Failed either goto or do guild quest	Bryan
-696	已杀死城堡中的全部怪物	Killed all castle monsters	Bryan
-697	已杀死野外全部怪物	Killed all outdoor monsters	Bryan
+695		Failed either goto or do guild quest	Bryan
+696		Killed all castle monsters	Bryan
+697		Killed all outdoor monsters	Bryan
 698	把石头城地下的洞穴人消灭光，然后到石头城找斯巴克·伯恩基德。	0	Bryan
 699	把伊拉西亚和布拉卡达的狮鹫全杀光，然后到迪雅找塞斯·达克森。	0	Bryan
-700	已杀死全部伊拉西亚狮鹫	Killed all Erathian Griffins	Bryan
-701	已杀死全部布拉卡达沙漠狮鹫	Killed all Bracada Desert Griffins	Bryan
-702	已与马尔威克及其同伙了断	Finished with Malwick & Assc.	Riki
-703	开启 mdtXX 的地图（矮人古墓）	Turn on map in mdtXX(Dwarven Barrow)	Riki
-704	开启 mdkXX 的地图（矮人古墓）	Turn on map in mdkXX(Dwarven Barrow)	Riki
-705	开启 mdrXX 的地图（矮人古墓）	Turn on map in mdrXX(Dwarven Barrow)	Riki
+700		Killed all Erathian Griffins	Bryan
+701		Killed all Bracada Desert Griffins	Bryan
+702		Finished with Malwick & Assc.	Riki
+703		Turn on map in mdtXX(Dwarven Barrow)	Riki
+704		Turn on map in mdkXX(Dwarven Barrow)	Riki
+705		Turn on map in mdrXX(Dwarven Barrow)	Riki
 706	"去悬崖洞穴探访达伦·坦普的兄弟的下落，然后回和谐谷把情况告诉他。"	0	0
 707	去地狱城大厅找到四季披风，然后去布拉卡达沙漠找盖里·查姆。	0	0
-708	找到瞭望塔 6 的第二个入口	Find second entrance to Watchtower6	James
-709	已进入仙灵丘	Entered Faerie Mound	James
-710	阿奇巴德现在在克兰克的实验室	Archibald in Clankers Lab now	0
-711	取走伙伴的挂毯	Take the Associate's Tapestry	0
+708		Find second entrance to Watchtower6	James
+709		Entered Faerie Mound	James
+710		Archibald in Clankers Lab now	0
+711		Take the Associate's Tapestry	0
 712	"拿到三个雕像，把它们分别放在布拉卡达、泰塔利亚和埃里的祭坛里，然后到图拉利昂森林找索尔·伦伯拉。"		0
-713	已把物品 617 放入 out14（雕像）	Placed item 617 in out14(statue)	0
-714	已把物品 618 放入 out13（雕像）	Place item 618 in out13(statue)	0
-715	已把物品 619 放入 out06（雕像）	Place item 619 in out06(statue)	0
+713		Placed item 617 in out14(statue)	0
+714		Place item 618 in out13(statue)	0
+715		Place item 619 in out06(statue)	0
 716	得到三幅画像，然后带给泰塔利亚的费迪南德·威斯康。	0	0
 717	"在十三个客栈玩牌全部获得胜利，然后回伊拉西亚找吉娜·巴尼斯。"	0	0
-718	传送增益：哈蒙戴尔	TP Buff Harmondale	0
-719	传送增益：伊拉西亚	TP Buff Erathia	0
-720	传送增益：土拉立安森林	TP Buff Tularean Forest	0
-721	传送增益：赛勒斯提	TP Buff Celeste	0
-722	传送增益：深渊	TP Buff The Pit	0
-723	传送增益：尼根	TP Buff Nighon	0
-724	花瓶 - 我弄丢了它	Vase - I lost it	0
-725	匕首 - 我弄丢了它	Dagger - I lost it	0
-726	波涛卷轴 - 我弄丢了它	Scroll of Waves - I lost it	0
-727	密码 - 我弄丢了它	Cipher - I lost it	0
-728	破旧腰带 - 我弄丢了它	Worn Belt - I lost it	0
-729	木之心 - 我弄丢了它	Heart of Wood - I lost it	0
-730	前往永晨的地图 - 我弄丢了它	Map to Evenmorn - I lost it	0
-731	魔像头部 - 我弄丢了它	Golem Head - I lost it	0
-732	修道院标准头部 - 我弄丢了它	Abby normal head - I lost it	0
-733	右臂 - 我弄丢了它	Right arm - I lost it	0
-734	左臂 - 我弄丢了它	Left arm - I lost it	0
-735	右腿 - 我弄丢了它	Right leg - I lost it	0
-736	左腿 - 我弄丢了它	Left leg - I lost it	0
-737	躯干 - 我弄丢了它	Torso - I lost it	0
-738	神圣干预之书 - 我弄丢了它	Book of Divine Intervention - I lost it	0
-739	龙蛋 - 我弄丢了它	Dragon Egg - I lost it	0
-740	矮人骨骸 - 我弄丢了它	Dwarf Bones - I lost it	0
-741	巫妖罐（空）- 我弄丢了它	Lich Jar (Empty) - I lost it	0
-742	灵药 - 我弄丢了它	Elixir - I lost it	0
-743	巫妖罐箱 - 我弄丢了它	Lich Jar Case - I lost it	0
-744	祭坛碎片（善良）- 我弄丢了它	Altar Piece (Good) - I lost it	0
-745	祭坛碎片（邪恶）- 我弄丢了它	Altar Piece (Evil) - I lost it	0
-746	控制立方体 - 我弄丢了它	Control Cube - I lost it	0
-747	潜水服 - 我弄丢了它	Wetsuit - I lost it	0
-748	最终部件 - 我弄丢了它	Final Part - I lost it	0
-749	巫妖罐（满）- 我弄丢了它	Lich Jar (Full) - I lost it	0
-750	赢得了全部阿卡玛吉对局	Won all Arcomage games	0
-751	已获得神圣干预之书	Got the Divine Intervention	0
-752	已与罗兰交谈	Talked to Roland	0
-753	完美之弓 - 我弄丢了它	Perfect bow - I lost it	0
-754	已打开装有暗影面具的箱子	Opened chest with shadow mask	0
-755	已杀死巴阿大祭司	Killed High Preist of Baa	0
-756	已完成阿卡玛吉任务——取得宝藏	Finished ArcoMage Quest - Get the treasure	0
+718		TP Buff Harmondale	0
+719		TP Buff Erathia	0
+720		TP Buff Tularean Forest	0
+721		TP Buff Celeste	0
+722		TP Buff The Pit	0
+723		TP Buff Nighon	0
+724		Vase - I lost it	0
+725		Dagger - I lost it	0
+726		Scroll of Waves - I lost it	0
+727		Cipher - I lost it	0
+728		Worn Belt - I lost it	0
+729		Heart of Wood - I lost it	0
+730		Map to Evenmorn - I lost it	0
+731		Golem Head - I lost it	0
+732		Abby normal head - I lost it	0
+733		Right arm - I lost it	0
+734		Left arm - I lost it	0
+735		Right leg - I lost it	0
+736		Left leg - I lost it	0
+737		Torso - I lost it	0
+738		Book of Divine Intervention - I lost it	0
+739		Dragon Egg - I lost it	0
+740		Dwarf Bones - I lost it	0
+741		Lich Jar (Empty) - I lost it	0
+742		Elixir - I lost it	0
+743		Lich Jar Case - I lost it	0
+744		Altar Piece (Good) - I lost it	0
+745		Altar Piece (Evil) - I lost it	0
+746		Control Cube - I lost it	0
+747		Wetsuit - I lost it	0
+748		Final Part - I lost it	0
+749		Lich Jar (Full) - I lost it	0
+750		Won all Arcomage games	0
+751		Got the Divine Intervention	0
+752		Talked to Roland	0
+753		Perfect bow - I lost it	0
+754		Opened chest with shadow mask	0
+755		Killed High Preist of Baa	0
+756		Finished ArcoMage Quest - Get the treasure	0
 757	祝贺	For Blinging	0
-758	已参观巨人领地	Visited The Land of the giants	0
-759	控制立方体只出现一次	Control Cube only once	0
-760	已占领区域 2 的山丘堡垒	Took area 2 hill fort	0
-761	不要被伏击	Don't get ambushed	0
-762	已购买物品 1	Bought Item 1	0
-763	已购买物品 2	Bought Item 2	0
-764	已购买物品 3	Bought Item 3	0
-765	已购买物品 4	Bought Item 4	0
-766	已购买物品 5	Bought Item 5	0
-767	已购买物品 6	Bought Item 6	0
-768	不能再买 1	Can't keep buying 1	0
-769	不能再买 2	Can't keep buying 2	0
-770	不能再买 3	Can't keep buying 3	0
-771	不能再买 4	Can't keep buying 4	0
-772	不能再买 5	Can't keep buying 5	0
-773	不能再买 6	Can't keep buying 6	0
-774	区域 2 哥布林出现的时间（劫掠营地）	Time for Gobs to appear in area 2(raiding camp)	0
-775	区域 12 的阿奇巴德只出现一次	Area 12 Archibald only once	0
-776	已取走罗兰的画像	Took Roland Painting	0
-777	已取走阿奇巴德的画像	Took Archi Painting	0
-778	已取走天使画像	Took Angel Painting	0
-779	南部烽火（Out02）	South Signal Fire Out02	0
-780	北部烽火（Out02）	North Signal Fire Out02	0
-781	西部烽火（Out02）	West Siganl Fire Out02	0
-782	你的朋友们很生你的气	Your friends are mad at you 	0
-783	已完成 MM7 剧情	Finished MM7 Story	
-784	已完成 MM6 剧情	Finished MM6 Story	0
+758		Visited The Land of the giants	0
+759		Control Cube only once	0
+760		Took area 2 hill fort	0
+761		Don't get ambushed	0
+762		Bought Item 1	0
+763		Bought Item 2	0
+764		Bought Item 3	0
+765		Bought Item 4	0
+766		Bought Item 5	0
+767		Bought Item 6	0
+768		Can't keep buying 1	0
+769		Can't keep buying 2	0
+770		Can't keep buying 3	0
+771		Can't keep buying 4	0
+772		Can't keep buying 5	0
+773		Can't keep buying 6	0
+774		Time for Gobs to appear in area 2(raiding camp)	0
+775		Area 12 Archibald only once	0
+776		Took Roland Painting	0
+777		Took Archi Painting	0
+778		Took Angel Painting	0
+779		South Signal Fire Out02	0
+780		North Signal Fire Out02	0
+781		West Siganl Fire Out02	0
+782		Your friends are mad at you 	0
+783		Finished MM7 Story	
+784		Finished MM6 Story	0
 785	0	0	0
 786	0	0	0
 787	0	0	0
@@ -1023,46 +1023,46 @@ Q Bit	Quest Note Text	Notes	Owner
 1022	0	0	0
 1023	0	0	0
 1024	0	0	0
-1025	开启 D05 的钥匙	" 1 D09, key to open D05"	" D09, key to open D05"
-1026	为泰拉克斯法杖任务的玻璃碎片而给予	" 2 D11, given for glass shard for staff of terrax quest"	" D11, given for glass shard for staff of terrax quest"
-1027	找回竖琴时给予	" 3 D06, given when harp is recovered"	" D06, given when harp is recovered"
-1028	从宝箱取回神器时给予	" 4 D10, given when you retreive artifact from chest"	" D10, given when you retreive artifact from chest"
-1029	获得沙漏的任务点	" 5 D18, questbit for getting hourglass"	" D18, questbit for getting hourglass"
-1030	6 T3，营救囚犯时给予	" 6 T3, given when you rescue prisoner"	" T3, given when you rescue prisoner"
-1031	7 T5，晋升为首席德鲁伊时给予	" 7 T5, when you are promoted to archdruid"	" T5, when you are promoted to archdruid"
-1032	8 T7，找到冒烟枪时给予	" 8 T7, given when you find the smoking gun"	" T7, given when you find the smoking gun"
-1033	9，CD2，摧毁巫妖之书时给予	" 9, CD2, given when you destroy Lich book"	" CD2, given when you destroy Lich book"
-1034	下水道，捕获盗贼王子。	Tim	"Sewer, Capture Prince of Thieves."
-1035	11 D7，开启 D18 中的墓穴。	"11 D7, opens tomb in D18."	"D7, opens tomb in D18."
-1036	12 D3，营救妈妈时给予。	"12 D3, given when you save Mom."	"D3, given when you save Mom."
-1037	在 D7 营救少女梅洛迪·西尔弗时给予。	"13 D13, given when you save the damsel, Melody Silver, in D7."	"D13, given when you save the damsel, Melody Silver, in D7."
-1038	14 D6，发出消息 504 时给予。	"14 D6, given when Message 504 given out."	"D6, given when Message 504 given out."
-1039	15 D7，打开装有治安官证据的箱子时给予。	"15 D7, given when chest with evidence for Constable opened."	"D7, given when chest with evidence for Constable opened."
-1040	队伍变成狼人时给予。	"16 D17, given when party is turned into Werewolves."	"D17, given when party is turned into Werewolves."
-1041	狼祭坛被摧毁时给予。	"17 D17, given when wolf altar is destroyed."	"D17, given when wolf altar is destroyed."
-1042	队伍埋葬受刑者时给予。	"18 D17, given when party buries torture victims."	"D17, given when party buries torture victims."
-1043	队伍埋葬更多受刑者时给予。	"19 D17, given when party buries more torture victims."	"D17, given when party buries more torture victims."
-1044	队伍挖出猛虎雕像任务物品时给予。	"20 D17, given when party digs up tiger statue quest item."	"D17, given when party digs up tiger statue quest item."
-1045	21 T2，邪恶水晶被摧毁时给予	"21 T2, Given when evil crystal is destroyed"	"T2, Given when evil crystal is destroyed"
-1046	寻找斯纳格尔之斧时给予	"22 D05, Given to find Snergles axe"	"D05, Given to find Snergles axe"
-1047	祭坛被亵渎时给予	"23 D13, Given when Altar is desecrated"	"D13, Given when Altar is desecrated"
-1048	寻找埃思里克头骨时给予	"24 D14, Given to find Ethrics Skull"	"D14, Given to find Ethrics Skull"
-1049	寻找商人的白珍珠时给予	"25 D15, Given to find merchants White pearl"	"D15, Given to find merchants White pearl"
-1050	寻找白女巫之冠时给予	"26 D19, Given to find White witches crown"	"D19, Given to find White witches crown"
-1051	斧子被归还时给予（这样门就无法打开）	"27 D05, Given when axe is returned (so door can't be opened)"	"D05, Given when axe is returned (so door can't be opened)"
+1025		" 1 D09, key to open D05"	" D09, key to open D05"
+1026		" 2 D11, given for glass shard for staff of terrax quest"	" D11, given for glass shard for staff of terrax quest"
+1027		" 3 D06, given when harp is recovered"	" D06, given when harp is recovered"
+1028		" 4 D10, given when you retreive artifact from chest"	" D10, given when you retreive artifact from chest"
+1029		" 5 D18, questbit for getting hourglass"	" D18, questbit for getting hourglass"
+1030		" 6 T3, given when you rescue prisoner"	" T3, given when you rescue prisoner"
+1031		" 7 T5, when you are promoted to archdruid"	" T5, when you are promoted to archdruid"
+1032		" 8 T7, given when you find the smoking gun"	" T7, given when you find the smoking gun"
+1033		" 9, CD2, given when you destroy Lich book"	" CD2, given when you destroy Lich book"
+1034		Tim	"Sewer, Capture Prince of Thieves."
+1035		"11 D7, opens tomb in D18."	"D7, opens tomb in D18."
+1036		"12 D3, given when you save Mom."	"D3, given when you save Mom."
+1037		"13 D13, given when you save the damsel, Melody Silver, in D7."	"D13, given when you save the damsel, Melody Silver, in D7."
+1038		"14 D6, given when Message 504 given out."	"D6, given when Message 504 given out."
+1039		"15 D7, given when chest with evidence for Constable opened."	"D7, given when chest with evidence for Constable opened."
+1040		"16 D17, given when party is turned into Werewolves."	"D17, given when party is turned into Werewolves."
+1041		"17 D17, given when wolf altar is destroyed."	"D17, given when wolf altar is destroyed."
+1042		"18 D17, given when party buries torture victims."	"D17, given when party buries torture victims."
+1043		"19 D17, given when party buries more torture victims."	"D17, given when party buries more torture victims."
+1044		"20 D17, given when party digs up tiger statue quest item."	"D17, given when party digs up tiger statue quest item."
+1045		"21 T2, Given when evil crystal is destroyed"	"T2, Given when evil crystal is destroyed"
+1046		"22 D05, Given to find Snergles axe"	"D05, Given to find Snergles axe"
+1047		"23 D13, Given when Altar is desecrated"	"D13, Given when Altar is desecrated"
+1048		"24 D14, Given to find Ethrics Skull"	"D14, Given to find Ethrics Skull"
+1049		"25 D15, Given to find merchants White pearl"	"D15, Given to find merchants White pearl"
+1050		"26 D19, Given to find White witches crown"	"D19, Given to find White witches crown"
+1051		"27 D05, Given when axe is returned (so door can't be opened)"	"D05, Given when axe is returned (so door can't be opened)"
 1052		Dave	
 1053		Dave	
 1054		Dave	
-1055	蜘蛛任务完成时给予	"31 D02, given when spider quest is completed"	"D02, given when spider quest is completed"
-1056	孩子获救时给予	"32 D02, given when kid is rescued"	"D02, given when kid is rescued"
-1057	蛋任务被布置时给予	"33 D02, given when egg quest is assigned"	"D02, given when egg quest is assigned"
-1058	找到巴阿神庙遗物时给予	"34 D02, given when temple of Baa relic is found"	"D02, given when temple of Baa relic is found"
-1059	带回黑珍珠，幽灵将不再出现。	35 D17 Brought back Black Pearl and Ghost will no longer show up.	Brought back Black Pearl and Ghost will no longer show up.
-1060	收获蝙蝠粪时给予	"36 D02, given when bat quano is harvested"	"D02, given when bat quano is harvested"
-1061	找到全部尸体时给予	"37 D02, is given when you get all the dead guys"	"D02, is given when you get all the dead guys"
-1062	找到冒烟枪时给予	"38 T07, given when you find the smoking gun"	"T07, given when you find the smoking gun"
-1063	39 CD2，找到先知宝石时给予	"39 CD2, given when you find the oracle gem"	"CD2, given when you find the oracle gem"
-1064	40 CD2，获得成为巫妖的知识时给予	"40 CD2, given when you get the knowledge to become a lich"	"CD2, given when you get the knowledge to become a lich"
+1055		"31 D02, given when spider quest is completed"	"D02, given when spider quest is completed"
+1056		"32 D02, given when kid is rescued"	"D02, given when kid is rescued"
+1057		"33 D02, given when egg quest is assigned"	"D02, given when egg quest is assigned"
+1058		"34 D02, given when temple of Baa relic is found"	"D02, given when temple of Baa relic is found"
+1059		35 D17 Brought back Black Pearl and Ghost will no longer show up.	Brought back Black Pearl and Ghost will no longer show up.
+1060		"36 D02, given when bat quano is harvested"	"D02, given when bat quano is harvested"
+1061		"37 D02, is given when you get all the dead guys"	"D02, is given when you get all the dead guys"
+1062		"38 T07, given when you find the smoking gun"	"T07, given when you find the smoking gun"
+1063		"39 CD2, given when you find the oracle gem"	"CD2, given when you find the oracle gem"
+1064		"40 CD2, given when you get the knowledge to become a lich"	"CD2, given when you get the knowledge to become a lich"
 1065		Bruce	
 1066		Bruce	
 1067		Bruce	
@@ -1073,9 +1073,9 @@ Q Bit	Quest Note Text	Notes	Owner
 1072		Bruce	
 1073		Bruce	
 1074		Bruce	
-1075	51 T4，角色找到白银圣杯时给予。	"51 T4, Given when characters find Silver Chalice."	"T4, Given when characters find Silver Chalice."
-1076	角色找到鹰像时给予	"52 D16, Given when characters find the Eagle Statuette"	"D16, Given when characters find the Eagle Statuette"
-1077	53 T6，角色从祭坛取走先知水晶时给予。	"53 T6, Given when characters take the Oracle Crystal from the altar."	"T6, Given when characters take the Oracle Crystal from the altar."
+1075		"51 T4, Given when characters find Silver Chalice."	"T4, Given when characters find Silver Chalice."
+1076		"52 D16, Given when characters find the Eagle Statuette"	"D16, Given when characters find the Eagle Statuette"
+1077		"53 T6, Given when characters take the Oracle Crystal from the altar."	"T6, Given when characters take the Oracle Crystal from the altar."
 1078		Chris	
 1079		Chris	
 1080		Chris	
@@ -1093,10 +1093,10 @@ Q Bit	Quest Note Text	Notes	Owner
 1092		Peter	
 1093		Peter	
 1094		Peter	
-1095	在 D4 门解除防护时给予。	Walt	Given when doors unwarded in D4.
-1096	D20，打开第一个神器宝箱时给予	Walt	"D20, given when 1st artifact chest opened"
-1097	D20，打开第二个神器宝箱时给予	Walt	"D20, given when 2nd artifact chest opened"
-1098	D17，发出消息卷轴 517 时给予	Walt	"D17, given when message scroll 517 given out"
+1095		Walt	Given when doors unwarded in D4.
+1096		Walt	"D20, given when 1st artifact chest opened"
+1097		Walt	"D20, given when 2nd artifact chest opened"
+1098		Walt	"D17, given when message scroll 517 given out"
 1099		Lisa	
 1100		Lisa	
 1101		Lisa	
@@ -1107,31 +1107,31 @@ Q Bit	Quest Note Text	Notes	Owner
 1106	把舒尔曼的信带给铁拳城堡的威尔伯·汉弗里摄政王。	Set by Andover after you show him the letter	Bring Sulman's letter to Regent Wilbur Humphrey at Castle Ironfist
 1107	找到大耳怪前哨宝库门的密码并返回新索匹格的市政厅。	Set by Town Hall	Find the Combination to the vault door in Goblinwatch
 1108	从羊鸣庙里找到美妙钟琴并返回新索匹格的市政厅。	Paul	Destroy the Altar of Evil in the Temple of Baa and return with the Chime of Harmony
-1109	在哥布林瞭望塔发现密码组合	Paul	Discovered Combination in Goblin Watch
+1109		Paul	Discovered Combination in Goblin Watch
 1110	找到科尔本爵士的盾牌并返回铁拳城堡向威尔伯·汉弗里报告。	Paul	Find Lord Kilburn's Shield
-1111	已与叛徒交谈	Paul	Talked to Traitor
+1111		Paul	Talked to Traitor
 1112	营救一名处于危难之中的少女，并带着她一同返回铁拳城堡威尔伯·汉弗里处。	Paul	Rescue a Damsel in Distress
 1113	杀死盘踞于黑摩尔城堡附近一洞穴里的长牙巨龙威瑟海德，并返回铁拳城堡威尔伯·汉弗里处。	Paul	Slay Longfang Witherhide
 1114	哄尼古拉，让他高兴。	Paul	Entertain Nicolai
-1115	约翰·西尔弗只与你交谈一次。	91 D12 John Silver only talks to you once.	D12 John Silver only talks to you once.
-1116	圣武士幽灵告诉队伍猛虎雕像位置时给予。	"92 D17, Given when Paladin Ghost tells party where Tiger Statue is."	"D17, Given when Paladin Ghost tells party where Tiger Statue is."
-1117	任务点 18 尸体被埋葬时使用。	"93 D17, Used when QB 18 corpses buried."	"D17, Used when QB 18 corpses buried."
-1118	任务点 19 尸体被埋葬时使用。	"94 D17, Used when QB 19 corpses buried."	"D17, Used when QB 19 corpses buried."
+1115		91 D12 John Silver only talks to you once.	D12 John Silver only talks to you once.
+1116		"92 D17, Given when Paladin Ghost tells party where Tiger Statue is."	"D17, Given when Paladin Ghost tells party where Tiger Statue is."
+1117		"93 D17, Used when QB 18 corpses buried."	"D17, Used when QB 18 corpses buried."
+1118		"94 D17, Used when QB 19 corpses buried."	"D17, Used when QB 19 corpses buried."
 1119	找到并把尼古拉王子带回铁拳城堡。	Walt	Find and return the Prince
 1120	找到第三只眼并把它交给铁拳城堡的尼古拉王子。	Walt	Find the Third Eye
-1121	阿奇巴德在图书馆接受了黑暗禁锢任务	Walt	Dark Containment quest taken by Archibald in Library
+1121		Walt	Dark Containment quest taken by Archibald in Library
 1122	擒获盗贼王子并把他押送回斯通城堡安东尼·斯通爵士处。	NPC	Capture the Prince of Thieves
 1123		Oracle	
-1124	先知，插入记忆水晶 α 时	Oracle	"Oracle, when memory crystal alpha inserted"
-1125	先知，插入记忆水晶 β 时	Oracle	"Oracle, when memory crystal beta inserted"
-1126	先知，插入记忆水晶 δ 时	Oracle	"Oracle, when memory crystal delta inserted"
-1127	先知，插入记忆水晶 ε 时	Oracle	"Oracle, when memory crystal epsilon inserted"
-1128	获得记忆水晶 ε 时给予	CD3	Given when you get memory crystal epsilon
+1124		Oracle	"Oracle, when memory crystal alpha inserted"
+1125		Oracle	"Oracle, when memory crystal beta inserted"
+1126		Oracle	"Oracle, when memory crystal delta inserted"
+1127		Oracle	"Oracle, when memory crystal epsilon inserted"
+1128		CD3	Given when you get memory crystal epsilon
 1129	"雇一个石匠和一个木匠，并把他们带到自由天堂的斯通神庙去修复该神庙，然后回到斯通城堡的安东尼·斯通爵士处。"	NPC	Rebuild Temple Stone
-1130	神庙之石重建完成	NPC	Rebuilt Temple Stone Complete
+1130		NPC	Rebuilt Temple Stone Complete
 1131	"前往自由天堂东面的岛屿的神庙，从众僧侣手中夺得圣杯并把它带回到自由天堂的斯通神庙，然后返回斯通城堡见斯通爵士。"	NPC	Find and replace the Sacred Chalice
-1132	已在神庙中放置圣杯	NPC	Placed Chalice in Temple
-1133	马丁·费里斯布置牧师任务	NPC	Marton Ferris sets cleric quest
+1132		NPC	Placed Chalice in Temple
+1133		NPC	Marton Ferris sets cleric quest
 1134	找到时间沙漏，交还给浓雾镇的阿尔伯特·牛顿爵士。	NPC	Retrieve the Hourglass of Time
 1135	喝下魔法喷泉的泉水并返回浓雾镇的阿尔伯特·牛顿爵士处。	NPC	Drink from the Fountain of Magic
 1136	找回德里克丝水晶并返回浓雾镇的阿尔伯特·牛顿爵士处。	NPC	Retrieve the Crystal of Terrax
@@ -1139,127 +1139,127 @@ Q Bit	Quest Note Text	Notes	Owner
 1138	得到查德威克的骑士提名并返回坦普城堡的奥斯里克·坦普爵士处。	NPC	Get nomination from Chadwick
 1139	击败军阀并把证据带给奥斯里克·坦普。	NPC	Defeat the Warlord
 1140	稳定王国内所有9个驿站的价格并回到银湾镇的弗丽斯夫人处。	NPC	Fix the prices of all the stables in the Kingdom
-1141	为价格联盟任务参观了全部马厩	NPC	visited all the stables for price fixing quest
+1141		NPC	visited all the stables for price fixing quest
 1142	在春秋分或冬夏至前往银湾镇北边的石圈拜祭太阳神坛（提示：3月20日是春分）。	NPC	Visit the Altar of the Sun on an equinox or solstice
 1143	在满月的午夜时分来到月亮神庙拜祭月亮神坛。	NPC	Visit the Altar of the Moon at midnight of a full moon
 1144	"结束冬天，带着好消息返回斯壮姆嘉德城堡的斯壮姆嘉德爵士处。"	NPC	End winter for Lord Stromgard
 1145	"从白帽镇南边的冰风堡垒中找回龙塔钥匙，并把它带给斯壮姆嘉德城堡的斯壮姆嘉德爵士。"	NPC	Retrieve the key to the Dragon Towers
 1146	重新设置每个镇的龙塔，并返回斯壮姆嘉德城堡的斯壮姆嘉德爵士处。	NPC	Reset all of the Dragon Towers
-1147	已参观全部塔楼	NPC	visited all the towers
+1147		NPC	visited all the towers
 1148	前往斯纳格的岩洞，除掉斯纳格，并把他的战斧交给幽灵沼泽萦绕旅店的阿维里·辛西亚。	NPC	Kill Snergle and return with his axe
 1149	突袭浓雾镇附近的银舵前哨并把他们堕落的证据带给浓雾镇的治安官。	NPC	silver helms are bad quest
 1150	为新索匹格的安多弗·波特皮洛夺回废庙中的蜡烛台。	NPC	Retrieve the candelabra for Andover Potbello
-1151	已营救梅洛迪	NPC	rescued melody
+1151		NPC	rescued melody
 1152	前往铁拳城堡南面的龙骑兵岩洞，夺回竖琴，并把它交还给铁拳城堡的安德鲁·贝斯普。	NPC	Retreive Andrew Besper's harp 
 1153	在自由天堂西面的埃斯里克的坟墓中找到埃斯里克的头骨，将它交给自由天堂的盖贝里·卡特曼。	NPC	Retrieve Ethric's skull for Gabriel Cartman in Free Haven
 1154	除掉新索匹格的废庙中的蜘蛛女王，并把它的心带给新索匹格的布福德·提·奥曼。	NPC	kill the queen of the spiders
 1155	摧毁在银湾镇西面独立碑中的祭坛并返回银湾镇的埃里诺·范德贝尔特处。	NPC	deface the altar quest
-1156	已成功玷污祭坛	NPC	successfully defaced the altar bit
-1157	蝙蝠粪任务	NPC	bat guano quest
+1156		NPC	successfully defaced the altar bit
+1157		NPC	bat guano quest
 1158	摧毁神拳庙中的水晶并返回布特雷格湾的温斯顿·舒则处。	NPC	give destroy crystal quest
-1159	已摧毁水晶	NPC	destroyed the crystal bit
+1159		NPC	destroyed the crystal bit
 1160	从布莱克郡附近的巨蛇庙中解救埃曼纽尔，并把他带回布莱克郡的乔安娜·克拉维兹处。	NPC	find the husband quest
 1161	在坦普城堡附近的龙骑兵堡垒里找到失落的神器，并把它交给自由天堂的佐尔丹·菲尔普。	NPC	give retrieve lost artifact quest
 1162	将雪莉从阴影教隐蔽所救出来，并带她前往新索匹格的弗兰克·费尔基德处。	NPC	save sharry quest
 1163	将安吉拉从废庙中救出来，并带她前往新索匹格的威尔特·德沃森处。	NPC	save angela quest
 1164	将谢勒尔从布特雷格湾岛屿上的食人族手中解救出来，并带她前往自由天堂的卡尔罗·托米尼处。	NPC	rescue the prisoner quest
 1165	摧毁狼穴中的狼人祭坛并返回布莱克郡的玛利亚·特里潘处。	NPC	werewolf quest
-1166	已激活珍珠	NPC	set pearl active
+1166		NPC	set pearl active
 1167	"在狼穴中找到褪色珍珠，交给同在狼穴中的幽灵巴塞萨。"	NPC	give pearl quest
 1168	在克里格斯城堡中找回宝石蛋，交还给克里格斯镇的埃米尔·利姆。	NPC	give egg quest
 1169	"解开烈火爵士的大厅中被魔力锁住的门，然后返回烈火爵士处。"	NPC	unward the doors quest
-1170	已解除火之领主的门防护	NPC	unwarded the doors for fire lord
-1171	已参观马厩 1	NPC	visited stable 1
-1172	已参观马厩 2	NPC	visited stable 2
-1173	已参观马厩 3	NPC	visited stable 3
-1174	已参观马厩 4	NPC	visited stable 4
-1175	已参观马厩 5	NPC	visited stable 5
-1176	已参观马厩 6	NPC	visited stable 6
-1177	已参观马厩 7	NPC	visited stable 7
-1178	已参观马厩 8	NPC	visited stable 8
-1179	已参观马厩 9	NPC	visited stable 9
-1180	龙之塔 1	NPC	dragon tower 1
-1181	龙之塔 2	NPC	dragon tower 2
-1182	龙之塔 3	NPC	dragon tower 3
-1183	龙之塔 4	NPC	dragon tower 4
-1184	龙之塔 5	NPC	dragon tower 5
-1185	龙之塔 6	NPC	dragon tower 6
+1170		NPC	unwarded the doors for fire lord
+1171		NPC	visited stable 1
+1172		NPC	visited stable 2
+1173		NPC	visited stable 3
+1174		NPC	visited stable 4
+1175		NPC	visited stable 5
+1176		NPC	visited stable 6
+1177		NPC	visited stable 7
+1178		NPC	visited stable 8
+1179		NPC	visited stable 9
+1180		NPC	dragon tower 1
+1181		NPC	dragon tower 2
+1182		NPC	dragon tower 3
+1183		NPC	dragon tower 4
+1184		NPC	dragon tower 5
+1185		NPC	dragon tower 6
 1186	前往超级羊鸣庙，找到阿尔法记忆水晶，把它放回到高级议会地下的恩洛斯神使的模块坛处。	NPC	Restore Memory Crystal Alpha
 1187	前往阿拉莫斯城堡，找到贝塔记忆水晶，把它放回到高级议会地下的恩洛斯神使的模块坛处。	NPC	Restore Memory Crystal Beta
 1188	前往黑摩尔城堡，找到德尔塔记忆水晶，把它放回到高级议会地下的恩洛斯神使的模块坛处。	NPC	Restore Memory Crystal Delta
 1189	前往克里格斯城堡，找到伊普斯隆记忆水晶，把它放回到高级议会地下的恩洛斯神使的模块坛处。	NPC	Restore Memory Crystal Epsilon
 1190	从飞龙沙漠的维兰坟墓中找回控制方块，并返回高级议会地下的恩洛斯神使处。	NPC	Retrieve the Control Cube
-1191	已满足议会要求并揭露叛徒（你被允许进入）	NPC	satisfied the council and exposed the traitor (you're allowed in)
-1192	已揭露叛徒	NPC	exposed the traitor
-1193	你已拥有立方体并被允许进入科幻地下城	NPC	you have the cube and are allowed to enter the sci fi dungeon
-1194	已捕获盗贼王子	NPC	captured the prince of thieves
-1195	已营救梅洛迪·西尔弗	NPC	rescued melody silver
-1196	已与 d7 中的僧侣交谈	NPC	talked to the monk in d7
-1197	已晋升为大德鲁伊	NPC	promoted to great druid
-1198	已晋升为首席德鲁伊	NPC	promoted to arch druid
-1199	已终结寒冬	NPC	ended winter
-1200	从 T6 到自由天堂下水道的传送台已激活。	NPC	teleporter pad from T6 to Free Haven sewer activated.
-1201	已释放阿奇巴德	NPC	Freed Archibald
-1202	已参观 C2	NPC	Visited C2
-1203	已参观 D1	NPC	Visited D1
-1204	已摧毁反应堆	NPC	killed the reactor
-1205	先知的任务物品位	Quest item bits for seer	Sixth Letter
-1206	先知的任务物品位	Quest item bits for seer	Kilburn's Shield
-1207	先知的任务物品位	Quest item bits for seer	Houglass of Time
-1208	先知的任务物品位	Quest item bits for seer	Devil Plans
-1209	先知的任务物品位	Quest item bits for seer	Dragon Claw
-1210	先知的任务物品位	Quest item bits for seer	Crystal of Terrax
-1211	先知的任务物品位	Quest item bits for seer	Discharge Papers
-1212	先知的任务物品位	Quest item bits for seer	Sacred Chalice
-1213	先知的任务物品位	Quest item bits for seer	Dragon Tower Keys
-1214	先知的任务物品位	Quest item bits for seer	Smoking Gun
-1215	先知的任务物品位	Quest item bits for seer	Memory Crystal Alpha
-1216	先知的任务物品位	Quest item bits for seer	Memory Crystal Beta
-1217	先知的任务物品位	Quest item bits for seer	Memory Crystal Delta
-1218	先知的任务物品位	Quest item bits for seer	Memory Crystal Epsilon
-1219	先知的任务物品位	Quest item bits for seer	Control Cube
-1220	先知的任务物品位	Quest item bits for seer	Third Eye
-1221	先知的任务物品位	Quest item bits for seer	Tanir's Bell
-1222	先知的任务物品位	Quest item bits for seer	Dark Containment
-1223	先知的任务物品位	Quest item bits for seer	Key to Gharik's Laboratory
+1191		NPC	satisfied the council and exposed the traitor (you're allowed in)
+1192		NPC	exposed the traitor
+1193		NPC	you have the cube and are allowed to enter the sci fi dungeon
+1194		NPC	captured the prince of thieves
+1195		NPC	rescued melody silver
+1196		NPC	talked to the monk in d7
+1197		NPC	promoted to great druid
+1198		NPC	promoted to arch druid
+1199		NPC	ended winter
+1200		NPC	teleporter pad from T6 to Free Haven sewer activated.
+1201		NPC	Freed Archibald
+1202		NPC	Visited C2
+1203		NPC	Visited D1
+1204		NPC	killed the reactor
+1205		Quest item bits for seer	Sixth Letter
+1206		Quest item bits for seer	Kilburn's Shield
+1207		Quest item bits for seer	Houglass of Time
+1208		Quest item bits for seer	Devil Plans
+1209		Quest item bits for seer	Dragon Claw
+1210		Quest item bits for seer	Crystal of Terrax
+1211		Quest item bits for seer	Discharge Papers
+1212		Quest item bits for seer	Sacred Chalice
+1213		Quest item bits for seer	Dragon Tower Keys
+1214		Quest item bits for seer	Smoking Gun
+1215		Quest item bits for seer	Memory Crystal Alpha
+1216		Quest item bits for seer	Memory Crystal Beta
+1217		Quest item bits for seer	Memory Crystal Delta
+1218		Quest item bits for seer	Memory Crystal Epsilon
+1219		Quest item bits for seer	Control Cube
+1220		Quest item bits for seer	Third Eye
+1221		Quest item bits for seer	Tanir's Bell
+1222		Quest item bits for seer	Dark Containment
+1223		Quest item bits for seer	Key to Gharik's Laboratory
 1224	在克里格斯城堡东面的顶级羊鸣庙中找到治疗斯里克·席尔瓦托恩的方法，并带着好消息回到威尔伯·汉弗里处。	Wilbur Humphrey	Expose the Traitor Quest
 1225	把证明斯里克·席尔瓦托恩叛国的信件交给自由天堂的高级议会。	NPC	
-1226	已杀死恶魔女王	NPC	Killed Demon Queen
-1227	一旦找到伊曼纽尔。	NPC	Once Emmanuel is found.
+1226		NPC	Killed Demon Queen
+1227		NPC	Once Emmanuel is found.
 1228	在黑摩尔城堡中找到并摧毁巫妖之书，然后返回黑摩尔镇的德里·罗斯处。	NPC	Lich Quest
-1229	先知任务 - 正在进行本月任务	NPC	Seer quest - On the quest for this month
-1230	先知任务 - 已完成本月任务	NPC	Seer quest - Completed the quest this month
-1231	先知任务 - 至少完成一次一月	NPC	Seer quest - Finished January at least once
-1232	先知任务 - 至少完成一次二月	NPC	Seer quest - Finished February at least once
-1233	先知任务 - 至少完成一次三月	NPC	Seer quest - Finished March at least once
-1234	先知任务 - 至少完成一次四月	NPC	Seer quest - Finished April at least once
-1235	先知任务 - 至少完成一次五月	NPC	Seer quest - Finished May at least once
-1236	先知任务 - 至少完成一次六月	NPC	Seer quest - Finished June at least once
-1237	先知任务 - 至少完成一次七月	NPC	Seer quest - Finished July at least once
-1238	先知任务 - 至少完成一次八月	NPC	Seer quest - Finished August at least once
-1239	先知任务 - 至少完成一次九月	NPC	Seer quest - Finished September at least once
-1240	先知任务 - 至少完成一次十月	NPC	Seer quest - Finished October at least once
-1241	先知任务 - 至少完成一次十一月	NPC	Seer quest - Finished November at least once
-1242	先知任务 - 至少完成一次十二月	NPC	Seer quest - Finished December at least once
+1229		NPC	Seer quest - On the quest for this month
+1230		NPC	Seer quest - Completed the quest this month
+1231		NPC	Seer quest - Finished January at least once
+1232		NPC	Seer quest - Finished February at least once
+1233		NPC	Seer quest - Finished March at least once
+1234		NPC	Seer quest - Finished April at least once
+1235		NPC	Seer quest - Finished May at least once
+1236		NPC	Seer quest - Finished June at least once
+1237		NPC	Seer quest - Finished July at least once
+1238		NPC	Seer quest - Finished August at least once
+1239		NPC	Seer quest - Finished September at least once
+1240		NPC	Seer quest - Finished October at least once
+1241		NPC	Seer quest - Finished November at least once
+1242		NPC	Seer quest - Finished December at least once
 1243	"把小雕像放在甜水镇、克里格斯、飞龙沙漠、幽灵沼泽和布特雷格湾，然后返回布莱克郡的特温伦处。"	NPC	Statuette Quest
-1244	给予小雕像宝箱	NPC	Give statuette chest
-1245	给予奖励宝箱	NPC	Give reward chest
-1246	已放置猛虎雕像	NPC	Placed tiger
-1247	已放置熊雕像	NPC	Placed bear
-1248	已放置鹰雕像	NPC	Placed eagle
-1249	已放置狼雕像	NPC	Placed wolf
-1250	已放置龙雕像	NPC	Placed dragon
-1251	不再给予小雕像宝箱	NPC	Don't give statuette chest again
+1244		NPC	Give statuette chest
+1245		NPC	Give reward chest
+1246		NPC	Placed tiger
+1247		NPC	Placed bear
+1248		NPC	Placed eagle
+1249		NPC	Placed wolf
+1250		NPC	Placed dragon
+1251		NPC	Don't give statuette chest again
 1252		NPC	"Hermit ""no snow"""
-1253	先知的任务物品位	Quest item bits for seer	First Mate's Scroll
-1254	先知的任务物品位	Quest item bits for seer	Doctor's Scroll
-1255	先知的任务物品位	Quest item bits for seer	Captain's Scroll
-1256	先知的任务物品位	Quest item bits for seer	Navigator's Scroll
-1257	先知的任务物品位	Quest item bits for seer	Engineer's Scroll
-1258	先知的任务物品位	Quest item bits for seer	Communication Officer's Scroll
+1253		Quest item bits for seer	First Mate's Scroll
+1254		Quest item bits for seer	Doctor's Scroll
+1255		Quest item bits for seer	Captain's Scroll
+1256		Quest item bits for seer	Navigator's Scroll
+1257		Quest item bits for seer	Engineer's Scroll
+1258		Quest item bits for seer	Communication Officer's Scroll
 1259	从铁拳城堡皇家图书馆阿基巴德处获得神秘的魔法。	NPC	Archibald bit for Oracle Quest
-1260	巫师任务的火花	NPC	Sparkle for Wizard Quest
-1261	你胜利后蜂巢不再出现	NPC	No more Hive after you win
+1260		NPC	Sparkle for Wizard Quest
+1261		NPC	No more Hive after you win
 1262		NPC	
 1263		NPC	
 1264		NPC	
@@ -1321,29 +1321,29 @@ Q Bit	Quest Note Text	Notes	Owner
 1320		NPC	
 1321		NPC	
 1322		NPC	
-1323	珠宝蛋宝箱不再出现	NPC	No more Jewelled Egg Chest
-1324	已用钥匙打开哥布林瞭望塔	Peter	Used Key to Open Goblin Watch
-1325	迷雾中的传送台激活。	NPC	Pad activation in Mist.
-1326	石中剑（新索匹格）	NPC	Sword in the Stone (New Sorpigal)
-1327	石中剑（铁拳城堡）	NPC	Sword in the Stone (IronFist)
-1328	基尔伯恩之盾	NPC	Kilburn's Shield
-1329	铁拳水井	NPC	IronFist Well
-1330	+10 运气（永久）。	NPC	+10 Luck permanent.
+1323		NPC	No more Jewelled Egg Chest
+1324		Peter	Used Key to Open Goblin Watch
+1325		NPC	Pad activation in Mist.
+1326		NPC	Sword in the Stone (New Sorpigal)
+1327		NPC	Sword in the Stone (IronFist)
+1328		NPC	Kilburn's Shield
+1329		NPC	IronFist Well
+1330		NPC	+10 Luck permanent.
 1331		NPC	
 1332		NPC	
 1333		NPC	
-1334	石中剑（OutD1）	NPC	Sword in the Stone (OutD1)
-1335	石中剑（OutD1）	NPC	Sword in the Stone (OutD1)
-1336	石中剑（OutD1）	NPC	Sword in the Stone (OutD1)
-1337	石中剑（OutE1）德鲁伊	NPC	Sword in the Stone (OutE1) Druid
-1338	在从 T6 设置此项之前，通往 T6 的下水道传送器无法工作	NPC	Sewer teleporter to T6 will not work till this is set from T6
-1339	T6 火焰祭坛	NPC	T6 Alter of Fire
-1340	T6 寒冷祭坛	NPC	T6 Alter of Cold
-1341	T6 痛苦祭坛	NPC	T6 Alter of Pain
-1342	T6 火焰神殿	NPC	T6 Shrine of Fire
-1343	T6 大气神殿	NPC	T6 Shrine of Air
-1344	T6 流水神殿	NPC	T6 Shrine of Water
-1345	T6 大地神殿	NPC	T6 Shrine of Earth
+1334		NPC	Sword in the Stone (OutD1)
+1335		NPC	Sword in the Stone (OutD1)
+1336		NPC	Sword in the Stone (OutD1)
+1337		NPC	Sword in the Stone (OutE1) Druid
+1338		NPC	Sewer teleporter to T6 will not work till this is set from T6
+1339		NPC	T6 Alter of Fire
+1340		NPC	T6 Alter of Cold
+1341		NPC	T6 Alter of Pain
+1342		NPC	T6 Shrine of Fire
+1343		NPC	T6 Shrine of Air
+1344		NPC	T6 Shrine of Water
+1345		NPC	T6 Shrine of Earth
 1346		NPC	
 1347		NPC	
 1348		NPC	
@@ -1382,24 +1382,24 @@ Q Bit	Quest Note Text	Notes	Owner
 1381		NPC	
 1382		NPC	
 1383		NPC	
-1384	方尖碑（OutA1）	NPC	Obelisk OutA1
-1385	方尖碑（OutA2）	NPC	Obelisk OutA2
-1386	方尖碑（OutA3）	NPC	Obelisk OutA3
-1387	方尖碑（OutB1）	NPC	Obelisk OutB1
-1388	方尖碑（OutB2）	NPC	Obelisk OutB2
-1389	方尖碑（OutB3）	NPC	Obelisk OutB3
-1390	方尖碑（OutC1）	NPC	Obelisk OutC1
-1391	方尖碑（OutC2）	NPC	Obelisk OutC2
-1392	方尖碑（OutC3）	NPC	Obelisk OutC3
-1393	方尖碑（OutD1）	NPC	Obelisk OutD1
-1394	方尖碑（OutD2）	NPC	Obelisk OutD2
-1395	方尖碑（铁拳城堡）	NPC	Obelisk OutD3
-1396	方尖碑（OutE1）	NPC	Obelisk OutE1
-1397	方尖碑（OutE2）	NPC	Obelisk OutE2
-1398	方尖碑（OutE3）	NPC	Obelisk OutE3
-1399	方尖碑（岩石）	NPC	Obelisk Rock
-1400	d18 之门	NPC	d18 Door
-1401	火之领主只给予一次经验和宝藏	NPC	Fire Lord gives XP and treasure only once
+1384		NPC	Obelisk OutA1
+1385		NPC	Obelisk OutA2
+1386		NPC	Obelisk OutA3
+1387		NPC	Obelisk OutB1
+1388		NPC	Obelisk OutB2
+1389		NPC	Obelisk OutB3
+1390		NPC	Obelisk OutC1
+1391		NPC	Obelisk OutC2
+1392		NPC	Obelisk OutC3
+1393		NPC	Obelisk OutD1
+1394		NPC	Obelisk OutD2
+1395		NPC	Obelisk OutD3
+1396		NPC	Obelisk OutE1
+1397		NPC	Obelisk OutE2
+1398		NPC	Obelisk OutE3
+1399		NPC	Obelisk Rock
+1400		NPC	d18 Door
+1401		NPC	Fire Lord gives XP and treasure only once
 1402		NPC	
 1403		NPC	
 1404		NPC	
@@ -1535,152 +1535,152 @@ Q Bit	Quest Note Text	Notes	Owner
 1534		marks quest items	
 1535		marks quest items	
 1536		marks quest items	
-1537	晋升为精灵族长。	Promoted to Elf Patriarch.	
-1538	晋升为战争巨魔。	Promoted to War Troll.	
-1539	已找到巨魔家园。	Found Troll Homeland.	
-1540	晋升为冠军。	Promoted to Champion.	
-1541	已将黑曜石归还给查尔斯·基克索特。	Returned Ebonest to Charles Quixote.	
-1542	已营救布雷曾·斯托姆兰斯。	Rescued Blazen Stormlance.	
-1543	晋升为古龙。	Promoted to Great Wyrm.	
-1544	已将屠者威斯尔伯恩之剑交给巧爪赤掠者。	Gave the Sword of Whistlebone the Slayer to the Deftclaw Redreaver.	
-1545	晋升为牛头人领主。	Promoted to Minotaur Lord.	
-1546	晋升为太阳牧师。	Promoted to Cleric of the Sun.	
-1547	晋升为诺斯费拉图。	Promoted to Nosferatu.	
-1548	晋升为巫妖。	Promoted to Lich.	
-1549	已为血滴镇的希斯取回毒蛇偶像。	Recovered Idol of the Snake for Hiss of Blood Drop village.	
-1550	已找到蚀月盾。	Found the shield Eclipse.	
-1551	已从阿尔瓦的食人魔堡垒营救伊拉贝尔·亨特。	Rescued Irabelle Hunter from the Ogre Fortress in Alvar.	
-1552	已将圣膏药水带给匕伤群岛的兰吉德。	Brought the Annointed Herb Potion to Languid on the Dagger Wound Islands.	
-1553	已杀死渡鸦海滨地区的全部凶狼。	Killed all of the Dire Wolves in the Ravenshore area.	
-1554	已为艾瑞安·韩特把假报告送给恐怖海盗斯坦利。	Delivered False Report to the Dread Pirate Stanley for Arion Hunter.	
-1555	当前应付罚款：%lu	Current Fines Due: %lu	
-1556	已营救洛伦·斯蒂尔	Rescued Loren Steel	
-1557	已将冒牌洛伦剑交给凯瑟琳	Gave Loren Imposter to Catherine	
-1558	已取回河畔堡计划书	Retrieved Fort Riverstride Plans	
-1559	已将假计划书交给精灵王	Gave false plans to Elfking	
-1560	晋升为游荡者	Promoted to Rogue	
-1561	晋升为名誉游荡者	Promoted to Honorary Rogue	
-1562	晋升为间谍	Promoted to Spy	
-1563	晋升为名誉间谍	Promoted to Honorary Spy	
-1564	晋升为刺客	Promoted to Assassin	
-1565	晋升为名誉刺客	Promoted to Honorary Assassin	
-1566	晋升为骑士	Promoted to Cavalier	
-1567	晋升为名誉骑士	Promoted to Honorary Cavalier	
-1568	晋升为冠军	Promoted to Champion	
-1569	晋升为名誉冠军	Promoted to Honorary Champion	
-1570	晋升为黑骑士	Promoted to Black Knight	
-1571	晋升为名誉黑骑士	Promoted to Honorary Black Knight	
-1572	晋升为学徒	Promoted to Initiate	
-1573	晋升为名誉学徒	Promoted to Honorary Initiate	
-1574	晋升为大师	Promoted to Master	
-1575	晋升为名誉大师	Promoted to Honorary Master	
-1576	晋升为忍者	Promoted to Ninja	
-1577	晋升为名誉忍者	Promoted to Honorary Ninja	
-1578	晋升为猎人	Promoted to Hunter	
-1579	晋升为名誉猎人	Promoted to Honorary Hunter	
-1580	晋升为游侠领主	Promoted to Ranger Lord	
-1581	晋升为名誉游侠领主	Promoted to Honorary Ranger Lord	
-1582	晋升为赏金猎人	Promoted to Bounty Hunter	
-1583	晋升为名誉赏金猎人	Promoted to Honorary Bounty Hunter	
-1584	晋升为魔法战士	Promoted to Warrior Mage	
-1585	晋升为名誉魔法战士	Promoted to Honorary Warrior Mage	
-1586	晋升为神射手	Promoted to Master Archer	
-1587	晋升为名誉神射手	Promoted to Honorary Master Archer	
-1588	晋升为狙击手	Promoted to Sniper	
-1589	晋升为名誉狙击手	Promoted to Honorary Sniper	
-1590	晋升为十字军	Promoted to Crusader	
-1591	晋升为名誉十字军	Promoted to Honorary Crusader	
-1592	晋升为英雄	Promoted to Hero	
-1593	晋升为名誉英雄	Promoted to Honorary Hero	
-1594	晋升为恶徒	Promoted to Villain	
-1595	晋升为名誉恶徒	Promoted to Honorary Villain	
-1596	加入元素公会	Joined the Elemental Guild	
-1597	加入自我公会	Joined the Self Guild	
-1598	加入大气公会	Joined the Air Guild	
-1599	加入大地公会	Joined the Earth Guild	
-1600	加入火焰公会	Joined the Fire Guild	
-1601	加入流水公会	Joined the Water Guild	
-1602	加入躯体公会	Joined the Body Guild	
-1603	加入心灵公会	Joined the Mind Guild	
-1604	加入精神公会	Joined the Spirit Guild	
-1605	加入光明公会	Joined the Light Guild	
-1606	加入黑暗公会	Joined the Dark Guild	
-1607	晋升为牧师	Promoted to Priest	
-1608	晋升为名誉牧师	Promoted to Honorary Priest	
-1609	晋升为光明牧师	Promoted to Priest of the Light	
-1610	晋升为名誉光明牧师	Promoted to Honorary Priest of the Light	
-1611	晋升为黑暗牧师	Promoted to Priest of the Dark	
-1612	晋升为名誉黑暗牧师	Promoted to Honorary Priest of the Dark	
-1613	晋升为大德鲁伊	Promoted to Great Druid	
-1614	晋升为名誉大德鲁伊	Promoted to Honorary Great Druid	
-1615	晋升为首席德鲁伊	Promoted to Arch Druid	
-1616	晋升为名誉首席德鲁伊	Promoted to Honorary Arch Druid	
-1617	晋升为术士	Promoted to Warlock	
-1618	晋升为名誉术士	Promoted to Honorary Warlock	
-1619	晋升为巫师	Promoted to Wizard	
-1620	晋升为名誉巫师	Promoted to Honorary Wizard	
-1621	晋升为大法师	Promoted to Archmage	
-1622	晋升为名誉大法师	Promoted to Honorary Archmage	
-1623	晋升为巫妖	Promoted to Lich	
-1624	晋升为名誉巫妖	Promoted to Honorary Lich	
-1625	%u 次死亡	%u Deaths	
-1626	已收集 %u 赏金	Collected %u in bounties	
-1627	已服刑 %u 次	Served %u Prison Terms	
-1628	%u 次侍从竞技场胜利	%u Page Arena Victories	
-1629	%u 次见习骑士竞技场胜利	%u Squire Arena Victories	
-1630	%u 次骑士竞技场胜利	%u Knight Arena Victories	
-1631	%u 次领主竞技场胜利	%u Lord Arena Victories	
-1632	阿卡玛吉冠军	ArcoMage Champion	
-1633	阿卡玛吉胜场：%lu	ArcoMage wins: %lu	
-1634	阿卡玛吉败场：%lu	ArcoMage losses: %lu	
-1635	获得十字军晋升	Received Promotion to Crusader	
-1636	获得名誉十字军晋升	Received Promotion to Honorary Crusader	
-1637	获得英雄晋升	Received Promotion to Hero	
-1638	获得名誉英雄晋升	Received Promotion to Honorary Hero	
-1639	获得巫师晋升	Received Promotion to Wizard	
-1640	获得名誉巫师晋升	Received Promotion to Honorary Wizard	
-1641	获得大法师晋升	Received Promotion to Archmage	
-1642	获得名誉大法师晋升	Received Promotion to Honorary Archmage	
-1643	获得骑士晋升	Received Promotion to Cavalier	
-1644	获得名誉骑士晋升	Received Promotion to Honorary Cavalier	
-1645	获得冠军晋升	Received Promotion to Champion	
-1646	获得名誉冠军晋升	Received Promotion to Honorary Champion	
-1647	获得牧师晋升	Received Promotion to Priest	
-1648	获得名誉牧师晋升	Received Promotion to Honorary Priest	
-1649	获得大祭司晋升	Received Promotion to High Priest	
-1650	获得名誉大祭司晋升	Received Promotion to Honorary High Priest	
-1651	获得大德鲁伊晋升	Received Promotion to Great Druid	
-1652	获得名誉大德鲁伊晋升	Received Promotion to Honorary Great Druid	
-1653	获得首席德鲁伊晋升	Received Promotion to Arch Druid	
-1654	获得名誉首席德鲁伊晋升	Received Promotion to Honorary Arch Druid	
-1655	获得战斗法师晋升	Received Promotion to Battle Mage	
-1656	获得名誉战斗法师晋升	Received Promotion to Honorary Battle Mage	
-1657	获得魔法战士晋升	Received Promotion to Warrior Mage	
-1658	获得名誉魔法战士晋升	Received Promotion to Honorary Warrior Mage	
-1659	加入元素公会	Joined the Elemental Guild	
-1660	加入自我公会	Joined the Self Guild	
-1661	加入海盗巢穴公会	Joined the Buccaneer's Lair Guild	
-1662	加入护卫服务公会	Joined the Protection Services Guild	
-1663	加入走私者公会	Joined the Smugglers' Guild	
-1664	加入刀锋尽头公会	Joined the Blade's End Guild	
-1665	加入决斗者之刃公会	Joined the Duelists' Edge Guild	
-1666	加入狂战士之怒公会	Joined the Berserker's Fury Guild	
-1667	加入大气公会	Joined the Air Guild	
-1668	加入大地公会	Joined the Earth Guild	
-1669	加入火焰公会	Joined the Fire Guild	
-1670	加入流水公会	Joined the Water Guild	
-1671	加入躯体公会	Joined the Body Guild	
-1672	加入心灵公会	Joined the Mind Guild	
-1673	加入精神公会	Joined the Spirit Guild	
-1674	加入光明公会	Joined the Light Guild	
-1675	加入黑暗公会	Joined the Dark Guild	
-1676	已收集 %u 份赏金	Collected %u bounties	
-1677	%u 次死亡	%u Deaths	
-1678	已服刑 %u 次	Served %u Prison Terms	
-1679	%u 次侍从竞技场胜利	%u Page Arena Victories	
-1680	%u 次见习骑士竞技场胜利	%u Squire Arena Victories	
-1681	%u 次骑士竞技场胜利	%u Knight Arena Victories	
-1682	%u 次领主竞技场胜利	%u Lord Arena Victories	
+1537		Promoted to Elf Patriarch.	
+1538		Promoted to War Troll.	
+1539		Found Troll Homeland.	
+1540		Promoted to Champion.	
+1541		Returned Ebonest to Charles Quixote.	
+1542		Rescued Blazen Stormlance.	
+1543		Promoted to Great Wyrm.	
+1544		Gave the Sword of Whistlebone the Slayer to the Deftclaw Redreaver.	
+1545		Promoted to Minotaur Lord.	
+1546		Promoted to Cleric of the Sun.	
+1547		Promoted to Nosferatu.	
+1548		Promoted to Lich.	
+1549		Recovered Idol of the Snake for Hiss of Blood Drop village.	
+1550		Found the shield Eclipse.	
+1551		Rescued Irabelle Hunter from the Ogre Fortress in Alvar.	
+1552		Brought the Annointed Herb Potion to Languid on the Dagger Wound Islands.	
+1553		Killed all of the Dire Wolves in the Ravenshore area.	
+1554		Delivered False Report to the Dread Pirate Stanley for Arion Hunter.	
+1555		Current Fines Due: %lu	
+1556		Rescued Loren Steel	
+1557		Gave Loren Imposter to Catherine	
+1558		Retrieved Fort Riverstride Plans	
+1559		Gave false plans to Elfking	
+1560		Promoted to Rogue	
+1561		Promoted to Honorary Rogue	
+1562		Promoted to Spy	
+1563		Promoted to Honorary Spy	
+1564		Promoted to Assassin	
+1565		Promoted to Honorary Assassin	
+1566		Promoted to Cavalier	
+1567		Promoted to Honorary Cavalier	
+1568		Promoted to Champion	
+1569		Promoted to Honorary Champion	
+1570		Promoted to Black Knight	
+1571		Promoted to Honorary Black Knight	
+1572		Promoted to Initiate	
+1573		Promoted to Honorary Initiate	
+1574		Promoted to Master	
+1575		Promoted to Honorary Master	
+1576		Promoted to Ninja	
+1577		Promoted to Honorary Ninja	
+1578		Promoted to Hunter	
+1579		Promoted to Honorary Hunter	
+1580		Promoted to Ranger Lord	
+1581		Promoted to Honorary Ranger Lord	
+1582		Promoted to Bounty Hunter	
+1583		Promoted to Honorary Bounty Hunter	
+1584		Promoted to Warrior Mage	
+1585		Promoted to Honorary Warrior Mage	
+1586		Promoted to Master Archer	
+1587		Promoted to Honorary Master Archer	
+1588		Promoted to Sniper	
+1589		Promoted to Honorary Sniper	
+1590		Promoted to Crusader	
+1591		Promoted to Honorary Crusader	
+1592		Promoted to Hero	
+1593		Promoted to Honorary Hero	
+1594		Promoted to Villain	
+1595		Promoted to Honorary Villain	
+1596		Joined the Elemental Guild	
+1597		Joined the Self Guild	
+1598		Joined the Air Guild	
+1599		Joined the Earth Guild	
+1600		Joined the Fire Guild	
+1601		Joined the Water Guild	
+1602		Joined the Body Guild	
+1603		Joined the Mind Guild	
+1604		Joined the Spirit Guild	
+1605		Joined the Light Guild	
+1606		Joined the Dark Guild	
+1607		Promoted to Priest	
+1608		Promoted to Honorary Priest	
+1609		Promoted to Priest of the Light	
+1610		Promoted to Honorary Priest of the Light	
+1611		Promoted to Priest of the Dark	
+1612		Promoted to Honorary Priest of the Dark	
+1613		Promoted to Great Druid	
+1614		Promoted to Honorary Great Druid	
+1615		Promoted to Arch Druid	
+1616		Promoted to Honorary Arch Druid	
+1617		Promoted to Warlock	
+1618		Promoted to Honorary Warlock	
+1619		Promoted to Wizard	
+1620		Promoted to Honorary Wizard	
+1621		Promoted to Archmage	
+1622		Promoted to Honorary Archmage	
+1623		Promoted to Lich	
+1624		Promoted to Honorary Lich	
+1625		%u Deaths	
+1626		Collected %u in bounties	
+1627		Served %u Prison Terms	
+1628		%u Page Arena Victories	
+1629		%u Squire Arena Victories	
+1630		%u Knight Arena Victories	
+1631		%u Lord Arena Victories	
+1632		ArcoMage Champion	
+1633		ArcoMage wins: %lu	
+1634		ArcoMage losses: %lu	
+1635		Received Promotion to Crusader	
+1636		Received Promotion to Honorary Crusader	
+1637		Received Promotion to Hero	
+1638		Received Promotion to Honorary Hero	
+1639		Received Promotion to Wizard	
+1640		Received Promotion to Honorary Wizard	
+1641		Received Promotion to Archmage	
+1642		Received Promotion to Honorary Archmage	
+1643		Received Promotion to Cavalier	
+1644		Received Promotion to Honorary Cavalier	
+1645		Received Promotion to Champion	
+1646		Received Promotion to Honorary Champion	
+1647		Received Promotion to Priest	
+1648		Received Promotion to Honorary Priest	
+1649		Received Promotion to High Priest	
+1650		Received Promotion to Honorary High Priest	
+1651		Received Promotion to Great Druid	
+1652		Received Promotion to Honorary Great Druid	
+1653		Received Promotion to Arch Druid	
+1654		Received Promotion to Honorary Arch Druid	
+1655		Received Promotion to Battle Mage	
+1656		Received Promotion to Honorary Battle Mage	
+1657		Received Promotion to Warrior Mage	
+1658		Received Promotion to Honorary Warrior Mage	
+1659		Joined the Elemental Guild	
+1660		Joined the Self Guild	
+1661		Joined the Buccaneer's Lair Guild	
+1662		Joined the Protection Services Guild	
+1663		Joined the Smugglers' Guild	
+1664		Joined the Blade's End Guild	
+1665		Joined the Duelists' Edge Guild	
+1666		Joined the Berserker's Fury Guild	
+1667		Joined the Air Guild	
+1668		Joined the Earth Guild	
+1669		Joined the Fire Guild	
+1670		Joined the Water Guild	
+1671		Joined the Body Guild	
+1672		Joined the Mind Guild	
+1673		Joined the Spirit Guild	
+1674		Joined the Light Guild	
+1675		Joined the Dark Guild	
+1676		Collected %u bounties	
+1677		%u Deaths	
+1678		Served %u Prison Terms	
+1679		%u Page Arena Victories	
+1680		%u Squire Arena Victories	
+1681		%u Knight Arena Victories	
+1682		%u Lord Arena Victories	
 1683		Replacement for NPCs ?3 ver. 7	
 1684		Replacement for NPCs ?17 ver. 7	
 1685		Replacement for NPCs ?54 ver. 7	
@@ -1714,7 +1714,7 @@ Q Bit	Quest Note Text	Notes	Owner
 1713	进入“可控裂缝”，找到“失控混沌”并将其带入“不稳定起源物质”。	Cross Continent Q
 1714	找到你的朋友。	Cross Continent Q
 1715	找到大裂缝中主建筑物的入口。	Cross Continent Q
-1716	跨大陆任务	Cross Continent Q
-1717	跨大陆任务	Cross Continent Q
-1718	跨大陆任务	Cross Continent Q
-1719	跨大陆任务	Cross Continent Q
+1716		Cross Continent Q
+1717		Cross Continent Q
+1718		Cross Continent Q
+1719		Cross Continent Q
