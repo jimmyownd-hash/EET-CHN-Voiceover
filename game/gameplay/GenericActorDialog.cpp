@@ -11,6 +11,8 @@
 #include <cmath>
 #include <cstdlib>
 #include <limits>
+#include <unordered_map>
+#include <vector>
 #include <random>
 
 namespace OpenYAMM::Game
@@ -36,9 +38,55 @@ uint64_t fnv1a64(const std::string &text)
     return hash;
 }
 
+// The Chinese pack renames monsters and NPCs in the tables, so match the translated names as well.
+const std::vector<std::string> &translatedNameVariants(const std::string &english)
+{
+    static const std::unordered_map<std::string, std::vector<std::string>> variants = {
+        {"Lizardman Peasant", {"蜥蜴人农奴", "蜥蜴人农民"}},
+        {"Lizardman Villager", {"蜥蜴人村民"}},
+        {"Swordsman", {"剑士", "剑客"}},
+        {"Guard", {"守卫", "士兵", "卫兵"}},
+        {"Adventurer", {"探险家"}},
+        {"Lizardman Guard", {"蜥蜴人守卫"}},
+        {"Lizardman Soldier", {"蜥蜴人士兵"}},
+        {"Dark Elf Peasant", {"黑暗精灵农民"}},
+        {"Dark Elf Guard", {"黑暗精灵守卫"}},
+        {"Ogre Peasant", {"食人妖农民"}},
+        {"Wererat Peasant", {"鼠人农民"}},
+        {"Wererat Peasants", {"鼠人农民"}},
+        {"Troll Peasant", {"巨魔农民"}},
+        {"Dragon Hunter", {"猎龙人"}},
+        {"Necromancer Peasant", {"死灵法师农民"}},
+        {"Cleric Peasant", {"牧师农民"}},
+        {"Regnan Peasant", {"雷格那农民"}},
+        {"Pirate", {"海盗"}},
+        {"Minotaur Peasant", {"牛头人农民"}},
+    };
+    static const std::vector<std::string> none;
+    const auto it = variants.find(english);
+    return it != variants.end() ? it->second : none;
+}
+
+bool actorNameIs(const std::string &actual, const std::string &english)
+{
+    if (actual == english)
+    {
+        return true;
+    }
+
+    const std::vector<std::string> &variants = translatedNameVariants(english);
+    return std::find(variants.begin(), variants.end(), actual) != variants.end();
+}
+
 uint32_t findNpcIdByName(const NpcDialogTable &npcDialogTable, const std::string &name)
 {
     const NpcEntry *pNpcEntry = npcDialogTable.findNpcByName(name);
+
+    for (size_t i = 0; pNpcEntry == nullptr && i < translatedNameVariants(name).size(); ++i)
+    {
+        pNpcEntry = npcDialogTable.findNpcByName(translatedNameVariants(name)[i]);
+    }
+
     return pNpcEntry != nullptr ? pNpcEntry->id : 0;
 }
 
@@ -268,77 +316,77 @@ std::optional<GenericActorDialogResolution> resolveGeneratedActorDialog(
 
 std::string resolveGenericNpcName(const std::string &actorName, uint32_t actorGroup)
 {
-    if (actorName == "Lizardman Peasant")
+    if (actorNameIs(actorName, "Lizardman Peasant"))
     {
         return "Lizardman Peasant";
     }
 
-    if (actorName == "Lizardman Villager")
+    if (actorNameIs(actorName, "Lizardman Villager"))
     {
         return "Lizardman Peasant";
     }
 
-    if ((actorName == "Swordsman" || actorName == "Guard" || actorName == "Adventurer")
+    if ((actorNameIs(actorName, "Swordsman") || actorNameIs(actorName, "Guard") || actorNameIs(actorName, "Adventurer"))
         && actorGroup >= 54
         && actorGroup <= 60)
     {
         return "Guard";
     }
 
-    if (actorName == "Lizardman Guard"
-        || actorName == "Lizardman Soldier"
-        || actorName == "Lizardman Warrior"
-        || actorName == "Lizardman Lookout")
+    if (actorNameIs(actorName, "Lizardman Guard")
+        || actorNameIs(actorName, "Lizardman Soldier")
+        || actorNameIs(actorName, "Lizardman Warrior")
+        || actorNameIs(actorName, "Lizardman Lookout"))
     {
         return "Lizardman Guard";
     }
 
-    if (actorName == "Dark Elf Peasant")
+    if (actorNameIs(actorName, "Dark Elf Peasant"))
     {
         return "Dark Elf Peasant";
     }
 
-    if (actorName == "Dark Elf Guard")
+    if (actorNameIs(actorName, "Dark Elf Guard"))
     {
         return "Dark Elf Guard";
     }
 
-    if (actorName == "Ogre Peasant")
+    if (actorNameIs(actorName, "Ogre Peasant"))
     {
         return "Ogre Peasant";
     }
 
-    if (actorName == "Wererat Peasant" || actorName == "Wererat Peasants")
+    if (actorNameIs(actorName, "Wererat Peasant") || actorNameIs(actorName, "Wererat Peasants"))
     {
         return "Wererat Peasants";
     }
 
-    if (actorName == "Troll Peasant")
+    if (actorNameIs(actorName, "Troll Peasant"))
     {
         return "Troll Peasant";
     }
 
-    if (actorName == "Dragon Hunter")
+    if (actorNameIs(actorName, "Dragon Hunter"))
     {
         return "Dragon Hunter";
     }
 
-    if (actorName == "Necromancer Peasant")
+    if (actorNameIs(actorName, "Necromancer Peasant"))
     {
         return "Necromancer Peasant";
     }
 
-    if (actorName == "Cleric Peasant")
+    if (actorNameIs(actorName, "Cleric Peasant"))
     {
         return "Cleric Peasant";
     }
 
-    if (actorName == "Regnan Peasant" || actorName == "Pirate")
+    if (actorNameIs(actorName, "Regnan Peasant") || actorNameIs(actorName, "Pirate"))
     {
         return "Regnan Peasant";
     }
 
-    if (actorName == "Minotaur Peasant")
+    if (actorNameIs(actorName, "Minotaur Peasant"))
     {
         return "Minotaur Peasant";
     }
