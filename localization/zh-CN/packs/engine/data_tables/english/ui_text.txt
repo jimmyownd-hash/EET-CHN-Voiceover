@@ -7289,6 +7289,7 @@ Stoneskin	石肤
 Mistform	雾形
 Glamour	魅惑
 Slow	减速
+Stun	晕眩重击
 Berserk	狂暴
 Amulet	护身符
 Belt	腰带
