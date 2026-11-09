@@ -77,4 +77,53 @@ std::vector<std::string> buildArcomageTavernTexts(const HouseTable &houseTable, 
 
     return texts;
 }
+
+std::vector<ArcomageJournalRow> buildArcomageJournalRows(const HouseTable &houseTable, const MapStats &mapStats,
+    const Party &party)
+{
+    std::map<uint32_t, std::vector<ArcomageTavern>> tavernsByContinent;
+
+    for (const auto &[houseId, house] : houseTable.entries())
+    {
+        if (!house.arcomageRule)
+        {
+            continue;
+        }
+
+        const MapStatsEntry *pMap = mapStats.findById(house.mapId);
+        ArcomageTavern tavern;
+        tavern.town = pMap != nullptr ? pMap->name : std::string();
+        tavern.name = house.name;
+        tavern.won = party.hasArcomageWinAt(houseId);
+        tavernsByContinent[pMap != nullptr ? pMap->mergedContinentId : 0].push_back(std::move(tavern));
+    }
+
+    std::vector<ArcomageJournalRow> texts;
+
+    for (auto &[continentId, taverns] : tavernsByContinent)
+    {
+        std::sort(taverns.begin(), taverns.end(), [](const ArcomageTavern &left, const ArcomageTavern &right)
+            {
+                return std::tie(left.town, left.name) < std::tie(right.town, right.name);
+            });
+        const size_t wonCount = size_t(std::count_if(taverns.begin(), taverns.end(),
+            [](const ArcomageTavern &tavern) { return tavern.won; }));
+        ArcomageJournalRow heading;
+        heading.heading = true;
+        heading.title = continentName(continentId) + ": " + std::to_string(wonCount) + " of "
+            + std::to_string(taverns.size()) + " taverns won.";
+        texts.push_back(std::move(heading));
+
+        for (const ArcomageTavern &tavern : taverns)
+        {
+            ArcomageJournalRow row;
+            row.title = tavern.name;
+            row.town = tavern.town;
+            row.won = tavern.won;
+            texts.push_back(std::move(row));
+        }
+    }
+
+    return texts;
+}
 } // namespace OpenYAMM::Game

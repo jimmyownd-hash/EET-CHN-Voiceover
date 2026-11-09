@@ -4974,6 +4974,8 @@ void GameplayPartyOverlayRenderer::renderJournalOverlay(GameplayScreenRuntime &c
 
             const std::string search = toLowerCopy(journalScreen.notesSearch);
             std::vector<std::string> noteTexts;
+            std::vector<ArcomageJournalRow> arcomageRows;
+            bool arcomageTable = false;
             const JournalAutonoteTable *pJournalAutonoteTable = context.journalAutonoteTable();
 
             if (pJournalAutonoteTable != nullptr && pParty != nullptr)
@@ -5009,21 +5011,120 @@ void GameplayPartyOverlayRenderer::renderJournalOverlay(GameplayScreenRuntime &c
             if (pParty != nullptr && context.houseTable() != nullptr
                 && journalScreen.notesCategory == GameplayUiController::JournalNotesCategory::Arcomage)
             {
-                for (const std::string &text : buildArcomageTavernTexts(*context.houseTable(), context.mapStats(), *pParty))
+                std::vector<ArcomageJournalRow> allRows =
+                    buildArcomageJournalRows(*context.houseTable(), context.mapStats(), *pParty);
+
+                for (size_t index = 0; index < allRows.size(); ++index)
                 {
-                    if (search.empty() || toLowerCopy(text).find(search) != std::string::npos)
+                    const ArcomageJournalRow &row = allRows[index];
+
+                    if (row.heading)
                     {
-                        noteTexts.push_back(text);
+                        // A continent heading stays while any of its taverns does.
+                        bool keep = search.empty();
+
+                        for (size_t next = index + 1; !keep && next < allRows.size() && !allRows[next].heading; ++next)
+                        {
+                            keep = toLowerCopy(allRows[next].title + " " + allRows[next].town).find(search)
+                                != std::string::npos;
+                        }
+
+                        if (keep)
+                        {
+                            arcomageRows.push_back(row);
+                        }
+                    }
+                    else if (search.empty()
+                        || toLowerCopy(row.title + " " + row.town + " " + UiText::translate(row.title) + " "
+                               + UiText::translate(row.town)).find(search) != std::string::npos)
+                    {
+                        arcomageRows.push_back(row);
                     }
                 }
+
+                arcomageTable = true;
             }
 
-            if (noteTexts.empty() && !search.empty())
+            if (noteTexts.empty() && arcomageRows.empty() && !search.empty())
             {
                 bodyLines = {"No notes match \"" + journalScreen.notesSearch + "\"."};
                 bodyParagraphEnds = {1};
             }
 
+            if (arcomageTable)
+            {
+                const float lineHeight = static_cast<float>(bodyFont->fontHeight) * bodyFontScale;
+                const float rowHeight = lineHeight * 1.3f;
+                const size_t rowsPerPage = std::max<size_t>(2, static_cast<size_t>(textResolved->height / rowHeight));
+                std::vector<std::vector<size_t>> arcomagePages(1);
+
+                for (size_t index = 0; index < arcomageRows.size(); ++index)
+                {
+                    // A heading never ends a page alone.
+                    if (arcomagePages.back().size() >= rowsPerPage
+                        || (arcomageRows[index].heading && !arcomagePages.back().empty()
+                            && arcomagePages.back().size() + 2 > rowsPerPage))
+                    {
+                        arcomagePages.emplace_back();
+                    }
+
+                    arcomagePages.back().push_back(index);
+                }
+
+                const size_t pageIndex = std::min(journalScreen.notesPage, arcomagePages.size() - 1);
+                journalScreen.notesPage = pageIndex;
+                GameplayUiSkin::renderButton(context, "JournalPrevPageButton", width, height, false, pageIndex > 0);
+                GameplayUiSkin::renderButton(context, "JournalNextPageButton", width, height,
+                    false, pageIndex + 1 < arcomagePages.size());
+                const std::optional<GameplayScreenRuntime::HudTextureHandle> dividerTexture =
+                    loadHudTexture("obsidian_value_divider");
+                const auto drawText = [&](const std::string &text, uint32_t colorAbgr, float x, float y, bool rightAlign)
+                {
+                    const std::string shown = UiText::translate(text);
+                    const float drawX = rightAlign
+                        ? x - context.measureHudTextWidth(bodyFont->fontName, shown) * bodyFontScale
+                        : x;
+                    const GameplayHudFontLayer layer = context.hudFontMainLayer(*bodyFont, colorAbgr);
+                    context.renderHudFontLayer(*bodyFont, bodyFont->shadowTextureHandle, shown, drawX, y, bodyFontScale);
+                    context.renderHudFontLayer(*bodyFont, layer, shown, drawX, y, bodyFontScale);
+                };
+                float y = textResolved->y;
+
+                for (const size_t rowIndex : arcomagePages[pageIndex])
+                {
+                    const ArcomageJournalRow &row = arcomageRows[rowIndex];
+
+                    if (row.heading)
+                    {
+                        if (y > textResolved->y)
+                        {
+                            y += rowHeight * 0.35f;
+                        }
+
+                        drawText(row.title, 0xff5fc8e8u, textResolved->x, y, false);
+                        y += rowHeight;
+
+                        if (dividerTexture)
+                        {
+                            const float dividerWidth = std::min(
+                                textResolved->width, static_cast<float>(dividerTexture->width) * textResolved->scale);
+                            context.submitHudTexturedQuad(*dividerTexture, textResolved->x, y - rowHeight * 0.25f,
+                                dividerWidth, 0.533333f * textResolved->scale);
+                        }
+
+                        continue;
+                    }
+
+                    drawText(row.title, pTextLayout->textColorAbgr, textResolved->x + textResolved->width * 0.04f, y,
+                        false);
+                    drawText(row.town, 0xff96a096u, textResolved->x + textResolved->width * 0.50f, y, false);
+                    drawText(row.won ? "Won" : "Not won yet", row.won ? 0xff78dc6eu : 0xff96a096u,
+                        textResolved->x + textResolved->width, y, true);
+                    y += rowHeight;
+                }
+            }
+            else
+            {
             const std::vector<JournalStackedPage> pages = buildJournalStackedPages(
                 context,
                 *bodyFont,
@@ -5061,6 +5162,7 @@ void GameplayPartyOverlayRenderer::renderJournalOverlay(GameplayScreenRuntime &c
                         textY += 6.0f * bodyFontScale;
                     }
                 }
+            }
             }
         }
 

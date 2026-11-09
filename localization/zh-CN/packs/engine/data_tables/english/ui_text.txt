@@ -7818,3 +7818,5 @@ This character cannot learn the skills in {s}	该角色无法学习{s}中的技�
 needs Normal	需要普通
 needs Grandmaster	需要宗师
 {place}: won	{place}：已获胜
+Won	已获胜
+Not won yet	尚未获胜
