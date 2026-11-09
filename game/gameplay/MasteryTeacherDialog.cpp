@@ -4,6 +4,7 @@
 #include "game/tables/MergedBaseTables.h"
 #include "game/tables/NpcDialogTable.h"
 #include "game/party/Party.h"
+#include "game/ui/UiText.h"
 #include "game/rules/GameRules.h"
 
 #include <cctype>
@@ -462,10 +463,12 @@ std::string joinPromotionClassNames(const std::vector<std::string> &classNames)
     {
         if (!result.empty())
         {
-            result += index + 1 == classNames.size() ? " or " : ", ";
+            result += index + 1 == classNames.size()
+                ? (UiText::hasOverrides() ? "\xE6\x88\x96" : " or ")
+                : (UiText::hasOverrides() ? "\xE3\x80\x81" : ", ");
         }
 
-        result += displayClassName(classNames[index]);
+        result += UiText::translate(displayClassName(classNames[index]));
     }
 
     return result;
