@@ -440,7 +440,7 @@ elements:
       visible: true
       interactive: false
       text:
-        value: 输入方式
+        value: 预设
         font: fondamento
         color: '#e0c990'
         align_x: left
@@ -457,7 +457,7 @@ elements:
       visible: true
       interactive: false
       text:
-        value: 视角与移动
+        value: 鼠标
         font: fondamento
         color: '#e0c990'
         align_x: left

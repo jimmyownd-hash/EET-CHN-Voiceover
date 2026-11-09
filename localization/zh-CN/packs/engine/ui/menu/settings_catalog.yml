@@ -775,13 +775,13 @@ bindings:
   group: 队伍与书籍
 - id: double_speed
   name: 切换双倍速度
-  group: 系统
+  group: System
 - id: quick_save
   name: 快速存档
-  group: 系统
+  group: System
 - id: quick_load
   name: 快速读档
-  group: 系统
+  group: System
 # MAW's keys (devdocs/maw/GAPS.md §11 D.18): listed only in a MAW game's pause menu. `context` is the page a key acts
 # on; keys of different contexts may share a key (A picks the alchemist on the inventory page and moves left in play;
 # MAW's E closes our character screen).

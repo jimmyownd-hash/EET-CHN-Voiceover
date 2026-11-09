@@ -1,6 +1,7 @@
 #include "game/content/CompletionCertificates.h"
 
 #include "game/party/SkillData.h"
+#include "game/ui/UiText.h"
 
 #include <yaml-cpp/yaml.h>
 
@@ -271,8 +272,10 @@ std::string formatPlayTime(float gameMinutes)
     days %= DaysPerMonth * MonthsPerYear;
     const uint64_t months = days / DaysPerMonth;
     days %= DaysPerMonth;
-    return pluralized(years, "Year", "Years") + ", " + pluralized(months, "Month", "Months") + ", "
-        + pluralized(days, "Day", "Days");
+    // Each piece is translated on its own ("{n#} Years" is a ui_text pattern) so a localized line stays whole.
+    return UiText::translate(pluralized(years, "Year", "Years")) + ", "
+        + UiText::translate(pluralized(months, "Month", "Months")) + ", "
+        + UiText::translate(pluralized(days, "Day", "Days"));
 }
 
 CompletionCertificate buildCompletionCertificate(
@@ -313,7 +316,8 @@ CompletionCertificate buildCompletionCertificate(
     {
         const CompletionCertificateDefinition *pWorld = findCertificate(certificates, worldId);
         const WorldCompletionRecord *pRecord = party.findWorldCompletion(worldId);
-        const std::string name = pWorld != nullptr && !pWorld->continent.empty() ? pWorld->continent : worldId;
+        const std::string name =
+            UiText::translate(pWorld != nullptr && !pWorld->continent.empty() ? pWorld->continent : worldId);
 
         if (pRecord != nullptr && pRecord->timed)
         {

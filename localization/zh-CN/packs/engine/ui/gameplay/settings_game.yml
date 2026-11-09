@@ -431,7 +431,7 @@ elements:
       visible: true
       interactive: false
       text:
-        value: '规则集'
+        value: 规则集
         font: fondamento
         color: '#e0c990'
         align_x: left
@@ -448,7 +448,7 @@ elements:
       visible: true
       interactive: false
       text:
-        value: '偏好'
+        value: Preferences
         font: fondamento
         color: '#e0c990'
         align_x: left

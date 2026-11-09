@@ -4131,7 +4131,6 @@ Use potion slot 4	使用药剂 4 号位
 Use potion slot 5	使用药剂 5 号位
 Use potion slot 6	使用药剂 6 号位
 '{party_count} / {party_capacity} adventurers	{party_count} / {party_capacity} 名冒险者
-Import Saves\u2026	导入存档…
 Number keys on the inventory page and in shops and chests; Shift with a number does the other. A party	在物品栏、商店与箱子界面使用数字键；按住 Shift 再按数字键可执行另一种操作。
 Voice {voice_number} · {race_name}	语音 {voice_number} · {race_name}
 {save_name}\nSaved {saved_timestamp} · {save_kind} save	{save_name}\n保存于 {saved_timestamp} · {save_kind} 存档
@@ -5866,9 +5865,9 @@ Quick save failed!	快速保存失败！
 You can't save here!	这里不能保存！
  Press again to load.	 再按一次读取。
 NPC interaction UI is not implemented yet.	NPC 交互界面尚未实现。
-No saves were found in that folder or in a \"saves\" folder inside it.	那个文件夹里、以及其中的 \「saves\」 文件夹里都没有找到存档。
-Permanently delete \"{name}\"?	要彻底删除「{name}」吗？
-No notes match \"{search}\".	没有与「{search}」匹配的笔记。
+No saves were found in that folder or in a "saves" folder inside it.	那个文件夹里、以及其中的「saves」文件夹里都没有找到存档。
+Permanently delete "{name}"?	要彻底删除「{name}」吗？
+No notes match "{search}".	没有与「{search}」匹配的笔记。
 With your skills, you should be working here as a teacher\n\n	以你的本领，本该在这里当老师\n\n
 Skill	技能
 Implant	植入体
@@ -6395,6 +6394,27 @@ Total Time: {t}	总用时：{t}
 Your score: {s}	你的得分：{s}
 Score: {s}	得分：{s}
 Completed on {d}	完成于 {d}
+{s}, Level {n#} {c}	{s}，{n#} 级{c}
+{s} the Level {n#} {c}	{s}，{n#} 级{c}
+{s}: finished	{s}：已通关
+{n#} Year	{n#} 年
+{n#} Years	{n#} 年
+{n#} Month	{n#} 个月
+{n#} Months	{n#} 个月
+{n#} Day	{n#} 天
+{n#} Days	{n#} 天
+{d#} January {y#}	{y#} 年 1 月 {d#} 日
+{d#} February {y#}	{y#} 年 2 月 {d#} 日
+{d#} March {y#}	{y#} 年 3 月 {d#} 日
+{d#} April {y#}	{y#} 年 4 月 {d#} 日
+{d#} May {y#}	{y#} 年 5 月 {d#} 日
+{d#} June {y#}	{y#} 年 6 月 {d#} 日
+{d#} July {y#}	{y#} 年 7 月 {d#} 日
+{d#} August {y#}	{y#} 年 8 月 {d#} 日
+{d#} September {y#}	{y#} 年 9 月 {d#} 日
+{d#} October {y#}	{y#} 年 10 月 {d#} 日
+{d#} November {y#}	{y#} 年 11 月 {d#} 日
+{d#} December {y#}	{y#} 年 12 月 {d#} 日
 Years	年
 Months	月
 Days	日
