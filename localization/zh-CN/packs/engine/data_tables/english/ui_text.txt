@@ -5137,6 +5137,27 @@ Skill bonus: +{points}	技能加成：+{points}
 Skill bonus: 	技能加成：
 Awards earned: {count}	获得荣誉：{count}
 {time} remaining	剩余 {time}
+# party creation race card
+{s} {n#} · {t} · max {m#}	{s} {n#} · {t} · 上限 {m#}
+{n#} points per +1	每 {n#} 点 +1
+1 point per +1	每点 +1
+{e} (warrior classes): {s}	{e}（战士系职业）：{s}
+{e} (casters): {s}	{e}（施法职业）：{s}
+{e} (not {c} line): {s}	{e}（{c}系除外）：{s}
+At least {a}, at most {b}: {s}	至少{a}、至多{b}：{s}
+Forbidden: {s}	禁用：{s}
+At most {m}: {s}	至多{m}：{s}
+Forbidden	禁用
+forbidden	禁用
+At least {m}	至少{m}
+at least {m}	至少{m}
+At most {m}	至多{m}
+at most {m}	至多{m}
++{n#} mastery rank	精通等级 +{n#}
+-{n#} mastery rank	精通等级 -{n#}
+At least {a}, at most {b} (casters): {s}	至少{a}、至多{b}（施法职业）：{s}
+At least {a}, at most {b} (warrior classes): {s}	至少{a}、至多{b}（战士系职业）：{s}
+At least {a}, at most {b} (not {c} line): {s}	至少{a}、至多{b}（{c}系除外）：{s}
 # skill popup lines (trainer hint, armour, dragon leech)
 {a} - {b} (next map)	{a} - {b}（相邻地图）
 {a} - {b} (coach/boat)	{a} - {b}（马车/船）
