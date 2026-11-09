@@ -7734,3 +7734,9 @@ No alchemy preference when sorting	排序时不考虑炼金偏好
 This potion has not enough power ({n#} needed)	这瓶药剂的强度不足（需要 {n#}）
 Item power reached the limit for its owner's level ({n#})	物品强度已达持有者等级的上限（{n#}）
 Grandmaster rank adds damage per skill point.	宗师级每点技能增加伤害。
+# transport schedule fact labels (keys keep trailing space)
+Departs 	出发 
+On the road 	途中 
+Arrives 	到达 
+Fare 	费用 
+Food to wait 	等待所需食物 
