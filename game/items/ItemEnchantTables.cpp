@@ -4,6 +4,7 @@
 
 #include <algorithm>
 #include <array>
+#include <iterator>
 #include <cctype>
 
 namespace OpenYAMM::Game
@@ -559,9 +560,11 @@ SpecialItemEnchantKind parseSpecialEnchantKind(const std::string &value)
         return SpecialItemEnchantKind::FeatherFalling;
     }
 
-    static const std::array<const char *, 9> RulesetSpecials = {
+    static const std::array<const char *, 18> RulesetSpecials = {
         "of ascension", "lichs'", "paladins'", "warriormage'", "shadows'", "rangers'", "elementals'", "selfs'",
         "divines'",
+        // Simplified Chinese localization of the same names.
+        "升华的", "巫妖的", "圣武士的", "战法师的", "暗影的", "游侠的", "元素使的", "自身的", "神明的",
     };
 
     if (std::find(RulesetSpecials.begin(), RulesetSpecials.end(), normalized) != RulesetSpecials.end())
@@ -593,6 +596,84 @@ ItemEnchantPriceModifier parsePriceModifier(const std::string &value)
     return modifier;
 }
 }
+
+// English "Name Add" text of the 73 base special enchantments by id. A localized table replaces the text the kind
+// detection reads, so fall back to it.
+const char *const EnglishSpecialEnchantSuffixes[] = {
+    "of Protection",
+    "of The Gods",
+    "of Carnage",
+    "of Cold",
+    "of Frost",
+    "of Ice",
+    "of Sparks",
+    "of Lightning",
+    "of Thunderbolts",
+    "of Fire",
+    "of Flame",
+    "of Infernos",
+    "of Poison",
+    "of Venom",
+    "of Acid",
+    "Vampiric",
+    "of Recovery",
+    "of Immunity",
+    "of Sanity",
+    "of Freedom",
+    "of Antidotes",
+    "of Alarms",
+    "of The Medusa",
+    "of Force",
+    "of Power",
+    "of Air Magic",
+    "of Body Magic",
+    "of Dark Magic",
+    "of Earth Magic",
+    "of Fire Magic",
+    "of Light Magic",
+    "of Mind Magic",
+    "of Spirit Magic",
+    "of Water Magic",
+    "of Thievery",
+    "of Shielding",
+    "of Regeneration",
+    "of Mana",
+    "Ogre Slaying",
+    "Dragon Slaying",
+    "of Darkness",
+    "of Doom",
+    "of Earth",
+    "of Life",
+    "Rogues'",
+    "of The Dragon",
+    "of The Eclipse",
+    "of The Golem",
+    "of The Moon",
+    "of The Phoenix",
+    "of The Sky",
+    "of The Stars",
+    "of The Sun",
+    "of The Troll",
+    "of The Unicorn",
+    "Warriors'",
+    "Wizards'",
+    "Antique",
+    "Swift",
+    "Monks'",
+    "Thieves'",
+    "of Identifying",
+    "Elemental Slaying",
+    "Undead Slaying",
+    "Of David",
+    "of Plenty",
+    "Assassins'",
+    "Barbarians'",
+    "of the Storm",
+    "of the Ocean",
+    "of Water Walking",
+    "of Feather Falling",
+    "of Sparking",
+};
 
 bool StandardItemEnchantTable::load(const std::vector<std::vector<std::string>> &rows)
 {
@@ -679,6 +760,12 @@ bool SpecialItemEnchantTable::load(const std::vector<std::vector<std::string>> &
 
         SpecialItemEnchantEntry entry = {};
         entry.kind = parseSpecialEnchantKind(suffix);
+
+        if (entry.kind == SpecialItemEnchantKind::None && m_entries.size() < std::size(EnglishSpecialEnchantSuffixes))
+        {
+            entry.kind = parseSpecialEnchantKind(EnglishSpecialEnchantSuffixes[m_entries.size()]);
+        }
+
         entry.name = name;
         entry.suffix = suffix;
 
