@@ -5775,6 +5775,8 @@ SkillMastery: Legendary	传奇
 {mastery} {skill} regained	恢复了{mastery}{skill}
 Learned {skill}	学会了{skill}
 Learned the skills in {item}	学会了{item}中的技能
+Currently enabled	当前已开启
+Currently disabled	当前已关闭
 {skill} disabled	{skill}已关闭
 {skill} enabled	{skill}已开启
 Do you wish to leave {place}?	你要离开{place}吗？
