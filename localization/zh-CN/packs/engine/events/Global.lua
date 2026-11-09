@@ -6121,7 +6121,7 @@ RegisterGlobalEvent(598, "岩石尖塔", function()
     evt.SummonItem(37, 4010, 7736, 544, 1000, 1, false) -- Footman's Axe
     evt.SummonItem(38, 4010, 7736, 544, 1000, 1, false) -- Minotaur War Axe
     evt.SummonItem(39, 4010, 7736, 544, 1000, 1, false) -- Elite Minotaur Axe
-    evt.StatusText("我游历这片土地，为的是编目这里能找到的各种奶酪。我的任务即将完成，但还差三种奶酪未尝。它们是 Frelandeau、Eldenbrie 和 Dunduck。谁能替我找到这些稀有而据说美味的珍馐，我必有重谢。")
+    evt.StatusText("我游历这片土地，为的是编目这里能找到的各种奶酪。我的任务即将完成，但还差三种奶酪未尝。它们是 独角兽奶酪、艾顿布理奶酪 和 登达克奶酪。谁能替我找到这些稀有而据说美味的珍馐，我必有重谢。")
 end)
 
 RegisterGlobalEvent(654, "我的生活", function()
@@ -6138,7 +6138,7 @@ end)
 
 RegisterGlobalEvent(656, "Quest", function()
     if not IsQBitSet(QBit(176)) then -- Find a wheel of Frelandeau Cheese. Bring it to Asael Fromago in Alvar.
-        evt.SetMessage("我游历这片土地，为的是编目这里能找到的各种奶酪。我的任务即将完成，但还差三种奶酪未尝。它们是 Frelandeau、Eldenbrie 和 Dunduck。谁能替我找到这些稀有而据说美味的珍馐，我必有重谢。")
+        evt.SetMessage("我游历这片土地，为的是编目这里能找到的各种奶酪。我的任务即将完成，但还差三种奶酪未尝。它们是 独角兽奶酪、艾顿布理奶酪 和 登达克奶酪。谁能替我找到这些稀有而据说美味的珍馐，我必有重谢。")
         SetQBit(QBit(176)) -- Find a wheel of Frelandeau Cheese. Bring it to Asael Fromago in Alvar.
         SetQBit(QBit(177)) -- Find a log of Eldenbrie Cheese. Bring it to Asael Fromago in Alvar.
         SetQBit(QBit(178)) -- Find a ball of Dunduck Cheese. Bring it to Asael Fromago in Alvar.
@@ -6148,7 +6148,7 @@ RegisterGlobalEvent(656, "Quest", function()
     if HasItem(658) then -- Wheel of Frelandeau
         if HasItem(659) then -- Log of Eldenbrie
             if HasItem(660) then -- Ball of Dunduck
-                evt.SetMessage("太好了！把奶酪给我！我必须吃掉它们！啊……咔嚓咔嚓……Frelandeau，绝妙……嗯，还有 Eldenbrie，烟熏得妙极……嗯哼，Dunduck……好吧，这不太美妙，是吧？你让我这趟贾丹姆奶酪编目之旅大功告成！我可以心满意足地死了！一个奶酪人向你致以卑微的谢意。这是答应你的奖赏！")
+                evt.SetMessage("太好了！把奶酪给我！我必须吃掉它们！啊……咔嚓咔嚓……独角兽奶酪，绝妙……嗯，还有 艾顿布理奶酪，烟熏得妙极……嗯哼，登达克奶酪……好吧，这不太美妙，是吧？你让我这趟贾丹姆奶酪编目之旅大功告成！我可以心满意足地死了！一个奶酪人向你致以卑微的谢意。这是答应你的奖赏！")
                 evt.ForPlayer(Players.Member0)
                 AddValue(Gold, 25000)
                 evt.ForPlayer(Players.All)
@@ -6172,7 +6172,7 @@ RegisterGlobalEvent(656, "Quest", function()
             elseif HasItem(660) then -- Ball of Dunduck
                 evt.SetMessage("很好，你替我找到了一些我寻觅的奶酪。可如今我一心想要一次完整的奶酪品鉴，三种奶酪同时入口，好让我对比着细品。等你把它们全凑齐了再回来。现在这些我不收。我觉得我忍不住要尝尝你留下的那些——那样奶酪品鉴就毁了！")
             else
-                evt.SetMessage("你说过会帮我找到我想要的奶酪，结果却空手而归！别浪费我宝贵的时间！给我带奶酪来——Frelandeau、Eldenbrie 和 Dunduck！找不到就别回来！")
+                evt.SetMessage("你说过会帮我找到我想要的奶酪，结果却空手而归！别浪费我宝贵的时间！给我带奶酪来——独角兽奶酪、艾顿布理奶酪 和 登达克奶酪！找不到就别回来！")
             end
             return
         elseif HasItem(658) then -- Wheel of Frelandeau
@@ -6184,7 +6184,7 @@ RegisterGlobalEvent(656, "Quest", function()
         elseif HasItem(660) then -- Ball of Dunduck
             evt.SetMessage("很好，你替我找到了一些我寻觅的奶酪。可如今我一心想要一次完整的奶酪品鉴，三种奶酪同时入口，好让我对比着细品。等你把它们全凑齐了再回来。现在这些我不收。我觉得我忍不住要尝尝你留下的那些——那样奶酪品鉴就毁了！")
         else
-            evt.SetMessage("你说过会帮我找到我想要的奶酪，结果却空手而归！别浪费我宝贵的时间！给我带奶酪来——Frelandeau、Eldenbrie 和 Dunduck！找不到就别回来！")
+            evt.SetMessage("你说过会帮我找到我想要的奶酪，结果却空手而归！别浪费我宝贵的时间！给我带奶酪来——独角兽奶酪、艾顿布理奶酪 和 登达克奶酪！找不到就别回来！")
         end
         return
     elseif HasItem(658) then -- Wheel of Frelandeau
@@ -6196,7 +6196,7 @@ RegisterGlobalEvent(656, "Quest", function()
     elseif HasItem(660) then -- Ball of Dunduck
         evt.SetMessage("很好，你替我找到了一些我寻觅的奶酪。可如今我一心想要一次完整的奶酪品鉴，三种奶酪同时入口，好让我对比着细品。等你把它们全凑齐了再回来。现在这些我不收。我觉得我忍不住要尝尝你留下的那些——那样奶酪品鉴就毁了！")
     else
-        evt.SetMessage("你说过会帮我找到我想要的奶酪，结果却空手而归！别浪费我宝贵的时间！给我带奶酪来——Frelandeau、Eldenbrie 和 Dunduck！找不到就别回来！")
+        evt.SetMessage("你说过会帮我找到我想要的奶酪，结果却空手而归！别浪费我宝贵的时间！给我带奶酪来——独角兽奶酪、艾顿布理奶酪 和 登达克奶酪！找不到就别回来！")
     end
 end)
 
