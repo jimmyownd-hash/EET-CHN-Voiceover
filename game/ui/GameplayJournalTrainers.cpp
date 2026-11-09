@@ -1,4 +1,5 @@
 #include "game/ui/GameplayJournalTrainers.h"
+#include "game/ui/ImeComposition.h"
 
 #include "game/gameplay/GameplayInputFrame.h"
 #include "game/gameplay/GameplayScreenRuntime.h"
@@ -1076,7 +1077,7 @@ void renderJournalTrainers(
     else
     {
         paint.text(LabelFont, LabelText + 1, Ink, paint.fitted(LabelFont, LabelText + 1,
-            journal.notesSearch + (journal.notesSearchActive ? "_" : ""), searchWidth), searchX + 22, textY);
+            journal.notesSearch + (journal.notesSearchActive ? ImeComposition::caret() : ""), searchWidth), searchX + 22, textY);
     }
 
     for (size_t index = 0; index < MasteryLetters.size(); ++index)

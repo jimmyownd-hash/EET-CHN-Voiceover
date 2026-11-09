@@ -1,4 +1,5 @@
 #include "game/app/GameApplication.h"
+#include "game/ui/ImeComposition.h"
 
 #include "game/gameplay/PartyHostileAlert.h"
 #include "game/gameplay/ActorBehaviorRuntime.h"
@@ -7591,6 +7592,8 @@ bool GameApplication::processPendingDebugMapJump()
 
 void GameApplication::handleSdlEvent(const SDL_Event &event)
 {
+    ImeComposition::handleEvent(event);
+
 #if !defined(__ANDROID__) && !defined(OPENYAMM_IOS)
     // PrintScreen saves the frame on every screen, the debug console included.
     if (event.type == SDL_EVENT_KEY_DOWN && !event.key.repeat && event.key.scancode == SDL_SCANCODE_PRINTSCREEN)

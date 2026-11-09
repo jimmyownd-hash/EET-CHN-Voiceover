@@ -1,4 +1,5 @@
 #include "game/ui/GameplayAlchemyBenchRenderer.h"
+#include "game/ui/ImeComposition.h"
 
 #include "game/gameplay/GameplayInputFrame.h"
 #include "game/gameplay/GameplayScreenRuntime.h"
@@ -243,7 +244,7 @@ void GameplayAlchemyBenchRenderer::render(GameplayScreenRuntime &context, int wi
         {
             // A steady caret; blinking would need a clock the bench does not otherwise use.
             painter.text("AlchemyBenchRecipeSearch", *search,
-                state.recipeSearch + (state.recipeSearchActive ? "_" : ""));
+                state.recipeSearch + (state.recipeSearchActive ? ImeComposition::caret() : ""));
         }
     }
 

@@ -365,6 +365,10 @@ int EngineApplication::run() const
 
 #if defined(__ANDROID__) || defined(OPENYAMM_IOS)
     SDL_SetHint(SDL_HINT_ORIENTATIONS, "LandscapeLeft LandscapeRight");
+#else
+    // The game draws the input method's composition and candidates in its text fields (ImeComposition): the system's
+    // window does not show in fullscreen or in captures of the game window.
+    SDL_SetHint(SDL_HINT_IME_IMPLEMENTED_UI, "composition,candidates");
 #endif
 
     if (!SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS))

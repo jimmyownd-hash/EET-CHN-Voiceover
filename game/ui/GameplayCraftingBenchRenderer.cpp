@@ -1,4 +1,5 @@
 #include "game/ui/GameplayCraftingBenchRenderer.h"
+#include "game/ui/ImeComposition.h"
 
 #include "game/gameplay/GameplayScreenRuntime.h"
 #include "game/items/ItemRuntime.h"
@@ -175,7 +176,7 @@ void GameplayCraftingBenchRenderer::render(GameplayScreenRuntime &context, const
 
         painter.text("CraftingBenchItemSearch", *search,
             state.search.empty() && !state.searchActive ? std::string("Search items")
-                                                        : state.search + (state.searchActive ? "_" : ""),
+                                                        : state.search + (state.searchActive ? ImeComposition::caret() : ""),
             state.search.empty() && !state.searchActive ? std::optional<uint32_t>(DisabledTextColor) : std::nullopt);
     }
 

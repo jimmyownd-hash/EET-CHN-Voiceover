@@ -1,4 +1,5 @@
 #include "game/ui/UiText.h"
+#include "game/ui/ImeComposition.h"
 #include "game/ui/GameplayPartyOverlayRenderer.h"
 #include "game/items/InventoryBags.h"
 #include "game/ui/InventoryBagOverview.h"
@@ -599,8 +600,27 @@ void renderSearchField(
     }
     else
     {
-        // A steady caret, as in the alchemy bench search.
-        context.renderLayoutLabel(textStyle, area, text + (active ? "_" : ""), false);
+        // A steady caret, as in the alchemy bench search, after any text an input method is composing.
+        context.renderLayoutLabel(textStyle, area, text + (active ? ImeComposition::caret(false) : ""), false);
+    }
+
+    // The input method's candidates, in a well of their own under the field (the system's list does not show in
+    // fullscreen or in captures of the game window).
+    if (active && !ImeComposition::candidates().empty())
+    {
+        const std::string candidates = ImeComposition::candidateLine(9);
+        const float pad = 6.0f * area.scale;
+        GameplayScreenRuntime::ResolvedHudLayoutElement box = area;
+        box.y = area.y + area.height + line;
+        box.width = std::max(area.width, context.measureHudTextWidth(style.fontName, candidates) * area.scale + 2.0f * pad);
+        fill(box.x, box.y, box.width, box.height, 0xe0101010u);
+        fill(box.x, box.y, box.width, line, SearchActiveBorderColor);
+        fill(box.x, box.y + box.height - line, box.width, line, SearchActiveBorderColor);
+        fill(box.x, box.y + line, line, box.height - 2.0f * line, SearchActiveBorderColor);
+        fill(box.x + box.width - line, box.y + line, line, box.height - 2.0f * line, SearchActiveBorderColor);
+        GameplayScreenRuntime::HudLayoutElement candidateStyle = style;
+        candidateStyle.textColorAbgr = 0xffffffffu;
+        context.renderLayoutLabel(candidateStyle, box, candidates, false);
     }
 }
 
@@ -746,7 +766,7 @@ void renderJournalMapTextFields(
         if (journalScreen.mapNoteEditing)
         {
             // A personal note being written, with a steady caret as in the search fields.
-            context.renderLayoutLabel(*pNoteLayout, *noteResolved, journalScreen.mapNoteEditText + "_");
+            context.renderLayoutLabel(*pNoteLayout, *noteResolved, journalScreen.mapNoteEditText + ImeComposition::caret());
         }
         else if (pActiveNote != nullptr)
         {
@@ -4259,11 +4279,16 @@ void GameplayPartyOverlayRenderer::renderSaveLoadOverlay(
             && pSaveGameScreen->editActive
             && slotIndex == pSaveGameScreen->editSlotIndex)
         {
-            label = pSaveGameScreen->editBuffer;
+            label = pSaveGameScreen->editBuffer + ImeComposition::text();
 
             if ((SDL_GetTicks() / 500u) % 2u == 0u)
             {
                 label += "_";
+            }
+
+            if (!ImeComposition::candidates().empty())
+            {
+                label += "  " + ImeComposition::candidateLine(5);
             }
         }
 

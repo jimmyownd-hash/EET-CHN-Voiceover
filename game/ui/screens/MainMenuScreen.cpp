@@ -1,4 +1,5 @@
 #include "game/ui/screens/MainMenuScreen.h"
+#include "game/ui/ImeComposition.h"
 
 #include "game/app/GameUpdater.h"
 #include "game/data/GameDataRepository.h"
@@ -1390,7 +1391,7 @@ void MainMenuScreen::drawKeyboard(const std::string &prefix, const Rect &viewpor
         m_searchEditing = true;
         setTextEditing(true);
     }
-    label(prefix + "Search", m_search.empty() ? "Search actions or keys..." : m_search + (m_searchEditing ? "_" : ""));
+    label(prefix + "Search", m_search.empty() ? "Search actions or keys..." : m_search + (m_searchEditing ? ImeComposition::caret() : ""));
     if (selectBox("binding-filter", designRect(prefix + "GroupFilter"), m_bindingGroup, true, 12.16f))
     {
         std::vector<std::string> groups = {"All actions"};

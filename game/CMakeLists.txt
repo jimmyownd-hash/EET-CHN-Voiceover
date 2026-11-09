@@ -366,6 +366,7 @@ add_library(openyamm_game STATIC
     ui/KeyboardScreenLayout.cpp
     ui/MenuScreenBase.cpp
     ui/UiText.cpp
+    ui/ImeComposition.cpp
     ui/GameplayUiController.cpp
     ui/UiLayoutManager.cpp
     ui/MenuSettingsModel.cpp

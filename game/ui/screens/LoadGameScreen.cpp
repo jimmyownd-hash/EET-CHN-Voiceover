@@ -1,4 +1,5 @@
 #include "game/ui/screens/LoadGameScreen.h"
+#include "game/ui/ImeComposition.h"
 
 #include "engine/Utf8Text.h"
 #include "game/content/RulesetDefinition.h"
@@ -788,7 +789,7 @@ void LoadGameScreen::drawScreen(float deltaSeconds)
                 m_nameEditing = true;
                 setTextEditing(true);
             }
-            label(prefix + "NameField", m_saveName + (m_nameEditing ? "_" : ""));
+            label(prefix + "NameField", m_saveName + (m_nameEditing ? ImeComposition::caret() : ""));
             if (m_foodCost.food > 0 || m_foodCost.foodWithEnemiesNear > 0)
             {
                 std::string text = m_foodCost.food > 0 ? "Saving here costs " + std::to_string(m_foodCost.food) +
