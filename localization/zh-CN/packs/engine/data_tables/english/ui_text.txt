@@ -5896,6 +5896,8 @@ Needs {combo} combo points.	需要 {combo} 点连击点。
 Holding it reserves no spell points.	保持时不占用魔法值。
 <bad>Not held:</> cast it to hold it, again to let it go.	<bad>未保持：</>施放一次保持，再施放一次解除。
 Not enough combo points	连击点不足
+Held by {who}.	由{who}维持。
+Held by {name}.	由{name}维持。
 Held by {name}	由{name}保持
 All buffs have been removed	所有增益已被移除
 All of {owner}'s bags sorted	{owner}的所有背包已整理
@@ -7470,3 +7472,21 @@ no spell points	无魔法值
 {c#} skill points	{c#} 点技能点
 {c#} skill point	{c#} 点技能点
 {x}, you have {n#}	{x}，你有 {n#} 点
+
+# v1.8b 法术说明里被颜色拆开的小段
+ of maximum spell points.	 的最大法术值。
+of maximum spell points.	的最大法术值。
+ of maximum hit points.	 的最大生命值。
+of maximum hit points.	的最大生命值。
+ cast it to hold it, again to let it go.	 施放即维持，再次施放即解除。
+cast it to hold it, again to let it go.	施放即维持，再次施放即解除。
+Not held:	未持有：
+.	。
+regained over time	随时间恢复
+power {n#}	强度 {n#}
+10 + 1-30 per skill point	10 + 每技能点 1-30
+delayed at massive hit point loss	大量失血时延缓死亡
+poison, disease, stone, death	中毒、疾病、石化、死亡
+take what they inflict	承受同等伤害
+party-wide	全队生效
+{n#} spell points (flat)	{n#} 点魔法值（固定）
