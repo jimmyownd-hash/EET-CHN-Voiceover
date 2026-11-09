@@ -1730,8 +1730,30 @@ std::string GameplayHudOverlaySupport::itemSearchText(
             {
                 text += '\n';
                 text += part;
+
+                // With a translation overlay the player types the words they see: search those too.
+                if (UiText::hasOverrides())
+                {
+                    const std::string shown = UiText::translate(part);
+
+                    if (shown != part)
+                    {
+                        text += '\n';
+                        text += shown;
+                    }
+                }
             }
         };
+
+    if (UiText::hasOverrides())
+    {
+        const std::string shownName = UiText::translate(text);
+
+        if (shownName != text)
+        {
+            text += '\n' + shownName;
+        }
+    }
 
     add(pDefinition->unidentifiedName);
     add(pDefinition->skillGroup);

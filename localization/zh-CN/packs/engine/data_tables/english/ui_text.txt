@@ -5137,6 +5137,79 @@ Skill bonus: +{points}	技能加成：+{points}
 Skill bonus: 	技能加成：
 Awards earned: {count}	获得荣誉：{count}
 {time} remaining	剩余 {time}
+# spell names shown bare (buff list, aura names)
+Fire Bolt	霹雳火焰
+Fireball	连珠火球
+Immolation	怒火焚身
+Meteor Shower	流星火雨
+Inferno	地狱烈焰
+Incinerate	烈火威弹
+Sparks	遍地开花
+Lightning Bolt	霹雳闪电
+Invisibility	隐身奇术
+Implosion	雷鸣爆弹
+Fly	飞行奇术
+Starburst	群星飞落
+Awaken	催醒奇术
+Ice Bolt	霹雳寒冰
+Recharge Item	魔力填充
+Enchant Item	天赋魔力
+Ice Blast	寒冰爆裂
+Deadly Swarm	致命毒蜂
+Blades	旋转飞镖
+Stone to Flesh	解除石化
+Rock Blast	巨石轰击
+Telekinesis	隔空取物
+Death Blossom	死亡之花
+Turn Undead	驱散亡灵
+Remove Curse	驱魔除咒
+Spirit Lash	灵魂移位
+Raise Dead	死而复生
+Shared Life	分享生命
+Resurrection	转世重生
+Telepathy	心灵感应
+Remove Fear	驱逐恐惧
+Mind Blast	惊心动魄
+Cure Paralysis	治愈麻痹
+Mass Fear	凶神恶煞
+Cure Insanity	治愈痴狂
+Psychic Shock	魂飞魄散
+Enslave	夺魂大法
+Cure Weakness	治愈虚弱
+Cure Poison	疗毒妙方
+Cure Disease	治愈疾病
+Flying Fist	神拳出击
+Power Cure	疗伤圣法
+Light Bolt	光明之焰
+Destroy Undead	亡灵杀手
+Dispel Magic	驱散魔法
+Summon Wisp	光影召唤
+Day of the Gods	天佑一日
+Prismatic Light	死亡之光
+Sunray	聚光魔球
+Divine Intervention	普渡众生
+Reanimate	起死回生
+Toxic Cloud	毒云笼罩
+Shrinking Ray	缩身大法
+Shrapmetal	钢镖齐射
+Control Undead	操纵亡灵
+Dragon Breath	神龙吐珠
+Armageddon	末日审判
+Souldrinker	惊魂夺魄
+Travelers' Boon	宝囊
+Darkfire Bolt	暗火
+Lifedrain	吸血
+Levitate	飘浮
+Flame Blast	焰爆
+Wing Buffet	翼击
+# lower-case stat names (aura panel party rows)
+might	力量
+intellect	智力
+personality	个性
+endurance	耐力
+accuracy	准确
+speed	速度
+luck	运气
 # party creation race card
 {s} {n#} · {t} · max {m#}	{s} {n#} · {t} · 上限 {m#}
 {n#} points per +1	每 {n#} 点 +1
@@ -5638,7 +5711,7 @@ The satchels held only gold.	袋子里只有金币。
 {satchels} satchels emptied, {items} items taken	{satchels} 个袋子已清空，取得 {items} 件物品
 {gold} gold (followers took {share})	{gold} 金币（随从取走 {share}）
 {count} items from the old bags did not fit and lie at your feet	{count} 件旧背包物品没装下，掉在你脚边
-Search items (ring might luck|speed)	搜索物品（如 戒指 力量 幸运|速度）
+Search items (ring might luck|speed)	搜索物品（如 戒指 力量 运气|速度）
 Map progress	地图进度
 Endless Arena	无尽竞技场
 {binding}: loot all	{binding}：一键拾取

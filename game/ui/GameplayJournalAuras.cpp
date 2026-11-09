@@ -10,6 +10,8 @@
 #include "game/ui/GameplayUiRuntime.h"
 #include "game/ui/GameplayUiSkin.h"
 #include "game/ui/SpellbookUiLayout.h"
+#include "game/ui/UiText.h"
+#include "engine/Utf8Text.h"
 
 #include <algorithm>
 #include <array>
@@ -314,18 +316,20 @@ public:
         return measured / m_page.scale;
     }
 
-    std::string fitted(const std::string &font, float height, const std::string &value, float available) const
+    std::string fitted(const std::string &font, float height, const std::string &source, float available) const
     {
-        if (width(font, height, value) <= available)
+        if (width(font, height, source) <= available)
         {
-            return value;
+            return source;
         }
 
+        // Shorten the text as it is shown (a translation, when there is one), a whole character at a time.
+        const std::string value = UiText::hasOverrides() ? UiText::translate(source) : source;
         std::string result = value;
 
         while (result.size() > 1)
         {
-            result.pop_back();
+            Engine::Utf8::popBack(result);
 
             while (!result.empty() && result.back() == ' ')
             {
