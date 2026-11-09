@@ -70,7 +70,7 @@ SetMapMetadata({
     [501] = { kind = "enter_dungeon", source = "opcode", targetMap = "d13.blv", targetName = "食人妖墓穴" },
     [502] = { kind = "enter_dungeon", source = "opcode", targetMap = "d14.blv", targetName = "独眼巨人储藏室" },
     [503] = { kind = "enter_dungeon", source = "opcode", targetMap = "d15.blv", targetName = "炎之锁链" },
-    [504] = { kind = "travel", source = "opcode", targetMap = "elemf.odm", targetName = "火之位面" },
+    [504] = { kind = "travel", source = "opcode", targetMap = "elemf.odm", targetName = "火元素界" },
     [505] = { kind = "enter_dungeon", source = "opcode", targetMap = "d15.blv", targetName = "炎之锁链" },
     [506] = { kind = "enter_dungeon", source = "opcode", targetMap = "d48.blv", targetName = "爱欣格的洞穴" },
     },

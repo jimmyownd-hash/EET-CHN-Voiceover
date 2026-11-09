@@ -33,7 +33,7 @@ MM6.SeerRecoverableItems = {
     {Item = 2077, QBit = 1210}, -- Crystal of Terrax
     {Item = 2128, QBit = 1211}, -- Discharge Papers
     {Item = 2054, QBit = 1212}, -- Sacred Chalice
-    {Item = 2106, QBit = 1213}, -- 龙之塔 Keys
+    {Item = 2106, QBit = 1213}, -- 龙塔 Keys
     {Item = 2122, QBit = 1214}, -- Smoking Gun
     {Item = 2170, QBit = 1215}, -- Memory Crystal Alpha
     {Item = 2171, QBit = 1216}, -- Memory Crystal Beta

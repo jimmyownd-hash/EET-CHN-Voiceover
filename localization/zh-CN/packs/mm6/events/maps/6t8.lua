@@ -37,7 +37,7 @@ SetMapMetadata({
     [19] = { kind = "secret_event", source = "heuristic", hidden = true },
     [20] = { kind = "secret_event", source = "heuristic", hidden = true },
     [21] = { kind = "teleport", source = "heuristic" },
-    [50] = { kind = "leave_dungeon", source = "opcode", targetMap = "outb2.odm", targetName = "黑郡" },
+    [50] = { kind = "leave_dungeon", source = "opcode", targetMap = "outb2.odm", targetName = "布莱克郡" },
     },
     textureNames = {"t1swbd", "t1swbu"},
     spriteNames = {},

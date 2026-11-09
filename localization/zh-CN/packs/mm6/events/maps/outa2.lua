@@ -10,9 +10,9 @@ SetMapMetadata({
     [77] = {3},
     },
     contextActions = {
-    [2] = { kind = "enter_house", source = "opcode", houseId = 32, targetName = "歌吟之钢" },
+    [2] = { kind = "enter_house", source = "opcode", houseId = 32, targetName = "鸣吟之钢" },
     [4] = { kind = "enter_house", source = "opcode", houseId = 75, targetName = "附魔锁甲" },
-    [6] = { kind = "enter_house", source = "opcode", houseId = 109, targetName = "强力魔法店" },
+    [6] = { kind = "enter_house", source = "opcode", houseId = 109, targetName = "强力魔法" },
     [8] = { kind = "enter_house", source = "opcode", houseId = 1586, targetName = "对练场" },
     [10] = { kind = "enter_house", source = "opcode", houseId = 280, targetName = "最后机会" },
     [50] = { kind = "enter_house", source = "opcode", houseId = 1217, targetName = "房屋" },

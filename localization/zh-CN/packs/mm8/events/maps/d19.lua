@@ -108,7 +108,7 @@ SetMapMetadata({
     [203] = { kind = "enter_house", source = "opcode", houseId = 754, targetName = "戴森·利兰之室" },
     [452] = { kind = "open_door", source = "title" },
     [454] = { kind = "open_door", source = "opcode" },
-    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "out06.odm", targetName = "影尖塔" },
+    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "out06.odm", targetName = "影旋山脉" },
     },
     textureNames = {},
     spriteNames = {},

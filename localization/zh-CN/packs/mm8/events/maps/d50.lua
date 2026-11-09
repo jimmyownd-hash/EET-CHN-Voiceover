@@ -87,7 +87,7 @@ SetMapMetadata({
     [79] = { kind = "open_door", source = "opcode" },
     [80] = { kind = "open_door", source = "opcode" },
     [81] = { kind = "open_door", source = "opcode" },
-    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "pbp.odm", targetName = "位面之间" },
+    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "pbp.odm", targetName = "界间之地" },
     },
     textureNames = {},
     spriteNames = {},

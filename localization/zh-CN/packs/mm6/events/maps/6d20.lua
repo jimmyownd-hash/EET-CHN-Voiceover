@@ -39,7 +39,7 @@ SetMapMetadata({
     [18] = { kind = "boost", source = "title" },
     [19] = { kind = "boost", source = "title" },
     [20] = { kind = "boost", source = "title" },
-    [50] = { kind = "leave_dungeon", source = "opcode", targetMap = "outb1.odm", targetName = "克里格尖塔" },
+    [50] = { kind = "leave_dungeon", source = "opcode", targetMap = "outb1.odm", targetName = "克里格斯" },
     },
     textureNames = {},
     spriteNames = {},

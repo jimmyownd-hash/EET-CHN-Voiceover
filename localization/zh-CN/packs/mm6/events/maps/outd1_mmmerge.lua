@@ -24,6 +24,6 @@ end, "阿卜杜勒折扣旅行社")
 
 MM6.RegisterDragonTowerTimer(209, 11032, -8940, 2830, 1182)
 
-ReplaceMapEvent(210, "龙之塔", function()
+ReplaceMapEvent(210, "龙塔", function()
     MM6.TryDisableDragonTower(1182, 117, 42)
 end)

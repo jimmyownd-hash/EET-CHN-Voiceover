@@ -53,7 +53,7 @@ SetMapMetadata({
     [452] = { kind = "travel", source = "opcode", targetMap = "7out02.odm", targetName = "和谐谷" },
     [453] = { kind = "obelisk", source = "title" },
     [501] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d27.blv", targetName = "佐德殖民地" },
-    [502] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d36.blv", targetName = "通往伊欧弗的隧道" },
+    [502] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d36.blv", targetName = "通往伊欧弗尔隧道" },
     [503] = { kind = "enter_dungeon", source = "opcode", targetMap = "mdt12.blv", targetName = "巨龙洞穴" },
     [504] = { kind = "enter_dungeon", source = "opcode", targetMap = "mdt12.blv", targetName = "巨龙洞穴" },
     },

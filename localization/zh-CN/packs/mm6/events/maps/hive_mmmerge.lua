@@ -122,4 +122,4 @@ ReplaceMapEvent(60, "Exit", function()
         evt.StatusText("门是锁着的")
     end
 end, "出口")
-SetMapContextAction(60, {kind = "leave_dungeon", source = "authored", targetMap = "oute3.odm", targetName = "出口"})
+SetMapContextAction(60, {kind = "leave_dungeon", source = "authored", targetMap = "oute3.odm", targetName = "新索匹格"})

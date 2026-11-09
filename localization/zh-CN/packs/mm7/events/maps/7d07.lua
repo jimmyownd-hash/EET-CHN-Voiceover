@@ -64,7 +64,7 @@ SetMapMetadata({
     [503] = { kind = "leave_dungeon", source = "opcode", targetMap = "out10.odm", targetName = "尼弘山" },
     [504] = { kind = "leave_dungeon", source = "opcode", targetMap = "out10.odm", targetName = "尼弘山" },
     [505] = { kind = "passage", source = "opcode", targetMap = "7d35.blv", targetName = "尼弘隧道" },
-    [506] = { kind = "passage", source = "opcode", targetMap = "7d36.blv", targetName = "通往伊欧弗的隧道" },
+    [506] = { kind = "passage", source = "opcode", targetMap = "7d36.blv", targetName = "通往伊欧弗尔隧道" },
     },
     textureNames = {},
     spriteNames = {},

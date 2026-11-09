@@ -98,7 +98,7 @@ SetMapMetadata({
     [98] = { kind = "open_chest", source = "opcode", chestIds = {17} },
     [99] = { kind = "open_chest", source = "opcode", chestIds = {18} },
     [100] = { kind = "open_chest", source = "opcode", chestIds = {19} },
-    [131] = { kind = "enter_house", source = "opcode", houseId = 702, targetName = "弗拉姆德林洞" },
+    [131] = { kind = "enter_house", source = "opcode", houseId = 702, targetName = "弗兰德林洞穴" },
     [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "out04.odm", targetName = "铁砂荒漠" },
     },
     textureNames = {},

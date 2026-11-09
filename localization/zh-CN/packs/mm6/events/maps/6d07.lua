@@ -31,7 +31,7 @@ SetMapMetadata({
     [17] = { kind = "open_chest", source = "opcode", chestIds = {2} },
     [18] = { kind = "open_chest", source = "opcode", chestIds = {3} },
     [19] = { kind = "open_door", source = "opcode" },
-    [20] = { kind = "leave_dungeon", source = "opcode", targetMap = "oute2.odm", targetName = "迷雾群岛" },
+    [20] = { kind = "leave_dungeon", source = "opcode", targetMap = "oute2.odm", targetName = "浓雾岛" },
     [21] = { kind = "use_switch", source = "title" },
     [22] = { kind = "open_door", source = "opcode" },
     [23] = { kind = "open_door", source = "opcode" },

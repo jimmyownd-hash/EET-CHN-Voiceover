@@ -7,7 +7,7 @@ SetMapMetadata({
     openedChestIds = {
     },
     contextActions = {
-    [1] = { kind = "leave_dungeon", source = "opcode", targetMap = "outb1.odm", targetName = "克里格尖塔" },
+    [1] = { kind = "leave_dungeon", source = "opcode", targetMap = "outb1.odm", targetName = "克里格斯" },
     },
     textureNames = {},
     spriteNames = {},

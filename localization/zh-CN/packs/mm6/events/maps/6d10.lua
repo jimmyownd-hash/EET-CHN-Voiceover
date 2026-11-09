@@ -47,7 +47,7 @@ SetMapMetadata({
     [30] = { kind = "use_lever", source = "title" },
     [31] = { kind = "use_lever", source = "title" },
     [32] = { kind = "open_door", source = "title" },
-    [33] = { kind = "leave_dungeon", source = "opcode", targetMap = "outc2.odm", targetName = "自由港" },
+    [33] = { kind = "leave_dungeon", source = "opcode", targetMap = "outc2.odm", targetName = "自由天堂" },
     [34] = { kind = "open_chest", source = "opcode", chestIds = {4} },
     [35] = { kind = "open_chest", source = "opcode", chestIds = {5} },
     [36] = { kind = "open_chest", source = "opcode", chestIds = {6} },

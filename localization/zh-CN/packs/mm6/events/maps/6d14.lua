@@ -55,7 +55,7 @@ SetMapMetadata({
     [38] = { kind = "generic_event", source = "opcode" },
     [39] = { kind = "open_door", source = "title" },
     [40] = { kind = "open_door", source = "title" },
-    [50] = { kind = "leave_dungeon", source = "opcode", targetMap = "outc2.odm", targetName = "自由港" },
+    [50] = { kind = "leave_dungeon", source = "opcode", targetMap = "outc2.odm", targetName = "自由天堂" },
     },
     textureNames = {},
     spriteNames = {},

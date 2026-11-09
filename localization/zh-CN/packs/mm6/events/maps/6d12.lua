@@ -29,7 +29,7 @@ SetMapMetadata({
     [18] = { kind = "open_chest", source = "opcode", chestIds = {3} },
     [19] = { kind = "open_chest", source = "opcode", chestIds = {4} },
     [20] = { kind = "open_door", source = "opcode" },
-    [21] = { kind = "leave_dungeon", source = "opcode", targetMap = "outd1.odm", targetName = "银湾" },
+    [21] = { kind = "leave_dungeon", source = "opcode", targetMap = "outd1.odm", targetName = "银湾镇" },
     [24] = { kind = "secret_event", source = "heuristic", hidden = true },
     },
     textureNames = {"d5walc", "john01"},

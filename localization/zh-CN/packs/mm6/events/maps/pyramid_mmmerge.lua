@@ -46,7 +46,7 @@ local function registerCrewCodeEvent(eventId, itemId, mapVarIndex, qbit, answer,
     end, "净化池")
 end
 
-ReplaceMapEvent(1, "VARN 井", function(continueStep)
+ReplaceMapEvent(1, "VARN 之井", function(continueStep)
     if continueStep == 10 then
         evt.StatusText("错误。")
         evt.FaceExpression(44)
@@ -84,7 +84,7 @@ ReplaceMapEvent(1, "VARN 井", function(continueStep)
     evt.SimpleMessage("船长的密码是什么？")
     evt.AskQuestion(1, 10, 44, 14, 43, 43, "答案？（请用英文作答）", {"kriK", "kriK"})
     return nil
-end, "VARN之井")
+end, "VARN 之井")
 
 registerCrewCodeEvent(21, 2158, 10, 1253, "kcopS", 48, "大副的密码是什么？", 33)
 registerCrewCodeEvent(22, 2159, 11, 1256, "uluS", 33, "领航员的密码是什么？", 35)
@@ -92,7 +92,7 @@ registerCrewCodeEvent(23, 2160, 12, 1258, "aruhU", 50, "通讯官的密码是什
 registerCrewCodeEvent(24, 2161, 13, 1257, "yttocS", 46, "工程师的密码是什么？", 39)
 registerCrewCodeEvent(25, 2162, 14, 1254, "yoccM", 13, "医生的密码是什么？", 41)
 
-ReplaceMapEvent(26, "Books", function()
+ReplaceMapEvent(26, "书籍", function()
     if IsAtLeast(MapVar(25), 1) then
         return
     end
@@ -102,7 +102,7 @@ ReplaceMapEvent(26, "Books", function()
     SetValue(MapVar(25), 1)
 end, "书")
 
-ReplaceMapEvent(27, "Books", function()
+ReplaceMapEvent(27, "书籍", function()
     if IsAtLeast(MapVar(26), 1) then
         return
     end

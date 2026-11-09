@@ -34,7 +34,7 @@ SetMapMetadata({
     [23] = { kind = "generic_event", source = "opcode" },
     [24] = { kind = "shrine", source = "title" },
     [25] = { kind = "open_door", source = "title" },
-    [50] = { kind = "leave_dungeon", source = "opcode", targetMap = "outd1.odm", targetName = "银湾" },
+    [50] = { kind = "leave_dungeon", source = "opcode", targetMap = "outd1.odm", targetName = "银湾镇" },
     },
     textureNames = {"d6flora"},
     spriteNames = {},

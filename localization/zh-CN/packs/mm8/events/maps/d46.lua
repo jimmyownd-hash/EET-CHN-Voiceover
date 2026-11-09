@@ -106,7 +106,7 @@ SetMapMetadata({
     [451] = { kind = "teleport", source = "heuristic" },
     [452] = { kind = "open_door", source = "opcode" },
     [453] = { kind = "open_door", source = "opcode" },
-    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "out08.odm", targetName = "劫掠漫游" },
+    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "out08.odm", targetName = "荒湮回廊" },
     },
     textureNames = {},
     spriteNames = {},

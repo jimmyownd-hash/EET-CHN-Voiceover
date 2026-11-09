@@ -26,7 +26,7 @@ SetMapMetadata({
     [30] = { kind = "open_door", source = "opcode" },
     [31] = { kind = "use_switch", source = "title" },
     [35] = { kind = "boost", source = "title" },
-    [50] = { kind = "leave_dungeon", source = "opcode", targetMap = "outb1.odm", targetName = "克里格尖塔" },
+    [50] = { kind = "leave_dungeon", source = "opcode", targetMap = "outb1.odm", targetName = "克里格斯" },
     },
     textureNames = {},
     spriteNames = {},

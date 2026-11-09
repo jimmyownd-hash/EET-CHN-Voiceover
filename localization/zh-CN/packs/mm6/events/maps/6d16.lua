@@ -74,7 +74,7 @@ SetMapMetadata({
     [45] = { kind = "generic_event", source = "opcode" },
     [46] = { kind = "generic_event", source = "opcode" },
     [47] = { kind = "open_door", source = "title" },
-    [50] = { kind = "leave_dungeon", source = "opcode", targetMap = "outd1.odm", targetName = "银湾" },
+    [50] = { kind = "leave_dungeon", source = "opcode", targetMap = "outd1.odm", targetName = "银湾镇" },
     [51] = { kind = "secret_event", source = "heuristic", hidden = true },
     },
     textureNames = {"d8s2on"},

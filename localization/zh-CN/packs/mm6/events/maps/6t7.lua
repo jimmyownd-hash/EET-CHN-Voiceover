@@ -44,7 +44,7 @@ SetMapMetadata({
     [39] = { kind = "open_chest", source = "opcode", chestIds = {3} },
     [40] = { kind = "open_chest", source = "opcode", chestIds = {7, 8} },
     [45] = { kind = "open_chest", source = "opcode", chestIds = {4} },
-    [60] = { kind = "leave_dungeon", source = "opcode", targetMap = "outb1.odm", targetName = "克里格尖塔" },
+    [60] = { kind = "leave_dungeon", source = "opcode", targetMap = "outb1.odm", targetName = "克里格斯" },
     [61] = { kind = "secret_event", source = "heuristic", hidden = true },
     [62] = { kind = "secret_event", source = "heuristic", hidden = true },
     [63] = { kind = "secret_event", source = "heuristic", hidden = true },

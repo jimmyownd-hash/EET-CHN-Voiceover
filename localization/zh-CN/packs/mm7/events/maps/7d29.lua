@@ -83,7 +83,7 @@ SetMapMetadata({
     [417] = { kind = "enter_house", source = "opcode", houseId = 380 },
     [418] = { kind = "enter_house", source = "opcode", houseId = 380 },
     [419] = { kind = "enter_house", source = "opcode", houseId = 380 },
-    [420] = { kind = "enter_house", source = "opcode", houseId = 1169, targetName = "王座室" },
+    [420] = { kind = "enter_house", source = "opcode", houseId = 1169, targetName = "王座厅" },
     [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "7out02.odm", targetName = "和谐谷" },
     },
     textureNames = {"bannwc-a", "bannwc-b", "ch1b1", "ch1b1el", "ch1b1er", "chb1p6", "chb1p7", "elfhuma", "elfhumb", "nechuma", "nechumb", "tfb09r1a", "tfb09r1b", "tfb09r1c", "tfb09r1d", "tfb09r1e", "tfb09r1f", "tfb09r1g", "tfb09r1h", "tfb09r1i", "tfb09r1j", "wizh-a", "wizh-b"},

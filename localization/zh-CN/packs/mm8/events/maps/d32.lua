@@ -113,7 +113,7 @@ SetMapMetadata({
     [133] = { kind = "open_door", source = "opcode" },
     [134] = { kind = "open_door", source = "opcode" },
     [451] = { kind = "open_door", source = "title" },
-    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "out13.odm", targetName = "雷格纳" },
+    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "out13.odm", targetName = "雷格那" },
     [502] = { kind = "passage", source = "opcode", targetMap = "d33.blv", targetName = "雷格那地底隧道" },
     },
     textureNames = {},

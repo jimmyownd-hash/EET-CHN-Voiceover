@@ -86,18 +86,18 @@ local SeerPilgrimageMonthsPerYear = 12
 local SeerPilgrimageDaysPerYear = SeerPilgrimageDaysPerMonth * SeerPilgrimageMonthsPerYear
 
 local seerPilgrimageByMonth = {
-    {month = "一月", stat = "力量", map = "走私者聚集处"},
-    {month = "二月", stat = "智力", map = "迷雾群岛"},
-    {month = "三月", stat = "个性", map = "银湾"},
+    {month = "一月", stat = "力量", map = "私货湾"},
+    {month = "二月", stat = "智力", map = "浓雾岛"},
+    {month = "三月", stat = "个性", map = "银湾镇"},
     {month = "四月", stat = "耐力", map = "冰冻高原"},
-    {month = "五月", stat = "精准", map = "自由天堂"},
+    {month = "五月", stat = "准确", map = "自由天堂"},
     {month = "六月", stat = "速度", map = "诅咒沼泽"},
-    {month = "七月", stat = "幸运", map = "新索匹格"},
-    {month = "八月", stat = "火系", map = "战争尖塔"},
-    {month = "九月", stat = "风系", map = "铁拳城堡"},
-    {month = "十月", stat = "水系", map = "战争尖塔"},
+    {month = "七月", stat = "运气", map = "新索匹格"},
+    {month = "八月", stat = "火系", map = "克里格斯"},
+    {month = "九月", stat = "空气", map = "铁拳城堡"},
+    {month = "十月", stat = "水系", map = "克里格斯"},
     {month = "十一月", stat = "土系", map = "鳗鱼水域"},
-    {month = "十二月", stat = "魔法", map = "黑郡"},
+    {month = "十二月", stat = "魔法", map = "布莱克郡"},
 }
 
 local seerPilgrimageMonthBits = {

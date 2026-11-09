@@ -113,7 +113,7 @@ SetMapMetadata({
     [491] = { kind = "teleport", source = "heuristic" },
     [501] = { kind = "enter_dungeon", source = "opcode", targetMap = "d11.blv", targetName = "黄蜂巢" },
     [502] = { kind = "enter_dungeon", source = "opcode", targetMap = "d12.blv", targetName = "食人妖要塞" },
-    [503] = { kind = "enter_dungeon", source = "opcode", targetMap = "d41.blv", targetName = "黑矮人营地" },
+    [503] = { kind = "enter_dungeon", source = "opcode", targetMap = "d41.blv", targetName = "黑暗矮人聚集处" },
     [504] = { kind = "enter_dungeon", source = "opcode", targetMap = "d11.blv", targetName = "黄蜂巢" },
     },
     textureNames = {},

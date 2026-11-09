@@ -30,7 +30,7 @@ SetMapMetadata({
     [15] = { kind = "teleport", source = "heuristic" },
     [17] = { kind = "open_door", source = "title" },
     [18] = { kind = "open_door", source = "opcode" },
-    [19] = { kind = "leave_dungeon", source = "opcode", targetMap = "outb1.odm", targetName = "克里格尖塔" },
+    [19] = { kind = "leave_dungeon", source = "opcode", targetMap = "outb1.odm", targetName = "克里格斯" },
     [20] = { kind = "secret_event", source = "heuristic", hidden = true },
     [21] = { kind = "secret_event", source = "heuristic", hidden = true },
     [22] = { kind = "secret_event", source = "heuristic", hidden = true },

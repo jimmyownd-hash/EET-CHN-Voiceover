@@ -58,7 +58,7 @@ SetMapMetadata({
     [455] = { kind = "secret_event", source = "heuristic", hidden = true },
     [456] = { kind = "secret_event", source = "heuristic", hidden = true },
     [501] = { kind = "passage", source = "opcode", targetMap = "7d07.blv", targetName = "雷拳山" },
-    [502] = { kind = "passage", source = "opcode", targetMap = "7d24.blv", targetName = "石城" },
+    [502] = { kind = "passage", source = "opcode", targetMap = "7d24.blv", targetName = "石头城" },
     },
     textureNames = {"cwb1"},
     spriteNames = {},

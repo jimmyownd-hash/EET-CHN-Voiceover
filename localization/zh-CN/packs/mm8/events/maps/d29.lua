@@ -104,7 +104,7 @@ SetMapMetadata({
     [452] = { kind = "teleport", source = "heuristic" },
     [453] = { kind = "teleport", source = "heuristic" },
     [454] = { kind = "teleport", source = "heuristic" },
-    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "elemf.odm", targetName = "火焰位面" },
+    [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "elemf.odm", targetName = "火元素界" },
     },
     textureNames = {},
     spriteNames = {},

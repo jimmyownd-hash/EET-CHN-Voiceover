@@ -71,7 +71,7 @@ SetMapMetadata({
     [52] = { kind = "teleport", source = "heuristic" },
     [54] = { kind = "shrine", source = "title" },
     [56] = { kind = "generic_event", source = "opcode" },
-    [58] = { kind = "leave_dungeon", source = "opcode", targetMap = "outb2.odm", targetName = "黑郡" },
+    [58] = { kind = "leave_dungeon", source = "opcode", targetMap = "outb2.odm", targetName = "布莱克郡" },
     [59] = { kind = "secret_event", source = "heuristic", hidden = true },
     [61] = { kind = "open_door", source = "opcode" },
     [62] = { kind = "open_chest", source = "opcode", chestIds = {8} },

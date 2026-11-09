@@ -62,7 +62,7 @@ SetMapMetadata({
     [197] = { kind = "generic_event", source = "opcode" },
     [198] = { kind = "generic_event", source = "opcode" },
     [199] = { kind = "generic_event", source = "opcode" },
-    [416] = { kind = "enter_house", source = "opcode", houseId = 218, targetName = "王座室" },
+    [416] = { kind = "enter_house", source = "opcode", houseId = 218, targetName = "王座厅" },
     [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "7out04.odm", targetName = "土拉立安森林" },
     [502] = { kind = "passage", source = "opcode", targetMap = "7d08.blv", targetName = "土拉立安洞穴" },
     },

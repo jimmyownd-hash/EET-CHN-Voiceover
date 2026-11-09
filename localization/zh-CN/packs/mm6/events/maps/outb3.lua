@@ -29,7 +29,7 @@ SetMapMetadata({
     [77] = { kind = "open_chest", source = "opcode", chestIds = {3} },
     [78] = { kind = "open_chest", source = "opcode", chestIds = {4} },
     [79] = { kind = "open_chest", source = "opcode", chestIds = {5} },
-    [90] = { kind = "enter_house", source = "opcode", houseId = 420, targetName = "VARN 之墓" },
+    [90] = { kind = "enter_house", source = "opcode", houseId = 420, targetName = "维兰坟墓" },
     [91] = { kind = "travel", source = "opcode", targetMap = "oute3.odm", targetName = "新索匹格" },
     [92] = { kind = "enter_dungeon", source = "opcode", targetMap = "znwc.blv", targetName = "新世界计算" },
     [100] = { kind = "fountain", source = "title" },

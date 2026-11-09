@@ -61,7 +61,7 @@ SetMapMetadata({
     [197] = { kind = "generic_event", source = "opcode" },
     [198] = { kind = "generic_event", source = "opcode" },
     [376] = { kind = "enter_house", source = "opcode", houseId = 1158, targetName = "爱丽丝·哈格里夫斯" },
-    [416] = { kind = "enter_house", source = "opcode", houseId = 217, targetName = "王座室" },
+    [416] = { kind = "enter_house", source = "opcode", houseId = 217, targetName = "王座厅" },
     [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "7out03.odm", targetName = "伊拉西亚" },
     [502] = { kind = "leave_dungeon", source = "opcode", targetMap = "7out03.odm", targetName = "伊拉西亚" },
     },

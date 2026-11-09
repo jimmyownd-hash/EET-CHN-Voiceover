@@ -100,7 +100,7 @@ SetMapMetadata({
     [454] = { kind = "enter_house", source = "opcode", houseId = 113, targetName = "狼毒药剂" },
     [501] = { kind = "enter_dungeon", source = "opcode", targetMap = "d19.blv", targetName = "死灵法师公会" },
     [502] = { kind = "enter_dungeon", source = "opcode", targetMap = "d20.blv", targetName = "疯狂死灵法师实验室" },
-    [503] = { kind = "enter_dungeon", source = "opcode", targetMap = "d21.blv", targetName = "吸血鬼地窖" },
+    [503] = { kind = "enter_dungeon", source = "opcode", targetMap = "d21.blv", targetName = "吸血鬼墓窖" },
     [504] = { kind = "enter_dungeon", source = "opcode", targetMap = "d49.blv", targetName = "雅达克的洞穴" },
     },
     textureNames = {},

@@ -213,17 +213,17 @@ function CrossContinents.HandleVerdantIntro()
     CrossContinents.SetVar("MetVerdant", 1)
 
     if step == 0 then
-        evt.SimpleMessage("维丹介绍自己是一名时空旅者，并说世界需要你的帮助。")
+        evt.SimpleMessage("维尔丹介绍自己是一名时空旅者，并说世界需要你的帮助。")
         CrossContinents.SetVar("IntroStep", 1)
     elseif step == 1 then
-        evt.SimpleMessage("维丹解释说，失踪的英雄们让几段历史失去了主角。")
+        evt.SimpleMessage("维尔丹解释说，失踪的英雄们让几段历史失去了主角。")
         CrossContinents.SetVar("IntroStep", 2)
     elseif step == 2 then
-        evt.SimpleMessage("维丹相信你的队伍可以接替他们的位置，而不再引发另一场灾难。")
+        evt.SimpleMessage("维尔丹相信你的队伍可以接替他们的位置，而不再引发另一场灾难。")
         CrossContinents.SetVar("IntroStep", 3)
     else
         evt.SimpleMessage(
-            "维丹请求你拯救每块大陆的故事，并使用次元门在各大陆间移动。")
+            "维尔丹请求你拯救每块大陆的故事，并使用次元门在各大陆间移动。")
         CrossContinents.SetVar("GotMainQuest", 1)
         CrossContinents.SetVar("StartedContinent", CrossContinents.CurrentContinent())
         evt.SetNPCGreeting(CrossContinents.Config.VerdantNpcId, 328)
@@ -253,9 +253,9 @@ function CrossContinents.HandleConnectorStone()
         CrossContinents.SetVar("GotConnectorStone", 1)
     end
 
-    local message = "连接石可以让你召唤维丹，但每次使用后都需要充能。"
+    local message = "连接石可以让你召唤维尔丹，但每次使用后都需要充能。"
     if CrossContinents.GetVar("ImprovedConnector", 0) ~= 0 then
-        message = message .. "维丹已经改进了它，充能后的石头还能帮助恢复队伍。"
+        message = message .. "维尔丹已经改进了它，充能后的石头还能帮助恢复队伍。"
     end
     evt.SimpleMessage(message)
     CrossContinents.UpdateVerdantTopics()

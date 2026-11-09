@@ -47,7 +47,7 @@ SetMapMetadata({
     [33] = { kind = "generic_event", source = "opcode" },
     [34] = { kind = "generic_event", source = "opcode" },
     [35] = { kind = "open_door", source = "title" },
-    [50] = { kind = "leave_dungeon", source = "opcode", targetMap = "outc1.odm", targetName = "冰封高地" },
+    [50] = { kind = "leave_dungeon", source = "opcode", targetMap = "outc1.odm", targetName = "冰冻高原" },
     [51] = { kind = "secret_event", source = "heuristic", hidden = true },
     [52] = { kind = "secret_event", source = "heuristic", hidden = true },
     },

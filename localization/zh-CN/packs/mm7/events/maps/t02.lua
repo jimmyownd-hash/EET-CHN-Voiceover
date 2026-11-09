@@ -68,7 +68,7 @@ SetMapMetadata({
     [455] = { kind = "secret_event", source = "heuristic", hidden = true },
     [456] = { kind = "secret_event", source = "heuristic", hidden = true },
     [457] = { kind = "secret_event", source = "heuristic", hidden = true },
-    [501] = { kind = "passage", source = "opcode", targetMap = "7d26.blv", targetName = "深渊" },
+    [501] = { kind = "passage", source = "opcode", targetMap = "7d26.blv", targetName = "地狱城" },
     },
     textureNames = {},
     spriteNames = {},
