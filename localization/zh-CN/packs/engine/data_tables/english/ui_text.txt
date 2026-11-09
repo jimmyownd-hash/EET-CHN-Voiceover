@@ -5831,7 +5831,9 @@ Spell cast failed: {reason}	施法失败：{reason}
 Answer: {answer}_	回答：{answer}_
 Discovered: {item}!	发现了{item}！
 Brewed {count} x {item}	炼制了 {count} 份{item}
-Brewing stopped after {steps}.	炼制在 {steps} 步后停止。
+Brewing stopped after {steps}.	炼制在 {steps}后停止。
+{n#} steps	{n#} 步
+{n#} step	{n#} 步
 Immune to {effects}	免疫{effects}
 Quality +{percent} %	品质 +{percent}%
 Damage {min}-{max}	伤害 {min}-{max}
@@ -6120,6 +6122,16 @@ All buffs have been removed	所有增益已被移除
 All of {owner}'s bags sorted	{owner}的所有背包已整理
 This character can't summon any more monsters!	该角色无法再召唤更多怪物了！
 Can't cast Armageddon indoors!	室内不能施展末日审判！
+Can't cast Meteor Shower indoors!	室内不能施展流星火雨！
+Can't cast Starburst indoors!	室内不能施展群星飞落！
+Not enough spell points	法术值不足
+Need spell UI	需要先打开法术界面
+Quick save failed: *	快速存档失败：
+Quick load failed: *	快速读档失败：
+An equipped relic exacts its weekly price	所装备的遗物每周都要索取代价
+Sorry, but we are unable to train you.	抱歉，我们无法训练你。
+Perhaps I could come with you?	也许我可以和你们同行？
+But you better get all the other companies to sign up!	不过你最好让其他所有公司也都来签约！
 Can't cast Inferno outdoors!	室外不能施展地狱火！
 Can't cast Prismatic Light outdoors!	室外不能施展七彩光！
 I wouldn't join in your reckless adventure, not even for all the wealth in the world.	我才不会加入你们这种玩命的冒险，就算给我全世界的财富也不干。
@@ -7026,6 +7038,9 @@ Imported {n#} saves.	导入了 {n#} 个存档。
 Saving here costs {a#} food, you carry {b#}	在此存档需要 {a#} 份食物，你有 {b#} 份
 Saving here is free now	现在在此存档免费
 Not enough food: saving here costs {n#}.	食物不足：在此存档需要 {n#} 份。
+Not enough food: saving here costs {n#}	食物不足：在此存档需要 {n#} 份。
+Not enough food: saving here costs {n#} food ({m#} left)	食物不足：在此存档需要 {n#} 份食物（还剩 {m#} 份）
+{s} gains +{n#} {t}!	{s}的{t}提升了 {n#}！
 Not enough food	食物不足
 {n#} save needs a newer version of OpenYAMM and is not listed.	有 {n#} 个存档需要更新版本的 OpenYAMM，未列出。
 {n#} saves need a newer version of OpenYAMM and is not listed.	有 {n#} 个存档需要更新版本的 OpenYAMM，未列出。
