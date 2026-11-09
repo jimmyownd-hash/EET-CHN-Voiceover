@@ -7740,3 +7740,80 @@ On the road 	途中
 Arrives 	到达 
 Fare 	费用 
 Food to wait 	等待所需食物 
+# sweep: composed UI fragments
++{n#} Might Permanent	力量永久 +{n#}
++{n#} Intellect Permanent	智力永久 +{n#}
++{n#} Personality Permanent	个性永久 +{n#}
++{n#} Endurance Permanent	耐力永久 +{n#}
++{n#} Accuracy Permanent	精确永久 +{n#}
++{n#} Speed Permanent	速度永久 +{n#}
++{n#} Luck Permanent	幸运永久 +{n#}
++{n#} Fire Permanent	火系抗性永久 +{n#}
++{n#} Air Permanent	空气抗性永久 +{n#}
++{n#} Water Permanent	水系抗性永久 +{n#}
++{n#} Earth Permanent	土系抗性永久 +{n#}
++{n#} Mind Permanent	心智抗性永久 +{n#}
++{n#} Body Permanent	肢体抗性永久 +{n#}
++3 Fire Permanent	火系抗性永久 +3
+{s} +{n#} (Permanent)	{s} +{n#}（永久）
+Safe to mix. The empty bottle is returned.	可以安全混合。空瓶会退还。
+Safe to mix. {d#} drinks.	可以安全混合。可饮用 {d#} 次。
+Safe to mix. Works from power {p#}.	可以安全混合。强度达到 {p#} 起才生效。
+Safe to mix. The empty bottle is returned. {d#} drinks.	可以安全混合。空瓶会退还。可饮用 {d#} 次。
+Safe to mix. The empty bottle is returned. Works from power {p#}.	可以安全混合。空瓶会退还。强度达到 {p#} 起才生效。
+Safe to mix. {d#} drinks. Works from power {p#}.	可以安全混合。可饮用 {d#} 次。强度达到 {p#} 起才生效。
+Safe to mix. The empty bottle is returned. {d#} drinks. Works from power {p#}.	可以安全混合。空瓶会退还。可饮用 {d#} 次。强度达到 {p#} 起才生效。
+Needs {m} Alchemy. Safe for {who}. The empty bottle is returned.	需要{m}炼金术。{who}可以安全调配。空瓶会退还。
+Needs {m} Alchemy. Safe for {who}. {d#} drinks.	需要{m}炼金术。{who}可以安全调配。可饮用 {d#} 次。
+Needs {m} Alchemy. Safe for {who}. Works from power {p#}.	需要{m}炼金术。{who}可以安全调配。强度达到 {p#} 起才生效。
+Needs {m} Alchemy. Safe for {who}. The empty bottle is returned. {d#} drinks.	需要{m}炼金术。{who}可以安全调配。空瓶会退还。可饮用 {d#} 次。
+Needs {m} Alchemy. Safe for {who}. The empty bottle is returned. Works from power {p#}.	需要{m}炼金术。{who}可以安全调配。空瓶会退还。强度达到 {p#} 起才生效。
+Needs {m} Alchemy. Safe for {who}. {d#} drinks. Works from power {p#}.	需要{m}炼金术。{who}可以安全调配。可饮用 {d#} 次。强度达到 {p#} 起才生效。
+Needs {m} Alchemy. Safe for {who}. The empty bottle is returned. {d#} drinks. Works from power {p#}.	需要{m}炼金术。{who}可以安全调配。空瓶会退还。可饮用 {d#} 次。强度达到 {p#} 起才生效。
+Needs {m} Alchemy; {who} has no Alchemy skill.	需要{m}炼金术；{who}没有炼金术技能。
+{item} needs more Alchemy.	{item}需要更高的炼金术。
+Uses: {a}. Brews first: {b}.	消耗：{a}。先酿造：{b}。
+Step {n#}: {s}	第 {n#} 步：{s}
+{s} already at step {n#}	{s}已达第 {n#} 步
+{s} +{n#} steps	{s}可提升 {n#} 步
+{h#} Hours {m#} Minute	{h#} 小时 {m#} 分钟
+{h#} Hour {m#} Minutes	{h#} 小时 {m#} 分钟
+{h#} Hour {m#} Minute	{h#} 小时 {m#} 分钟
+{m#} Minutes {s#} Seconds	{m#} 分钟 {s#} 秒
+{m#} Minutes {s#} Second	{m#} 分钟 {s#} 秒
+{m#} Minute {s#} Seconds	{m#} 分钟 {s#} 秒
+{m#} Minute {s#} Second	{m#} 分钟 {s#} 秒
+ of {w}' spell points · 	 占{w}的法术值 · 
+ of {w}' hit points · 	 占{w}的生命值 · 
+skill {n#}	技能 {n#}
+Expert first	需先成为专家
+Master first	需先成为大师
+{a#} satchel emptied, {b#} items taken	{a#} 个袋子已清空，取得 {b#} 件物品
+{a#} satchels emptied, {b#} item taken	{a#} 个袋子已清空，取得 {b#} 件物品
+{a#} satchel emptied, {b#} item taken	{a#} 个袋子已清空，取得 {b#} 件物品
+Tab {s} (Shift+{n#})	标签页 {s}（Shift+{n#}）
+{s} [missing 3D model for item {n#} - please report]	{s} [物品 {n#} 缺少 3D 模型，请反馈]
+{n#} {s} created	已合成 {n#} 个{s}
+Broken   {s}	损坏   {s}
+{n#} (ready): {s}	{n#} 连击点（就绪）：{s}
+{n#}: {s}	{n#} 连击点：{s}
+Needs {m} Alchemy; Nobody in the party has no Alchemy skill.	需要{m}炼金术；队伍中无人具备炼金术技能。
+{n#} possible	可做 {n#} 次
+x{n#} possible	可合并 {n#} 次
+needs Expert	需要专家
+needs Master	需要大师
+Make bag {n#} {kind}	把第 {n#} 号背包设为{kind}
+Make tab {t}, bag {n#} {kind}	把第 {t} 页的第 {n#} 号背包设为{kind}
+Tab {t}, bag {n#}	第 {t} 页背包 {n#}
+tab {t}, bag {n#}	第 {t} 页背包 {n#}
+{s} still needs {t}	{s} 还需要 {t}
+{s} needs a name	{s} 需要起名
+{s}: {a#}, +{b#} per point, max {c#}	{s}：{a#}，每点 +{b#}，上限 {c#}
+{s}: {a#}, {b#} points per +1, max {c#}	{s}：{a#}，每 {b#} 点 +1，上限 {c#}
+{s}: {a#}, 1 point per +1, max {c#}	{s}：{a#}，每点 +1，上限 {c#}
+Normal first	须先学会普通级
+This character cannot learn the skills in {s}	该角色无法学习{s}中的技能
+{s} already at step {n#},	{s}已达第 {n#} 阶、
+{s} +{n#} steps,	{s}提升 {n#} 阶、
+needs Normal	需要普通
+needs Grandmaster	需要宗师
