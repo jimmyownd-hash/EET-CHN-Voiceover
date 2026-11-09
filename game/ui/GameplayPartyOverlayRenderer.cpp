@@ -8316,7 +8316,7 @@ void GameplayPartyOverlayRenderer::renderCharacterDetailOverlay(GameplayScreenRu
     const size_t activeSpellRows = std::max<size_t>(1, overlay.activeSpells.size());
     const float spellRowsHeight = spellValueLineHeight * static_cast<float>(activeSpellRows);
     const float rootWidth = std::max(425.0f * popupScale, pRootLayout->width * popupScale);
-    const float rootHeight = std::max(200.0f * popupScale, 112.0f * popupScale + spellRowsHeight + 14.0f * popupScale);
+    const float rootHeight = std::max(200.0f * popupScale, 112.0f * popupScale + spellRowsHeight + 26.0f * popupScale);
     const float popupGap = 12.0f * popupScale;
     float rootX = overlay.sourceX + overlay.sourceWidth + popupGap;
 
