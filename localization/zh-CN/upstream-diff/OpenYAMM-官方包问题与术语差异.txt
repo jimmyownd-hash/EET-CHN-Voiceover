@@ -1,0 +1,504 @@
+OpenYAMM 1.22 官方 zh-cn 语言包 与 我们 v2.1 汉化 的对照 + 官方包问题清单
+
+━━ 一、官方包里的问题（可以报告给作者）━━
+1. 完全没翻的界面文字（译文为空）：Promotion（转职）、{name} is now a {class}.（xx 现在是 xx。）、No one among you can take this promotion now.（现在没人能转职。）、Your rest is interrupted.（休息被打断了。）、There’s two things to know here.、Spell Description 等；另有一批调试用文字（debug console、test party 等）可忽略。
+2. 译错的："End" 译成了“结束”，在属性缩写里应是“耐力”（Endurance）；"Cabinet/Crate/Dresser/Pantry" 等家具名两边译法不同，官方偏直译，属风格差异。
+3. 带乱码的原文：engine.po 里有 22 处英文原文的撇号变成了乱码字符（如 Increases the character�s level…、Don�t have Lantern），这是上游原文的编码问题，会导致这些条目的原文对不上。
+4. 译文占位符和原文不一致（共 5 条，多为句式拆分造成）：Price is the same every time, %06. / How could I not respond…（多了 %15）/ ' Press again to load.'（多了 {warning}）/ 'Adds one at random: '（多了 {choices}）/ ', {hidden} hidden, not counted'（多了 {alive}）。这几条需要作者确认是否有意为之。
+5. 官方把法术/药水/附魔里的同名条目用药水名代替，导致 Fire Resistance、Air Resistance 等显示成“御火药剂”“御风药剂”，在装备属性里很怪（我们译为火系抗性、空气抗性）。
+
+━━ 二、术语差异（共 1941 条，下面是最值得讨论的）━━
+格式：英文 | 官方 | 我们
+
+【装备附魔】
+of Might | 之力量 | 力量
+of Thought | 之智慧 | 思维
+of Charm | 之个性 | 魅力
+of Vigor | 之活力 | 活力
+of Precision | 之精准 | 精准
+of Speed | 之速度 | 迅捷
+of Luck | 之运气 | 幸运
+of Health | 之生命 | 生命
+of Magic | 之魔力 | 魔力
+of Defense | 之防御 | 防护
+of Fire Resistance | 之火焰抗性 | 御火
+of Air Resistance | 之空气抗性 | 御风
+of Water Resistance | 之水系抗性 | 御水
+of Earth Resistance | 之土系抗性 | 御土
+of Mind Resistance | 之心智抗性 | 御心
+of Body Resistance | 之肢体抗性 | 御体
+of Alchemy | 之炼金术 | 炼金
+of Stealing | 之盗窃术 | 盗窃
+of Disarming | 之拆除陷阱 | 解陷
+of Items | 之鉴定物品 | 鉴物
+of Monsters | 之鉴定怪物 | 识怪
+of Arms | 之武器精通 | 兵刃
+of Dodging | 之闪避 | 闪避
+of the Fist | 之拳术 | 铁拳
+of great Might | 之巨力 | 巨力
+Dragon Slaying | 屠龙类 | 屠龙
+Ogre Slaying | 杀魔类 | 屠魔
+of Acid | 强酸类 | 强酸
+of Air Magic | 空气魔法类 | 空气法术
+of Alarms | 警觉类 | 警醒
+of Antidotes | 抗毒类 | 解毒
+of Body Magic | 肢体魔法类 | 肢体法术
+of Carnage | 屠杀类 | 杀戮
+of Cold | 寒冷类 | 寒冰
+of Dark Magic | 暗黑魔法类 | 暗黑法术
+of Darkness | 暗黑类 | 幽暗
+of Doom | 末日类 | 厄运
+of Earth | 大地类 | 大地
+of Earth Magic | 土系魔法类 | 土系法术
+of Feather Falling | 凌空飞降类 | 羽落
+of Fire | 火焰类 | 烈焰
+of Fire Magic | 火系魔法类 | 火系法术
+of Flame | 烈焰类 | 炽焰
+of Force | 强力类 | 原力
+of Freedom | 自由类 | 自由
+of Frost | 霜冻类 | 霜冻
+of Ice | 冰结类 | 寒冰
+of Identifying | 鉴定类 | 鉴识
+of Immunity | 免疫类 | 免疫
+of Infernos | 地狱火类 | 炼狱
+of Life | 生命类 | 生命
+of Light Magic | 光明魔法类 | 光明法术
+of Lightning | 电击类 | 闪电
+of Mana | 法力类 | 法力
+of Mind Magic | 心智魔法类 | 心智法术
+of Plenty | 丰足类 | 丰饶
+of Poison | 剧毒类 | 剧毒
+of Power | 威力类 | 力量
+of Protection | 保护类 | 庇护
+of Recovery | 回复类 | 复元
+of Regeneration | 再生类 | 再生
+of Sanity | 理智类 | 清明
+of Shielding | 护盾类 | 护盾
+of Sparking | 电击类 | 电花
+of Sparks | 电球类 | 火花
+of Spirit Magic | 灵魂魔法类 | 灵魂法术
+of The Dragon | 飞龙类 | 巨龙
+of The Eclipse | 日蚀类 | 日蚀
+of The Gods | 众神类 | 神祇
+of The Golem | 巨像类 | 魔像
+of The Medusa | 蛇发女妖类 | 美杜莎
+of The Moon | 月亮类 | 明月
+of The Phoenix | 凤凰类 | 凤凰
+of The Sky | 天空类 | 苍穹
+of The Stars | 星辰类 | 星辰
+of The Sun | 太阳类 | 烈日
+of The Troll | 巨魔类 | 巨魔
+of The Unicorn | 独角兽类 | 独角兽
+of Thievery | 盗窃类 | 盗窃
+of Thunderbolts | 轰雷类 | 雷霆
+of Venom | 蛇毒类 | 毒液
+of Water Magic | 水系魔法类 | 水系法术
+of Water Walking | 凌波微步类 | 水面行走
+of the Ocean | 海洋类 | 汪洋
+of the Storm | 风暴类 | 风暴
+Ogre Raiding Fort | 食人魔劫掠堡垒 | 食人妖堡垒
+Ogre Peasant | 食人妖农民 | 食人魔农民
+
+【其他较短的词条（前 400 条）】
+Armor Class | 护甲等级 | 防御等级
+Fire Resistance | 御火药剂 | 火系抗性
+Air Resistance | 御风药剂 | 空气抗性
+Water Resistance | 御水药剂 | 水系抗性
+Earth Resistance | 御土药剂 | 土系抗性
+Mind Resistance | 御心药剂 | 心系抗性
+Body Resistance | 御体药剂 | 体系抗性
+Throws sparks into enemy. | 向敌人投掷火花 | 向敌人抛出火花。
+Antique | 古董类 | 古董
+Assassins' | 杀手类 | 刺客
+Barbarians' | 野蛮类 | 蛮族
+Dragon Slaying | 屠龙类 | 屠龙
+Elemental Slaying | 屠元素类 | 灭元素
+Monks' | 僧侣类 | 武僧
+Of David | 屠泰坦类 | 大卫
+Ogre Slaying | 杀魔类 | 屠魔
+Rogues' | 飞贼类 | 游荡者
+Swift | 迅捷类 | 疾行
+Thieves' | 盗贼类 | 盗贼
+Undead Slaying | 屠亡灵类 | 灭亡灵
+Vampiric | 吸血类 | 吸血
+Warriors' | 战士类 | 战士
+Wizards' | 法师类 | 法师
+Heal 20% of damage done on attack | 攻击时恢复造成伤害的20% | 攻击时回复所造成伤害的 20%
+Increase knockback effect (X10) | 击退效果提升（X10） | 击退效果增强（10 倍）
+Regenerate 1hp/x while walking, etc | 行走时逐渐恢复生命 | 行走时每单位时间回复 1 点生命，等等
+Regenerate 1sp/x while walking, etc | 行走时逐渐恢复魔法 | 行走时每单位时间回复 1 点法术，等等
+X 2 damage vs all dragons | 对龙伤害翻倍 | 对所有巨龙造成 2 倍伤害
+End (+10), AC (+10), HP (+10) | 耐力+10、防御等级+10、生命值+10 | 耐力（+10），护甲（+10），生命（+10）
+HP (+10), Regen hpts | 生命值+10，并逐渐恢复生命 | 生命（+10），持续回复生命
+Speed (+5), Acc (+5) | 速度+5、准确+5 | 速度（+5），精准（+5）
+SP (+10), Regen spts | 魔法值+10，并逐渐恢复魔法 | 法术（+10），持续回复法术
+End (+15), AC (+5) | 耐力+15、防御等级+5 | 耐力（+15），护甲（+5）
+Luck (+10), Int (+10) | 智力+10、运气+10 | 运气（+10），智力（+10）
+Fire Res (+30), Regen hpts | 火焰抗性+30，并逐渐恢复生命 | 火系抗性（+30），持续回复生命
+Int (+10), Spd (+10), SP (+10) | 智力+10、速度+10、魔法值+10 | 智力（+10），速度（+10），法术（+10）
+End (+10), Acc (+10) | 耐力 +10，准确度 +10 | 耐力（+10），精准（+10）
+Might(+10), Per (+10) | 力量+10、个性+10 | 力量（+10），个性（+10）
+End (+15), Regen hpts | 耐力+15，并逐渐恢复生命 | 耐力（+15），持续回复生命
+Luck (+15), Regen spts | 运气+15，并逐渐恢复魔法 | 运气（+15），持续回复法术
+Might (+5), End (+5) | 力量+5、耐力+5 | 力量（+5），耐力（+5）
+Intelect (+5), Per (+5) | 智力+5、个性+5 | 智力（+5），个性（+5）
+Gold value increased | 物品价值大幅提升 | 金币价值提升
++3 to Dodging and Unarmed skill | 闪避和徒手格斗技能+3 | 闪避与徒手格斗 +3
++3 to Stealing and Disarm skill | 盗窃和拆除陷阱技能+3 | 偷窃与解除陷阱 +3
++3 to ID Monster and ID Item skill | 鉴定物品和鉴定怪物技能+3 | 怪物鉴定与物品鉴定 +3
+UNUSED x2 damage on all Titans | 对泰坦伤害翻倍 | （未启用）对所有泰坦造成 2 倍伤害
+SP | 法力 | 魔法
+End | 结束 | 耐力
+Door. | 门 | 门。
+Cabinet | 柜子 | 橱柜
+Chest of Drawers | 五斗柜 | 抽屉柜
+Dresser | 梳妆台 | 梳妆柜
+Pantry | 食品储藏室 | 食品柜
+Switch. | 开关 | 开关。
+Crate | 箱子 | 木箱
+Open Crate | 打开板条箱 | 打开的木箱
+Sealed Crate | 密封板条箱 | 封死的木箱
+Crates. | 板条箱。 | 木箱。
+Crates filled with wood chips. | 装满木屑的板条箱。 | 装满木屑的木箱。
+Picture Door | 画像门 | 画像后的门
+Flame Door | 火焰门 | 火焰之门
+Door Beam | 门梁 | 门闩
+Altar of Accuracy | 准确祭坛 | 精准祭坛
+Tree | 树妖 | 树
+Nice Flower | 美丽的花 | 漂亮的花
+Flowers | 鲜花 | 花丛
+Well of VARN | VARN之井 | VARN 之井
+Sacred Pool | 圣池 | 圣水池
+Cleansing Pool | 净化池 | 净化水池
+Small glittering pool. | 波光粼粼的小水池。 | 闪着微光的小水池。
+Full sack | 满满的麻袋 | 满袋
+Storage Container | 储物容器 | 储物箱
+Mine | 矿井 | 矿坑
+Crystal. | 水晶 | 水晶。
+Crystal | 德里克丝的水晶 | 水晶
+Shrine | 祭坛 | 神龛
+Shrine of Air | 空气圣坛 | 空气神龛
+Shrine of Water | 流水圣坛 | 流水神龛
+Shrine of Earth | 大地圣坛 | 大地神龛
+Shrine of Cold | 寒冷圣坛 | 寒冷神龛
+Shrine of Magic | 魔法圣坛 | 魔法神龛
+Shrine of the Gods | 诸神圣坛 | 众神神龛
+Shrine of Might | 力量圣坛 | 力量神龛
+Shrine of Intellect | 智力圣坛 | 智力神龛
+Shrine of Personality | 个性圣坛 | 人格神龛
+Shrine of Endurance | 耐力圣坛 | 耐力神龛
+Shrine of Accuracy | 准确圣坛 | 精准神龛
+Shrine of Speed | 速度圣坛 | 速度神龛
+Shrine of Luck | 运气圣坛 | 幸运神龛
+Shrine of Poison | 毒药圣坛 | 毒素神龛
+Shrine of Electricity | 雷电圣坛 | 闪电神龛
+Keg | 桶 | 小酒桶
+Black liquid filled barrel | 装满黑色液体的木桶 | 装满黑液的木桶
+Stew filled bowl. | 装满炖菜的碗。 | 盛满炖菜的碗。
+Computer Terminal | 电脑终端 | 终端机
+Portrait | 肖像 | 画像
+Picture | 画像 | 图画
+Carved mural. | 雕刻壁画。 | 雕花壁画。
+Table with implements atop. | 上面放着工具的桌子。 | 摆着工具的桌子。
+Monolith | 巨石碑 | 巨石柱
+Lift | 电梯 | 升降机
+Teleporter | 传送点 | 传送器
+Stone Face | 石面 | 石像面孔
+Crumbling boulder. | 崩塌的巨石。 | 碎裂的巨石。
+Wall | 墙壁 | 墙
+Wall with missing bricks. | 缺砖的墙壁 | 缺了砖的墙。
+Circle of Stones | 石圈 | 石阵
+Flickering Torch | 闪烁的火把 | 摇曳的火把
+Cart | 马车 | 手推车
+Wagon | 马车 | 四轮马车
+Tower | 塔 | 塔楼
+Vault | 宝库 | 金库
+The Vault | 金库 | 信托银行
+Regnan Ship | 雷格南船 | 雷格那船
+Sunk Regnan Ship | 沉没的雷格南船 | 沉没的雷格那船
+Submarine | 潜艇 | 潜水艇
+Hatch | 舱门 | 舱口
+Key Hole | 锁孔 | 钥匙孔
+Books | 书籍 | 书
+Potions for sale | 药剂出售 | 待售药水
+Weapon shop placeholder | 武器店占位符 | 武器店
+Armor shop placeholder | 盔甲店占位符 | 防具店
+Magic shop placeholder | 魔法店占位符 | 魔法店
+Spell shop placeholder | 法术店占位符 | 法术店
+Alchemist placeholder | 炼金术士占位符 | 炼金店
+Temple placeholder | 神殿占位符 | 神殿
+Bank placeholder | 银行占位符 | 银行
+Training hall placeholder | 训练场占位符 | 训练场
+Baa Head One | 巴阿之首·一 | 羊鸣头像之一
+Baa Head Two | 巴阿之首·二 | 羊鸣头像之二
+Baa Head Three | 巴阿之首·三 | 羊鸣头像之三
+Baa Head Four | 巴阿之首·四 | 羊鸣头像之四
+Almighty Head of Baa. | 全能的巴阿之首。 | 羊鸣全能头像。
+Glowing dinosaur bones | 发光的恐龙骨 | 发光的恐龙骨骸
+Bones | 骨头 | 骨骸
+Old bones. | 旧骸骨。 | 陈年骨骸。
+Poisoned Spike | 毒刺 | 淬毒尖刺
+The door will not budge | 门纹丝不动 | 这扇门纹丝不动
+Looks like an earthquake hit this mine. | 看来地震袭击了这座矿坑。 | 这座矿坑像是被地震犁过。
+Shard filled caskets. | 装满碎片的小棺。 | 装满碎片的匣子。
+A giant's sword | 巨人之剑 | 巨人的剑
+Dimension Door | 次元之门 | 次元门
+Dimensional travel | 维度旅行 | 跨位面传送
+Fire the Cannon ! | 发射大炮！ | 开炮！
+Leave to tower | 离开高塔 | 离开塔楼
+Drink from the Well | 饮用井水 | 饮井水
+Drink from the well | 饮用井水 | 饮井水
+Drink from Well. | 饮用井水 | 饮井水。
+Drink from the Fountain | 饮用喷泉 | 饮喷泉水
+Drink from the fountain | 饮用喷泉 | 饮喷泉水
+Drink from Fountain | 饮用喷泉 | 饮喷泉水
+Drink from Fountain. | 饮用喷泉 | 饮喷泉水。
+Drink from Trough. | 从水槽饮水 | 在饮水槽饮水。
+Drink from Fountain of Magic | 饮用魔法喷泉 | 饮用魔法之泉
+Drink | 饮水处 | 饮用
+Jump into the Well | 跳入水井 | 跳进水井
+Free Haven | 自由天堂 | 自由港
+Rockham | 罗克汉姆 | 洛克汉姆
+Rockham/Free Haven | 罗克汉姆/自由港 | 洛克汉姆／自由港
+Avlee | 爱佛黎 | 艾弗利
+Darkmoor | 黑摩尔 | 暗沼
+Whitecap | 白头村 | 白浪镇
+White Cap | 白帽镇 | 白浪镇
+Silver Cove | 银湾镇 | 银湾
+Misty Islands | 浓雾岛 | 雾岛
+Welcome to Misty Islands | 欢迎来到迷雾群岛 | 欢迎来到雾岛
+Temple of Baa | 巴阿神庙 | 羊鸣庙
+Temple Baa | 巴之神殿 | 羊鸣庙
+Temple of Light | 光明神殿 | 治疗之屋
+Temple of Dark | 黑暗神殿 | 暗黑神庙
+Temple of Stone | 石之神殿 | 石之庙
+Water Temple | 水神庙 | 水之神殿
+Abandoned Temple | 废弃神殿 | 废庙
+The Grand Temple of the Moon | 月之圣殿 | 月之大神殿
+The Grand Temple of the Sun | 日之圣殿 | 日之大神殿
+Grand Temple of Eep | 伊普圣殿 | 伊普大神殿
+Chapel of Eep | 伊普小教堂 | 伊普礼拜堂
+Vampire Crypt | 吸血鬼墓窖 | 吸血鬼墓穴
+The Crypt of Korbu | 可布之墓 | 科布之墓
+The Tomb of Lord Brinne | 布林勋爵之墓 | 布林领主之墓
+Tomb of Lord Brinne | 布林恩领主之墓 | 布林领主之墓
+Destroyed Building | 毁坏的建筑 | 损毁的建筑
+Merchant House of Alvar | 阿尔瓦商人之家 | 阿尔瓦商会
+Escaton's Crystal | 爱斯卡顿水晶 | 艾斯卡顿水晶
+The Vault of Time | 时间之库 | 时间宝库
+Balthazar Lair | 霸杀煞之穴 | 巴尔萨煞巢穴
+Regnan Pirate Outpost | 雷格南海盗哨站 | 雷格那海盗前哨站
+Uplifted Library | 升空图书馆 | 升格图书馆
+Ancient Troll Home | 食人妖古老家园 | 巨魔古居
+A Druid Circle | 德鲁伊石圈 | 德鲁伊石环
+War Camp | 战争营地 | 军营
+Ogre Raiding Fort | 食人魔劫掠堡垒 | 食人妖堡垒
+Castle Gloaming | 暮光城堡 | 黄昏城堡
+Fort Riverstride | 河畔堡垒 | 利文斯德要塞
+Castle Lambent | 微光城堡 | 光辉城堡
+Castle of Air | 空气城堡 | 风之城堡
+Castle of Fire | 火焰城堡 | 火之城堡
+Hall of the Pit | 深渊之厅 | 地狱之厅
+The Pit | 地狱城 | 深坑
+Throne Room | 王座厅 | 加冕殿
+Clanker's Laboratory | 科兰克的实验室 | 科兰克实验室
+School of Sorcery | 巫术学校 | 魔法学院
+Hostel | 旅舍 | 客栈
+Empty House | 空房屋 | 空屋
+Flooded House | 被淹房屋 | 被洪水淹没的屋子
+The Mercenary Guild | 佣兵公会 | 佣兵行会
+Mercenary Guild | 佣兵行会 | 雇佣兵行会
+Smugglers' Guild | 走私贩行会 | 走私者行会
+Guild of Bounty Hunters | 赏金猎人行会 | 赏金猎人公会
+Guild of Water | 水系公会 | 流水公会
+Guild of Mind | 心智行会 | 心智魔法行会
+Guild of Light | 光明行会 | 光明魔法行会
+Guild of Dark | 黑暗行会 | 暗黑魔法行会
+Guild of Night | 夜之行会 | 高级暗黑魔法行会
+Guild of Twilight | 暮色行会 | 初级暗黑魔法行会
+Guild of Enlightenment | 开悟行会 | 高级光明魔法行会
+Guild of Illumination | 启明行会 | 初级光明魔法行会
+Guild Caravans | 行会商队 | 马车队公会
+Crystal Caravans | 水晶商队 | 钻石之旅
+Protection Services | 护卫服务 | 保护服务
+The Adventurer's Inn | 冒险者旅店 | 冒险者的旅店
+Two Palms Tavern | 双棕榈酒馆 | 双叶旅店
+The Grog and Grub | 酒肉之家 | 葛卢格和葛卢伯
+Grogg's Grog | 格罗格烈酒馆 | 克劳格旅店
+The Vampyre Lounge | 吸血鬼酒吧 | 旅行之家
+War College | 战争学院 | 战争学校
+Balthazar Academy | 巴尔萨泽学院 | 巴尔萨煞学院
+Bank of Balthazar | 巴尔萨泽银行 | 巴尔萨煞之银行
+Halls of Gold | 黄金之厅 | 信誉银行
+The Depository | 寄存处 | 存款处
+Steadwick Townhall | 斯特德维克市政厅 | 斯坦德威克市政厅
+Pierpont Townhall | 皮尔庞特市政厅 | 匹尔邦特市政厅
+City of Steadwick | 斯坦德维克城 | 斯特德威克城
+Royal Lines | 皇家线路 | 御道
+Trial of Honor | 荣誉试炼 | 荣誉之地
+The Proving Grounds | 试炼场 | 正义之地
+Island Training Grounds | 岛屿训练场 | 海岛训练所
+Self Study | 自我修行 | 自我学习
+Basic Principles | 基础训练馆 | 基本技能训练所
+Applied Instruction | 应用训练馆 | 斗士训练所
+Training Essentials | 训练基础馆 | 勇者训练所
+Rites of Passage | 成人礼仪式馆 | 进步之仪式
+House of Healing | 疗愈之家 | 疗伤所
+House of Solace | 慰藉之家 | 抚慰之屋
+Armorworks | 盔甲工坊 | 铠甲作坊
+Shields of Malice | 恶念之盾 | 怨恨之盾
+Blades of Spite | 怨恨之刃 | 怨恨之剑
+Blades' End | 刀锋终点 | 终极利刃
+Duelists' Edge | 决斗者之锋 | 双刃剑锋
+The Knight's Blade | 骑士之刃 | 武士之刃
+Erik's Armory | 埃里克军械库 | 埃里克的铠甲店
+Queen Catherine's Smithy | 凯瑟琳女王铁匠铺 | 皇家铠甲店
+The Queen's Forge | 女王铁匠铺 | 皇家锻造场
+The Peasant's Smithy | 农夫铁匠铺 | 农夫铠甲店
+Tempered Steel | 淬炼钢武器店 | 百炼精钢
+The Balanced Axe | 均衡战斧 | 精良战斧
+Ayzar's Axes | 艾扎尔战斧店 | 爱煞之斧
+The Polished Pauldron | 抛光肩甲店 | 精制肩甲
+Armor of Honor | 荣誉盔甲 | 荣誉铠甲店
+Linked Mail | 环甲 | 连接锁甲
+Buckskins and Bucklers | 皮衣与圆盾 | 鹿皮和盾牌
+Alloyed Weapons | 合金武器店 | 精制武器
+Alloyed Armor and Shields | 合金甲盾店 | 精制铠甲和盾牌
+Vander's Blades & Bows | 范德刀弓店 | 汪尔达的宝剑和弓箭
+The Knocked Bow | 张弦之弓 | 百发百中的弓箭
+Frozen Assets | 冻结资产 | 富豪银行
+Eldritch Influences | 诡异之力 | 埃尔德斯的魔法商店
+Esoteric Indulgences | 秘学珍宝 | 奇幻魔法商店
+Infernal Temptations | 地狱诱惑 | 地狱的诱惑
+Perdition's Flame | 毁灭之火 | 烈焰训练所
+Artifacts & Antiquities | 神器与古物 | 古代魔法商店
+Amulets of Power | 力量护符店 | 力量护身符
+Fearsome Fetishes | 可怖护符店 | 恐怖魔法
+Delicate Things | 精巧之物 | 精致宝物
+Potent Potions & Brews | 强力药水与酿造 | 强力药剂
+Phials of Faith | 信仰之瓶 | 忠诚法师
+Philters and Elixirs | 灵药与精华 | 灵丹妙药
+The Blessed Brew | 祝福佳酿 | 美酒佳肴旅店
+Emerald Enchantments | 翡翠附魔店 | 神奇的绿宝石
+The Blue Bottle | 蓝色药瓶 | 蓝瓶
+The Blackened Vial | 乌黑小瓶 | 黑色药瓶
+Edmond's Ampules | 埃德蒙安瓿店 | 埃德蒙德的圣瓶
+Perius' Powders | 佩里乌斯药粉店 | 派瑞呃斯的药粉
+Mineral Wealth | 矿产财富 | 实业银行
+Material Wealth | 物资财富 | 富贵银行
+Natural Magic | 自然魔法 | 自然魔法商店
+Nature's Remedies | 自然疗法 | 治疗之屋
+Nature's Stockpile | 自然储备 | 大自然银行
+Mystic Medicine | 神秘医疗 | 秘药
+Herbal Elixirs | 草药精华 | 草药灵药
+Cures and Curses | 治愈与诅咒 | 诅咒和治疗
+Lead Transformations | 铅之转化 | 梦幻之瓶
+Otto's Oddities | 奥托奇物店 | 奥托的神奇宝物
+The Snobbish Goblin | 势利鬼酒馆 | 怪物旅店
+The Laughing Monk | 大笑僧侣 | 法师旅店
+The Missing Link | 缺失之环 | 迷幻之店
+The Potted Pixie | 盆栽精灵 | 勇士旅店
+Familiar Place | 熟悉之地 | 宾至如归旅店
+Fortune's Folly | 命运愚行 | 幸运旅店
+Markham's Headquarters | 马克姆总部 | 马克汉姆的总部
+Vault of Time | 时光库 | 时间宝库
+The J.V.C Corral | J.V.C 畜栏 | 胜利驿站
+Royal Steeds | 皇家骏马 | 皇家战马
+Faithful Steeds | 忠诚骏马 | 忠诚战马
+Dry Saddles | 干马鞍 | 神奇战马
+Wind Runner | 御风者号 | 追风号
+Sea Sprite | 海精灵号 | 海上精灵号
+Sacred Sails | 神圣之帆 | 神圣之帆号
+Clan Leader's Hall | 族长之厅 | 部落酋长厅堂
+Wolves' Bane | 狼毒药剂 | 恶狼克星
+Berserkers' Fury | 狂战士之怒 | 雷霆震怒
+Temple of Tranquility | 宁静神殿 | 镇定之庙
+The Order of Tatalia | 塔塔力雅教团 | 泰塔利亚神庙
+The Loyal Mercenary | 忠诚佣兵 | 忠诚佣兵旅店
+Guardian of Kriegspire | 克里格斯拜尔守护者 | 冰尖峰守卫
+Curator of Kriegspire | 克里格斯拜尔馆主 | 冰尖峰馆长
+Lord of Fire | 烈火爵士 | 火焰领主
+Prison of the Air Lord | 天空领主之囚牢 | 空气领主之牢
+Prison of the Earth Lord | 大地领主之囚牢 | 大地领主之牢
+Prison of the Fire Lord | 火焰领主之囚牢 | 火焰领主之牢
+Prison of the Water Lord | 流水领主之囚牢 | 流水领主之牢
+Gate to the Plane of Air | 天空位面之门 | 通往空气位面的门
+Gate to the Plane of Earth | 大地位面之门 | 通往大地位面的门
+Gate to the Plane of Fire | 火焰位面之门 | 通往火焰位面的门
+Gate to the Plane of Water | 流水位面之门 | 通往流水位面的门
+Gate out of the Plane of Air | 离开天空位面之门 | 离开空气位面的门
+Gate out of the Plane of Earth | 离开大地位面之门 | 离开大地位面的门
+Gate out of the Plane of Fire | 离开火焰位面之门 | 离开火焰位面的门
+Gate out of the Plane of Water | 离开流水位面之门 | 离开流水位面的门
+North to the Tularean Forest | 北行至图拉里恩森林 | 向北往图拉雷安森林
+East to the Tularean Forest | 东行至图拉里恩森林 | 向东往图拉雷安森林
+East to Steadwick | 东行至斯泰德维克 | 向东往斯特德威克
+North to Deyja Moors | 北行至德加沼泽 | 向北往戴贾沼泽
+South to the Bracada Desert | 南行至布拉卡达沙漠 | 向南往布拉卡达沙漠
+East | 东 | 向东
+North  | 北 | 向北
+To Main Square | 通往主广场 | 前往中央广场
+Thunderfist Mountain | 雷拳山 | 桑达非斯山脉
+Passage Under Regna | 雷格那地底隧道 | 雷格那地下通道
+Tularean Caves | 图拉雷恩洞穴 | 图拉利昂洞穴
+Breeding Zone | 繁殖区 | 再生之地
+Watchtower 6 | 瞭望塔6号 | 6 号哨塔
+Temple of the Moon | 月亮神殿 | 月亮神庙
+White Cliff Caves | 白崖穴 | 悬崖洞穴
+Red Dwarf Mines | 红矮人矿场 | 红色矮人矿井
+Haunted Mansion | 鬼宅 | 闹鬼宅邸
+Druid Circle | 德鲁伊石圈 | 德鲁伊石环
+Small Sub Pen | 小型潜艇坞 | 地下小洞窟
+Prison of the Lord of Air | 空气领主监狱 | 风之王监狱
+Prison of the Lord of Fire | 火之领主监狱 | 火之王监狱
+Prison of the Lord of Water | 水之领主监狱 | 水之王监狱
+Prison of the Lord of Earth | 土之领主监狱 | 地之王监狱
+Old Loeb's Cave | 老罗伯的洞穴 | 老勒布之洞
+Ilsingore's Cave | 爱欣格的洞穴 | 伊尔辛戈尔之洞
+Yaardrake's Cave | 雅达克的洞穴 | 亚德雷克之洞
+New World Computing | 新世界计算 | 新世界电脑公司
+Plane of Air | 风元素界 | 空气位面
+Plane of Earth | 地元素界 | 大地位面
+Plane of Fire | 火元素界 | 火焰位面
+Plane of Water | 水元素界 | 流水位面
+Dire Wolf Den | 猛狼巢穴 | 猛狼穴
+Dragon Hunter's Camp | 狩龙猎人营地 | 猎龙者营地
+Naga Vault | 纳迦宝库 | 半蛇人洞穴
+Temple of the Sun | 太阳神殿 | 太阳神庙
+Colony Zod | 佐德殖民地 | 星座之地
+Hall under the Hill | 山丘之厅 | 山下之厅
+Grand Temple of the Sun | 太阳大神殿 | 高级太阳神庙
+Temple | 神庙 | 神殿
+A Cave | 洞穴 | 一处洞穴
+Lord Markham | 马克汉姆爵士 | 马卡姆领主
+The Mercenary Guild  | 佣兵公会 | 佣兵行会
+Talk to the Arena Master | 与竞技场大师交谈 | 与竞技场主管交谈
+The Temple of the Sun | 太阳神殿 | 日之神殿
+True Mettle | 真勇气武器店 | 真勇
+Keen Edge | 锐锋武器店 | 锐锋
+Polished Steel | 抛光钢武器店 | 磨钢
+Lance's Spears | 兰斯长矛店 | 蓝斯之矛
+Blooded Daggers and Blades | 染血刀剑店 | 沾血匕首与刀刃
+Custom Cutlass | 定制弯刀店 | 定作匕首
+The Blooded Dagger | 染血匕首 | 嗜血之剑
+Swords Inc. | 利剑股份 | 宝剑之屋
+The Best Defense | 最佳防御 | 防御之神
+Ironwood Spears | 铁木长矛店 | 铁木长矛
+The Knife Shoppe | 刀剑铺 | 刀具店
+Hammer and Tongs | 锤与钳 | 铁锤和钢钳
+Fine Blades | 精良刀剑店 | 利刃
+The Eagle's Eye | 鹰眼武器店 | 鹰眼
+Arm's Length Spear Shop | 一臂之长矛店 | 武器长矛店
+Blunt Trauma Weapons | 钝击武器店 | 钝型武器
+The Sharpening Stone | 磨刀石武器店 | 磨刀石
+Feathers and String | 羽与弦弓店 | 羽毛和绳索
+Haft and Handle Pole arms | 柄杆长兵店 | 短兵刃
+Abdul's Discount Weapons | 阿卜杜勒折扣武器店 | 阿卜杜的廉价武器
+Singing Steel | 鸣吟之钢 | 鸣铁
+Mark and Missile | 标与矢 | 飞标和飞弹
+Stout Heart Staff and Spear | 勇心杖矛店 | 粗棒和长矛
+The Tannery | 皮革坊 | 皮革店
+The Polished Shield | 抛光盾牌店 | 打磨盾牌
+Plated Protection | 板甲防护 | 钢甲防御
+
+（完整 1941 条见同目录《术语差异-完整.tsv》）
