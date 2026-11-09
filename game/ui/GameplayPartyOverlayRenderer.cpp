@@ -10793,13 +10793,21 @@ void GameplayPartyOverlayRenderer::renderCharacterOverlay(
             const std::vector<CharacterSkillUiRow> displayRows =
                 rows.empty() ? std::vector<CharacterSkillUiRow>{{"", "None", "", false}} : rows;
 
+            float levelColumnWidth = context.measureHudTextWidth("Lucida", "88");
+
+            for (const CharacterSkillUiRow &row : displayRows)
+            {
+                levelColumnWidth = std::max(levelColumnWidth, context.measureHudTextWidth("Lucida", row.level));
+            }
+
             for (size_t rowIndex = 0; rowIndex < displayRows.size(); ++rowIndex)
             {
                 const CharacterSkillUiRow &row = displayRows[rowIndex];
                 const uint32_t textColorAbgr = row.upgradeable ? GameplayUiSkin::Learnable : GameplayUiSkin::Ivory;
                 const float levelRight = resolvedLevelHeader->x + resolvedLevelHeader->width;
-                const float raiseCostRight = levelRight
-                    - (context.measureHudTextWidth("Lucida", row.level) + 8.0f) * resolvedLevelHeader->scale;
+                // One column for every row: the widest level in the group, so a two-digit level does not push
+                // its own cost tag out of line with the others.
+                const float raiseCostRight = levelRight - (levelColumnWidth + 8.0f) * resolvedLevelHeader->scale;
                 const float raiseCostLeft = raiseCostRight
                     - context.measureHudTextWidth("Lucida", row.raiseCost) * RaiseCostScale * resolvedRegion->scale;
                 const float nameWidth = row.raiseCost.empty()

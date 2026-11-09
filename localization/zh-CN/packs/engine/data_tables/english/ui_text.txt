@@ -5137,6 +5137,64 @@ Skill bonus: +{points}	技能加成：+{points}
 Skill bonus: 	技能加成：
 Awards earned: {count}	获得荣誉：{count}
 {time} remaining	剩余 {time}
+# skill popup lines (trainer hint, armour, dragon leech)
+{a} - {b} (next map)	{a} - {b}（相邻地图）
+{a} - {b} (coach/boat)	{a} - {b}（马车/船）
+{a} - {b} (next map, {c})	{a} - {b}（相邻地图，{c}）
+{a} - {b} (coach/boat, {c})	{a} - {b}（马车/船，{c}）
+Normal (skill 	普通（需技能 
+Expert (skill 	专家（需技能 
+Master (skill 	大师（需技能 
+Grandmaster (skill 	宗师（需技能 
+ required)	 级）
+Learned automatically at skill {n#}.	技能达到 {n#} 级时自动习得。
+Highest mastery for this class reached.	已达到该职业的最高精通。
+Grandmaster reached.	已达到宗师。
+Requires a class promotion first.	需要先完成职业晋升。
+outside	野外
+this map	本地图
+next map	相邻地图
+coach/boat	马车/船
+Current Armor Class from items: 	物品提供的护甲等级：
+Bonus Armor Class: 	技能额外护甲等级：
+Bonus resistances: 	技能额外抗性：
+Melee life leech vs equal level: 	对同级目标的近战生命吸取：
+ (	（再多 1 点技能为 
+ with one more point), lower against stronger monsters.	），对更强的怪物会降低。
+# item tooltip lines (stats, artifacts, dimension maps)
+{s}: Immune	{s}：免疫
+{s} +{n#}%	{s} +{n#}%
+{s} -{n#}	{s} -{n#}
+Dodge	闪避
+Map Level: {n#}	地图等级：{n#}
++{n#}% craft items drop chances	制作材料掉率 +{n#}%
++{n#}% item quality	物品品质 +{n#}%
++{n#}% monster density	怪物密度 +{n#}%
+Grows with its wearer up to level {n#}	随佩戴者成长，最高 {n#} 级
+Fire Aura: adds {n#} Fire Damage to any attack	火焰光环：任何攻击附加 {n#} 点火焰伤害
+Flame Aura: adds {n#} Fire Damage to any attack	烈焰光环：任何攻击附加 {n#} 点火焰伤害
+Inferno Aura: adds {n#} Fire Damage to any attack	炼狱光环：任何攻击附加 {n#} 点火焰伤害
+Hell Aura: adds {n#} Fire Damage to any attack	地狱光环：任何攻击附加 {n#} 点火焰伤害
+Physical damage on hit	命中附加物理伤害
+Physical damage on hit, slows	命中附加物理伤害，并减速
+Light damage on hit	命中附加光明伤害
+Light damage on hit, slows	命中附加光明伤害，并减速
+Water damage on hit	命中附加水系伤害
+Water damage on hit, slows	命中附加水系伤害，并减速
+Air damage on hit	命中附加空气伤害
+Air damage on hit, slows	命中附加空气伤害，并减速
+Fire damage on hit	命中附加火焰伤害
+Fire damage on hit, slows	命中附加火焰伤害，并减速
+Body damage on hit	命中附加肢体伤害
+Body damage on hit, slows	命中附加肢体伤害，并减速
+Dark damage on hit	命中附加暗黑伤害
+Dark damage on hit, slows	命中附加暗黑伤害，并减速
+x{n#} damage vs Elf	对精灵伤害 x{n#}
+x{n#} damage vs Elemental	对元素生物伤害 x{n#}
+x{n#} damage vs Ogre	对食人魔伤害 x{n#}
+x{n#} damage vs Dragon	对龙伤害 x{n#}
+x{n#} damage vs Demon	对恶魔伤害 x{n#}
+x{n#} damage vs Undead	对亡灵伤害 x{n#}
 Special:  +{n#} to all Resistances.	特殊：所有抗性 +{n#}。
  +{n#} to all Resistances.	所有抗性 +{n#}。
 Special:  +{n#} to all Seven Statistics.	特殊：七项属性全部 +{n#}。
