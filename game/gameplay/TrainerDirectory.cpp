@@ -346,7 +346,7 @@ TrainerDirectory TrainerDirectory::buildFrom(
             place->houseId = houseId;
             place->houseName = trimmed(house->second.name);
 
-            if (place->houseName == "House")
+            if (place->houseName == "House" || place->houseName == "\xe6\x88\xbf\xe5\xb1\x8b")
             {
                 place->houseName.clear();
             }

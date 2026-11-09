@@ -2,31 +2,31 @@ Standard Bonuses by Group
 
 Bonus Stat	Of Name	Arm	Shld	Helm	Belt	Cape	Gaunt	Boot	Ring	Amul
 
-Might	之力量	5	0	10	10	10	10	5	10	10
-Intellect	之智慧	5	0	10	10	10	10	5	10	10
-Personality	之个性	5	0	10	10	10	10	10	10	10
-Endurance	之活力	5	0	10	10	10	10	5	10	10
-Accuracy	之精准	5	0	10	10	10	10	5	10	10
-Speed	之速度	5	0	10	10	10	10	25	10	10
-Luck	之运气	5	0	10	10	10	10	10	10	10
-Hit Points	之生命	10	5	5	0	10	5	10	10	10
-Spell Points	之魔力	10	5	10	0	10	10	10	10	10
-Armor Class	之防御	20	20	10	0	10	10	5	10	10
-Fire Resistance	之火焰抗性	10	10	5	0	10	15	5	10	10
-Air Resistance	之空气抗性	10	10	5	0	10	15	5	10	10
-Water Resistance	之水系抗性	10	10	5	0	10	15	5	10	10					
-Earth Resistance	之土系抗性	10	10	5	0	10	15	5	10	10					
-Mind Resistance	之心智抗性	10	10	5	0	10	15	5	10	10					
-Body Resistance	之肢体抗性	10	10	5	0	10	15	5	10	10					
-Alchemy skill	之炼金术	0	0	0	5	5	0	5	10	15					
-Stealing skill	之盗窃术	0	0	0	0	0	0	0	0	0					
-Disarm skill	之拆除陷阱	0	0	5	5	5	20	5	15	5					
-ID Item skill	之鉴定物品	0	0	5	5	5	5	5	10	15					
-ID Monster skill	之鉴定怪物	0	0	0	5	5	5	5	10	15					
-Armsmaster skill	之武器精通	10	10	10	10	0	10	10	0	0					
-Dodge skill	之闪避	0 	0	0	15	10	5	10	5	5					
-Unarmed skill	之拳术	0	0	0	5	5	20	10	5	5					
-Great might	之巨力	0	0	0	0	0	0	0	0	0
+Might	力量之	5	0	10	10	10	10	5	10	10
+Intellect	智力之	5	0	10	10	10	10	5	10	10
+Personality	个性之	5	0	10	10	10	10	10	10	10
+Endurance	耐力之	5	0	10	10	10	10	5	10	10
+Accuracy	准确之	5	0	10	10	10	10	5	10	10
+Speed	速度之	5	0	10	10	10	10	25	10	10
+Luck	运气之	5	0	10	10	10	10	10	10	10
+Hit Points	生命之	10	5	5	0	10	5	10	10	10
+Spell Points	魔力之	10	5	10	0	10	10	10	10	10
+Armor Class	防御之	20	20	10	0	10	10	5	10	10
+Fire Resistance	火焰抗性之	10	10	5	0	10	15	5	10	10
+Air Resistance	空气抗性之	10	10	5	0	10	15	5	10	10
+Water Resistance	水系抗性之	10	10	5	0	10	15	5	10	10					
+Earth Resistance	土系抗性之	10	10	5	0	10	15	5	10	10					
+Mind Resistance	心智抗性之	10	10	5	0	10	15	5	10	10					
+Body Resistance	肢体抗性之	10	10	5	0	10	15	5	10	10					
+Alchemy skill	炼金术之	0	0	0	5	5	0	5	10	15					
+Stealing skill	盗窃术之	0	0	0	0	0	0	0	0	0					
+Disarm skill	拆除陷阱之	0	0	5	5	5	20	5	15	5					
+ID Item skill	鉴定物品之	0	0	5	5	5	5	5	10	15					
+ID Monster skill	鉴定怪物之	0	0	0	5	5	5	5	10	15					
+Armsmaster skill	武器精通之	10	10	10	10	0	10	10	0	0					
+Dodge skill	闪避之	0 	0	0	15	10	5	10	5	5					
+Unarmed skill	拳术之	0	0	0	5	5	20	10	5	5					
+Great might	巨力之	0	0	0	0	0	0	0	0	0
 
 		120	70	115	70	140	155	110	140	140					
 

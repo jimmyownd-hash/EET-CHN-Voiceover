@@ -467,7 +467,7 @@ end, "方尖碑")
 
 RegisterEvent(454, "巫术学院", nil, "巫术学院")
 
-RegisterEvent(455, "红矮人矿场", nil, "红矮人矿场")
+RegisterEvent(455, "红矮人矿坑", nil, "红矮人矿坑")
 
 RegisterEvent(456, "水井", nil, "水井")
 

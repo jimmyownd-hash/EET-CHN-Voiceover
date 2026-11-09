@@ -88,7 +88,7 @@ SetMapMetadata({
     [452] = { kind = "shrine", source = "title" },
     [453] = { kind = "obelisk", source = "title" },
     [501] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d16.blv", targetName = "酒窖" },
-    [502] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d20.blv", targetName = "佣兵公会" },
+    [502] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d20.blv", targetName = "佣兵行会" },
     [503] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d17.blv", targetName = "潮穴" },
     [504] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d18.blv", targetName = "马克汉爵士宅邸" },
     [505] = { kind = "enter_dungeon", source = "opcode", targetMap = "mdt09.blv", targetName = "罗姆赛克斯的洞穴" },
@@ -394,7 +394,7 @@ RegisterEvent(204, "饮用井水", function()
     evt.StatusText("精神焕发！")
 end, "饮用井水")
 
-RegisterEvent(205, "佣兵公会", nil, "佣兵公会")
+RegisterEvent(205, "佣兵行会", nil, "佣兵行会")
 
 RegisterEvent(206, "潮穴", nil, "潮穴")
 
@@ -518,7 +518,7 @@ RegisterEvent(501, "进入酒窖", function()
     evt.MoveToMap(601, -512, 1, 1024, 0, 0, 156, 1, "7d16.blv") -- The Wine Cellar
 end, "进入酒窖")
 
-RegisterEvent(502, "进入佣兵公会", function()
+RegisterEvent(502, "进入佣兵行会", function()
     if IsQBitSet(QBit(526)) then -- Accepted Fireball wand from Malwick
         if IsQBitSet(QBit(702)) then -- Finished with Malwick & Assc.
             evt.MoveToMap(886, 2601, 1, 474, 0, 0, 154, 1, "7d20.blv") -- The Mercenary Guild
@@ -554,7 +554,7 @@ RegisterEvent(502, "进入佣兵公会", function()
     return
     end
     evt.MoveToMap(886, 2601, 1, 474, 0, 0, 154, 1, "7d20.blv") -- The Mercenary Guild
-end, "进入佣兵公会")
+end, "进入佣兵行会")
 
 RegisterEvent(503, "进入潮汐洞穴", function()
     evt.MoveToMap(-1944, -2052, 1, 0, 0, 0, 155, 1, "7d17.blv") -- The Tidewater Caverns

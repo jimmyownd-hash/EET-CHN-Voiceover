@@ -513,7 +513,11 @@ int effectiveReputationForWorld(const IGameplayWorldRuntime *pWorldRuntime)
 
 bool isTempleOfBaa(const HouseEntry &houseEntry)
 {
-    return isHouseType(houseEntry, "Temple") && houseEntry.name.find("Baa") != std::string::npos;
+    // "Temple Baa" / "Temple of Baa"; the Chinese pack may write 巴阿 or 羊鸣.
+    return isHouseType(houseEntry, "Temple")
+        && (houseEntry.name.find("Baa") != std::string::npos
+            || houseEntry.name.find("\xe5\xb7\xb4\xe9\x98\xbf") != std::string::npos
+            || houseEntry.name.find("\xe7\xbe\x8a\xe9\xb8\xa3") != std::string::npos);
 }
 
 }

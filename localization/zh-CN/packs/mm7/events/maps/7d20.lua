@@ -371,7 +371,7 @@ RegisterEvent(452, "书柜", function()
     evt.StatusText("你没看到任何有趣的东西")
 end, "书柜")
 
-RegisterEvent(501, "离开佣兵公会", function()
+RegisterEvent(501, "离开佣兵行会", function()
     evt.MoveToMap(17920, 16803, 3072, 1536, 0, 0, 0, 0, "7out13.odm") -- Tatalia
-end, "离开佣兵公会")
+end, "离开佣兵行会")
 

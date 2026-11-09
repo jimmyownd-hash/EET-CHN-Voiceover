@@ -1701,7 +1701,10 @@ std::string ItemEnchantRuntime::displayName(
         {
             if (!pEntry->suffix.empty())
             {
-                return baseName + " " + pEntry->suffix;
+                // "Longsword of Might"; a localized table writes the bonus as a prefix without a space (力量之长剑).
+                const bool localizedPrefix = std::any_of(pEntry->suffix.begin(), pEntry->suffix.end(),
+                    [](char c) { return static_cast<unsigned char>(c) >= 0x80; });
+                return localizedPrefix ? pEntry->suffix + baseName : baseName + " " + pEntry->suffix;
             }
         }
     }

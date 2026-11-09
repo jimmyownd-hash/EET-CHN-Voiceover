@@ -1,189 +1,189 @@
 key	column	value
-烈火爆雷	Normal Recovery	100
-烈火爆雷	Expert Recovery	100
-烈火爆雷	Master Recovery	100
-烈火爆雷	Grandmaster Recovery	100
-流星火雨	Normal Mana	40
-流星火雨	Expert Mana	40
-流星火雨	Master Mana	40
-流星火雨	Grandmaster Mana	40
-流星火雨	Normal Recovery	200
-流星火雨	Expert Recovery	200
-流星火雨	Master Recovery	200
-流星火雨	Grandmaster Recovery	180
-地狱烈焰	Normal Mana	50
-地狱烈焰	Expert Mana	50
-地狱烈焰	Master Mana	50
-地狱烈焰	Grandmaster Mana	50
-遍地开花	Expert Mana	8
-遍地开花	Master Mana	10
-遍地开花	Grandmaster Mana	12
-霹雳闪电	Expert Recovery	80
-霹雳闪电	Master Recovery	100
-霹雳闪电	Grandmaster Recovery	120
-群星飞落	Normal Mana	60
-群星飞落	Expert Mana	60
-群星飞落	Master Mana	60
-群星飞落	Grandmaster Mana	60
-群星飞落	Normal Recovery	140
-群星飞落	Expert Recovery	140
-群星飞落	Master Recovery	140
-群星飞落	Grandmaster Recovery	140
-毒液喷发	Expert Mana	4
-毒液喷发	Master Mana	5
-毒液喷发	Grandmaster Mana	6
-死亡之花	Normal Mana	50
-死亡之花	Expert Mana	50
-死亡之花	Master Mana	50
-死亡之花	Grandmaster Mana	50
-死亡之花	Normal Recovery	180
-死亡之花	Expert Recovery	180
-死亡之花	Master Recovery	180
-死亡之花	Grandmaster Recovery	160
-分享生命	Normal Mana	12
-分享生命	Expert Mana	12
-分享生命	Master Mana	12
-分享生命	Grandmaster Mana	12
-分享生命	Normal Recovery	200
-分享生命	Expert Recovery	200
-分享生命	Master Recovery	200
-转世重生	Grandmaster Recovery	300
-惊心动魄	Normal Recovery	120
-惊心动魄	Master Recovery	100
-惊心动魄	Grandmaster Recovery	90
-凶神恶煞	Normal Mana	40
-凶神恶煞	Expert Mana	40
-凶神恶煞	Master Mana	40
-凶神恶煞	Grandmaster Mana	40
-凶神恶煞	Normal Recovery	200
-凶神恶煞	Expert Recovery	200
-凶神恶煞	Master Recovery	200
-凶神恶煞	Grandmaster Recovery	200
-亡灵杀手	Normal Mana	50
-亡灵杀手	Expert Mana	50
-亡灵杀手	Master Mana	50
-亡灵杀手	Grandmaster Mana	50
-光影召唤	Expert Mana	50
-光影召唤	Master Mana	75
-光影召唤	Grandmaster Mana	100
-暗火	Normal Mana	20
-暗火	Expert Mana	20
-暗火	Master Mana	20
-暗火	Grandmaster Mana	20
-吸血	Master Mana	10
-吸血	Grandmaster Mana	15
-吸血	Expert Recovery	100
-吸血	Master Recovery	100
-吸血	Grandmaster Recovery	100
-霹雳火焰	DamageBase	8
-霹雳火焰	DamageDiceMin	1
-霹雳火焰	DamageDiceSides	2
-连珠火球	DamageBase	0
-连珠火球	DamageDiceMin	1
-连珠火球	DamageDiceSides	8
-烈火爆雷	DamageBase	0
-烈火爆雷	DamageDiceMin	1
-烈火爆雷	DamageDiceSides	10
-烈火爆雷	Normal Damage %	100
-烈火爆雷	Expert Damage %	100
-烈火爆雷	Master Damage %	133
-烈火爆雷	Grandmaster Damage %	167
-怒火焚身	DamageBase	10
-怒火焚身	DamageDiceMin	1
-怒火焚身	DamageDiceSides	30
-流星火雨	DamageBase	2
-流星火雨	DamageDiceMin	1
-流星火雨	DamageDiceSides	1
-地狱烈焰	DamageBase	12
-地狱烈焰	DamageDiceMin	1
-地狱烈焰	DamageDiceSides	7
-烈火威弹	DamageBase	19
-烈火威弹	DamageDiceMin	1
-烈火威弹	DamageDiceSides	21
-遍地开花	DamageBase	0
-遍地开花	DamageDiceMin	1
-遍地开花	DamageDiceSides	4
-霹雳闪电	DamageBase	12
-霹雳闪电	DamageDiceMin	1
-霹雳闪电	DamageDiceSides	8
-雷鸣爆弹	DamageBase	20
-雷鸣爆弹	DamageDiceMin	1
-雷鸣爆弹	DamageDiceSides	12
-群星飞落	DamageBase	7
-群星飞落	DamageDiceMin	1
-群星飞落	DamageDiceSides	1
-毒液喷发	DamageBase	5
-毒液喷发	DamageDiceMin	1
-毒液喷发	DamageDiceSides	3
-霹雳寒冰	DamageBase	6
-霹雳寒冰	DamageDiceMin	1
-霹雳寒冰	DamageDiceSides	7
-酸弹飞射	DamageBase	4
-酸弹飞射	DamageDiceMin	1
-酸弹飞射	DamageDiceSides	14
-寒冰爆裂	DamageBase	6
-寒冰爆裂	DamageDiceMin	1
-寒冰爆裂	DamageDiceSides	6
-致命毒蜂	DamageBase	8
-致命毒蜂	DamageDiceMin	1
-致命毒蜂	DamageDiceSides	5
-旋转飞镖	DamageBase	7
-旋转飞镖	DamageDiceMin	1
-旋转飞镖	DamageDiceSides	7
-巨石轰击	DamageBase	8
-巨石轰击	DamageDiceMin	1
-巨石轰击	DamageDiceSides	8
-死亡之花	DamageBase	4
-死亡之花	DamageDiceMin	1
-死亡之花	DamageDiceSides	2
-灵魂移位	DamageBase	20
-灵魂移位	DamageDiceMin	2
-灵魂移位	DamageDiceSides	16
-惊心动魄	DamageBase	12
-惊心动魄	DamageDiceMin	1
-惊心动魄	DamageDiceSides	6
-魂飞魄散	DamageBase	25
-魂飞魄散	DamageDiceMin	1
-魂飞魄散	DamageDiceSides	25
-魔法伤害	DamageBase	4
-魔法伤害	DamageDiceMin	1
-魔法伤害	DamageDiceSides	4
-神拳出击	DamageBase	20
-神拳出击	DamageDiceMin	1
-神拳出击	DamageDiceSides	5
-光明之焰	DamageBase	12
-光明之焰	DamageDiceMin	1
-光明之焰	DamageDiceSides	2
-亡灵杀手	DamageBase	45
-亡灵杀手	DamageDiceMin	1
-亡灵杀手	DamageDiceSides	45
-死亡之光	DamageBase	30
-死亡之光	DamageDiceMin	2
-死亡之光	DamageDiceSides	6
-聚光魔球	DamageBase	60
-聚光魔球	DamageDiceMin	1
-聚光魔球	DamageDiceSides	60
-毒云笼罩	DamageBase	15
-毒云笼罩	DamageDiceMin	1
-毒云笼罩	DamageDiceSides	9
-钢镖齐射	DamageBase	0
-钢镖齐射	DamageDiceMin	1
-钢镖齐射	DamageDiceSides	7
-神龙吐珠	DamageBase	0
-神龙吐珠	DamageDiceMin	1
-神龙吐珠	DamageDiceSides	28
-末日审判	DamageBase	50
-末日审判	DamageDiceMin	1
-末日审判	DamageDiceSides	1
-惊魂夺魄	DamageBase	25
-惊魂夺魄	DamageDiceMin	1
-惊魂夺魄	DamageDiceSides	5
-暗火	DamageBase	46
-暗火	DamageDiceMin	1
-暗火	DamageDiceSides	28
-吸血	DamageBase	0
-吸血	DamageDiceMin	1
-吸血	DamageDiceSides	22
-焰爆	DamageBase	0
-焰爆	DamageDiceMin	1
-焰爆	DamageDiceSides	25
+7	Normal Recovery	100
+7	Expert Recovery	100
+7	Master Recovery	100
+7	Grandmaster Recovery	100
+9	Normal Mana	40
+9	Expert Mana	40
+9	Master Mana	40
+9	Grandmaster Mana	40
+9	Normal Recovery	200
+9	Expert Recovery	200
+9	Master Recovery	200
+9	Grandmaster Recovery	180
+10	Normal Mana	50
+10	Expert Mana	50
+10	Master Mana	50
+10	Grandmaster Mana	50
+15	Expert Mana	8
+15	Master Mana	10
+15	Grandmaster Mana	12
+18	Expert Recovery	80
+18	Master Recovery	100
+18	Grandmaster Recovery	120
+22	Normal Mana	60
+22	Expert Mana	60
+22	Master Mana	60
+22	Grandmaster Mana	60
+22	Normal Recovery	140
+22	Expert Recovery	140
+22	Master Recovery	140
+22	Grandmaster Recovery	140
+24	Expert Mana	4
+24	Master Mana	5
+24	Grandmaster Mana	6
+43	Normal Mana	50
+43	Expert Mana	50
+43	Master Mana	50
+43	Grandmaster Mana	50
+43	Normal Recovery	180
+43	Expert Recovery	180
+43	Master Recovery	180
+43	Grandmaster Recovery	160
+54	Normal Mana	12
+54	Expert Mana	12
+54	Master Mana	12
+54	Grandmaster Mana	12
+54	Normal Recovery	200
+54	Expert Recovery	200
+54	Master Recovery	200
+55	Grandmaster Recovery	300
+59	Normal Recovery	120
+59	Master Recovery	100
+59	Grandmaster Recovery	90
+63	Normal Mana	40
+63	Expert Mana	40
+63	Master Mana	40
+63	Grandmaster Mana	40
+63	Normal Recovery	200
+63	Expert Recovery	200
+63	Master Recovery	200
+63	Grandmaster Recovery	200
+79	Normal Mana	50
+79	Expert Mana	50
+79	Master Mana	50
+79	Grandmaster Mana	50
+82	Expert Mana	50
+82	Master Mana	75
+82	Grandmaster Mana	100
+103	Normal Mana	20
+103	Expert Mana	20
+103	Master Mana	20
+103	Grandmaster Mana	20
+111	Master Mana	10
+111	Grandmaster Mana	15
+111	Expert Recovery	100
+111	Master Recovery	100
+111	Grandmaster Recovery	100
+2	DamageBase	8
+2	DamageDiceMin	1
+2	DamageDiceSides	2
+6	DamageBase	0
+6	DamageDiceMin	1
+6	DamageDiceSides	8
+7	DamageBase	0
+7	DamageDiceMin	1
+7	DamageDiceSides	10
+7	Normal Damage %	100
+7	Expert Damage %	100
+7	Master Damage %	133
+7	Grandmaster Damage %	167
+8	DamageBase	10
+8	DamageDiceMin	1
+8	DamageDiceSides	30
+9	DamageBase	2
+9	DamageDiceMin	1
+9	DamageDiceSides	1
+10	DamageBase	12
+10	DamageDiceMin	1
+10	DamageDiceSides	7
+11	DamageBase	19
+11	DamageDiceMin	1
+11	DamageDiceSides	21
+15	DamageBase	0
+15	DamageDiceMin	1
+15	DamageDiceSides	4
+18	DamageBase	12
+18	DamageDiceMin	1
+18	DamageDiceSides	8
+20	DamageBase	20
+20	DamageDiceMin	1
+20	DamageDiceSides	12
+22	DamageBase	7
+22	DamageDiceMin	1
+22	DamageDiceSides	1
+24	DamageBase	5
+24	DamageDiceMin	1
+24	DamageDiceSides	3
+26	DamageBase	6
+26	DamageDiceMin	1
+26	DamageDiceSides	7
+29	DamageBase	4
+29	DamageDiceMin	1
+29	DamageDiceSides	14
+32	DamageBase	6
+32	DamageDiceMin	1
+32	DamageDiceSides	6
+37	DamageBase	8
+37	DamageDiceMin	1
+37	DamageDiceSides	5
+39	DamageBase	7
+39	DamageDiceMin	1
+39	DamageDiceSides	7
+41	DamageBase	8
+41	DamageDiceMin	1
+41	DamageDiceSides	8
+43	DamageBase	4
+43	DamageDiceMin	1
+43	DamageDiceSides	2
+52	DamageBase	20
+52	DamageDiceMin	2
+52	DamageDiceSides	16
+59	DamageBase	12
+59	DamageDiceMin	1
+59	DamageDiceSides	6
+65	DamageBase	25
+65	DamageDiceMin	1
+65	DamageDiceSides	25
+70	DamageBase	4
+70	DamageDiceMin	1
+70	DamageDiceSides	4
+76	DamageBase	20
+76	DamageDiceMin	1
+76	DamageDiceSides	5
+78	DamageBase	12
+78	DamageDiceMin	1
+78	DamageDiceSides	2
+79	DamageBase	45
+79	DamageDiceMin	1
+79	DamageDiceSides	45
+84	DamageBase	30
+84	DamageDiceMin	2
+84	DamageDiceSides	6
+87	DamageBase	60
+87	DamageDiceMin	1
+87	DamageDiceSides	60
+90	DamageBase	15
+90	DamageDiceMin	1
+90	DamageDiceSides	9
+93	DamageBase	0
+93	DamageDiceMin	1
+93	DamageDiceSides	7
+97	DamageBase	0
+97	DamageDiceMin	1
+97	DamageDiceSides	28
+98	DamageBase	50
+98	DamageDiceMin	1
+98	DamageDiceSides	1
+99	DamageBase	25
+99	DamageDiceMin	1
+99	DamageDiceSides	5
+103	DamageBase	46
+103	DamageDiceMin	1
+103	DamageDiceSides	28
+111	DamageBase	0
+111	DamageDiceMin	1
+111	DamageDiceSides	22
+123	DamageBase	0
+123	DamageDiceMin	1
+123	DamageDiceSides	25

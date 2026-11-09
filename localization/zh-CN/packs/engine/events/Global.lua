@@ -8372,7 +8372,7 @@ RegisterCanShowTopic(833, function()
 end)
 
 RegisterGlobalEvent(834, nil, function()
-    evt.SetMessage("窃贼深入我体内，取走了我的心。\n藤蔓传话，他们藏在泰塔利亚的雇佣兵公会里。\n我们想挤碎他们，可他们够不着。\n要用行者才能捉住行者。\n替我们抓住窃贼。\n好吗？")
+    evt.SetMessage("窃贼深入我体内，取走了我的心。\n藤蔓传话，他们藏在泰塔利亚的雇佣兵行会里。\n我们想挤碎他们，可他们够不着。\n要用行者才能捉住行者。\n替我们抓住窃贼。\n好吗？")
     SetQBit(QBit(551)) -- Find the Heart of the Forest in the Mercenary Guild in Tatalia and return it to the Oldest Tree in the Tularean Forest.
     evt.SetNPCTopic(392, 0, 835) -- The Oldest Tree topic 0: Heart of the Wood
 end)
@@ -10439,11 +10439,11 @@ RegisterGlobalEvent(924, nil, function()
 end)
 
 RegisterGlobalEvent(925, nil, function()
-    evt.SetMessage("托马斯·格雷掌管巫术学校。\n你们想晋升法师或荣誉法师，就找他。\n他的房间就在我身后那扇门进去。")
+    evt.SetMessage("托马斯·格雷掌管巫术学院。\n你们想晋升法师或荣誉法师，就找他。\n他的房间就在我身后那扇门进去。")
 end)
 
 RegisterGlobalEvent(926, nil, function()
-    evt.SetMessage("想办理巫术学校卷轴商店会员吗？\n会员可免费使用我们图书馆里的卷轴。\n六个月会员费 5000 金币，不过商店每周才补货一次。")
+    evt.SetMessage("想办理巫术学院卷轴商店会员吗？\n会员可免费使用我们图书馆里的卷轴。\n六个月会员费 5000 金币，不过商店每周才补货一次。")
     evt.SetNPCTopic(620, 1, 927) -- Eric Swarrel topic 1: Book Shop
 end)
 RegisterCanShowTopic(926, function()
@@ -10831,7 +10831,7 @@ RegisterGlobalEvent(949, nil, function()
 end)
 
 RegisterGlobalEvent(1063, nil, function()
-    evt.SetMessage("布拉卡达沙漠这里的巫术学校收藏着不少古怪的魔法器具。\n几年前，一件格外重要的器物被迪雅的劫掠者从学校偷走。\n这件器物——四季披肩，曾由太阳牧师在季节更替的宗教仪式上披戴。\n作为巫术学校的代表，我获权为它的归还奖赏你们。\n我们最新的情报说，被盗的披肩在深渊之厅；我建议先去那儿查。")
+    evt.SetMessage("布拉卡达沙漠这里的巫术学院收藏着不少古怪的魔法器具。\n几年前，一件格外重要的器物被迪雅的劫掠者从学校偷走。\n这件器物——四季披肩，曾由太阳牧师在季节更替的宗教仪式上披戴。\n作为巫术学院的代表，我获权为它的归还奖赏你们。\n我们最新的情报说，被盗的披肩在深渊大厅；我建议先去那儿查。")
     SetQBit(QBit(707)) -- Retrieve the Seasons' Stole from the Hall of the Pit and return it to Gary Zimm in the Bracada Desert.
     evt.SetNPCTopic(625, 0, 1064) -- Gary Zimm topic 0: Quest
 end)
@@ -10853,7 +10853,7 @@ RegisterGlobalEvent(1064, nil, function()
         evt.SetMessage("别忘了，你若能找到四季披肩并还给我，是有赏的。")
         return
     end
-    evt.SetMessage("好极！\n这毫无疑问就是四季披肩。\n这是你的奖赏；你为巫术学校和我都立了大功。")
+    evt.SetMessage("好极！\n这毫无疑问就是四季披肩。\n这是你的奖赏；你为巫术学院和我都立了大功。")
     RemoveItem(1440) -- Season's Stole
     AddValue(Experience, 7500)
     evt.ForPlayer(Players.Current)
@@ -11515,7 +11515,7 @@ RegisterGlobalEvent(1174, nil, function()
     elseif IsQBitSet(QBit(1565)) then -- Promoted to Honorary Assassin
         evt.SetMessage("龙已陨落——而且死在你们手里！\n你们是英雄！")
     else
-        evt.SetMessage("直到不久前，我们本地的龙“无情者弗罗思拉克斯”还只是劫掠南边的山丘——吃羊、家畜和野狗。\n可他尝出了精灵血的味道，如今连我们也猎。\n你们若想去会他，他的洞在北边山上、雇佣兵公会以西。\n他不总在那儿。\n小心——他很强。")
+        evt.SetMessage("直到不久前，我们本地的龙“无情者弗罗思拉克斯”还只是劫掠南边的山丘——吃羊、家畜和野狗。\n可他尝出了精灵血的味道，如今连我们也猎。\n你们若想去会他，他的洞在北边山上、雇佣兵行会以西。\n他不总在那儿。\n小心——他很强。")
         return
     end
 end)
@@ -12058,7 +12058,7 @@ RegisterGlobalEvent(1238, nil, function()
 end)
 
 RegisterGlobalEvent(1239, nil, function()
-    evt.SetMessage("你在迪雅地表看到的，只是死亡王国真正面貌的一小部分。\n有一座地下城，他们叫深渊。\n从地表只能经由迪雅北部的深渊之厅到达。\n")
+    evt.SetMessage("你在迪雅地表看到的，只是死亡王国真正面貌的一小部分。\n有一座地下城，他们叫深渊。\n从地表只能经由迪雅北部的深渊大厅到达。\n")
 end)
 
 RegisterGlobalEvent(1240, nil, function()

@@ -78,7 +78,7 @@ SetMapMetadata({
     [457] = { kind = "teleport", source = "heuristic" },
     [501] = { kind = "passage", source = "opcode", targetMap = "t04.blv", targetName = "深渊大厅" },
     [502] = { kind = "enter_house", source = "opcode", houseId = 317, targetName = "黑暗神殿" },
-    [503] = { kind = "passage", source = "opcode", targetMap = "7d10.blv", targetName = "培育区" },
+    [503] = { kind = "passage", source = "opcode", targetMap = "7d10.blv", targetName = "繁殖区" },
     [504] = { kind = "passage", source = "opcode", targetMap = "d03.blv", targetName = "暮光城堡" },
     [505] = { kind = "passage", source = "opcode", targetMap = "d03.blv", targetName = "暮光城堡" },
     },

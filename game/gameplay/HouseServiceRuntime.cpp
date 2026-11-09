@@ -564,10 +564,11 @@ constexpr size_t AlchemistTopRowSlots = 6;
 
 bool isRecipeScrollItem(const ItemDefinition &entry)
 {
-    static const std::string RecipeSuffix = " Recipe";
+    // "<potion> Recipe"; a localized items table names the scroll "<potion>配方" (Simplified Chinese).
+    static const std::array<std::string, 2> RecipeSuffixes = {" Recipe", "\xe9\x85\x8d\xe6\x96\xb9"};
     return entry.equipStat == "Mscroll"
-        && entry.name.size() > RecipeSuffix.size()
-        && entry.name.ends_with(RecipeSuffix);
+        && std::any_of(RecipeSuffixes.begin(), RecipeSuffixes.end(),
+            [&](const std::string &suffix) { return entry.name.size() > suffix.size() && entry.name.ends_with(suffix); });
 }
 
 // The merged table carries the MM8 and MM7 recipe sets under the same names; only the first of each name is sold so

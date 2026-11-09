@@ -447,7 +447,7 @@ ActorBehaviorSpell readSpellOptions(lua_State *pLuaState, int tableIndex, const 
     {
         const SpellEntry *pEntry = pSpellTable->findById(static_cast<int>(spell.spellId));
 
-        if (pEntry == nullptr || !isMonsterProjectileSpellName(pEntry->name))
+        if (pEntry == nullptr || !isMonsterProjectileSpellName(pEntry->normalizedName))
         {
             luaL_error(pLuaState, "actor behaviour spells must be monster projectile spells (spell %d)",
                 static_cast<int>(spell.spellId));

@@ -162,7 +162,7 @@ tables:
   - table: spells.txt
     mode: override
     path: patches/spells.txt
-    keyColumn: 2
+    keyColumn: 0   # 汉化版按法术编号匹配（原版按英文名）
     headerRow: 0
   # Written by hand in content/ (the patch tool rewrites patches/ and tables/), applied after the generated ones:
   # the skill reset topics of the Oracle, Judge Grey and the Seer (events/Global_maw.lua); no class picks Learning

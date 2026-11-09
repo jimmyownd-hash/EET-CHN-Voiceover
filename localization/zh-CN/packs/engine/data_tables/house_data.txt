@@ -44,7 +44,7 @@
 42	7	Armor Shop	13	97	卡尔战斗装备	卡尔	甲匠	1076	0	0	0	4	2		28			6	18	0	0	0	0
 43	8	Armor Shop	62	174	埃里克军械库	埃里克	甲匠	0537	0	0	0	1.5	1		7			6	18	0	0	0	0
 44	9	Armor Shop	62	174	枯木城堡	Placeholder		0537	0	0	0	1.5	1			1		6	18	0	0	0	0
-45	10	Armor Shop	62	324	尼贡隧道	Placeholder		0537	0	0	0	1.5	1					6	18	0	0	0	0
+45	10	Armor Shop	62	324	尼弘隧道	Placeholder		0537	0	0	0	1.5	1					6	18	0	0	0	0
 46	11	Armor Shop	62	174	Placeholder	Placeholder		0537	0	0	0	1.5	1					6	18	0	0	0	0
 47	12	Armor Shop	63	174	农夫铁匠铺	彼得	甲匠	0537	0	0	0	1.5	1		14			6	18	0	0	0	0
 48	13	Armor Shop	62	330	通往伊欧弗尔隧道	Placeholder		0537	0	0	0	1.5	1					6	18	0	0	0	0
@@ -393,12 +393,12 @@
 391	51	Dungeon Ent	63	303	白崖穴	Placeholder			0	0	0	1.5						6	18	0	0	0	0
 392	52	Dungeon Ent	64	304	伊拉西亚城下水道	Placeholder			0	0	0	1.5						6	18	0	0	0	0
 393	53	Dungeon Ent	64	305	河畔堡垒	Placeholder			0	0	0	1.5						6	18	0	0	0	0
-394	54	Dungeon Ent	65	308	图拉雷恩洞穴	Placeholder			0	0	0	1.5						6	18	0	0	0	0
+394	54	Dungeon Ent	65	308	土拉立安洞穴	Placeholder			0	0	0	1.5						6	18	0	0	0	0
 395	55	Dungeon Ent	65	309	科兰克的实验室	Placeholder			0	0	0	1.5						0	24	0	0	0	0
-396	56	Dungeon Ent	66	310	深渊之厅	Placeholder			0	0	0	1.5						6	18	0	0	0	0
+396	56	Dungeon Ent	66	310	深渊大厅	Placeholder			0	0	0	1.5						6	18	0	0	0	0
 397	57	Dungeon Ent	66	311	瞭望塔6号	Placeholder			0	0	0	1.5						6	18	0	0	0	0
-398	58	Dungeon Ent	67	312	巫术学校	Placeholder			0	0	0	1.5						6	18	0	0	0	0
-399	59	Dungeon Ent	67	313	红矮人矿场	Placeholder			0	0	0	1.5						6	18	0	0	0	0
+398	58	Dungeon Ent	67	312	巫术学院	Placeholder			0	0	0	1.5						6	18	0	0	0	0
+399	59	Dungeon Ent	67	313	红矮人矿坑	Placeholder			0	0	0	1.5						6	18	0	0	0	0
 400	60	Dungeon Ent	68	315	迷雾之墙	Placeholder			0	0	0	1.5						6	18	0	0	0	0
 401	61	Dungeon Ent	68	316	光明神庙	Placeholder			0	0	0	1.5						6	18	0	0	0	0
 402	62	Dungeon Ent	69	318	繁殖区	Placeholder			0	0	0	1.5						6	18	0	0	0	0
@@ -414,7 +414,7 @@
 412	72	Dungeon Ent	74	335	酒窖	Placeholder			0	0	0	1.5						6	18	0	0	0	0
 413	73	Dungeon Ent	75	336	泰坦据点	Placeholder			0	0	0	1.5						6	18	0	0	0	0
 414	74	Dungeon Ent	75	337	Temple of Baa	Placeholder			0	0	0	1.5						6	18	0	0	0	0
-415	75	Dungeon Ent	75	338	山丘之厅	Placeholder			0	0	0	1.5						6	18	0	0	0	0
+415	75	Dungeon Ent	75	338	山丘下的大厅	Placeholder			0	0	0	1.5						6	18	0	0	0	0
 416	76	Dungeon Ent	76	339	林肯号	Placeholder			0	0	0	1.5						6	18	0	0	0	0
 417	77	Dungeon Ent	151	480	大耳怪前哨				0	0	0	0	1							0	0	Need 	进入
 418	78	Dungeon Ent	148	406	Temple of Baa				0	0	0	0	1							0	0		进入

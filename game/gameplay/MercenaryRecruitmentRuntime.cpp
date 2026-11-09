@@ -1162,13 +1162,17 @@ std::optional<uint32_t> findMercenaryRecruitmentHouseId(
 
         const std::string lowerType = toLowerCopy(house.type);
         const std::string lowerName = toLowerCopy(house.name);
+        // The Chinese pack names the house 冒险者旅店 and taverns 酒馆 / 旅店.
         const bool isAdventurersInn =
             lowerName.find("adventurer") != std::string::npos
-            || lowerType.find("adventurer") != std::string::npos;
+            || lowerType.find("adventurer") != std::string::npos
+            || lowerName.find("\xe5\x86\x92\xe9\x99\xa9\xe8\x80\x85") != std::string::npos;
         const bool isTavern =
             lowerType == "tavern"
             || lowerName.find("tavern") != std::string::npos
-            || lowerName.find("inn") != std::string::npos;
+            || lowerName.find("inn") != std::string::npos
+            || lowerName.find("\xe9\x85\x92\xe9\xa6\x86") != std::string::npos
+            || lowerName.find("\xe6\x97\x85\xe5\xba\x97") != std::string::npos;
 
         if (isAdventurersInn && (!bestAdventurersInn || houseId < *bestAdventurersInn))
         {

@@ -9,6 +9,7 @@
 #include "game/tables/PotionNoteTable.h"
 
 #include <algorithm>
+#include <array>
 #include <cctype>
 #include <functional>
 #include <tuple>
@@ -378,18 +379,25 @@ std::optional<uint32_t> AlchemyBenchRuntime::recipeScrollPotionItemId(
     uint32_t scrollItemId,
     const AlchemyBenchTables &tables)
 {
-    static const std::string RecipeSuffix = " Recipe";
+    // "<potion> Recipe"; a localized items table names the scroll "<potion>配方" (Simplified Chinese).
+    static const std::array<std::string, 2> RecipeSuffixes = {" Recipe", "\xe9\x85\x8d\xe6\x96\xb9"};
     const ItemDefinition *pScroll = tables.itemTable.get(scrollItemId);
 
-    if (pScroll == nullptr
-        || pScroll->equipStat != "Mscroll"
-        || pScroll->name.size() <= RecipeSuffix.size()
-        || !pScroll->name.ends_with(RecipeSuffix))
+    if (pScroll == nullptr || pScroll->equipStat != "Mscroll")
     {
         return std::nullopt;
     }
 
-    const std::string potionName = pScroll->name.substr(0, pScroll->name.size() - RecipeSuffix.size());
+    const auto suffixIt = std::find_if(RecipeSuffixes.begin(), RecipeSuffixes.end(),
+        [&](const std::string &suffix)
+        { return pScroll->name.size() > suffix.size() && pScroll->name.ends_with(suffix); });
+
+    if (suffixIt == RecipeSuffixes.end())
+    {
+        return std::nullopt;
+    }
+
+    const std::string potionName = pScroll->name.substr(0, pScroll->name.size() - suffixIt->size());
 
     for (const MergedPotionSettingEntry &setting : tables.potionSettingTable.entries())
     {

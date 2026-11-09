@@ -1176,6 +1176,11 @@ EventDialogContent buildEventDialogContent(
                     ? transitionVideoNameForDungeonHouse(pHouseTable, pDungeonHouseMap, dialog.title)
                     : std::string();
             }
+            // The map file name is language independent, so try it before the English title tables.
+            if (dialog.videoName.empty())
+            {
+                dialog.videoName = transitionVideoNameForMap(transitionMapName);
+            }
             if (dialog.videoName.empty() && pTransitionText != nullptr && !pTransitionText->title.empty())
             {
                 dialog.videoName = transitionVideoNameForTransitionTitle(pTransitionText->title);
@@ -1183,10 +1188,6 @@ EventDialogContent buildEventDialogContent(
             if (dialog.videoName.empty() && !dialog.title.empty())
             {
                 dialog.videoName = transitionVideoNameForTransitionTitle(dialog.title);
-            }
-            if (dialog.videoName.empty())
-            {
-                dialog.videoName = transitionVideoNameForMap(transitionMapName);
             }
         }
         dialog.videoDirectory = !dialog.videoName.empty() ? TransitionVideoDirectory : std::string();

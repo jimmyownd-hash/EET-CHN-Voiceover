@@ -576,7 +576,7 @@ Circus (Winter)	马戏团（冬季）
 Hostel	客栈
 Empty House	空屋
 Flooded House	被洪水淹没的屋子
-The Mercenary Guild	佣兵公会
+The Mercenary Guild	佣兵行会
 Mercenary Guild	雇佣兵行会
 Smugglers' Guild	走私者行会
 Guild of Bounty Hunters	赏金猎人公会
@@ -811,7 +811,7 @@ Grand Temple of the Sun	高级太阳神庙
 Temple	神殿
 A Cave	一处洞穴
 Lord Markham	马卡姆领主
-The Mercenary Guild 	佣兵公会
+The Mercenary Guild 	佣兵行会
 Dragon Leader's Cavern 	龙首领洞窟
 Talk to the Arena Master	与竞技场主管交谈
 The Temple of the Sun	日之神殿
@@ -6558,7 +6558,7 @@ Buy {school} Spells	购买{school}法术
 Current Fine: {n#} gold	当前罚金：{n#} 金币
 Victory Conditions	胜利条件
 Thieves guild	盗贼公会
-Merc Guild	佣兵公会
+Merc Guild	佣兵行会
 Fire Guild	火系公会
 Air Guild	气系公会
 Water Guild	水系公会

@@ -392,12 +392,12 @@
 391	303	白崖穴		out02 white cliff cave				0	Dungeon Ent
 392	304	伊拉西亚城下水道		out03 erathian sewer				0	Dungeon Ent
 393	305	河畔堡垒		out03 fort riverstride				0	Dungeon Ent
-394	308	图拉雷恩洞穴		out04 tularean caves				0	Dungeon Ent
+394	308	土拉立安洞穴		out04 tularean caves				0	Dungeon Ent
 395	309	科兰克的实验室		out04 clanker's laboratory				0	Dungeon Ent
-396	310	深渊之厅		out05 hall of the pit				0	Dungeon Ent
+396	310	深渊大厅		out05 hall of the pit				0	Dungeon Ent
 397	311	瞭望塔6号		out05 watchtower 6				0	Dungeon Ent
-398	312	巫术学校		out06 school of sorcery				0	Dungeon Ent
-399	313	红矮人矿场		out06 red dwarf mines				0	Dungeon Ent
+398	312	巫术学院		out06 school of sorcery				0	Dungeon Ent
+399	313	红矮人矿坑		out06 red dwarf mines				0	Dungeon Ent
 400	315	迷雾之墙		out07 walls of mist				0	Dungeon Ent
 401	316	光明神庙		out07 temple of the light				0	Dungeon Ent
 402	318	繁殖区		out08 breeding zone				0	Dungeon Ent
@@ -413,7 +413,7 @@
 412	335	酒窖		out13 wine cellar				0	Dungeon Ent
 413	336	泰坦据点		out14 titan's stronghold				0	Dungeon Ent
 414	337	巴阿神庙		out14 temple of baa				0	Dungeon Ent
-415	338	山丘之厅		out14 hall under the hill				0	Dungeon Ent
+415	338	山丘下的大厅		out14 hall under the hill				0	Dungeon Ent
 416	339	林肯号		out15 the linclon				0	Dungeon Ent
 417	480	大耳怪前哨		d01				0	Dungeon Ent
 418	406	巴阿神庙		t1				0	Dungeon Ent
