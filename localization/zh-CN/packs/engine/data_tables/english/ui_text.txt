@@ -6791,6 +6791,10 @@ Ends on another outdoor map	到另一张室外地图时结束
 does not know it	不会此法术
 Moving casts it as the new holder: they must be ready and pay its recovery, and the old holder's reservation is released. The strength follows the new holder's skill.	转移相当于由新持有者重新施放：对方必须处于就绪状态，并承担其恢复时间；原持有者的保留值随之释放。强度按新持有者的技能计算。
 Release all	全部解除
+# aura status lines
+{s} held by {n}	{s}由{n}持有
+{s} released	{s}已解除
+{s} release	{s}已解除
 Also R in the	也可在
 Partly used	部分生效
 Adds nothing	无额外效果
