@@ -54,7 +54,7 @@ SetMapMetadata({
     [79] = { kind = "open_chest", source = "opcode", chestIds = {3} },
     [90] = { kind = "enter_house", source = "opcode", houseId = 438, targetName = "斯纳格的铁矿" },
     [91] = { kind = "enter_house", source = "opcode", houseId = 424, targetName = "暗沼城堡" },
-    [92] = { kind = "enter_house", source = "opcode", houseId = 334, targetName = "巴阿神庙" },
+    [92] = { kind = "enter_house", source = "opcode", houseId = 334, targetName = "羊鸣庙" },
     [93] = { kind = "enter_dungeon", source = "opcode", targetMap = "zddb01.blv", targetName = "龙之巢穴" },
     [100] = { kind = "fountain", source = "title" },
     [210] = { kind = "secret_event", source = "heuristic", hidden = true },
@@ -671,9 +671,9 @@ RegisterEvent(91, nil, function()
     evt.MoveToMap(21169, 1920, -689, 1024, 0, 0, 424, 1, "cd2.blv") -- Castle Darkmoor
 end)
 
-RegisterEvent(92, "巴之神殿", function()
+RegisterEvent(92, "羊鸣庙", function()
     evt.EnterHouse(334) -- Temple Baa
-end, "巴之神殿")
+end, "羊鸣庙")
 
 RegisterEvent(93, "龙巢", function()
     evt.MoveToMap(-622, 239, 1, 128, 0, 0, 0, 0, "zddb01.blv") -- Dragon's Lair

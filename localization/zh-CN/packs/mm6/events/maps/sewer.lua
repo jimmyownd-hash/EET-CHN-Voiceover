@@ -40,7 +40,7 @@ SetMapMetadata({
     [25] = { kind = "leave_dungeon", source = "opcode", targetMap = "outc2.odm", targetName = "自由天堂" },
     [26] = { kind = "open_door", source = "title" },
     [27] = { kind = "open_door", source = "opcode" },
-    [28] = { kind = "passage", source = "opcode", targetMap = "6t6.blv", targetName = "巴之神殿至尊殿" },
+    [28] = { kind = "passage", source = "opcode", targetMap = "6t6.blv", targetName = "羊鸣至尊神殿" },
     },
     textureNames = {},
     spriteNames = {"0"},

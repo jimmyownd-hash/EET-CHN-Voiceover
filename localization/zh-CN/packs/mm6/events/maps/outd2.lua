@@ -50,7 +50,7 @@ SetMapMetadata({
     [91] = { kind = "enter_house", source = "opcode", houseId = 423, targetName = "拳头神殿" },
     [92] = { kind = "enter_house", source = "opcode", houseId = 429, targetName = "太阳神殿" },
     [93] = { kind = "enter_house", source = "opcode", houseId = 426, targetName = "赞萨神殿" },
-    [94] = { kind = "enter_house", source = "opcode", houseId = 334, targetName = "巴阿神庙" },
+    [94] = { kind = "enter_house", source = "opcode", houseId = 334, targetName = "羊鸣庙" },
     [100] = { kind = "well", source = "title" },
     [101] = { kind = "well", source = "title" },
     [102] = { kind = "fountain", source = "title" },
@@ -646,9 +646,9 @@ RegisterEvent(93, "赞萨神庙", function()
     evt.MoveToMap(2817, -4748, -639, 512, 0, 0, 426, 1, "6t3.blv") -- Temple of Tsantsa
 end, "赞萨神庙")
 
-RegisterEvent(94, "巴之神殿", function()
+RegisterEvent(94, "羊鸣庙", function()
     evt.EnterHouse(334) -- Temple Baa
-end, "巴之神殿")
+end, "羊鸣庙")
 
 RegisterEvent(100, "饮用井水", function()
     if IsAtLeast(MightBonus, 20) then return end

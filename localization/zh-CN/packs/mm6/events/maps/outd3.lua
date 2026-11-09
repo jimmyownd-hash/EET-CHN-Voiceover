@@ -65,8 +65,8 @@ SetMapMetadata({
     [91] = { kind = "enter_house", source = "opcode", houseId = 430, targetName = "斯纳格的岩洞" },
     [92] = { kind = "enter_house", source = "opcode", houseId = 432, targetName = "龙骑兵岩洞" },
     [93] = { kind = "enter_house", source = "opcode", houseId = 440, targetName = "考勒根的豪宅" },
-    [94] = { kind = "enter_house", source = "opcode", houseId = 418, targetName = "巴之神殿" },
-    [97] = { kind = "enter_house", source = "opcode", houseId = 334, targetName = "巴之神殿" },
+    [94] = { kind = "enter_house", source = "opcode", houseId = 418, targetName = "羊鸣庙" },
+    [97] = { kind = "enter_house", source = "opcode", houseId = 334, targetName = "羊鸣庙" },
     [100] = { kind = "fountain", source = "title" },
     [101] = { kind = "fountain", source = "title" },
     [102] = { kind = "fountain", source = "title" },
@@ -366,9 +366,9 @@ RegisterEvent(94, nil, function()
     evt.MoveToMap(-15592, 120, -191, 0, 0, 0, 418, 1, "6t1.blv") -- Temple of Baa
 end)
 
-RegisterEvent(97, "巴之神殿", function()
+RegisterEvent(97, "羊鸣庙", function()
     evt.EnterHouse(334) -- Temple Baa
-end, "巴之神殿")
+end, "羊鸣庙")
 
 RegisterEvent(100, "饮用喷泉", function()
     if not IsAtLeast(SpeedBonus, 10) then

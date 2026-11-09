@@ -1184,7 +1184,7 @@ Q Bit	Quest Note Text	Notes	Owner
 1183		NPC	dragon tower 4
 1184		NPC	dragon tower 5
 1185		NPC	dragon tower 6
-1186	前往超级羊鸣庙，找到阿尔法记忆水晶，把它放回到高级议会地下的恩洛斯神使的模块坛处。	NPC	Restore Memory Crystal Alpha
+1186	前往羊鸣至尊神殿，找到阿尔法记忆水晶，把它放回到高级议会地下的恩洛斯神使的模块坛处。	NPC	Restore Memory Crystal Alpha
 1187	前往阿拉莫斯城堡，找到贝塔记忆水晶，把它放回到高级议会地下的恩洛斯神使的模块坛处。	NPC	Restore Memory Crystal Beta
 1188	前往黑摩尔城堡，找到德尔塔记忆水晶，把它放回到高级议会地下的恩洛斯神使的模块坛处。	NPC	Restore Memory Crystal Delta
 1189	前往克里格斯城堡，找到伊普斯隆记忆水晶，把它放回到高级议会地下的恩洛斯神使的模块坛处。	NPC	Restore Memory Crystal Epsilon
@@ -1222,7 +1222,7 @@ Q Bit	Quest Note Text	Notes	Owner
 1221		Quest item bits for seer	Tanir's Bell
 1222		Quest item bits for seer	Dark Containment
 1223		Quest item bits for seer	Key to Gharik's Laboratory
-1224	在克里格斯城堡东面的顶级羊鸣庙中找到治疗斯里克·席尔瓦托恩的方法，并带着好消息回到威尔伯·汉弗里处。	Wilbur Humphrey	Expose the Traitor Quest
+1224	在克里格斯城堡东面的羊鸣高等神殿中找到治疗斯里克·席尔瓦托恩的方法，并带着好消息回到威尔伯·汉弗里处。	Wilbur Humphrey	Expose the Traitor Quest
 1225	把证明斯里克·席尔瓦托恩叛国的信件交给自由天堂的高级议会。	NPC	
 1226		NPC	Killed Demon Queen
 1227		NPC	Once Emmanuel is found.

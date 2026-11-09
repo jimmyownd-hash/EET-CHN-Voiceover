@@ -332,7 +332,7 @@
 331	401	银湾神殿		temprich			31360	1035	Temple
 332	400	国王神殿		tempmid			31370	1034	Temple
 333	399	疗愈之家		temppoor			31350	1033	Temple
-334	402	巴之神殿		tempevil			31380	1032	Temple
+334	402	羊鸣庙		tempevil			31380	1032	Temple
 335	479	铁拳城堡		cstlgood			31280	0	Castle Entrance
 336	479	牛顿城堡		cstlgood			31280	0	Castle Entrance
 337	479	泰珀城堡		cstlgood			31280	0	Castle Entrance
@@ -412,11 +412,11 @@
 411	334	潮穴		out13 tidewater caverns				0	Dungeon Ent
 412	335	酒窖		out13 wine cellar				0	Dungeon Ent
 413	336	泰坦据点		out14 titan's stronghold				0	Dungeon Ent
-414	337	巴阿神庙		out14 temple of baa				0	Dungeon Ent
+414	337	羊鸣庙		out14 temple of baa				0	Dungeon Ent
 415	338	山丘下的大厅		out14 hall under the hill				0	Dungeon Ent
 416	339	林肯号		out15 the linclon				0	Dungeon Ent
 417	480	大耳怪前哨		d01				0	Dungeon Ent
-418	406	巴阿神庙		t1				0	Dungeon Ent
+418	406	羊鸣庙		t1				0	Dungeon Ent
 419	481	阿拉莫斯城堡		cd1				0	Dungeon Ent
 420	456	维兰坟墓		pyramid				0	Dungeon Ent
 421	457	蜂巢		hive				0	Dungeon Ent
@@ -431,9 +431,9 @@
 430	461	斯纳格的岩洞		d05				0	Dungeon Ent
 431	408	月亮神殿		t5				0	Dungeon Ent
 432	459	龙骑兵岩洞		d06				0	Dungeon Ent
-433	405	巴之神殿至尊殿		t6				0	Dungeon Ent
+433	405	羊鸣至尊神殿		t6				0	Dungeon Ent
 434	476	银舵前哨		d07				0	Dungeon Ent
-435	404	巴之神殿上殿		t7				0	Dungeon Ent
+435	404	羊鸣高等神殿		t7				0	Dungeon Ent
 436	478	阴影教		d08				0	Dungeon Ent
 437	409	蛇之神殿		t8				0	Dungeon Ent
 438	466	斯纳格的铁矿		d09				0	Dungeon Ent

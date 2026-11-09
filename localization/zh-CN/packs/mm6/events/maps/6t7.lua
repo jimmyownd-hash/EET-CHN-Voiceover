@@ -269,13 +269,13 @@ RegisterEvent(29, "箱子", function()
     evt.OpenChest(6)
 end, "箱子")
 
-RegisterEvent(34, "巴阿之首·二", nil, "巴阿之首·二")
+RegisterEvent(34, "羊鸣之首·二", nil, "羊鸣之首·二")
 
 RegisterEvent(36, "讲台", function(continueStep)
     if continueStep == 2 then
     end
     if continueStep ~= nil then return end
-    evt.SetMessage("专家级洞察术是钥匙，巴阿之门自会为你敞开。                                                                                                                                            螺旋阵上记住每个头像，向巴阿交谈，否则你将丧命。")
+    evt.SetMessage("专家级洞察术是钥匙，羊鸣之门自会为你敞开。                                                                                                                                            螺旋阵上记住每个头像，向羊鸣交谈，否则你将丧命。")
     evt._PressAnyKey(36, 2)
 end, "讲台")
 
@@ -391,13 +391,13 @@ RegisterEvent(70, nil, function()
     evt.CastSpell(15, 3, 3, -7232, -7008, 230, 0, 0, 0) -- Sparks
 end)
 
-RegisterEvent(71, "巴阿之首·一", function()
+RegisterEvent(71, "羊鸣之首·一", function()
     evt.StatusText("咩一号就位。")
     if IsAtLeast(MapVar(11), 1) then return end
     SetValue(MapVar(11), 1)
-end, "巴阿头像一")
+end, "羊鸣头像一")
 
-RegisterEvent(72, "巴阿之首·二", function()
+RegisterEvent(72, "羊鸣之首·二", function()
     if not IsAtLeast(MapVar(11), 1) then
         evt.DamagePlayer(Players.Current, const.Damage.Fire, 20)
         evt.StatusText("咩！咩！")
@@ -405,9 +405,9 @@ RegisterEvent(72, "巴阿之首·二", function()
     end
     evt.StatusText("咩二号准备就绪。")
     SetValue(MapVar(12), 1)
-end, "巴阿头像二")
+end, "羊鸣头像二")
 
-RegisterEvent(73, "巴阿之首·三", function()
+RegisterEvent(73, "羊鸣之首·三", function()
     if not IsAtLeast(MapVar(12), 1) then
         evt.DamagePlayer(Players.Current, const.Damage.Fire, 20)
         evt.StatusText("咩！咩！")
@@ -415,9 +415,9 @@ RegisterEvent(73, "巴阿之首·三", function()
     end
     evt.StatusText("咩三号待命。")
     SetValue(MapVar(13), 1)
-end, "巴阿头像三")
+end, "羊鸣头像三")
 
-RegisterEvent(74, "巴阿之首·四", function()
+RegisterEvent(74, "羊鸣之首·四", function()
     if not IsAtLeast(MapVar(13), 1) then
         evt.DamagePlayer(Players.Current, const.Damage.Fire, 20)
         evt.StatusText("咩！咩！")
@@ -428,23 +428,23 @@ RegisterEvent(74, "巴阿之首·四", function()
     if IsAtLeast(MapVar(10), 1) then
         SetValue(MapVar(16), 1)
     end
-end, "巴阿头像四")
+end, "羊鸣头像四")
 
-RegisterEvent(75, "全能的巴阿之首。", function()
+RegisterEvent(75, "全能的羊鸣之首。", function()
     if not IsAtLeast(MapVar(16), 1) then
         evt.StatusText("你不配信奉咩！")
         evt.DamagePlayer(Players.Current, const.Damage.Fire, 100)
         return
     end
     if not IsPlayerBitSet(PlayerBit(69)) then
-        evt.StatusText("\"追随巴阿！+50,000 经验值。\"")
+        evt.StatusText("\"追随羊鸣！+50,000 经验值。\"")
         AddValue(Experience, 50000)
         SubtractValue(1638635, 25)
         SetPlayerBit(PlayerBit(69))
         return
     end
     evt.StatusText("去传播咩的教义吧！")
-end, "万能的巴阿之首。")
+end, "万能的羊鸣之首。")
 
 RegisterEvent(76, "熔岩池", function()
     evt.DamagePlayer(Players.All, const.Damage.Magic, 30)

@@ -464,11 +464,11 @@ Alchemist placeholder	炼金店
 Temple placeholder	神殿
 Bank placeholder	银行
 Training hall placeholder	训练场
-Baa Head One	巴阿头像之一
-Baa Head Two	巴阿头像之二
-Baa Head Three	巴阿头像之三
-Baa Head Four	巴阿头像之四
-Almighty Head of Baa.	巴阿全能头像。
+Baa Head One	羊鸣头像之一
+Baa Head Two	羊鸣头像之二
+Baa Head Three	羊鸣头像之三
+Baa Head Four	羊鸣头像之四
+Almighty Head of Baa.	羊鸣全能头像。
 Glowing dinosaur bones	发光的恐龙骨骸
 Bones	骨骸
 Old bones.	陈年骨骸。
@@ -522,7 +522,7 @@ Welcome to Emerald Isle	欢迎来到翡翠岛
 Dwarven Barrow	矮人古墓
 Titan Stronghold	泰坦要塞
 Temple of Baa	羊鸣庙
-Temple Baa	羊鸣神庙
+Temple Baa	羊鸣庙
 Temple of Light	治疗之屋
 Temple of Dark	暗黑神庙
 Temple of Stone	石之庙
@@ -1040,9 +1040,9 @@ Castle Kriegspire	克里格斯城堡
 Hall of the Fire Lord	烈火爵士的大厅
 Snergle's Caverns	斯纳格的岩洞
 Dragoons' Caverns	龙骑兵岩洞
-Supreme Temple of Baa	超级羊鸣庙
+Supreme Temple of Baa	羊鸣至尊神殿
 Silver Helm Outpost	银舵前哨
-Superior Temple of Baa	顶级羊鸣庙
+Superior Temple of Baa	羊鸣高等神殿
 Shadow Guild	阴影教
 Temple of the Snake	巨蛇庙
 Snergle's Iron Mines	斯纳格的铁矿
@@ -1891,16 +1891,16 @@ You kneel at the altar for a moment of silent prayer.	你在祭坛前跪下，�
 Trial by Cold	寒冷试炼
 Trial by Fire	火焰试炼
 You're not worthy!	你不配！
-"Expert Perception is the key and the doors of Baa will let you be.                                                                                                                                                                                                                  The Spiral then each head, talk to Baa or you'll be dead."	“专家级感知是钥匙，巴阿之门才会为你敞开。\n\n先绕螺旋，再依次面对每个头像；去和巴阿交谈，否则你就死定了。”
-"Follow Baa!  +50,000 Experience."	“追随巴阿！+50,000 经验值。”
-Baa Four is a go.	巴阿四号准备就绪。
-Baa One here.	巴阿一号在此。
-Baa Three standing by.	巴阿三号待命。
-Baa Two ready.	巴阿二号就绪。
-Baa!  Baa!	巴阿！巴阿！
+"Expert Perception is the key and the doors of Baa will let you be.                                                                                                                                                                                                                  The Spiral then each head, talk to Baa or you'll be dead."	“专家级感知是钥匙，羊鸣之门才会为你敞开。\n\n先绕螺旋，再依次面对每个头像；去和羊鸣交谈，否则你就死定了。”
+"Follow Baa!  +50,000 Experience."	“追随羊鸣！+50,000 经验值。”
+Baa Four is a go.	羊鸣四号准备就绪。
+Baa One here.	羊鸣一号在此。
+Baa Three standing by.	羊鸣三号待命。
+Baa Two ready.	羊鸣二号就绪。
+Baa!  Baa!	羊鸣！羊鸣！
 Chest Is locked.	箱子被锁上了。
-Go forth and spread the word of Baa!	去吧，传播巴阿的教义！
-You're not worthy of Baa!	你不配侍奉巴阿！
+Go forth and spread the word of Baa!	去吧，传播羊鸣的教义！
+You're not worthy of Baa!	你不配侍奉羊鸣！
 A teleporter!	传送装置！
 Refreshing	神清气爽
 +5 Hit points restored.	+5 生命值已恢复。
@@ -1954,7 +1954,7 @@ The surface of the obelisk is blood warm to the touch.  A message swims into vie
 +40 Armor class temporary.	防御等级临时 +40。
 +5 Elemental resistance permanent.	元素抗性永久 +5。
 The surface of the obelisk is blood warm to the touch.  A message swims into view as you remove your hand:                                                                                                                                                            t_haat_lt__en_lc	方尖碑的表面摸上去像血一样温热。你收回手时，一段文字浮现眼前：\n\n就太，故
-You are not a follower of Baa.  Begone!	你不是巴阿的信徒。滚开！
+You are not a follower of Baa.  Begone!	你不是羊鸣的信徒。滚开！
 You feel Strange.	你感觉古怪。
 You pray at the shrine.	你在神龛前祈祷。
 +10 Magic permanent	魔法永久 +10
@@ -3668,7 +3668,7 @@ performed daring deeds	做出了惊人的事迹
 You should probably show The Letter to Andover Potbello in New Sorpigal.	你不妨向新索匹格的安多弗·波特皮洛出示那封信件。
 You need to give The Letter to Regent Wilbur Humphrey in Ironfist Castle.	你必须把信交给铁拳城堡的摄政王威尔伯·汉弗里。
 You must satisfy the six High Council members in Free Haven to visit the Oracle.\nEach lord will request a task of you to earn their favor.\nPerform each of these tasks and then talk to the Council member of that Lord to gain their approval.\nOnce all the members of the High Council give their permission, you will be allowed to visit the Oracle.	要拜见神使，必须先使自由天堂高级议会的六个议员满意。恩洛斯六爵士每位都会给你布置一项任务，完成这项任务后，这名爵士在议会中的代表就会支持你。一旦议员一致通过，你就可以拜见神使了。
-It appears that Slicker Silvertongue is a traitor on the Council.\nYou will need proof to convince Regent Humphrey and have Slicker removed from the Council.\nGo to the Superior Temple of Baa in Kriegspire and return with proof associating Slicker with the Temple of Baa.	看起来斯里克·席尔瓦托恩就是隐藏在议会中的叛徒。你必须用证据说服摄政王威尔伯·汉弗里，把叛徒逐出议会。你得到克里格斯的顶级羊鸣庙去一趟，把斯里克和羊鸣教阴谋勾结的确凿证据带回来。
+It appears that Slicker Silvertongue is a traitor on the Council.\nYou will need proof to convince Regent Humphrey and have Slicker removed from the Council.\nGo to the Superior Temple of Baa in Kriegspire and return with proof associating Slicker with the Temple of Baa.	看起来斯里克·席尔瓦托恩就是隐藏在议会中的叛徒。你必须用证据说服摄政王威尔伯·汉弗里，把叛徒逐出议会。你得到克里格斯的羊鸣高等神殿去一趟，把斯里克和羊鸣教阴谋勾结的确凿证据带回来。
 The Oracle has been asleep since Archibald performed his mischief on it.\nYou will need the four memory crystals to revive the Oracle.\nThey can be found on Hermit's Isle, in Castle Alamos, in Castle Kriegspire, and in Castle Darkmoor.	在阿基巴德对神使动了手脚之后，神使就沉睡至今。要使其重新觉醒，你需要四块记忆水晶。它们分别在隐士岛、阿拉莫斯城堡、克里格斯城堡和黑摩尔城堡。
 To gain access to the Control Center, you will need the Control Cube located in the Temple of VARN in Dragonsand.\nBring the Cube back to the Oracle to gain admittance into the Control Center.\nThe Kreegan reactor is immune to all attacks.\nOnly the ancient weapons from the Control Center will harm the reactor.\nMake sure you have these weapons and the skill to use them.	要进入控制中心，必须先得到飞龙沙漠维兰神殿内的控制方块。把控制方块交还给神使，就可以进入控制中心了。克里根人的反应器免疫任何类似的攻击，它的唯一克星是控制中心内储存的上古兵器。你一定要拿到这些兵器并掌握使用它们的技能。
 Before you destroy the reactor, you will need a spell capable of containing the resulting explosions.\nYou must free Archibald from his stone prison.\nTalk to Nicolai and bring him the Third Eye– he will allow you to use Tanir's Bell to turn Archibald back to normal.\nFrom there, you should be able to convince Archibald to give you the knowledge you need.	在破坏反应器之前，你必须取得一种能将反应器的爆炸包裹控制起来的魔法。所以你必须把阿基巴德从石化中解放出来。先和尼古拉交谈，把“第三只眼”交给他，他会让你用坦耐尔之铃使阿基巴德恢复原形。然后你就可以说服阿基巴德传授你想要的魔法。

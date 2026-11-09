@@ -78,7 +78,7 @@
 75	伊拉西亚城下水道	d01.blv	0	0	5	672	7	10	5	2	1	10	50	50	0	Thief	Thief	1	 1-3	Rat	Rat	3	 1-3	0	0	1	 1-3	18	CAVE	0	Thief guild and sewers.  Many entrance/exits.  Golem guarded treasure	3	-	mm7
 76	迷宫	d02.blv	0	0	12	672	7	10	12	6	5	10	40	30	30	AMinotaur	AMinotaur	4	 1-3	Hydra	Hydra	2	 1-3	Warlock	Warlock	3	 1-3	18	STONEROOM	0	minotaur maze used by the warlocks to breed new minotaurs.	10	x	mm7
 77	暮光城堡	d03.blv	0	0	12	336	7	10	12	6	4	10	40	30	30	Lich	Lich	3	 1-3	Vampire	Vampire	3	 1-3	Necromancer	Necromancer	3	 1-3	22	STONEROOM	0	Necromancer's castle (headed by Archibald)	8	-	mm7
-78	巴阿神庙	d04.blv	0	0	11	672	7	10	11	5	3	10	40	30	30	Cleric Moon	Cleric Moon	1	 1-3	Devil	Devil	3	 1-3	Spider	Spider	5	 1-3	28	STONEROOM	0	temple of Baa that hasn't quite got the bad news yet.	14	-	mm7
+78	羊鸣庙	d04.blv	0	0	11	672	7	10	11	5	3	10	40	30	30	Cleric Moon	Cleric Moon	1	 1-3	Devil	Devil	3	 1-3	Spider	Spider	5	 1-3	28	STONEROOM	0	temple of Baa that hasn't quite got the bad news yet.	14	-	mm7
 79	竞技场	7d05.blv	0	0	1	0	7	10	1	1	1	10	0	0	0	0	0	1	 1-3	0	0	1	 1-3	0	0	1	 1-3	23	ARENA	0			-	mm7
 80	月之神庙	7d06.blv	0	0	0	672	7	10	0	1	0	10	40	30	30	Bat	Bat	1	 2-5	Rat	Rat	1	 2-5	Spider	Spider	1	 2-5	28	CAVE	0	"Half cave, half ruined temple of the moon"	1	x	mm7
 81	雷拳山	7d07.blv	0	0	10	672	7	10	10	5	4	10	40	30	30	Warlock	Warlock	4	 1-3	AMinotaur	AMinotaur	2	 1-3	Beholder	Beholder	2	 1-3	31	CAVE	0	Volcano dungeon connecting to Stone city (dungeon 20)	10	x	mm7
@@ -172,13 +172,13 @@
 169	加里克的炼铁厂	6d18.blv	0	0	11	672	0	0	7	8	6	10	40	40	20	Sorcerer	Sorcerer	4	 3-6	ElemFire	ElemFire	4	 2-3	ElemFire	ElemFire	4	 2-3	42	0	Tim	0	0	-
 170	阿加的实验室	6d19.blv	0	0	11	672	0	0	5	9	6	10	80	20	0	BBeholder	BBeholder	4	 2-3	Cockatrice	Cockatrice	5	 2-3	BLich	BLich	5	 1-1	42	0	Dave	0	0	-
 171	龙骑士洞穴	6d20.blv	0	0	15	672	0	0	6	10	6	10	10	20	70	KnightPlate	KnightPlate	5	 2-4	DragonLand	DragonLand	5	 2-4	0	0	1	 1-4	42	0	Lisa	0	0	-
-172	巴阿神庙	6t1.blv	0	0	5	672	0	0	2	1	6	10	10	40	50	Cleric	Cleric	1	 3-5	BSpider	BSpider	3	 3-5	Skeleton	Skeleton	3	 3-5	50	0	Tony	0	0	-
+172	羊鸣庙	6t1.blv	0	0	5	672	0	0	2	1	6	10	10	40	50	Cleric	Cleric	1	 3-5	BSpider	BSpider	3	 3-5	Skeleton	Skeleton	3	 3-5	50	0	Tony	0	0	-
 173	拳头神殿	6t2.blv	0	0	7	672	0	0	2	1	6	10	20	80	0	BMonk	BMonk	3	 2-4	BRat	BRat	5	 3-5	0	0	1	 1-4	49	0	Dave	0	0	-
 174	赞萨神殿	6t3.blv	0	0	6	672	0	0	2	1	6	10	30	30	40	PeasantM4	PeasantM4	4	 3-4	PeasantF4	PeasantF4	4	 3-4	Cobra	Cobra	5	 4-6	49	0	Chris	0	0	-
 175	太阳神殿	6t4.blv	0	0	15	672	0	0	3	2	6	10	100	0	0	BMonk	BMonk	4	 2-4	BMinotaur	BMinotaur	5	 1-1	0	0	1	 1-4	49	0	Chris	0	0	-
 176	月亮神殿	6t5.blv	0	0	11	672	0	0	3	2	6	10	40	60	0	Druidess	Druidess	4	 3-6	Cobra	Cobra	5	 3-5	BMedusa	BMedusa	2	 2-3	49	0	Tim	0	0	-
-177	巴之神殿至尊殿	6t6.blv	0	0	8	672	0	0	4	4	6	10	90	0	10	Cleric	Cleric	4	 3-5	Demon	Demon	1	 2-3	ElemFire	ElemFire	3	 2-4	50	0	Chris	0	0	-
-178	巴之神殿上殿	6t7.blv	0	0	10	672	0	0	4	4	6	10	70	20	10	Cleric	Cleric	5	 3-6	Druidess	Druidess	4	 3-6	Sorcerer	Sorcerer	3	 3-6	50	0	Tony	0	0	-
+177	羊鸣至尊神殿	6t6.blv	0	0	8	672	0	0	4	4	6	10	90	0	10	Cleric	Cleric	4	 3-5	Demon	Demon	1	 2-3	ElemFire	ElemFire	3	 2-4	50	0	Chris	0	0	-
+178	羊鸣高等神殿	6t7.blv	0	0	10	672	0	0	4	4	6	10	70	20	10	Cleric	Cleric	5	 3-6	Druidess	Druidess	4	 3-6	Sorcerer	Sorcerer	3	 3-6	50	0	Tony	0	0	-
 179	蛇之神殿	6t8.blv	0	0	16	672	0	0	5	5	6	10	100	0	0	BMedusa	BMedusa	5	 2-5	PeasantM1	PeasantM1	3	 1-1	DragonCover	DragonCover	1	 1-1	49	0	Chris	0	0	-
 180	阿拉莫斯城堡	cd1.blv	0	0	11	672	0	0	5	5	6	10	10	80	10	Sorcerer	Sorcerer	4	 2-3	Barbarian	Barbarian	5	 3-5	ElemAir	ElemAir	4	 2-3	49	0	Bruce	0	0	-
 181	暗沼城堡	cd2.blv	0	0	11	672	0	0	5	5	6	10	10	10	80	BLich	BLich	4	 2-4	BBeholder	BBeholder	3	 2-4	Ogre	Ogre	5	 2-4	49	0	Tony	0	0	-

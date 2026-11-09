@@ -333,7 +333,7 @@
 331	29	Temple	146	401	银湾神殿	杰弗里	医师	1035	0	0	0	30	1		0			5	1	0	0	0	
 332	30	Temple	148	400	国王神殿	查尔斯	医师	1034	0	0	0	30	1		0			5	1	0	0	0	
 333	31	Temple	147	399	疗愈之家	亚当	医师	1033	0	0	0	40	1		0			5	1	0	0	0	
-334	32	Temple	147	402	Temple Baa	兰德鲁	医师	1032	0	0	0	2	1	(see formulas for Neg Rep and Cloak)	1			5	1	0	0	0	
+334	32	Temple	147	402	羊鸣庙	兰德鲁	医师	1032	0	0	0	2	1	(see formulas for Neg Rep and Cloak)	1			5	1	0	0	0	
 335	1	Castle Entrance	148	479	铁拳城堡				0	0	0	0	1							0	0		进入
 336	2	Castle Entrance	148	479	牛顿城堡				0	0	0	0	1							0	0		进入
 337	3	Castle Entrance	144	479	泰珀城堡				0	0	0	0	1							0	0		进入
@@ -413,11 +413,11 @@
 411	71	Dungeon Ent	74	334	潮穴	Placeholder			0	0	0	1.5						6	18	0	0	0	0
 412	72	Dungeon Ent	74	335	酒窖	Placeholder			0	0	0	1.5						6	18	0	0	0	0
 413	73	Dungeon Ent	75	336	泰坦据点	Placeholder			0	0	0	1.5						6	18	0	0	0	0
-414	74	Dungeon Ent	75	337	Temple of Baa	Placeholder			0	0	0	1.5						6	18	0	0	0	0
+414	74	Dungeon Ent	75	337	羊鸣庙	Placeholder			0	0	0	1.5						6	18	0	0	0	0
 415	75	Dungeon Ent	75	338	山丘下的大厅	Placeholder			0	0	0	1.5						6	18	0	0	0	0
 416	76	Dungeon Ent	76	339	林肯号	Placeholder			0	0	0	1.5						6	18	0	0	0	0
 417	77	Dungeon Ent	151	480	大耳怪前哨				0	0	0	0	1							0	0	Need 	进入
-418	78	Dungeon Ent	148	406	Temple of Baa				0	0	0	0	1							0	0		进入
+418	78	Dungeon Ent	148	406	羊鸣庙				0	0	0	0	1							0	0		进入
 419	79	Dungeon Ent	149	481	阿拉莫斯城堡				0	0	0	0	1							0	0		进入
 420	80	Dungeon Ent	142	456	维兰坟墓				0	0	0	0	1							0	0		进入
 421	81	Dungeon Ent	137	457	蜂巢				0	0	0	0	1							0	0		进入
@@ -432,9 +432,9 @@
 430	90	Dungeon Ent	148	461	斯纳格的岩洞				0	0	0	0	1							0	0		进入
 431	91	Dungeon Ent	144	408	月亮神殿				0	0	0	0	1							0	0		进入
 432	92	Dungeon Ent	148	459	龙骑兵岩洞				0	0	0	0	1							0	0		进入
-433	93	Dungeon Ent	139	405	Supreme Temple of Baa				0	0	0	0	1							0	0		进入
+433	93	Dungeon Ent	139	405	羊鸣至尊神殿				0	0	0	0	1							0	0		进入
 434	94	Dungeon Ent	150	476	银舵前哨				0	0	0	0	1							0	0		进入
-435	95	Dungeon Ent	140	404	Superior Temple of Baa				0	0	0	0	1							0	0		进入
+435	95	Dungeon Ent	140	404	羊鸣高等神殿				0	0	0	0	1							0	0		进入
 436	96	Dungeon Ent	143	478	阴影教				0	0	0	0	1							0	0		进入
 437	97	Dungeon Ent	141	409	蛇之神殿				0	0	0	0	1							0	0		进入
 438	98	Dungeon Ent	145	466	斯纳格的铁矿				0	0	0	0	1							0	0		进入

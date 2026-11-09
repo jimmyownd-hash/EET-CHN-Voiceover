@@ -12,7 +12,7 @@ SetMapMetadata({
     [1] = { kind = "obelisk", source = "title" },
     [75] = { kind = "open_chest", source = "opcode", chestIds = {1} },
     [76] = { kind = "open_chest", source = "opcode", chestIds = {2} },
-    [90] = { kind = "enter_house", source = "opcode", houseId = 433, targetName = "巴阿至高神庙" },
+    [90] = { kind = "enter_house", source = "opcode", houseId = 433, targetName = "羊鸣至尊神殿" },
     [100] = { kind = "fountain", source = "title" },
     [210] = { kind = "obelisk", source = "title" },
     },

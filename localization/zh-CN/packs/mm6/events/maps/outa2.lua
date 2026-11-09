@@ -34,7 +34,7 @@ SetMapMetadata({
     [75] = { kind = "open_chest", source = "opcode", chestIds = {1} },
     [76] = { kind = "open_chest", source = "opcode", chestIds = {2} },
     [77] = { kind = "open_chest", source = "opcode", chestIds = {3} },
-    [90] = { kind = "enter_house", source = "opcode", houseId = 334, targetName = "巴阿神庙" },
+    [90] = { kind = "enter_house", source = "opcode", houseId = 334, targetName = "羊鸣庙" },
     [100] = { kind = "fountain", source = "title" },
     [200] = { kind = "obelisk", source = "title" },
     },
@@ -152,9 +152,9 @@ RegisterEvent(77, "箱子", function()
     evt.OpenChest(3)
 end, "宝箱")
 
-RegisterEvent(90, "巴之神殿", function()
+RegisterEvent(90, "羊鸣庙", function()
     evt.EnterHouse(334) -- Temple Baa
-end, "巴之神殿")
+end, "羊鸣庙")
 
 RegisterEvent(100, "饮用喷泉", function()
     if not IsAtLeast(MapVar(2), 1) then

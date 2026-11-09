@@ -88,7 +88,7 @@ SetMapMetadata({
     [452] = { kind = "shrine", source = "title" },
     [453] = { kind = "obelisk", source = "title" },
     [501] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d09.blv", targetName = "泰坦要塞" },
-    [502] = { kind = "enter_dungeon", source = "opcode", targetMap = "d04.blv", targetName = "巴阿神庙" },
+    [502] = { kind = "enter_dungeon", source = "opcode", targetMap = "d04.blv", targetName = "羊鸣庙" },
     [503] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d22.blv", targetName = "山丘下的大厅" },
     },
     textureNames = {},
@@ -365,7 +365,7 @@ RegisterEvent(205, "饮用井水", function()
     evt.StatusText("精神焕发！")
 end, "饮用井水")
 
-RegisterEvent(206, "巴阿神庙", nil, "巴阿神庙")
+RegisterEvent(206, "羊鸣庙", nil, "羊鸣庙")
 
 RegisterEvent(207, "泰坦要塞", nil, "泰坦要塞")
 
@@ -657,9 +657,9 @@ RegisterEvent(501, "进入泰坦要塞", function()
     evt.MoveToMap(-1707, -21848, -1007, 512, 0, 0, 157, 1, "7d09.blv") -- The Titans' Stronghold
 end, "进入泰坦要塞")
 
-RegisterEvent(502, "进入巴阿神庙", function()
+RegisterEvent(502, "进入羊鸣庙", function()
     evt.MoveToMap(1, -2772, 1, 512, 0, 0, 158, 1, "d04.blv") -- The Temple of Baa
-end, "进入巴阿神庙")
+end, "进入羊鸣庙")
 
 RegisterEvent(503, "进入山丘下的大厅", function()
     evt.MoveToMap(-1114, 2778, 1, 1280, 0, 0, 159, 1, "7d22.blv") -- The Hall under the Hill

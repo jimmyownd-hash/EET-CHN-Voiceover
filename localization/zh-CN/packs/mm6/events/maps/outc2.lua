@@ -37,7 +37,7 @@ SetMapMetadata({
     [48] = { kind = "enter_house", source = "opcode", houseId = 337, targetName = "泰珀城堡" },
     [49] = { kind = "enter_house", source = "opcode", houseId = 209, targetName = "高层议会" },
     [52] = { kind = "enter_house", source = "opcode", houseId = 507, targetName = "进取号" },
-    [53] = { kind = "enter_house", source = "opcode", houseId = 334, targetName = "巴阿神庙" },
+    [53] = { kind = "enter_house", source = "opcode", houseId = 334, targetName = "羊鸣庙" },
     [54] = { kind = "enter_house", source = "opcode", houseId = 105, targetName = "巫师之铺" },
     [56] = { kind = "enter_house", source = "opcode", houseId = 1221, targetName = "房屋" },
     [57] = { kind = "enter_house", source = "opcode", houseId = 1236, targetName = "房屋" },
@@ -331,9 +331,9 @@ RegisterEvent(52, "进取号", function()
     evt.EnterHouse(507) -- Enterprise
 end, "企业号")
 
-RegisterEvent(53, "巴之神殿", function()
+RegisterEvent(53, "羊鸣庙", function()
     evt.EnterHouse(334) -- Temple Baa
-end, "巴之神殿")
+end, "羊鸣庙")
 
 RegisterEvent(54, "巫师之铺", function()
     evt.EnterHouse(105) -- The Sorcerer's Shoppe
@@ -613,9 +613,9 @@ RegisterEvent(123, "泰珀城堡", function()
     evt.StatusText("坦珀堡")
 end, "泰珀城堡")
 
-RegisterEvent(124, "巴之神殿", function()
+RegisterEvent(124, "羊鸣庙", function()
     evt.StatusText("咩神庙")
-end, "巴之神殿")
+end, "羊鸣庙")
 
 RegisterEvent(125, "自由港", function()
     evt.StatusText("自由港")

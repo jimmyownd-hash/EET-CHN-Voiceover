@@ -38,7 +38,7 @@ SetMapMetadata({
     [65] = { kind = "enter_house", source = "opcode", houseId = 1415, targetName = "房屋" },
     [75] = { kind = "open_chest", source = "opcode", chestIds = {1} },
     [76] = { kind = "open_chest", source = "opcode", chestIds = {2} },
-    [90] = { kind = "enter_house", source = "opcode", houseId = 435, targetName = "巴之神殿上殿" },
+    [90] = { kind = "enter_house", source = "opcode", houseId = 435, targetName = "羊鸣高等神殿" },
     [91] = { kind = "enter_house", source = "opcode", houseId = 448, targetName = "阿加的实验室" },
     [92] = { kind = "enter_house", source = "opcode", houseId = 449, targetName = "龙骑士洞穴" },
     [93] = { kind = "enter_house", source = "opcode", houseId = 427, targetName = "克里格斯城堡" },
@@ -193,7 +193,7 @@ end, "箱子")
 RegisterEvent(90, nil, function()
     evt.ForPlayer(Players.All)
     if not HasItem(2105) then -- Cloak of Baa
-        evt.StatusText("你不是巴阿的信徒。滚开！")
+        evt.StatusText("你不是羊鸣的信徒。滚开！")
         return
     end
     evt.MoveToMap(2094, -19, 177, 337, 0, 0, 435, 1, "6t7.blv") -- Superior Temple of Baa

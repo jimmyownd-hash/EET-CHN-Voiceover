@@ -61,7 +61,7 @@ SetMapMetadata({
     [73] = { kind = "open_chest", source = "opcode", chestIds = {7, 8, 9} },
     [90] = { kind = "enter_house", source = "opcode", houseId = 437, targetName = "蛇之神殿" },
     [91] = { kind = "enter_house", source = "opcode", houseId = 446, targetName = "狼穴" },
-    [92] = { kind = "enter_house", source = "opcode", houseId = 334, targetName = "巴阿神庙" },
+    [92] = { kind = "enter_house", source = "opcode", houseId = 334, targetName = "羊鸣庙" },
     [100] = { kind = "well", source = "title" },
     [101] = { kind = "well", source = "title" },
     [102] = { kind = "fountain", source = "title" },
@@ -737,9 +737,9 @@ RegisterEvent(91, nil, function()
     evt.MoveToMap(-9600, 22127, 1, 512, 0, 0, 446, 1, "6d17.blv") -- Lair of the Wolf
 end)
 
-RegisterEvent(92, "巴之神殿", function()
+RegisterEvent(92, "羊鸣庙", function()
     evt.EnterHouse(334) -- Temple Baa
-end, "巴之神殿")
+end, "羊鸣庙")
 
 RegisterEvent(100, "饮用井水", function()
     if IsAtLeast(LuckBonus, 50) then return end
