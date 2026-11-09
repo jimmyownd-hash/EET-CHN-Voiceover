@@ -7491,3 +7491,10 @@ take what they inflict	承受同等伤害
 party-wide	全队生效
 {n#} spell points (flat)	{n#} 点魔法值（固定）
 Vitality: *	生存力：
+# v1.8b 零星补漏
+Potion Deleted in Austerity	紧缩模式下被删除的药剂
+Not enough disarm skill	拆除陷阱技能不足
+No alchemy preference when sorting	排序时不考虑炼金偏好
+This potion has not enough power ({n#} needed)	这瓶药剂的强度不足（需要 {n#}）
+Item power reached the limit for its owner's level ({n#})	物品强度已达持有者等级的上限（{n#}）
+Grandmaster rank adds damage per skill point.	宗师级每点技能增加伤害。
