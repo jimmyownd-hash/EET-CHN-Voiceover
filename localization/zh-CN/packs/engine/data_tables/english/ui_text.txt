@@ -7845,3 +7845,14 @@ Not won yet	尚未获胜
  Requires a class promotion first.	需要先完成职业晋升。
  No trainer found.	没有找到导师。
  No trainer known yet: a tavern sells the Ledger of Teachers.	尚无已知导师：酒馆出售导师名册。
+{n#} items	{n#} 件物品
+off hand	副手
+main hand	主手
+bow	弓
+helm	头盔
+belt	腰带
+cloak	披风
+gauntlets	手套
+boots	靴子
+amulet	护身符
+ring	戒指

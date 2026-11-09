@@ -5,6 +5,8 @@
 #include "game/gameplay/ReputationRuntime.h"
 #include "game/rules/GameRules.h"
 #include "game/rules/MonsterRules.h"
+#include "game/rules/maw/MawMonsterRules.h"
+#include "game/ui/UiText.h"
 #include "game/party/Party.h"
 #include "game/tables/NpcDialogTable.h"
 
@@ -86,6 +88,12 @@ MonsterTable::MonsterStatsEntry bountyNamedStats(
         ActorRulesetFacts facts;
         facts.bossAffix = bossAffix;
         named.name = gameRulesFor(pParty).monsters.actorDisplayName(facts, stats.name);
+        const std::string affixName = mawBossAffixName(MawBossAffix(bossAffix));
+
+        if (!affixName.empty() && named.name.compare(0, affixName.size(), affixName) == 0)
+        {
+            named.name = UiText::translate(affixName) + named.name.substr(affixName.size());
+        }
     }
 
     return named;

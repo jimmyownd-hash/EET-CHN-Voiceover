@@ -11456,7 +11456,7 @@ void GameplayPartyOverlayRenderer::renderActorInspectOverlay(GameplayScreenRunti
                 return;
             }
 
-            activeEffects.push_back(std::string(pName) + " "
+            activeEffects.push_back(UiText::translate(pName) + " "
                 + GameplayHudOverlaySupport::formatRemainingDuration(std::ceil(remainingSeconds)));
         };
 

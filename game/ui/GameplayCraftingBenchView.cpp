@@ -7,6 +7,7 @@
 #include "game/tables/ItemTable.h"
 #include "game/tables/MergedBaseTables.h"
 #include "game/ui/GameplayAlchemyBenchView.h"
+#include "game/ui/UiText.h"
 
 #include <algorithm>
 #include <cmath>
@@ -229,7 +230,7 @@ std::optional<GameplayCraftingBenchModel> GameplayCraftingBenchView::buildModel(
         const CraftTargetEntry &target = model.targets[*model.selectedTarget];
         const Character *pOwner = pParty->member(target.ref.memberIndex);
         model.ownerText = (pOwner != nullptr ? pOwner->name + ", level " + std::to_string(pOwner->level) : "")
-            + (target.ref.worn ? ", " + slotName(target.ref.slot) : ", in the pack");
+            + (target.ref.worn ? ", " + UiText::translate(slotName(target.ref.slot)) : ", in the pack");
     }
 
     if (model.selectedTarget && model.selectedMaterial)

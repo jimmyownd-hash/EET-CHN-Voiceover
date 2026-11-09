@@ -9,6 +9,7 @@
 #include "game/ui/GameplayAlchemyBenchView.h"
 #include "game/ui/GameplayBenchPainter.h"
 #include "game/ui/GameplayCraftingBenchView.h"
+#include "game/ui/UiText.h"
 
 #include <SDL3/SDL.h>
 
@@ -453,7 +454,7 @@ void GameplayCraftingBenchRenderer::render(GameplayScreenRuntime &context, const
             {
                 if (!contains(after, line.text))
                 {
-                    lineY = painter.paragraph("CraftingBenchCompare", "- " + line.text, GameplayUiSkin::Penalty, lineY);
+                    lineY = painter.paragraph("CraftingBenchCompare", "- " + UiText::translate(line.text), GameplayUiSkin::Penalty, lineY);
                 }
             }
 
