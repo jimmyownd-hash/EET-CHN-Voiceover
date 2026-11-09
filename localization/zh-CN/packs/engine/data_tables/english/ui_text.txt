@@ -7490,3 +7490,4 @@ poison, disease, stone, death	中毒、疾病、石化、死亡
 take what they inflict	承受同等伤害
 party-wide	全队生效
 {n#} spell points (flat)	{n#} 点魔法值（固定）
+Vitality: *	生存力：
