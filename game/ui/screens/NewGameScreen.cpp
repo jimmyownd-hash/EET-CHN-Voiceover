@@ -565,13 +565,19 @@ void NewGameScreen::handleSdlEvent(const SDL_Event &event)
             return;
         }
 
-        for (size_t i = 0; pText[i] != '\0' && m_state.nameEditBuffer.size() < MaximumNameLength; ++i)
-        {
-            if (isPrintableNameCharacter(pText[i]))
+        Engine::Utf8::appendTyped(
+            m_state.nameEditBuffer,
+            pText,
+            MaximumNameLength,
+            [](uint32_t point)
             {
-                m_state.nameEditBuffer.push_back(pText[i]);
-            }
-        }
+                if (point < 0x80)
+                {
+                    return isPrintableNameCharacter(static_cast<char>(point));
+                }
+
+                return Engine::Utf8::isTypeable(point);
+            });
 
         return;
     }
@@ -1088,7 +1094,7 @@ void NewGameScreen::deleteNameEditCharacter()
 {
     if (m_state.nameEditing && !m_state.nameEditBuffer.empty())
     {
-        m_state.nameEditBuffer.pop_back();
+        Engine::Utf8::popBack(m_state.nameEditBuffer);
     }
 }
 

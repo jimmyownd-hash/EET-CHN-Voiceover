@@ -3,6 +3,7 @@
 #include "game/ui/screens/NewGameScreen.h"
 
 #include "game/rules/GameRules.h"
+#include "game/ui/ImeComposition.h"
 #include "game/ui/GameplayUiSkin.h"
 
 #include <algorithm>
@@ -453,7 +454,7 @@ void NewGameScreen::drawCreationIdentity(bool input)
     }
 
     sheetText({nameRect.x + 10 * u, nameRect.y, nameRect.width - 20 * u, nameRect.height},
-              m_state.nameEditing ? m_state.nameEditBuffer + "_" : m_state.name, "menu_arrus", 23, NameText);
+              m_state.nameEditing ? m_state.nameEditBuffer + ImeComposition::caret() : m_state.name, "menu_arrus", 23, NameText);
     setTextEditing(m_state.nameEditing);
 
     const Rect classRect = designRect("CharacterCreationClassValue");
