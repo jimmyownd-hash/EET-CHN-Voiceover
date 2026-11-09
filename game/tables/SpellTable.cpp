@@ -334,6 +334,10 @@ bool SpellTable::loadFromRows(const std::vector<std::vector<std::string>> &rows)
             continue;
         }
 
+        // Code compares spells by their English normalized name, so keep it English even when the
+        // displayed name is localized.
+        m_entries[idIt->second].normalizedName = canonicalLegacySpellAlias(normalizeName(english.pName));
+
         for (const char *pName : {english.pName, english.pShortName})
         {
             const std::string name = pName;
