@@ -7856,3 +7856,4 @@ gauntlets	手套
 boots	靴子
 amulet	护身符
 ring	戒指
+N/A	无
