@@ -11297,8 +11297,10 @@ void GameplayPartyOverlayRenderer::renderActorInspectOverlay(GameplayScreenRunti
     if (reveal.attackAndDamage)
     {
         attackRows = {
-            pStats->attack1Type,
-            (actorState.attack2Chance > 0 || !pStats->attack2Type.empty()) ? pStats->attack2Type : std::string()};
+            UiText::translate(pStats->attack1Type),
+            (actorState.attack2Chance > 0 || !pStats->attack2Type.empty())
+                ? UiText::translate(pStats->attack2Type)
+                : std::string()};
         damageRows = {
             formatMonsterDamageText(actorState.attack1Damage),
             (actorState.attack2Chance > 0 || actorState.attack2Damage.diceRolls > 0)
