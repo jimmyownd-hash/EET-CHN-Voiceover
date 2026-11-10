@@ -41,6 +41,9 @@ Issues we noticed in the current zh-cn pack (untranslated entries such as Promot
 corrupted apostrophes in 22 source strings, a few placeholder mismatches) plus the full 1941-entry term
 difference table.
 
+## 05-mm9-gaps
+Two player-visible strings still empty in the current `mm9.po`, translated (the other ~230 empty entries are debug labels).
+
 ## MM9
 Chinese translations of the MM9 Chedian Guide pages (quests, promotions, travel, teachers, shops, bestiary,
 items) are in `../guides/mm9/`, with a glossary. We kept the MM6-8 terminology so that MM9 text can be dropped

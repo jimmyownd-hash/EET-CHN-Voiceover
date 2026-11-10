@@ -1,0 +1,10 @@
+# The only two player-visible entries still empty in assets_dev/languages/zh-cn/text/mm9.po
+# (the other ~230 empty entries are developer debug strings: "Cinema ...: done", "... destroyed", "asdf" ...).
+# Terms follow the existing mm9.po (Atli -> 阿特利, Elixir of Defedation -> 净体灵药).
+
+#: assets_dev/worlds/mm9/events/maps/guberland.lua:157
+msgid "The raiders got away. Atli's boat needs guarding again tonight."
+msgstr "袭击者逃走了。今晚阿特利的船又得有人看守了。"
+
+msgid "The engine roars, but there is no Elixir of Defedation to drink."
+msgstr "引擎轰鸣作响，可是没有净体灵药可喝。"
