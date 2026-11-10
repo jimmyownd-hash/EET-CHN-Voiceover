@@ -468,7 +468,7 @@ RegisterEvent(454, nil, function()
     evt.CastSpell(15, 20, 3, 256, -608, 632, -1, -1, -1) -- Sparks
 end)
 
-RegisterEvent(501, "离开雷格纳海盗前哨站站", function()
+RegisterEvent(501, "离开雷格纳海盗前哨站", function()
     evt.MoveToMap(4217, -17375, 146, 1536, 0, 0, 0, 1, "out01.odm") -- Dagger Wound Island
-end, "离开雷格纳海盗前哨站站")
+end, "离开雷格纳海盗前哨站")
 

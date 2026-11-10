@@ -1011,7 +1011,7 @@ Castle Stromgard	斯壮姆嘉德城堡
 Backdoor of Abandoned Temple	废弃神殿的后门
 Gateway to the Plane of Air	前往风元素界的传送门
 Gateway to the Plane of Water	前往水元素界的传送门
-Pirate Outpost	海盗前哨站站
+Pirate Outpost	海盗前哨站
 Gateway to the Plane of Fire	前往火元素界的传送门
 Gateway to the Plane of Earth	前往地元素界的传送门
 Merchanthouse of Alvar	阿尔瓦的商人公会

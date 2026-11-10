@@ -3,7 +3,7 @@ Q Bit	Quest Note Text	Notes	Owner
 2		Activate Area 1 teleporters 5 and 6.	Riki
 3	将达德洛斯的信送给渡鸦海滨商人之家中的艾德加·费尔蒙	Given by Dadeross in Dagger Wound. Taken by Fellmoon in Ravenshore.	TomO
 4		Letter from Q Bit 3 delivered.	TomO
-5	杀死匕伤岛上雷格那海盗前哨站站的首领	Given by the alliance council at Ravenshore along with quest 31. Starts Pirate Timer.	TomO
+5	杀死匕伤岛上雷格那海盗前哨站的首领	Given by the alliance council at Ravenshore along with quest 31. Starts Pirate Timer.	TomO
 6		Pirate Leader in Dagger Wound Pirate Outpost killed (quest given at Q Bit 5). Ends pirate/lizardman war on Dagger Wound. Shuts off pirate timer.	TomO
 7	将布拉克许·单牙的传送水晶带回给费德瑞克·塔力米尔	Brekish Onefang asks player to bring a power crystal to Fredrick Talimere	TomO
 8		Fredrick Talimere visited by player with crystal in their possesion.	TomO

@@ -894,9 +894,9 @@ RegisterEvent(501, "进入废弃神殿", function()
     evt.MoveToMap(-3008, -1696, 2464, 512, 0, 0, 346, 1, "d05.blv") -- Abandoned Temple
 end, "进入废弃神殿")
 
-RegisterEvent(502, "进入雷格纳海盗前哨站站", function()
+RegisterEvent(502, "进入雷格纳海盗前哨站", function()
     evt.MoveToMap(-7, -714, 1, 512, 0, 0, 349, 1, "d06.blv") -- Pirate Outpost
-end, "进入雷格纳海盗前哨站站")
+end, "进入雷格纳海盗前哨站")
 
 RegisterEvent(503, "进入升空图书馆", function()
     evt.MoveToMap(-592, 624, 0, 0, 0, 0, 0, 1, "d40.blv") -- Uplifted Library
