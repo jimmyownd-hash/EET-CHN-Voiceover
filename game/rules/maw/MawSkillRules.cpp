@@ -15,6 +15,7 @@
 #include "game/rules/maw/MawSkillFormulas.h"
 #include "game/rules/maw/MawSpellFormulas.h"
 #include "game/rules/maw/MawTexts.h"
+#include "game/ui/UiText.h"
 
 #include <algorithm>
 #include <array>
@@ -590,7 +591,9 @@ SkillTooltipText MawSkillRules::skillTooltip(
         {
             std::ostringstream line;
             line << "Chance to paralyse vs level " << reference << ": " << mawRound(chance * 10000) / 100 << " %";
-            stunLine = line.str();
+            // Composed in code and spliced mid-paragraph into the description, so the draw-time translation cannot
+            // match it as a whole: translate it here.
+            stunLine = UiText::translate(line.str());
         }
 
         const auto [power, vitality] = mawRetaliationCoefficients(m_rules, character, *party.itemTable(),
