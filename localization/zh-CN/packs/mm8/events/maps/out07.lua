@@ -31,13 +31,13 @@ SetMapMetadata({
     [11] = { kind = "enter_house", source = "opcode", houseId = 610, targetName = "鸦视宅邸" },
     [13] = { kind = "enter_house", source = "opcode", houseId = 611, targetName = "造梦者宅邸" },
     [15] = { kind = "enter_house", source = "opcode", houseId = 612, targetName = "雪树宅邸" },
-    [17] = { kind = "enter_house", source = "opcode", houseId = 613, targetName = "丹蒂利昂宅邸" },
+    [17] = { kind = "enter_house", source = "opcode", houseId = 613, targetName = "丹提理安宅邸" },
     [19] = { kind = "enter_house", source = "opcode", houseId = 614, targetName = "米斯里特宅邸" },
     [21] = { kind = "enter_house", source = "opcode", houseId = 615, targetName = "汤克宅邸" },
     [23] = { kind = "enter_house", source = "opcode", houseId = 616, targetName = "锐锋宅邸" },
     [25] = { kind = "enter_house", source = "opcode", houseId = 617, targetName = "宝石宅邸" },
     [27] = { kind = "enter_house", source = "opcode", houseId = 618, targetName = "桑普森宅邸" },
-    [29] = { kind = "enter_house", source = "opcode", houseId = 701, targetName = "韦里什之家" },
+    [29] = { kind = "enter_house", source = "opcode", houseId = 701, targetName = "瓦瑞西之家" },
     [81] = { kind = "open_chest", source = "opcode", chestIds = {0} },
     [82] = { kind = "open_chest", source = "opcode", chestIds = {1} },
     [83] = { kind = "open_chest", source = "opcode", chestIds = {2} },
@@ -126,11 +126,11 @@ end, "雪树宅邸")
 
 RegisterEvent(16, "雪树宅邸", nil, "雪树宅邸")
 
-RegisterEvent(17, "丹蒂利昂宅邸", function()
+RegisterEvent(17, "丹提理安宅邸", function()
     evt.EnterHouse(613) -- Dantillion's Residence
-end, "丹蒂利昂宅邸")
+end, "丹提理安宅邸")
 
-RegisterEvent(18, "丹蒂利昂宅邸", nil, "丹蒂利昂宅邸")
+RegisterEvent(18, "丹提理安宅邸", nil, "丹提理安宅邸")
 
 RegisterEvent(19, "米斯里特宅邸", function()
     evt.EnterHouse(614) -- Mithrit Residence
@@ -162,11 +162,11 @@ end, "桑普森宅邸")
 
 RegisterEvent(28, "桑普森宅邸", nil, "桑普森宅邸")
 
-RegisterEvent(29, "韦里什之家", function()
+RegisterEvent(29, "瓦瑞西之家", function()
     evt.EnterHouse(701) -- Verish's House
-end, "韦里什之家")
+end, "瓦瑞西之家")
 
-RegisterEvent(30, "韦里什之家", nil, "韦里什之家")
+RegisterEvent(30, "瓦瑞西之家", nil, "瓦瑞西之家")
 
 RegisterEvent(81, "箱子", function()
     evt.OpenChest(0)

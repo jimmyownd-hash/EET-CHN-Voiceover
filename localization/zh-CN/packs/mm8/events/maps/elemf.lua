@@ -28,8 +28,8 @@ SetMapMetadata({
     [100] = {19},
     },
     contextActions = {
-    [11] = { kind = "enter_house", source = "opcode", houseId = 686, targetName = "余烬之家" },
-    [13] = { kind = "enter_house", source = "opcode", houseId = 687, targetName = "恒焰之家" },
+    [11] = { kind = "enter_house", source = "opcode", houseId = 686, targetName = "安伯之家" },
+    [13] = { kind = "enter_house", source = "opcode", houseId = 687, targetName = "暮光之家" },
     [15] = { kind = "enter_house", source = "opcode", houseId = 688, targetName = "空房屋" },
     [17] = { kind = "enter_house", source = "opcode", houseId = 689, targetName = "空房屋" },
     [19] = { kind = "enter_house", source = "opcode", houseId = 690, targetName = "空房屋" },
@@ -94,17 +94,17 @@ RegisterNoOpEvent(9, nil)
 
 RegisterNoOpEvent(10, nil)
 
-RegisterEvent(11, "余烬之家", function()
+RegisterEvent(11, "安伯之家", function()
     evt.EnterHouse(686) -- Ember's House
-end, "余烬之家")
+end, "安伯之家")
 
-RegisterEvent(12, "余烬之家", nil, "余烬之家")
+RegisterEvent(12, "安伯之家", nil, "安伯之家")
 
-RegisterEvent(13, "恒焰之家", function()
+RegisterEvent(13, "暮光之家", function()
     evt.EnterHouse(687) -- Evenblaze's House
-end, "恒焰之家")
+end, "暮光之家")
 
-RegisterEvent(14, "恒焰之家", nil, "恒焰之家")
+RegisterEvent(14, "暮光之家", nil, "暮光之家")
 
 RegisterEvent(15, "空房屋", function()
     evt.EnterHouse(688) -- Empty House

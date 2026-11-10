@@ -23,7 +23,7 @@ SetMapMetadata({
     [20] = { kind = "enter_house", source = "opcode", houseId = 1584, targetName = "自由港学院" },
     [22] = { kind = "enter_house", source = "opcode", houseId = 273, targetName = "回荡低语" },
     [24] = { kind = "enter_house", source = "opcode", houseId = 272, targetName = "维克托之厅" },
-    [26] = { kind = "enter_house", source = "opcode", houseId = 274, targetName = "洛克姆骄傲" },
+    [26] = { kind = "enter_house", source = "opcode", houseId = 274, targetName = "罗克汉姆骄傲" },
     [28] = { kind = "enter_house", source = "opcode", houseId = 300, targetName = "外汇兑换所" },
     [30] = { kind = "enter_house", source = "opcode", houseId = 133, targetName = "火系进阶行会" },
     [32] = { kind = "enter_house", source = "opcode", houseId = 139, targetName = "空气进阶行会" },
@@ -251,11 +251,11 @@ end, "维克托之厅")
 
 RegisterEvent(25, "维克托之厅", nil, "维克托之厅")
 
-RegisterEvent(26, "洛克姆骄傲", function()
+RegisterEvent(26, "罗克汉姆骄傲", function()
     evt.EnterHouse(274) -- Rockham's Pride
-end, "洛克姆骄傲")
+end, "罗克汉姆骄傲")
 
-RegisterEvent(27, "洛克姆骄傲", nil, "洛克姆骄傲")
+RegisterEvent(27, "罗克汉姆骄傲", nil, "罗克汉姆骄傲")
 
 RegisterEvent(28, "外汇兑换所", function()
     evt.EnterHouse(300) -- Foreign Exchange

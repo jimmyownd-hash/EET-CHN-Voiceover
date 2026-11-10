@@ -99,24 +99,24 @@ SetMapMetadata({
     [99] = { kind = "open_chest", source = "opcode", chestIds = {18} },
     [100] = { kind = "open_chest", source = "opcode", chestIds = {19} },
     [201] = { kind = "enter_house", source = "opcode", houseId = 755, targetName = "牛头人首领之室" },
-    [203] = { kind = "enter_house", source = "opcode", houseId = 624, targetName = "萨尼斯之家" },
-    [205] = { kind = "enter_house", source = "opcode", houseId = 625, targetName = "费里斯之家" },
+    [203] = { kind = "enter_house", source = "opcode", houseId = 624, targetName = "坦尼斯之家" },
+    [205] = { kind = "enter_house", source = "opcode", houseId = 625, targetName = "费瑞斯之家" },
     [207] = { kind = "enter_house", source = "opcode", houseId = 626, targetName = "被淹房屋" },
     [209] = { kind = "enter_house", source = "opcode", houseId = 626, targetName = "被淹房屋" },
     [211] = { kind = "enter_house", source = "opcode", houseId = 628, targetName = "武器店占位符" },
     [213] = { kind = "enter_house", source = "opcode", houseId = 629, targetName = "苏尔泰尔屋" },
-    [215] = { kind = "enter_house", source = "opcode", houseId = 630, targetName = "里奥内尔之家" },
+    [215] = { kind = "enter_house", source = "opcode", houseId = 630, targetName = "瑞欧耐尔之家" },
     [217] = { kind = "enter_house", source = "opcode", houseId = 631, targetName = "盔甲店占位符" },
     [219] = { kind = "enter_house", source = "opcode", houseId = 632, targetName = "魔法店占位符" },
     [221] = { kind = "enter_house", source = "opcode", houseId = 633, targetName = "法术店占位符" },
-    [223] = { kind = "enter_house", source = "opcode", houseId = 634, targetName = "乌尔布雷希特之家" },
+    [223] = { kind = "enter_house", source = "opcode", houseId = 634, targetName = "乌布理契之家" },
     [225] = { kind = "enter_house", source = "opcode", houseId = 635, targetName = "森杰克之家" },
     [227] = { kind = "enter_house", source = "opcode", houseId = 636, targetName = "炼金术士占位符" },
     [229] = { kind = "enter_house", source = "opcode", houseId = 637, targetName = "神殿占位符" },
     [451] = { kind = "fountain", source = "title" },
     [452] = { kind = "enter_house", source = "opcode", houseId = 638, targetName = "洛茨之家" },
     [454] = { kind = "enter_house", source = "opcode", houseId = 639, targetName = "霍利菲尔德之家" },
-    [456] = { kind = "enter_house", source = "opcode", houseId = 640, targetName = "特萨拉之家" },
+    [456] = { kind = "enter_house", source = "opcode", houseId = 640, targetName = "泰沙拉之家" },
     [458] = { kind = "enter_house", source = "opcode", houseId = 641, targetName = "暴风眼之家" },
     [460] = { kind = "enter_house", source = "opcode", houseId = 642, targetName = "银行占位符" },
     [462] = { kind = "enter_house", source = "opcode", houseId = 643, targetName = "训练场占位符" },
@@ -658,11 +658,11 @@ RegisterEvent(201, "牛头人首领之室", function()
     evt.EnterHouse(755) -- Minotaur Leader's Room
 end, "牛头人首领之室")
 
-RegisterEvent(203, "萨尼斯之家", function()
+RegisterEvent(203, "坦尼斯之家", function()
     evt.EnterHouse(624) -- Thanys' House
-end, "萨尼斯之家")
+end, "坦尼斯之家")
 
-RegisterEvent(204, "萨尼斯之家", nil, "萨尼斯之家")
+RegisterEvent(204, "坦尼斯之家", nil, "坦尼斯之家")
 
 RegisterEvent(205, "被淹房屋", function()
     if not IsQBitSet(QBit(23)) then -- Allied with Minotaurs. Rescue the Minotaurs done.

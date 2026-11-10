@@ -98,7 +98,7 @@ SetMapMetadata({
     [98] = { kind = "open_chest", source = "opcode", chestIds = {17} },
     [99] = { kind = "open_chest", source = "opcode", chestIds = {18} },
     [100] = { kind = "open_chest", source = "opcode", chestIds = {19} },
-    [131] = { kind = "enter_house", source = "opcode", houseId = 702, targetName = "弗兰德林洞穴" },
+    [131] = { kind = "enter_house", source = "opcode", houseId = 702, targetName = "佛蓝林洞穴" },
     [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "out04.odm", targetName = "铁砂荒漠" },
     },
     textureNames = {},
@@ -410,9 +410,9 @@ RegisterEvent(100, "箱子", function()
     evt.OpenChest(19)
 end, "箱子")
 
-RegisterEvent(131, "弗兰德林洞穴", function()
+RegisterEvent(131, "佛蓝林洞穴", function()
     evt.EnterHouse(702) -- Flamdring's Cave
-end, "弗兰德林洞穴")
+end, "佛蓝林洞穴")
 
 RegisterEvent(501, "离开伊辛戈雷的洞穴", function()
     evt.MoveToMap(-17928, 14096, 2080, 1536, 0, 0, 0, 3, "out04.odm") -- Ironsand Desert

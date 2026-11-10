@@ -47,7 +47,7 @@
 46	174	占位符		human armor01			30940	0537	Armor Shop
 47	174	农夫铁匠铺		human armor01			30940	0537	Armor Shop
 48	324	占位符		out10 connecting tunnel cave #1				0	Dungeon Ent
-49	174	凯瑟琳女王铁匠铺		human armor01			30940	0537	Armor Shop
+49	174	凯瑟琳王后铁匠铺		human armor01			30940	0537	Armor Shop
 50	174	占位符		human armor01			30940	0537	Armor Shop
 51	179	皮衣与圆盾		elf armor			31100	0496	Armor Shop
 52	177	荣誉盔甲		wizard armor			30660	1505	Armor Shop
@@ -56,7 +56,7 @@
 55	174	缺失之环		human armor01			30940	0537	Armor Shop
 56	179	艾弗里前哨		elf armor			31100	0496	Armor Shop
 57	176	抛光肩甲店		dwarven armor01			30570	0491	Armor Shop
-58	174	塞尔盔甲盾牌店		human armor01			30940	0537	Armor Shop
+58	174	特尔盔甲盾牌店		human armor01			30940	0537	Armor Shop
 59	174	合金甲盾店		human armor01			30940	0537	Armor Shop
 60	174	绿林铁匠铺		human armor01			30940	0537	Armor Shop
 61	174	掷出的铁手套		human armor01			30940	0537	Armor Shop
@@ -81,7 +81,7 @@
 80	76	神秘混乱		nmagshp			34900	1099	Magic Shop
 81	49	力量护符店		mmagshp			32700	1082	Magic Shop
 82	99	雷格纳之礼		rmagshp			36000	1075	Magic Shop
-83	33	考里古玩店		demagshp			31600	1133	Magic Shop
+83	33	卡奥里古玩店		demagshp			31600	1133	Magic Shop
 84	194	翡翠附魔店		human magic shop01			30910	0529	Magic Shop
 85	194	奥托奇物店		human magic shop01			30910	0529	Magic Shop
 86	194	女王魔法店		human magic shop01			30910	0529	Magic Shop
@@ -213,7 +213,7 @@
 212	24	族长之厅	1,2	lchwar				0	Throne
 213	81	桑德罗/赞特王座厅	9,10	tsthrone				0	Throne
 214	67	太阳神殿领袖室	33	tthrone				0	Throne
-215	350	马克姆领主之室		lord markam				0	Throne
+215	350	马克汉姆爵士之室		lord markam				0	Throne
 216	347	王座厅	398	dwarven king				0	Throne
 217	342	王座厅	408	gryphonheart throne room				0	Throne
 218	343	王座厅	409	elf castle throne room				0	Throne
@@ -253,7 +253,7 @@
 252	208	格罗格烈酒馆		dwarven tavern01			31180	0485	Tavern
 253	206	骑士消遣		human tavern01			30870	0535	Tavern
 254	206	最后去处		human tavern01			30870	0535	Tavern
-255	206	加里恩路边酒馆		human tavern01			30870	0535	Tavern
+255	206	加里昂路边酒馆		human tavern01			30870	0535	Tavern
 256	206	舒适享受		human tavern01			30870	0535	Tavern
 257	206	想当英雄吗？		human tavern01			30870	0535	Tavern
 258	206	优雅兽人		human tavern01			30870	0535	Tavern
@@ -272,7 +272,7 @@
 271	393	生锈盾牌		tavpoor1			46400	0278	Tavern
 272	394	维克托之厅		tavrich			31390	0027	Tavern
 273	396	回荡低语		tavmid			31420	0156	Tavern
-274	395	洛克姆骄傲	792	tavpoor2			31410	0433	Tavern
+274	395	罗克汉姆骄傲	792	tavpoor2			31410	0433	Tavern
 275	396	冰霜与理性		tavmid			31420	0156	Tavern
 276	393	冰霜酒杯		tavpoor1			46400	0278	Tavern
 277	395	绿洲		tavpoor2			31410	0433	Tavern
@@ -551,16 +551,16 @@
 550	27	维尔顿小屋	79	demedhs				0	House
 551	27	法斯韦尔之家	233	demedhs				0	House
 552	27	羽风之家	234	demedhs				0	House
-553	87	斯通小屋	119,238	trporhs1				0	House
+553	87	石头小屋	119,238	trporhs1				0	House
 554	87	炉誓小屋	132	trporhs1				0	House
-555	87	塔利昂小屋	78,135	trporhs1				0	House
+555	87	塔力安小屋	78,135	trporhs1				0	House
 556	87	迷雾小屋	149	trporhs1				0	House
-557	87	霍伯特小屋	82,242	trporhs1				0	House
+557	87	贺伯特小屋	82,242	trporhs1				0	House
 558	87	绿风暴小屋	198,243	trporhs1				0	House
 559	87	波尔小屋	84,244	trporhs1				0	House
 560	87	塔伦特小屋	214	trporhs1				0	House
-561	87	施梅克小屋	43,67,86	trporhs1				0	House
-562	57	阿瓦隆宅邸	90	dhporhs				0	House
+561	87	史麦克小屋	43,67,86	trporhs1				0	House
+562	57	阿瓦龙宅邸	90	dhporhs				0	House
 563	56	阿林宅邸	164	dhmedhs				0	House
 564	57	光誓宅邸	192	dhporhs				0	House
 565	56	水獭镇宅邸	197	dhmedhs				0	House
@@ -570,8 +570,8 @@
 569	56	克恩宅邸	158	dhmedhs				0	House
 570	57	珍妮宅邸	203	dhporhs				0	House
 571	56	韦尔德里克之家	232	dhmedhs				0	House
-572	171	伊什顿洞穴	91,178,255	cave				0	House
-573	171	伊希尔戈尔洞穴	179,269	cave				0	House
+572	171	伊斯顿洞穴	91,178,255	cave				0	House
+573	171	伊斯希尔歌尔洞穴	179,269	cave				0	House
 574	171	疤翼洞穴	89,180	cave				0	House
 575	10	告诉詹姆斯你看到这个353		lmedhs1				0	House
 576	10	告诉詹姆斯你看到这个354		lmedhs1				0	House
@@ -586,9 +586,9 @@
 585	68	沙多之家	172	nrchhs1				0	House
 586	71	梅尔库图拉之家	276	nporhs				0	House
 587	68	罗根之厅	201	nrchhs1				0	House
-588	71	哈利恩小屋	95	nporhs				0	House
+588	71	海林安小屋	95	nporhs				0	House
 589	68	罗伯茨宅邸	294	nrchhs1				0	House
-590	68	因法斯图斯之家	284	nrchhs1				0	House
+590	68	因佛史塔斯之家	284	nrchhs1				0	House
 591	68	旅程之家	104	nrchhs1				0	House
 592	71	低语之厅	101	nporhs				0	House
 593	71	钢眼庄园	185	nporhs				0	House
@@ -604,41 +604,41 @@
 603	68	绞架井庄园	240	nrchhs1				0	House
 604	71	菲德尔伯恩之家	236	nporhs				0	House
 605	68	德韦雷罗宅邸	278	nrchhs1				0	House
-606	68	坦蒂利昂之家	93	nrchhs1				0	House
+606	68	坦尼林安之家	93	nrchhs1				0	House
 607	68	拳头宅邸	237	nrchhs1				0	House
 608	71	沃格林实验室	319	nporhs				0	House
 609	68	华莱士之家	325	nrchhs1				0	House
 610	66	鸦视宅邸	159	clporhs				0	House
 611	66	造梦者宅邸	162	clporhs				0	House
 612	66	雪树宅邸	59,165	clporhs				0	House
-613	66	丹蒂利昂宅邸	41,167	clporhs				0	House
+613	66	丹提理安宅邸	41,167	clporhs				0	House
 614	66	米斯里特宅邸	190	clporhs				0	House
 615	66	汤克宅邸	88,204	clporhs				0	House
 616	66	锐锋宅邸	206	clporhs				0	House
 617	66	宝石宅邸	100,212	clporhs				0	House
 618	66	桑普森宅邸	215	clporhs				0	House
-619	87	泽维乌斯宅邸	85	trporhs1				0	House
-620	87	维什之家	321	trporhs1				0	House
+619	87	夕维恶斯宅邸	85	trporhs1				0	House
+620	87	维许之家	321	trporhs1				0	House
 621	87	帆之小屋	315	trporhs1				0	House
 622	87	波多小屋	320	trporhs1				0	House
-623	87	加尔维努斯之家	77	trporhs1				0	House
-624	43	萨尼斯之家	57	mporhs				0	House
-625	43	费里斯之家	322	mporhs				0	House
+623	87	加文那斯之家	77	trporhs1				0	House
+624	43	坦尼斯之家	57	mporhs				0	House
+625	43	费瑞斯之家	322	mporhs				0	House
 626	44	被淹房屋		mdrownhs				0	House
 627	44	被淹商店		mdrownhs				0	House
 628	41	武器店占位符		mrchhs				0	House
 629	41	苏尔泰尔屋	186	mrchhs				0	House
-630	41	里奥内尔之家	282	mrchhs				0	House
+630	41	瑞欧耐尔之家	282	mrchhs				0	House
 631	41	盔甲店占位符		mrchhs				0	House
 632	41	魔法店占位符		mrchhs				0	House
 633	41	法术店占位符		mrchhs				0	House
-634	41	乌尔布雷希特之家	290	mrchhs				0	House
+634	41	乌布理契之家	290	mrchhs				0	House
 635	43	森杰克之家	117	mporhs				0	House
 636	41	炼金术士占位符		mrchhs				0	House
 637	41	神殿占位符		mrchhs				0	House
 638	41	洛茨之家	161	mrchhs				0	House
 639	41	霍利菲尔德之家	134	mrchhs				0	House
-640	43	特萨拉之家	58	mporhs				0	House
+640	43	泰沙拉之家	58	mporhs				0	House
 641	41	暴风眼之家	152	mrchhs				0	House
 642	41	银行占位符		mrchhs				0	House
 643	41	训练场占位符		mrchhs				0	House
@@ -657,14 +657,14 @@
 656	92	特伦斯之家	323	rrchhs1				0	House
 657	94	蕨类巢穴	324	rmedhs				0	House
 658	92	帕维尔之居	103	rrchhs1				0	House
-659	94	纳拉尼之厅	326	rmedhs				0	House
+659	94	娜拉尼之厅	326	rmedhs				0	House
 660	92	默瑟住宅	327	rrchhs1				0	House
 661	86	空气领主囚室	26	aelmcell				0	House
 662	85	水之领主囚室	24	welmcell				0	House
 663	84	土之领主囚室	25	eelmcell				0	House
 664	83	火之领主囚室	23	felmcell				0	House
-665	111	翼帆之家	258	aelmhs				0	House
-666	111	水汽之家	259	aelmhs				0	House
+665	111	翅帆之家	258	aelmhs				0	House
+666	111	瓦波之家	259	aelmhs				0	House
 667	111	和风之家	239	aelmhs				0	House
 668	111	空房屋		aelmhs				0	House
 669	111	空房屋		aelmhs				0	House
@@ -672,10 +672,10 @@
 671	111	空房屋		aelmhs				0	House
 672	111	内德隆之家	153	aelmhs				0	House
 673	71	鹤之小屋	228	nporhs				0	House
-674	10	卡格诺商店	106	lmedhs1				0	House
+674	10	卡格纳商店	106	lmedhs1				0	House
 675	68	比思庄园	220	nrchhs1				0	House
-676	110	土行者之家	256	eelmhs				0	House
-677	110	土壤之家	257	eelmhs				0	House
+676	110	罗姆沃克之家	256	eelmhs				0	House
+677	110	所一尔之家	257	eelmhs				0	House
 678	110	空房屋		eelmhs				0	House
 679	110	空房屋		eelmhs				0	House
 680	110	空房屋		eelmhs				0	House
@@ -684,8 +684,8 @@
 683	110	空房屋		eelmhs				0	House
 684	110	空房屋		eelmhs				0	House
 685	110	空房屋		eelmhs				0	House
-686	108	余烬之家	311	felmhs				0	House
-687	108	恒焰之家	312	felmhs				0	House
+686	108	安伯之家	311	felmhs				0	House
+687	108	暮光之家	312	felmhs				0	House
 688	108	空房屋		felmhs				0	House
 689	108	空房屋		felmhs				0	House
 690	108	空房屋		felmhs				0	House
@@ -694,14 +694,14 @@
 693	109	空房屋		welmhs				0	House
 694	109	空房屋		welmhs				0	House
 695	109	空房屋		welmhs				0	House
-696	110	格里文之家	156	eelmhs				0	House
+696	110	葛瑞文之家	156	eelmhs				0	House
 697	87	石下之家	289	trporhs1				0	House
 698	87	蓟骨宅邸	281	trporhs1				0	House
 699	56	内利克斯之家	280	dhmedhs				0	House
-700	56	坦普斯之家	288	dhmedhs				0	House
-701	66	韦里什之家	279	clporhs				0	House
-702	171	弗兰德林洞穴	277	cave				0	House
-703	171	硫磺洞穴	285	cave				0	House
+700	56	坦帕斯之家	288	dhmedhs				0	House
+701	66	瓦瑞西之家	279	clporhs				0	House
+702	171	佛蓝林洞穴	277	cave				0	House
+703	171	布尔斯通洞穴	285	cave				0	House
 704	171	杜罗思洞穴	293	cave				0	House
 705	389	占位符		throne02			31780	0	Throne
 706	10	House 487		lmedhs1				0	House
@@ -750,16 +750,16 @@
 749	10	占位符		lmedhs1				0	House
 750	10	占位符		lmedhs1				0	House
 751	40	议会厅大门	40	decouncl				0	House
-752	87	奥弗杜恩之家		trporhs1				0	House
-753	64	查尔斯·吉诃德之家	15	cquixote				0	House
-754	71	戴森·利兰之室	11	nporhs				0	House
+752	87	欧瓦都之家		trporhs1				0	House
+753	64	查尔斯·科切特之家	15	cquixote				0	House
+754	71	戴森·李蓝之室	11	nporhs				0	House
 755	54	牛头人首领之室	13	mledden				0	House
 756	10	冒险者旅店		lmedhs1				0	House
 757	10	神谕者	314	lmedhs1				0	House
 758	10	冒险者旅店		lmedhs1				0	House
 759	10	冒险者旅店		lmedhs1				0	House
 760	10	冒险者旅店		lmedhs1				0	House
-761	13	嘶嘶小屋	69	lporhs1				0	House
+761	13	希斯小屋	69	lporhs1				0	House
 762	87	杰克小屋	250	trporhs1				0	House
 763	10	占位符		lmedhs1				0	House
 764	10	占位符		lmedhs1				0	House
@@ -773,8 +773,8 @@
 772	91	狼鼠走私贩首领	4	wrthrone				0	House
 773	38	商会会馆	5	demguild				0	House
 774	82	龙首领洞穴	17	dlcavern				0	House
-775	103	埃斯卡顿王座厅	22	esthrone				0	House
-776	13	罗特纳克斯之家	29	lporhs1				0	House
+775	103	爱斯卡顿王座厅	22	esthrone				0	House
+776	13	罗特奈克斯之家	29	lporhs1				0	House
 777	25	艾弗庄园	249	derchhs1				0	House
 778	10	占位符		lmedhs1				0	House
 779	10	占位符		lmedhs1				0	House
@@ -790,20 +790,20 @@
 789	10	占位符		lmedhs1				0	House
 790	10	占位符		lmedhs1				0	House
 791	10	占位符		lmedhs1				0	House
-792	13	萨丁之家	133	lporhs1				0	House
+792	13	泰丁之家	133	lporhs1				0	House
 793	87	水坑小屋	118	trporhs1				0	House
 794	10	占位符		lmedhs1				0	House
 795	13	伊奇之家	181,213	lporhs1				0	House
 796	25	锻匠庄园	136	derchhs1				0	House
 797	10	占位符		lmedhs1				0	House
-798	13	倦怠者小屋	66,200	lporhs1				0	House
+798	13	蓝贵德小屋	66,200	lporhs1				0	House
 799	25	苹果之家	217	derchhs1				0	House
 800	10	占位符		lmedhs1				0	House
 801	10	占位符		lmedhs1				0	House
 802	10	占位符		lmedhs1				0	House
 803	10	占位符		lmedhs1				0	House
 804	13	蓟之家	68,127	lporhs1				0	House
-805	66	特雷布利德之家	98	clporhs				0	House
+805	66	崔比力之家	98	clporhs				0	House
 806	10	占位符		lmedhs1				0	House
 807	10	占位符		lmedhs1				0	House
 808	10	占位符		lmedhs1				0	House
@@ -812,7 +812,7 @@
 811	10	占位符		lmedhs1				0	House
 812	10	占位符		lmedhs1				0	House
 813	13	泽瓦小屋	163	lporhs1				0	House
-814	87	霍尔登小屋	248	trporhs1				0	House
+814	87	霍尔顿小屋	248	trporhs1				0	House
 815	10	占位符		lmedhs1				0	House
 816	10	占位符		lmedhs1				0	House
 817	10	占位符		lmedhs1				0	House
@@ -850,16 +850,16 @@
 849	10	占位符		lmedhs1				0	House
 850	10	占位符		lmedhs1				0	House
 851	10	占位符		lmedhs1				0	House
-852	13	梅纳萨之家	80,196	lporhs1				0	House
-853	66	阿奇博尔德之家	166	clporhs				0	House
+852	13	曼纳梭尔之家	80,196	lporhs1				0	House
+853	66	阿基巴德之家	166	clporhs				0	House
 854	10	占位符		lmedhs1				0	House
 855	10	占位符		lmedhs1				0	House
 856	10	占位符		lmedhs1				0	House
 857	10	占位符		lmedhs1				0	House
 858	10	占位符		lmedhs1				0	House
 859	10	占位符		lmedhs1				0	House
-860	13	外壳小屋	81	lporhs1				0	House
-861	41	阿里乌斯之家	241,266	mrchhs				0	House
+860	13	哈斯克小屋	81	lporhs1				0	House
+861	41	艾瑞恶斯之家	241,266	mrchhs				0	House
 862	10	占位符		lmedhs1				0	House
 863	10	占位符		lmedhs1				0	House
 864	10	占位符		lmedhs1				0	House
@@ -872,12 +872,12 @@
 871	25	救镇者之厅	121,130	derchhs1				0	House
 872	10	占位符		lmedhs1				0	House
 873	11	房屋		lmedhs1				0	House
-874	66	乔伯之家	125	clporhs				0	House
+874	66	乔波之家	125	clporhs				0	House
 875	10	占位符		lmedhs1				0	House
 876	11	长尾小屋	97,123	lmedhs1				0	House
-877	66	梅兰德尔之家	271	clporhs				0	House
+877	66	麦兰德之家	271	clporhs				0	House
 878	10	占位符		lmedhs1				0	House
-879	11	艾斯伦之家	65	lmedhs1				0	House
+879	11	埃斯蓝之家	65	lmedhs1				0	House
 880	56	蓝镰之家	222	dhmedhs				0	House
 881	10	占位符		lmedhs1				0	House
 882	11	格里维克之家	154	lmedhs1				0	House
@@ -888,14 +888,14 @@
 887	10	占位符		lmedhs1				0	House
 888	25	山人小屋	247	derchhs1				0	House
 889	25	洞丘庄园	176	derchhs1				0	House
-890	56	里弗之家	75	dhmedhs				0	House
+890	56	利斧之家	75	dhmedhs				0	House
 891	25	泰珀之厅	145	derchhs1				0	House
 892	56	普特南之家	193	dhmedhs				0	House
 893	27	卡兰德小屋	251	demedhs				0	House
-894	66	拉修斯之家	73	clporhs				0	House
+894	66	拉西亚斯之家	73	clporhs				0	House
 895	25	赏金猎人行会	109	derchhs1				0	House
 896	56	博瑟姆之厅	140	dhmedhs				0	House
-897	25	内布利克之家	105	derchhs1				0	House
+897	25	耐布力克之家	105	derchhs1				0	House
 898	56	劈石者之厅	207	dhmedhs				0	House
 899	25	旅舍		derchhs1				0	House
 900	56	旅舍		dhmedhs				0	House
@@ -908,7 +908,7 @@
 907	87	猎人小屋	116	trporhs1				0	House
 908	66	德尔维什小屋	50	clporhs				0	House
 909	87	多特家族小屋	231	trporhs1				0	House
-910	246	格斯伍尔夫之家	720	human poor house 1				0	House
+910	246	古斯渥夫之家	720	human poor house 1				0	House
 911	247	沃尔弗顿宅邸	559	human poor house 2				0	House
 912	248	House 271		human poor house 2				0	House
 913	246	House 272		human poor house 1				0	House
@@ -973,7 +973,7 @@
 972	283	牛皮宅邸	767	necromancer poor house 2				0	House
 973	282	暗行者之家	543	necromancer poor house 1				0	House
 974	283	凯德林宅邸	768	necromancer poor house 2				0	House
-975	285	博瑟姆之家	539	necromancer medium house 1				0	House
+975	285	波散恩之家	539	necromancer medium house 1				0	House
 976	286	莫格伦宅邸	737	necromancer medium house 2				0	House
 977	285	德拉肯宅邸	766	necromancer medium house 1				0	House
 978	286	哈利之居	783	necromancer medium house 2				0	House
@@ -1019,7 +1019,7 @@
 1018	173							0640	House
 1019	173							0640	House
 1020	261	斯尼克之家	380	elven rich house 1				0	House
-1021	262	地狱火之家	471,724	elven rich house 2				0	House
+1021	262	因法那之家	471,724	elven rich house 2				0	House
 1022	263	猎鹿者宅邸	554,560	elven rich house 3				0	House
 1023	261	快足之家	537	elven rich house 1				0	House
 1024	173							0640	House
@@ -1028,7 +1028,7 @@
 1027	248	埃弗里尔之家	544	human poor house 2				0	House
 1028	173							0640	House
 1029	173							0640	House
-1030	246	特里西娅之家	561	human poor house 1				0	House
+1030	246	翠西亚之家	561	human poor house 1				0	House
 1031	247	伊斯拉姆之家	465	human poor house 2				0	House
 1032	248	劈石者宅邸	451	human poor house 2				0	House
 1033	173							0640	House
@@ -1138,7 +1138,7 @@
 1137	274	分水岭宅邸	586,596	wizard poor house 2				0	House
 1138	276	霍利菲尔德宅邸	512	wizard medium house 1				0	House
 1139	277	甜蜜宅邸	383	wizard medium house 2				0	House
-1140	255	坦普斯之家	496	elven poor house 1				0	House
+1140	255	坦帕斯之家	496	elven poor house 1				0	House
 1141	256	凯恩之居	517	elven poor house 2				0	House
 1142	255	苹果宅邸	547	elven poor house 1				0	House
 1143	297	罗根宅邸	590	warlock rich house 1				0	House
@@ -1165,10 +1165,10 @@
 1164	352	仲裁者		arbiter good town				0	House
 1165	351	仲裁者	413	arbiter neutral town				0	House
 1166	353	仲裁者		arbiter evil town				0	House
-1167	246	唐娜·怀里斯宅邸	351	human poor house 1				0	House
+1167	246	唐纳·理斯宅邸	351	human poor house 1				0	House
 1168	359	玛格丽特夫人号	350	boat01			45900	0	House
 1169	341	王座厅		harmondale throne room				0	House
-1170	247	米娅·露西尔之家	353	human poor house 2				0	House
+1170	247	米尔·路基之家	353	human poor house 2				0	House
 1171	248	万达利尔宅邸	352	human poor house 2				0	House
 1172	246	House 227		human poor house 1				0	House
 1173	247	House 228		human poor house 2				0	House
@@ -1181,7 +1181,7 @@
 1180	248	House 235		human poor house 2				0	House
 1181	246	House 236		human poor house 1				0	House
 1182	247	House 237		human poor house 2				0	House
-1183	249	卡罗琳·韦瑟斯之家	348	human medium house 1				0	House
+1183	249	凯洛琳·威瑟之家	348	human medium house 1				0	House
 1184	250	特尔马宅邸	349	human medium house 2				0	House
 1185	249	House 241		human medium house 1				0	House
 1186	250	House 242		human medium house 2				0	House

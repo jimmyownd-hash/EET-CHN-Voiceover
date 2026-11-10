@@ -27,13 +27,13 @@ SetMapMetadata({
     [20] = { kind = "enter_house", source = "opcode", houseId = 152, targetName = "灵魂入门行会" },
     [22] = { kind = "enter_house", source = "opcode", houseId = 164, targetName = "肢体入门行会" },
     [24] = { kind = "enter_house", source = "opcode", houseId = 1168, targetName = "玛格丽特夫人号" },
-    [50] = { kind = "enter_house", source = "opcode", houseId = 1167, targetName = "唐娜·怀里斯宅邸" },
-    [51] = { kind = "enter_house", source = "opcode", houseId = 1170, targetName = "米娅·露西尔之家" },
+    [50] = { kind = "enter_house", source = "opcode", houseId = 1167, targetName = "唐纳·理斯宅邸" },
+    [51] = { kind = "enter_house", source = "opcode", houseId = 1170, targetName = "米尔·路基之家" },
     [52] = { kind = "enter_house", source = "opcode", houseId = 1171, targetName = "万达利尔宅邸" },
     [53] = { kind = "enter_house", source = "opcode", houseId = 1172, targetName = "房屋 227" },
     [54] = { kind = "enter_house", source = "opcode", houseId = 1173, targetName = "房屋 228" },
     [55] = { kind = "enter_house", source = "opcode", houseId = 1174, targetName = "房屋 229" },
-    [56] = { kind = "enter_house", source = "opcode", houseId = 1183, targetName = "卡罗琳·韦瑟斯之家" },
+    [56] = { kind = "enter_house", source = "opcode", houseId = 1183, targetName = "凯洛琳·威瑟之家" },
     [57] = { kind = "enter_house", source = "opcode", houseId = 1184, targetName = "特尔马宅邸" },
     [58] = { kind = "enter_house", source = "opcode", houseId = 1185, targetName = "房屋 241" },
     [59] = { kind = "enter_house", source = "opcode", houseId = 1186, targetName = "房屋 242" },
@@ -145,13 +145,13 @@ RegisterEvent(25, "玛格丽特女士号", nil, "玛格丽特女士号")
 
 RegisterEvent(49, "房屋", nil, "房屋")
 
-RegisterEvent(50, "唐娜·怀里斯宅邸", function()
+RegisterEvent(50, "唐纳·理斯宅邸", function()
     evt.EnterHouse(1167) -- Donna Wyrith's Residence
-end, "唐娜·怀里斯宅邸")
+end, "唐纳·理斯宅邸")
 
-RegisterEvent(51, "米娅·露西尔之家", function()
+RegisterEvent(51, "米尔·路基之家", function()
     evt.EnterHouse(1170) -- Mia Lucille' Home
-end, "米娅·露西尔之家")
+end, "米尔·路基之家")
 
 RegisterEvent(52, "万达利尔宅邸", function()
     evt.EnterHouse(1171) -- Vandalir Residence
@@ -169,9 +169,9 @@ RegisterEvent(55, "房屋 229", function()
     evt.EnterHouse(1174) -- House 229
 end, "房屋 229")
 
-RegisterEvent(56, "卡罗琳·韦瑟斯之家", function()
+RegisterEvent(56, "凯洛琳·威瑟之家", function()
     evt.EnterHouse(1183) -- Carolyn Weathers' House
-end, "卡罗琳·韦瑟斯之家")
+end, "凯洛琳·威瑟之家")
 
 RegisterEvent(57, "特尔马宅邸", function()
     evt.EnterHouse(1184) -- Tellmar Residence

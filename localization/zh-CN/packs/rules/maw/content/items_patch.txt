@@ -276,7 +276,7 @@ key	column	value
 1063	Sprite Index	296
 1063	Notes	将武器伤害或护甲防护精炼提升几个百分点，最高 20%；物品越普通，每个方块提升越多。在工作台（制造）上使用。
 1064	Pic File	maw_craft_mirror
-1064	Name	阿奇博尔德之镜
+1064	Name	阿基巴德之镜
 1064	Value	100000
 1064	Equip Stat	Gem
 1064	Skill Group	Misc

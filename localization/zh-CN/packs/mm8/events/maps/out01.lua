@@ -27,24 +27,24 @@ SetMapMetadata({
     [100] = {19},
     },
     contextActions = {
-    [11] = { kind = "enter_house", source = "opcode", houseId = 761, targetName = "嘶嘶小屋" },
-    [13] = { kind = "enter_house", source = "opcode", houseId = 776, targetName = "罗特纳克斯之家" },
+    [11] = { kind = "enter_house", source = "opcode", houseId = 761, targetName = "希斯小屋" },
+    [13] = { kind = "enter_house", source = "opcode", houseId = 776, targetName = "罗特奈克斯之家" },
     [15] = { kind = "enter_house", source = "opcode", houseId = 784, targetName = "蒂斯克小屋" },
-    [17] = { kind = "enter_house", source = "opcode", houseId = 792, targetName = "萨丁之家" },
+    [17] = { kind = "enter_house", source = "opcode", houseId = 792, targetName = "泰丁之家" },
     [19] = { kind = "enter_house", source = "opcode", houseId = 795, targetName = "伊奇之家" },
-    [21] = { kind = "enter_house", source = "opcode", houseId = 798, targetName = "倦怠者小屋" },
+    [21] = { kind = "enter_house", source = "opcode", houseId = 798, targetName = "蓝贵德小屋" },
     [23] = { kind = "enter_house", source = "opcode", houseId = 804, targetName = "蓟之家" },
     [25] = { kind = "enter_house", source = "opcode", houseId = 813, targetName = "泽瓦小屋" },
     [27] = { kind = "enter_house", source = "opcode", houseId = 823, targetName = "伊斯特里克之家" },
     [29] = { kind = "enter_house", source = "opcode", houseId = 833, targetName = "骨头之家" },
     [31] = { kind = "enter_house", source = "opcode", houseId = 843, targetName = "拉萨廷小屋" },
-    [33] = { kind = "enter_house", source = "opcode", houseId = 852, targetName = "梅纳萨之家" },
-    [35] = { kind = "enter_house", source = "opcode", houseId = 860, targetName = "外壳小屋" },
+    [33] = { kind = "enter_house", source = "opcode", houseId = 852, targetName = "曼纳梭尔之家" },
+    [35] = { kind = "enter_house", source = "opcode", houseId = 860, targetName = "哈斯克小屋" },
     [37] = { kind = "enter_house", source = "opcode", houseId = 866, targetName = "塔利米尔小屋" },
     [39] = { kind = "enter_house", source = "opcode", houseId = 870, targetName = "雷希之家" },
     [41] = { kind = "enter_house", source = "opcode", houseId = 873, targetName = "房屋" },
     [43] = { kind = "enter_house", source = "opcode", houseId = 876, targetName = "长尾小屋" },
-    [45] = { kind = "enter_house", source = "opcode", houseId = 879, targetName = "艾斯伦之家" },
+    [45] = { kind = "enter_house", source = "opcode", houseId = 879, targetName = "埃斯蓝之家" },
     [47] = { kind = "enter_house", source = "opcode", houseId = 882, targetName = "格里维克之家" },
     [49] = { kind = "enter_house", source = "opcode", houseId = 885, targetName = "乌什小屋" },
     [81] = { kind = "open_chest", source = "opcode", chestIds = {0, 3} },
@@ -173,17 +173,17 @@ RegisterNoOpEvent(9, nil)
 
 RegisterNoOpEvent(10, nil)
 
-RegisterEvent(11, "嘶嘶小屋", function()
+RegisterEvent(11, "希斯小屋", function()
     evt.EnterHouse(761) -- Hiss' Hut
-end, "嘶嘶小屋")
+end, "希斯小屋")
 
-RegisterEvent(12, "嘶嘶小屋", nil, "嘶嘶小屋")
+RegisterEvent(12, "希斯小屋", nil, "希斯小屋")
 
-RegisterEvent(13, "罗特纳克斯之家", function()
+RegisterEvent(13, "罗特奈克斯之家", function()
     evt.EnterHouse(776) -- Rohtnax's House
-end, "罗特纳克斯之家")
+end, "罗特奈克斯之家")
 
-RegisterEvent(14, "罗特纳克斯之家", nil, "罗特纳克斯之家")
+RegisterEvent(14, "罗特奈克斯之家", nil, "罗特奈克斯之家")
 
 RegisterEvent(15, "蒂斯克小屋", function()
     evt.EnterHouse(784) -- Tisk's Hut
@@ -191,11 +191,11 @@ end, "蒂斯克小屋")
 
 RegisterEvent(16, "蒂斯克小屋", nil, "蒂斯克小屋")
 
-RegisterEvent(17, "萨丁之家", function()
+RegisterEvent(17, "泰丁之家", function()
     evt.EnterHouse(792) -- Thadin's House
-end, "萨丁之家")
+end, "泰丁之家")
 
-RegisterEvent(18, "萨丁之家", nil, "萨丁之家")
+RegisterEvent(18, "泰丁之家", nil, "泰丁之家")
 
 RegisterEvent(19, "伊奇之家", function()
     evt.EnterHouse(795) -- House of Ich
@@ -203,11 +203,11 @@ end, "伊奇之家")
 
 RegisterEvent(20, "伊奇之家", nil, "伊奇之家")
 
-RegisterEvent(21, "倦怠者小屋", function()
+RegisterEvent(21, "蓝贵德小屋", function()
     evt.EnterHouse(798) -- Languid's Hut
-end, "倦怠者小屋")
+end, "蓝贵德小屋")
 
-RegisterEvent(22, "倦怠者小屋", nil, "倦怠者小屋")
+RegisterEvent(22, "蓝贵德小屋", nil, "蓝贵德小屋")
 
 RegisterEvent(23, "蓟之家", function()
     evt.EnterHouse(804) -- House of Thistle
@@ -239,17 +239,17 @@ end, "拉萨廷小屋")
 
 RegisterEvent(32, "拉萨廷小屋", nil, "拉萨廷小屋")
 
-RegisterEvent(33, "梅纳萨之家", function()
+RegisterEvent(33, "曼纳梭尔之家", function()
     evt.EnterHouse(852) -- Menasaur's House
-end, "梅纳萨之家")
+end, "曼纳梭尔之家")
 
-RegisterEvent(34, "梅纳萨之家", nil, "梅纳萨之家")
+RegisterEvent(34, "曼纳梭尔之家", nil, "曼纳梭尔之家")
 
-RegisterEvent(35, "外壳小屋", function()
+RegisterEvent(35, "哈斯克小屋", function()
     evt.EnterHouse(860) -- Husk's Hut
-end, "外壳小屋")
+end, "哈斯克小屋")
 
-RegisterEvent(36, "外壳小屋", nil, "外壳小屋")
+RegisterEvent(36, "哈斯克小屋", nil, "哈斯克小屋")
 
 RegisterEvent(37, "塔利米尔小屋", function()
     evt.EnterHouse(866) -- Talimere's Hut
@@ -275,11 +275,11 @@ end, "长尾小屋")
 
 RegisterEvent(44, "长尾小屋", nil, "长尾小屋")
 
-RegisterEvent(45, "艾斯伦之家", function()
+RegisterEvent(45, "埃斯蓝之家", function()
     evt.EnterHouse(879) -- Aislen's House
-end, "艾斯伦之家")
+end, "埃斯蓝之家")
 
-RegisterEvent(46, "艾斯伦之家", nil, "艾斯伦之家")
+RegisterEvent(46, "埃斯蓝之家", nil, "埃斯蓝之家")
 
 RegisterEvent(47, "格里维克之家", function()
     evt.EnterHouse(882) -- House of Grivic

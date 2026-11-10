@@ -101,8 +101,8 @@ SetMapMetadata({
     [98] = { kind = "open_chest", source = "opcode", chestIds = {17} },
     [99] = { kind = "open_chest", source = "opcode", chestIds = {18} },
     [100] = { kind = "open_chest", source = "opcode", chestIds = {19} },
-    [201] = { kind = "enter_house", source = "opcode", houseId = 676, targetName = "土行者之家" },
-    [203] = { kind = "enter_house", source = "opcode", houseId = 677, targetName = "土壤之家" },
+    [201] = { kind = "enter_house", source = "opcode", houseId = 676, targetName = "罗姆沃克之家" },
+    [203] = { kind = "enter_house", source = "opcode", houseId = 677, targetName = "所一尔之家" },
     [205] = { kind = "enter_house", source = "opcode", houseId = 678, targetName = "空房屋" },
     [207] = { kind = "enter_house", source = "opcode", houseId = 679, targetName = "空房屋" },
     [209] = { kind = "enter_house", source = "opcode", houseId = 680, targetName = "空房屋" },
@@ -111,7 +111,7 @@ SetMapMetadata({
     [215] = { kind = "enter_house", source = "opcode", houseId = 683, targetName = "空房屋" },
     [217] = { kind = "enter_house", source = "opcode", houseId = 684, targetName = "空房屋" },
     [219] = { kind = "enter_house", source = "opcode", houseId = 685, targetName = "空房屋" },
-    [223] = { kind = "enter_house", source = "opcode", houseId = 696, targetName = "格里文之家" },
+    [223] = { kind = "enter_house", source = "opcode", houseId = 696, targetName = "葛瑞文之家" },
     [451] = { kind = "generic_event", source = "opcode" },
     [505] = { kind = "leave_dungeon", source = "opcode", targetMap = "out01.odm", targetName = "匕伤群岛" },
     },
@@ -444,17 +444,17 @@ RegisterEvent(100, "箱子", function()
     evt.OpenChest(19)
 end, "箱子")
 
-RegisterEvent(201, "土行者之家", function()
+RegisterEvent(201, "罗姆沃克之家", function()
     evt.EnterHouse(676) -- Loamwalker's House
-end, "土行者之家")
+end, "罗姆沃克之家")
 
-RegisterEvent(202, "土行者之家", nil, "土行者之家")
+RegisterEvent(202, "罗姆沃克之家", nil, "罗姆沃克之家")
 
-RegisterEvent(203, "土壤之家", function()
+RegisterEvent(203, "所一尔之家", function()
     evt.EnterHouse(677) -- Soil's House
-end, "土壤之家")
+end, "所一尔之家")
 
-RegisterEvent(204, "土壤之家", nil, "土壤之家")
+RegisterEvent(204, "所一尔之家", nil, "所一尔之家")
 
 RegisterEvent(205, "空房屋", function()
     evt.EnterHouse(678) -- Empty House
@@ -504,11 +504,11 @@ end, "空房屋")
 
 RegisterEvent(220, "空房屋", nil, "空房屋")
 
-RegisterEvent(223, "格里文之家", function()
+RegisterEvent(223, "葛瑞文之家", function()
     evt.EnterHouse(696) -- Griven's House
-end, "格里文之家")
+end, "葛瑞文之家")
 
-RegisterEvent(224, "格里文之家", nil, "格里文之家")
+RegisterEvent(224, "葛瑞文之家", nil, "葛瑞文之家")
 
 RegisterEvent(401, "离开大地位面之门", nil, "离开大地位面之门")
 

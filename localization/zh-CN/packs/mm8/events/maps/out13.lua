@@ -42,7 +42,7 @@ SetMapMetadata({
     [33] = { kind = "enter_house", source = "opcode", houseId = 656, targetName = "特伦斯之家" },
     [35] = { kind = "enter_house", source = "opcode", houseId = 657, targetName = "蕨类巢穴" },
     [37] = { kind = "enter_house", source = "opcode", houseId = 658, targetName = "帕维尔之居" },
-    [39] = { kind = "enter_house", source = "opcode", houseId = 659, targetName = "纳拉尼之厅" },
+    [39] = { kind = "enter_house", source = "opcode", houseId = 659, targetName = "娜拉尼之厅" },
     [41] = { kind = "enter_house", source = "opcode", houseId = 660, targetName = "默瑟住宅" },
     [81] = { kind = "open_chest", source = "opcode", chestIds = {0} },
     [82] = { kind = "open_chest", source = "opcode", chestIds = {1} },
@@ -198,11 +198,11 @@ end, "帕维尔之居")
 
 RegisterEvent(38, "帕维尔之居", nil, "帕维尔之居")
 
-RegisterEvent(39, "纳拉尼之厅", function()
+RegisterEvent(39, "娜拉尼之厅", function()
     evt.EnterHouse(659) -- Nalani's Hall
-end, "纳拉尼之厅")
+end, "娜拉尼之厅")
 
-RegisterEvent(40, "纳拉尼之厅", nil, "纳拉尼之厅")
+RegisterEvent(40, "娜拉尼之厅", nil, "娜拉尼之厅")
 
 RegisterEvent(41, "默瑟住宅", function()
     evt.EnterHouse(660) -- Mercer Domicile

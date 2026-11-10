@@ -26,7 +26,7 @@ SetMapMetadata({
     [170] = {0},
     },
     contextActions = {
-    [3] = { kind = "enter_house", source = "opcode", houseId = 49, targetName = "凯瑟琳女王铁匠铺" },
+    [3] = { kind = "enter_house", source = "opcode", houseId = 49, targetName = "凯瑟琳王后铁匠铺" },
     [5] = { kind = "enter_house", source = "opcode", houseId = 86, targetName = "女王魔法店" },
     [7] = { kind = "enter_house", source = "opcode", houseId = 118, targetName = "铅之转化" },
     [9] = { kind = "enter_house", source = "opcode", houseId = 462, targetName = "皇家骏马" },
@@ -40,7 +40,7 @@ SetMapMetadata({
     [25] = { kind = "enter_house", source = "opcode", houseId = 159, targetName = "心智进阶行会" },
     [27] = { kind = "enter_house", source = "opcode", houseId = 166, targetName = "肢体大师行会" },
     [29] = { kind = "enter_house", source = "opcode", houseId = 10, targetName = "女王铁匠铺" },
-    [52] = { kind = "enter_house", source = "opcode", houseId = 910, targetName = "格斯伍尔夫之家" },
+    [52] = { kind = "enter_house", source = "opcode", houseId = 910, targetName = "古斯渥夫之家" },
     [53] = { kind = "enter_house", source = "opcode", houseId = 911, targetName = "沃尔弗顿宅邸" },
     [54] = { kind = "enter_house", source = "opcode", houseId = 912, targetName = "房屋 271" },
     [55] = { kind = "enter_house", source = "opcode", houseId = 913, targetName = "房屋 272" },
@@ -159,11 +159,11 @@ RegisterEvent(2, nil, function()
     end
 end)
 
-RegisterEvent(3, "凯瑟琳女王铁匠铺", function()
+RegisterEvent(3, "凯瑟琳王后铁匠铺", function()
     evt.EnterHouse(49) -- Queen Catherine's Smithy
-end, "凯瑟琳女王铁匠铺")
+end, "凯瑟琳王后铁匠铺")
 
-RegisterEvent(4, "凯瑟琳女王铁匠铺", nil, "凯瑟琳女王铁匠铺")
+RegisterEvent(4, "凯瑟琳王后铁匠铺", nil, "凯瑟琳王后铁匠铺")
 
 RegisterEvent(5, "女王魔法店", function()
     evt.EnterHouse(86) -- Her Majesty's Magics
@@ -245,9 +245,9 @@ RegisterEvent(30, "女王铁匠铺", nil, "女王铁匠铺")
 
 RegisterEvent(51, "房屋", nil, "房屋")
 
-RegisterEvent(52, "格斯伍尔夫之家", function()
+RegisterEvent(52, "古斯渥夫之家", function()
     evt.EnterHouse(910) -- Guthwulf's Home
-end, "格斯伍尔夫之家")
+end, "古斯渥夫之家")
 
 RegisterEvent(53, "沃尔弗顿宅邸", function()
     evt.EnterHouse(911) -- Wolverton Residence

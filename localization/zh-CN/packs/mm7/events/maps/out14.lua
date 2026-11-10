@@ -40,10 +40,10 @@ SetMapMetadata({
     [52] = { kind = "enter_house", source = "opcode", houseId = 1014, targetName = "羽风宅邸" },
     [53] = { kind = "enter_house", source = "opcode", houseId = 1015, targetName = "鸦发宅邸" },
     [54] = { kind = "enter_house", source = "opcode", houseId = 1020, targetName = "斯尼克之家" },
-    [55] = { kind = "enter_house", source = "opcode", houseId = 1021, targetName = "地狱火之家" },
+    [55] = { kind = "enter_house", source = "opcode", houseId = 1021, targetName = "因法那之家" },
     [56] = { kind = "enter_house", source = "opcode", houseId = 1022, targetName = "猎鹿者宅邸" },
     [57] = { kind = "enter_house", source = "opcode", houseId = 1023, targetName = "快足之家" },
-    [58] = { kind = "enter_house", source = "opcode", houseId = 1140, targetName = "坦普斯之家" },
+    [58] = { kind = "enter_house", source = "opcode", houseId = 1140, targetName = "坦帕斯之家" },
     [59] = { kind = "enter_house", source = "opcode", houseId = 1141, targetName = "凯恩之居" },
     [60] = { kind = "enter_house", source = "opcode", houseId = 1142, targetName = "苹果宅邸" },
     [63] = { kind = "enter_house", source = "opcode", houseId = 1016, targetName = "吉莉安之家" },
@@ -179,9 +179,9 @@ RegisterEvent(54, "斯尼克之家", function()
     evt.EnterHouse(1020) -- Snick House
 end, "斯尼克之家")
 
-RegisterEvent(55, "地狱火之家", function()
+RegisterEvent(55, "因法那之家", function()
     evt.EnterHouse(1021) -- Infernon's House
-end, "地狱火之家")
+end, "因法那之家")
 
 RegisterEvent(56, "猎鹿者宅邸", function()
     evt.EnterHouse(1022) -- Deerhunter Residence
@@ -191,9 +191,9 @@ RegisterEvent(57, "快足之家", function()
     evt.EnterHouse(1023) -- Swiftfoot's House
 end, "快足之家")
 
-RegisterEvent(58, "坦普斯之家", function()
+RegisterEvent(58, "坦帕斯之家", function()
     evt.EnterHouse(1140) -- Tempus' House
-end, "坦普斯之家")
+end, "坦帕斯之家")
 
 RegisterEvent(59, "凯恩之居", function()
     evt.EnterHouse(1141) -- Kaine's

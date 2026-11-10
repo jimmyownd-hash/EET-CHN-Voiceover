@@ -722,7 +722,7 @@
 718	轻松的生活				Davee Sail NPC 503	
 719	恐怖海盗史坦力				Erik Jarblower NPC 504	
 720	贾丹姆的走私者				Jarrena Marmon NPC 505	
-721	史坦力的财宝				Pirate Paul NPC 506	
+721	斯坦利的财宝				Pirate Paul NPC 506	
 722	隐藏的财宝				Yoel Wargreen NPC 507	
 723	埋葬岗				Pordo NPC 508	
 724	伊普的信仰者				Vish NPC 509	

@@ -39,9 +39,9 @@ SetMapMetadata({
     [29] = { kind = "enter_house", source = "opcode", houseId = 585, targetName = "沙多之家" },
     [31] = { kind = "enter_house", source = "opcode", houseId = 586, targetName = "梅尔库图拉之家" },
     [33] = { kind = "enter_house", source = "opcode", houseId = 587, targetName = "罗根之厅" },
-    [35] = { kind = "enter_house", source = "opcode", houseId = 588, targetName = "哈利恩小屋" },
+    [35] = { kind = "enter_house", source = "opcode", houseId = 588, targetName = "海林安小屋" },
     [37] = { kind = "enter_house", source = "opcode", houseId = 589, targetName = "罗伯茨宅邸" },
-    [39] = { kind = "enter_house", source = "opcode", houseId = 590, targetName = "因法斯图斯之家" },
+    [39] = { kind = "enter_house", source = "opcode", houseId = 590, targetName = "因佛史塔斯之家" },
     [41] = { kind = "enter_house", source = "opcode", houseId = 591, targetName = "旅程之家" },
     [43] = { kind = "enter_house", source = "opcode", houseId = 592, targetName = "低语之厅" },
     [45] = { kind = "enter_house", source = "opcode", houseId = 593, targetName = "钢眼庄园" },
@@ -57,7 +57,7 @@ SetMapMetadata({
     [65] = { kind = "enter_house", source = "opcode", houseId = 603, targetName = "绞架井庄园" },
     [67] = { kind = "enter_house", source = "opcode", houseId = 604, targetName = "菲德尔伯恩之家" },
     [69] = { kind = "enter_house", source = "opcode", houseId = 605, targetName = "德韦雷罗宅邸" },
-    [71] = { kind = "enter_house", source = "opcode", houseId = 606, targetName = "坦蒂利昂之家" },
+    [71] = { kind = "enter_house", source = "opcode", houseId = 606, targetName = "坦尼林安之家" },
     [73] = { kind = "enter_house", source = "opcode", houseId = 607, targetName = "拳头宅邸" },
     [75] = { kind = "enter_house", source = "opcode", houseId = 608, targetName = "沃格林实验室" },
     [77] = { kind = "enter_house", source = "opcode", houseId = 609, targetName = "华莱士之家" },
@@ -198,11 +198,11 @@ end, "罗根之厅")
 
 RegisterEvent(34, "罗根之厅", nil, "罗根之厅")
 
-RegisterEvent(35, "哈利恩小屋", function()
+RegisterEvent(35, "海林安小屋", function()
     evt.EnterHouse(588) -- Hallien's Cottage
-end, "哈利恩小屋")
+end, "海林安小屋")
 
-RegisterEvent(36, "哈利恩小屋", nil, "哈利恩小屋")
+RegisterEvent(36, "海林安小屋", nil, "海林安小屋")
 
 RegisterEvent(37, "罗伯茨宅邸", function()
     evt.EnterHouse(589) -- Roberts Residence
@@ -210,11 +210,11 @@ end, "罗伯茨宅邸")
 
 RegisterEvent(38, "罗伯茨宅邸", nil, "罗伯茨宅邸")
 
-RegisterEvent(39, "因法斯图斯之家", function()
+RegisterEvent(39, "因佛史塔斯之家", function()
     evt.EnterHouse(590) -- Infaustus' House
-end, "因法斯图斯之家")
+end, "因佛史塔斯之家")
 
-RegisterEvent(40, "因法斯图斯之家", nil, "因法斯图斯之家")
+RegisterEvent(40, "因佛史塔斯之家", nil, "因佛史塔斯之家")
 
 RegisterEvent(41, "旅程之家", function()
     evt.EnterHouse(591) -- House of Journey
@@ -306,11 +306,11 @@ end, "德韦雷罗宅邸")
 
 RegisterEvent(70, "德韦雷罗宅邸", nil, "德韦雷罗宅邸")
 
-RegisterEvent(71, "坦蒂利昂之家", function()
+RegisterEvent(71, "坦尼林安之家", function()
     evt.EnterHouse(606) -- Tantilion's House
-end, "坦蒂利昂之家")
+end, "坦尼林安之家")
 
-RegisterEvent(72, "坦蒂利昂之家", nil, "坦蒂利昂之家")
+RegisterEvent(72, "坦尼林安之家", nil, "坦尼林安之家")
 
 RegisterEvent(73, "拳头宅邸", function()
     evt.EnterHouse(607) -- Fist Residence

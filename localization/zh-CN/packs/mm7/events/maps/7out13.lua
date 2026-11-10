@@ -41,7 +41,7 @@ SetMapMetadata({
     [52] = { kind = "enter_house", source = "opcode", houseId = 1025, targetName = "斯蒂尔宅邸" },
     [53] = { kind = "enter_house", source = "opcode", houseId = 1026, targetName = "良知之家" },
     [54] = { kind = "enter_house", source = "opcode", houseId = 1027, targetName = "埃弗里尔之家" },
-    [57] = { kind = "enter_house", source = "opcode", houseId = 1030, targetName = "特里西娅之家" },
+    [57] = { kind = "enter_house", source = "opcode", houseId = 1030, targetName = "翠西亚之家" },
     [58] = { kind = "enter_house", source = "opcode", houseId = 1031, targetName = "伊斯拉姆之家" },
     [59] = { kind = "enter_house", source = "opcode", houseId = 1032, targetName = "劈石者宅邸" },
     [61] = { kind = "enter_house", source = "opcode", houseId = 1034, targetName = "卡琳德拉之家" },
@@ -90,8 +90,8 @@ SetMapMetadata({
     [501] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d16.blv", targetName = "酒窖" },
     [502] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d20.blv", targetName = "佣兵行会" },
     [503] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d17.blv", targetName = "潮穴" },
-    [504] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d18.blv", targetName = "马克汉爵士宅邸" },
-    [505] = { kind = "enter_dungeon", source = "opcode", targetMap = "mdt09.blv", targetName = "罗姆赛克斯的洞穴" },
+    [504] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d18.blv", targetName = "马克汉姆爵士宅邸" },
+    [505] = { kind = "enter_dungeon", source = "opcode", targetMap = "mdt09.blv", targetName = "劳斯莱克的洞穴" },
     },
     textureNames = {},
     spriteNames = {"0"},
@@ -189,9 +189,9 @@ RegisterEvent(54, "埃弗里尔之家", function()
     evt.EnterHouse(1027) -- Everil's House
 end, "埃弗里尔之家")
 
-RegisterEvent(57, "特里西娅之家", function()
+RegisterEvent(57, "翠西亚之家", function()
     evt.EnterHouse(1030) -- Tricia's House
-end, "特里西娅之家")
+end, "翠西亚之家")
 
 RegisterEvent(58, "伊斯拉姆之家", function()
     evt.EnterHouse(1031) -- Isram's House

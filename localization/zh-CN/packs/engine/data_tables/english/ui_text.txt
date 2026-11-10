@@ -690,7 +690,7 @@ The Potted Pixie	勇士旅店
 Familiar Place	宾至如归旅店
 Fortune's Folly	幸运旅店
 Markham's Headquarters	马克汉姆的总部
-Lord Markham's Manor	马克汉爵士宅邸
+Lord Markham's Manor	马克汉姆爵士宅邸
 Vault of Time	时间宝库
 J.V.C. Corral	JVC 马场
 The J.V.C Corral	胜利驿站

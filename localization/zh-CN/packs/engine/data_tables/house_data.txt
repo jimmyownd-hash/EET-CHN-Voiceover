@@ -48,7 +48,7 @@
 46	11	Armor Shop	62	174	Placeholder	Placeholder		0537	0	0	0	1.5	1					6	18	0	0	0	0
 47	12	Armor Shop	63	174	农夫铁匠铺	彼得	甲匠	0537	0	0	0	1.5	1		14			6	18	0	0	0	0
 48	13	Armor Shop	62	330	通往伊欧弗尔隧道	Placeholder		0537	0	0	0	1.5	1					6	18	0	0	0	0
-49	14	Armor Shop	64	174	凯瑟琳女王铁匠铺	大卫	甲匠	0537	0	0	0	2	1		21			6	18	0	0	0	0
+49	14	Armor Shop	64	174	凯瑟琳王后铁匠铺	大卫	甲匠	0537	0	0	0	2	1		21			6	18	0	0	0	0
 50	15	Armor Shop	62	174	Placeholder	Placeholder		0537	0	0	0	1.5	1					6	18	0	0	0	0
 51	16	Armor Shop	65	179	皮衣与圆盾	萨布尔	甲匠	0541	0	0	0	2	1		21			6	18	0	0	0	0
 52	17	Armor Shop	99	177	荣誉盔甲	卡斯伯特	甲匠	1498	0	0	0	4	2		28			6	18	0	0	0	0
@@ -57,7 +57,7 @@
 55	20	Armor Shop	72	174	缺失之环	布兰德	甲匠	0537	0	0	0	3	1.5		21			6	18	0	0	0	0
 56	21	Armor Shop	73	179	艾弗里前哨	塔伦斯	甲匠	0541	0	0	0	3	1.5		21			6	18	0	0	0	0
 57	22	Armor Shop	98	176	抛光肩甲店	亚瑟	甲匠	0491	0	0	0	2.5	1		14			6	18	0	0	0	0
-58	23	Armor Shop	103	174	塞尔盔甲盾牌店	特尔	甲匠	0537	0	0	0	2.5	1		21			6	18	0	0	0	0
+58	23	Armor Shop	103	174	特尔盔甲盾牌店	特尔	甲匠	0537	0	0	0	2.5	1		21			6	18	0	0	0	0
 59	24	Armor Shop	72	174	合金甲盾店	埃尔莫	甲匠	0537	0	0	0	3	1.5		21			6	18	0	0	0	0
 60	25	Armor Shop	0	174	绿林铁匠铺	拉里克	甲匠	0537	0	0	0	1.5	1		7			6	18	0	0	0	0
 61	26	Armor Shop	0	174	掷出的铁手套	穆根	甲匠	0537	0	0	0	1.5	1		7			6	18	0	0	0	0
@@ -82,7 +82,7 @@
 80	5	Magic Shop	6	76	神秘混乱	内德	魔法师	1099	0	0	0	3	1.5		21			6	18	0	0	0	0
 81	6	Magic Shop	35	49	力量护符店	瑟尔	魔法师	1082	0	0	0	4	1.5		28			6	18	0	0	0	0
 82	7	Magic Shop	13	99	雷格纳之礼	弗林	魔法师	1075	0	0	0	4	1.5		28			6	18	0	0	0	0
-83	8	Magic Shop	2	33	考里古玩店	卡奥里	魔法师	1133	0	0	0	2	1		14			6	18	0	0	0	0
+83	8	Magic Shop	2	33	卡奥里古玩店	卡奥里	魔法师	1133	0	0	0	2	1		14			6	18	0	0	0	0
 84	9	Magic Shop	62	194	翡翠附魔店	瑟斯顿	魔法师	0529	0	0	0	1.5	1		7			6	18	0	0	0	0
 85	10	Magic Shop	63	194	奥托奇物店	奥托	魔法师	0529	0	0	0	1.5	1		14			6	18	0	0	0	0
 86	11	Magic Shop	64	194	女王魔法店	内森	魔法师	0529	0	0	0	2	1		21			6	18	0	0	0	0
@@ -214,7 +214,7 @@
 212	1	Throne	1	24	族长之厅	Placeholder	Brekish One-Fang		0	0	0	1.5				129		 	 	0	0	0	0
 213	2	Throne	30	81	桑德罗/赞特王座厅	Placeholder	Sandro		0	0	0	1.5				172		 	 	0	0	0	0
 214	3	Throne	33	67	太阳神殿领袖室	Placeholder	Placeholder		0	0	0	1.5				171		 	 	0	0	0	0
-215	4	Throne	92	350	马克姆领主之室				0	0	0	1.5				73				0	0		
+215	4	Throne	92	350	马克汉姆爵士之室				0	0	0	1.5				73				0	0		
 216	5	Throne	98	347	王座厅				0	0	0	1.5				97				0	0		
 217	6	Throne	107	342	王座厅	Placeholder			0	0	0	1.5				169		6	18	0	0	0	0
 218	7	Throne	106	343	王座厅	Placeholder			0	0	0	1.5				170		6	18	0	0	0	0
@@ -254,7 +254,7 @@
 252	25	Tavern	98	208	格罗格烈酒馆	格罗格	旅店老板	0485	0	0	0	20	1.5					5	2	0	0	0	0
 253	26	Tavern	0	206	骑士消遣	迈克尔	旅店老板	0535	0	0	0	6	1					8	2	0	0	0	0
 254	27	Tavern	0	206	最后去处	沙姆斯	旅店老板	0535	0	0	0	6	1					8	2	0	0	0	0
-255	28	Tavern	0	206	加里恩路边酒馆	加里昂	旅店老板	0535	0	0	0	6	1					8	2	0	0	0	0
+255	28	Tavern	0	206	加里昂路边酒馆	加里昂	旅店老板	0535	0	0	0	6	1					8	2	0	0	0	0
 256	29	Tavern	0	206	舒适享受	敏捷	旅店老板	0535	0	0	0	6	1					8	2	0	0	0	0
 257	30	Tavern	0	206	想当英雄吗？	霍巴特	旅店老板	0535	0	0	0	6	1					8	2	0	0	0	0
 258	31	Tavern	0	206	优雅兽人	莫利	旅店老板	0535	0	0	0	6	1					8	2	0	0	0	0
@@ -273,7 +273,7 @@
 271	44	Tavern	145	393	生锈盾牌	亚伦 	旅店老板	0278	0	0	0	10	1					5	2	0	0	0	
 272	45	Tavern	144	394	维克托之厅	维克托	旅店老板	0027	0	0	0	30	1					5	2	0	0	0	
 273	46	Tavern	144	396	回荡低语	凯蒂	旅店老板	0156	0	0	0	20	1					5	2	0	0	0	
-274	47	Tavern	144	395	洛克姆骄傲	查尔斯	旅店老板	0433	0	0	0	20	1					5	2	0	0	0	
+274	47	Tavern	144	395	罗克汉姆骄傲	查尔斯	旅店老板	0433	0	0	0	20	1					5	2	0	0	0	
 275	48	Tavern	143	396	冰霜与理性	辛西娅 	旅店老板	0156	0	0	0	14	1					5	2	0	0	0	
 276	49	Tavern	143	393	冰霜酒杯	斯坦	旅店老板	0278	0	0	0	30	1					5	2	0	0	0	
 277	50	Tavern	141	395	绿洲	阿扎兹 	旅店老板	0433	0	0	0	60	1					5	2	0	0	0	
@@ -552,16 +552,16 @@
 550	43	House	3	27	维尔顿小屋	Placeholder			0	0	0	1.5				88				0	0		
 551	44	House	3	27	法斯韦尔之家	Placeholder			0	0	0	1.5				88				0	0		
 552	45	House	3	27	羽风之家	Placeholder			0	0	0	1.5				88				0	0		
-553	46	House	4	87	斯通小屋	Placeholder			0	0	0	1.5				109				0	0		
+553	46	House	4	87	石头小屋	Placeholder			0	0	0	1.5				109				0	0		
 554	47	House	4	87	炉誓小屋	Placeholder			0	0	0	1.5				109				0	0		
-555	48	House	4	87	塔利昂小屋	Placeholder			0	0	0	1.5				109				0	0		
+555	48	House	4	87	塔力安小屋	Placeholder			0	0	0	1.5				109				0	0		
 556	49	House	4	87	迷雾小屋	Placeholder			0	0	0	1.5				109				0	0		
-557	50	House	4	87	霍伯特小屋	Placeholder			0	0	0	1.5				109				0	0		
+557	50	House	4	87	贺伯特小屋	Placeholder			0	0	0	1.5				109				0	0		
 558	51	House	4	87	绿风暴小屋	Placeholder			0	0	0	1.5				109				0	0		
 559	52	House	4	87	波尔小屋	Placeholder			0	0	0	1.5				112				0	0		
 560	53	House	4	87	塔伦特小屋	Placeholder			0	0	0	1.5				112				0	0		
-561	54	House	4	87	施梅克小屋	Placeholder			0	0	0	1.5				112				0	0		
-562	55	House	5	57	阿瓦隆宅邸	Placeholder			0	0	0	1.5				112				0	0		
+561	54	House	4	87	史麦克小屋	Placeholder			0	0	0	1.5				112				0	0		
+562	55	House	5	57	阿瓦龙宅邸	Placeholder			0	0	0	1.5				112				0	0		
 563	56	House	5	56	阿林宅邸	Placeholder			0	0	0	1.5				112				0	0		
 564	57	House	5	57	光誓宅邸	Placeholder			0	0	0	1.5				112				0	0		
 565	58	House	5	56	水獭镇宅邸	Placeholder			0	0	0	1.5				112				0	0		
@@ -571,8 +571,8 @@
 569	62	House	5	56	克恩宅邸	Placeholder			0	0	0	1.5				115				0	0		
 570	63	House	5	57	珍妮宅邸	Placeholder			0	0	0	1.5								0	0		
 571	64	House	5	56	韦尔德里克之家	Placeholder			0	0	0	1.5								0	0		
-572	65	House	28	171	伊什顿洞穴	Placeholder			0	0	0	1.5								0	0		
-573	66	House	28	171	伊希尔戈尔洞穴	Placeholder			0	0	0	1.5								0	0		
+572	65	House	28	171	伊斯顿洞穴	Placeholder			0	0	0	1.5								0	0		
+573	66	House	28	171	伊斯希尔歌尔洞穴	Placeholder			0	0	0	1.5								0	0		
 574	67	House	28	171	疤翼洞穴	Placeholder			0	0	0	1.5				118				0	0		
 575	68	House	0	10	告诉詹姆斯你看到这个353	Placeholder			0	0	0	1.5				118				0	0		
 576	69	House	0	10	告诉詹姆斯你看到这个354	Placeholder			0	0	0	1.5				118				0	0		
@@ -587,9 +587,9 @@
 585	78	House	6	68	沙多之家	Placeholder			0	0	0	1.5				121				0	0		
 586	79	House	6	71	梅尔库图拉之家	Placeholder			0	0	0	1.5				124				0	0		
 587	80	House	6	68	罗根之厅	Placeholder			0	0	0	1.5				124				0	0		
-588	81	House	6	71	哈利恩小屋	Placeholder			0	0	0	1.5				124				0	0		
+588	81	House	6	71	海林安小屋	Placeholder			0	0	0	1.5				124				0	0		
 589	82	House	6	68	罗伯茨宅邸	Placeholder			0	0	0	1.5								0	0		
-590	83	House	6	68	因法斯图斯之家	Placeholder			0	0	0	1.5								0	0		
+590	83	House	6	68	因佛史塔斯之家	Placeholder			0	0	0	1.5								0	0		
 591	84	House	6	68	旅程之家	Placeholder			0	0	0	1.5								0	0		
 592	85	House	6	71	低语之厅	Placeholder			0	0	0	1.5				82				0	0		
 593	86	House	6	71	钢眼庄园	Placeholder			0	0	0	1.5				82				0	0		
@@ -605,41 +605,41 @@
 603	96	House	6	68	绞架井庄园	Placeholder			0	0	0	1.5				85				0	0		
 604	97	House	6	71	菲德尔伯恩之家	Placeholder			0	0	0	1.5				88				0	0		
 605	98	House	6	68	德韦雷罗宅邸	Placeholder			0	0	0	1.5				88				0	0		
-606	99	House	6	68	坦蒂利昂之家	Placeholder			0	0	0	1.5				88				0	0		
+606	99	House	6	68	坦尼林安之家	Placeholder			0	0	0	1.5				88				0	0		
 607	100	House	6	68	拳头宅邸	Placeholder			0	0	0	1.5				88				0	0		
 608	101	House	6	71	沃格林实验室	Placeholder			0	0	0	1.5				88				0	0		
 609	102	House	6	68	华莱士之家	Placeholder			0	0	0	1.5				73				0	0		
 610	103	House	7	66	鸦视宅邸	Placeholder			0	0	0	1.5				73				0	0		
 611	104	House	7	66	造梦者宅邸	Placeholder			0	0	0	1.5				73				0	0		
 612	105	House	7	66	雪树宅邸	Placeholder			0	0	0	1.5				73				0	0		
-613	106	House	7	66	丹蒂利昂宅邸	Placeholder			0	0	0	1.5				73				0	0		
+613	106	House	7	66	丹提理安宅邸	Placeholder			0	0	0	1.5				73				0	0		
 614	107	House	7	66	米斯里特宅邸	Placeholder			0	0	0	1.5				73				0	0		
 615	108	House	7	66	汤克宅邸	Placeholder			0	0	0	1.5				73				0	0		
 616	109	House	7	66	锐锋宅邸	Placeholder			0	0	0	1.5				73				0	0		
 617	110	House	7	66	宝石宅邸	Placeholder			0	0	0	1.5				73				0	0		
 618	111	House	7	66	桑普森宅邸	Placeholder			0	0	0	1.5				73				0	0		
-619	112	House	8	87	泽维乌斯宅邸	Placeholder			0	0	0	1.5				73				0	0		
-620	113	House	8	87	维什之家	Placeholder			0	0	0	1.5				73				0	0		
+619	112	House	8	87	夕维恶斯宅邸	Placeholder			0	0	0	1.5				73				0	0		
+620	113	House	8	87	维许之家	Placeholder			0	0	0	1.5				73				0	0		
 621	114	House	8	87	帆之小屋	Placeholder			0	0	0	1.5				73				0	0		
 622	115	House	8	87	波多小屋	Placeholder			0	0	0	1.5				73				0	0		
-623	116	House	8	87	加尔维努斯之家	Placeholder			0	0	0	1.5				73				0	0		
-624	117	House	35	43	萨尼斯之家	Placeholder			0	0	0	1.5				76				0	0		
-625	118	House	35	43	费里斯之家	Placeholder			0	0	0	1.5				76				0	0		
+623	116	House	8	87	加文那斯之家	Placeholder			0	0	0	1.5				73				0	0		
+624	117	House	35	43	坦尼斯之家	Placeholder			0	0	0	1.5				76				0	0		
+625	118	House	35	43	费瑞斯之家	Placeholder			0	0	0	1.5				76				0	0		
 626	119	House	35	44	被淹房屋	Placeholder			0	0	0	1.5				76				0	0		
 627	120	House	35	44	被淹商店	Placeholder			0	0	0	1.5				76				0	0		
 628	121	House	35	41	武器店占位符	Placeholder			0	0	0	1.5				76				0	0		
 629	122	House	35	41	苏尔泰尔屋	Placeholder			0	0	0	1.5				76				0	0		
-630	123	House	35	41	里奥内尔之家	Placeholder			0	0	0	1.5				76				0	0		
+630	123	House	35	41	瑞欧耐尔之家	Placeholder			0	0	0	1.5				76				0	0		
 631	124	House	35	41	盔甲店占位符	Placeholder			0	0	0	1.5				76				0	0		
 632	125	House	35	41	魔法店占位符	Placeholder			0	0	0	1.5				79				0	0		
 633	126	House	35	41	法术店占位符	Placeholder			0	0	0	1.5				79				0	0		
-634	127	House	35	41	乌尔布雷希特之家	Placeholder			0	0	0	1.5				79				0	0		
+634	127	House	35	41	乌布理契之家	Placeholder			0	0	0	1.5				79				0	0		
 635	128	House	35	43	森杰克之家	Placeholder			0	0	0	1.5				91				0	0		
 636	129	House	35	41	炼金术士占位符	Placeholder			0	0	0	1.5				91				0	0		
 637	130	House	35	41	神殿占位符	Placeholder			0	0	0	1.5				91				0	0		
 638	131	House	35	41	洛茨之家	Placeholder			0	0	0	1.5				91				0	0		
 639	132	House	35	41	霍利菲尔德之家	Placeholder			0	0	0	1.5				94				0	0		
-640	133	House	35	43	特萨拉之家	Placeholder			0	0	0	1.5				94				0	0		
+640	133	House	35	43	泰沙拉之家	Placeholder			0	0	0	1.5				94				0	0		
 641	134	House	35	41	暴风眼之家	Placeholder			0	0	0	1.5				94				0	0		
 642	135	House	35	41	银行占位符	Placeholder			0	0	0	1.5				97				0	0		
 643	136	House	35	41	训练场占位符	Placeholder			0	0	0	1.5				97				0	0		
@@ -658,14 +658,14 @@
 656	149	House	13	92	特伦斯之家	Placeholder			0	0	0	1.5				109				0	0		
 657	150	House	13	94	蕨类巢穴	Placeholder			0	0	0	1.5				109				0	0		
 658	151	House	13	92	帕维尔之居	Placeholder			0	0	0	1.5				109				0	0		
-659	152	House	13	94	纳拉尼之厅	Placeholder			0	0	0	1.5				109				0	0		
+659	152	House	13	94	娜拉尼之厅	Placeholder			0	0	0	1.5				109				0	0		
 660	153	House	13	92	默瑟住宅	Placeholder			0	0	0	1.5				109				0	0		
 661	154	House	47	86	空气领主囚室	Placeholder			0	0	0	1.5				109	For Tomo			0	0		
 662	155	House	49	85	水之领主囚室	Placeholder			0	0	0	1.5				109	For Tomo			0	0		
 663	156	House	50	84	土之领主囚室	Placeholder			0	0	0	1.5				112	For Tomo			0	0		
 664	157	House	48	83	火之领主囚室	Placeholder			0	0	0	1.5				112	For Tomo			0	0		
-665	158	House	9	111	翼帆之家	Placeholder			0	0	0	1.5				115				0	0		
-666	159	House	9	111	水汽之家	Placeholder			0	0	0	1.5				115				0	0		
+665	158	House	9	111	翅帆之家	Placeholder			0	0	0	1.5				115				0	0		
+666	159	House	9	111	瓦波之家	Placeholder			0	0	0	1.5				115				0	0		
 667	160	House	9	111	和风之家	Placeholder			0	0	0	1.5								0	0		
 668	161	House	9	111	空房屋	Placeholder			0	0	0	1.5								0	0		
 669	162	House	9	111	空房屋	Placeholder			0	0	0	1.5								0	0		
@@ -673,10 +673,10 @@
 671	164	House	9	111	空房屋	Placeholder			0	0	0	1.5								0	0		
 672	165	House	9	111	内德隆之家	Placeholder			0	0	0	1.5								0	0		
 673	166	House	6	71	鹤之小屋	Placeholder			0	0	0	1.5								0	0		
-674	167	House	8	10	卡格诺商店	Placeholder			0	0	0	1.5								0	0		
+674	167	House	8	10	卡格纳商店	Placeholder			0	0	0	1.5								0	0		
 675	168	House	6	68	比思庄园	Placeholder			0	0	0	1.5								0	0		
-676	169	House	10	110	土行者之家	Placeholder			0	0	0	1.5								0	0		
-677	170	House	10	110	土壤之家	Placeholder			0	0	0	1.5								0	0		
+676	169	House	10	110	罗姆沃克之家	Placeholder			0	0	0	1.5								0	0		
+677	170	House	10	110	所一尔之家	Placeholder			0	0	0	1.5								0	0		
 678	171	House	10	110	空房屋	Placeholder			0	0	0	1.5								0	0		
 679	172	House	10	110	空房屋	Placeholder			0	0	0	1.5								0	0		
 680	173	House	10	110	空房屋	Placeholder			0	0	0	1.5								0	0		
@@ -685,8 +685,8 @@
 683	176	House	10	110	空房屋	Placeholder			0	0	0	1.5								0	0		
 684	177	House	10	110	空房屋	Placeholder			0	0	0	1.5								0	0		
 685	178	House	10	110	空房屋	Placeholder			0	0	0	1.5								0	0		
-686	179	House	11	108	余烬之家	Placeholder			0	0	0	1.5								0	0		
-687	180	House	11	108	恒焰之家	Placeholder			0	0	0	1.5								0	0		
+686	179	House	11	108	安伯之家	Placeholder			0	0	0	1.5								0	0		
+687	180	House	11	108	暮光之家	Placeholder			0	0	0	1.5								0	0		
 688	181	House	11	108	空房屋	Placeholder			0	0	0	1.5								0	0		
 689	182	House	11	108	空房屋	Placeholder			0	0	0	1.5								0	0		
 690	183	House	11	108	空房屋	Placeholder			0	0	0	1.5								0	0		
@@ -695,14 +695,14 @@
 693	186	House	12	109	空房屋	Placeholder			0	0	0	1.5								0	0		
 694	187	House	12	109	空房屋	Placeholder			0	0	0	1.5								0	0		
 695	188	House	12	109	空房屋	Placeholder			0	0	0	1.5								0	0		
-696	189	House	10	110	格里文之家	Placeholder			0	0	0	1.5								0	0		
+696	189	House	10	110	葛瑞文之家	Placeholder			0	0	0	1.5								0	0		
 697	190	House	2	87	石下之家	Placeholder			0	0	0	1.5								0	0		
 698	191	House	4	87	蓟骨宅邸	Placeholder			0	0	0	1.5								0	0		
 699	192	House	5	56	内利克斯之家	Placeholder			0	0	0	1.5								0	0		
-700	193	House	5	56	坦普斯之家	Placeholder			0	0	0	1.5								0	0		
-701	194	House	7	66	韦里什之家	Placeholder			0	0	0	1.5								0	0		
-702	195	House	59	171	弗兰德林洞穴	Placeholder			0	0	0	1.5								0	0		
-703	196	House	60	171	硫磺洞穴	Placeholder			0	0	0	1.5								0	0		
+700	193	House	5	56	坦帕斯之家	Placeholder			0	0	0	1.5								0	0		
+701	194	House	7	66	瓦瑞西之家	Placeholder			0	0	0	1.5								0	0		
+702	195	House	59	171	佛蓝林洞穴	Placeholder			0	0	0	1.5								0	0		
+703	196	House	60	171	布尔斯通洞穴	Placeholder			0	0	0	1.5								0	0		
 704	197	House	58	171	杜罗思洞穴	Placeholder			0	0	0	1.5								0	0		
 705	198	House	0	389	占位符	Placeholder			0	0	0	1.5								0	0		
 706	199	House	0	10	House 487	Placeholder			0	0	0	1.5								0	0		
@@ -751,16 +751,16 @@
 749	242	House	0	10	Placeholder	Placeholder	书记员		0	0	0	4	2		14			6	18	0	0	0	0
 750	243	House	0	10	Placeholder	Placeholder	书记员		0	0	0	1.5	1		14			6	18	0	0	0	0
 751	244	House	20	40	议会厅大门	Placeholder	商人		0	0	0	1.5				133		 	 	0	0	0	0
-752	245	House	4	87	奥弗杜恩之家	Placeholder	Overdune		0	0	0	1.5				134		 	 	0	0	0	0
-753	246	House	27	64	查尔斯·吉诃德之家	Placeholder	Charles Quixote		0	0	0	1.5				1		 	 	0	0	0	0
-754	247	House	30	71	戴森·利兰之室	Placeholder	Dyson Leland		0	0	0	1.5				1		 	 	0	0	0	0
+752	245	House	4	87	欧瓦都之家	Placeholder	Overdune		0	0	0	1.5				134		 	 	0	0	0	0
+753	246	House	27	64	查尔斯·科切特之家	Placeholder	Charles Quixote		0	0	0	1.5				1		 	 	0	0	0	0
+754	247	House	30	71	戴森·李蓝之室	Placeholder	Dyson Leland		0	0	0	1.5				1		 	 	0	0	0	0
 755	248	House	35	54	牛头人首领之室	Placeholder	Placeholder		0	0	0	1.5				1		 	 	0	0	0	0
 756	249	House	1	10	冒险者旅店	Placeholder			0	0	0	1.5						 	 	0	0	0	0
 757	250	House	2	10	神谕者	Placeholder			0	0	0	1.5								0	0	0	0
 758	251	House	6	10	冒险者旅店	Placeholder			0	0	0	1.5				1				0	0	0	0
 759	252	House	13	10	冒险者旅店	Placeholder			0	0	0	1.5				1				0	0	0	0
 760	253	House	35	10	冒险者旅店	Placeholder			0	0	0	1.5				1				0	0	0	0
-761	254	House	1	13	嘶嘶小屋	Placeholder			0	0	0	1.5								0	0		
+761	254	House	1	13	希斯小屋	Placeholder			0	0	0	1.5								0	0		
 762	255	House	2	87	杰克小屋	Placeholder			0	0	0	1.5				76				0	0		
 763	256	House	3	10	Placeholder	Placeholder	职员		0	0	0	1.5	1					6	18	0	0	0	0
 764	257	House	0	10	Placeholder	Placeholder	书记员		0	0	0	3	1.5		14			6	18	0	0	0	0
@@ -774,8 +774,8 @@
 772	265	House	18	91	狼鼠走私贩首领	Placeholder	狼鼠走私贩		0	0	0	1.5				168		  	 	0	0	0	0
 773	266	House	3	38	商会会馆	Placeholder	商人		0	0	0	1.5				169		 	 	0	0	0	0
 774	267	House	28	82	龙首领洞穴	Placeholder	龙		0	0	0	1.5				170		 	 	0	0	0	0
-775	268	House	46	103	埃斯卡顿王座厅	Placeholder	Escaton		0	0	0	1.5				Kastore		 	 	0	0	0	0
-776	269	House	1	13	罗特纳克斯之家	Placeholder			0	0	0	1.5								0	0		
+775	268	House	46	103	爱斯卡顿王座厅	Placeholder	Escaton		0	0	0	1.5				Kastore		 	 	0	0	0	0
+776	269	House	1	13	罗特奈克斯之家	Placeholder			0	0	0	1.5								0	0		
 777	270	House	2	25	艾弗庄园	Placeholder			0	0	0	1.5				76				0	0		
 778	271	House	4	10	Placeholder	Placeholder	职员		0	0	0	1.5	1					6	18	0	0	0	0
 779	272	House	0	10	Placeholder	Placeholder	书记员		0	0	0	4	2		28			6	18	0	0	0	0
@@ -791,20 +791,20 @@
 789	282	House	0	10	Placeholder	Placeholder	书记员		0	0	0	5	2.5		28			6	18	0	0	0	0
 790	283	House	0	10	Placeholder	Placeholder	书记员		0	0	0	5	2.5		28			6	18	0	0	0	0
 791	284	House	0	10	Placeholder	Placeholder	书记员		0	0	0	5	2.5		28			6	18	0	0	0	0
-792	285	House	1	13	萨丁之家	Placeholder			0	0	0	1.5								0	0		
+792	285	House	1	13	泰丁之家	Placeholder			0	0	0	1.5								0	0		
 793	286	House	2	87	水坑小屋	Placeholder			0	0	0	1.5				76				0	0		
 794	287	House	8	10	Placeholder	Placeholder	职员		0	0	0	1.5	1					6	18	0	0	0	0
 795	288	House	1	13	伊奇之家	Placeholder			0	0	0	1.5								0	0		
 796	289	House	2	25	锻匠庄园	Placeholder			0	0	0	1.5				76				0	0		
 797	290	House	0	10	Placeholder	Placeholder	银行家		0	0	0	1	1					6	18	0	0	0	0
-798	291	House	1	13	倦怠者小屋	Placeholder			0	0	0	1.5								0	0		
+798	291	House	1	13	蓝贵德小屋	Placeholder			0	0	0	1.5								0	0		
 799	292	House	2	25	苹果之家	Placeholder			0	0	0	1.5				76				0	0		
 800	293	House	0	10	Placeholder	Placeholder	炼金术士		0	0	0	0	0		0			6	18	0	0	0	0
 801	294	House	0	10	Placeholder	Placeholder	船长		0	0	0	5	1					6	18	0	0	0	0
 802	295	House	0	10	Placeholder	Placeholder	导师		0	0	0	50	2.5				No Max	6	18	0	0	0	0
 803	296	House	0	10	Placeholder	Placeholder	银行家		0	0	0	1	1					6	18	0	0	0	0
 804	297	House	1	13	蓟之家	Placeholder			0	0	0	1.5								0	0		
-805	298	House	2	66	特雷布利德之家	Placeholder			0	0	0	1.5				76				0	0		
+805	298	House	2	66	崔比力之家	Placeholder			0	0	0	1.5				76				0	0		
 806	299	House	0	10	Placeholder	Placeholder	铁匠		0	0	0	0	0		0			6	18	0	0	0	0
 807	300	House	0	10	Placeholder	Placeholder	甲匠		0	0	0	0	0		0			6	18	0	0	0	0
 808	301	House	0	10	Placeholder	Placeholder	炼金术士		0	0	0	0	0		0			6	18	0	0	0	0
@@ -813,7 +813,7 @@
 811	304	House	0	10	Placeholder	Placeholder	导师		0	0	0	40	2				50	6	18	0	0	0	0
 812	305	House	0	10	Placeholder	Placeholder	银行家		0	0	0	1	1					6	18	0	0	0	0
 813	306	House	1	13	泽瓦小屋	Placeholder			0	0	0	1.5								0	0		
-814	307	House	2	87	霍尔登小屋	Placeholder			0	0	0	1.5				76				0	0		
+814	307	House	2	87	霍尔顿小屋	Placeholder			0	0	0	1.5				76				0	0		
 815	308	House	0	10	Placeholder	Placeholder	铁匠		0	0	0	0	0		0			6	18	0	0	0	0
 816	309	House	0	10	Placeholder	Placeholder	甲匠		0	0	0	0	0		0			6	18	0	0	0	0
 817	310	House	0	10	Placeholder	Placeholder	魔法师		0	0	0	0	0		0			6	18	0	0	0	0
@@ -851,16 +851,16 @@
 849	342	House	0	10	Placeholder	Placeholder	医师		0	0	0	40	1.5					1	24	0	0	0	0
 850	343	House	0	10	Placeholder	Placeholder	导师		0	0	0	1.5	1					6	18	0	0	0	0
 851	344	House	0	10	Placeholder	Placeholder	旅店老板		0	0	0	1	1.5					5	2	0	0	0	0
-852	345	House	1	13	梅纳萨之家	Placeholder			0	0	0	1.5								0	0		
-853	346	House	2	66	阿奇博尔德之家	Placeholder			0	0	0	1.5				79				0	0		
+852	345	House	1	13	曼纳梭尔之家	Placeholder			0	0	0	1.5								0	0		
+853	346	House	2	66	阿基巴德之家	Placeholder			0	0	0	1.5				79				0	0		
 854	347	House	0	10	Placeholder	Placeholder	铁匠		0	0	0	0	0		0			6	18	0	0	0	0
 855	348	House	0	10	Placeholder	Placeholder	甲匠		0	0	0	0	0		0			6	18	0	0	0	0
 856	349	House	0	10	Placeholder	Placeholder	魔法师		0	0	0	0	0		0			6	18	0	0	0	0
 857	350	House	0	10	Placeholder	Placeholder	医师		0	0	0	5	1					1	24	0	0	0	0
 858	351	House	0	10	Placeholder	Placeholder	导师		0	0	0	1.5	1					6	18	0	0	0	0
 859	352	House	0	10	Placeholder	Placeholder	旅店老板		0	0	0	1	1.5					5	2	0	0	0	0
-860	353	House	1	13	外壳小屋	Placeholder			0	0	0	1.5								0	0		
-861	354	House	2	41	阿里乌斯之家	Placeholder			0	0	0	1.5				79				0	0		
+860	353	House	1	13	哈斯克小屋	Placeholder			0	0	0	1.5								0	0		
+861	354	House	2	41	艾瑞恶斯之家	Placeholder			0	0	0	1.5				79				0	0		
 862	355	House	0	10	Placeholder	Placeholder	铁匠		0	0	0	0	0		0			6	18	0	0	0	0
 863	356	House	0	10	Placeholder	Placeholder	甲匠		0	0	0	0	0		0			6	18	0	0	0	0
 864	357	House	0	10	Placeholder	Placeholder	医师		0	0	0	1.5	1					1	24	0	0	0	0
@@ -873,12 +873,12 @@
 871	364	House	2	25	救镇者之厅	Placeholder			0	0	0	1.5				79				0	0		
 872	365	House	0	10	Placeholder	Placeholder	旅店老板		0	0	0	1	1					8	2	0	0	0	0
 873	366	House	1	11	房屋	Placeholder			0	0	0	1.5				76				0	0		
-874	367	House	2	66	乔伯之家	Placeholder			0	0	0	1.5				79				0	0		
+874	367	House	2	66	乔波之家	Placeholder			0	0	0	1.5				79				0	0		
 875	368	House	0	10	Placeholder	Placeholder	旅店老板		0	0	0	1	1					8	2	0	0	0	0
 876	369	House	1	11	长尾小屋	Placeholder			0	0	0	1.5				76				0	0		
-877	370	House	2	66	梅兰德尔之家	Placeholder			0	0	0	1.5				79				0	0		
+877	370	House	2	66	麦兰德之家	Placeholder			0	0	0	1.5				79				0	0		
 878	371	House	0	10	Placeholder	Placeholder	旅店老板		0	0	0	1	1					8	2	0	0	0	0
-879	372	House	1	11	艾斯伦之家	Placeholder			0	0	0	1.5				76				0	0		
+879	372	House	1	11	埃斯蓝之家	Placeholder			0	0	0	1.5				76				0	0		
 880	373	House	2	56	蓝镰之家	Placeholder			0	0	0	1.5				79				0	0		
 881	374	House	0	10	Placeholder	Placeholder	旅店老板		0	0	0	1	1					8	2	0	0	0	0
 882	375	House	1	11	格里维克之家	Placeholder			0	0	0	1.5				76				0	0		
@@ -889,14 +889,14 @@
 887	380	House	0	10	Placeholder	Placeholder	旅店老板		0	0	0	1	1					8	2	0	0	0	0
 888	381	House	2	25	山人小屋	Placeholder			0	0	0	1.5				79				0	0		
 889	382	House	2	25	洞丘庄园	Placeholder			0	0	0	1.5				79				0	0		
-890	383	House	2	56	里弗之家	Placeholder			0	0	0	1.5				79				0	0		
+890	383	House	2	56	利斧之家	Placeholder			0	0	0	1.5				79				0	0		
 891	384	House	2	25	泰珀之厅	Placeholder			0	0	0	1.5				79				0	0		
 892	385	House	2	56	普特南之家	Placeholder			0	0	0	1.5				73				0	0		
 893	386	House	2	27	卡兰德小屋	Placeholder			0	0	0	1.5				73				0	0		
-894	387	House	2	66	拉修斯之家	Placeholder			0	0	0	1.5				73				0	0		
+894	387	House	2	66	拉西亚斯之家	Placeholder			0	0	0	1.5				73				0	0		
 895	388	House	2	25	赏金猎人行会	Placeholder			0	0	0	1.5				73				0	0		
 896	389	House	2	56	博瑟姆之厅	Placeholder			0	0	0	1.5				73				0	0		
-897	390	House	2	25	内布利克之家	Placeholder			0	0	0	1.5				73				0	0		
+897	390	House	2	25	耐布力克之家	Placeholder			0	0	0	1.5				73				0	0		
 898	391	House	2	56	劈石者之厅	Placeholder			0	0	0	1.5				73				0	0		
 899	392	House	2	25	旅舍	Placeholder			0	0	0	1.5				73				0	0		
 900	393	House	2	56	旅舍	Placeholder			0	0	0	1.5				73				0	0		
@@ -909,7 +909,7 @@
 907	400	House	2	87	猎人小屋	Placeholder			0	0	0	1.5				73				0	0		
 908	401	House	2	66	德尔维什小屋	Placeholder			0	0	0	1.5				73				0	0		
 909	402	House	2	87	多特家族小屋	Placeholder			0	0	0	1.5				73				0	0		
-910	403	House	64	246	格斯伍尔夫之家				0	0	0	1.5				73				0	0		
+910	403	House	64	246	古斯渥夫之家				0	0	0	1.5				73				0	0		
 911	404	House	64	247	沃尔弗顿宅邸				0	0	0	1.5				73				0	0		
 912	405	House	64	248	House 271				0	0	0	1.5				73				0	0		
 913	406	House	64	246	House 272				0	0	0	1.5				73				0	0		
@@ -974,7 +974,7 @@
 972	465	House	66	283	牛皮宅邸				0	0	0	1.5				109				0	0		
 973	466	House	66	282	暗行者之家				0	0	0	1.5				109				0	0		
 974	467	House	66	283	凯德林宅邸				0	0	0	1.5				109				0	0		
-975	468	House	66	285	博瑟姆之家				0	0	0	1.5				112				0	0		
+975	468	House	66	285	波散恩之家				0	0	0	1.5				112				0	0		
 976	469	House	66	286	莫格伦宅邸				0	0	0	1.5				112				0	0		
 977	470	House	66	285	德拉肯宅邸				0	0	0	1.5				112				0	0		
 978	471	House	66	286	哈利之居				0	0	0	1.5				112				0	0		
@@ -1020,7 +1020,7 @@
 1018	511	House	0	173				0640	0	0	0	1.5				85				0	0		
 1019	512	House	0	173				0640	0	0	0	1.5				85				0	0		
 1020	513	House	73	261	斯尼克之家				0	0	0	1.5				88				0	0		
-1021	514	House	73	262	地狱火之家				0	0	0	1.5				88				0	0		
+1021	514	House	73	262	因法那之家				0	0	0	1.5				88				0	0		
 1022	515	House	73	263	猎鹿者宅邸				0	0	0	1.5				88				0	0		
 1023	516	House	73	261	快足之家				0	0	0	1.5				88				0	0		
 1024	517	House	0	173				0640	0	0	0	1.5				88				0	0		
@@ -1029,7 +1029,7 @@
 1027	520	House	72	248	埃弗里尔之家				0	0	0	1.5				73				0	0		
 1028	521	House	0	173				0640	0	0	0	1.5				73				0	0		
 1029	522	House	0	173				0640	0	0	0	1.5				73				0	0		
-1030	523	House	72	246	特里西娅之家				0	0	0	1.5				73				0	0		
+1030	523	House	72	246	翠西亚之家				0	0	0	1.5				73				0	0		
 1031	524	House	72	247	伊斯拉姆之家				0	0	0	1.5				73				0	0		
 1032	525	House	72	248	劈石者宅邸				0	0	0	1.5				73				0	0		
 1033	526	House	0	173				0640	0	0	0	1.5				73				0	0		
@@ -1139,7 +1139,7 @@
 1137	630	House	67	274	分水岭宅邸				0	0	0	1.5								0	0		
 1138	631	House	67	276	霍利菲尔德宅邸				0	0	0	1.5								0	0		
 1139	632	House	67	277	甜蜜宅邸				0	0	0	1.5								0	0		
-1140	633	House	73	255	坦普斯之家				0	0	0	1.5								0	0		
+1140	633	House	73	255	坦帕斯之家				0	0	0	1.5								0	0		
 1141	634	House	73	256	凯恩之居				0	0	0	1.5								0	0		
 1142	635	House	73	255	苹果宅邸				0	0	0	1.5								0	0		
 1143	636	House	69	297	罗根宅邸				0	0	0	1.5								0	0		
@@ -1166,10 +1166,10 @@
 1164	657	House	63	352	仲裁者	Placeholder			0	0	0	1.5				1				0	0	0	0
 1165	658	House	63	351	仲裁者	Placeholder			0	0	0	1.5				1				0	0	0	0
 1166	659	House	63	353	仲裁者	Placeholder			0	0	0	1.5				1				0	0	0	0
-1167	660	House	62	246	唐娜·怀里斯宅邸				0	0	0	1.5								0	0		
+1167	660	House	62	246	唐纳·理斯宅邸				0	0	0	1.5								0	0		
 1168	661	House	62	359	玛格丽特夫人号	尼尔森	船长		0	0	0	1.5						6	18	0	0	0	0
 1169	662	House	103	341	王座厅	Placeholder			0	0	0	1.5				168				0	0	0	0
-1170	663	House	62	247	米娅·露西尔之家				0	0	0	1.5								0	0		
+1170	663	House	62	247	米尔·路基之家				0	0	0	1.5								0	0		
 1171	664	House	62	248	万达利尔宅邸				0	0	0	1.5								0	0		
 1172	665	House	62	246	House 227				0	0	0	1.5								0	0		
 1173	666	House	62	247	House 228				0	0	0	1.5								0	0		
@@ -1182,7 +1182,7 @@
 1180	673	House	62	248	House 235				0	0	0	1.5								0	0		
 1181	674	House	62	246	House 236				0	0	0	1.5								0	0		
 1182	675	House	62	247	House 237				0	0	0	1.5								0	0		
-1183	676	House	62	249	卡罗琳·韦瑟斯之家				0	0	0	1.5				76				0	0		
+1183	676	House	62	249	凯洛琳·威瑟之家				0	0	0	1.5				76				0	0		
 1184	677	House	62	250	特尔马宅邸				0	0	0	1.5				76				0	0		
 1185	678	House	62	249	House 241				0	0	0	1.5				76				0	0		
 1186	679	House	62	250	House 242				0	0	0	1.5				76				0	0		

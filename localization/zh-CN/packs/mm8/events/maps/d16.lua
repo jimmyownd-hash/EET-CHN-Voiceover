@@ -98,7 +98,7 @@ SetMapMetadata({
     [98] = { kind = "open_chest", source = "opcode", chestIds = {17} },
     [99] = { kind = "open_chest", source = "opcode", chestIds = {18} },
     [100] = { kind = "open_chest", source = "opcode", chestIds = {19} },
-    [201] = { kind = "enter_house", source = "opcode", houseId = 753, targetName = "查尔斯·吉诃德之家" },
+    [201] = { kind = "enter_house", source = "opcode", houseId = 753, targetName = "查尔斯·科切特之家" },
     [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "out05.odm", targetName = "绞刑峡谷" },
     },
     textureNames = {},
@@ -466,9 +466,9 @@ RegisterEvent(100, "箱子", function()
     evt.OpenChest(19)
 end, "箱子")
 
-RegisterEvent(201, "查尔斯·吉诃德之家", function()
+RegisterEvent(201, "查尔斯·科切特之家", function()
     evt.EnterHouse(753) -- Charles Quixote's House
-end, "查尔斯·吉诃德之家")
+end, "查尔斯·科切特之家")
 
 RegisterEvent(401, "板条箱", nil, "板条箱")
 

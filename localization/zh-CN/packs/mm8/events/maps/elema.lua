@@ -28,8 +28,8 @@ SetMapMetadata({
     [100] = {19},
     },
     contextActions = {
-    [11] = { kind = "enter_house", source = "opcode", houseId = 665, targetName = "翼帆之家" },
-    [13] = { kind = "enter_house", source = "opcode", houseId = 666, targetName = "水汽之家" },
+    [11] = { kind = "enter_house", source = "opcode", houseId = 665, targetName = "翅帆之家" },
+    [13] = { kind = "enter_house", source = "opcode", houseId = 666, targetName = "瓦波之家" },
     [15] = { kind = "enter_house", source = "opcode", houseId = 667, targetName = "和风之家" },
     [17] = { kind = "enter_house", source = "opcode", houseId = 668, targetName = "空房屋" },
     [19] = { kind = "enter_house", source = "opcode", houseId = 669, targetName = "空房屋" },
@@ -93,17 +93,17 @@ RegisterNoOpEvent(9, nil)
 
 RegisterNoOpEvent(10, nil)
 
-RegisterEvent(11, "翼帆之家", function()
+RegisterEvent(11, "翅帆之家", function()
     evt.EnterHouse(665) -- Wingsail's House
-end, "翼帆之家")
+end, "翅帆之家")
 
-RegisterEvent(12, "翼帆之家", nil, "翼帆之家")
+RegisterEvent(12, "翅帆之家", nil, "翅帆之家")
 
-RegisterEvent(13, "水汽之家", function()
+RegisterEvent(13, "瓦波之家", function()
     evt.EnterHouse(666) -- Vapor's House
-end, "水汽之家")
+end, "瓦波之家")
 
-RegisterEvent(14, "水汽之家", nil, "水汽之家")
+RegisterEvent(14, "瓦波之家", nil, "瓦波之家")
 
 RegisterEvent(15, "和风之家", function()
     evt.EnterHouse(667) -- Zephyr's House

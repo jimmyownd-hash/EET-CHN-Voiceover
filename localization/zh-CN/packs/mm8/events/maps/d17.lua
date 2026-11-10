@@ -48,8 +48,8 @@ SetMapMetadata({
     [98] = { kind = "open_chest", source = "opcode", chestIds = {17} },
     [99] = { kind = "open_chest", source = "opcode", chestIds = {18} },
     [100] = { kind = "open_chest", source = "opcode", chestIds = {19} },
-    [131] = { kind = "enter_house", source = "opcode", houseId = 572, targetName = "伊什顿洞穴" },
-    [132] = { kind = "enter_house", source = "opcode", houseId = 573, targetName = "伊希尔戈尔洞穴" },
+    [131] = { kind = "enter_house", source = "opcode", houseId = 572, targetName = "伊斯顿洞穴" },
+    [132] = { kind = "enter_house", source = "opcode", houseId = 573, targetName = "伊斯希尔歌尔洞穴" },
     [133] = { kind = "enter_house", source = "opcode", houseId = 574, targetName = "疤翼洞穴" },
     [201] = { kind = "enter_house", source = "opcode", houseId = 774, targetName = "龙首领洞穴" },
     [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "out05.odm", targetName = "绞刑峡谷" },
@@ -228,13 +228,13 @@ RegisterEvent(100, "箱子", function()
     evt.OpenChest(19)
 end, "箱子")
 
-RegisterEvent(131, "伊什顿洞穴", function()
+RegisterEvent(131, "伊斯顿洞穴", function()
     evt.EnterHouse(572) -- Ishton's Cave
-end, "伊什顿洞穴")
+end, "伊斯顿洞穴")
 
-RegisterEvent(132, "伊希尔戈尔洞穴", function()
+RegisterEvent(132, "伊斯希尔歌尔洞穴", function()
     evt.EnterHouse(573) -- Ithilgore's Cave
-end, "伊希尔戈尔洞穴")
+end, "伊斯希尔歌尔洞穴")
 
 RegisterEvent(133, "疤翼洞穴", function()
     evt.EnterHouse(574) -- Scarwing's Cave

@@ -105,7 +105,7 @@ SetMapMetadata({
     [99] = { kind = "open_chest", source = "opcode", chestIds = {18} },
     [100] = { kind = "open_chest", source = "opcode", chestIds = {19} },
     [201] = { kind = "enter_house", source = "opcode", houseId = 213, targetName = "桑德罗/赞特王座厅" },
-    [203] = { kind = "enter_house", source = "opcode", houseId = 754, targetName = "戴森·利兰之室" },
+    [203] = { kind = "enter_house", source = "opcode", houseId = 754, targetName = "戴森·李蓝之室" },
     [452] = { kind = "open_door", source = "title" },
     [454] = { kind = "open_door", source = "opcode" },
     [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "out06.odm", targetName = "影旋山脉" },
@@ -885,7 +885,7 @@ RegisterEvent(201, "桑德罗/赞特王座厅", function()
     end
 end, "桑德罗/赞特王座厅")
 
-RegisterEvent(203, "戴森·利兰之室", function()
+RegisterEvent(203, "戴森·李蓝之室", function()
     SetValue(MapVar(31), 5)
     if IsQBitSet(QBit(26)) then -- Find the skeleton transformer in the Shadowspire Necromancers' Guild. Destroy it and return to Oskar Tyre. - Given and taken by Oskar Tyre (area 7). Taken when Qbit 29 set.
         if IsQBitSet(QBit(89)) and IsQBitSet(QBit(90)) then -- Dyson Leland talks to you about the Necromancers. For global event 97-100.
@@ -933,7 +933,7 @@ RegisterEvent(203, "戴森·利兰之室", function()
         evt.EnterHouse(754) -- Dyson Leland's Room
         return
     end
-end, "戴森·利兰之室")
+end, "戴森·李蓝之室")
 
 RegisterEvent(451, nil, function()
     if IsAtLeast(MapVar(11), 2) then return end

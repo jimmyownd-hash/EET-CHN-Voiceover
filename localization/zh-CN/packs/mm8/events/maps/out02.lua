@@ -35,30 +35,30 @@ SetMapMetadata({
     [19] = { kind = "enter_house", source = "opcode", houseId = 793, targetName = "水坑小屋" },
     [21] = { kind = "enter_house", source = "opcode", houseId = 796, targetName = "锻匠庄园" },
     [23] = { kind = "enter_house", source = "opcode", houseId = 799, targetName = "苹果之家" },
-    [25] = { kind = "enter_house", source = "opcode", houseId = 805, targetName = "特雷布利德之家" },
-    [27] = { kind = "enter_house", source = "opcode", houseId = 814, targetName = "霍尔登小屋" },
+    [25] = { kind = "enter_house", source = "opcode", houseId = 805, targetName = "崔比力之家" },
+    [27] = { kind = "enter_house", source = "opcode", houseId = 814, targetName = "霍尔顿小屋" },
     [29] = { kind = "enter_house", source = "opcode", houseId = 824, targetName = "阿兹诺格小屋" },
     [31] = { kind = "enter_house", source = "opcode", houseId = 834, targetName = "卢奥德林之家" },
     [33] = { kind = "enter_house", source = "opcode", houseId = 844, targetName = "苹果蜂庄园" },
-    [35] = { kind = "enter_house", source = "opcode", houseId = 853, targetName = "阿奇博尔德之家" },
-    [37] = { kind = "enter_house", source = "opcode", houseId = 861, targetName = "阿里乌斯之家" },
+    [35] = { kind = "enter_house", source = "opcode", houseId = 853, targetName = "阿基巴德之家" },
+    [37] = { kind = "enter_house", source = "opcode", houseId = 861, targetName = "艾瑞恶斯之家" },
     [39] = { kind = "enter_house", source = "opcode", houseId = 867, targetName = "猎鹿者之家" },
     [41] = { kind = "enter_house", source = "opcode", houseId = 871, targetName = "救镇者之厅" },
-    [43] = { kind = "enter_house", source = "opcode", houseId = 874, targetName = "乔伯之家" },
-    [45] = { kind = "enter_house", source = "opcode", houseId = 877, targetName = "梅兰德尔之家" },
+    [43] = { kind = "enter_house", source = "opcode", houseId = 874, targetName = "乔波之家" },
+    [45] = { kind = "enter_house", source = "opcode", houseId = 877, targetName = "麦兰德之家" },
     [47] = { kind = "enter_house", source = "opcode", houseId = 880, targetName = "蓝镰之家" },
     [49] = { kind = "enter_house", source = "opcode", houseId = 883, targetName = "快舌庄园" },
     [51] = { kind = "enter_house", source = "opcode", houseId = 886, targetName = "拉拉塞尔庄园" },
     [53] = { kind = "enter_house", source = "opcode", houseId = 888, targetName = "山人小屋" },
     [55] = { kind = "enter_house", source = "opcode", houseId = 889, targetName = "洞丘庄园" },
-    [57] = { kind = "enter_house", source = "opcode", houseId = 890, targetName = "里弗之家" },
+    [57] = { kind = "enter_house", source = "opcode", houseId = 890, targetName = "利斧之家" },
     [59] = { kind = "enter_house", source = "opcode", houseId = 891, targetName = "泰珀之厅" },
     [61] = { kind = "enter_house", source = "opcode", houseId = 892, targetName = "普特南之家" },
     [63] = { kind = "enter_house", source = "opcode", houseId = 893, targetName = "卡兰德小屋" },
-    [65] = { kind = "enter_house", source = "opcode", houseId = 894, targetName = "拉修斯之家" },
+    [65] = { kind = "enter_house", source = "opcode", houseId = 894, targetName = "拉西亚斯之家" },
     [67] = { kind = "enter_house", source = "opcode", houseId = 895, targetName = "赏金猎人行会" },
     [69] = { kind = "enter_house", source = "opcode", houseId = 896, targetName = "博瑟姆之厅" },
-    [71] = { kind = "enter_house", source = "opcode", houseId = 897, targetName = "内布利克之家" },
+    [71] = { kind = "enter_house", source = "opcode", houseId = 897, targetName = "耐布力克之家" },
     [73] = { kind = "enter_house", source = "opcode", houseId = 898, targetName = "劈石者之厅" },
     [75] = { kind = "enter_house", source = "opcode", houseId = 899, targetName = "旅舍" },
     [77] = { kind = "enter_house", source = "opcode", houseId = 900, targetName = "旅舍" },
@@ -100,7 +100,7 @@ SetMapMetadata({
     [187] = { kind = "enter_house", source = "opcode", houseId = 1565, targetName = "体育馆" },
     [191] = { kind = "enter_house", source = "opcode", houseId = 229, targetName = "凯塞尔酒馆" },
     [193] = { kind = "enter_house", source = "opcode", houseId = 282, targetName = "斯蒂尔金库" },
-    [195] = { kind = "enter_house", source = "opcode", houseId = 83, targetName = "考里古玩店" },
+    [195] = { kind = "enter_house", source = "opcode", houseId = 83, targetName = "卡奥里古玩店" },
     [197] = { kind = "enter_house", source = "opcode", houseId = 237, targetName = "跳舞食人魔" },
     [199] = { kind = "enter_house", source = "opcode", houseId = 483, targetName = "风之号" },
     [201] = { kind = "enter_house", source = "opcode", houseId = 186, targetName = "自我行会" },
@@ -431,25 +431,25 @@ end, "苹果之家")
 
 RegisterEvent(24, "苹果之家", nil, "苹果之家")
 
-RegisterEvent(25, "特雷布利德之家", function()
+RegisterEvent(25, "崔比力之家", function()
     if not IsQBitSet(QBit(57)) then -- The Pirates invaded Ravenshore
         evt.EnterHouse(805) -- Treblid's Home
         return
     end
     evt.FaceAnimation(FaceAnimation.DoorLocked)
-end, "特雷布利德之家")
+end, "崔比力之家")
 
-RegisterEvent(26, "特雷布利德之家", nil, "特雷布利德之家")
+RegisterEvent(26, "崔比力之家", nil, "崔比力之家")
 
-RegisterEvent(27, "霍尔登小屋", function()
+RegisterEvent(27, "霍尔顿小屋", function()
     if not IsQBitSet(QBit(57)) then -- The Pirates invaded Ravenshore
         evt.EnterHouse(814) -- Holden's Hovel
         return
     end
     evt.FaceAnimation(FaceAnimation.DoorLocked)
-end, "霍尔登小屋")
+end, "霍尔顿小屋")
 
-RegisterEvent(28, "霍尔登小屋", nil, "霍尔登小屋")
+RegisterEvent(28, "霍尔顿小屋", nil, "霍尔顿小屋")
 
 RegisterEvent(29, "阿兹诺格小屋", function()
     if not IsQBitSet(QBit(57)) then -- The Pirates invaded Ravenshore
@@ -481,25 +481,25 @@ end, "苹果蜂庄园")
 
 RegisterEvent(34, "苹果蜂庄园", nil, "苹果蜂庄园")
 
-RegisterEvent(35, "阿奇博尔德之家", function()
+RegisterEvent(35, "阿基巴德之家", function()
     if not IsQBitSet(QBit(57)) then -- The Pirates invaded Ravenshore
         evt.EnterHouse(853) -- Archibald's Home
         return
     end
     evt.FaceAnimation(FaceAnimation.DoorLocked)
-end, "阿奇博尔德之家")
+end, "阿基巴德之家")
 
-RegisterEvent(36, "阿奇博尔德之家", nil, "阿奇博尔德之家")
+RegisterEvent(36, "阿基巴德之家", nil, "阿基巴德之家")
 
-RegisterEvent(37, "阿里乌斯之家", function()
+RegisterEvent(37, "艾瑞恶斯之家", function()
     if not IsQBitSet(QBit(57)) then -- The Pirates invaded Ravenshore
         evt.EnterHouse(861) -- Arius' House
         return
     end
     evt.FaceAnimation(FaceAnimation.DoorLocked)
-end, "阿里乌斯之家")
+end, "艾瑞恶斯之家")
 
-RegisterEvent(38, "阿里乌斯之家", nil, "阿里乌斯之家")
+RegisterEvent(38, "艾瑞恶斯之家", nil, "艾瑞恶斯之家")
 
 RegisterEvent(39, "猎鹿者之家", function()
     if not IsQBitSet(QBit(57)) then -- The Pirates invaded Ravenshore
@@ -521,25 +521,25 @@ end, "救镇者之厅")
 
 RegisterEvent(42, "救镇者之厅", nil, "救镇者之厅")
 
-RegisterEvent(43, "乔伯之家", function()
+RegisterEvent(43, "乔波之家", function()
     if not IsQBitSet(QBit(57)) then -- The Pirates invaded Ravenshore
         evt.EnterHouse(874) -- Jobber's Home
         return
     end
     evt.FaceAnimation(FaceAnimation.DoorLocked)
-end, "乔伯之家")
+end, "乔波之家")
 
-RegisterEvent(44, "乔伯之家", nil, "乔伯之家")
+RegisterEvent(44, "乔波之家", nil, "乔波之家")
 
-RegisterEvent(45, "梅兰德尔之家", function()
+RegisterEvent(45, "麦兰德之家", function()
     if not IsQBitSet(QBit(57)) then -- The Pirates invaded Ravenshore
         evt.EnterHouse(877) -- Maylander's House
         return
     end
     evt.FaceAnimation(FaceAnimation.DoorLocked)
-end, "梅兰德尔之家")
+end, "麦兰德之家")
 
-RegisterEvent(46, "梅兰德尔之家", nil, "梅兰德尔之家")
+RegisterEvent(46, "麦兰德之家", nil, "麦兰德之家")
 
 RegisterEvent(47, "蓝镰之家", function()
     if not IsQBitSet(QBit(57)) then -- The Pirates invaded Ravenshore
@@ -591,15 +591,15 @@ end, "洞丘庄园")
 
 RegisterEvent(56, "洞丘庄园", nil, "洞丘庄园")
 
-RegisterEvent(57, "里弗之家", function()
+RegisterEvent(57, "利斧之家", function()
     if not IsQBitSet(QBit(57)) then -- The Pirates invaded Ravenshore
         evt.EnterHouse(890) -- Reaver's Home
         return
     end
     evt.FaceAnimation(FaceAnimation.DoorLocked)
-end, "里弗之家")
+end, "利斧之家")
 
-RegisterEvent(58, "里弗之家", nil, "里弗之家")
+RegisterEvent(58, "利斧之家", nil, "利斧之家")
 
 RegisterEvent(59, "泰珀之厅", function()
     if not IsQBitSet(QBit(57)) then -- The Pirates invaded Ravenshore
@@ -631,15 +631,15 @@ end, "卡兰德小屋")
 
 RegisterEvent(64, "卡兰德小屋", nil, "卡兰德小屋")
 
-RegisterEvent(65, "拉修斯之家", function()
+RegisterEvent(65, "拉西亚斯之家", function()
     if not IsQBitSet(QBit(57)) then -- The Pirates invaded Ravenshore
         evt.EnterHouse(894) -- Lathius' Home
         return
     end
     evt.FaceAnimation(FaceAnimation.DoorLocked)
-end, "拉修斯之家")
+end, "拉西亚斯之家")
 
-RegisterEvent(66, "拉修斯之家", nil, "拉修斯之家")
+RegisterEvent(66, "拉西亚斯之家", nil, "拉西亚斯之家")
 
 RegisterEvent(67, "赏金猎人行会", function()
     if not IsQBitSet(QBit(57)) then -- The Pirates invaded Ravenshore
@@ -661,15 +661,15 @@ end, "博瑟姆之厅")
 
 RegisterEvent(70, "博瑟姆之厅", nil, "博瑟姆之厅")
 
-RegisterEvent(71, "内布利克之家", function()
+RegisterEvent(71, "耐布力克之家", function()
     if not IsQBitSet(QBit(57)) then -- The Pirates invaded Ravenshore
         evt.EnterHouse(897) -- Neblick's House
         return
     end
     evt.FaceAnimation(FaceAnimation.DoorLocked)
-end, "内布利克之家")
+end, "耐布力克之家")
 
-RegisterEvent(72, "内布利克之家", nil, "内布利克之家")
+RegisterEvent(72, "耐布力克之家", nil, "耐布力克之家")
 
 RegisterEvent(73, "劈石者之厅", function()
     if not IsQBitSet(QBit(57)) then -- The Pirates invaded Ravenshore
@@ -1040,15 +1040,15 @@ end, "斯蒂尔金库")
 
 RegisterEvent(194, "斯蒂尔金库", nil, "斯蒂尔金库")
 
-RegisterEvent(195, "考里古玩店", function()
+RegisterEvent(195, "卡奥里古玩店", function()
     if not IsQBitSet(QBit(57)) then -- The Pirates invaded Ravenshore
         evt.EnterHouse(83) -- Caori's Curios
         return
     end
     evt.FaceAnimation(FaceAnimation.DoorLocked)
-end, "考里古玩店")
+end, "卡奥里古玩店")
 
-RegisterEvent(196, "考里古玩店", nil, "考里古玩店")
+RegisterEvent(196, "卡奥里古玩店", nil, "卡奥里古玩店")
 
 RegisterEvent(197, "跳舞食人魔", function()
     if not IsQBitSet(QBit(57)) then -- The Pirates invaded Ravenshore

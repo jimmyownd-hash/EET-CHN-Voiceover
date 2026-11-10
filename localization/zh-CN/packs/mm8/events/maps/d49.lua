@@ -98,7 +98,7 @@ SetMapMetadata({
     [98] = { kind = "open_chest", source = "opcode", chestIds = {17} },
     [99] = { kind = "open_chest", source = "opcode", chestIds = {18} },
     [100] = { kind = "open_chest", source = "opcode", chestIds = {19} },
-    [131] = { kind = "enter_house", source = "opcode", houseId = 703, targetName = "硫磺洞穴" },
+    [131] = { kind = "enter_house", source = "opcode", houseId = 703, targetName = "布尔斯通洞穴" },
     [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "out06.odm", targetName = "影旋山脉" },
     },
     textureNames = {},
@@ -410,9 +410,9 @@ RegisterEvent(100, "箱子", function()
     evt.OpenChest(19)
 end, "箱子")
 
-RegisterEvent(131, "硫磺洞穴", function()
+RegisterEvent(131, "布尔斯通洞穴", function()
     evt.EnterHouse(703) -- Brimstone's Cave
-end, "硫磺洞穴")
+end, "布尔斯通洞穴")
 
 RegisterEvent(501, "离开亚尔德雷克的洞穴", function()
     evt.MoveToMap(21749, 21967, 2144, 1024, 0, 0, 0, 3, "out06.odm") -- Shadowspire

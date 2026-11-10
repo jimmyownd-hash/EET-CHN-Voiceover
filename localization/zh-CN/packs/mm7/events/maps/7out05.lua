@@ -40,7 +40,7 @@ SetMapMetadata({
     [55] = { kind = "enter_house", source = "opcode", houseId = 972, targetName = "牛皮宅邸" },
     [56] = { kind = "enter_house", source = "opcode", houseId = 973, targetName = "暗行者之家" },
     [57] = { kind = "enter_house", source = "opcode", houseId = 974, targetName = "凯德林宅邸" },
-    [58] = { kind = "enter_house", source = "opcode", houseId = 975, targetName = "博瑟姆之家" },
+    [58] = { kind = "enter_house", source = "opcode", houseId = 975, targetName = "波散恩之家" },
     [59] = { kind = "enter_house", source = "opcode", houseId = 976, targetName = "莫格伦宅邸" },
     [60] = { kind = "enter_house", source = "opcode", houseId = 977, targetName = "德拉肯宅邸" },
     [61] = { kind = "enter_house", source = "opcode", houseId = 978, targetName = "哈利之居" },
@@ -86,7 +86,7 @@ SetMapMetadata({
     [456] = { kind = "secret_event", source = "heuristic", hidden = true },
     [501] = { kind = "enter_dungeon", source = "opcode", targetMap = "t04.blv", targetName = "深渊大厅" },
     [502] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d15.blv", targetName = "瞭望塔6号" },
-    [503] = { kind = "enter_dungeon", source = "opcode", targetMap = "mdt10.blv", targetName = "赛塔轲的高塔" },
+    [503] = { kind = "enter_dungeon", source = "opcode", targetMap = "mdt10.blv", targetName = "威廉姆·塞塔格的高塔" },
     [504] = { kind = "enter_dungeon", source = "opcode", targetMap = "7d15.blv", targetName = "瞭望塔6号" },
     },
     textureNames = {},
@@ -195,9 +195,9 @@ RegisterEvent(57, "凯德林宅邸", function()
     evt.EnterHouse(974) -- Kedrin Residence
 end, "凯德林宅邸")
 
-RegisterEvent(58, "博瑟姆之家", function()
+RegisterEvent(58, "波散恩之家", function()
     evt.EnterHouse(975) -- Botham's Home
-end, "博瑟姆之家")
+end, "波散恩之家")
 
 RegisterEvent(59, "莫格伦宅邸", function()
     evt.EnterHouse(976) -- Mogren Residence

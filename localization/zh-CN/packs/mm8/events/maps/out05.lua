@@ -32,7 +32,7 @@ SetMapMetadata({
     [13] = { kind = "enter_house", source = "opcode", houseId = 539, targetName = "晨星宅邸" },
     [15] = { kind = "enter_house", source = "opcode", houseId = 540, targetName = "林篱宅邸" },
     [17] = { kind = "enter_house", source = "opcode", houseId = 541, targetName = "铁拳宅邸" },
-    [19] = { kind = "enter_house", source = "opcode", houseId = 562, targetName = "阿瓦隆宅邸" },
+    [19] = { kind = "enter_house", source = "opcode", houseId = 562, targetName = "阿瓦龙宅邸" },
     [21] = { kind = "enter_house", source = "opcode", houseId = 563, targetName = "阿林宅邸" },
     [23] = { kind = "enter_house", source = "opcode", houseId = 564, targetName = "光誓宅邸" },
     [25] = { kind = "enter_house", source = "opcode", houseId = 565, targetName = "水獭镇宅邸" },
@@ -43,7 +43,7 @@ SetMapMetadata({
     [35] = { kind = "enter_house", source = "opcode", houseId = 570, targetName = "珍妮宅邸" },
     [37] = { kind = "enter_house", source = "opcode", houseId = 571, targetName = "韦尔德里克之家" },
     [39] = { kind = "enter_house", source = "opcode", houseId = 699, targetName = "内利克斯之家" },
-    [41] = { kind = "enter_house", source = "opcode", houseId = 700, targetName = "坦普斯之家" },
+    [41] = { kind = "enter_house", source = "opcode", houseId = 700, targetName = "坦帕斯之家" },
     [43] = { kind = "enter_house", source = "opcode", houseId = 542, targetName = "里弗斯顿宅邸" },
     [81] = { kind = "open_chest", source = "opcode", chestIds = {0} },
     [82] = { kind = "open_chest", source = "opcode", chestIds = {1} },
@@ -146,11 +146,11 @@ end, "铁拳宅邸")
 
 RegisterEvent(18, "铁拳宅邸", nil, "铁拳宅邸")
 
-RegisterEvent(19, "阿瓦隆宅邸", function()
+RegisterEvent(19, "阿瓦龙宅邸", function()
     evt.EnterHouse(562) -- Avalon's Residence
-end, "阿瓦隆宅邸")
+end, "阿瓦龙宅邸")
 
-RegisterEvent(20, "阿瓦隆宅邸", nil, "阿瓦隆宅邸")
+RegisterEvent(20, "阿瓦龙宅邸", nil, "阿瓦龙宅邸")
 
 RegisterEvent(21, "阿林宅邸", function()
     evt.EnterHouse(563) -- Arin Residence
@@ -212,11 +212,11 @@ end, "内利克斯之家")
 
 RegisterEvent(40, "内利克斯之家", nil, "内利克斯之家")
 
-RegisterEvent(41, "坦普斯之家", function()
+RegisterEvent(41, "坦帕斯之家", function()
     evt.EnterHouse(700) -- Tempus' House
-end, "坦普斯之家")
+end, "坦帕斯之家")
 
-RegisterEvent(42, "坦普斯之家", nil, "坦普斯之家")
+RegisterEvent(42, "坦帕斯之家", nil, "坦帕斯之家")
 
 RegisterEvent(43, "里弗斯顿宅邸", function()
     evt.EnterHouse(542) -- Reaverston Residence

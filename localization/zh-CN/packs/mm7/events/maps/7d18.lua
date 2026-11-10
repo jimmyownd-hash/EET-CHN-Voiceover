@@ -50,7 +50,7 @@ SetMapMetadata({
     [194] = { kind = "open_chest", source = "opcode", chestIds = {19} },
     [195] = { kind = "open_chest", source = "opcode", chestIds = {0} },
     [376] = { kind = "secret_event", source = "heuristic", hidden = true },
-    [416] = { kind = "enter_house", source = "opcode", houseId = 215, targetName = "马克姆领主之室" },
+    [416] = { kind = "enter_house", source = "opcode", houseId = 215, targetName = "马克汉姆爵士之室" },
     [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "7out13.odm", targetName = "塔塔力雅" },
     },
     textureNames = {},
@@ -311,14 +311,14 @@ RegisterEvent(376, nil, function()
     evt.CastSpell(15, 20, 3, -1132, 1001, 374, 0, 0, 0) -- Sparks
 end)
 
-RegisterEvent(416, "马克姆领主之室", function()
+RegisterEvent(416, "马克汉姆爵士之室", function()
     if not IsAtLeast(MapVar(6), 2) then
         evt.EnterHouse(215) -- Lord Markham's Chamber
         return
     end
     evt.StatusText("这扇门已经锁上了")
     evt.FaceAnimation(FaceAnimation.DoorLocked)
-end, "马克姆领主之室")
+end, "马克汉姆爵士之室")
 
 RegisterEvent(451, nil, function()
     if IsAtLeast(MapVar(6), 1) then return end

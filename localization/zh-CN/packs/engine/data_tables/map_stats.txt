@@ -92,7 +92,7 @@
 89	瞭望塔6号	7d15.blv	0	0	11	672	7	10	11	6	3	10	40	30	30	Necromancer	Necromancer	1	 1-3	Lich	Lich	1	 1-3	Elemental Earth	Elemental Earth	1	 1-3	18	CAVE	0	Last remaining Necromancer border watchtower.	5	-	mm7
 90	酒窖	7d16.blv	0	0	13	672	7	10	13	7	3	10	40	30	30	Vampire	Vampire	4	 1-3	Bat	Bat	5	 1-3	Necromancer	Necromancer	3	 1-3	18	STONEROOM	0	"Basement under house for vampire ""family"""	13	-	mm7
 91	潮穴	7d17.blv	0	0	9	672	7	10	9	4	2	10	40	30	30	Thief	Thief	4	 1-3	Ghost	Ghost	3	 1-3	Skeleton Warrior	Skeleton Warrior	5	 1-3	18	CAVE	0	pirate's caves.  Fills with water periodically	13	-	mm7
-92	马克汉爵士宅邸	7d18.blv	0	0	10	672	7	10	10	5	2	10	50	50	0	Fighter Plate	Fighter Plate	3	 1-3	Swordsman	Swordsman	3	 1-3	0	0	1	 1-3	34	CAVE	0	Repeatable map (needs special coding)		-	mm7
+92	马克汉姆爵士宅邸	7d18.blv	0	0	10	672	7	10	10	5	2	10	50	50	0	Fighter Plate	Fighter Plate	3	 1-3	Swordsman	Swordsman	3	 1-3	0	0	1	 1-3	34	CAVE	0	Repeatable map (needs special coding)		-	mm7
 93	月亮大神殿	7d19.blv	0	0	9	672	7	10	9	4	3	10	50	50	0	Cleric Moon	Cleric Moon	3	 1-3	Wight	Wight	2	 1-3	0	0	1	 1-3	28	STONEROOM	0	Ruined old temple of the moon	9	-	mm7
 94	佣兵行会	7d20.blv	0	0	11	672	7	10	11	5	4	10	40	30	30	Archer	Archer	4	 1-3	Fighter Leather	Fighter Leather	5	 1-3	Fighter Plate	Fighter Plate	3	 1-3	34	CAVE	0	main mercenary guild	13	-	mm7
 95	白崖穴	7d21.blv	0	0	2	672	7	10	2	1	0	10	50	50	0	Troglodyte	Troglodyte	1	 1-3	Ooze	Ooze	1	 1-3	0	0	1	 1-3	18	CAVE	0	Goblin caves.  Good place to put gold from robbed bank and new monsters	2	x	mm7
@@ -127,8 +127,8 @@
 124	5号墓穴	mdr03.blv	0	0	5	672	7	10	5	3	1	10	50	50	0	Skeleton Warrior	Skeleton Warrior	3	 1-3	Rat	Rat	3	 1-3	0	0	1	 1-3	20	CAVE	0			-	mm7
 125	11号墓穴	mdr04.blv	0	0	5	672	7	10	5	3	1	10	50	50	0	Zombie	Zombie	3	 1-3	Bat	Bat	3	 1-3	0	0	1	 1-3	20	CAVE	0			-	mm7
 126	15号墓穴	mdr05.blv	0	0	5	672	7	10	5	3	1	10	50	50	0	Zombie	Zombie	3	 1-3	Rat	Rat	3	 1-3	0	0	1	 1-3	20	CAVE	0			-	mm7
-127	罗姆赛克斯的洞穴	mdt09.blv	0	0	10	672	7	10	10	5	3	10	100	0	0	ADragon	ADragon	1	 1-3	0	0	3	 1-3	0	0	1	 1-3	18	CAVE	0			-	mm7
-128	赛塔轲的高塔	mdt10.blv	0	0	8	672	7	10	8	4	2	10	50	50	0	Fighter Plate	Fighter Plate	1	 1-3	Rat	Rat	3	 1-3	0	0	1	 1-3	34	STONEROOM	0			-	mm7
+127	劳斯莱克的洞穴	mdt09.blv	0	0	10	672	7	10	10	5	3	10	100	0	0	ADragon	ADragon	1	 1-3	0	0	3	 1-3	0	0	1	 1-3	18	CAVE	0			-	mm7
+128	威廉姆·塞塔格的高塔	mdt10.blv	0	0	8	672	7	10	8	4	2	10	50	50	0	Fighter Plate	Fighter Plate	1	 1-3	Rat	Rat	3	 1-3	0	0	1	 1-3	34	STONEROOM	0			-	mm7
 129	隐藏的陵寝	mdt11.blv	0	0	12	672	7	10	12	6	4	10	50	50	0	Lich	Lich	3	 1-3	Vampire	Vampire	3	 1-3	0	0	1	 1-3	18	CAVE	0			-	mm7
 130	巨龙洞穴	mdt12.blv	0	0	20	672	7	15	20	10	6	10	100	0	0	ADragon	ADragon	5	 1-3	0	0	1	 1-3	0	0	1	 1-3	31	CAVE	0	Repeatable map (needs special coding)		-	mm7
 131	强盗窝	mdt14.blv	0	0	6	336	7	10	6	3	1	10	50	50	0	Thief	Thief	2	 1-3	Fighter Leather	Fighter Leather	1	 1-3	0	0	1	 1-3	34	CAVE	0	Repeatable map (needs special coding)		-	mm7

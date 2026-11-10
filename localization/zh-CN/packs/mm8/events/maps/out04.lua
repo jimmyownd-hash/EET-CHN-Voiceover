@@ -28,15 +28,15 @@ SetMapMetadata({
     [100] = {19},
     },
     contextActions = {
-    [11] = { kind = "enter_house", source = "opcode", houseId = 752, targetName = "奥弗杜恩之家" },
+    [11] = { kind = "enter_house", source = "opcode", houseId = 752, targetName = "欧瓦都之家" },
     [13] = { kind = "enter_house", source = "opcode", houseId = 559, targetName = "波尔小屋" },
     [15] = { kind = "enter_house", source = "opcode", houseId = 558, targetName = "绿风暴小屋" },
-    [17] = { kind = "enter_house", source = "opcode", houseId = 557, targetName = "霍伯特小屋" },
+    [17] = { kind = "enter_house", source = "opcode", houseId = 557, targetName = "贺伯特小屋" },
     [19] = { kind = "enter_house", source = "opcode", houseId = 556, targetName = "迷雾小屋" },
-    [21] = { kind = "enter_house", source = "opcode", houseId = 555, targetName = "塔利昂小屋" },
-    [23] = { kind = "enter_house", source = "opcode", houseId = 553, targetName = "斯通小屋" },
+    [21] = { kind = "enter_house", source = "opcode", houseId = 555, targetName = "塔力安小屋" },
+    [23] = { kind = "enter_house", source = "opcode", houseId = 553, targetName = "石头小屋" },
     [25] = { kind = "enter_house", source = "opcode", houseId = 554, targetName = "炉誓小屋" },
-    [27] = { kind = "enter_house", source = "opcode", houseId = 561, targetName = "施梅克小屋" },
+    [27] = { kind = "enter_house", source = "opcode", houseId = 561, targetName = "史麦克小屋" },
     [29] = { kind = "enter_house", source = "opcode", houseId = 560, targetName = "塔伦特小屋" },
     [31] = { kind = "enter_house", source = "opcode", houseId = 698, targetName = "蓟骨宅邸" },
     [81] = { kind = "open_chest", source = "opcode", chestIds = {0} },
@@ -110,11 +110,11 @@ RegisterNoOpEvent(9, nil)
 
 RegisterNoOpEvent(10, nil)
 
-RegisterEvent(11, "奥弗杜恩之家", function()
+RegisterEvent(11, "欧瓦都之家", function()
     evt.EnterHouse(752) -- Overdune's House
-end, "奥弗杜恩之家")
+end, "欧瓦都之家")
 
-RegisterEvent(12, "奥弗杜恩之家", nil, "奥弗杜恩之家")
+RegisterEvent(12, "欧瓦都之家", nil, "欧瓦都之家")
 
 RegisterEvent(13, "波尔小屋", function()
     evt.EnterHouse(559) -- Pole's Hovel
@@ -128,11 +128,11 @@ end, "绿风暴小屋")
 
 RegisterEvent(16, "绿风暴小屋", nil, "绿风暴小屋")
 
-RegisterEvent(17, "霍伯特小屋", function()
+RegisterEvent(17, "贺伯特小屋", function()
     evt.EnterHouse(557) -- Hobert's Hovel
-end, "霍伯特小屋")
+end, "贺伯特小屋")
 
-RegisterEvent(18, "霍伯特小屋", nil, "霍伯特小屋")
+RegisterEvent(18, "贺伯特小屋", nil, "贺伯特小屋")
 
 RegisterEvent(19, "迷雾小屋", function()
     evt.EnterHouse(556) -- Hovel of Mist
@@ -140,17 +140,17 @@ end, "迷雾小屋")
 
 RegisterEvent(20, "迷雾小屋", nil, "迷雾小屋")
 
-RegisterEvent(21, "塔利昂小屋", function()
+RegisterEvent(21, "塔力安小屋", function()
     evt.EnterHouse(555) -- Talion's Hovel
-end, "塔利昂小屋")
+end, "塔力安小屋")
 
-RegisterEvent(22, "塔利昂小屋", nil, "塔利昂小屋")
+RegisterEvent(22, "塔力安小屋", nil, "塔力安小屋")
 
-RegisterEvent(23, "斯通小屋", function()
+RegisterEvent(23, "石头小屋", function()
     evt.EnterHouse(553) -- Stone's Hovel
-end, "斯通小屋")
+end, "石头小屋")
 
-RegisterEvent(24, "斯通小屋", nil, "斯通小屋")
+RegisterEvent(24, "石头小屋", nil, "石头小屋")
 
 RegisterEvent(25, "炉誓小屋", function()
     evt.EnterHouse(554) -- Hearthsworn Hovel
@@ -158,11 +158,11 @@ end, "炉誓小屋")
 
 RegisterEvent(26, "炉誓小屋", nil, "炉誓小屋")
 
-RegisterEvent(27, "施梅克小屋", function()
+RegisterEvent(27, "史麦克小屋", function()
     evt.EnterHouse(561) -- Schmecker's Hovel
-end, "施梅克小屋")
+end, "史麦克小屋")
 
-RegisterEvent(28, "施梅克小屋", nil, "施梅克小屋")
+RegisterEvent(28, "史麦克小屋", nil, "史麦克小屋")
 
 RegisterEvent(29, "塔伦特小屋", function()
     evt.EnterHouse(560) -- Tarent Hovel

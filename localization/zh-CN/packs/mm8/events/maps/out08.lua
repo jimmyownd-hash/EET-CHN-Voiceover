@@ -28,12 +28,12 @@ SetMapMetadata({
     [100] = {19},
     },
     contextActions = {
-    [11] = { kind = "enter_house", source = "opcode", houseId = 619, targetName = "泽维乌斯宅邸" },
-    [13] = { kind = "enter_house", source = "opcode", houseId = 620, targetName = "维什之家" },
+    [11] = { kind = "enter_house", source = "opcode", houseId = 619, targetName = "夕维恶斯宅邸" },
+    [13] = { kind = "enter_house", source = "opcode", houseId = 620, targetName = "维许之家" },
     [15] = { kind = "enter_house", source = "opcode", houseId = 621, targetName = "帆之小屋" },
     [17] = { kind = "enter_house", source = "opcode", houseId = 622, targetName = "波多小屋" },
-    [19] = { kind = "enter_house", source = "opcode", houseId = 623, targetName = "加尔维努斯之家" },
-    [23] = { kind = "enter_house", source = "opcode", houseId = 674, targetName = "卡格诺商店" },
+    [19] = { kind = "enter_house", source = "opcode", houseId = 623, targetName = "加文那斯之家" },
+    [23] = { kind = "enter_house", source = "opcode", houseId = 674, targetName = "卡格纳商店" },
     [81] = { kind = "open_chest", source = "opcode", chestIds = {0} },
     [82] = { kind = "open_chest", source = "opcode", chestIds = {1} },
     [83] = { kind = "open_chest", source = "opcode", chestIds = {2} },
@@ -103,17 +103,17 @@ RegisterNoOpEvent(9, nil)
 
 RegisterNoOpEvent(10, nil)
 
-RegisterEvent(11, "泽维乌斯宅邸", function()
+RegisterEvent(11, "夕维恶斯宅邸", function()
     evt.EnterHouse(619) -- Xevius's Residence
-end, "泽维乌斯宅邸")
+end, "夕维恶斯宅邸")
 
-RegisterEvent(12, "泽维乌斯宅邸", nil, "泽维乌斯宅邸")
+RegisterEvent(12, "夕维恶斯宅邸", nil, "夕维恶斯宅邸")
 
-RegisterEvent(13, "维什之家", function()
+RegisterEvent(13, "维许之家", function()
     evt.EnterHouse(620) -- Vish's House
-end, "维什之家")
+end, "维许之家")
 
-RegisterEvent(14, "维什之家", nil, "维什之家")
+RegisterEvent(14, "维许之家", nil, "维许之家")
 
 RegisterEvent(15, "帆之小屋", function()
     evt.EnterHouse(621) -- Sail's Shack
@@ -127,17 +127,17 @@ end, "波多小屋")
 
 RegisterEvent(18, "波多小屋", nil, "波多小屋")
 
-RegisterEvent(19, "加尔维努斯之家", function()
+RegisterEvent(19, "加文那斯之家", function()
     evt.EnterHouse(623) -- Galvinus's Home
-end, "加尔维努斯之家")
+end, "加文那斯之家")
 
-RegisterEvent(20, "加尔维努斯之家", nil, "加尔维努斯之家")
+RegisterEvent(20, "加文那斯之家", nil, "加文那斯之家")
 
-RegisterEvent(23, "卡格诺商店", function()
+RegisterEvent(23, "卡格纳商店", function()
     evt.EnterHouse(674) -- Cagnor's Shop
-end, "卡格诺商店")
+end, "卡格纳商店")
 
-RegisterEvent(24, "卡格诺商店", nil, "卡格诺商店")
+RegisterEvent(24, "卡格纳商店", nil, "卡格纳商店")
 
 RegisterEvent(81, "箱子", function()
     evt.OpenChest(0)

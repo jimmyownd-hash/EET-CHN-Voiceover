@@ -104,7 +104,7 @@ SetMapMetadata({
     [98] = { kind = "open_chest", source = "opcode", chestIds = {17} },
     [99] = { kind = "open_chest", source = "opcode", chestIds = {18} },
     [100] = { kind = "open_chest", source = "opcode", chestIds = {19} },
-    [201] = { kind = "enter_house", source = "opcode", houseId = 775, targetName = "埃斯卡顿王座厅" },
+    [201] = { kind = "enter_house", source = "opcode", houseId = 775, targetName = "爱斯卡顿王座厅" },
     [451] = { kind = "generic_event", source = "opcode" },
     [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "pbp.odm", targetName = "界间之地" },
     },
@@ -467,9 +467,9 @@ RegisterEvent(100, "箱子", function()
     evt.OpenChest(19)
 end, "箱子")
 
-RegisterEvent(201, "埃斯卡顿王座厅", function()
+RegisterEvent(201, "爱斯卡顿王座厅", function()
     evt.EnterHouse(775) -- Escaton's 王座大厅
-end, "埃斯卡顿王座厅")
+end, "爱斯卡顿王座厅")
 
 RegisterEvent(451, "喝一口", function()
     evt.StatusText("精神焕发")
