@@ -82,7 +82,7 @@ Victory Certificate	胜利证书
 Visitor's Pass	访客通行证
 Three Crusades	三次圣战
 Gladiatorial Labour	角斗士试炼
-Assassin's Trial	刺客试炼
+Assassin's Trial	杀手试炼
 Ranger's Trial	游骑兵试炼
 Honk	霍恩克
 Honky	霍恩克教徒
@@ -107,19 +107,19 @@ Monk	僧侣
 Sorcerer	巫师
 Cleric	牧师
 Druid	德鲁伊
-Mercenary	佣兵
+Mercenary	雇佣兵
 Crusader	十字军
 Gladiator	角斗士
-Assassin	刺客
+Assassin	杀手
 Scholar	学者
-Mage	魔法师
-Healer	医师
+Mage	法师
+Healer	治疗师
 Priest	神甫
 Lich	巫妖
 Cavalier	豪侠
-Champion	冠军骑士
+Champion	勇士
 Rogue	神偷
-Warrior Mage	魔法战士
+Warrior Mage	战斗法师
 Master Archer	神箭手
 Hunter	猎手
 Ranger Lord	游骑领主
@@ -134,30 +134,30 @@ Priest of Light	光明主教
 Nosferatu	诺斯费拉图
 Patriarch	尊者
 Minotaur	牛头人
-Minotaur Lord	牛头人领主
+Minotaur Lord	牛头领主
 Troll	巨魔
-War Troll	战争巨魔
+War Troll	战斗巨魔
 Dragon	龙
-Great Wyrm	超级威猛兽
+Great Wyrm	神龙
 Dark Elf	黑暗精灵
 Vampire	吸血鬼
 # ---- 属性、技能、法术（官方） ----
 Might	力量
 Intellect	智力
 Speed	速度
-Perception	侦查
-Disarm Trap	拆除陷阱
-Disarm Traps	拆除陷阱
+Perception	洞察术
+Disarm Trap	陷阱拆卸术
+Disarm Traps	陷阱拆卸术
 Identify Item	物品鉴定术
-Lloyd's Beacon	时空道标
-Town Portal	时空之门
-Wizard Eye	魔力神眼
+Lloyd's Beacon	劳埃德信标
+Town Portal	城镇传送
+Wizard Eye	巫师之眼
 Sparks	遍地开花
-Fire Spike	烈火爆雷
+Fire Spike	火刺
 Dispel Magic	驱散魔法
 Lightning Bolt	霹雳闪电
-Slow	迟缓术
-Fireball	火球术
+Slow	减速
+Fireball	连珠火球
 Grandmaster	宗师
 # ---- 怪物 ----
 Basilisk	石化蜥蜴

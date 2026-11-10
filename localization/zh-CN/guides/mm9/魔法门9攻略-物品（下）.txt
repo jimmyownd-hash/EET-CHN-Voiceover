@@ -76,23 +76,23 @@
 克罗纳·基加（Crona Kiga）
 玩偶（Dolly）
 龙（Dragon）
-灵药液（Elixir Fluid）
-灵药原料（Elixir Ingredients）
-污秽灵药（Elixir of Defedation）
+药剂液（Elixir Fluid）
+药剂原料（Elixir Ingredients）
+污秽药剂（Elixir of Defedation）
 农夫的犁（Farmer's Plow）
 游戏票（Game Ticket）
 罐子（Jar）
 一桶怪酒（Keg of Strange Brew）
 书房钥匙（Key to Study）
-基拉之盾（Kira's Shield）
+基拉的盾（Kira's Shield）
 基拉之剑（Kira's Sword）
 一绺头发（Lock of Hair）
 路德维希的手稿（Ludwig's Manuscript）
 迷宫钥匙（Maze Key）
-接生婆的草药包（Midwife's Bag of Herbs）
+接生婆的药草袋（Midwife's Bag of Herbs）
 尼亚姆的钥匙（Njam's Key）
 努尔蒂甘的药水（Nurtigan's Potion）
-连接之球（Orb of Linking）
+连接宝珠（Orb of Linking）
 圣徒遗物（Saint's Relic）
 西格蒙德之剑（Sigmund's Sword）
 炉渣提取器（Slag Extractor）
