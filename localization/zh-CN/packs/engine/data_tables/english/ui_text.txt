@@ -7857,3 +7857,5 @@ boots	靴子
 amulet	护身符
 ring	戒指
 N/A	无
+No Armageddon casts left today	今天已无法再施放末日审判
+Armageddon already active	末日审判已在生效
