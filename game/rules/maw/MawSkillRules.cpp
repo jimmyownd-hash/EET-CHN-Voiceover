@@ -791,7 +791,8 @@ std::string MawSkillRules::statTooltip(
 
             if (!effect.empty() && mawWearsLegendaryAffix(character, affix))
             {
-                text += "\n - <value>" + effect + "</>";
+                // The colour tags only turn into colour codes through mawFillText; left raw they show as "<value>".
+                text += mawFillText("\n - <value>" + effect + "</>", {});
                 anyLegendary = true;
             }
         }
