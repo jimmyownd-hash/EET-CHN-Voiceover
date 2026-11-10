@@ -19,10 +19,10 @@ zh-cn pack differs in ~1900 entries. The most visible ones: equipment enchants a
 skill names (武器使用术, 经商术, 洞察术 ...). Only entries with identical placeholders and no line
 breaks were touched; dialogue is not included. Not verified in-game - treat as a candidate list and cherry-pick.
 
-## 02-code-fixes - engine-side patches against OpenYAMM 1.21 (reference only)
+## 02-code-fixes - engine-side fixes (patches)
 - `0001-ui-translate-bench-effects-bounty.patch`: text composed in C++ before drawing was shown in English
   (crafting bench lines/slots/"N items", monster active-effect names, bounty boss affix). Fix: route via
-  `UiText::translate`. In 1.22 this likely maps to `tr()` - please check whether these spots are covered.
+  `UiText::translate`.
 - `0002-roster-join-chinese-topic-labels.patch`: story companions could not join ("no join event") because
   the topic label was compared against an English literal; with a translated label the match failed.
 - `0003-translate-paralyse-line-attack-type-legendary-tags.patch`: (a) the staff/mace "Chance to paralyse" line was
