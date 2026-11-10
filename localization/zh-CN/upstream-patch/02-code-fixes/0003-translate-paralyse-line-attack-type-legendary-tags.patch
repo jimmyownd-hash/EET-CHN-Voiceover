@@ -1,0 +1,50 @@
+diff --git a/game/rules/maw/MawSkillRules.cpp b/game/rules/maw/MawSkillRules.cpp
+index 22d5d0a..82dc92a 100644
+--- a/game/rules/maw/MawSkillRules.cpp
++++ b/game/rules/maw/MawSkillRules.cpp
+@@ -15,6 +15,7 @@
+ #include "game/rules/maw/MawSkillFormulas.h"
+ #include "game/rules/maw/MawSpellFormulas.h"
+ #include "game/rules/maw/MawTexts.h"
++#include "game/ui/UiText.h"
+ 
+ #include <algorithm>
+ #include <array>
+@@ -590,7 +591,9 @@ SkillTooltipText MawSkillRules::skillTooltip(
+         {
+             std::ostringstream line;
+             line << "Chance to paralyse vs level " << reference << ": " << mawRound(chance * 10000) / 100 << " %";
+-            stunLine = line.str();
++            // Composed in code and spliced mid-paragraph into the description, so the draw-time translation cannot
++            // match it as a whole: translate it here.
++            stunLine = UiText::translate(line.str());
+         }
+ 
+         const auto [power, vitality] = mawRetaliationCoefficients(m_rules, character, *party.itemTable(),
+@@ -788,7 +791,8 @@ std::string MawSkillRules::statTooltip(
+ 
+             if (!effect.empty() && mawWearsLegendaryAffix(character, affix))
+             {
+-                text += "\n - <value>" + effect + "</>";
++                // The colour tags only turn into colour codes through mawFillText; left raw they show as "<value>".
++                text += mawFillText("\n - <value>" + effect + "</>", {});
+                 anyLegendary = true;
+             }
+         }
+diff --git a/game/ui/GameplayPartyOverlayRenderer.cpp b/game/ui/GameplayPartyOverlayRenderer.cpp
+index 15d48e7..fd9e4ff 100644
+--- a/game/ui/GameplayPartyOverlayRenderer.cpp
++++ b/game/ui/GameplayPartyOverlayRenderer.cpp
+@@ -11297,8 +11297,10 @@ void GameplayPartyOverlayRenderer::renderActorInspectOverlay(GameplayScreenRunti
+     if (reveal.attackAndDamage)
+     {
+         attackRows = {
+-            pStats->attack1Type,
+-            (actorState.attack2Chance > 0 || !pStats->attack2Type.empty()) ? pStats->attack2Type : std::string()};
++            UiText::translate(pStats->attack1Type),
++            (actorState.attack2Chance > 0 || !pStats->attack2Type.empty())
++                ? UiText::translate(pStats->attack2Type)
++                : std::string()};
+         damageRows = {
+             formatMonsterDamageText(actorState.attack1Damage),
+             (actorState.attack2Chance > 0 || actorState.attack2Damage.diceRolls > 0)

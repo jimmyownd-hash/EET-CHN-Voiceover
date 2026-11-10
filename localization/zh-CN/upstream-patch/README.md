@@ -25,6 +25,11 @@ breaks were touched; dialogue is not included. Not verified in-game - treat as a
   `UiText::translate`. In 1.22 this likely maps to `tr()` - please check whether these spots are covered.
 - `0002-roster-join-chinese-topic-labels.patch`: story companions could not join ("no join event") because
   the topic label was compared against an English literal; with a translated label the match failed.
+- `0003-translate-paralyse-line-attack-type-legendary-tags.patch`: (a) the staff/mace "Chance to paralyse" line was
+  spliced into a translated paragraph in English at Master rank; (b) the monster info panel showed raw attack types
+  ("Phys", "Ener", "Pois"); (c) the Vitality tooltip printed raw `<value>` / `</>` colour tags in the legendary
+  effects list because that line bypassed `mawFillText`. Fixes (a) and (b) are localization-only; (c) is a plain bug
+  that also affects English.
 Also found: comparisons against English literals must stay English (e.g. ranged damage text `N/A`) when the
 display string is translated separately.
 
