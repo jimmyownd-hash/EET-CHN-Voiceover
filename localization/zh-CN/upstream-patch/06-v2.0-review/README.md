@@ -46,3 +46,12 @@ still in the 2.0 pack.
   of 0003 with `Engine::tr` / `Engine::localize`. Only the two points above remain.
 
 Not checked by a native reader in game: this is a comparison of text files.
+
+## 7. The machine drafts - `machine-drafts.reviewed.engine.po` (27 of 162 changed)
+2.0 has 162 entries marked `machine translation (Claude), review` (145 in engine.po: battle orders, guard values,
+loot settings, promotion and bounty lines; 17 in mm9.po). All 162 were read. 135 are fine as they are and can lose
+the review mark. 27 are changed so their terms match the rest of our pack: Armor Class 防御等级 (not 护甲等级),
+Unarmed 空手搏斗术, Armsmaster 武器使用术, sword / spear 长剑 / 长矛, mastery 精通等级 (not 掌握度),
+Spell Points 魔法值, Antagarich 安塔格里克, Jadame 贾丹姆, Bounty hunt 悬赏追捕, Dungeon 地城, Blood 血液,
+mastery letter M = 大. These follow the same wording as `terms.*.po`; if you keep the pack's current terms instead,
+skip this file. The MM9 drafts use the same names as the rest of mm9.po (约维克, 乔加德, 马克尔) and need no change.
