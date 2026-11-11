@@ -68,7 +68,7 @@ elements:
       color: '#dbc59e'
       align_x: center
       align_y: middle
-      scale: 0.88
+      scale: 0.74105
       pad_x: 0.0
   - id: MainMenuActionPanel
     anchor: top_left
@@ -100,7 +100,7 @@ elements:
       color: '#ffe4ac'
       align_x: center
       align_y: middle
-      scale: 0.56
+      scale: 0.43333
       pad_x: 12.8
     notes: 'Live label; image padding, disabled and focus states: level_generation/ui/menu_study_20260928/runtime_stage/contracts/theme.yml.'
   - id: MainMenuNewGameButton
@@ -122,7 +122,7 @@ elements:
       color: '#e8d1a4'
       align_x: center
       align_y: middle
-      scale: 0.56
+      scale: 0.43333
       pad_x: 12.8
     notes: 'Live label; image padding, disabled and focus states: level_generation/ui/menu_study_20260928/runtime_stage/contracts/theme.yml.'
   - id: MainMenuLoadGameButton
@@ -144,7 +144,7 @@ elements:
       color: '#e8d1a4'
       align_x: center
       align_y: middle
-      scale: 0.56
+      scale: 0.43333
       pad_x: 12.8
     notes: 'Live label; image padding, disabled and focus states: level_generation/ui/menu_study_20260928/runtime_stage/contracts/theme.yml.'
   - id: MainMenuSettingsButton
@@ -166,7 +166,7 @@ elements:
       color: '#e8d1a4'
       align_x: center
       align_y: middle
-      scale: 0.56
+      scale: 0.43333
       pad_x: 12.8
     notes: 'Live label; image padding, disabled and focus states: level_generation/ui/menu_study_20260928/runtime_stage/contracts/theme.yml.'
   - id: MainMenuCreditsButton
@@ -188,7 +188,7 @@ elements:
       color: '#cbc5af'
       align_x: center
       align_y: middle
-      scale: 0.5
+      scale: 0.38333
       pad_x: 12.8
     notes: 'Live label; image padding, disabled and focus states: level_generation/ui/menu_study_20260928/runtime_stage/contracts/theme.yml.'
   - id: MainMenuQuitButton
@@ -210,7 +210,7 @@ elements:
       color: '#cbc5af'
       align_x: center
       align_y: middle
-      scale: 0.5
+      scale: 0.38333
       pad_x: 12.8
     notes: 'Live label; image padding, disabled and focus states: level_generation/ui/menu_study_20260928/runtime_stage/contracts/theme.yml.'
   - id: MainMenuContinueInfo
@@ -228,6 +228,6 @@ elements:
       color: '#bebba8'
       align_x: center
       align_y: middle
-      scale: 0.66
+      scale: 0.56471
       pad_x: 0.0
     notes: Location of the newest valid save. Real elapsed play time is not stored in saves.
