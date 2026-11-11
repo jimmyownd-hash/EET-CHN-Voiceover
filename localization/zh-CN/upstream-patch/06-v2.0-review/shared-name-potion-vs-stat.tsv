@@ -1,0 +1,21 @@
+English	current zh-cn (potion wording)	suggested for the stat/spell/skill meaning	first source
+Meditation	冥想药剂	冥想术	assets_dev/engine/data_tables/english/Global.txt:299
+Wolves' Bane	狼毒药剂	恶狼克星	assets_dev/engine/data_tables/house_animations.txt:114
+Recharge Item	魔力填充药剂	魔力填充	assets_dev/engine/data_tables/english/potion.txt:35
+Remove Fear	驱逐恐惧药剂	驱逐恐惧	assets_dev/engine/data_tables/english/potion.txt:39
+Remove Curse	驱魔除咒药剂	驱魔除咒	assets_dev/engine/data_tables/english/potion.txt:40
+Stone to Flesh	解除石化药剂	解除石化	assets_dev/engine/data_tables/english/potion.txt:172
+Fire Resistance	御火药剂	火系抗性	assets_dev/engine/data_tables/english/Global.txt:27
+Air Resistance	御风药剂	空气抗性	assets_dev/engine/data_tables/english/Global.txt:205
+Water Resistance	御水药剂	水系抗性	assets_dev/engine/data_tables/english/Global.txt:197
+Earth Resistance	御土药剂	土系抗性	assets_dev/engine/data_tables/english/Global.txt:211
+Mind Resistance	御心药剂	心系抗性	assets_dev/engine/data_tables/english/Global.txt:216
+Body Resistance	御体药剂	体系抗性	assets_dev/engine/data_tables/english/Global.txt:207
+Haste	攻击加速药剂	加速	assets_dev/engine/data_tables/english/Global.txt:444
+Shield	护体神盾药剂	盾牌	assets_dev/engine/data_tables/english/Global.txt:282
+Stone Skin	护体石肤药剂	石肤术	assets_dev/engine/data_tables/english/spells.txt:43
+Bless	圣灵佑佐药剂	祝福	assets_dev/engine/data_tables/english/Global.txt:446
+Preservation	天神护体药剂	保护	assets_dev/engine/data_tables/english/Global.txt:236
+Heroism	天赐神力药剂	英勇	assets_dev/engine/data_tables/english/Global.txt:443
+Protection from Magic	御魔奇术药剂	魔法防护	assets_dev/engine/data_tables/english/potion.txt:94
+Resistance	防御药剂	抗性	assets_dev/engine/data_tables/items.txt:1773

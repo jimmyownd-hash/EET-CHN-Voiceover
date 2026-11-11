@@ -1,0 +1,44 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: zh-cn\n"
+
+# was:  SP 已保留
+msgid " SP held"
+msgstr " 法术值 已保留"
+
+# was: 安塔格里奇
+msgid "Antagrich"
+msgstr "安塔格里克"
+
+# was: 发现了{item}！
+msgid "Discovered: {item}!"
+msgstr "发现新配方：{item}！"
+
+# was: 已导入 1 个存档。
+msgid "Imported 1 save."
+msgstr "导入了 1 个存档。"
+
+# was: 佣兵公会
+msgid "Merc Guild"
+msgstr "佣兵行会"
+
+# was: 永久删除「{name}」？
+msgid "Permanently delete \"{name}\"?"
+msgstr "要彻底删除「{name}」吗？"
+
+# was: 标准 MMerge
+msgid "Standard MMerge"
+msgstr "MMMerge 整合版"
+
+# was: 标签页
+msgid "Tab"
+msgstr "Tab键"
+
+# was: 远近闻名
+msgid "well known"
+msgstr "一名小有名气的"
+
+# was: 攻击会按造成伤害的一部分回复生命
+msgid "Attacks heal part of the damage dealt"
+msgstr "攻击可治疗造成伤害的一部分"

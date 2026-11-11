@@ -1,0 +1,16 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: zh-cn\n"
+
+# doubled character
+# was: 离开雷格纳海盗前哨站站
+#: assets_dev/worlds/mm8/events/maps/d06.lua:471 assets_dev/worlds/mm8/events/maps/d06.lua:473
+msgid "Leave the Regnan Pirate Outpost"
+msgstr "离开雷格纳海盗前哨站"
+
+# doubled character
+# was: 进入雷格纳海盗前哨站站
+#: assets_dev/worlds/mm8/events/maps/out01.lua:897 assets_dev/worlds/mm8/events/maps/out01.lua:899
+msgid "Enter the Regnan Pirate Outpost"
+msgstr "进入雷格纳海盗前哨站"

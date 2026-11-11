@@ -1,0 +1,399 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: zh-cn\n"
+
+# was: 小龙吃掉了食物。
+#: assets_dev/worlds/mm7/events/Global_mm7_mmmerge.lua:110
+msgid "The hatchling eats the food."
+msgstr "幼龙吃掉了食物。"
+
+# was: 小龙饿了，你需要五份食物来喂它。
+#: assets_dev/worlds/mm7/events/Global_mm7_mmmerge.lua:92
+msgid "The hatchling is hungry, but you need five food to feed it."
+msgstr "幼龙饿了，但你需要五份食物才能喂它。"
+
+# was: 门锁着
+#: assets_dev/worlds/mm7/events/common/mm7_common.lua:111 assets_dev/worlds/mm7/events/common/mm7_common.lua:122 assets_dev/worlds/mm7/events/maps/7d22.lua:199
+msgid "The Door is Locked"
+msgstr "门被锁上了"
+
+# was: 柜子
+#: assets_dev/worlds/mm7/events/maps/7d12.lua:160 assets_dev/worlds/mm7/events/maps/7d12.lua:162 assets_dev/worlds/mm7/events/maps/7d12.lua:172
+msgid "Cabinet"
+msgstr "橱柜"
+
+# was: 不太清爽
+#: assets_dev/worlds/mm7/events/maps/7d12.lua:347
+msgid "Not Very Refreshing"
+msgstr "提神效果不佳"
+
+# was: 精神焕发
+#: assets_dev/worlds/mm7/events/maps/7d12.lua:351 assets_dev/worlds/mm7/events/maps/7d24.lua:216 assets_dev/worlds/mm7/events/maps/7d24.lua:220
+msgid "Refreshing"
+msgstr "神清气爽"
+
+# was: 没有让你感兴趣的物品
+#: assets_dev/worlds/mm7/events/maps/7d14.lua:250 assets_dev/worlds/mm7/events/maps/7d37.lua:350
+msgid "There are no items that interest you"
+msgstr "没有你感兴趣的东西"
+
+# was: 你成功解除了陷阱
+#: assets_dev/worlds/mm7/events/maps/7d17.lua:87
+msgid "You Successfully disarm the trap"
+msgstr "你成功地解除了陷阱"
+
+# was: 这扇门已经锁上了
+#: assets_dev/worlds/mm7/events/maps/7d18.lua:319
+msgid "This Door has Been Locked"
+msgstr "这扇门已被锁上"
+
+# was: 你没看到任何有趣的东西
+#: assets_dev/worlds/mm7/events/maps/7d20.lua:371
+msgid "You see nothing of interest"
+msgstr "你看不到任何感兴趣的东西"
+
+# was: 饮用井水
+#: assets_dev/worlds/mm7/events/maps/7d22.lua:177 assets_dev/worlds/mm7/events/maps/7d22.lua:179 assets_dev/worlds/mm7/events/maps/7out01.lua:255
+msgid "Drink from the Well"
+msgstr "饮井水"
+
+# was: 精神焕发！
+#: assets_dev/worlds/mm7/events/maps/7d22.lua:178
+msgid "Refreshing !"
+msgstr "神清气爽！"
+
+# was: 电力已恢复
+#: assets_dev/worlds/mm7/events/maps/7d23.lua:824
+msgid "Power Restored"
+msgstr "能量已恢复"
+
+# was: 你们必须穿上潜水服才能离开船
+#: assets_dev/worlds/mm7/events/maps/7d23.lua:861 assets_dev/worlds/mm7/events/maps/7d23_mmmerge.lua:10
+msgid "You must all be wearing your wetsuits to exit the ship"
+msgstr "你们必须全都穿上潜水服才能离开这艘船"
+
+# was: 所有属性+25（临时）
+#: assets_dev/worlds/mm7/events/maps/7d25.lua:409
+msgid "+25 to all Stats(Temporary)"
+msgstr "所有属性 +25（临时）"
+
+# was: 宝库
+#: assets_dev/worlds/mm7/events/maps/7d31.lua:240 assets_dev/worlds/mm7/events/maps/7d31.lua:257
+msgid "Vault"
+msgstr "金库"
+
+# was: 肖像
+#: assets_dev/worlds/mm7/events/maps/7d33.lua:440 assets_dev/worlds/mm7/events/maps/7d33.lua:445 assets_dev/worlds/mm7/events/maps/7d33.lua:447
+msgid "Portrait"
+msgstr "画像"
+
+# was: 马车
+#: assets_dev/worlds/mm7/events/maps/7out01.lua:202
+msgid "Cart"
+msgstr "手推车"
+
+# was: 火系抗性临时+50。
+#: assets_dev/worlds/mm7/events/maps/7out01.lua:258
+msgid "+50 Fire Resistance temporary."
+msgstr "火系抗性 +50（临时）。"
+
+# was: 生命值恢复5点。
+#: assets_dev/worlds/mm7/events/maps/7out01.lua:278
+msgid "+5 Hit points restored."
+msgstr "+5 生命值已恢复。"
+
+# was: 魔法值恢复5点。
+#: assets_dev/worlds/mm7/events/maps/7out01.lua:289
+msgid "+5 Spell points restored."
+msgstr "+5 法术值已恢复。"
+
+# was: 北行至图拉里恩森林
+#: assets_dev/worlds/mm7/events/maps/7out02.lua:739
+msgid "North to the Tularean Forest"
+msgstr "向北往图拉雷安森林"
+
+# was: 东
+#: assets_dev/worlds/mm7/events/maps/7out02.lua:745
+msgid "East"
+msgstr "向东"
+
+# was: +10 力量（临时）
+#: assets_dev/worlds/mm7/events/maps/7out02.lua:755
+msgid "+ 10 Might (Temporary)"
+msgstr "力量 +10（临时）"
+
+# was: 饮用喷泉
+#: assets_dev/worlds/mm7/events/maps/7out02.lua:801 assets_dev/worlds/mm7/events/maps/7out02.lua:822 assets_dev/worlds/mm7/events/maps/7out03.lua:540
+msgid "Drink from the Fountain"
+msgstr "饮喷泉水"
+
+# was: 你大概不该那么做。
+#: assets_dev/worlds/mm7/events/maps/7out02.lua:804 assets_dev/worlds/mm7/events/maps/7out02.lua:807 assets_dev/worlds/mm7/events/maps/7out02.lua:821
+msgid "You probably shouldn't do that."
+msgstr "你最好别那么做。"
+
+# was: 也许那不是什么好主意。
+#: assets_dev/worlds/mm7/events/maps/7out02.lua:817
+msgid "Maybe that wasn't such a good idea."
+msgstr "也许那不是个好主意。"
+
+# was: +2 准确（永久）
+#: assets_dev/worlds/mm7/events/maps/7out02.lua:828
+msgid "+2 Accuracy (Permanent)"
+msgstr "精确 +2（永久）"
+
+# was: 舱门
+#: assets_dev/worlds/mm7/events/maps/7out02.lua:952 assets_dev/worlds/mm7/events/maps/7out02.lua:954
+msgid "Hatch"
+msgstr "舱口"
+
+# was: 力量+2（永久）
+#: assets_dev/worlds/mm7/events/maps/7out03.lua:492
+msgid "+2 Might (Permanent)"
+msgstr "力量 +2（永久）"
+
+# was: 身体抗性+20（临时）
+#: assets_dev/worlds/mm7/events/maps/7out03.lua:505
+msgid "+20 Body Resistance (Temporary)"
+msgstr "体系抗性 +20（临时）"
+
+# was: 力量+50（临时）
+#: assets_dev/worlds/mm7/events/maps/7out03.lua:547
+msgid "+50 Might (Temporary)"
+msgstr "力量 +50（临时）"
+
+# was: 命中+10（临时）
+#: assets_dev/worlds/mm7/events/maps/7out03.lua:560
+msgid "+10 Accuracy (Temporary)"
+msgstr "精确 +10（临时）"
+
+# was: 个性+5（临时）
+#: assets_dev/worlds/mm7/events/maps/7out03.lua:573
+msgid "+5 Personality (Temporary)"
+msgstr "个性 +5（临时）"
+
+# was: 运气+10（永久）
+#: assets_dev/worlds/mm7/events/maps/7out03.lua:726
+msgid "+10 Luck(Permanent)"
+msgstr "幸运 +10（永久）"
+
+# was: 北行至德加沼泽
+#: assets_dev/worlds/mm7/events/maps/7out03.lua:751
+msgid "North to Deyja Moors"
+msgstr "向北往戴贾沼泽"
+
+# was: 南行至布拉卡达沙漠
+#: assets_dev/worlds/mm7/events/maps/7out03.lua:755
+msgid "South to the Bracada Desert"
+msgstr "向南往布拉卡达沙漠"
+
+# was: 大地抗性+50（临时）
+#: assets_dev/worlds/mm7/events/maps/7out04.lua:424
+msgid "+50 Earth Resistance (Temporary)"
+msgstr "土系抗性 +50（临时）"
+
+# was: 水系、火系与空气抗性+10（永久）
+#: assets_dev/worlds/mm7/events/maps/7out04.lua:603
+msgid "+10 Water, Fire, and Air Resistance(Permanent)"
+msgstr "水系、火系与空气抗性 +10（永久）"
+
+# was: 智力+2（永久）
+#: assets_dev/worlds/mm7/events/maps/7out05.lua:378
+msgid "+2 Intellect (Permanent)"
+msgstr "智力 +2（永久）"
+
+# was: 个性+10（临时）
+#: assets_dev/worlds/mm7/events/maps/7out05.lua:391
+msgid "+10 Personality (Temporary)"
+msgstr "个性 +10（临时）"
+
+# was: 火系抗性+10（临时）
+#: assets_dev/worlds/mm7/events/maps/7out05.lua:404
+msgid "+10 Fire Resistance (Temporary)"
+msgstr "火系抗性 +10（临时）"
+
+# was: 你还没受够吗？
+#: assets_dev/worlds/mm7/events/maps/7out05.lua:418
+msgid "Haven't you had enough ?"
+msgstr "你还没喝够吗？"
+
+# was: 火系抗性+5（永久）
+#: assets_dev/worlds/mm7/events/maps/7out05.lua:432 assets_dev/worlds/mm7/events/maps/7out05.lua:438
+msgid "+5 Fire Resistance (Permanent)"
+msgstr "火系抗性 +5（永久）"
+
+# was: 精神、大地与肢体抗性+10（永久）
+#: assets_dev/worlds/mm7/events/maps/7out05.lua:454
+msgid "+10 Mind, Earth, and Body Resistance(Permanent)"
+msgstr "心智、土系与体系抗性 +10（永久）"
+
+# was: 你许下愿望
+#: assets_dev/worlds/mm7/events/maps/7out06.lua:503 assets_dev/worlds/mm7/events/maps/7out06.lua:553 assets_dev/worlds/mm7/events/maps/out12.lua:198
+msgid "You make a wish"
+msgstr "你许了个愿"
+
+# was: 饮水处
+#: assets_dev/worlds/mm7/events/maps/7out06.lua:556 assets_dev/worlds/mm7/events/maps/7out06.lua:577 assets_dev/worlds/mm7/events/maps/7out13.lua:415
+msgid "Drink"
+msgstr "饮用"
+
+# was: 嗯，你决定不做。
+#: assets_dev/worlds/mm7/events/maps/7out06.lua:559 assets_dev/worlds/mm7/events/maps/7out06.lua:562 assets_dev/worlds/mm7/events/maps/7out06.lua:576
+msgid "hmmm, You decide against it."
+msgstr "嗯……你决定算了。"
+
+# was: 突然，你感觉不太舒服
+#: assets_dev/worlds/mm7/events/maps/7out06.lua:572
+msgid "Suddenly, You Don't Feel too Well"
+msgstr "突然间，你感觉不太对劲"
+
+# was: 智力与个性+25（临时）
+#: assets_dev/worlds/mm7/events/maps/7out06.lua:587
+msgid "+25 Intellect and Personality (Temporary)"
+msgstr "智力与个性 +25（临时）"
+
+# was: 通往主广场
+#: assets_dev/worlds/mm7/events/maps/7out06.lua:607
+msgid "To Main Square"
+msgstr "前往中央广场"
+
+# was: 护甲+20（临时）
+#: assets_dev/worlds/mm7/events/maps/7out13.lua:365
+msgid "+20 AC (Temporary)"
+msgstr "护甲 +20（临时）"
+
+# was: 空气抗性+20（临时）
+#: assets_dev/worlds/mm7/events/maps/7out13.lua:378
+msgid "+20 Air Resistance (Temporary)"
+msgstr "空气抗性 +20（临时）"
+
+# was: 速度+2（永久）
+#: assets_dev/worlds/mm7/events/maps/7out13.lua:391
+msgid "+2 Speed (Permanent)"
+msgstr "速度 +2（永久）"
+
+# was: 佣兵公会
+#: assets_dev/worlds/mm7/events/maps/7out13.lua:397
+msgid "The Mercenary Guild "
+msgstr "佣兵行会"
+
+# was: 东行至斯泰德维克
+#: assets_dev/worlds/mm7/events/maps/7out13.lua:405
+msgid "East to Steadwick"
+msgstr "向东往斯特德威克"
+
+# was: 你决定再试一次不是个好主意。
+#: assets_dev/worlds/mm7/events/maps/7out13.lua:418 assets_dev/worlds/mm7/events/maps/7out13.lua:421 assets_dev/worlds/mm7/events/maps/7out13.lua:435
+msgid "You decide it would be a bad idea to try that again."
+msgstr "你觉得再试一次不是个好主意。"
+
+# was: 你感觉不舒服。
+#: assets_dev/worlds/mm7/events/maps/7out13.lua:431
+msgid "You do not feel well."
+msgstr "你感觉不太舒服。"
+
+# was: 北
+#: assets_dev/worlds/mm7/events/maps/7out13.lua:438
+msgid "North "
+msgstr "向北"
+
+# was: 似乎什么都没发生
+#: assets_dev/worlds/mm7/events/maps/7out15.lua:148
+msgid "Nothing Seems to have happened"
+msgstr "似乎什么也没发生"
+
+# was: 电梯
+#: assets_dev/worlds/mm7/events/maps/d04.lua:123 assets_dev/worlds/mm7/events/maps/d04.lua:125
+msgid "Lift"
+msgstr "升降机"
+
+# was: 锁孔
+#: assets_dev/worlds/mm7/events/maps/mdk01.lua:187 assets_dev/worlds/mm7/events/maps/mdk01.lua:196 assets_dev/worlds/mm7/events/maps/mdr01.lua:171
+msgid "Key Hole"
+msgstr "钥匙孔"
+
+# was: 离开高塔
+#: assets_dev/worlds/mm7/events/maps/mdt10.lua:186 assets_dev/worlds/mm7/events/maps/mdt10.lua:188
+msgid "Leave to tower"
+msgstr "离开塔楼"
+
+# was: 月之圣殿
+#: assets_dev/worlds/mm7/events/maps/out09.lua:193
+msgid "The Grand Temple of the Moon"
+msgstr "月之大神殿"
+
+# was: 日之圣殿
+#: assets_dev/worlds/mm7/events/maps/out09.lua:195
+msgid "The Grand Temple of the Sun"
+msgstr "日之大神殿"
+
+# was: 跳入水井
+#: assets_dev/worlds/mm7/events/maps/out09.lua:199 assets_dev/worlds/mm7/events/maps/out09.lua:201 assets_dev/worlds/mm7/events/maps/out09.lua:203
+msgid "Jump into the Well"
+msgstr "跳进水井"
+
+# was: +10 准确和速度(永久)
+#: assets_dev/worlds/mm7/events/maps/out09.lua:235
+msgid "+10 Accuracy and Speed(Permanent)"
+msgstr "精确与速度 +10（永久）"
+
+# was: +2 个性(永久)
+#: assets_dev/worlds/mm7/events/maps/out10.lua:300
+msgid "+2 Personality (Permanent)"
+msgstr "个性 +2（永久）"
+
+# was: +20 全抗性(临时)
+#: assets_dev/worlds/mm7/events/maps/out10.lua:318 assets_dev/worlds/mm7/events/maps/out10.lua:329
+msgid "+20 All Resistances (Temporary)"
+msgstr "所有抗性 +20（临时）"
+
+# was: +50 智力和个性(临时)
+#: assets_dev/worlds/mm7/events/maps/out10.lua:344
+msgid "+50 Intellect and Personality (Temporary)"
+msgstr "智力与个性 +50（临时）"
+
+# was: +50 魔法值
+#: assets_dev/worlds/mm7/events/maps/out10.lua:353
+msgid "+50 Spell Points"
+msgstr "法术值 +50"
+
+# was: +50 生命值
+#: assets_dev/worlds/mm7/events/maps/out10.lua:363
+msgid "+50 Hit Points"
+msgstr "生命值 +50"
+
+# was: +10 个性和智力(永久)
+#: assets_dev/worlds/mm7/events/maps/out10.lua:381
+msgid "+10 Personality and Intellect(Permanent)"
+msgstr "个性与智力 +10（永久）"
+
+# was: 火系抗性+25（临时）
+#: assets_dev/worlds/mm7/events/maps/out11.lua:377
+msgid "+25 Fire Resistance (Temporary)"
+msgstr "火系抗性 +25（临时）"
+
+# was: 耐力与力量+10（永久）
+#: assets_dev/worlds/mm7/events/maps/out11.lua:399
+msgid "+10 Endurance and Might(Permanent)"
+msgstr "耐力与力量 +10（永久）"
+
+# was: 生命值+25
+#: assets_dev/worlds/mm7/events/maps/out14.lua:317
+msgid "+25 Hit Points"
+msgstr "生命值 +25"
+
+# was: 水系抗性+20（临时）
+#: assets_dev/worlds/mm7/events/maps/out14.lua:349
+msgid "+20 Water Resistance (Temporary)"
+msgstr "水系抗性 +20（临时）"
+
+# was: 耐力+2（永久）
+#: assets_dev/worlds/mm7/events/maps/out14.lua:362
+msgid "+2 Endurance (Permanent)"
+msgstr "耐力 +2（永久）"
+
+# was: 东行至图拉里恩森林
+#: assets_dev/worlds/mm7/events/maps/out14.lua:652
+msgid "East to the Tularean Forest"
+msgstr "向东往图拉雷安森林"

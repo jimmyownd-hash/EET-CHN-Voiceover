@@ -1,0 +1,53 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: zh-cn\n"
+
+# doubled character
+# was: 杀死匕伤岛上雷格那海盗前哨站站的首领
+#: assets_dev/engine/data_tables/english/quests.txt:6
+msgid "Kill the leader of the Regnan Pirate outpost at Dagger Wound."
+msgstr "杀死匕伤岛上雷格那海盗前哨站的首领"
+
+# doubled character
+# was: 这个简单又高雅的戒指上面镶嵌有一枚鹅蛋大的的红宝石，切割精准，没有任何的缺陷。
+#: assets_dev/engine/data_tables/items.txt:146
+msgid "This simply elegant ring is set with a single, oval ruby of high quality - pigeon blood red, perfectly cut and clear of imperfections."
+msgstr "这个简单又高雅的戒指上面镶嵌有一枚鹅蛋大的红宝石，切割精准，没有任何的缺陷。"
+
+# doubled character
+# was: 任务物品：这是艾瑞安·韩特交给你的信件，他要求你将信传递给雷格那岛上的的恐怖海盗史坦力。
+#: assets_dev/engine/data_tables/items.txt:605
+msgid "Quest Item: A letter given to you by Arion Hunter for delivery to the Dread Pirate Stanley on Regna."
+msgstr "任务物品：这是艾瑞安·韩特交给你的信件，他要求你将信传递给雷格那岛上的恐怖海盗史坦力。"
+
+# doubled character
+# was: 在攻破了海盗前哨站站之后，我们终于安全了。
+#: assets_dev/engine/data_tables/npc_news.txt:15
+msgid "With the Pirate Outpost defeated our homes are once again safe!  Thank you!"
+msgstr "在攻破了海盗前哨站之后，我们终于安全了。"
+
+# typed riddle answer: the Chinese question text asks for a number / Chinese word
+#: assets_dev/engine/events/Global.lua:1978
+msgid "jail"
+msgstr "4"
+
+# typed riddle answer: the Chinese question text asks for a number / Chinese word
+#: assets_dev/engine/events/Global.lua:2066
+msgid "in"
+msgstr "2"
+
+# typed riddle answer: the Chinese question text asks for a number / Chinese word
+#: assets_dev/engine/events/Global.lua:2066
+msgid "inside"
+msgstr "里面"
+
+# typed riddle answer: the Chinese question text asks for a number / Chinese word
+#: assets_dev/engine/events/Global.lua:2154
+msgid "an egg"
+msgstr "蛋"
+
+# typed riddle answer: the Chinese question text asks for a number / Chinese word
+#: assets_dev/engine/events/Global.lua:2154
+msgid "egg"
+msgstr "1"

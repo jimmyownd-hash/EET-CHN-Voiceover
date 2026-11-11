@@ -1,0 +1,294 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: zh-cn\n"
+
+# was: 锁孔
+#: assets_dev/worlds/mm8/events/maps/d06.lua:349 assets_dev/worlds/mm8/events/maps/d06.lua:357 assets_dev/worlds/mm8/events/maps/d12.lua:161
+msgid "Key Hole"
+msgstr "钥匙孔"
+
+# was: 潜艇
+#: assets_dev/worlds/mm8/events/maps/d06.lua:444 assets_dev/worlds/mm8/events/maps/d34.lua:414
+msgid "Submarine"
+msgstr "潜水艇"
+
+# was: 你杀死了全部的恐狼
+#: assets_dev/worlds/mm8/events/maps/d08.lua:134 assets_dev/worlds/mm8/events/maps/out02.lua:921
+msgid "You have killed all of the Dire Wolves"
+msgstr "你杀死了所有的猛狼"
+
+# was: 你杀死了全部的食人魔
+#: assets_dev/worlds/mm8/events/maps/d12.lua:146
+msgid "You have Killed all of the Ogres"
+msgstr "你杀死了所有的食人妖"
+
+# was: 毒牙兽现已安息！
+#: assets_dev/worlds/mm8/events/maps/d13.lua:604
+msgid "Vilebite is now at rest !"
+msgstr "维尔拜如今得以安息了！"
+
+# was: 你杀死了全部的屠龙者
+#: assets_dev/worlds/mm8/events/maps/d16.lua:168 assets_dev/worlds/mm8/events/maps/out05.lua:411 assets_dev/worlds/mm8/events/maps/out05_mmmerge.lua:21
+msgid "You have killed all of the Dragon Hunters"
+msgstr "你杀死了所有的猎龙者"
+
+# was: 你杀死了全部的巨龙
+#: assets_dev/worlds/mm8/events/maps/d17.lua:139 assets_dev/worlds/mm8/events/maps/out05.lua:377 assets_dev/worlds/mm8/events/maps/out05_mmmerge.lua:12
+msgid "You have killed all of the Dragons"
+msgstr "你杀死了所有的龙"
+
+# was: 门梁
+#: assets_dev/worlds/mm8/events/maps/d19.lua:413 assets_dev/worlds/mm8/events/maps/d19.lua:425
+msgid "Door Beam"
+msgstr "门闩"
+
+# was: 精神焕发！
+#: assets_dev/worlds/mm8/events/maps/d20.lua:493
+msgid "Refreshing !"
+msgstr "神清气爽！"
+
+# was: 饮用喷泉
+#: assets_dev/worlds/mm8/events/maps/d24.lua:791 assets_dev/worlds/mm8/events/maps/d24.lua:799
+msgid "Drink from the Fountain"
+msgstr "饮喷泉水"
+
+# was: 电梯
+#: assets_dev/worlds/mm8/events/maps/d31.lua:138 assets_dev/worlds/mm8/events/maps/d31.lua:140 assets_dev/worlds/mm8/events/maps/d31.lua:142
+msgid "Lift"
+msgstr "升降机"
+
+# was: 精神焕发
+#: assets_dev/worlds/mm8/events/maps/d35.lua:475 assets_dev/worlds/mm8/events/maps/elema.lua:237 assets_dev/worlds/mm8/events/maps/eleme.lua:522
+msgid "Refreshing"
+msgstr "神清气爽"
+
+# was: 你没发现任何有趣的东西
+#: assets_dev/worlds/mm8/events/maps/d40.lua:490 assets_dev/worlds/mm8/events/maps/d40.lua:495 assets_dev/worlds/mm8/events/maps/d40.lua:513
+msgid "You found nothing of interest"
+msgstr "你没找到任何感兴趣的东西"
+
+# was: 与竞技场大师交谈
+#: assets_dev/worlds/mm8/events/maps/d42.lua:406 assets_dev/worlds/mm8/events/maps/d42.lua:408
+msgid "Talk to the Arena Master"
+msgstr "与竞技场主管交谈"
+
+# was: 你杀死了这座古老巨魔巢穴中的全部石化蜥蜴
+#: assets_dev/worlds/mm8/events/maps/d43.lua:135
+msgid "You have Killed all of the Basilisks in this Ancient Troll Home"
+msgstr "你杀死了这座巨魔古居里所有的石化蜥蜴"
+
+# was: 你没发现任何有用的东西
+#: assets_dev/worlds/mm8/events/maps/d44.lua:489 assets_dev/worlds/mm8/events/maps/d44.lua:494
+msgid "You found nothing useful"
+msgstr "你没找到任何有用的东西"
+
+# was: 离开天空位面之门
+#: assets_dev/worlds/mm8/events/maps/elema.lua:228
+msgid "Gate out of the Plane of Air"
+msgstr "离开空气位面的门"
+
+# was: 空气抗性+10（永久）
+#: assets_dev/worlds/mm8/events/maps/elema.lua:233
+msgid "Air Resistance +10 (Permanent)"
+msgstr "空气抗性 +10（永久）"
+
+# was: 离开大地位面之门
+#: assets_dev/worlds/mm8/events/maps/eleme.lua:513
+msgid "Gate out of the Plane of Earth"
+msgstr "离开大地位面的门"
+
+# was: 大地抗性+10（永久）
+#: assets_dev/worlds/mm8/events/maps/eleme.lua:518
+msgid "Earth Resistance +10 (Permanent)"
+msgstr "土系抗性 +10（永久）"
+
+# was: 离开火焰位面之门
+#: assets_dev/worlds/mm8/events/maps/elemf.lua:217
+msgid "Gate out of the Plane of Fire"
+msgstr "离开火焰位面的门"
+
+# was: 火系抗性+25（临时）
+#: assets_dev/worlds/mm8/events/maps/elemf.lua:222
+msgid "Fire Resistance +25 (Temporary)"
+msgstr "火系抗性 +25（临时）"
+
+# was: 离开流水位面之门
+#: assets_dev/worlds/mm8/events/maps/elemw.lua:211
+msgid "Gate out of the Plane of Water"
+msgstr "离开流水位面的门"
+
+# was: 水系抗性+10（永久）
+#: assets_dev/worlds/mm8/events/maps/elemw.lua:216
+msgid "Water Resistance +10 (Permanent)"
+msgstr "水系抗性 +10（永久）"
+
+# was: 打开板条箱
+#: assets_dev/worlds/mm8/events/maps/out01.lua:344 assets_dev/worlds/mm8/events/maps/out01.lua:346 assets_dev/worlds/mm8/events/maps/out01.lua:348
+msgid "Open Crate"
+msgstr "打开的木箱"
+
+# was: 饮用井水
+#: assets_dev/worlds/mm8/events/maps/out01.lua:376 assets_dev/worlds/mm8/events/maps/out01.lua:384 assets_dev/worlds/mm8/events/maps/out01.lua:386
+msgid "Drink from the well"
+msgstr "饮井水"
+
+# was: 运气 +2（永久）
+#: assets_dev/worlds/mm8/events/maps/out01.lua:389
+msgid "Luck +2 (Permanent)"
+msgstr "幸运 +2（永久）"
+
+# was: 饮用喷泉
+#: assets_dev/worlds/mm8/events/maps/out01.lua:416 assets_dev/worlds/mm8/events/maps/out01.lua:424 assets_dev/worlds/mm8/events/maps/out02.lua:872
+msgid "Drink from the fountain"
+msgstr "饮喷泉水"
+
+# was: 雷格南海盗哨站
+#: assets_dev/worlds/mm8/events/maps/out01.lua:507
+msgid "Regnan Pirate Outpost"
+msgstr "雷格那海盗前哨站"
+
+# was: 大地位面之门
+#: assets_dev/worlds/mm8/events/maps/out01.lua:511
+msgid "Gate to the Plane of Earth"
+msgstr "通往大地位面的门"
+
+# was: 发射大炮！
+#: assets_dev/worlds/mm8/events/maps/out01.lua:604 assets_dev/worlds/mm8/events/maps/out01.lua:607 assets_dev/worlds/mm8/events/maps/out01.lua:609
+msgid "Fire the Cannon !"
+msgstr "开炮！"
+
+# was: 密封板条箱
+#: assets_dev/worlds/mm8/events/maps/out01.lua:741 assets_dev/worlds/mm8/events/maps/out02.lua:1111 assets_dev/worlds/mm8/events/maps/out08.lua:286
+msgid "Sealed Crate"
+msgstr "封死的木箱"
+
+# was: 布林勋爵之墓
+#: assets_dev/worlds/mm8/events/maps/out02.lua:1107
+msgid "The Tomb of Lord Brinne"
+msgstr "布林领主之墓"
+
+# was: 门是锁着的
+#: assets_dev/worlds/mm8/events/maps/out02.lua:1241 assets_dev/worlds/mm8/events/maps/out13.lua:491
+msgid "The door is locked"
+msgstr "门被锁上了"
+
+# was: 时间之库
+#: assets_dev/worlds/mm8/events/maps/out02.lua:1113 assets_dev/worlds/mm8/events/maps/out02.lua:836 assets_dev/worlds/mm8/events/maps/out02.lua:851
+msgid "The Vault of Time"
+msgstr "时间宝库"
+
+# was: 那并没有让人感到神清气爽
+#: assets_dev/worlds/mm8/events/maps/out02.lua:864 assets_dev/worlds/mm8/events/maps/out07.lua:252
+msgid "That was not so refreshing"
+msgstr "这可不怎么提神"
+
+# was: 你的头脑变得清明，恢复了一些法力
+#: assets_dev/worlds/mm8/events/maps/out03.lua:465 assets_dev/worlds/mm8/events/maps/out06.lua:450
+msgid "You mind clears, and you recover some Mana"
+msgstr "你的头脑恢复清明，并回复了一些法力"
+
+# was: 你已杀死全部食人魔
+#: assets_dev/worlds/mm8/events/maps/out03.lua:486
+msgid "You have killed all of the Ogres"
+msgstr "你杀死了所有的食人妖"
+
+# was: 洞穴
+#: assets_dev/worlds/mm8/events/maps/out04.lua:327 assets_dev/worlds/mm8/events/maps/out06.lua:536 assets_dev/worlds/mm8/events/maps/out13.lua:380
+msgid "A Cave"
+msgstr "一处洞穴"
+
+# was: 火焰位面之门
+#: assets_dev/worlds/mm8/events/maps/out04.lua:329
+msgid "Gate to the Plane of Fire"
+msgstr "通往火焰位面的门"
+
+# was: 毁坏的建筑
+#: assets_dev/worlds/mm8/events/maps/out04.lua:331
+msgid "Destroyed Building"
+msgstr "损毁的建筑"
+
+# was: 鲜花
+#: assets_dev/worlds/mm8/events/maps/out05.lua:267 assets_dev/worlds/mm8/events/maps/out05.lua:269
+msgid "Flowers"
+msgstr "花丛"
+
+# was: 火系抗性+2（永久）
+#: assets_dev/worlds/mm8/events/maps/out05.lua:327
+msgid "Fire Resistance +2 (Permanent)"
+msgstr "火系抗性 +2（永久）"
+
+# was: 命中+2（永久）
+#: assets_dev/worlds/mm8/events/maps/out05.lua:337
+msgid "Accuracy +2 (Permanent)"
+msgstr "精确 +2（永久）"
+
+# was: 个性+2（永久）
+#: assets_dev/worlds/mm8/events/maps/out07.lua:261
+msgid "Personality +2 (Permanent)"
+msgstr "个性 +2（永久）"
+
+# was: 太阳神殿
+#: assets_dev/worlds/mm8/events/maps/out07.lua:348
+msgid "The Temple of the Sun"
+msgstr "日之神殿"
+
+# was: 德鲁伊石圈
+#: assets_dev/worlds/mm8/events/maps/out07.lua:350
+msgid "A Druid Circle"
+msgstr "德鲁伊石环"
+
+# was: 天空位面之门
+#: assets_dev/worlds/mm8/events/maps/out07.lua:354
+msgid "Gate to the Plane of Air"
+msgstr "通往空气位面的门"
+
+# was: 流水位面之门
+#: assets_dev/worlds/mm8/events/maps/out08.lua:284
+msgid "Gate to the Plane of Water"
+msgstr "通往流水位面的门"
+
+# was: 塔
+#: assets_dev/worlds/mm8/events/maps/out13.lua:376
+msgid "Tower"
+msgstr "塔楼"
+
+# was: 雷格南船
+#: assets_dev/worlds/mm8/events/maps/out13.lua:382
+msgid "Regnan Ship"
+msgstr "雷格那船"
+
+# was: 沉没的雷格南船
+#: assets_dev/worlds/mm8/events/maps/out13.lua:384
+msgid "Sunk Regnan Ship"
+msgstr "沉没的雷格那船"
+
+# was: 你在附近找不到合适的弹药
+#: assets_dev/worlds/mm8/events/maps/out13.lua:403 assets_dev/worlds/mm8/events/maps/out13_mmmerge.lua:17
+msgid "You do not see the right kind of ammunition anywhere"
+msgstr "你四处都找不到合适的弹药"
+
+# was: 天空领主之囚牢
+#: assets_dev/worlds/mm8/events/maps/pbp.lua:168
+msgid "Prison of the Air Lord"
+msgstr "空气领主之牢"
+
+# was: 大地领主之囚牢
+#: assets_dev/worlds/mm8/events/maps/pbp.lua:170
+msgid "Prison of the Earth Lord"
+msgstr "大地领主之牢"
+
+# was: 火焰领主之囚牢
+#: assets_dev/worlds/mm8/events/maps/pbp.lua:172
+msgid "Prison of the Fire Lord"
+msgstr "火焰领主之牢"
+
+# was: 流水领主之囚牢
+#: assets_dev/worlds/mm8/events/maps/pbp.lua:174
+msgid "Prison of the Water Lord"
+msgstr "流水领主之牢"
+
+# was: 巨人之剑
+#: assets_dev/worlds/mm8/events/maps/pbp.lua:222 assets_dev/worlds/mm8/events/maps/pbp.lua:226
+msgid "A giant's sword"
+msgstr "巨人的剑"

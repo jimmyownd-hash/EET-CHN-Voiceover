@@ -7,6 +7,11 @@ Every item says what it is and why it exists.
 
 我们的汉化成果整理成可以直接给作者的形式。你想要时随时取用，不急。
 
+## 06-v2.0-review - START HERE for OpenYAMM 2.0
+Review of the zh-cn pack as shipped in 2.0 (commit 1a0ffeb): definite fixes, the potion/stat name clash, terminology
+candidates, house names vs. NPC names, untranslatable attack types and one code bug. See its README.
+Folders 01, 02 and 04 below were written for 1.21 / 1.22 and are kept for reference only.
+
 ## 01-term-patch - terminology patch for assets_dev/languages/zh-cn/text/engine.po
 - `engine.batchA.po`: 1532 short entries (English text <= 40 chars) re-mapped to our terminology.
 - `engine.all.po`: the above plus 147 longer entries (1679 total).
@@ -40,9 +45,6 @@ Chinese Arcomage sprite sheet as a `mods/engine/icons_x2/sprites.png` override. 
 Issues we noticed in the current zh-cn pack (untranslated entries such as Promotion / "Your rest is interrupted.",
 corrupted apostrophes in 22 source strings, a few placeholder mismatches) plus the full 1941-entry term
 difference table.
-
-## 05-mm9-gaps
-Two player-visible strings still empty in the current `mm9.po`, translated (the other ~230 empty entries are debug labels).
 
 ## MM9
 Chinese translations of the MM9 Chedian Guide pages (quests, promotions, travel, teachers, shops, bestiary,
