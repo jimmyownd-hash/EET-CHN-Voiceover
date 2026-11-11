@@ -480,9 +480,9 @@ RegisterEvent(455, "树", function()
     end
 end, "树")
 
-RegisterEvent(501, "进入太阳神庙", function()
+RegisterEvent(501, "进入太阳神殿", function()
     evt.MoveToMap(-768, -768, 96, 280, 0, 0, 364, 1, "d22.blv") -- Temple of the Sun
-end, "进入太阳神庙")
+end, "进入太阳神殿")
 
 RegisterEvent(502, "进入德鲁伊石环", function()
     evt.MoveToMap(235, 2980, 673, 1536, 0, 0, 365, 3, "d23.blv") -- Druid Circle

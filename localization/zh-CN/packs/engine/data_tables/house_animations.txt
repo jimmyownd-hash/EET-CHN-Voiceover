@@ -283,7 +283,7 @@
 282	36	斯蒂尔金库		debank			31900	1113	Bank
 283	36	金融行会所		debank			31900	1113	Bank
 284	79	血库银行		nbank			35200	1093	Bank
-285	52	巴尔萨泽银行		mbank			33000	1107	Bank
+285	52	巴尔萨煞银行		mbank			33000	1107	Bank
 286	186	金库		human bank01			30890	1555	Bank
 287	186	伊拉西亚银行		human bank01			30890	1555	Bank
 288	191	自然储备		elf bank			31030	0541	Bank
@@ -342,7 +342,7 @@
 341	147	土之领主监狱		pr_lorde				0	Dungeon Ent
 342	148	火之领主监狱		pr_lordf				0	Dungeon Ent
 343	149	水之领主监狱		pr_lordw				0	Dungeon Ent
-344	170	霸杀煞之穴						0	Dungeon Ent
+344	170	巴尔萨煞巢穴						0	Dungeon Ent
 345	146	废弃神殿后门		ab_tempbd				0	Dungeon Ent
 346	112	废弃神殿		ab_temp				0	Dungeon Ent
 347	144	空气位面之门		gw_air				0	Dungeon Ent
@@ -1567,7 +1567,7 @@
 1566	35	行会训练场		detrhall			31800	1114	Training
 1567	62	戈德里克铁手套		dhtrhall			34000	1102	Training
 1568	78	刺客学校		ntrhall			35100	1236	Training
-1569	51	巴尔萨泽学院		mtrhall			32900	1079	Training
+1569	51	巴尔萨煞学院		mtrhall			32900	1079	Training
 1570	224	岛屿训练场		human training ground01			30830	0530	Training
 1571	224	基础训练馆		human training ground01			30830	0530	Training
 1572	224	为女王陛下效力		human training ground01			30830	0530	Training

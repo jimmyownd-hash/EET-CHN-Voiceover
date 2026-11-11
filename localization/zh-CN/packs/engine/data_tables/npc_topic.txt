@@ -98,7 +98,7 @@
 95	任务				Sandro	
 96	戴森·李蓝				Sandro	
 97	死灵法师				Dyson Leland	
-98	太阳神庙				Dyson Leland	
+98	太阳神殿				Dyson Leland	
 99	你自己				Dyson Leland	
 100	加入				Dyson Leland	
 101	谭特				Sandro	
@@ -144,7 +144,7 @@
 141	干粮		Masul during find the source of conflux	559. Masul NPC 68	Masul NPC 68	
 142	救赎		Masul during free the elemental lords	560. Masul NPC 68	Masul NPC 68	
 143	通往城市之钥匙		Masul at home after win game	561. Masul NPC 68	Masul NPC 68	
-144	太阳神庙		Sandro while alliance being formed	562. Sandro NPC 69	Sandro NPC 69	
+144	太阳神殿		Sandro while alliance being formed	562. Sandro NPC 69	Sandro NPC 69	
 145	海盗法师		Sandro during sink the fleet	563. Sandro NPC 69	Sandro NPC 69	
 146	巫师		Sandro during talk to xanthor	654. James	Sandro NPC 69	
 147	次元之戒		Sandro during find the hearts	565. Sandro NPC 69	Sandro NPC 69	

@@ -125,8 +125,8 @@ SetMapMetadata({
     [468] = { kind = "enter_house", source = "opcode", houseId = 81, targetName = "力量护符店" },
     [470] = { kind = "enter_house", source = "opcode", houseId = 115, targetName = "佩里乌斯药粉店" },
     [472] = { kind = "enter_house", source = "opcode", houseId = 308, targetName = "萨满" },
-    [474] = { kind = "enter_house", source = "opcode", houseId = 1569, targetName = "巴尔萨泽学院" },
-    [476] = { kind = "enter_house", source = "opcode", houseId = 285, targetName = "巴尔萨泽银行" },
+    [474] = { kind = "enter_house", source = "opcode", houseId = 1569, targetName = "巴尔萨煞学院" },
+    [476] = { kind = "enter_house", source = "opcode", houseId = 285, targetName = "巴尔萨煞银行" },
     [478] = { kind = "enter_house", source = "opcode", houseId = 188, targetName = "心智行会" },
     [501] = { kind = "leave_dungeon", source = "opcode", targetMap = "out08.odm", targetName = "荒湮回廊" },
     [502] = { kind = "leave_dungeon", source = "opcode", targetMap = "out08.odm", targetName = "荒湮回廊" },
@@ -938,11 +938,11 @@ end, "被淹商店")
 
 RegisterEvent(479, "被淹商店", nil, "被淹商店")
 
-RegisterEvent(501, "离开霸杀煞之穴", function()
+RegisterEvent(501, "离开巴尔萨煞巢穴", function()
     evt.MoveToMap(-10869, -8850, 1985, 1024, 0, 0, 0, 1, "out08.odm") -- Ravage Roaming
-end, "离开霸杀煞之穴")
+end, "离开巴尔萨煞巢穴")
 
-RegisterEvent(502, "离开霸杀煞之穴", function()
+RegisterEvent(502, "离开巴尔萨煞巢穴", function()
     evt.MoveToMap(-12279, -12153, 2752, 1536, 0, 0, 0, 1, "out08.odm") -- Ravage Roaming
-end, "离开霸杀煞之穴")
+end, "离开巴尔萨煞巢穴")
 

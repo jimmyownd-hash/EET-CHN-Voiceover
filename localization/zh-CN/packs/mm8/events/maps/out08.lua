@@ -60,10 +60,10 @@ SetMapMetadata({
     [150] = { kind = "obelisk", source = "title" },
     [183] = { kind = "enter_house", source = "opcode", houseId = 482, targetName = "雾之号" },
     [191] = { kind = "enter_house", source = "opcode", houseId = 235, targetName = "牛眼旅店" },
-    [501] = { kind = "enter_dungeon", source = "opcode", targetMap = "d24.blv", targetName = "霸杀煞之穴" },
+    [501] = { kind = "enter_dungeon", source = "opcode", targetMap = "d24.blv", targetName = "巴尔萨煞巢穴" },
     [502] = { kind = "enter_dungeon", source = "opcode", targetMap = "d25.blv", targetName = "野蛮人要塞" },
     [503] = { kind = "enter_dungeon", source = "opcode", targetMap = "d26.blv", targetName = "可布之墓" },
-    [504] = { kind = "enter_dungeon", source = "opcode", targetMap = "d24.blv", targetName = "霸杀煞之穴" },
+    [504] = { kind = "enter_dungeon", source = "opcode", targetMap = "d24.blv", targetName = "巴尔萨煞巢穴" },
     [505] = { kind = "enter_dungeon", source = "opcode", targetMap = "d25.blv", targetName = "野蛮人要塞" },
     [506] = { kind = "enter_dungeon", source = "opcode", targetMap = "d25.blv", targetName = "野蛮人要塞" },
     [507] = { kind = "enter_dungeon", source = "opcode", targetMap = "d25.blv", targetName = "野蛮人要塞" },
@@ -302,9 +302,9 @@ RegisterEvent(479, nil, function()
     end
 end)
 
-RegisterEvent(501, "进入霸杀煞之穴", function()
+RegisterEvent(501, "进入巴尔萨煞巢穴", function()
     evt.MoveToMap(1, -100, -85, 1540, 0, 0, 344, 1, "d24.blv") -- Balthazar Lair
-end, "进入霸杀煞之穴")
+end, "进入巴尔萨煞巢穴")
 
 RegisterEvent(502, "进入蛮族堡垒", function()
     evt.MoveToMap(-2284, 1847, 1, 1024, 0, 0, 367, 1, "d25.blv") -- Barbarian Fortress
@@ -314,9 +314,9 @@ RegisterEvent(503, "进入科尔布地窖", function()
     evt.MoveToMap(-4436, -6538, 317, 512, 0, 0, 0, 1, "d26.blv") -- The Crypt of Korbu
 end, "进入科尔布地窖")
 
-RegisterEvent(504, "进入霸杀煞之穴", function()
+RegisterEvent(504, "进入巴尔萨煞巢穴", function()
     evt.MoveToMap(832, 849, 44, 1548, 0, 0, 344, 1, "d24.blv") -- Balthazar Lair
-end, "进入霸杀煞之穴")
+end, "进入巴尔萨煞巢穴")
 
 RegisterEvent(505, "进入蛮族堡垒", function()
     evt.MoveToMap(614, 1858, 1, 0, 0, 0, 367, 1, "d25.blv") -- Barbarian Fortress

@@ -511,7 +511,7 @@ RegisterEvent(452, nil, function()
     end
 end)
 
-RegisterEvent(501, "离开太阳神庙", function()
+RegisterEvent(501, "离开太阳神殿", function()
     evt.MoveToMap(-9754, -10226, 1890, 0, 0, 0, 0, 1, "out07.odm") -- Murmurwoods
-end, "离开太阳神庙")
+end, "离开太阳神殿")
 

@@ -13,7 +13,7 @@ Q Bit	Quest Note Text	Notes	Owner
 12		Quest 11 is done.	TomO
 13	在贾丹姆大陆的主要势力之间结盟	Given by Bastian Lourdrin (area 3). Activates Merchanthouse in Alvar. Checked as each alliance is formed. Taken when three are formed. 	TomO
 14	和影旋山脉区域的死灵法师公会结盟	Given by Bastian Lourdrin (area 3). Activates Merchanthouse in Alvar. Taken by Sandro (area 6) or when quest 15 is done.	TomO
-15	和低语之森的太阳神庙结盟	"Given by Bastian Lourdrin (area 3). Activates Merchanthouse in Alvar. Taken by Oskar Tyre (area 7), or when quest 27 is done."	TomO
+15	和低语之森的太阳神殿结盟	"Given by Bastian Lourdrin (area 3). Activates Merchanthouse in Alvar. Taken by Oskar Tyre (area 7), or when quest 27 is done."	TomO
 16	和绞刑峡谷的猎龙人结盟	Given by Bastian Lourdrin (area 3). Activates Merchanthouse in Alvar. Taken when Dragon Egg (item 605) delivered to Charles Quixote or dragon leader.	TomO
 17	和绞刑峡谷的飞龙们结盟	Given by Bastian Lourdrin (area 3). Activates Merchanthouse in Alvar. Taken when Dragon Egg (item 605) delivered to Charles Quixote or dragon leader.	TomO
 18	和残破镇的牛头人结盟	Given by Bastian Lourdrin (area 3). Activates Merchanthouse in Alvar. Taken when minotaurs rescued.	TomO
@@ -26,7 +26,7 @@ Q Bit	Quest Note Text	Notes	Owner
 25	找到一个目击火湖形成的证人，并且将它带回阿尔瓦的商人公会。	Given and taken by Bastian Lourdrin (area 3).	TomO
 26	找到影旋山脉的死灵法师公会中的骷髅转换器，摧毁它之后回去找奥斯卡·提尔报到。	Given and taken by Oskar Tyre (area 7). Taken when Qbit 29 set.	TomO
 27		Skeleton Transformer Destroyed.	TomO
-28	"将龙葵灯炉带给死灵法师公会的领导者山德罗。龙葵灯炉就在太阳神庙之中。"	Given and taken by Sandro (area 6). Taken when Qbit 27 set.	TomO
+28	"将龙葵灯炉带给死灵法师公会的领导者山德罗。龙葵灯炉就在太阳神殿之中。"	Given and taken by Sandro (area 6). Taken when Qbit 27 set.	TomO
 29		Nightshade Brazier Stolen.	TomO
 30	救出被困在残破镇的巢穴中的牛头人。	Given by MINOTAUR CLUE GUY (area 8). Turned off when minotaur leader is reached in Minotaur lair dungeon.	TomO
 31	从残破镇旁索格的要塞中找出龙蛋，并且带回去给绞刑峡谷的查尔斯·吉科德。	Given and taken by Quixote (area 5)	TomO
@@ -554,7 +554,7 @@ Q Bit	Quest Note Text	Notes	Owner
 553		Solved Tree quest	Bryan
 554	去埃弗蒙岛捣毁月亮神庙的祭坛，然后回到赛勒斯提找蕾贝卡·迪万。	0	Bryan
 555	去泰塔利亚的潮穴找到海盗的地图，然后回到迪雅找达德拉斯·福克。	0	Bryan
-556	去埃弗蒙岛捣毁太阳神庙的祭坛，然后回到迪雅找达德拉斯·福克。	0	Bryan
+556	去埃弗蒙岛捣毁太阳神殿的祭坛，然后回到迪雅找达德拉斯·福克。	0	Bryan
 557	"找到人偶肢体的六个部分，把它拼成人形，然后去魔法学院把人偶交给托马斯·格雷。"	0	Bryan
 558		Player Castle.  Golem should appear in castle bit.	Bryan
 559	去地狱城的再生之地找到普渡众生魔法，然后回到魔法学院把它交给托马斯·格雷。	0	Bryan
