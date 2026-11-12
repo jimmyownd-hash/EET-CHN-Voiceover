@@ -7,7 +7,10 @@ Every item says what it is and why it exists.
 
 我们的汉化成果整理成可以直接给作者的形式。你想要时随时取用，不急。
 
-## 06-v2.0-review - START HERE for OpenYAMM 2.0
+## 07-v2.0-gap-patch - newest, for OpenYAMM 2.0
+Ready-to-use translation files (fixed .po files, engine-extra.po, roster/name tables, charset) plus ISSUE.md: the texts that stay English because the code never translates them. 给作者的补丁和问题清单。
+
+## 06-v2.0-review for OpenYAMM 2.0
 Review of the zh-cn pack as shipped in 2.0 (commit 1a0ffeb): definite fixes, the potion/stat name clash, terminology
 candidates, house names vs. NPC names, untranslatable attack types and one code bug. See its README.
 Folders 01, 02 and 04 below were written for 1.21 / 1.22 and are kept for reference only.
