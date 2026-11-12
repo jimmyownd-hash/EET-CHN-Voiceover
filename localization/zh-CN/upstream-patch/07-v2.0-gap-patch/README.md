@@ -18,7 +18,8 @@ Not a full in-game test; please spot-check.
 See ISSUE.md for the places that cannot be fixed by .po files.
 
 ## mods/ (files that are not text)
-- `mods/engine/audio/`: 851 Chinese companion voice wavs (灵石之光配音). Our earlier packs put them in `mods/worlds/<w>/audio`, where
-  2.0 never reads them (the log says "is a new file"); the engine audio pack is where the English voices live, so same-named
-  files in `mods/engine/audio` replace them. The same files are identical for mm6/mm7/mm8.
+- `languages/zh-cn/engine/audio/`: 851 Chinese companion voice wavs (灵石之光配音), laid out as the language pack's audio overlay
+  (`languages/<id>/engine/audio`, see packs.yml), so it replaces the English voices of the same names. Our earlier packs put them in
+  `mods/worlds/<w>/audio`, where 2.0 never reads them (the log says "is a new file"). The files are identical for mm6/mm7/mm8.
+  Players of the patch zip get the same files under `mods/engine/audio`.
 - `mods/engine/icons_x2/sprites.png`: Arcomage sprite sheet with Chinese card names and labels (built for 1.21, not verified on 2.0).
