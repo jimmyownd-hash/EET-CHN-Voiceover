@@ -91854,7 +91854,7 @@ msgstr "当队伍最佳技能乘以掌握度达到怪物等级减去队伍平均
 #: assets_dev/engine/rulesets/maw/data/texts.yml:886
 msgid ""
 "A Master finds random reagents on 1 % of slain monsters, a Grandmaster on 2 %."
-msgstr "大师级在 1% 的被杀怪物身上发现随机试剂，宗师级为 2%。 # zzAlchemy.lua:708-709."
+msgstr "大师级在 1% 的被杀怪物身上发现随机试剂，宗师级为 2%。"
 
 # imported from zh-cn-todo.po
 #: assets_dev/engine/rulesets/maw/data/texts.yml:889
