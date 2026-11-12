@@ -32100,3 +32100,10 @@ msgstr "吸取 10% 魔法伤害，提升施法速度（不可叠加）"
 # MAW rules text, from the 1.21 pack (special_item_enchants_patch.txt)
 msgid "Leech 10% of physical damage, increases attack speed"
 msgstr "吸取 10% 物理伤害，提升攻击速度"
+
+# teacher_ledger.yml: what the innkeeper says
+msgid "There you are: the Ledger of Teachers of {continent}. Every trainer is now in your journal's notes."
+msgstr "给你：{continent}的《导师名册》。所有导师现已记入你的日志笔记。"
+
+msgid "That's more gold than you carry, friend."
+msgstr "你带的金币不够，朋友。"
