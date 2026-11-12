@@ -16,3 +16,9 @@ Not a full in-game test; please spot-check.
 - `fonts/lxgwwenkai.charset.txt`: union of the 2.0 charset and the characters our texts use (+780 glyphs).
 
 See ISSUE.md for the places that cannot be fixed by .po files.
+
+## mods/ (files that are not text)
+- `mods/engine/audio/`: 851 Chinese companion voice wavs (灵石之光配音). Our earlier packs put them in `mods/worlds/<w>/audio`, where
+  2.0 never reads them (the log says "is a new file"); the engine audio pack is where the English voices live, so same-named
+  files in `mods/engine/audio` replace them. The same files are identical for mm6/mm7/mm8.
+- `mods/engine/icons_x2/sprites.png`: Arcomage sprite sheet with Chinese card names and labels (built for 1.21, not verified on 2.0).
