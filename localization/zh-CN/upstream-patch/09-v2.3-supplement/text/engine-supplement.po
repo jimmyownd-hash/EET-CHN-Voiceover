@@ -236,3 +236,9 @@ msgstr "无法安装更新：{error}"
 
 msgid "OpenYAMM {version} is ready. Restart to play it."
 msgstr "OpenYAMM {version} 已就绪，重启后即可游玩。"
+
+msgid "Prices"
+msgstr "价格"
+
+msgid "Magic Portals"
+msgstr "魔法传送门"
