@@ -14,3 +14,4 @@ Still English in v2.3: about 200 MM9 script/quest-flag labels ("Cinema chess_cap
 
 ## text/engine-supplement.po (new file, 78 entries)
 Texts that ARE wrapped in tr()/trNoop() in the v2.3 code but are in neither templates/*.pot nor zh-cn (so no translator could see them): the Battle Orders Upkeep list (36), the Load screen's playthrough texts (16: "This playthrough", ...), the updater messages (16: "The update was cancelled." ...), "All continents"/"Continent" on the Progress page, "+{experience} experience", "Quest Book", the party-creation voice hint, the upkeep status messages. Please regenerate the templates and merge this file into zh-cn engine.po (it adds new msgids only, nothing is overridden).
+- 98 artifact descriptions in the form the MAW popup looks them up (mawArtifactDescription cuts the "(Special Powers: ...)" and the leading "(...)" from the English first, so the full texts in engine.po never match; this affects every language).

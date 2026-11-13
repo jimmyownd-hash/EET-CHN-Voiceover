@@ -242,3 +242,299 @@ msgstr "价格"
 
 msgid "Magic Portals"
 msgstr "魔法传送门"
+
+# Artifact descriptions as the MAW popup shows them: the "(Special Powers: ...)" and the leading "(...)" summary are cut from the English before the lookup (mawArtifactDescription), so the full texts in engine.po never match.
+
+msgid "The Forge of Chaos was destroyed in the making of the Swords of Balance. Legend says the Blade of Light, Elsenrail, and the Blade of Dark, Glomenthal, will play major roles in the last act of the universe."
+msgstr "混沌熔炉在铸造平衡之剑的过程中已经被摧毁了。根据传说，光明之剑爱森瑞尔和黑暗之剑葛罗曼沙将会在宇宙历史最终章的时候扮演重要的角色。"
+
+msgid "As a child, before he carved his barbarian kingdom in Vori, Lars Eilief found this sword deep in an ice cave. When he died, it was set adrift with him on his funeral barge. How it ended up in Jadame is a mystery."
+msgstr "在拉斯·爱力夫创建他的沃里蛮人王国之前，他在孩提时于一座冰封洞窟的深处找到了这柄剑。当他死掉的时候，这柄剑被放在他的葬礼船上和他的尸体一起随波逐流。这柄剑最后怎么会出现在贾丹姆大陆上实在让人费解。"
+
+msgid "Before there was a Regnan Empire, the ancestors of the Trolls of Ironsand lived on Regna Island. With this blade and a horde of sea raiders, Hareck I ousted the Trolls and formed his pirate nation."
+msgstr "在雷格那帝国建立以前，铁沙漠的巨魔们居住在雷格那岛上。靠着这柄剑和一群骁勇善战的海盗，海里克一世驱逐了所有的巨魔，并且建立了他的海盗帝国。"
+
+msgid "When the Dark Dwarves carved the first Minotaur labyrinth into the heart of Mt. Ashenbane they forged this axe for Xaxius, the first herdmaster."
+msgstr "当黑暗矮人在爱审班山脉深处建造了第一个牛头人迷宫的时候，他们也替萨沙恶斯打造了这柄武器。"
+
+msgid "The mad artificer, Cornelius of Blackshire, built this axe for the purpose of clearing the trees around his country estate. \"A single blow will both fell a tree and render it into firewood!\" he was heard to exclaim. That he was soon found slain and the axe gone missing is proof that someone saw a better use for the tool."
+msgstr "黑岸的可努力雅司，也是大家所熟知的疯狂神器师；他铸造这柄斧头的原因只是为了清除住家附近的所有树木。“只要砍一下，不只可以把树砍倒，更可以将它们变成柴火！”据说有人曾经听到他这样说。稍后，他被人发现死在森林里面，这柄斧头也跟着消失不见。很明显的，有人找到了这柄斧头更好的用途。"
+
+msgid "Arguably the best dragon hunter of all times, Sir Ryan Smedly carried this mighty spear with him on all his expeditions, claiming that with it in hand, he could best any dragon in single combat. This proved true, but nevertheless he was slain by no less than a dozen dragons who ambushed him at Shadowmarsh Pass."
+msgstr "莱恩·史麦力爵士可能是史上最强的猎龙人。据说他在任何时候都会携带着这柄力量强大的长矛，宣称只要有了这柄武器，他可以单打独斗的胜过任何的飞龙。他并没有夸大其词，但是，他最后遭到十几只的飞龙围攻，死在阴影隘口。"
+
+msgid "The great Vampire, Korbu was known to use living men to guard his crypt during daylight hours. Compelled by a spell of enslavement, these sorry souls would walk their rounds carrying these mighty halberds. When Korbu mysteriously vanished, and the slave spell failed, a few of these weapons appeared in the larger world."
+msgstr "伟大的吸血鬼可布据说曾经以活人来在白天的时候看顾他的墓穴。这些可悲的灵魂受到法术的操弄，会毫无意识的拿着这威力强大的长戟在墓穴附近走动。当可布神秘的失踪之后，有些奴隶恢复了神智，把这些武器带进了贾丹姆大陆上。"
+
+msgid "At the conclusion of the Vampires' War of the Chalice, Korbu exacted horrific retribution on his defeated enemy, Calden Fain. It is better for the world that knowledge of the necromantic arts which rendered Fain--body and soul--into this living blade, is lost."
+msgstr "在吸血鬼的圣杯之战结束时，可布将它的敌手卡登·费恩施以永不超生的魔咒。幸好，有关于如何将费恩的身体与灵魂永远禁锢入这柄武器中的魔法已经永远的失传了，不会有人再拿它来执行残酷的刑罚。"
+
+msgid "Uri Hossana, King of the Western Elves, also called \"The Drunken King,\" was deposed the day he carelessly misplaced his scepter of office while on a hunting trip. This proved to be the last blunder of an incapable ruler. His advisors relieved him of his crown and left him to fend for himself in the Howling Marsh. He was never seen again."
+msgstr "乌力·何沙纳，也是西方精灵之王，另一个称号则是“喝醉的国王”，在他于狩猎的时候弄丢了象征地位与权力的令牌之后，终于被放逐了。这也是这位无能的领导者最后一次的错误。他的顾问拿下了他的皇冠，并且让他在尖啸森林中自生自灭。从此之后再也没有人见过他。"
+
+msgid "Trollish folklore is full of the fables of Sevenstrong Burlfist who with Biter, his faithful wolf companion, and his mighty club, Breaker, endlessly quested for the Silver Rose. Fables? One must wonder, if Breaker exists, then why not too, the Silver Rose?"
+msgstr "在巨魔的传说中常常会提到一名英雄和他的忠实恶狼伴侣一起寻找银玫瑰的故事。传说？如果破坏之棒存在的话，那么银玫瑰也应该存在咯？"
+
+msgid "Nemerit, an otherwise unremarkable witch of the last era, was renown for her staff artificing skill. She created a staff for every conceivable use. It is said she carried this staff on reagent collecting trips into the swamplands."
+msgstr "一个没有什么特色的女巫妮茉莉却因她擅长对手杖注入魔力而出名。她制造了各种各样功能的手杖。据说她会携带这柄手杖进入沼泽之地搜集药材。"
+
+msgid "Legends tell of many great archer heroes, but none greater than Brennan Morland of whom it was said once pierced a gold sovereign at 300 paces in an archery tournament. Now, holding his bow you must wonder if the legend owes more to the bow than the man."
+msgstr "传说中有许多伟大的弓箭手英雄，但没有人比布伦南·莫兰更伟大，据说他在一次射箭比赛中在三百步外射中了一枚金币。现在，握着他的弓，你一定会想，这个传说是否更多归功于弓而不是他本人。"
+
+msgid "A mage known as much for frailty of body as for magical prowess, Serendine of Freehaven built this armor to make the most of his strengths and the least of his weaknesses."
+msgstr "法师知道自己的优点是在魔法，体魄上面就不是他们的长处。自由海文的色兰登制造了这个盔甲就是要善用自己的长处，补足自己的短绌。"
+
+msgid "Dark and Light Elven dealings have been peaceable, if uneasy, for centuries. Before that there was nothing but war. Few suits of this Dark Elven war armor have survived the ravages of time. Those that have are understandably, coveted."
+msgstr "黑暗和光明精灵之间的关系虽然有些紧张，却也和平的延续了好几个世纪。在那个之前双方都只有决一死战的恶劣关系。黑暗精灵的这种护甲只有极少数逃过了岁月的侵蚀，其它的都已经被打造变卖成更有用处的工具了。"
+
+msgid "Each grandmaster of the Blackshire Armorers' Guild creates a masterpiece suit of plate as proof of his right to hold his station. It is not unusual for a guild member to spend ten to twenty years in the creation of one of these suits."
+msgstr "黑岸盔甲公会的大师每个人都会打造一件足以代表他的实力和地位的盔假。公会的成员常常会花费十到二十年的时间只为了打造出这样一件盔甲来。"
+
+msgid "That she would actually have a name for her gloves, is evidence of the flamboyant, if deserved, conceit of Darcie Darby--most widely known for her theft of the bejeweled Rod of Right, part of the royal regalia of Enroth."
+msgstr "达丝·德比的手套现在都以她的名字来命名，可见她拥有不小的实力。她最为人所称道的事迹就是偷走镶满珠宝的恩洛斯皇家统治令牌。"
+
+msgid "When Jerico Ironfist secured the throne in the First War of Enrothian Succession, he sent forth heralds to spread the news. They were given pairs of these boots so the news would be spread quickly and thus soonest end widespread civil unrest."
+msgstr "当杰瑞可·艾恩法斯特在第一次的恩洛斯王位继承之战后获得了王位之后，他派出信差们到各地去散播这个消息。每一名信差都获得了这双靴子，以便让他们能够以最快的速度散播消息，终止大众和整个王国的不安。"
+
+msgid "When the cartographer Alvia Morrania went to chart the terrain of the elemental planes she went well prepared. This ring of general protection was among the many special items commissioned by the Enrothian courts in support of her expedition."
+msgstr "当地理师爱维雅·摩蓝尼雅去绘制元素界的地形时，她的准备相当的充分。这个戒指是恩洛斯议会支持她探险所提供的许多道具之一。"
+
+msgid "In the history of the barbarian tribes of Vori, it is rare to find a long reigning chieftain. Rarer still is one who held his position through magic rather than might. Drogg was such--a warrior mage who survived many years of rival challenges. It is said that he wore his helmet, even in sleep. Now that you possess it, you understand why."
+msgstr "在沃里的蛮人部族历史中，实在很难找到有哪一个酋长能够统治比较长的时间。通过魔法而非蛮力来保障自己的地位更是极为少见的事情。德拉格却就是这样的一名酋长。他是一名战士也是一名法师，在许多敌人的挑战下生存了下来。据说他即使在睡眠中都戴着这顶头盔。当你获得了这顶头盔之后，你很快了解了其中的原因。"
+
+msgid "So named by its creator and only sovereign wearer, Mederon, the first and last Lich Emperor of Nighon. The everlasting dynasty he hoped to found lasted barely a dozen years. Mederon escaped the fate of his kingdom. It is said he still lives as a madman and searches the world for his lost crown."
+msgstr "这个名字是由尼根的第一个，也是最后一任巫妖皇帝麦德隆所命名的。他希望能够永续存在的皇朝只存续了几十年。麦德隆自己则是逃过了如同王国一般毁灭的命运。据说他直到目前为止依旧疯狂地四处搜寻他失落的皇冠。"
+
+msgid "When Angels fall from grace, they lose their wings. Since this is an event of extreme infrequency, angel wings are a very rare commodity. Archangel wings are almost never seen. When used as a material, they imbue the resulting item with fantastic powers."
+msgstr "当天使堕落的时候，他们会失去那一双羽翼。由于这是极为少见的情形，天使羽翼也就成为非常珍贵的商品。大天使的羽翼几乎从未有人见过。结合羽翼的力量所创造出的物品将会获得极为强大的力量。"
+
+msgid "The pommel of this sword is gruesomely butted by a shrunken medusa's head. Though greatly diminished, the medusa's power flows along Snake's blade and into its targets--a good design, but poorly implemented, for some of the negative energies flow into the sword's wielder as well."
+msgstr "这柄剑的剑锷部分是由一个缩小的蛇发女妖头所制成的。虽然尺寸变小了，但蛇发女妖的威力依旧通过蛇状的刀刃源源不绝的流入敌人的身体中。虽然这是个很好的点子，但是在实行上却有相当大的困难，因为某些负面的能源也会跟着流入持用者的体内。"
+
+msgid "Havoc's enchantment makes it able to readily defeat any target's defenses. Unfortunately, its aggressive spirit makes it indifferent to parrying movements."
+msgstr "毁灭之剑的魔力让它可以轻易穿透任何敌人的防御，很不幸的，它积极主动的个性也让持有者防御的动作变得毫无意义。"
+
+msgid "So called because of its power to demonize its wielder, nevertheless, there are many who would willingly pay the price for the power offered by \"Hell's Cleaver.\""
+msgstr "地狱邪斧的称号其来有自，因为他能够让使用者彻底的恶魔化。当然，也有许多人心甘情愿地付出这样的代价，接受地狱邪斧所赋予他们的强大力量。"
+
+msgid "Many under the rule of Luthiner the Severe saw the existence of his spear Spiritslayer as proof of the existence of evil. The injuries caused by the spear go beyond the physical as Spiritslayer takes a strike as an opportunity to drink its target's very essence."
+msgstr "许多在暴君路西那底下苟延残喘的人们都将这柄灵魂断碎矛当做他邪恶的象征。因为灵魂断碎矛所造成的伤害不只是物理性的，他还能够吸取目标的精髓，削弱对方的力量。"
+
+msgid "The Trident of Rulership was never meant to be on dry land, yet when the once mighty, ocean to ocean, Triton empire collapsed, many of its greatest artifacts including those of its royal treasure were looted and made their way to the surface."
+msgstr "统治三叉戟本来就不是为了在陆地上使用的。但是当统治七海的崔顿帝国崩溃之后，许多他们所制造的宝物，包括了皇家宝库内的神兵利器通通都流通到市面上供人采买。"
+
+msgid "Though generally considered unfashionable among current necromantic customs, live sacrifice was once widely practiced. To reduce the cruelty inflicted on his victims, the Necromancer Ferredine the Merciful created a blade capable of bringing about a quicker and less suffered end."
+msgstr "虽然一般来说对目前的死灵法师已经不那么风行，但是活人献祭也曾经是相当流型的一股风潮。为了要降低倒霉的对象所感受到的痛苦，死灵法师慈悲费络丁创造了这个可以让猎物不要太过痛苦的刀刃。"
+
+msgid "By imposing upon its wielder a deepened state of concentration, the Staff of Elements increases his or her affinity with elemental magic to a profound degree. Of course, it is not always a good thing to have one's attention taken away from one's immediate concerns."
+msgstr "元素之杖借着让持有者进入更深的沉思状态中，可以大幅增加他们的元素系魔法能力。当然，把人的注意力太过集中在另外一个方面，有时也会造成不好的影响。"
+
+msgid "This bow was built to the specifications of the great Elven tournament archer, Terin Tourfeather. More concerned with fancy shooting than with the realities of the battlefield, the bow's detrimental effects were of no concern to Tourfeather--more workaday wielders should pay more heed."
+msgstr "这把弓是专门打造给伟大的精灵射手，太林·土尔非勒索使用的。虽然这柄弓主要的目的在美观和装饰上，但这并不会让不用上战场的太林感到困扰。现在的人才比较需要担心这个问题。"
+
+msgid "An ingenious combination of the mechanical and magical went into the creation of this self-cocking crossbow which launches its quarrels with incredible force. That the same launching force causes it to kick like a mule means only the most skilled can use it to any good effect."
+msgstr "结合了魔法和机械装置的完美点子，这柄十字弓可以不停的自动以机器的力量卷动弓弦，快速的射出力量强大的箭矢。但这强大的后座力也造成只有最具有技巧的人才能够使用这具十字弓。"
+
+msgid "The final stage of degeneration from their human form leaves a Lich completely soulless and thus immune to certain magics. Such liches often curse their personal items with vulnerabilities to these magics to dissuade others from using them."
+msgstr "从人类退化成巫妖的最后一个阶段让巫妖的灵魂完全消失，导致对某些魔法完全免疫。这些巫妖往往会诅咒某些自己所使用的物品，让其它的人无法使用这些宝物。"
+
+msgid "The great knight Gerrald Herondale abandoned this shield after it took the brunt of a dark and deadly curse. Though it still retained its great powers, the shield was also weighed down with malevolent energies."
+msgstr "加拉德·鹰谷是一名伟大的骑士，他在这面盾牌受到诅咒之后立即抛弃了这个宝物。虽然这个盾牌依旧拥有强大的力量，但同样的也受到更多诅咒的拖累。"
+
+msgid "A lost relic of the Freehaven Alchemists' Guild, until its disappearance, this ring was the signet of the guildmaster. It was meant to be worn only during the mixing of the most powerful potions for it drew much energy from the user."
+msgstr "在这个戒指神秘失踪之前，他一直是自由海文炼金术士公会领袖的印玺。只有在进行最强大的药剂混合的时候才会配戴这个戒指，因为这会吸取使用者太多的力量。"
+
+msgid "The only reason someone would wear this hat is for the luck it conveys. It is the farthest thing from flattering!"
+msgstr "这可不是夸大其词！这个东西唯一值得配戴的原因是它所增加的运气属性！"
+
+msgid "An experiment of the Blackshire Artificers' Guild, this belt was designed to turn its wearer into the perfect warrior--mighty and fearless. No more were made when in field tests it became apparent that \"foolhardy\" and \"careless\" were not virtues of the perfect warrior."
+msgstr "这是黑岸物品创造师公会的一个实验品，这条腰带原本应该将配戴者变成一个完美的战士，力量强大，而且不会感到畏惧。但是，在没有经过战场实地实验的状况下，大家就意识到了“漫不经心”、“愚笨”并非是完美战士的美德。"
+
+msgid "A ring of simple metal (copper or brass?), warm on touch."
+msgstr "一圈简单的金属（铜还是黄铜？），摸上去很暖和。"
+
+msgid "Ancient and fey, Puck's enchantments cause it to practically fly for enemy's throats.  No one knows when or where Puck was forged, but the Faerie origins are unmistakable."
+msgstr "这是一把古代的神剑，速度奇快无比，敌人往往在还没有反应过来之前就被刺破了喉咙。这把剑的来历是个迷，但它肯定是由精灵制造的。"
+
+msgid "Wallace has somehow found its way into the hands of rebels and rabble rousers for centuries.  The weapon magnifies both the ability and the confidence of its wielder, frequently leading its owners to take risks they might otherwise have avoided.  Though none of its owner's ambitions have been fulfilled, no one has ever declined to carry Wallace once they have heard its siren song."
+msgstr "华里斯剑能增强使用者的信心和力量，但也往往使他们过于自信，导致最终的失败。它几百年来一直流落在民间，经常被冒险家和叛乱者所使用，虽然世人都知道它是把不祥之剑，但没有人能抵挡它的诱惑。"
+
+msgid "Corsair is one of the finest weapons ever turned out by the Regnan armories.  Ever true to their nature, Regna's smiths fashioned a weapon that would aid their imperial \"tax collection\" efforts on the high seas and coastal towns.  To this date, Regna has not forged a weapon that didn't advance their selfish goals at the expense of others."
+msgstr "海盗之剑是雷格那的武器制造厂出产的精品。有了这把剑之后，它们进行海上抢劫时就更加肆无忌惮了。"
+
+msgid "Owned by Colonial Governor Padish at the Time of the Silence, this fantastic armor has resurfaced in many of the great treasure hoardes throughout history.  Like most creations turned out by the Heavenly Forge, it is nearly indestructible, and its like can no longer be made by any forge in the land."
+msgstr "它是寂静时代的殖民地总督帕第什穿过的铠甲，几百年来一直是学武之人梦寐以求的宝物。就像天堂铸造厂的其他杰作一样，它几乎是坚不可摧的，而且大陆上的任何铸造师都无法再次将它制造出来。"
+
+msgid "Named after its owner and creator, Yoruba is an extremely tough, magic resistant suit of plate mail.  Because of the armor's prohibitive expense, it was built in piecemeal fashion--and it shows.  Different pieces are made of different materials, with the most expensive ones in the breastplate.  There are two puncture holes in the breastplate that the original owner never repaired, possibly for sentimental reasons."
+msgstr "这是由著名的工匠余尔波打造的铠甲，非常坚固，而且可以防御魔法。它是用各种不同的材料拼制而成的，其中胸甲所使用的材料特别珍贵，但上面却有两个受损部位没有被修理过，其中可能有一段悲伤的典故。"
+
+msgid "Though powerful, Splitter is never wielded by a single owner for long.  The blade gives off great blasts of fire when struck, and the magical protection against fire the weapon offers isn't enough to completely shield a user from the blast."
+msgstr "这柄战斧虽然威力无穷，但使用者大多不得善终。虽然它为使用者增加了火系抗性，但砍中敌人后的爆裂还是会伤害到使用者本人。"
+
+msgid "Ghoulsbane was commissioned by the Church of the Sun more than 150 years ago as part of their effort to destroy the ever growing population of undead created by the Church of the Moon.  Though powerful, it is only one weapon, and the undead are legion.  The Church of the Sun fell in 1083 A.S."
+msgstr "嗜血战斧是150年前由太阳教制造的，专门用来对付月亮教的亡灵怪物。但由于使用者势孤力单，而亡灵怪物却杀之不尽，所以太阳教最终被月亮教所灭。"
+
+msgid "A humorless weapon, to say the least, Gibbet was forged by Mekorig the Blind to help end the Age of Monsters, and promote the Age of Man.  A noble idea, but one that hasn't worked out very well.  Gibbet often goes missing for years, only to be rediscovered in some dragon's hoard by ambitious adventurers.  The power of the weapon often inspires such adventurers to move the weapon to another dragon hoard, where it once again goes missing for years."
+msgstr "基尔比特之矛是由麦克林打造的，"
+
+msgid "The Archer's dream.  Ullyses requires no arrows, firing bolts of ice formed when the string is drawn back.  Its origins are unknown, but the style suggests Elvish make."
+msgstr "这是弓箭手梦寐以求的神弓。它拉开弦就能射出冰箭，所以不需要用普通的箭。这把弓的来历不明，但从打造的技艺上来看应该是精灵的杰作。"
+
+msgid "The Hands of the Master are meant for Monks, but a few Thieves have put them to use with excellent results.  Most of the owners have gone on to fame and fortune, but the last one obviously didn't do so well."
+msgstr "王者之手是僧侣梦寐以求的宝物，另外，盗贼使用它以后也能大大增加技艺。拥有过它的人大多数都功成名就，但它的最后一个主人看来就没有这么幸运了。"
+
+msgid "So named for their boost to their wearer's reflexes and pace, the Boots true function is to ease the use of Water Magic in order to speed travel.  Anyone using the boots is destined for greatness, but not necessarily honor.  Much mischief can be attributed to previous owners of these boots."
+msgstr "它名不虚传，能大大增加使用者的行走速度，而且可以使他更有效的使用水系魔法。拥有过它的人大多都非常有名。不过，它有时也会为人们带来灾难。"
+
+msgid "The Ruler's Ring was made in 744 A.S. by Joshua Stom, chief alchemist for the Warlocks of Nighon.  Although not an inheritly evil artifact, the ring was created to control and conquer, nothing more."
+msgstr "王者指环是多年以前由尼根的邪术师制造的，长久以来一直被用于战争和破坏。"
+
+msgid "It is said that Mash was the answer to the First Ogre's prayer to the Gods for a weapon that would make it stronger than anything else.  Annoyed, the Gods cursed the First Ogre with Mash, and all Ogres have since borne the mark of that act--strong, but slow, dull, and stupid.  In any event, Mash is yours now."
+msgstr "据说麦斯是食人妖为了追求绝对的力量而打造的，但他们的行为触怒了神，神就用麦斯杀死了这些食人妖。长久以来，许多人都讥笑它的粗重和迟钝，但没人敢怀疑它的威力。不管怎么说，它现在是你的了。"
+
+msgid "Much more a tool than a weapon, Ethric's Staff was fashioned by the world's first lich--Ethric the Mad.  The staff magnifies Dark magic, drawing from the life force of its user.  Since Ethric's life force was magically sustained, this wasn't a problem for him.  Mortals, however, will slowly feel their life force drain away while they hold the staff."
+msgstr "与其说是武器，不如说是工具，埃斯里克之杖是由世界上第一个巫妖——疯子埃斯里克打造的。它通过吸取使用者的鲜血来提高暗黑魔法的威力。由于埃斯里克的生命是由魔法维持的，所以这对他来说不是问题。然而，凡人在握住该手杖时会慢慢感觉到他们的生命力正在流失。"
+
+msgid "Secretly passed from one Assassin to another for centuries, Old Nick happily vanished from history's sight during the Battle for Morning--a joint Human-Elvish attack on the Assassin's guild nearly 200 years ago.  It is said that Old Nick has killed more people than the Plague.  Now that you've found this evil weapon, you're going to throw it down a well...aren't you?"
+msgstr "这是刺客代代相传的匕首，但在200年前人类和精灵联合向杀手行会发起的晨曦之战中失落了。据说尼克匕首杀过的人比瘟疫害死的人还多。知道了这些以后，你会不会立刻将它扔到井里？"
+
+msgid "The original name of Amuck has been lost in time, but the blade retains a magically keen edge and all of its original power.  Fantastic strength and vitality are conferred upon the owner at the expense of a proper sense of fear.  Wielders of Amuck don't much bother dodging blows in battle."
+msgstr "这柄战斧年代久远，但它的锋芒丝毫没有被岁月所掩盖。它能大大增加使用者的力量和耐力，而且由于它挥舞起来密不透风，所以不怕弓箭的袭击。"
+
+msgid "One of five such shields known to exist, the Glory Shield was built during the Time of Wonders.  It was especially tuned to promote Spirit magic, but that same attunement leaves the wielder somewhat open to Mind and Body based attacks."
+msgstr "这是奇迹时代打造的盾牌，这样的盾牌全世界只有五面。它能大大增加灵魂魔法的威力，但会降低对肢体魔法和心智魔法的防御力。"
+
+msgid "One of the first shields to issue from the Kelebrim Foundry, this one bears the simple stamp \"Kelebrim\" on the inside under the hand strap.  It has very powerful enchantments meant to protect from Medusa gazes, but like many grand enchantments, it comes with a flaw.  Kelebrim weakens it's owners resistance to Earth magic."
+msgstr "从盾牌上的标记来看，这是克里布林铸造厂出产的精品。它被赋予强大的魔法防御力，但有一个缺点：它会降低使用者的土系抗性。"
+
+msgid "Owned by Taledon, Divine High Priest and High Holy Conduit of the Church of the Sun from 870 A.S., this powerful helm probably contributed to his untimely death in 881.  It is said that an object may take so much enchantment--try to put too much in, and something negative squeezes out.  In this case, the negative made the wearer profoundly unlucky.  Taledon, arguably the most powerful figure of his time, veteran diplomat, soldier, and priest, was crushed beneath the wheels of a runaway peasant's wagon while crossing the street in Steadwick."
+msgstr "这是由当年太阳教的大主教塔里顿使用的头盔。有传言说正是由于这件头盔过于强大，遭到了天忌，所以造成了这位集外交家、战士和神职人员于一身的伟人过早的离开了人世。"
+
+msgid "This is the lost (WAS the lost) crown of the short lived Empire of Phynax.  When worn, the crown's jewels smolder with   barely restrained Fire magic, and cast reddish light upon the face of the wearer.  The crown amplifies any skill in Fire magic the wearer may have, and fiercely resists water based attacks."
+msgstr "这是昙花一现的菲尼克斯王国的皇冠。戴上它以后，它就会闪闪发光，大大增加火系魔法的威力，同时还能减少水系伤害。"
+
+msgid "Like so many similar items, the Titan's Belt increases the might of its wearer at the expense of speed.  The only difference with this relic is the magnitude of the trade off."
+msgstr "泰坦腰带能大大增强佩带者的力量，但会降低他的速度。由于这是古代流传下来的宝物，所以价值连城。"
+
+msgid "The sinister Twilight Cloak has been used by spies and assassins for centuries.  The nature of the enchantment is so beneficial to those professions that the loss of magical resistance is easily overlooked."
+msgstr "这是几个世纪以来杀手们梦寐以求的宝物。由于它上面附加的魔法威力太强大了，所以没人会在乎损失的那些魔法防御力。"
+
+msgid "Master smith Ivan Selving named this crossbow after his only daughter Ania, calling it his second best creation ever.  Archers using this crossbow rarely miss their targets, but their concentration and slow, careful movements make them easy targets in turn."
+msgstr "伟大的工匠依万·塞尔文以他女儿安娜雅的名字为这把弓命名，因为他认为这是除了女儿以外最珍惜的东西。这把弓的命中率奇高，但它会使弓箭手的行动迟缓。"
+
+msgid "Forged in the halcyon days at the beginning of the Church of the Sun, Justice is a powerful weapon for Good.  At the cost of a speed, Justice is one of the mightiest relics a Paladin or Cleric can wield for the Path of Light."
+msgstr "正义是太阳教在创立之初所铸造的武器，他们希望用它来维护正义。虽然它会降低使用者的速度，但威力却相当惊人，最适合圣武士和牧师使用。"
+
+msgid "This is the very hammer the great Mekorig the Blind used to turn out so much of the world's finest enchanted equipment during his many years as Master of the Mekorig Foundry.  The hammer's connection to the elements leaves the wielder vulnerable to elemental magic, but it is a small price to pay for the enhanced Self ability and Might the hammer provides."
+msgstr "这是伟大的铸造师麦克林最得意的杰作之一，上面附加了非凡的魔法力。它虽然会降低使用者对元素魔法的防御力，但和所增加的威力相比，这就显得微不足道了。"
+
+msgid "Rumored to be the footwear of a god, the winged sandals confer enormous power on the wearer."
+msgstr "这双带翅膀的草鞋据说是某个神所使用过的，穿上它的人将身轻如燕。"
+
+msgid "The cloak worn by the High Priest of Baa, though useful it seems to sap the will of the wearer slowly away."
+msgstr "这是羊鸣教的高级神甫穿过的披风，虽然它威力强大，但会消磨使用者的意志。"
+
+msgid "This sword was created by the goblins for their Chief at the time, Grogar.  Unfortunately, the goblins lost the war and Elfbane was lost for quite some time.  Enchanted to both slay elves, and protect its wielder from arrows, Elfbane truly lives up to its name.  A curious side effect of the enchantment renders the weapon unusable by all but a goblin."
+msgstr "这是大耳怪们为了对付精灵而铸造的宝剑，但是它们最终败给了精灵，这把剑也因此失踪了许多年。精灵杀手名不虚传，不但对精灵有特殊攻击效果，而且可以防御弓箭，不过只有大耳怪们能够使用这把宝剑。"
+
+msgid "Mind's Eye was created by Mekorig for the Great Druid, Larette Weisman.  While enhancing both intellect and personality, Mind's Eye regenerates the wearer's mana and also provides head protection.  Unfortunately, Mind's Eye will only fit on the head of a human."
+msgstr "这是铸造师麦克林为大德鲁伊劳里达·威斯曼打造的头盔。它不但能提高使用者的智力和个性，而且还能恢复魔法值和提高防御力。不过，只有人类能够戴上它。"
+
+msgid "Elven chainmail was more common before the wars against the humans and the goblins.  Centuries of combat combined with the degradation of armorsmithing skills have reduced the number of sets of Elven Chainmail to almost none.  The effect of using lighter materials and custom designing the armor to only fit elves grants the wearer more freedom of movement, allowing faster, more accurate attacks."
+msgstr "精灵锁甲很久以前是精灵们非常钟爱的铠甲，但经历了常年的战乱以后，这种铠甲越来越少，而且由于技术的退步，已经没有人能够打造了。精灵锁甲非常轻巧，因此它能够增加使用者的速度和准确。"
+
+msgid "Forge Gauntlets were created by Mekorig for his assistants to aid them in helping him.  Extending the already amazing dwarven might and endurance, the gauntlets also grant exceptional resistance to fire-- necessary in a forge as hot as Mekorig's."
+msgstr "这是铸造师麦克林为矮人打造的手套。它能让矮人的力量和耐力更为强化。此外，它还有防御火系攻击的效果。"
+
+msgid "Designed for Saint Perci, this belt confers martial prowess, exceptional strength, and regeneration.  Saint Perci used the belt quite extensively, but even with its help he wasn't able to stave off death at the hands of the Wromthrax the dragon."
+msgstr "这是大贤者帕斯使用过的腰带，它能增加佩带者的力量，提高他的武器使用术，还能为他恢复生命值。虽然这条腰带威力无穷，但是帕斯最终还是死在巨龙劳斯莱克的爪下。"
+
+msgid "A magical 'escort' designed by the mage Terrax for one of his female friends who had to travel quite far to reach him.  The ring protects the wearer from elements, falling, and drowning.  Unfortunately, she traveled to Erathia and the ring disappeared soon after."
+msgstr "这是魔法师泰拉克斯为一位经常要长途跋涉来见他的女士制作的指环，它能防止不慎失足和落水。但这位女士不久以后就去了伊拉西亚，而这枚指环从此下落不明。"
+
+msgid "One of nine such blades in the world, Mordred was made by the Brotherhood in 428 A.S. as part of their first experiments in the development of Dark Magic.  Their hope was to find a way to extend one person's life at the expense of another's, but instead of reversing ages, they merely found a way to steal health."
+msgstr "天下九大利刃之一，由兄弟会在寂静时代428年打制，是他们首次扩展暗黑魔法的成果。他们本来想创造利用他人生命为自己延年益寿的魔法，但没有成功，发明的魔法只能损害他人健康。"
+
+msgid "The origins of Thor are lost in time, but this mighty barbarian weapon is well remembered by military historians.  The weapon has been used in battles by many owners for centuries, although its last appearance was at the battle of Shimengard in 902 A.S..  The force of a blow from this hammer is so powerful that it can knock foes several feet back away from the wielder."
+msgstr "尽管没有人知道这件武器出自谁之手，但钻研军事历史的专家对它却刻骨铭心。在几个世纪的战斗中此武器辗转于多位勇士之手，最后一次出现是在寂静时代902年的西蒙加德战役中。此锤威力无比，能把对手击出几步开外。"
+
+msgid "This mighty axe is enchanted to destroy dragons and devils.  It has a way of finding an owner who is both likely to come across such monsters and is strong enough to fight them."
+msgstr "此战斧经魔法点化，专为屠龙斩魔之用。它能自动寻找它的主人，那些很容易遇到此类怪兽，而且有能力与它们战斗勇士。"
+
+msgid "Heavy, yet seemingly light as a feather in skilled hands, Excalibur confers great might upon its wielder.  Opponents do not easily walk away from blows struck by this legendary weapon."
+msgstr "尽管份量挺沉，但如果使用得当，则轻如鸿毛。艾克斯卡力巴给予使用者巨大的力量，安然避过这把传说之剑的攻击可不容易。"
+
+msgid "Traditionally carried by the High Druid, but lost during struggles over religious doctrine, Merlin acts as a reservoir of spell power the wielder can draw upon at any time.  Merlin is enchanted with swiftness, and rains blows upon enemies much faster than an ordinary staff."
+msgstr "惯例应由高级别德鲁伊持有，但在频繁的宗教派别斗争中被遗失了。莫林的内部储存着魔力，供持有者随时取用。它的速度经魔法增强，攻击对手时快如闪电，势如疾风骤雨。"
+
+msgid "Percival was enchanted by the Archer's Guild in 912 A.S. as the prototype in an enchantment process they were developing at the time.  Unfortunately, a suspicious fire broke out at the guild hall, ruining the development plans and destroying the exotic materials needed to create more Percivals.  The guild never recovered from their losses, and sold Percival to the Elves in 918 A.S..  It has since changed hands many times."
+msgstr "此物在寂静时代912年由弓箭手行会按照他们研制的程序点化。但不幸的是，当时大厅突然起火，研究计划毁于一旦，而且从海外运来用于量产的原料也被付之一炬。该行会从此一蹶不振，在寂静时代918年把帕西佛卖给了精灵族。此后又经多人转手。"
+
+msgid "Named after an ancient knight, Pellinore fortifies the wearer with an unnatural health so strong that the wearer heals from serious injuries in a matter of hours.  The armor is quite heavy, and protects the wearer from being knocked about during combat."
+msgstr "这件盔甲以一个古代骑士的名字命名。它附有非凡的疗伤能力，使穿着者身受重伤后只要几个小时就可恢复如常。此盔甲分量不轻，可防止其主人在战斗中被击倒。"
+
+msgid "Commissioned by King David IV of Erathia during the Timber Wars, Valeria not only shields the user from normal blows, but helps intercept many incoming arrows by magically focusing the wielder's attention on the flight of the missile.  The same enchantment that makes the shielding effect possible also increases the wielder's accuracy enormously."
+msgstr "维拉里亚是在木材战争期间由伊拉西亚国王大卫四世委托制作的。它不仅可以抵御普通的攻击，而且能使其主人的注意力集中在飞来的箭矢上，将其神奇地拦截下来。此物还能大大提高使用者的准确值。"
+
+msgid "In their endless quest to create the perfect Priest-King, the priests of the Church of the Sun created Arthur and imbued it with the power to heighten the wearer's personal abilities, as well as confer more magical energy.  It worked, heightening their King's natural abilities--and his pride.  In 1073, Leopold VII started a holy war against the rival Church of the Moon, grinding both organizations into poverty and ultimately resulting in their demise."
+msgstr "为了打造一个十全十美的大主教国王，太阳教派创制了此物。为了显示使用者的超人意志和过人本领，它被赋予无穷的力量和高超的魔法。在使用时，领袖的王者之气将得到淋漓尽致的发挥。1073年，李普德七世发动了与其死对头月亮教派一决生死的大战，最后两败俱伤，相继灭亡。"
+
+msgid "This cape originally belonged to Alastair Blane, Master thief of the Shadow Guild.  The cape increased his luck and certain thieving skills tremendously, enabling him to pursue a long and prosperous career.  Blane was never brought to justice for his crimes--he was instead killed over a card game for cheating while wearing the cloak to better his chances."
+msgstr "这件披风原先是阴影教首领阿莱斯蒂亚·布莱恩的。披风极大地提高了他的运气和偷盗技巧，使他始终鸿运高照。布莱恩一生从未受到正义的惩罚，反而在穿着这件披风打牌时被人发现作弊而死于非命。"
+
+msgid "No one knows where or when these magical boots were made, but many tales refer to them turning up in the most unusual places.  They grant their wearer superhuman quickness and grace of motion."
+msgstr "没人知道这双具有魔力的鞋子来自哪里，何时制造。许多传说把它描述成来自某个非同寻常的神秘圣地。这双鞋子给予其使用者超人的速度，而且行进时样子幽雅迷人。"
+
+msgid "Guinevere was created by the Alchemist Guild under the stones of Castle Kriegspire many years ago.  It boosts the magical resources available to its wearer, and eases the use of spells of the Mirrored Path."
+msgstr "这枚戒指是克里格斯城堡地下的炼金术士教派所作。它能给予佩戴者额外的魔法能量，更使光明和暗黑魔法的施放变得简单。"
+
+msgid "Lord Solomon Stone had this ring commissioned during his tenure as High Priest of the Path in 1018.  It gives a huge boost to a user's ability in clerical magic, as well as access to a good deal of magical energy."
+msgstr "此戒指问世于1018年，由大主教所罗门·斯通命人打制。它可以极大地提高使用者的牧师类魔法威力，并获得大量的魔法能量。"
+
+msgid "Though Morgan's origins are unknown, Morgan has had many owners in the last hundred years, all of them unknown before finding the amulet.  The amulet is so mighty, as a matter of fact, that any peasant or child that lays hands on it is sure to become a legend in his own time."
+msgstr "此物来历不明，在近百年中数易其主，在未得到此护身符之前他们都是名不见经传的小人物。这个神器有无穷的魔力，任何携带它的人无论是平民百姓还是三岁孩童，都将有轰轰烈烈的传奇生涯。"
+
+msgid "A powerful weapon said to have been delivered up from the Netherworld in response to the wish of a prolific mass murderer.  The weapon inflicts terrible wounds with its razor sharp edge and drips acid constantly.  Not only a terrible weapon, the sword bestows the cunning of a master thief for disarming traps and the luck of the devil in escaping the damage they do.  Hades draws its power from its wielder slowly and constantly."
+msgstr "这件威力无穷的兵器据说来自阴间，曾经滥杀无辜，沾满了血腥。它的刀口锋利无比，被它划破的伤口难以愈合。它不仅是件可怕的兵器，而且还可给予使用者盗贼大师般的陷阱拆卸术和魔鬼般的躲避伤害能力。只要把它拿在手上，使用者的生命就会缓慢地流失。"
+
+msgid "A powerful war-mace, Ares burns with fires from the heart of the mountain it was made from.  The same magic that causes it to burn with a terrible fire bestows resistance to fire upon its wielder."
+msgstr "它是一件威力无穷的战斗钉锤，在火山中心冶炼而成。由于经过真火锤炼，可提高使用者的防火能力。"
+
+msgid "This trident is probably what inspired the Regnan navy to adopt the trident as their favorite weapon of war.  Poseidon fills its wielder with a frightening battle rage, increasing the wielder's might, endurance and accuracy at the cost of personal safety.  So consuming is the wielder's desire to smite his enemies while using Poseidon that he neglects to dodge blows he might otherwise have avoided.  On the other hand, dead enemies (usually) don't fight back."
+msgstr "正是因为此兵器的出现才使雷格那的海军全体选择三叉戟为其专用兵器。它在战斗中可使挥舞者异常暴怒，从而提高力量值、耐力值和准确值，但受伤毙命的危险也随之加大。由于战斗时勇气大增，对敌人的反击不屑一顾，毫不避让，所以容易受伤。但另一方面进攻是最好的防守，毙命的对手是不会反击的。"
+
+msgid "More a magical curiosity than a truly useful weapon, Cronos increases the wielder's vitality fantastically, and decreases his luck by half as much."
+msgstr "与其说它是一件兵器不如说是一件魔法物品。它可以大大提高使用者的生命值，但运气值也随之下降。"
+
+msgid "A huge sword meant for the unsubtle, Hercules fills its wielder with the strength of a hundred men.  In keeping with its 'big and stupid' theme, the sword reduces the intelligence of its wielder while held."
+msgstr "这柄巨剑造型古朴，毫无机关。它可给予使用者百人之力。但由于笨重无比，会减少使用者的智力值。"
+
+msgid "Graced with the might of thunder, Artemus fires bolts magically charged with electricity.  While powerful, the user of the bow should be careful--elemental magics seem drawn to the bow, and do more damage when they hit the wielder."
+msgstr "阿缇密丝蕴含雷霆之力，射出的箭矢带有魔法充能的电流。虽然此弓威力强大，但使用者需多加小心——元素魔法似乎会被此弓吸引，命中持有者时造成的伤害会更大。"
+
+msgid "This unique armor graces its owner with luck, helping him to escape the brunt of most elemental attacks.  It draws its energy, however, from the constitution of its wearer, making the wearing of this armor a risky proposition."
+msgstr "这件独一无二的铠甲可提高穿着者的运气值，使他逃脱元素魔法的攻击。但它消耗穿着者身上的能量，穿着此盔甲带有一定风险。"
+
+msgid "Perhaps this suit of armor was meant only for the Gods.  Worn at times by barbarian chieftains, the armor will increase the physical vitality and magical energy the wearer has at his disposal, but at a terrible cost.  House plants have been known to score higher on intelligence tests than wearers of this armor.  One would think that accidental death would surely follow such a precipitous loss of thought, yet the luck the armor bestows seems to prevent disaster.  Often the wearer of the armor becomes so stupid he forgets to remove it."
+msgstr "这件盔甲原属于众神。由于长时间落在野蛮人酋长手里，所以可以使穿着者的生命力和魔法能量有极大提高。但也要因此付出沉重的代价，穿着者会变得蠢笨如牛，说不定哪一天就会死于非命，但同时运气值会有所提高，可以抵消一些负面影响。穿着者经常会笨得连脱下盔甲也想不起来。"
+
+msgid "Legend has it this shield was given as a gift from the Gods to a man wishing to fight the terrible medusas in their stronghold.  The shield is reflective and prevents the wielder from being frozen by the stoning gaze of the medusa.  It also carries an enchantment that helps protect against arrows, but the shield is very heavy and will slow the user down a bit."
+msgstr "传说它是众神赐予人类抵御美杜莎女妖的礼物。这件盾牌可以反射美杜莎的石化目光以避免被石化。它还拥有防御弓箭的魔力。但因为此盾牌沉重无比，使用者的行动速度也随之减慢。"
+
+msgid "This crown is a mighty relic that protects against elemental magic attacks of all kinds, but has a flaw that slows the wearer down tremendously."
+msgstr "此头冠可以抵御各种元素魔法的攻击，但穿戴者的行动速度会大大降低。"
+
+msgid "Legends say this cape was discarded by a God who became annoyed with the cape's magical slowing of his actions.  It confers an incomparable might to its wearer, at a large cost to speed."
+msgstr "传说神灵因为它的魔力使行动速度减慢而丢弃了它。它可以赋予使用者无与伦比的力量，但速度大大降低。"
+
+msgid "A relic from before the Silence, these boots must conceal some hidden magic as they are very heavy, yet light once worn.  They act upon the nerves and muscles of their wearer, heightening his speed and reflexes to inhuman levels, but simultaneously causing inaccuracy and over-compensation.  The boots have been owned by many through the ages, all of whom have died from some speed related accident, like running up a hill at blazing speeds and then falling down the cliff at the top."
+msgstr "这是寂静时代之前的遗物。尽管闲置不用时非常沉重，但使用时轻巧自如。使用者的肌肉和神经系统都有很大提高，行动速度将快得难以置信。但同时准确值也有所下降，有时会付出沉重的代价。此物长久以来已经数易其主，每个人都因为速度过快而死于非命，比如冲上山顶之后从悬崖上掉了下来。"
+
+msgid "Desired and sought after by the foolish for ages, this beautiful ring smoothes the skin, clears the voice, and dramatically improves the physical beauty of its wearer, as well as enhancing the personality.  The ring also carries a curse of ill luck, and the wearer usually dies of some tragic accident soon after finding the ring."
+msgstr "一些笨蛋找了它几个世纪。这个美丽的戒指能使皮肤光滑，嗓音清澈，体态优美，从而提高其个性值。但此物被邪恶的魔力诅咒，常会使携带者死于非命。"
+
+msgid "Also known as the Scholar's Ring, Athena vastly sharpens and improves the intellect of its wearer at the cost physical might.  Though the effect upon the physical body is nearly crippling, most sorcerers find the temptation to wear the ring too great to resist."
+msgstr "这是学者的戒指，戴上它智力将有惊人的提高，但同时力量会急剧下降。尽管知道力量将会减弱到极限，大多数法师依然无法抵御它的巨大诱惑而心甘情愿戴上此戒指。"
+
+msgid "Sometimes referred to as the Amulet of the Fool, this curious relic from before the Silence dramatically increases the personal vitality, magical energy, and luck of the wearer at the expense of personality.  While the armor is worn, the face goes slack, the eyes vacant, and the voice subsides to a monotone."
+msgstr "这件寂静时代之前的遗物有时被称为“愚者护身符”，它以牺牲个性为代价，极大地增加了佩戴者的个人生命力、魔法能量和运气。戴上它时，脸部会变得松弛，眼神空洞，声音也会变得单调。"
