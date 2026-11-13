@@ -180,3 +180,9 @@ msgstr "竞技场击杀"
 
 msgid "drawbridge unbarred"
 msgstr "吊桥已解锁"
+
+msgid "Elder Priest of the Light"
+msgstr "光明大主教"
+
+msgid "the Elder Priest of the Light"
+msgstr "光明大主教"
