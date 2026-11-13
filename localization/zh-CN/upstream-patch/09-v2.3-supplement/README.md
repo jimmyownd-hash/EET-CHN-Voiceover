@@ -7,5 +7,7 @@ Against the v2.3 tag, `assets_dev/languages/zh-cn/`:
   - 3 existing entries are re-worded: `Elder {class}` 长老{class} -> 资深{class} (MAW rank prefix: "长老大法师" read as a title, not a rank); `Elder Priest of the Light` / `the Elder Priest of the Light` 光明长老祭司 -> 光明大主教 (matches 光明主教).
 - `engine/icons_x2/sprites.pcx`: the Chinese Arcomage card sheet, same size (1920x5000) and layout as `assets_dev/engine/icons_x2/sprites.pcx` (the file is a PNG with a .pcx name, like the original). Copy it to `assets_dev/languages/zh-cn/engine/icons_x2/` now that language packs can replace icons_x2 (OY-579). It has not been tested in 2.3 yet.
 
-Still not translated in v2.3: 252 MM9 artifact lore texts and 47 fuzzy ones (the rebalanced MM9 artifacts). Party/NPC names and professions (roster, npc_names, npc_professions) stay English in a language pack, because packs do not replace data tables; players can use the `mods` folder (see 08-v2.2-supplement/mods).
+`text/mm9.po` also has the 47 fuzzy MM9 artifact descriptions (the rebalanced artifacts) re-translated with their new bonuses, the flag removed, plus the Halberd and Fizbin descriptions (translated from scratch).
+
+Still English in v2.3: about 200 MM9 script/quest-flag labels ("Cinema chess_capture_2: done", "Pledge 191", ... debug names that players do not see). Party/NPC names and professions (roster, npc_names, npc_professions) stay English in a language pack, because packs do not replace data tables; players can use the `mods` folder (see 08-v2.2-supplement/mods).
 - `save-editor/OpenYAMM存档修改器-2.3.html` – single-file save editor, reads/writes .oysav versions 154-179 (1.21 - 2.3).
