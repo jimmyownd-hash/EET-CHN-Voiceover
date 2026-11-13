@@ -1,0 +1,8 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: zh-CN\n"
+
+# 悬停提示框装不下长名字，改短
+msgid "Townsaver Hall"
+msgstr "陶恩赛佛大厅"
