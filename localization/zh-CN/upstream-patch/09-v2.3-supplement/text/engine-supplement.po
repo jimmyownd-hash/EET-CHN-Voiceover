@@ -1,0 +1,238 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: zh-CN\n"
+
+msgid "All continents"
+msgstr "所有大陆"
+
+msgid "Continent"
+msgstr "大陆"
+
+msgid "Buffs"
+msgstr "增益"
+
+msgid "Healing"
+msgstr "治疗"
+
+msgid "On Attack"
+msgstr "攻击时"
+
+msgid "Upkeep"
+msgstr "维持"
+
+msgid "Anywhere"
+msgstr "任何地方"
+
+msgid "Indoors"
+msgstr "室内"
+
+msgid "Outdoors"
+msgstr "室外"
+
+msgid "under {minutes} min left"
+msgstr "剩余不足 {minutes} 分钟"
+
+msgid "when it has run out"
+msgstr "失效后"
+
+msgid "indoors"
+msgstr "室内"
+
+msgid "outdoors"
+msgstr "室外"
+
+msgid "At most {count} upkeep spells"
+msgstr "最多 {count} 个维持法术"
+
+msgid "At most {count} orders"
+msgstr "最多 {count} 条指令"
+
+msgid "Already in the upkeep list"
+msgstr "已在维持列表中"
+
+msgid "the Upkeep key (not set) casts the first that is due"
+msgstr "维持键（未设置）会施放第一个到期的法术"
+
+msgid "{key} casts the first that is due; hold it to go on"
+msgstr "按 {key} 施放第一个到期的法术；按住可连续施放"
+
+msgid "+ Add a spell to keep up: click it on the right"
+msgstr "+ 添加要维持的法术：在右侧点击它"
+
+msgid "No upkeep"
+msgstr "没有维持法术"
+
+msgid "Select a spell to set when it is cast."
+msgstr "选择一个法术，设置它何时施放。"
+
+msgid "The buffs, heals and cures {member} keeps up. The Upkeep key casts the first that is due, at its usual cost. Add spells on the right, or the member's buffs or healing below."
+msgstr "{member} 维持的增益、治疗和解除状态。维持键会按平时的消耗施放第一个到期的法术。在右侧添加法术，或在下方添加该成员的增益或治疗。"
+
+msgid "Cast when it is due and every ticked condition holds."
+msgstr "到期且所有勾选的条件都满足时施放。"
+
+msgid "Renew when less is left than"
+msgstr "剩余时间少于以下时重新施放"
+
+msgid "buffs only"
+msgstr "仅增益"
+
+msgid "{minutes} min"
+msgstr "{minutes} 分钟"
+
+msgid "Add: {member}'s buffs, heals and cures"
+msgstr "添加：{member} 的增益、治疗和解除状态"
+
+msgid "Upkeep key cleared"
+msgstr "已清除维持键"
+
+msgid "{key} is taken by {action}. Choose another key."
+msgstr "{key} 已被“{action}”占用，请选择其他按键。"
+
+msgid "Upkeep key: {key}"
+msgstr "维持键：{key}"
+
+msgid "UPKEEP KEY"
+msgstr "维持键"
+
+msgid "Press the key to use. Escape keeps the old one."
+msgstr "请按下要使用的键。按 Esc 保留原来的键。"
+
+msgid "Click the box, then press a key. A right click clears it."
+msgstr "点击方框，再按一个键。右键点击可清除。"
+
+msgid "One key for the whole party: each ready member casts what is due on their list."
+msgstr "全队共用一个键：每位准备好的成员会施放自己列表中到期的法术。"
+
+msgid "Attack, upkeep and the quick keys, per member"
+msgstr "每位成员的攻击、维持与快捷键"
+
+msgid "Nothing to add"
+msgstr "没有可添加的"
+
+msgid "Copied {member}'s upkeep"
+msgstr "已复制 {member} 的维持列表"
+
+msgid "Add to {member}'s upkeep"
+msgstr "添加到 {member} 的维持列表"
+
+msgid "Quicksave {number}"
+msgstr "快速存档 {number}"
+
+msgid "{hours} h {minutes} min"
+msgstr "{hours} 小时 {minutes} 分钟"
+
+msgid "Unable to save the playthrough's name."
+msgstr "无法保存周目名称。"
+
+msgid "Delete Playthrough?"
+msgstr "删除这个周目？"
+
+msgid "{count} could not be deleted."
+msgstr "有 {count} 个无法删除。"
+
+msgid "Playthrough"
+msgstr "周目"
+
+msgid "Playthrough name"
+msgstr "周目名称"
+
+msgid "Started in"
+msgstr "开始于"
+
+msgid "Started"
+msgstr "开始时间"
+
+msgid "Last played"
+msgstr "上次游玩"
+
+msgid "These saves name no playthrough. Load one and save again to start its record."
+msgstr "这些存档没有周目名称。读取一个并重新保存，即可开始记录。"
+
+msgid "This playthrough has no statistics here yet. Its record starts when a save is loaded."
+msgstr "这个周目暂时没有统计数据。读取存档后才会开始记录。"
+
+msgid "Delete Playthrough"
+msgstr "删除周目"
+
+msgid "Load Newest Save"
+msgstr "读取最新存档"
+
+msgid "Older saves"
+msgstr "较早的存档"
+
+msgid "This playthrough"
+msgstr "本周目"
+
+msgid "Voices of the portrait's sex, its race first · play a line to hear it"
+msgstr "该头像性别的所有声音，本种族的排在前面 · 播放一句即可试听"
+
+msgid "Quest Book"
+msgstr "任务书"
+
+msgid "+{experience} experience"
+msgstr "+{experience} 经验"
+
+msgid "Train · {mastery}"
+msgstr "训练 · {mastery}"
+
+msgid "No upkeep spells set (Battle Orders)"
+msgstr "未设置维持法术（战斗指令）"
+
+msgid "Upkeep: not enough spell points for {spell}"
+msgstr "维持：魔法值不足，无法施放 {spell}"
+
+msgid "Upkeep: nobody is ready"
+msgstr "维持：没有人准备好"
+
+msgid "Upkeep: nothing to cast"
+msgstr "维持：没有需要施放的"
+
+msgid "The update was cancelled."
+msgstr "更新已取消。"
+
+msgid "This version of OpenYAMM cannot update itself."
+msgstr "此版本的 OpenYAMM 无法自行更新。"
+
+msgid "The update server is unreachable; try again later. ({error})"
+msgstr "无法连接更新服务器，请稍后再试。（{error}）"
+
+msgid "The update's signature is invalid; download the complete package from the website. ({error})"
+msgstr "更新签名无效，请从官网下载完整安装包。（{error}）"
+
+msgid "The update server sent an unexpected release ({release})."
+msgstr "更新服务器返回了意外的版本（{release}）。"
+
+msgid "OpenYAMM {version} needs the complete package from the website."
+msgstr "OpenYAMM {version} 需要从官网下载完整安装包。"
+
+msgid "This build of OpenYAMM ({version}) does not take updates."
+msgstr "此版本的 OpenYAMM（{version}）不支持更新。"
+
+msgid "This OpenYAMM {version} package does not match the published release; download it again from the website."
+msgstr "此 OpenYAMM {version} 安装包与已发布的版本不一致，请从官网重新下载。"
+
+msgid "Check for updates first."
+msgstr "请先检查更新。"
+
+msgid "OpenYAMM cannot write to its folder {folder}. Move it to a folder you can write to, or download the complete package."
+msgstr "OpenYAMM 无法写入其所在文件夹 {folder}。请把它移到可写入的文件夹，或下载完整安装包。"
+
+msgid "Not enough disk space: {size} needed."
+msgstr "磁盘空间不足：需要 {size}。"
+
+msgid "The download failed; try again later. ({error})"
+msgstr "下载失败，请稍后再试。（{error}）"
+
+msgid "The game content of OpenYAMM {version} is installed."
+msgstr "OpenYAMM {version} 的游戏内容已安装。"
+
+msgid "Installing OpenYAMM {version}..."
+msgstr "正在安装 OpenYAMM {version}……"
+
+msgid "The update could not be installed: {error}"
+msgstr "无法安装更新：{error}"
+
+msgid "OpenYAMM {version} is ready. Restart to play it."
+msgstr "OpenYAMM {version} 已就绪，重启后即可游玩。"

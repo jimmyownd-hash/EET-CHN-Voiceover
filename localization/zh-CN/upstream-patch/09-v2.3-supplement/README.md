@@ -11,3 +11,6 @@ Against the v2.3 tag, `assets_dev/languages/zh-cn/`:
 
 Still English in v2.3: about 200 MM9 script/quest-flag labels ("Cinema chess_capture_2: done", "Pledge 191", ... debug names that players do not see). Party/NPC names and professions (roster, npc_names, npc_professions) stay English in a language pack, because packs do not replace data tables; players can use the `mods` folder (see 08-v2.2-supplement/mods).
 - `save-editor/OpenYAMM存档修改器-2.3.html` – single-file save editor, reads/writes .oysav versions 154-179 (1.21 - 2.3).
+
+## text/engine-supplement.po (new file, 78 entries)
+Texts that ARE wrapped in tr()/trNoop() in the v2.3 code but are in neither templates/*.pot nor zh-cn (so no translator could see them): the Battle Orders Upkeep list (36), the Load screen's playthrough texts (16: "This playthrough", ...), the updater messages (16: "The update was cancelled." ...), "All continents"/"Continent" on the Progress page, "+{experience} experience", "Quest Book", the party-creation voice hint, the upkeep status messages. Please regenerate the templates and merge this file into zh-cn engine.po (it adds new msgids only, nothing is overridden).
