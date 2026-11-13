@@ -6,3 +6,7 @@ msgstr ""
 # 悬停提示框装不下长名字，改短
 msgid "Townsaver Hall"
 msgstr "陶恩赛佛大厅"
+
+# MAW 转职等级前缀，"长老大法师"读着别扭
+msgid "Elder {class}"
+msgstr "资深{class}"
