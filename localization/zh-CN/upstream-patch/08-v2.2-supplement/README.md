@@ -12,3 +12,8 @@ Thanks for taking issue #31 into 2.2. Checked the 2.2 zh-cn pack against the tem
   roster.txt / npc_names.txt / npc_professions.txt as mods/engine/data_tables), monster health bar names, and
   `glyph_scale` in the font descriptors (Chinese text is drawn about 28% larger than intended).
 - The Arcomage sprite sheet with Chinese card names (07-v2.0-gap-patch/mods/engine/icons_x2/sprites.png) is not in 2.2.
+
+## Also in this folder
+- `mods/engine/data_tables/` – translated party member / NPC names and professions (roster, npc_names, npc_professions) for the game folder's `mods/engine/data_tables/`.
+- `更新日志.txt` – changelog and install notes (Chinese).
+- `save-editor/OpenYAMM存档修改器-2.2.html` – single-file save editor, reads/writes .oysav versions 154–176 (1.21 – 2.2).

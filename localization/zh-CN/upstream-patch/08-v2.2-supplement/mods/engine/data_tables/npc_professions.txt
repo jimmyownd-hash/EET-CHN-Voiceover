@@ -1,0 +1,79 @@
+#	Professions	Prof name (Global.txt)	Rarity	Cost/w	Personality	Action Topic	Joins	Recruit	Join Text	Description
+0			100	0	Adventurer				2267	
+1	铁匠	308	10	200	Merchant		x		2268	2321
+2	铸甲匠	309	10	200	Merchant		x		2269	2322
+3	炼金术士	7	10	400	Sorcerer		x		2270	2323
+4	学者	306	10	500	Scholar		x		2271	2324
+5	向导	310	10	100	Adventurer		x		2272	2325
+6	追踪者	311	10	200	Adventurer		x		2273	2326
+7	探路者	312	10	300	Adventurer		x		2274	2327
+8	水手	313	10	100	Peasant		x		2275	2328
+9	领航员	314	10	200	Scholar		x		2276	2329
+10	医师	105	10	500	Priest	1714	x		2277	2330
+11	医术专家	315	30	2000	Priest	1714	x		2278	2331
+12	医术大师	316	50	5000	Priest	1714	x		2279	2332
+13	教师	317	10	300	Scholar		x		2280	2333
+14	导师	115	10	700	Scholar		x		2281	2334
+15	兵器专家	318	10	300	Paladin		x		2282	2335
+16	兵器大师	319	10	400	Paladin		x		2283	2336
+17	魔法学徒	320	10	500	Sorcerer		x		2284	2337
+18	神秘法师	321	10	1000	Sorcerer		x		2285	2338
+19	魔法大师	322	10	2000	Sorcerer		x		2286	2339
+20	商贩	323	10	100	Merchant		x		2287	2340
+21	商人	293	10	200	Merchant		x		2288	2341
+22	侦察员	324	10	300	Thief		x		2289	2342
+23	律师	325	10	200	Official				2290	2343
+24	大律师	326	10	300	Noble				2291	2344
+25	补锅匠	327	10	200	Peasant		x		2292	2345
+26	锁匠	328	10	300	Merchant		x		2293	2346
+27	傻瓜	329	10	100	Fanatic		x		2294	2347
+28	烟囱清扫工	330	10	200	Peasant		x		2295	2348
+29	搬运工	331	10	100	Peasant		x		2296	2349
+30	军需大师	332	10	200	Adventurer		x		2297	2350
+31	代理商	333	10	500	Official		x		2298	2351
+32	银行家	334	10	1000	Noble		x		2299	2352
+33	厨师	335	10	300	Peasant	1715	x		2300	2353
+34	大厨	336	30	400	Noble	1715	x		2301	2354
+35	骑师	337	10	100	Adventurer		x		2302	2355
+36	诗人	338	10	1000	Paladin		x		2303	2356
+37	御魔师	339	10	1000	Sorcerer		x		2304	2357
+38	绘图者	340	10	200	Sorcerer		x		2305	2358
+39	呼风大师	341	50	2000	Sorcerer	1716	x		2306	2359
+40	引水大师	342	30	1000	Sorcerer	1717	x		2307	2360
+41	护门大师	343	50	2000	Sorcerer	1718	x		2308	2361
+42	僧徒	344	10	200	Priest	1719	x		2309	2362
+43	号手	345	10	300	Paladin	1720	x		2310	2363
+44	探险家	346	10	100	Adventurer		x		2311	2364
+45	海盗	347	10	500	Thief				2312	2365
+46	扈从	348	30	600	Paladin		x		2313	2366
+47	灵媒	349	30	400	Scholar		x		2314	2367
+48	吉普塞人	350	10	100	Thief				2315	2368
+49	谈判官	351	10	500	Official				2316	2369
+50	骗子	352	10	200	Thief				2317	2370
+51	夜盗	353	10	2000	Thief				2318	2371
+52	农夫	305	10	1	Peasant		x	x	2319	
+53	农奴	354	10	1	Peasant				2267	
+54	裁缝	355	10	5	Merchant				2267	
+55	工人	356	10	1	Peasant		x	x	2267	
+56	农夫	357	10	1	Peasant		x	x	2267	
+57	桶匠	358	10	5	Merchant				2267	
+58	制陶工人	359	10	2	Merchant				2267	
+59	纺织工人	360	10	2	Merchant				2267	
+60	鞋匠	361	10	3	Merchant				2267	
+61	挖沟工	362	10	1	Peasant		x	x	2267	
+62	磨坊主	363	10	2	Peasant				2267	
+63	木匠	364	10	5	Merchant		x		2267	
+64	石匠	365	10	4	Fanatic		x		2267	
+65	小丑	366	10	10	Fanatic				2267	
+66	捕手	367	10	5	Adventurer		x	x	2267	
+67	乞丐	368	10	1	Fanatic		x	x	2267	
+68	偷牛贼	369	10	3	Thief		x	x	2267	
+69	猎手	370	10	5	Adventurer		x	x	2267	
+70	抄写员	371	10	10	Scholar				2267	
+71	传教士	372	10	10	Priest				2267	
+72	公务员	42	10	8	Official				2267	
+73	卫兵	100	10	10	Guard				2267	
+74	羊鸣教教徒	373	10	1	Fanatic				2267	
+75	贵族	303	10	100	Noble		x	x	2267	
+76	赌徒	374	10	10	Thief		x	x	2267	
+77	小孩	558	100	0	Peasant				2300	
