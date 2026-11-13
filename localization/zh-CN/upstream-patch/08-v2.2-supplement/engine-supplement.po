@@ -1,0 +1,182 @@
+# 简体中文补充译文（OpenYAMM 2.2）：作者包里还空着的文本。汉化：考拉粑粑
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: zh_CN\n"
+
+msgid "There you are: the Ledger of Teachers of {continent}. Every trainer is now in your journal's notes."
+msgstr "给你：{continent}的《导师名册》。所有导师现已记入你的日志笔记。"
+
+msgid "That's more gold than you carry, friend."
+msgstr "你带的金币不够，朋友。"
+
+msgid "_potion/reagent"
+msgstr "药瓶"
+
+msgid "Unused!!!"
+msgstr "未使用！"
+
+msgid "Spell Description"
+msgstr "法术说明"
+
+msgid "Bonus range for Standard by Level"
+msgstr "普通附魔加成范围（按等级）"
+
+msgid "lvl"
+msgstr "级"
+
+msgid "(note weapons can only have Special Bonuses)"
+msgstr "（注：武器只能带特殊附魔）"
+
+msgid "debug start"
+msgstr "调试开局"
+
+msgid "god lich party"
+msgstr "神级巫妖队伍"
+
+msgid "debug console"
+msgstr "调试控制台"
+
+msgid "test party"
+msgstr "测试队伍"
+
+msgid "+10 Magic resistance permanent"
+msgstr "永久 +10 魔法抗性"
+
+msgid "+5 Spell points restored"
+msgstr "恢复 5 点法术值"
+
+msgid "Blackshire guard hostility fixup"
+msgstr "黑郡：修正卫兵敌意"
+
+msgid "Silver Cove guard hostility fixup"
+msgstr "银湾：修正卫兵敌意"
+
+msgid "Castle Ironfist guard hostility fixup"
+msgstr "铁拳城堡：修正卫兵敌意"
+
+msgid "Misty Islands guard hostility fixup"
+msgstr "雾岛：修正卫兵敌意"
+
+msgid "Clans are united!!"
+msgstr "各氏族已经联合！"
+
+msgid "Unite the clans"
+msgstr "团结各氏族"
+
+msgid "Got rid of the Dook!!"
+msgstr "赶走了公爵！"
+
+msgid "The Frost Giant"
+msgstr "霜巨人"
+
+msgid "The frost giant is dead"
+msgstr "霜巨人死了"
+
+msgid "the docks are clear!!"
+msgstr "码头清理干净了！"
+
+msgid "the icy docks"
+msgstr "冰封的码头"
+
+msgid "Honky quest"
+msgstr "嘎嘎任务"
+
+msgid "honkies are gone"
+msgstr "嘎嘎们走了"
+
+msgid "mountain pass"
+msgstr "山口"
+
+msgid "pass is cleared"
+msgstr "山口已经打通"
+
+msgid "Sturm and Drang have gone to war"
+msgstr "斯图姆与德朗开战了"
+
+msgid "gone to war!"
+msgstr "开战了！"
+
+msgid "peace!"
+msgstr "和平！"
+
+msgid "war quest is complete"
+msgstr "战争任务完成"
+
+msgid "Player won prize"
+msgstr "队伍赢得奖品"
+
+msgid "Won prize!!"
+msgstr "赢得奖品！"
+
+msgid "Betrayed Party!!"
+msgstr "队伍被出卖了！"
+
+msgid "Forad has betrayed the party"
+msgstr "弗拉德出卖了队伍"
+
+msgid "Player imprisoned Njam"
+msgstr "队伍把尼亚姆关进了监狱"
+
+msgid "Put that bastard in prison!!"
+msgstr "把那混蛋关进监狱！"
+
+msgid "found all members of the party."
+msgstr "找到了队伍的所有成员。"
+
+msgid "6 fires of penance are lit"
+msgstr "赎罪六火已经点燃"
+
+msgid "Player lit the 6 fires of penance"
+msgstr "队伍点燃了赎罪六火"
+
+msgid "got the manuscript!"
+msgstr "拿到了手稿！"
+
+msgid "Player got writ of fate"
+msgstr "队伍拿到了命运敕令"
+
+msgid "writ of fate!!"
+msgstr "命运敕令！"
+
+msgid "Got Thjorad!"
+msgstr "拿到了乔拉德！"
+
+msgid "Cleared out the keep!"
+msgstr "要塞清理干净了！"
+
+msgid "Player cleared out Anskram Keep"
+msgstr "队伍清理了安斯克拉姆要塞"
+
+msgid "Got Kira's response!"
+msgstr "收到了基拉的答复！"
+
+msgid "Fixed the mines and refinery!"
+msgstr "修好了矿井和精炼厂！"
+
+msgid "Disabled the defenses!!"
+msgstr "解除了防御！"
+
+msgid "Got the Crona Kiga!"
+msgstr "拿到了克罗纳·基加！"
+
+msgid "Book of rules"
+msgstr "规则书"
+
+msgid "Got the book!!"
+msgstr "拿到了书！"
+
+msgid "Keys and Locks!!!!!"
+msgstr "钥匙与锁！"
+
+msgid "Quest Notes"
+msgstr "任务笔记"
+
+msgid "MM9 promotion service"
+msgstr "MM9 转职服务"
+
+msgid "Arena kills"
+msgstr "竞技场击杀"
+
+msgid "drawbridge unbarred"
+msgstr "吊桥已解锁"
