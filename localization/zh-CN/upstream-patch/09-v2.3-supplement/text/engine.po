@@ -4065,7 +4065,7 @@ msgstr "饮用翡翠岛西部边缘的井水后永久增加了2点运气值。"
 #: assets_dev/engine/data_tables/english/autonote.txt:263
 msgid ""
 "10 points of temporary Might from the well in the village south of Harmondale."
-msgstr "饮用和谐谷南面的村庄里的井水后暂时增加了10点力量值。"
+msgstr "饮用哈蒙代尔南面的村庄里的井水后暂时增加了10点力量值。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/english/autonote.txt:264
@@ -5916,7 +5916,7 @@ msgstr "在阿尔瓦的迷吼休息站赢得了魔幻牌的比赛。"
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/english/autonote.txt:663
 msgid "Won Arcomage at the On the House in Harmondale."
-msgstr "在和谐谷的迎宾旅店赢得了魔幻牌比赛。"
+msgstr "在哈蒙代尔的迎宾旅店赢得了魔幻牌比赛。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/english/autonote.txt:664
@@ -6303,7 +6303,7 @@ msgstr "在翡翠岛的双棕榈酒馆赢得了亚克曼纸牌对局。"
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/english/award_display_aliases.txt:34
 msgid "Won Arcomage at On the House in Harmondale."
-msgstr "在和谐谷的本店请客酒馆赢得了亚克曼纸牌对局。"
+msgstr "在哈蒙代尔的本店请客酒馆赢得了亚克曼纸牌对局。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/english/award_display_aliases.txt:35
@@ -6535,7 +6535,7 @@ msgstr "将帕尔森国王的羽毛笔带给了诺伯特·西拉丝"
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/english/awards.txt:4
 msgid "Removed goblins from Castle Harmondale"
-msgstr "消灭了和谐谷城堡里的大耳怪"
+msgstr "消灭了哈蒙代尔城堡里的大耳怪"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/english/awards.txt:40
@@ -7934,7 +7934,7 @@ msgid ""
 "The traditional rulers of Harmondale--Erathia and Avlee, have not really noticed the change in ownership, but I'm sure that's just an oversight that will be corrected soon.  Since Harmondale is currently under human rulership, I expect the Queen's tax collectors will be by shortly to inquire."
 msgstr ""
 "%30\n"
-"和谐谷的新主人今天来到了他的城堡。按照马克汉姆爵士的命令，这个新主人将领导%31、%32、%33和%34。但我要老实告诉你，这里既没有接风仪式也没有欢迎宴会，最近倒有一伙大耳怪占领了城堡，赖在里面不肯出来。没人教训他们，简直不知道天高地厚了。连我也没地方可去，只能住在小旅店里。新官上任三把火，现在就看你的能耐了，大人。\n"
+"哈蒙代尔的新主人今天来到了他的城堡。按照马克汉姆爵士的命令，这个新主人将领导%31、%32、%33和%34。但我要老实告诉你，这里既没有接风仪式也没有欢迎宴会，最近倒有一伙大耳怪占领了城堡，赖在里面不肯出来。没人教训他们，简直不知道天高地厚了。连我也没地方可去，只能住在小旅店里。新官上任三把火，现在就看你的能耐了，大人。\n"
 "还有件事得如实向你禀报。镇子里的百姓对你这位新来乍到的主人将怀有“谨慎的敌意”。而且这种敌意在短时间内是难以消除的。他们现在已经不会天真地把你当作一个青天大老爷了，只要能和前任差不多，就算谢天谢地了。这也难怪，百姓们都被这里的统治者折磨怕了，只要看看历任统治者的“政绩”，我实在很同情他们，但愿这次我没有看错，我们确实盼来了一个英明善良的君主。\n"
 "无论是伊拉西亚还是埃里统治这个城堡，对这里百姓的疾苦都不闻不问，一副漠然置之的态度，这才搞得这里的人民怨声载道。我想派你来也许就是要改变现在的状况。现在既然是人类统治这个城堡，我看最重要的问题就是要皇后的税官到这里清除那些乱七八糟的苛捐杂税。"
 
@@ -7948,7 +7948,7 @@ msgstr "伟大角逐"
 msgid ""
 "The citizens of Harmondale have begun to perceive my lords' justice as…a bit harsh.  As of %30 100 citizens have been summarily executed for their crimes against my lords in the streets.  I would like to point out that though the citizens refer to my lords as \"The Terrible\" (e.g. %31 the Terrible), my lords' stern justice has reduced crime in the city streets tremendously.  Many criminals choose to stay indoors rather than walk about the streets for fear my lords will recognize them and bring swift justice down upon their cowardly heads.  History will vindicate my lords' wise policy, I am sure."
 msgstr ""
-"和谐谷的百姓觉得我主人的正义感似乎有些过头了。就因为%30他一下子处死了一百个人。现在主人已经被冠于暴君的称号了（比如暴君%31）。但是“治乱世必施苛政”，这是古已有之的。如今那些盗贼强盗已经吓得不敢出门了，生怕被别人认出来就地正法，大家必须承认和谐谷这两天确实太平多了。历史会证明一切的，我的主人万岁！"
+"哈蒙代尔的百姓觉得我主人的正义感似乎有些过头了。就因为%30他一下子处死了一百个人。现在主人已经被冠于暴君的称号了（比如暴君%31）。但是“治乱世必施苛政”，这是古已有之的。如今那些盗贼强盗已经吓得不敢出门了，生怕被别人认出来就地正法，大家必须承认哈蒙代尔这两天确实太平多了。历史会证明一切的，我的主人万岁！"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/english/mm7_history.txt:2
@@ -7966,7 +7966,7 @@ msgid ""
 "Wendell Tweed\n"
 "Court Historian"
 msgstr ""
-"马克汉姆爵士嘱咐我为和谐谷城堡的历代统治者编写传记，以让后代永远铭记这段历史。我对这个任务不敢有丝毫马虎，并将忠实地记录下你在伊拉西亚所做的一切。你的所作所为，无论善恶与否，都与我无关，我仅是历史的记录者而已，一切是非功过自会有后人来评说！\n"
+"马克汉姆爵士嘱咐我为哈蒙代尔城堡的历代统治者编写传记，以让后代永远铭记这段历史。我对这个任务不敢有丝毫马虎，并将忠实地记录下你在伊拉西亚所做的一切。你的所作所为，无论善恶与否，都与我无关，我仅是历史的记录者而已，一切是非功过自会有后人来评说！\n"
 "愿上帝保佑我们！\n"
 "文德尔·特威德\n"
 "皇家史官"
@@ -7983,9 +7983,9 @@ msgid ""
 "Even the usually pessimistic townspeople have begun to cheer up.  Though most of the improvements to the town are cosmetic, the effect has been electrifying!  Business is positively booming, morale is up, and there is a real feeling that the worst days are behind us.  Providence willing, taxes will remain low, and good fortune will remain high.  The population's consensus is that nothing can go wrong!"
 msgstr ""
 "%30\n"
-"为了答谢我的主人奋不顾身地把矮人救出废弃矿井的英勇行为，矮人国王贺斯法九世决定正式承认他为和谐谷的新任统治者。国王已经派出了使者通报各处，让大家都知道此声明。伊拉西亚和埃里两国均已派出使者前往和谐谷，表达各自的问候和祝贺。\n"
+"为了答谢我的主人奋不顾身地把矮人救出废弃矿井的英勇行为，矮人国王贺斯法九世决定正式承认他为哈蒙代尔的新任统治者。国王已经派出了使者通报各处，让大家都知道此声明。伊拉西亚和埃里两国均已派出使者前往哈蒙代尔，表达各自的问候和祝贺。\n"
 "更为可喜的是，贺斯法国王为了表达自己的谢意，还派出一支工程队把破败的城堡和镇子修葺一新。我亲眼目睹了他们的高超工艺，真是太棒了。有些废墟还是一百五十多年前洛克文二世溃逃前留下的，被他们一古脑扫了个干干净净，还整理出好几间空房间。\n"
-"镇子里以前一直忧心忡忡的百姓们如今变得喜气洋洋。尽管目前所做的只是些小修小补，但这足以鼓起大家重建家园的信心。这些天，镇子里一片繁荣兴旺的景象，大家都情绪高涨，看来一直笼罩在这里的乌云已经散去，美好的生活即将开始。伊拉西亚对我们也不错。各种物资补给一样不少，少的只有征税。看来和谐谷的人民终于可以过上好日子了。"
+"镇子里以前一直忧心忡忡的百姓们如今变得喜气洋洋。尽管目前所做的只是些小修小补，但这足以鼓起大家重建家园的信心。这些天，镇子里一片繁荣兴旺的景象，大家都情绪高涨，看来一直笼罩在这里的乌云已经散去，美好的生活即将开始。伊拉西亚对我们也不错。各种物资补给一样不少，少的只有征税。看来哈蒙代尔的人民终于可以过上好日子了。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/english/mm7_history.txt:21
@@ -8004,9 +8004,9 @@ msgid ""
 "The townspeople have taken the announcement of war in stride, but there is an undercurrent of worry.  I am sure the pressure on my lords to choose a side is intense.  I am not sure what I would do, and take comfort in knowing that the decision is not mine to make.  Step carefully, my lords."
 msgstr ""
 "%30\n"
-"真不幸，伊拉西亚和埃里这两个不共戴天的死对头终于厌倦了和平所带来的无聊与平淡，再次开始兵戎相见。而这次恐怕我们和谐谷也要倒霉了。由于我的主人的名气越来越大，战争双方都想争取我们成为其强有力的盟友。他们先开始打笔墨官司。谁都知道现在和谐谷的最高管辖权归伊拉西亚所有。而埃里声称根据673年签订的图拉利昂条约，城堡应该归他们所有。伊拉西亚马上又指出根据811年发布的和平宣言中的条款，埃里对城堡的所有权是无效的。而埃里马上又找到了大约在375年由当时天下第一军阀独眼萨多文所订立的关于惩治叛国者和邪恶势力的条文，据理力争取消他们对城堡所有权的法案本身不成立。\n"
-"双方就这样绕来绕去，笔仗不休。这其中的经过就是好几本书也写不完。史书要求简单明了，公正精确，这些罗哩罗嗦的话不写也罢。反正双方手正发痒，找什么理由都无所谓，就想教训一下对方，而地点就是在和谐谷附近，这正是我所担心的地方。\n"
-"镇里的人口头上说战争已经见得多了，还有什么好害怕的，其实心底里怎么会忍心自己好不容易重建起来的家园再一次毁于战火。我的主人所承受的压力更大，他必须选择帮助哪一方。这关系到整个和谐谷百姓的生命啊！我的主人，你可要慎重考虑啊！"
+"真不幸，伊拉西亚和埃里这两个不共戴天的死对头终于厌倦了和平所带来的无聊与平淡，再次开始兵戎相见。而这次恐怕我们哈蒙代尔也要倒霉了。由于我的主人的名气越来越大，战争双方都想争取我们成为其强有力的盟友。他们先开始打笔墨官司。谁都知道现在哈蒙代尔的最高管辖权归伊拉西亚所有。而埃里声称根据673年签订的图拉利昂条约，城堡应该归他们所有。伊拉西亚马上又指出根据811年发布的和平宣言中的条款，埃里对城堡的所有权是无效的。而埃里马上又找到了大约在375年由当时天下第一军阀独眼萨多文所订立的关于惩治叛国者和邪恶势力的条文，据理力争取消他们对城堡所有权的法案本身不成立。\n"
+"双方就这样绕来绕去，笔仗不休。这其中的经过就是好几本书也写不完。史书要求简单明了，公正精确，这些罗哩罗嗦的话不写也罢。反正双方手正发痒，找什么理由都无所谓，就想教训一下对方，而地点就是在哈蒙代尔附近，这正是我所担心的地方。\n"
+"镇里的人口头上说战争已经见得多了，还有什么好害怕的，其实心底里怎么会忍心自己好不容易重建起来的家园再一次毁于战火。我的主人所承受的压力更大，他必须选择帮助哪一方。这关系到整个哈蒙代尔百姓的生命啊！我的主人，你可要慎重考虑啊！"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/english/mm7_history.txt:28
@@ -8026,7 +8026,7 @@ msgid ""
 msgstr ""
 "%30\n"
 "好消息。伊拉西亚和埃里两国经过一系列的冷战热战谍报战，就是没打什么大战。如今他们好像对战争又不那么感兴趣了，双方答应只要找到合适的调解人，就可以停战谈判。他们委托我的主人去寻找双方认可的调解人。谢天谢地，他们千错万错，总算这件事没找错人。看来决定伊拉西亚和埃里将来命运的重担又落在了我的主人身上。他肯定不会让我们失望的。\n"
-"至于其他方面，来自迪雅死灵法师领地和布拉卡达光明巫师领地的使者纷纷前来表示承认我的主人为和谐谷的统治者，并要永结友好。其实政治啊，外交啊，就这么回事。没有永远的朋友，也没有永远的敌人，见面可以称兄道弟，转过身就会背后捅刀子，唉，这么肮脏的勾当，还是少说为妙。\n"
+"至于其他方面，来自迪雅死灵法师领地和布拉卡达光明巫师领地的使者纷纷前来表示承认我的主人为哈蒙代尔的统治者，并要永结友好。其实政治啊，外交啊，就这么回事。没有永远的朋友，也没有永远的敌人，见面可以称兄道弟，转过身就会背后捅刀子，唉，这么肮脏的勾当，还是少说为妙。\n"
 "现在每个人都瞪大眼睛注视着我的主人，在他作出决定前，没人敢出声。黎明前的黑暗是最难熬的，这句话真有道理。"
 
 # imported from packs (base v1.21)
@@ -8041,8 +8041,8 @@ msgid ""
 "\n"
 "While ambassador Wright of  Bracada seemed pleased with the choice of arbiter, Ambassador Scale was furious.  He has issued (in the name of his government) a warning to all travelers, including my lords, from Harmondale that their \"safety could not be assured\".  I think his meaning is clear.  He has, however, expressed hope that perhaps some day the interests of the nation of Deyja will coincide with those of Harmondale.  (Author's note:  I don't think the interests of Deyja and Harmondale will ever \"coincide\" until they conquer us...)"
 msgstr ""
-"我的主人找到了老好人布兰蒂斯主持签订和谐谷条约。布兰蒂斯向来公正严明，请他来作调解人真是再合适不过了。在%30，布兰蒂斯先生承受极大的压力，把和谐谷和周围的领土严格划分开来。尽管有些小争议，但无关大局。凭借着高超的外交手段，布兰蒂斯顺利地使双方在停战协议上签了字。双方商定和谐谷的所有权仍划归伊拉西亚所有，但划一块更大的土地归埃里所有。\n"
-"来自布拉卡达的使者莱特对这个调解人非常满意，而迪雅的使者斯克尔却显得火冒三丈。他向所有在场的人发出警告（以其政府的名义），从和谐谷来的人在他们迪雅安全不能得到保障。这是什么意思，简直欺人太甚。他还说希望有朝一日他们和我们会在一些问题上达成共识。（笔者注：除非把我们和谐谷给灭了，想要我们和你们一致，做梦！）"
+"我的主人找到了老好人布兰蒂斯主持签订哈蒙代尔条约。布兰蒂斯向来公正严明，请他来作调解人真是再合适不过了。在%30，布兰蒂斯先生承受极大的压力，把哈蒙代尔和周围的领土严格划分开来。尽管有些小争议，但无关大局。凭借着高超的外交手段，布兰蒂斯顺利地使双方在停战协议上签了字。双方商定哈蒙代尔的所有权仍划归伊拉西亚所有，但划一块更大的土地归埃里所有。\n"
+"来自布拉卡达的使者莱特对这个调解人非常满意，而迪雅的使者斯克尔却显得火冒三丈。他向所有在场的人发出警告（以其政府的名义），从哈蒙代尔来的人在他们迪雅安全不能得到保障。这是什么意思，简直欺人太甚。他还说希望有朝一日他们和我们会在一些问题上达成共识。（笔者注：除非把我们哈蒙代尔给灭了，想要我们和你们一致，做梦！）"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/english/mm7_history.txt:42
@@ -8056,8 +8056,8 @@ msgid ""
 "\n"
 "While ambassador Wright of  Bracada seemed pleased with the choice of arbiter, Ambassador Scale was furious.  He has issued (in the name of his government) a warning to all travelers, including my lords, from Harmondale that their \"safety could not be assured\".  I think his meaning is clear.  He has not withdrawn, however, expressing hope that perhaps some day the interests of the nation of Deyja will coincide with those of Harmondale.  (Author's note:  I don't think the interests of Deyja and Harmondale will ever \"coincide\" until they conquer us...)"
 msgstr ""
-"我的主人找到了老好人布兰蒂斯主持签订和谐谷条约。布兰蒂斯向来公正严明，请他来做调解人真是再合适不过了。在%30，布兰蒂斯先生承受极大的压力，把和谐谷和周围的领土严格划分开来。尽管有些小争议，但无关大局。凭借着高超的外交手段，布兰蒂斯顺利地使双方在停战协议上签了字。双方商定和谐谷的所有权仍划归埃里所有，但划一块更大的土地归伊拉西亚所有。\n"
-"来自布拉卡达的使者莱特对这个调解人非常满意，而迪雅的使者斯克尔却显得火冒三丈。他向所有在场的人发出警告（以其政府的名义），从和谐谷来的人在他们迪雅安全不能得到保障。这是什么意思，简直欺人太甚。他还说希望有朝一日他们和我们会在一些问题上达成共识。（笔者注：除非把我们和谐谷给灭了，想要我们和你们一致，做梦！）"
+"我的主人找到了老好人布兰蒂斯主持签订哈蒙代尔条约。布兰蒂斯向来公正严明，请他来做调解人真是再合适不过了。在%30，布兰蒂斯先生承受极大的压力，把哈蒙代尔和周围的领土严格划分开来。尽管有些小争议，但无关大局。凭借着高超的外交手段，布兰蒂斯顺利地使双方在停战协议上签了字。双方商定哈蒙代尔的所有权仍划归埃里所有，但划一块更大的土地归伊拉西亚所有。\n"
+"来自布拉卡达的使者莱特对这个调解人非常满意，而迪雅的使者斯克尔却显得火冒三丈。他向所有在场的人发出警告（以其政府的名义），从哈蒙代尔来的人在他们迪雅安全不能得到保障。这是什么意思，简直欺人太甚。他还说希望有朝一日他们和我们会在一些问题上达成共识。（笔者注：除非把我们哈蒙代尔给灭了，想要我们和你们一致，做梦！）"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/english/mm7_history.txt:45
@@ -8073,9 +8073,9 @@ msgid ""
 "\n"
 "While ambassador Wright of  Bracada seemed pleased with the choice of arbiter, Ambassador Scale was furious.  He has issued (in the name of his government) a warning to all travelers, including my lords, from Harmondale that their \"safety could not be assured\".  I think his meaning is clear.  He has, however, expressed hope that perhaps some day the interests of the nation of Deyja will coincide with those of Harmondale.  (Author's note:  I don't think the interests of Deyja and Harmondale will ever \"coincide\" until they conquer us...)"
 msgstr ""
-"我的主人找到了老好人布兰蒂斯主持签订和谐谷条约。布兰蒂斯向来公正严明，请他来做调解人真是再合适不过了。在%30，布兰蒂斯先生承受极大的压力，把和谐谷和周围的领土严格划分开来。尽管有些小争议，但无关大局。凭借着高超的外交手段，布兰蒂斯顺利地使双方在停战协议上签了字。双方商定和谐谷的所有权仍划归伊拉西亚所有，但划一块更大的土地归埃里所有。\n"
-"在这次具有历史意义的和谈中，还正式产生了和谐谷的君主。条约任命我的主人为和谐谷的统治者，并拥有独立司法权和行政管辖权（这两个词挺耳熟的）。由于战事已平息，再也不会出现象倒霉的威斯平国王那样的悲剧，所以百姓们兴高采烈，纷纷祝愿和谐谷王国能够长治久安。\n"
-"来自布拉卡达的使者莱特对这个调解人非常满意，而迪雅的使者斯克尔却显得火冒三丈。他向所有在场的人发出警告（以其政府的名义），从和谐谷来的人在他们迪雅安全不能得到保障。这是什么意思，简直欺人太甚。他还说希望有朝一日他们和我们会在一些问题上达成共识。（笔者注：除非把我们和谐谷给灭了，想要我们和你们一致，做梦！）"
+"我的主人找到了老好人布兰蒂斯主持签订哈蒙代尔条约。布兰蒂斯向来公正严明，请他来做调解人真是再合适不过了。在%30，布兰蒂斯先生承受极大的压力，把哈蒙代尔和周围的领土严格划分开来。尽管有些小争议，但无关大局。凭借着高超的外交手段，布兰蒂斯顺利地使双方在停战协议上签了字。双方商定哈蒙代尔的所有权仍划归伊拉西亚所有，但划一块更大的土地归埃里所有。\n"
+"在这次具有历史意义的和谈中，还正式产生了哈蒙代尔的君主。条约任命我的主人为哈蒙代尔的统治者，并拥有独立司法权和行政管辖权（这两个词挺耳熟的）。由于战事已平息，再也不会出现象倒霉的威斯平国王那样的悲剧，所以百姓们兴高采烈，纷纷祝愿哈蒙代尔王国能够长治久安。\n"
+"来自布拉卡达的使者莱特对这个调解人非常满意，而迪雅的使者斯克尔却显得火冒三丈。他向所有在场的人发出警告（以其政府的名义），从哈蒙代尔来的人在他们迪雅安全不能得到保障。这是什么意思，简直欺人太甚。他还说希望有朝一日他们和我们会在一些问题上达成共识。（笔者注：除非把我们哈蒙代尔给灭了，想要我们和你们一致，做梦！）"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/english/mm7_history.txt:48
@@ -8089,7 +8089,7 @@ msgid ""
 "\n"
 "The rumor mill churns, and it seems that the secret of the Grand Vizier's new boldness comes from four new advisors he's hired.  They're always by his side, plotting and scheming for the benefit of Bracada.  That's what my sources are saying, anyway.  Who knows where these people really come from and what their true purpose is?"
 msgstr ""
-"我的主人最近总和一个叫格文·马格努斯的国王混在一起。听说他已经通过了一个法师的考验，这个考验出奇的难，对技巧和耐力的要求都很高。主人完成任务后，就参与了一个极其秘密的计划，准备和他的新盟友一起对抗一个大魔头。主人做事总是出人意料，但往往又棋高一招，谁知道这次他心里怎么想的。反正敌人又不是木头，会傻乎乎地挨打不还手。尽管这次有盟军，那又怎么样？就瞧那个国王呆头呆脑的样子，怎么会是迪雅那伙亡命之徒的对手。再说了，要是他见形势不妙，脚底抹油，那咱们和谐谷可就倒大霉了。\n"
+"我的主人最近总和一个叫格文·马格努斯的国王混在一起。听说他已经通过了一个法师的考验，这个考验出奇的难，对技巧和耐力的要求都很高。主人完成任务后，就参与了一个极其秘密的计划，准备和他的新盟友一起对抗一个大魔头。主人做事总是出人意料，但往往又棋高一招，谁知道这次他心里怎么想的。反正敌人又不是木头，会傻乎乎地挨打不还手。尽管这次有盟军，那又怎么样？就瞧那个国王呆头呆脑的样子，怎么会是迪雅那伙亡命之徒的对手。再说了，要是他见形势不妙，脚底抹油，那咱们哈蒙代尔可就倒大霉了。\n"
 "最近也真邪门，那个马格努斯本来干事缩手缩脚，瞻前顾后，如今却英明果断，信心实足。据可靠消息，他最近找了四个忠诚可靠的谋士，专门为他出谋划策，治理国家。布拉卡达倒是被他们搞得井井有条。不过他也太冒失了，连这些人的来历和动机都不搞清楚，万一被坏人利用了怎么办。"
 
 # imported from packs (base v1.21)
@@ -8115,7 +8115,7 @@ msgid ""
 "Well, there still has been no reaction from Deyja on the theft of the stone, but I doubt they will just take it lying down.  No, they are crafting some vengeful plan even now, or my historical experience is completely wrong.  The question is not whether they will strike, but when.  And where?  Here?  The town?  Or perhaps Bracada itself.  Perhaps my lords should hire a court astrologer, or some spies for advice."
 msgstr ""
 "高级暗黑神庙（其实应该是“低劣”？）是敌人的中心枢纽所在地，那个地方遭到了沉重地打击。在%30，我的主人成功地拿到了那个神庙祭坛上的石头，把它交给了瑞瑟雷克特，她是格文·马格努斯的首席大臣。她把这块石头与高级光明神庙里祭坛上的石头拼合在一起，就成了一块更大的石头。我不知道这帮法师葫芦里卖的什么药，反正我的主人又立了件大功，他拿到了那块祭坛上的石头，大大打击了敌人的嚣张气焰，这下他们再也不能用那块石头干坏事了。\n"
-"但迪雅方面似乎对此事无动于衷，一副毫不在意的样子。但凭我多年来研究历史所积累的经验来看，我敢打赌他们绝不会善罢甘休的，现在肯定在酝酿复仇的计划。敌人迟早会来的，只是什么时候，什么地方，是攻击和谐谷还是布拉卡达，看来我的主人真该找个算命的问问。"
+"但迪雅方面似乎对此事无动于衷，一副毫不在意的样子。但凭我多年来研究历史所积累的经验来看，我敢打赌他们绝不会善罢甘休的，现在肯定在酝酿复仇的计划。敌人迟早会来的，只是什么时候，什么地方，是攻击哈蒙代尔还是布拉卡达，看来我的主人真该找个算命的问问。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/english/mm7_history.txt:59
@@ -8145,7 +8145,7 @@ msgid ""
 "\n"
 "While ambassador Scale of Deyja seemed pleased with the choice of arbiter, Ambassador Wright was furious.  He has issued (in the name of his government) a warning to my lords never to set foot in Bracada on pain of death.  He has, however, indicated a willingness continue the \"dialogue\" between our countries.  Obviously, he hopes to extract some sort of concessions from us in the future."
 msgstr ""
-"我的主人找到了德冯·斯利恩当签订和谐谷和平条约的公证人。这人虽然是个资深外交官，却是个唯恐天下不乱的家伙，常在矛盾双方之间挑起不必要的冲突。%30凯瑟琳王后和帕尔森国王之间的谈判就是他导演的杰作。结果双方吵得不可开交，最后不欢而散，大家又重新开始在战场上一分高下。战争的结果从来都是“一将功成万骨枯”，伊拉西亚如愿以偿地得到了和谐谷，埃里尽管不甘心，但已经力不从心，无法把战争持续下去了。不过他们一定会积蓄力量，等有朝一日能够卷土重来。\n"
+"我的主人找到了德冯·斯利恩当签订哈蒙代尔和平条约的公证人。这人虽然是个资深外交官，却是个唯恐天下不乱的家伙，常在矛盾双方之间挑起不必要的冲突。%30凯瑟琳王后和帕尔森国王之间的谈判就是他导演的杰作。结果双方吵得不可开交，最后不欢而散，大家又重新开始在战场上一分高下。战争的结果从来都是“一将功成万骨枯”，伊拉西亚如愿以偿地得到了哈蒙代尔，埃里尽管不甘心，但已经力不从心，无法把战争持续下去了。不过他们一定会积蓄力量，等有朝一日能够卷土重来。\n"
 "迪雅的使节斯克尔对主人推荐的公证人非常满意，可布拉卡达的怀特大使却火冒三丈，他警告我们不得踏上布拉卡达一步，不然会有生命危险。同时他也希望我们两地之间能保持正常“对话”，这种陈词滥调我都听腻了，无非是想占我们的便宜，将来能扩张地盘罢了。"
 
 # imported from packs (base v1.21)
@@ -8160,7 +8160,7 @@ msgid ""
 "\n"
 "While ambassador Scale of Deyja seemed pleased with the choice of arbiter, Ambassador Wright was furious.  He has issued (in the name of his government) a warning to my lords never to set foot in Bracada on pain of death.  He has not withdrawn from the castle, however, indicating a willingness continue the \"dialogue\" between our countries.  Obviously, he hopes to extract some sort of concessions from us in the future."
 msgstr ""
-"我的主人找到了德冯·斯利恩当签订和谐谷和平条约的公证人。这人虽然是个资深外交官，却是个唯恐天下不乱的家伙，常在矛盾双方之间挑起不必要的冲突。%30凯瑟琳王后和帕尔森国王之间的谈判就是他导演的杰作。结果双方吵得不可开交，最后不欢而散，大家又重新开始在战场上一分高下。战争的结果从来都是“一将功成万骨枯”，埃里如愿以偿地得到了和谐谷，伊拉西亚尽管不甘心，但已经力不从心，无法把战争持续下去了。不过他们一定会积蓄力量，等有朝一日能够卷土重来。\n"
+"我的主人找到了德冯·斯利恩当签订哈蒙代尔和平条约的公证人。这人虽然是个资深外交官，却是个唯恐天下不乱的家伙，常在矛盾双方之间挑起不必要的冲突。%30凯瑟琳王后和帕尔森国王之间的谈判就是他导演的杰作。结果双方吵得不可开交，最后不欢而散，大家又重新开始在战场上一分高下。战争的结果从来都是“一将功成万骨枯”，埃里如愿以偿地得到了哈蒙代尔，伊拉西亚尽管不甘心，但已经力不从心，无法把战争持续下去了。不过他们一定会积蓄力量，等有朝一日能够卷土重来。\n"
 "迪雅的使节斯克尔对主人推荐的公证人非常满意，可布拉卡达的怀特大使却火冒三丈，他警告我们不得踏上布拉卡达一步，不然会有生命危险。同时他也希望我们两地之间能保持正常“对话”，这种陈词滥调我都听腻了，无非是想占我们的便宜，将来能扩张地盘罢了。"
 
 # imported from packs (base v1.21)
@@ -8177,8 +8177,8 @@ msgid ""
 "\n"
 "While ambassador Scale of Deyja seemed pleased with the choice of arbiter, Ambassador Wright was furious.  He has issued (in the name of his government) a warning to my lords never to set foot in Bracada on pain of death.  He has, however, indicated a willingness continue the \"dialogue\" between our countries.  Obviously, he hopes to extract some sort of concessions from us in the future."
 msgstr ""
-"我的主人找到了德冯·斯利恩当签订和谐谷和平条约的公证人。这人虽然是个资深外交官，却是个唯恐天下不乱的家伙，常在矛盾双方之间挑起不必要的冲突。%30凯瑟琳王后和帕尔森国王之间的谈判就是他导演的杰作。结果双方吵得不可开交，最后不欢而散，大家又重新开始在战场上一分高下。战争的结果从来都是“一将功成万骨枯”，这次双方难分高下，陷入了僵持阶段。\n"
-"最后双方的谈判终于有了突破性进展。双方正式承认和谐谷王国，并由我的主人全权管理和谐谷的一切事物。和谐谷长治久安的日子终于到来了。\n"
+"我的主人找到了德冯·斯利恩当签订哈蒙代尔和平条约的公证人。这人虽然是个资深外交官，却是个唯恐天下不乱的家伙，常在矛盾双方之间挑起不必要的冲突。%30凯瑟琳王后和帕尔森国王之间的谈判就是他导演的杰作。结果双方吵得不可开交，最后不欢而散，大家又重新开始在战场上一分高下。战争的结果从来都是“一将功成万骨枯”，这次双方难分高下，陷入了僵持阶段。\n"
+"最后双方的谈判终于有了突破性进展。双方正式承认哈蒙代尔王国，并由我的主人全权管理哈蒙代尔的一切事物。哈蒙代尔长治久安的日子终于到来了。\n"
 "迪雅的使节斯克尔对主人推荐的公证人非常满意，可布拉卡达的怀特大使却火冒三丈，他警告我们不得踏上布拉卡达一步，不然会有生命危险。同时他也希望我们两地之间能保持正常“对话”，这种陈词滥调我都听腻了，无非是想占我们的便宜，将来能扩张地盘罢了。"
 
 # imported from packs (base v1.21)
@@ -8193,7 +8193,7 @@ msgid ""
 "\n"
 "The rumor mill churns, and it seems that the secret of Lord Ironfist's new boldness comes from four new advisors he's hired.  They're always by his side, plotting and scheming for the benefit of Deyja.  That's what my sources are saying, anyway.  Who knows where these people really come from and what their true purpose is?"
 msgstr ""
-"我的主人最近总和阿基巴德混在一起。听说他已经通过了一个考验，这个考验出奇的难，对技巧和耐力的要求都很高。主人通过这个考验后，就参与了一个极其秘密的计划，准备和他的新盟友一起对付一个倒霉蛋。主人做事总是出人意料，但往往又棋高一招，谁知道这次他心里怎么想的。反正敌人又不是木头，会傻乎乎地挨打不还手。尽管这次有盟军，那又怎么样？就瞧那个阿基巴德鬼头鬼脑的样子，怎么看也不象个好人，要是他见形势不妙，脚底抹油，那咱们和谐谷可就倒大霉了。\n"
+"我的主人最近总和阿基巴德混在一起。听说他已经通过了一个考验，这个考验出奇的难，对技巧和耐力的要求都很高。主人通过这个考验后，就参与了一个极其秘密的计划，准备和他的新盟友一起对付一个倒霉蛋。主人做事总是出人意料，但往往又棋高一招，谁知道这次他心里怎么想的。反正敌人又不是木头，会傻乎乎地挨打不还手。尽管这次有盟军，那又怎么样？就瞧那个阿基巴德鬼头鬼脑的样子，怎么看也不象个好人，要是他见形势不妙，脚底抹油，那咱们哈蒙代尔可就倒大霉了。\n"
 "最近也真邪门，那个阿基巴德本来干事缩手缩脚，瞻前顾后，如今却英明果断，雷厉风行。据可靠消息，他最近找了四个忠诚可靠的谋士，专门为他出谋划策，治理国家。迪雅倒是被他们搞得蒸蒸日上。不过他也太冒失了，连这些人的来历和动机都不搞清楚，万一被坏人利用了怎么办。"
 
 # imported from packs (base v1.21)
@@ -8229,7 +8229,7 @@ msgid ""
 "Well, there still has been no reaction from Bracada on the theft of the stone, but I doubt they will just take it lying down.  No, they are crafting some vengeful plan even now, or my historical experience is completely wrong.  The question is not whether they will strike, but when.  And where?  Here?  The town?  Or perhaps Deyja itself.  Perhaps my lords should hire a court astrologer or some spies for advice."
 msgstr ""
 "高级光明神庙是敌人的中心枢纽所在地，那个地方遭到了沉重地打击。在%30，我的主人成功地拿到了那个神庙祭坛上的石头，把它交给了卡斯托，他是阿基巴德的首席大臣。他把这块石头与高级暗黑神庙里祭坛上的石头拼合在一起，就成了一块更大的石头。我不知道这帮巫师葫芦里卖的什么药，反正我的主人又立了件大功，他拿到了那块祭坛上的石头，大大打击了敌人的嚣张气焰，这下他们再也不能用那块石头干坏事了。\n"
-"但布拉卡达方面似乎对此事无动于衷，一副毫不在意的样子。但凭我多年来研究历史所积累的经验来看，我敢打赌他们绝不会善罢甘休的，现在肯定在酝酿复仇的计划。敌人迟早会来的，只是什么时候，什么地方，是攻击和谐谷还是迪雅，看来我的主人真该找个算命的问问。"
+"但布拉卡达方面似乎对此事无动于衷，一副毫不在意的样子。但凭我多年来研究历史所积累的经验来看，我敢打赌他们绝不会善罢甘休的，现在肯定在酝酿复仇的计划。敌人迟早会来的，只是什么时候，什么地方，是攻击哈蒙代尔还是迪雅，看来我的主人真该找个算命的问问。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/english/mm7_history.txt:89
@@ -8245,11 +8245,11 @@ msgid ""
 "\n"
 "More recently, the Necromancer Lord Terrence Rockwin II seized the castle as part of his expansion plans in 1008.  The few citizens who survived this conquest did so by hiding in the hills for the year he was in control of the castle.  Witnesses reported signs of a frenzied excavation taking place at the castle, but when Harmondale was retaken in the fall of 1009, no evidence of digging or construction could be found.  For that matter, no prisoners ever taken to the castle by the Necromancers were ever seen again."
 msgstr ""
-"和谐谷城堡建于689年，是木材战争期间抵御精灵军队（由国王洛索四世率领）的第一道防线。正如后来所发生的那样，仅仅三年后，它就在著名的和谐谷战役中沦陷于精灵的进攻。此后，城堡在血腥冲突中十三次易手，数百人丧生。除两次例外外，城堡一直由伊拉西亚或埃里控制，但这两次例外都非同寻常。\n"
+"哈蒙代尔城堡建于689年，是木材战争期间抵御精灵军队（由国王洛索四世率领）的第一道防线。正如后来所发生的那样，仅仅三年后，它就在著名的哈蒙代尔战役中沦陷于精灵的进攻。此后，城堡在血腥冲突中十三次易手，数百人丧生。除两次例外外，城堡一直由伊拉西亚或埃里控制，但这两次例外都非同寻常。\n"
 "\n"
-"817年，饱受苦难的和谐谷市民因残酷的丹福斯·奥克塔维奥男爵热衷于横征暴敛，在街头将他撕成了碎片。暴民抓住时机，将市长泰·维斯平推举为和谐谷国王，并让他入主城堡。维斯平一世国王的辉煌统治恰好持续了六个星期。伊拉西亚国王亚伦·格里芬哈特四世率两个久经沙场的军团进军该镇，将维斯平国王及其最响亮的支持者斩于剑下。手握这场“胜利”，格里芬哈特国王随即挥师讨伐精灵，两周后却在战斗中被精灵所杀。818年，城堡重归精灵控制。\n"
+"817年，饱受苦难的哈蒙代尔市民因残酷的丹福斯·奥克塔维奥男爵热衷于横征暴敛，在街头将他撕成了碎片。暴民抓住时机，将市长泰·维斯平推举为哈蒙代尔国王，并让他入主城堡。维斯平一世国王的辉煌统治恰好持续了六个星期。伊拉西亚国王亚伦·格里芬哈特四世率两个久经沙场的军团进军该镇，将维斯平国王及其最响亮的支持者斩于剑下。手握这场“胜利”，格里芬哈特国王随即挥师讨伐精灵，两周后却在战斗中被精灵所杀。818年，城堡重归精灵控制。\n"
 "\n"
-"更近一些的1008年，死灵法师领主特伦斯·洛克文二世将城堡夺为己有，作为其扩张计划的一部分。在这场征服中幸存的少数市民，在他控制城堡的那一年里，靠躲进山里活了下来。目击者称城堡中出现了疯狂挖掘的迹象，但当1009年秋和谐谷被收复时，却找不到任何挖掘或建造的痕迹。而且，死灵法师带进城堡的囚犯，再也没有人见过。"
+"更近一些的1008年，死灵法师领主特伦斯·洛克文二世将城堡夺为己有，作为其扩张计划的一部分。在这场征服中幸存的少数市民，在他控制城堡的那一年里，靠躲进山里活了下来。目击者称城堡中出现了疯狂挖掘的迹象，但当1009年秋哈蒙代尔被收复时，却找不到任何挖掘或建造的痕迹。而且，死灵法师带进城堡的囚犯，再也没有人见过。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/english/mm7_history.txt:9
@@ -10077,7 +10077,7 @@ msgstr "在拜尔德斯找到冥想之地。"
 #: assets_dev/engine/data_tables/english/quests.txt:541
 msgid ""
 "Go to the Temple of Baa in Avlee and kill the High Priest of Baa, then return to Bartholomew Hume in Harmondale."
-msgstr "到埃里的羊鸣教神庙铲除羊鸣教高级神甫，然后回到和谐谷找巴斯洛缪·海墨尔。"
+msgstr "到埃里的羊鸣教神庙铲除羊鸣教高级神甫，然后回到哈蒙代尔找巴斯洛缪·海墨尔。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/english/quests.txt:542
@@ -10089,7 +10089,7 @@ msgstr "到布拉卡达沙漠中的魔法学院破解密码，找到尼格的坟
 #: assets_dev/engine/data_tables/english/quests.txt:543
 msgid ""
 "Retrieve the Perfect Bow from the Titans' Stronghold in Avlee and return it to Lawrence Mark in Harmondale."
-msgstr "在埃里的泰坦城堡中找到完美之弓，把它交给和谐谷的劳伦斯·马克。"
+msgstr "在埃里的泰坦城堡中找到完美之弓，把它交给哈蒙代尔的劳伦斯·马克。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/english/quests.txt:544
@@ -10208,7 +10208,7 @@ msgstr "去巨人领地的龙穴找龙蛋，然后把它带回尼根见托尔·�
 #: assets_dev/engine/data_tables/english/quests.txt:588
 msgid ""
 "Clean out Castle Harmondale and return to the Butler in the tavern, On the House, in Harmondale."
-msgstr "把和谐谷城堡里面的怪物消灭干净，然后去镇子上的客栈找管家。"
+msgstr "把哈蒙代尔城堡里面的怪物消灭干净，然后去镇子上的客栈找管家。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/english/quests.txt:589
@@ -10344,7 +10344,7 @@ msgstr "去埃里西面的海里进入林肯号，找到船上的振荡器，把
 #: assets_dev/engine/data_tables/english/quests.txt:659
 msgid ""
 "Talk to the Dwarves in Stone City in the Barrow Downs to find a way to repair Castle Harmondale."
-msgstr "去拜尔德斯的石头城和矮人交谈，设法使它们帮助你修复和谐谷城堡。"
+msgstr "去拜尔德斯的石头城和矮人交谈，设法使它们帮助你修复哈蒙代尔城堡。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/english/quests.txt:664
@@ -10367,7 +10367,7 @@ msgstr "为仲裁人格瑞找个继任者。"
 #: assets_dev/engine/data_tables/english/quests.txt:668
 msgid ""
 "Retrieve the Lantern of Light from the Barrow Downs and return it to Tarin Withern in Harmondale."
-msgstr "从拜尔德斯找回光明灯，把它交给和谐谷的忒林维泽。"
+msgstr "从拜尔德斯找回光明灯，把它交给哈蒙代尔的忒林维泽。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/english/quests.txt:669
@@ -10379,7 +10379,7 @@ msgstr "去尼根从迷宫里找到哈尔代尔的尸骨，把它交给尼根的
 #: assets_dev/engine/data_tables/english/quests.txt:670
 msgid ""
 "Retrieve Davrik's Signet ring from the Bandit Caves in the northeast of Erathia and return it to Davrik Peladium in Harmondale."
-msgstr "去伊拉西亚东北面的强盗窝夺回德弗里克·派尔丁的戒指印章，并到和谐谷把戒指还给他。"
+msgstr "去伊拉西亚东北面的强盗窝夺回德弗里克·派尔丁的戒指印章，并到哈蒙代尔把戒指还给他。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/english/quests.txt:671
@@ -10437,7 +10437,7 @@ msgstr "把伊拉西亚和布拉卡达的狮鹫全杀光，然后到迪雅找塞
 #: assets_dev/engine/data_tables/english/quests.txt:707
 msgid ""
 "Find the fate of Darron's brother in the White Cliff Caves, then return to Darron Temper in Harmondale."
-msgstr "去悬崖洞穴探访达伦·坦普的兄弟的下落，然后回和谐谷把情况告诉他。"
+msgstr "去悬崖洞穴探访达伦·坦普的兄弟的下落，然后回哈蒙代尔把情况告诉他。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/english/quests.txt:708
@@ -10621,7 +10621,7 @@ msgstr ""
 #: assets_dev/engine/data_tables/english/scroll.txt:116
 msgid ""
 "Scale  Catherine and Eldrich will never understand our joy over their struggle over disputed Harmondale.  Continue to harvest the benefits of their war.  In the end they shall not be able to stand against us.   -Archibald"
-msgstr "关于 凯瑟琳和埃尔德里克永远不会理解我们对他们争夺和谐谷一事有多么欣喜。继续坐收他们战争的红利。到最后他们将无法与我们抗衡。 -阿奇博尔德"
+msgstr "关于 凯瑟琳和埃尔德里克永远不会理解我们对他们争夺哈蒙代尔一事有多么欣喜。继续坐收他们战争的红利。到最后他们将无法与我们抗衡。 -阿奇博尔德"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/english/scroll.txt:117
@@ -10635,7 +10635,7 @@ msgstr ""
 msgid ""
 "Ambassador Wright,  Its is very important that you speak with the new Lords of Harmondale.  It is my hope that they can end this stupidity between Queen Catherine and King Eldrich. Loren Steel, the carrier of this message, can provide you with further details. If the war continues, it will only serve to strengthen Archibalds position.  Gavin Magnus Ruling Wizard"
 msgstr ""
-"赖特大使， 与和谐谷的新领主们交谈非常重要。我希望他们能终结凯瑟琳女王与埃尔德里克国王之间的这场愚蠢争斗。这封信的携带者洛伦·斯蒂尔可以为你提供更多细节。如果战争继续下去，只会进一步巩固阿奇博尔德的地位。 加文·马格努斯 统治巫师"
+"赖特大使， 与哈蒙代尔的新领主们交谈非常重要。我希望他们能终结凯瑟琳女王与埃尔德里克国王之间的这场愚蠢争斗。这封信的携带者洛伦·斯蒂尔可以为你提供更多细节。如果战争继续下去，只会进一步巩固阿奇博尔德的地位。 加文·马格努斯 统治巫师"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/english/scroll.txt:119
@@ -10662,7 +10662,7 @@ msgstr ""
 msgid ""
 "My dear Mister Malwick,  I have not heard from you in some time.  I hope this letter finds you well.  You were supposed to send regular messages to us so that we would be up to date on your \"recruitment drive\".  It is important that you find the right people.  Markham must be handled correctly...and then Harmondale should be ours.  Once you have completed this I am sure we can make arrangements to bring you home and have your debt cleared.  -Niles"
 msgstr ""
-"亲爱的马尔维克先生， 我好一阵子没收到你的消息了。希望你一切安好。你应该定期给我们发送消息，这样我们才能随时了解你的\"招募行动\"进展。找到合适的人很重要。马卡姆必须谨慎处理……然后和谐谷就该归我们了。一旦你完成此事，我相信我们可以安排把你接回家，并免除你的债务。 -奈尔斯"
+"亲爱的马尔维克先生， 我好一阵子没收到你的消息了。希望你一切安好。你应该定期给我们发送消息，这样我们才能随时了解你的\"招募行动\"进展。找到合适的人很重要。马卡姆必须谨慎处理……然后哈蒙代尔就该归我们了。一旦你完成此事，我相信我们可以安排把你接回家，并免除你的债务。 -奈尔斯"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/english/scroll.txt:122
@@ -10700,7 +10700,7 @@ msgstr ""
 msgid ""
 "Velatyr,  Our raids have been quite successful; our position allows us to hit two routes, Erathia to Deyja and Erathia to Harmondale.  We've done as you've suggested and kept our activity infrequent enough to prevent direct intervention from Erathian forces.  Also, our cave has been hidden enough that casual observation won't be enough to locate it.  Your payment is being finalized right now, and will be shipped to you soon.  Laerat"
 msgstr ""
-"维拉蒂尔， 我们的劫掠行动相当成功；我们的位置使我们能够打击两条路线，伊拉西亚至德加和伊拉西亚至和谐谷。我们按你的建议行事，把活动频率保持在足够低的水平，以避免伊拉西亚部队的直接干预。此外，我们的洞穴隐蔽得足够好，不经意的观察不足以发现它。你的报酬正在最后敲定，不久就会送给你。 莱拉特"
+"维拉蒂尔， 我们的劫掠行动相当成功；我们的位置使我们能够打击两条路线，伊拉西亚至德加和伊拉西亚至哈蒙代尔。我们按你的建议行事，把活动频率保持在足够低的水平，以避免伊拉西亚部队的直接干预。此外，我们的洞穴隐蔽得足够好，不经意的观察不足以发现它。你的报酬正在最后敲定，不久就会送给你。 莱拉特"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/english/scroll.txt:126
@@ -15162,7 +15162,7 @@ msgstr "雷霆震怒"
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/house_animations.txt:204 assets_dev/engine/data_tables/house_data.txt:205
 msgid "Harmondale Townhall"
-msgstr "和谐谷市政厅"
+msgstr "哈蒙代尔市政厅"
 
 # imported from terms.engine.po
 #: assets_dev/engine/data_tables/house_animations.txt:205 assets_dev/engine/data_tables/house_data.txt:206
@@ -16037,7 +16037,7 @@ msgstr "风之王监狱"
 #: assets_dev/engine/data_tables/house_data.txt:392 assets_dev/engine/data_tables/map_stats.txt:106 assets_dev/engine/data_tables/npc_topic.txt:1233
 #: assets_dev/engine/data_tables/npc_topic.txt:1259 assets_dev/engine/data_tables/npc_topic.txt:755 assets_dev/engine/data_tables/town_portal_switch.txt:10
 msgid "Castle Harmondale"
-msgstr "和谐谷城堡"
+msgstr "哈蒙代尔城堡"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/house_animations.txt:384 assets_dev/engine/data_tables/house_data.txt:385 assets_dev/engine/data_tables/map_stats.txt:110
@@ -35956,7 +35956,7 @@ msgstr "翡翠岛"
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/map_stats.txt:66 assets_dev/engine/data_tables/npc_topic.txt:1231 assets_dev/engine/data_tables/npc_topic.txt:771
 msgid "Harmondale"
-msgstr "和谐谷"
+msgstr "哈蒙代尔"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/map_stats.txt:68
@@ -43957,7 +43957,7 @@ msgid ""
 "Hello, my lords.\n"
 "Do you have a moment to assist an old dwarf in need?"
 msgstr ""
-"你们好，和谐谷的领主。你们能帮我们矮人族一个忙吗？\n"
+"你们好，哈蒙代尔的领主。你们能帮我们矮人族一个忙吗？\n"
 "你们有空帮一位需要帮助的老矮人吗？"
 
 # imported from packs (base v1.21)
@@ -43973,7 +43973,7 @@ msgstr "感谢你们能帮忙干掉这些洞穴人！"
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_greet.txt:1008
 msgid "Good day, my lords."
-msgstr "你们好，和谐谷的领主们。"
+msgstr "你们好，哈蒙代尔的领主们。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_greet.txt:1009
@@ -44040,7 +44040,7 @@ msgid ""
 "Greetings, my lords.\n"
 "May I have a moment of your time?"
 msgstr ""
-"你们好，和谐谷的领主们，能帮我个忙吗？\n"
+"你们好，哈蒙代尔的领主们，能帮我个忙吗？\n"
 "能占用你们一点时间吗？"
 
 # imported from packs (base v1.21)
@@ -44054,7 +44054,7 @@ msgid ""
 "Well met, lords.\n"
 "Do you have a moment to share?"
 msgstr ""
-"你们好，和谐谷的领主们，能占用你们几分钟吗？\n"
+"你们好，哈蒙代尔的领主们，能占用你们几分钟吗？\n"
 "你们愿意抽出一点时间谈谈吗？"
 
 # imported from packs (base v1.21)
@@ -44110,7 +44110,7 @@ msgid ""
 "Greetings, lords.\n"
 "Welcome to my humble home."
 msgstr ""
-"你们好，和谐谷的领主。欢迎光临寒舍。\n"
+"你们好，哈蒙代尔的领主。欢迎光临寒舍。\n"
 "欢迎光临寒舍。"
 
 # imported from packs (base v1.21)
@@ -44252,7 +44252,7 @@ msgid ""
 "Good luck…last people who tried to clean this place up went into Castle Harmondale and never came out."
 msgstr ""
 "你们赢了马卡姆勋爵的竞赛？\n"
-"祝你们好运……上一批试图清理这个地方的人进了和谐谷城堡，就再也没出来过。"
+"祝你们好运……上一批试图清理这个地方的人进了哈蒙代尔城堡，就再也没出来过。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_greet.txt:1075
@@ -44636,8 +44636,8 @@ msgid ""
 "The deal really is cut and dried.\n"
 "Buy the ticket--take the ride! ::Yawns:: Now, is there anything else you wished to speak about?"
 msgstr ""
-"啊，是你们，寻宝比赛的优胜者，怎么又回来了。你们该不会是要把和谐谷城堡退给我吧。咱们合同上写的清清楚楚，一旦你们拥有了城堡，是不允许反悔的。现在你们后悔也已经晚了。还是赶快去你们的城堡看看吧。如果你们还有什么困难，尽管说吧！\n"
-"我希望你们不是来把和谐谷还给我的！\n"
+"啊，是你们，寻宝比赛的优胜者，怎么又回来了。你们该不会是要把哈蒙代尔城堡退给我吧。咱们合同上写的清清楚楚，一旦你们拥有了城堡，是不允许反悔的。现在你们后悔也已经晚了。还是赶快去你们的城堡看看吧。如果你们还有什么困难，尽管说吧！\n"
+"我希望你们不是来把哈蒙代尔还给我的！\n"
 "如果你们看看签署的契约，第九页第三节第三小段明确写着，我们的交易是不可撤销的。\n"
 "这笔交易确实已经是板上钉钉。\n"
 "买了票就要坐车！::打了个哈欠:: 那么，你们还有别的事想谈吗？"
@@ -46025,7 +46025,7 @@ msgid ""
 "I am honored.\n"
 "What is your pleasure, my lords?"
 msgstr ""
-"和谐谷的领主们回来了！\n"
+"哈蒙代尔的领主们回来了！\n"
 "我深感荣幸。\n"
 "各位大人有什么吩咐？"
 
@@ -46512,7 +46512,7 @@ msgid ""
 "That title belongs to another.\n"
 "Pleased to meet you."
 msgstr ""
-"啊，和谐谷的领主们，是哪阵风把你们吹来了。我就是托尔·安文，尼根邪术师的领袖，很高兴见到你们。\n"
+"啊，哈蒙代尔的领主们，是哪阵风把你们吹来了。我就是托尔·安文，尼根邪术师的领袖，很高兴见到你们。\n"
 "真有趣！\n"
 "我的魔宠说她在你们身上闻到了大海彼岸土地的气息。\n"
 "我是托尔·安温，奈贡巫师的领袖，不过并非奈贡之王。\n"
@@ -46557,13 +46557,13 @@ msgid ""
 "Perhaps you could...talk to them?\n"
 "I'll be in the On the House Tavern here in Harmondale should you manage to 'convince' them to leave."
 msgstr ""
-"啊，你们是和谐谷城堡的新主人，我等了你们很久了。现在有一伙可恶的大耳怪霸占了城堡，死活不肯搬出来。而且他们还在这里鱼肉乡里，作威作福，简直无法无天。现在你们来了，这下我们有救了。我现在到镇子的客栈里等你们，等你们把大耳怪赶走了，可以上那里来找我。\n"
+"啊，你们是哈蒙代尔城堡的新主人，我等了你们很久了。现在有一伙可恶的大耳怪霸占了城堡，死活不肯搬出来。而且他们还在这里鱼肉乡里，作威作福，简直无法无天。现在你们来了，这下我们有救了。我现在到镇子的客栈里等你们，等你们把大耳怪赶走了，可以上那里来找我。\n"
 "我本想在内室迎接你们，只是那些哥布林。\n"
 "有一小群哥布林搬进了里面。\n"
 "我已经请他们离开，但他们不听我的话。\n"
 "说实话，他们相当无礼。\n"
 "或许你们可以……跟他们谈谈？\n"
-"如果你们能设法\"说服\"他们离开，我就在和谐谷这里的\"店家请客\"酒馆等着。"
+"如果你们能设法\"说服\"他们离开，我就在哈蒙代尔这里的\"店家请客\"酒馆等着。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_greet.txt:566
@@ -46613,8 +46613,8 @@ msgid ""
 "I am King Hothfarr IX, Lord of Stone City.\n"
 "What do you want?"
 msgstr ""
-"哦，你们就是和谐谷城堡的领主。我是国王贺斯法九世。你们上这儿来有什么事吗？\n"
-"和谐谷的领主们，嗯？\n"
+"哦，你们就是哈蒙代尔城堡的领主。我是国王贺斯法九世。你们上这儿来有什么事吗？\n"
+"哈蒙代尔的领主们，嗯？\n"
 "我是霍特法尔九世国王，石城之主。\n"
 "你们想要什么？"
 
@@ -46635,7 +46635,7 @@ msgid ""
 "Welcome, Harmondale!\n"
 "Stone city is at your disposal."
 msgstr ""
-"欢迎，和谐谷的领主们！\n"
+"欢迎，哈蒙代尔的领主们！\n"
 "石城随时听候你们的差遣。"
 
 # imported from packs (base v1.21)
@@ -46756,7 +46756,7 @@ msgid ""
 "Welcome to the peerage.\n"
 "Now, why do you request an audience of me?"
 msgstr ""
-"马克汉姆说你是和谐谷的新主人，欢迎你的到来，我们感到非常荣幸。我们坐下来聊聊吧！\n"
+"马克汉姆说你是哈蒙代尔的新主人，欢迎你的到来，我们感到非常荣幸。我们坐下来聊聊吧！\n"
 "欢迎进入贵族行列。\n"
 "那么，你们为何请求觐见我？"
 
@@ -46769,7 +46769,7 @@ msgid ""
 "I should execute you, but the war is over, and that would be bad form.\n"
 "Just remember that your treachery has been...noted."
 msgstr ""
-"啊，和谐谷来的。我已经知道你们把假的囚犯交给了伊拉西亚，这种背叛行为理应处死。可现在战争已经结束了，我们可以不计较你们以前的所作所为，但我们以后再也不会相信你们了。\n"
+"啊，哈蒙代尔来的。我已经知道你们把假的囚犯交给了伊拉西亚，这种背叛行为理应处死。可现在战争已经结束了，我们可以不计较你们以前的所作所为，但我们以后再也不会相信你们了。\n"
 "在谈正事之前，我要说的是，我最近注意到你们从艾弗利带回了错误的囚犯。\n"
 "真是惊人的相似！\n"
 "我本该处决你们，但战争已经结束，那样做有失体统。\n"
@@ -46793,7 +46793,7 @@ msgid ""
 "Harmondale again, hmmm?\n"
 "Make it quick--my patience is already wearing thin."
 msgstr ""
-"又是和谐谷的人，嗯？\n"
+"又是哈蒙代尔的人，嗯？\n"
 "有话快说——我的耐心已经快磨光了。"
 
 # imported from packs (base v1.21)
@@ -46806,7 +46806,7 @@ msgid ""
 "[Ahem] Yes.\n"
 "Well, you had a reason for visiting me, right?"
 msgstr ""
-"听说和谐谷又有了新的领主，原来就是你们。嗯，（国王看了看他的笔录官）我们最好写下他们的名字，免得历史一眨眼就把他们忘了。哈哈！好吧，咱们言归正传，你们到我这儿来想干什么？\n"
+"听说哈蒙代尔又有了新的领主，原来就是你们。嗯，（国王看了看他的笔录官）我们最好写下他们的名字，免得历史一眨眼就把他们忘了。哈哈！好吧，咱们言归正传，你们到我这儿来想干什么？\n"
 "又来了。\n"
 "好吧，[帕尔森国王看向他的书记官] 我们最好把他们的名字记下来，免得历史一眨眼就错过了他们，嗯？\n"
 "哈，哈哈哈！\n"
@@ -46868,7 +46868,7 @@ msgid ""
 "The position has it's rewards, but you'll never hear the people you're helping thank you.\n"
 "I always know I'm doing the right thing when both sides are angry with me at once."
 msgstr ""
-"你们好，和谐谷的领主们。我就是公证人格瑞。长年以来我一直负责调解交战双方，使他们能和平共处。这可是一件吃力不讨好的工作。即使我一直秉公断事，铁面无私，仍会遭到别人的怨恨，有多少人能够理解我呢？\n"
+"你们好，哈蒙代尔的领主们。我就是公证人格瑞。长年以来我一直负责调解交战双方，使他们能和平共处。这可是一件吃力不讨好的工作。即使我一直秉公断事，铁面无私，仍会遭到别人的怨恨，有多少人能够理解我呢？\n"
 "我是格雷法官。\n"
 "我从事着一项不寻常的工作——仲裁交战国家之间的争端。\n"
 "这个职位有它的回报，但你们永远听不到那些受助之人的感谢。\n"
@@ -46896,8 +46896,8 @@ msgid ""
 "I formally invite you to visit Bracada and meet Judge Fairweather, who we strongly recommend for the post.\n"
 "I don't mean to be pushy, but I'm sure you understand your choice will affect future relations between our two governments..."
 msgstr ""
-"你们好，和谐谷的领主们。我就是怀特，来自布拉卡达的使者。你应该听说过布拉卡达这个地方，它是与伊拉西亚南部比邻的一个法师王国。现在你们可是至关重要的人物了。公证人格瑞遭到了不幸，你们必须另外找一个调解人来解决埃里和伊拉西亚之间的纠纷。\n"
-"我想你们该到我们布拉卡达找费尔维泽，他应该是最合适的人选。如果你们能听从我的劝告的话，将大大有利于布拉卡达和和谐谷两国关系的发展。"
+"你们好，哈蒙代尔的领主们。我就是怀特，来自布拉卡达的使者。你应该听说过布拉卡达这个地方，它是与伊拉西亚南部比邻的一个法师王国。现在你们可是至关重要的人物了。公证人格瑞遭到了不幸，你们必须另外找一个调解人来解决埃里和伊拉西亚之间的纠纷。\n"
+"我想你们该到我们布拉卡达找费尔维泽，他应该是最合适的人选。如果你们能听从我的劝告的话，将大大有利于布拉卡达和哈蒙代尔两国关系的发展。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_greet.txt:639
@@ -46909,7 +46909,7 @@ msgid ""
 msgstr ""
 "各位大人，见到你们总是令人愉快。\n"
 "我必须再次恳请你们考虑由我们的——呃，我的意思是法官费尔韦瑟——出任重要的仲裁官一职。\n"
-"做决定可以慢慢来，但动作可要快点，嗯？记住，你们只需前往布拉卡达拜访法官费尔韦瑟，选定他担任此职；然后把他带到和谐谷这里的仲裁官官邸。\n"
+"做决定可以慢慢来，但动作可要快点，嗯？记住，你们只需前往布拉卡达拜访法官费尔韦瑟，选定他担任此职；然后把他带到哈蒙代尔这里的仲裁官官邸。\n"
 "我相信他一定能迅速终结这场可恶的战争。"
 
 # imported from packs (base v1.21)
@@ -46944,9 +46944,9 @@ msgid ""
 "It would mean so much to us, and we could do so much for you!\n"
 "Think about it, but don't think too long!"
 msgstr ""
-"很高兴见到你们，和谐谷的领主。我就是来自迪雅的使者斯克尔。你们应该听说过迪雅吧，它是与伊拉西亚西北部比邻的死灵法师王国。你们要是对我们至高无上的亡灵魔法有兴趣，我倒可以帮忙，哈哈哈。\n"
+"很高兴见到你们，哈蒙代尔的领主。我就是来自迪雅的使者斯克尔。你们应该听说过迪雅吧，它是与伊拉西亚西北部比邻的死灵法师王国。你们要是对我们至高无上的亡灵魔法有兴趣，我倒可以帮忙，哈哈哈。\n"
 "现在公证人格瑞已经死了，你们必须尽快找一个继任者。我想你们应该来我们迪雅，有一个叫德冯·斯利恩的很合适担当这个职位，凭他的能力足以和解这场一触即发的战争。 \n"
-"如果你们能听从我的劝告的话，将大大有利于迪雅和和谐谷两国关系的发展，对我们大家都有好处，好好考虑一下吧。"
+"如果你们能听从我的劝告的话，将大大有利于迪雅和哈蒙代尔两国关系的发展，对我们大家都有好处，好好考虑一下吧。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_greet.txt:649
@@ -46966,7 +46966,7 @@ msgstr ""
 "你们必须明白，你们的选择对我们来说非常重要。\n"
 "也许你们需要指路？\n"
 "法官斯林在德加，那是伊拉西亚西北方的国家。\n"
-"你们只需去拜访他，告诉他你们选定他担任此职；然后把他带到和谐谷这里的仲裁官官邸。\n"
+"你们只需去拜访他，告诉他你们选定他担任此职；然后把他带到哈蒙代尔这里的仲裁官官邸。\n"
 "接下来的一切他都会处理妥当。"
 
 # imported from packs (base v1.21)
@@ -47038,7 +47038,7 @@ msgid ""
 "Remember, though, that once you choose me, you cannot later change your mind.\n"
 "Your choice is permanent."
 msgstr ""
-"你们是和谐谷的新主人吧。我就是 德冯·斯利恩。老实跟你说吧，我是死灵法师这一边的人。迪雅之所以要你选我当调解人，是因为伊拉西亚和埃里都是我们的敌人，我自然不会偏向任何一方的。而且办成此事，你就选择了黑暗之路，就是我们迪雅的朋友了。\n"
+"你们是哈蒙代尔的新主人吧。我就是 德冯·斯利恩。老实跟你说吧，我是死灵法师这一边的人。迪雅之所以要你选我当调解人，是因为伊拉西亚和埃里都是我们的敌人，我自然不会偏向任何一方的。而且办成此事，你就选择了黑暗之路，就是我们迪雅的朋友了。\n"
 "死灵法师的名声虽然不好听，其实我们钻研的是天下至高无上的魔法。生与死，灵魂与肉体，这就是大自然生生不息的力量的源泉，是物质存在的最高形式。如此高深的魔法本质，自然不是常人所能理解的。虽然我们的魔法曲高和寡，但仍然值得为其奉献一生，甚至不惜用生命来捍卫它。\n"
 "你们选择了我当调解人，也就成为我们死灵法师的朋友，可以与我们一起探索深奥的亡灵魔法。但要记住，你们一旦作出决定，是不容更改的。"
 
@@ -47068,9 +47068,9 @@ msgid ""
 "The only thing that remains is for you to return to Harmondale with me, and bring me to the Judge Grey's old house.\n"
 "I'll take it from there."
 msgstr ""
-"好了，既然你们已经选择我当调解人，快把我带到和谐谷城堡公证人格瑞以前住的房子去吧，晚了就来不及了。\n"
+"好了，既然你们已经选择我当调解人，快把我带到哈蒙代尔城堡公证人格瑞以前住的房子去吧，晚了就来不及了。\n"
 "我向你们保证，你们不会后悔自己的选择。\n"
-"现在只剩下最后一件事：你们要与我一同返回和谐谷，带我到格雷法官的旧宅。\n"
+"现在只剩下最后一件事：你们要与我一同返回哈蒙代尔，带我到格雷法官的旧宅。\n"
 "接下来的事就交给我了。"
 
 # imported from packs (base v1.21)
@@ -47080,7 +47080,7 @@ msgid ""
 "Only then can I start my new job and begin to \"sort out this mess\".\n"
 "[Heh!]"
 msgstr ""
-"我们得先去和谐谷的格雷法官故居。\n"
+"我们得先去哈蒙代尔的格雷法官故居。\n"
 "只有这样我才能开始我的新工作，着手\"\"收拾这堆烂摊子\"\"。\n"
 "[嘿！]"
 
@@ -47185,9 +47185,9 @@ msgid ""
 "The only thing left to do is for you to return to Harmondale with me, and bring me to Judge Grey's old house.\n"
 "I'll see that matters are handled correctly."
 msgstr ""
-"啊，你们终于选我当调解人了。好了，我们快走吧。我们必须尽快赶到和谐谷公证人格瑞以前住的屋子，交战双方说好在那里碰头的。\n"
+"啊，你们终于选我当调解人了。好了，我们快走吧。我们必须尽快赶到哈蒙代尔公证人格瑞以前住的屋子，交战双方说好在那里碰头的。\n"
 "这是你们做过的最好的决定，即使你们现在还不相信。\n"
-"剩下的最后一件事，就是你们随我返回和谐谷，带我到格雷法官的旧宅。\n"
+"剩下的最后一件事，就是你们随我返回哈蒙代尔，带我到格雷法官的旧宅。\n"
 "我会确保一切安排妥当。"
 
 # imported from packs (base v1.21)
@@ -47196,7 +47196,7 @@ msgid ""
 "We need to go to Judge Grey's old house in Harmondale.\n"
 "Only then can I start my new job and put this horrible war to an end."
 msgstr ""
-"我们得先去和谐谷的格雷法官故居。\n"
+"我们得先去哈蒙代尔的格雷法官故居。\n"
 "只有这样我才能开始我的新工作，终结这场可怕的战争。"
 
 # imported from packs (base v1.21)
@@ -47256,7 +47256,7 @@ msgid ""
 "You can take the test whenever you feel ready.\n"
 "And if you fail today, you can always come back and try it another day."
 msgstr ""
-"啊，你们就是和谐谷的新主人，很高兴见到你们。我已经听说你们的功绩了，确实很了不起。我想布拉卡达和和谐谷之间将迎来一个和平友好的新时代。既然你们已经选择了我们光明之路，我们就是盟友了。但我的大臣们认为你们还必须完成法师之路的考验，不然他们还会心存忧虑，不知你们的本领到底怎样。\n"
+"啊，你们就是哈蒙代尔的新主人，很高兴见到你们。我已经听说你们的功绩了，确实很了不起。我想布拉卡达和哈蒙代尔之间将迎来一个和平友好的新时代。既然你们已经选择了我们光明之路，我们就是盟友了。但我的大臣们认为你们还必须完成法师之路的考验，不然他们还会心存忧虑，不知你们的本领到底怎样。\n"
 "不过我对你们一直很有信心。放心吧，这个考验对你们来说应该是轻而易举的。什么时候准备好了，就可以来找我。不用着急，我不会催你们的。"
 
 # imported from packs (base v1.21)
@@ -47587,7 +47587,7 @@ msgid ""
 "Lord Ironfist has a test he likes to put new Necromancer recruits through.\n"
 "If you can pass it, return to me and we'll talk more."
 msgstr ""
-"很高兴能认识你们。我就是卡斯托，艾恩法斯特爵士的首席大臣。你选择了德冯·斯利恩解决伊拉西亚和埃里之间的纠纷，干得真不错。看来和谐谷和迪雅的关系将进入一个和平相处的新阶段。\n"
+"很高兴能认识你们。我就是卡斯托，艾恩法斯特爵士的首席大臣。你选择了德冯·斯利恩解决伊拉西亚和埃里之间的纠纷，干得真不错。看来哈蒙代尔和迪雅的关系将进入一个和平相处的新阶段。\n"
 "但是我们只是初次打交道而已，我对你们还不怎么了解。艾恩法斯特爵士经常向一些新来的死灵法师委派任务，以考察他们的本领和勇气。如果你能完成他所交给的任务的话，我们就可以开始进一步的合作了，快去吧。"
 
 # imported from packs (base v1.21)
@@ -47646,7 +47646,7 @@ msgid ""
 "Better return home and watch your border!\n"
 "Something dark may cross it during the night…"
 msgstr ""
-"啊，是你们，和谐谷城堡的领主们。你们到这里来干吗，快滚回去吧。别把我惹火了，发兵灭了你这小小的和谐谷。\n"
+"啊，是你们，哈蒙代尔城堡的领主们。你们到这里来干吗，快滚回去吧。别把我惹火了，发兵灭了你这小小的哈蒙代尔。\n"
 "你们最好回家看好自己的边境！\n"
 "有什么黑暗的东西可能会在夜里越过边境……"
 
@@ -47866,7 +47866,7 @@ msgid ""
 "I know it's annoying, but until you pass the test, they refuse to have anything to do with you.\n"
 "I'm sure you understand."
 msgstr ""
-"（阿基巴德微笑着合起双手）啊，你们就是和谐谷的新主人，我们尊敬的盟友，欢迎你们。你们能够选择黑暗之路真是太好了，谁都知道我是一个英明的君主，赏罚分明，爱民如子，跟着我你们不会吃亏的。\n"
+"（阿基巴德微笑着合起双手）啊，你们就是哈蒙代尔的新主人，我们尊敬的盟友，欢迎你们。你们能够选择黑暗之路真是太好了，谁都知道我是一个英明的君主，赏罚分明，爱民如子，跟着我你们不会吃亏的。\n"
 "尽管我充分信任你们的忠诚和能力，可惜我手下那些大臣可不这样想。他们坚持要你们完成一个任务，来证明你们的实力。不过我想这个任务对你们来说简直是小事一桩，你们不会使我失望的。"
 
 # imported from packs (base v1.21)
@@ -48199,7 +48199,7 @@ msgid ""
 "Oh, the new lords of Harmondale!\n"
 "Just the persons I needed to see!"
 msgstr ""
-"哦，和谐谷的新领主们！\n"
+"哦，哈蒙代尔的新领主们！\n"
 "正是我想见的人！"
 
 # imported from packs (base v1.21)
@@ -48227,7 +48227,7 @@ msgstr "好吧，我还在这里。但是只要有机会，我就会准备要离
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_greet.txt:981
 msgid "Ah, the Lords of Harmondale. Perhaps you can be of assistance to me?"
-msgstr "哦，是和谐谷的领主，说不定你们能帮我的忙。"
+msgstr "哦，是哈蒙代尔的领主，说不定你们能帮我的忙。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_greet.txt:982
@@ -48237,7 +48237,7 @@ msgstr "谢谢你们把哈尔代尔的遗体找回来。"
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_greet.txt:983
 msgid "Lords of Harmondale, I need your help!"
-msgstr "和谐谷的领主，我需要你们帮忙！"
+msgstr "哈蒙代尔的领主，我需要你们帮忙！"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_greet.txt:984
@@ -48250,7 +48250,7 @@ msgid ""
 "Greetings, you must be the Lords of Harmondale.\n"
 "I am a collector of the finest historical items, perhaps you can deliver something to me?"
 msgstr ""
-"你们好，想必你们就是和谐谷的领主们吧。\n"
+"你们好，想必你们就是哈蒙代尔的领主们吧。\n"
 "我是一位珍贵历史物品的收藏家，也许你们能帮我带来点什么？"
 
 # imported from packs (base v1.21)
@@ -48283,7 +48283,7 @@ msgid ""
 "Do you have a moment to assist me?"
 msgstr ""
 "你们好！\n"
-"你们就是和谐谷的新领主们，如果我没认错的话。\n"
+"你们就是哈蒙代尔的新领主们，如果我没认错的话。\n"
 "你们有空帮我个忙吗？"
 
 # imported from packs (base v1.21)
@@ -48306,8 +48306,8 @@ msgid ""
 "I bring you news from Harmondale.\n"
 "It seems members of the Mercenary Guild have found it quite the easy pickings, and have begun looting the city and the castle there."
 msgstr ""
-"我给你们带来了和谐谷的消息。\n"
-"看来佣兵公会的成员在那里捞了不少便宜，已经开始洗劫和谐谷的城市和城堡。"
+"我给你们带来了哈蒙代尔的消息。\n"
+"看来佣兵公会的成员在那里捞了不少便宜，已经开始洗劫哈蒙代尔的城市和城堡。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_greet.txt:997
@@ -55452,7 +55452,7 @@ msgstr ""
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_news.txt:63 assets_dev/engine/data_tables/npc_news.txt:64
 msgid "So you are the new Lords of Harmondale?  How may I serve you?"
-msgstr "你们是和谐谷的新领主吗？我可以为你们做些什么？"
+msgstr "你们是哈蒙代尔的新领主吗？我可以为你们做些什么？"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_news.txt:630
@@ -61191,7 +61191,7 @@ msgid ""
 "Give you respect.\n"
 "Go now, and beware the griffins in Bracada."
 msgstr ""
-"啊，你们是和谐谷的新主人，见到你们真是太荣幸了。你们要我们帮你们修复城堡，我们当然乐意效劳，不过我们想先麻烦你们一下，帮我一个小忙。美杜莎女妖霸占了我们在布拉卡达东面的矿井，还把我们一些人变成了石头。这帮该死的女妖真是太可恶了，你们能帮我们去教训她们一下吗？\n"
+"啊，你们是哈蒙代尔的新主人，见到你们真是太荣幸了。你们要我们帮你们修复城堡，我们当然乐意效劳，不过我们想先麻烦你们一下，帮我一个小忙。美杜莎女妖霸占了我们在布拉卡达东面的矿井，还把我们一些人变成了石头。这帮该死的女妖真是太可恶了，你们能帮我们去教训她们一下吗？\n"
 "你们要做的就是把这些丹药浇到石像上，这样我们的人就可以变回人形。如果你们完成这个任务，我们会修复你们的城堡的。快去吧，不过你们得小心那里的狮鹫啊。"
 
 # imported from packs (base v1.21)
@@ -61215,7 +61215,7 @@ msgstr "格芬哈特号角一定是被帕尔森派人偷走了，你们来迟一
 msgid ""
 "Messengers have informed me of your visit with my King.\n"
 "I hope you can see now why we are the rightful rulers of Harmondale."
-msgstr "我奉命通知你们去和我们的国王帕尔森会面。我希望你们明白我们才是和谐谷的真正统治者。"
+msgstr "我奉命通知你们去和我们的国王帕尔森会面。我希望你们明白我们才是哈蒙代尔的真正统治者。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:297
@@ -62566,7 +62566,7 @@ msgid ""
 "It's called Fort Riverstride, and it protects us from surprise Elvish attacks coming through Harmondale.\n"
 "There's so many traps and tricks inside there, they say it will never fall without the help of treachery."
 msgstr ""
-"你们在和谐谷到斯坦德威克路上看见那座吊桥了吗？这就是利文斯德要塞，是为了防御精灵族发动突袭而建的。要塞中到处是机关陷阱，简直是一座永不陷落的堡垒。"
+"你们在哈蒙代尔到斯坦德威克路上看见那座吊桥了吗？这就是利文斯德要塞，是为了防御精灵族发动突袭而建的。要塞中到处是机关陷阱，简直是一座永不陷落的堡垒。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:4206
@@ -62638,7 +62638,7 @@ msgstr "看来战利品落入阿基巴德手中，听说为了争夺这个东西
 msgid ""
 "Looking for Expert instruction in one of your Skills?\n"
 "Expert teachers for most Skills can be found in Harmondale, Erathia and the Tularean Forest."
-msgstr "想要使自己的技术达到专家级水准。告诉你们吧，大多数技术的专家住在和谐谷，伊拉西亚和图拉利昂森林。"
+msgstr "想要使自己的技术达到专家级水准。告诉你们吧，大多数技术的专家住在哈蒙代尔，伊拉西亚和图拉利昂森林。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:4321
@@ -68395,7 +68395,7 @@ msgid ""
 "I'm already prepared for the trip.\n"
 "All you need to do now is get me to my new home, and I'll take care of the rest."
 msgstr ""
-"嗯，你们做得好极了。尽管光明之路非常艰辛坎坷，但却可以得到丰厚的回报。我已经整装待发了，你们只要把我送到和谐谷我的新家，剩下的事我会处理的。"
+"嗯，你们做得好极了。尽管光明之路非常艰辛坎坷，但却可以得到丰厚的回报。我已经整装待发了，你们只要把我送到哈蒙代尔我的新家，剩下的事我会处理的。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:6901
@@ -73008,7 +73008,7 @@ msgid ""
 "I am not allowed to say much, but I can tell you your position will be much higher than simply Lords of Harmondale, you can count on that!\n"
 "You will find Kastore in his place on the throne of Castle Gloaming."
 msgstr ""
-"（托尔伯蒂拿着控制晶片）这下我们的计划马上要大功告成了。我知道你们很想知道全部计划的真相，卡斯托还没有交代清楚吧。不过我也不能说得太多，天机不可泄露。反正我可以告诉你们，一旦我们成功了，你们的职位就不仅仅是个和谐谷城堡的小领主了，等着瞧吧，好戏还在后头呢！要找卡斯托，你们可以去黄昏城堡的宫殿看看。"
+"（托尔伯蒂拿着控制晶片）这下我们的计划马上要大功告成了。我知道你们很想知道全部计划的真相，卡斯托还没有交代清楚吧。不过我也不能说得太多，天机不可泄露。反正我可以告诉你们，一旦我们成功了，你们的职位就不仅仅是个哈蒙代尔城堡的小领主了，等着瞧吧，好戏还在后头呢！要找卡斯托，你们可以去黄昏城堡的宫殿看看。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:3249 assets_dev/engine/events/Global.lua:10301
@@ -73189,7 +73189,7 @@ msgid ""
 "We believe it was lost somewhere in the maze-like Barrows.\n"
 "Please find it and return it to us."
 msgstr ""
-"我们现在只有靠你们找回神灯了，和谐谷的新主人们。伊拉西亚神庙里的光明灯是举世罕见的珍宝。其实它并没有什么魔力，但具有鼓舞人心的作用。没有它，伊拉西亚的僧侣们就会人心惶惶，无心修炼。神灯是在石头城运往这里的路上丢失的，我想它肯定在拜尔德斯那个迷宫般蜿蜒曲折的坟墓里，拜托你们把它取回来，多谢了。"
+"我们现在只有靠你们找回神灯了，哈蒙代尔的新主人们。伊拉西亚神庙里的光明灯是举世罕见的珍宝。其实它并没有什么魔力，但具有鼓舞人心的作用。没有它，伊拉西亚的僧侣们就会人心惶惶，无心修炼。神灯是在石头城运往这里的路上丢失的，我想它肯定在拜尔德斯那个迷宫般蜿蜒曲折的坟墓里，拜托你们把它取回来，多谢了。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:3721 assets_dev/engine/events/Global.lua:10502
@@ -73204,7 +73204,7 @@ msgid ""
 "Thank you, Lords of Harmondale.\n"
 "The Lantern's return will bolster our faith and allows us to continue our services.\n"
 "Please take this small reward as a token of our gratitude."
-msgstr "太感谢你们了，和谐谷的主人们。神灯回到我们的手中，这下大家又可以专心修炼了。这些酬金是你们应该得的，请拿去吧。"
+msgstr "太感谢你们了，哈蒙代尔的主人们。神灯回到我们的手中，这下大家又可以专心修炼了。这些酬金是你们应该得的，请拿去吧。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:3726 assets_dev/engine/events/Global.lua:10518
@@ -73271,7 +73271,7 @@ msgid ""
 "I would be even more in your debt if Lord Markham sends this item back with you!\n"
 "I would be sure to favorably record your heroic acts and deeds!"
 msgstr ""
-"啊，你们就是和谐谷城堡的新主人！看起来不怎么象。不过象不象不是我说了算的，老百姓自有评判。我是个历史学家，还是个历史文物的收藏爱好者。听说马克汉姆爵士在这方面和我是同道，他有一件非常珍贵的收藏---帕尔森的羽毛笔。那可不是普通的羽毛笔，结束第一次木材战争时签署匹尔邦特和平协议用的就是这支笔。你们既然能成为和谐谷的主人，和马克汉姆爵士的交情肯定不错。麻烦你们把这封信带给他，他现在已经住在泰塔利亚了。如果爵士看了这封信，能把那支羽毛笔托你们交给我，那真是感激不尽，我一定会让您名垂青史。"
+"啊，你们就是哈蒙代尔城堡的新主人！看起来不怎么象。不过象不象不是我说了算的，老百姓自有评判。我是个历史学家，还是个历史文物的收藏爱好者。听说马克汉姆爵士在这方面和我是同道，他有一件非常珍贵的收藏---帕尔森的羽毛笔。那可不是普通的羽毛笔，结束第一次木材战争时签署匹尔邦特和平协议用的就是这支笔。你们既然能成为哈蒙代尔的主人，和马克汉姆爵士的交情肯定不错。麻烦你们把这封信带给他，他现在已经住在泰塔利亚了。如果爵士看了这封信，能把那支羽毛笔托你们交给我，那真是感激不尽，我一定会让您名垂青史。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:3754 assets_dev/engine/events/Global.lua:10575
@@ -73310,7 +73310,7 @@ msgid ""
 "If you would deliver this letter to the Faerie King, and return what he gives you to me, I'd be very grateful.\n"
 "You would also have the chance to meet the Faerie King for yourselves."
 msgstr ""
-"原来你们就是和谐谷城堡的新主人，那么这件事就要麻烦你们了。不过此事如果成功，你们自己也大有好处。在埃里北面的小山底下有个地下大厅，那里是仙帝的领地。以前我为他立下一件大功，他欠我一个人情，现在该是他报答我的时候了。可是那里住的神仙很爱作弄人，我可不敢去，不然准得被他们吓得半死。我现在只有拜托你们去把这封信交给仙帝，他会托付你们把一些东西交给我，你们把它们带回来就行了，到时候我会重重谢你们。你们还可以要仙帝帮忙实现你们的心愿，肯定会不虚此行的。"
+"原来你们就是哈蒙代尔城堡的新主人，那么这件事就要麻烦你们了。不过此事如果成功，你们自己也大有好处。在埃里北面的小山底下有个地下大厅，那里是仙帝的领地。以前我为他立下一件大功，他欠我一个人情，现在该是他报答我的时候了。可是那里住的神仙很爱作弄人，我可不敢去，不然准得被他们吓得半死。我现在只有拜托你们去把这封信交给仙帝，他会托付你们把一些东西交给我，你们把它们带回来就行了，到时候我会重重谢你们。你们还可以要仙帝帮忙实现你们的心愿，肯定会不虚此行的。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:2208 assets_dev/engine/events/Global.lua:10622
@@ -73353,7 +73353,7 @@ msgid ""
 "You have one month to get the tapestry.\n"
 "Don't be late."
 msgstr ""
-"我们有件小事想麻烦你们。三年以前光辉城堡袭击了我们的哨塔，抢走了一块名贵的挂毯。那个地方守卫非常森严，驻扎了大批大耳怪和邪恶剑手，我的手下根本无法靠近那里。看来只有你们能胜任这个任务，想办法潜入城堡，把那块挂毯夺回来。不过记住，你们只有一个月的时间，超过期限他们就会发现你们的和谐谷城堡，并会立即发动，好了，别浪费时间了，快去快回吧。"
+"我们有件小事想麻烦你们。三年以前光辉城堡袭击了我们的哨塔，抢走了一块名贵的挂毯。那个地方守卫非常森严，驻扎了大批大耳怪和邪恶剑手，我的手下根本无法靠近那里。看来只有你们能胜任这个任务，想办法潜入城堡，把那块挂毯夺回来。不过记住，你们只有一个月的时间，超过期限他们就会发现你们的哈蒙代尔城堡，并会立即发动，好了，别浪费时间了，快去快回吧。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:271 assets_dev/engine/events/Global.lua:1067
@@ -73374,7 +73374,7 @@ msgid ""
 "In return, I'll make sure that the large band of renegade swordsmen and goblins near Harmondale don't accidentally stumble upon your quiet, little village.\n"
 "You have one month; don't be late."
 msgstr ""
-"我们需要你们帮个小忙。法师们有一块珍贵的挂毯，是从寂静时代流传下来的一件文物。黄昏城堡派人偷走了这块挂毯。那个地方守卫非常森严，驻扎了大批大耳怪和邪恶剑手，我的手下根本无法靠近那里。看来只有你们能胜任这个任务，想办法潜入城堡，把那块挂毯夺回来。不过记住，你们只有一个月的时间，超过期限他们就会发现你们的和谐谷城堡，并会立即发动，好了，别浪费时间了，快去快回吧。"
+"我们需要你们帮个小忙。法师们有一块珍贵的挂毯，是从寂静时代流传下来的一件文物。黄昏城堡派人偷走了这块挂毯。那个地方守卫非常森严，驻扎了大批大耳怪和邪恶剑手，我的手下根本无法靠近那里。看来只有你们能胜任这个任务，想办法潜入城堡，把那块挂毯夺回来。不过记住，你们只有一个月的时间，超过期限他们就会发现你们的哈蒙代尔城堡，并会立即发动，好了，别浪费时间了，快去快回吧。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:3793 assets_dev/engine/events/Global.lua:10712
@@ -73385,7 +73385,7 @@ msgid ""
 "Consider this a lesson in punctuality.\n"
 "Go now and have a pleasant, pleasant day."
 msgstr ""
-"现在一个月的期限已经过了，那帮匪徒终于发现了你们的小城堡，如今他们正在和谐谷大肆抢劫屠杀，看来你们的全部家当都难保了。这次就当作一个教导你如何守时的教训吧。走吧，去享受这愉快的一天去吧。"
+"现在一个月的期限已经过了，那帮匪徒终于发现了你们的小城堡，如今他们正在哈蒙代尔大肆抢劫屠杀，看来你们的全部家当都难保了。这次就当作一个教导你如何守时的教训吧。走吧，去享受这愉快的一天去吧。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:3788 assets_dev/engine/events/Global.lua:10716
@@ -73395,7 +73395,7 @@ msgid ""
 "I'll keep that in mind the next time I need a job done.\n"
 "Your reward is nothing more than status quo-- things could be much worse than they already are.\n"
 "Go now, I have no more time for you."
-msgstr "好极了，看来你们是值得信赖的朋友，下次我们有事一定再会来找你们的。由于你们的努力，和谐谷城堡终于安然无恙了，我想这是对你们的最高奖赏。"
+msgstr "好极了，看来你们是值得信赖的朋友，下次我们有事一定再会来找你们的。由于你们的努力，哈蒙代尔城堡终于安然无恙了，我想这是对你们的最高奖赏。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:2239 assets_dev/engine/events/Global.lua:10725
@@ -73590,7 +73590,7 @@ msgstr "长剑大师特格·斯莱瑟住在迪雅西面的村子里。"
 #: assets_dev/engine/data_tables/english/autonote.txt:327 assets_dev/engine/data_tables/npc_topic_text.txt:3830 assets_dev/engine/events/Global.lua:10883
 msgid ""
 "The Grandmaster of the Sword, Chadric Townsaver, can be found in a small village in Welnin, just south of the city of Harmondale."
-msgstr "长剑宗师查德科·唐瑟夫住在和谐谷南面一个叫维尔宁的小村子里。"
+msgstr "长剑宗师查德科·唐瑟夫住在哈蒙代尔南面一个叫维尔宁的小村子里。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/english/autonote.txt:328 assets_dev/engine/data_tables/npc_topic_text.txt:3831 assets_dev/engine/events/Global.lua:10888
@@ -73639,7 +73639,7 @@ msgstr "弓箭大师兰希·拉弗赛特住在尼根的东北面。"
 #: assets_dev/engine/data_tables/english/autonote.txt:335 assets_dev/engine/data_tables/npc_topic_text.txt:3839 assets_dev/engine/events/Global.lua:10923
 msgid ""
 "The Grandmaster of the Bow, Cardric the Steady, can be found just to the southeast of the castle in the city of Harmondale."
-msgstr "弓箭宗师凯德拉克·斯蒂德住在和谐谷的城堡东南面。"
+msgstr "弓箭宗师凯德拉克·斯蒂德住在哈蒙代尔的城堡东南面。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/english/autonote.txt:336 assets_dev/engine/data_tables/npc_topic_text.txt:3840 assets_dev/engine/events/Global.lua:10928
@@ -73714,7 +73714,7 @@ msgstr "钢甲宗师工匠布朗达住在布拉卡达沙漠中心地带。"
 #: assets_dev/engine/data_tables/english/autonote.txt:346 assets_dev/engine/data_tables/npc_topic_text.txt:3851 assets_dev/engine/events/Global.lua:10978
 msgid ""
 "The Master tutor of Fire Magic, Ashen Temper, can be found in the city of Harmondale near the stables."
-msgstr "火系魔法大师阿什·坦普住在和谐谷的马厩附近。"
+msgstr "火系魔法大师阿什·坦普住在哈蒙代尔的马厩附近。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/english/autonote.txt:347 assets_dev/engine/data_tables/npc_topic_text.txt:3852 assets_dev/engine/events/Global.lua:10983
@@ -73750,7 +73750,7 @@ msgstr "快点！"
 #: assets_dev/engine/data_tables/english/autonote.txt:351 assets_dev/engine/data_tables/npc_topic_text.txt:3857 assets_dev/engine/events/Global.lua:11003
 msgid ""
 "The Grandmaster of Water Magic, Torrent, lives on a ridge, south of Harmondale, overlooking the city."
-msgstr "水系魔法宗师特伦住在和谐谷南面。"
+msgstr "水系魔法宗师特伦住在哈蒙代尔南面。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:3858 assets_dev/engine/events/Global.lua:11008
@@ -73919,7 +73919,7 @@ msgstr "洞察术宗师佩特拉·克莱利亚住在迪雅西北面的镇子里�
 #: assets_dev/engine/data_tables/english/autonote.txt:372 assets_dev/engine/data_tables/npc_topic_text.txt:3885 assets_dev/engine/events/Global.lua:11108
 msgid ""
 "The Master of Disarm Trap Skill, Lenord Skinner, lives on a ridge, south of Harmondale, overlooking the city."
-msgstr "拆卸术大师李诺德·斯格那住在和谐谷南面的山上。"
+msgstr "拆卸术大师李诺德·斯格那住在哈蒙代尔南面的山上。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/english/autonote.txt:373 assets_dev/engine/data_tables/npc_topic_text.txt:3886 assets_dev/engine/events/Global.lua:11113
@@ -73962,7 +73962,7 @@ msgstr "怪物鉴定术大师吉尼·斯威夫特住在埃里的东北部。"
 #: assets_dev/engine/data_tables/english/autonote.txt:379 assets_dev/engine/data_tables/npc_topic_text.txt:3893 assets_dev/engine/events/Global.lua:11143
 msgid ""
 "The Grandmaster of the Identify Monster Skill, Raven the Hunter, can be found in a small village to the south of Harmondale."
-msgstr "怪物鉴定术宗师猎人莱文住在和谐谷南部的小村子里。"
+msgstr "怪物鉴定术宗师猎人莱文住在哈蒙代尔南部的小村子里。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:3894 assets_dev/engine/events/Global.lua:11148
@@ -74062,7 +74062,7 @@ msgid ""
 "If I were you, I'd give him a piece of my mind!\n"
 "His mansion is in Tatalia, near the wharf."
 msgstr ""
-"你们就是马克汉姆爵士举办的寻宝竞赛的优胜者！你们赢得比赛有什么奖赏，光一个小小的和谐谷城堡就把你们打发了。我要是你们，就一定会缠着他多要些好处。他就住在泰塔利亚的码头附近。"
+"你们就是马克汉姆爵士举办的寻宝竞赛的优胜者！你们赢得比赛有什么奖赏，光一个小小的哈蒙代尔城堡就把你们打发了。我要是你们，就一定会缠着他多要些好处。他就住在泰塔利亚的码头附近。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:3933 assets_dev/engine/events/Global.lua:11443
@@ -74197,7 +74197,7 @@ msgstr ""
 #: assets_dev/engine/data_tables/npc_topic_text.txt:3973 assets_dev/engine/events/Global.lua:11557
 msgid ""
 "If you're looking for a teacher to begin serious monk training, speak with Bartholomew Hume--you can find him in the village south of the town of Harmondale."
-msgstr "你们想拜师学艺，去巴斯洛缪·海墨尔那里碰碰运气吧。他住在和谐谷南面的村子里。"
+msgstr "你们想拜师学艺，去巴斯洛缪·海墨尔那里碰碰运气吧。他住在哈蒙代尔南面的村子里。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:3990 assets_dev/engine/events/Global.lua:11561 assets_dev/engine/events/Global.lua:11641
@@ -74697,7 +74697,7 @@ msgstr "祝贺你们，现在你们已经是玩魔幻牌的冠军。你们的奖
 msgid ""
 "People say the Dwarves live in the barren lands south of Harmondale, but that's not exactly true--They live UNDER them.\n"
 "Look for their front gate in the center of the Barrow Downs where three bridges meet."
-msgstr "相传矮人族住在和谐谷南面的拜尔德斯，其实他们是住在那里的地底下。拜尔德斯中部三座桥相连的地方就是他们住所的进口。"
+msgstr "相传矮人族住在哈蒙代尔南面的拜尔德斯，其实他们是住在那里的地底下。拜尔德斯中部三座桥相连的地方就是他们住所的进口。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:4159 assets_dev/engine/events/Global.lua:11899
@@ -74793,7 +74793,7 @@ msgstr "美杜莎女妖霸占了红矮人矿井，还把我们的人变成了石
 msgid ""
 "We owe you much for your daring rescue of our people.\n"
 "Rebuilding your castle was the least we could do for you."
-msgstr "你们拯救了我们的人民，我们对你们感激不尽，重建和谐谷城堡这件事就包在我们身上。"
+msgstr "你们拯救了我们的人民，我们对你们感激不尽，重建哈蒙代尔城堡这件事就包在我们身上。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:4181 assets_dev/engine/events/Global.lua:11939
@@ -74812,7 +74812,7 @@ msgid ""
 "Good day, my lords.\n"
 "I must say the people are changing their minds about your chances of survival.\n"
 "Everyone is saying how wonderful it is to have stable rulers in the Castle!"
-msgstr "嗨，你们好，我的主人。和谐谷的百姓现在都对你们刮目相看，每个人都相信城堡在你们的治理下将永远繁荣昌盛。"
+msgstr "嗨，你们好，我的主人。哈蒙代尔的百姓现在都对你们刮目相看，每个人都相信城堡在你们的治理下将永远繁荣昌盛。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:4186 assets_dev/engine/events/Global.lua:11948
@@ -74821,7 +74821,7 @@ msgid ""
 "The fighting and politics between Erathia and Avlee will claim you sooner or later.\n"
 "Probably sooner."
 msgstr ""
-"你们好，尊敬的和谐谷领主。和谐谷的历任主人没有一个人能长久的统治这个城堡，看来你们也一样。你们迟早会卷入伊拉西亚和埃里的明争暗斗，等着瞧吧。"
+"你们好，尊敬的哈蒙代尔领主。哈蒙代尔的历任主人没有一个人能长久的统治这个城堡，看来你们也一样。你们迟早会卷入伊拉西亚和埃里的明争暗斗，等着瞧吧。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:4189 assets_dev/engine/events/Global.lua:11954
@@ -74830,7 +74830,7 @@ msgid ""
 "Most of the time lords here don't last long enough to rebel against, but there've been some wicked ones!\n"
 "Not that I think you're wicked, my lords."
 msgstr ""
-"和谐谷的人民都很安分守己，所以这里很少发生百姓暴动。但到了官逼民反的地步，人民的怒火就会象火山一样爆发，历史上最著名的人民暴动就发生在这里。不过你们看来不象暴君，只要对老百姓好，他们不会给你们惹事的。"
+"哈蒙代尔的人民都很安分守己，所以这里很少发生百姓暴动。但到了官逼民反的地步，人民的怒火就会象火山一样爆发，历史上最著名的人民暴动就发生在这里。不过你们看来不象暴君，只要对老百姓好，他们不会给你们惹事的。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:4192 assets_dev/engine/events/Global.lua:11959
@@ -74838,7 +74838,7 @@ msgid ""
 "It's good to see someone in Harmondale again, my lords.\n"
 "The castle's been standing empty since the War, except for the goblins.\n"
 "But they don't count, I suppose."
-msgstr "和谐谷终于有了新主人了。自从战争爆发以来，城堡就没有人掌管了，现在你们来了，百姓们这下该放心了。"
+msgstr "哈蒙代尔终于有了新主人了。自从战争爆发以来，城堡就没有人掌管了，现在你们来了，百姓们这下该放心了。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:4287 assets_dev/engine/events/Global.lua:11962
@@ -74854,7 +74854,7 @@ msgid ""
 "Harmondale sees a lot of violence, but at least they don't conscript.\n"
 "You know, there's been so many wars in Avlee that one of the kings had a tunnel dug from his castle to the caves in the North just in case the castle was taken AGAIN."
 msgstr ""
-"为了打赢这场战争，埃里已经耗尽了所有的资源，还不断向人民横征暴敛，我只好搬迁到和谐谷居住，看来这里是唯一没有卷入战争的一方乐土。埃里的国王在战争中挖了条地道通往北方的洞穴，以便在城堡失陷时能够逃命。"
+"为了打赢这场战争，埃里已经耗尽了所有的资源，还不断向人民横征暴敛，我只好搬迁到哈蒙代尔居住，看来这里是唯一没有卷入战争的一方乐土。埃里的国王在战争中挖了条地道通往北方的洞穴，以便在城堡失陷时能够逃命。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:4198 assets_dev/engine/events/Global.lua:11970
@@ -74863,7 +74863,7 @@ msgid ""
 "They're called the White Cliff Caves.\n"
 "If you're ever robbed, or are looking for some evil doers to punish, all you got to do is go up there.\n"
 "You'll find a fight for sure!"
-msgstr "和谐谷城外有一个岩洞群，那里是匪徒和怪兽盘踞的安乐窝。和谐谷的百姓吃尽了他们的苦头，现在该是向他们算帐的时候了。"
+msgstr "哈蒙代尔城外有一个岩洞群，那里是匪徒和怪兽盘踞的安乐窝。哈蒙代尔的百姓吃尽了他们的苦头，现在该是向他们算帐的时候了。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/events/Global.lua:11975
@@ -74935,7 +74935,7 @@ msgid ""
 "Because of all the tension in the air, Erathia and Avlee hired an arbiter to help them work out their differences.\n"
 "He's staying in the \"House of Stars\" on the eastern edge of Harmondale territory.\n"
 "Maybe he has some advice for you."
-msgstr "据说伊拉西亚和埃里已经找了个调解人来解决双方的分歧。这个人就住在和谐谷东面的群星之屋，也许他能给你们些忠告。"
+msgstr "据说伊拉西亚和埃里已经找了个调解人来解决双方的分歧。这个人就住在哈蒙代尔东面的群星之屋，也许他能给你们些忠告。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:4297 assets_dev/engine/events/Global.lua:12012
@@ -74950,7 +74950,7 @@ msgid ""
 "If you ever feel like you need advice on what next to do, or you've lost something important, go visit the Arbiter in the House of Stars near the Eastern edge of Harmondale territory.\n"
 "He often knows where lost items went, or has advice on what you need to do.\n"
 "I'm sure you'll find him helpful."
-msgstr "你们要是毫无头绪，不知下一步该怎么办，可以上群星之屋找调解人帮忙。他就住在和谐谷东面。"
+msgstr "你们要是毫无头绪，不知下一步该怎么办，可以上群星之屋找调解人帮忙。他就住在哈蒙代尔东面。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:4299 assets_dev/engine/events/Global.lua:12032 assets_dev/engine/events/Global.lua:12034
@@ -74966,7 +74966,7 @@ msgid ""
 "It's like the whole world is holding its breath, waiting for you to make a choice.\n"
 "Better be careful who you choose--this sounds like a big one, my Lords."
 msgstr ""
-"住在和谐谷的战争调解人格瑞突然死于非命，看来战争已经迫在眉睫了。到底是帮助伊拉西亚还是埃里，这可是关系到和谐谷安危的大事，你们可要权衡利弊，仔细考虑啊！"
+"住在哈蒙代尔的战争调解人格瑞突然死于非命，看来战争已经迫在眉睫了。到底是帮助伊拉西亚还是埃里，这可是关系到哈蒙代尔安危的大事，你们可要权衡利弊，仔细考虑啊！"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:4222 assets_dev/engine/events/Global.lua:12053
@@ -75148,7 +75148,7 @@ msgid ""
 "We are very lucky!\n"
 "I never thought Harmondale could afford such luxuries, my lords!"
 msgstr ""
-"我的主人，阿基巴德派来了大批工匠把城堡翻修一新，还留下了很多金银财宝。哦，他们还在城堡中发现了一个地下宝库，想不到和谐谷竟有这么多的宝藏，我在这里居住了这么多年也不知道这个秘密，这真象做梦一样。"
+"我的主人，阿基巴德派来了大批工匠把城堡翻修一新，还留下了很多金银财宝。哦，他们还在城堡中发现了一个地下宝库，想不到哈蒙代尔竟有这么多的宝藏，我在这里居住了这么多年也不知道这个秘密，这真象做梦一样。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:4337 assets_dev/engine/events/Global.lua:12179
@@ -75161,12 +75161,12 @@ msgid ""
 "The workers, however, discovered an older area to the castle--a torture chamber and dungeon.\n"
 "It isn't a pretty sight, I'm afraid."
 msgstr ""
-"我的主人，盖文·马格努斯派来了大批工匠把城堡翻修一新，还留下了很多金银财宝。哦，他们还在城堡中发现了一个地下宝库，想不到和谐谷竟有这么多的宝藏，我在这里居住了这么多年也不知道这个秘密，这真象做梦一样。"
+"我的主人，盖文·马格努斯派来了大批工匠把城堡翻修一新，还留下了很多金银财宝。哦，他们还在城堡中发现了一个地下宝库，想不到哈蒙代尔竟有这么多的宝藏，我在这里居住了这么多年也不知道这个秘密，这真象做梦一样。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:4354 assets_dev/engine/events/Global.lua:12181
 msgid "My Lords. Castle Harmondale stands ready."
-msgstr "主人，和谐谷城堡准备好了，一切听你们的安排。"
+msgstr "主人，哈蒙代尔城堡准备好了，一切听你们的安排。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic.txt:85 assets_dev/engine/data_tables/npc_topic.txt:87 assets_dev/engine/data_tables/npc_topic.txt:88
@@ -75222,7 +75222,7 @@ msgid ""
 "Many great battles have been waged there between the forces of King Eldrich of the Elves and Queen Catherine of Erathia.\n"
 "The goblins have taken the ruined fort in this area an use it to attack any travelers attempting to reach Harmondale!"
 msgstr ""
-"我的主人，你们虽然把把和谐谷城堡里的大耳怪消灭干净了，可城堡附近仍然有大耳怪在作恶。城堡的东面是有名的争议之地，埃里的精灵国王和伊拉西亚的凯瑟琳王后常率兵在那里交战，而大耳怪趁火打劫，占领了那里废弃的堡垒，不断骚扰过往和谐谷的行人。你们好人做到底，应该去把它们也收拾干净。"
+"我的主人，你们虽然把把哈蒙代尔城堡里的大耳怪消灭干净了，可城堡附近仍然有大耳怪在作恶。城堡的东面是有名的争议之地，埃里的精灵国王和伊拉西亚的凯瑟琳王后常率兵在那里交战，而大耳怪趁火打劫，占领了那里废弃的堡垒，不断骚扰过往哈蒙代尔的行人。你们好人做到底，应该去把它们也收拾干净。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:4348 assets_dev/engine/events/Global.lua:12204
@@ -75231,7 +75231,7 @@ msgid ""
 "Feel free to relax while you're here.\n"
 "Your sleep will never be disturbed by attacking monsters, nor will anything you decide to store in the castle's chests ever be stolen or removed.\n"
 "You are home."
-msgstr "我的主人，既然和谐谷城堡归你们统治，你们就应该把这里当作家一样。这里的一切都属于你们，一切人都听你们的派遣。"
+msgstr "我的主人，既然哈蒙代尔城堡归你们统治，你们就应该把这里当作家一样。这里的一切都属于你们，一切人都听你们的派遣。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:4352 assets_dev/engine/events/Global.lua:12208
@@ -75290,7 +75290,7 @@ msgid ""
 "Here's your crate of Tularean Wood.\n"
 "Be sure to take it to Rydric in Harmondale.\n"
 "He will pay you well for them."
-msgstr "这箱图拉利昂木料你们拿去吧。只要把它交给和谐谷的瑞德里克，他会好好酬谢你们的。"
+msgstr "这箱图拉利昂木料你们拿去吧。只要把它交给哈蒙代尔的瑞德里克，他会好好酬谢你们的。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:420 assets_dev/engine/events/Global.lua:1234
@@ -75482,7 +75482,7 @@ msgid ""
 "I have heard rumors that the shrine to the southeast of here can send you to the Land of the Giants.\n"
 "I have been to the shrine many times and it has never done anything special for me.\n"
 "Or is that you can get here, FROM the Land of the Giants? I wonder..."
-msgstr "听说和谐谷东南面的祭坛可以把人传送到巨人领地，可是我试了几次，一点反应都没有。你们不妨去碰碰运气，说不定能成功。"
+msgstr "听说哈蒙代尔东南面的祭坛可以把人传送到巨人领地，可是我试了几次，一点反应都没有。你们不妨去碰碰运气，说不定能成功。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:4448 assets_dev/engine/events/Global.lua:12979
@@ -85638,7 +85638,7 @@ msgid ""
 "You're all set.\n"
 "And once again, congratulations!!!"
 msgstr ""
-"祝贺你们！你们现在是和谐谷城堡的新主人了。把它交给你们我也就放心了。以后就由你们来掌管城堡的一切事务。（马克汉姆写了一份合同）在这里签个字吧，对，就在这儿。好了，一切全办妥了，再次祝贺你们，城堡的新主人！"
+"祝贺你们！你们现在是哈蒙代尔城堡的新主人了。把它交给你们我也就放心了。以后就由你们来掌管城堡的一切事务。（马克汉姆写了一份合同）在这里签个字吧，对，就在这儿。好了，一切全办妥了，再次祝贺你们，城堡的新主人！"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:2044 assets_dev/engine/events/Global.lua:7098
@@ -85646,7 +85646,7 @@ msgid ""
 "Well, the ship that will take you to your fiefdom awaits you in the harbor.\n"
 "My entourage and I will be taking a different ship out.\n"
 "Just board whenever you're ready."
-msgstr "我已经在港口专为你们准备了一艘船把你们送到和谐谷，如果收拾好了就快点上船吧。"
+msgstr "我已经在港口专为你们准备了一艘船把你们送到哈蒙代尔，如果收拾好了就快点上船吧。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:196 assets_dev/engine/events/Global.lua:710
@@ -85845,7 +85845,7 @@ msgid ""
 "We have reason to believe that whoever is in charge of Harmondale in the next few months will have an unprecedented opportunity to shape the future.\n"
 "That is why I am here today--to make sure the shape of the future is pleasing to my associates.\n"
 "I'm sure you understand."
-msgstr "我们认为以后谁能掌管和谐谷城堡谁就能有机会主宰未来。我的来意不说你们也知道，是为了将来早作打算。"
+msgstr "我们认为以后谁能掌管哈蒙代尔城堡谁就能有机会主宰未来。我的来意不说你们也知道，是为了将来早作打算。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:2047 assets_dev/engine/events/Global.lua:7331
@@ -85994,7 +85994,7 @@ msgid ""
 "Good job, mates!\n"
 "We'll be heading off for Harmondale right now.\n"
 "Congratulations."
-msgstr "祝贺你们，干得真不错，伙计！现在我们向和谐谷前进！"
+msgstr "祝贺你们，干得真不错，伙计！现在我们向哈蒙代尔前进！"
 
 # imported from terms.engine.po
 #: assets_dev/engine/data_tables/npc_topic_text.txt:2144 assets_dev/engine/events/Global.lua:7517
@@ -87928,7 +87928,7 @@ msgid ""
 "They will send ambassadors to you now--check your throne room.\n"
 "Watch your back, my friends."
 msgstr ""
-"欢迎回来，和谐谷的领主们！\n"
+"欢迎回来，哈蒙代尔的领主们！\n"
 "现在，我来帮你。\n"
 "我的工程师会为你效力。\n"
 "修缮你的城堡。\n"
@@ -87973,7 +87973,7 @@ msgid ""
 "The queen is very pleased with you!\n"
 "The rescue operation went well, and Loren can no longer be held as a bargaining chip for that wicked King Parson!\n"
 "When the current Harmondale conflict is over, I'm sure the Queen will reward you for your aid."
-msgstr "你们的营救行动完成得很出色，王后对你们非常满意。劳伦已经脱险了，这下帕尔森再也不能有恃无恐了。只要和谐谷的争端一结束，王后就会封赏你们的。"
+msgstr "你们的营救行动完成得很出色，王后对你们非常满意。劳伦已经脱险了，这下帕尔森再也不能有恃无恐了。只要哈蒙代尔的争端一结束，王后就会封赏你们的。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:2946 assets_dev/engine/events/Global.lua:9217
@@ -87985,7 +87985,7 @@ msgid ""
 "Harmondale is the rightful province of Erathia, despite Elvish claims to the contrary.\n"
 "Your work for us helps to ensure that Harmondale will forever be in the hands of Humans."
 msgstr ""
-"王后告诉我是你们及时揭露了帕尔森准备暗地里突袭伊拉西亚的阴谋，你们真是我们王国的大忠臣啊！和谐谷交给你们掌管，我们也就放心了。现在我们共同的敌人就是精灵族的帕尔森这个坏蛋，让我们一起努力除掉这个逆贼。"
+"王后告诉我是你们及时揭露了帕尔森准备暗地里突袭伊拉西亚的阴谋，你们真是我们王国的大忠臣啊！哈蒙代尔交给你们掌管，我们也就放心了。现在我们共同的敌人就是精灵族的帕尔森这个坏蛋，让我们一起努力除掉这个逆贼。"
 
 # imported from terms.engine.po
 #: assets_dev/engine/data_tables/npc_topic_text.txt:247 assets_dev/engine/events/Global.lua:922
@@ -88023,7 +88023,7 @@ msgid ""
 "Please travel to Pierpont in the Tularean Forest and meet with him.\n"
 "We will make it worth your while."
 msgstr ""
-"尽管和谐谷现在不属于埃里的领土，但我们的国王，埃里的最高统治者帕尔森一直认为和谐谷应当是我们的。关于这片土地的纠纷由来已久，反正是伊拉西亚很久以前就无耻地从我们手里骗取了这个地方，我们不把它夺回来是不会善罢甘休的。我们主人要在图拉利昂森林的匹尔邦特和你们见面，你们快去吧，一定会觉得不虚此行的。"
+"尽管哈蒙代尔现在不属于埃里的领土，但我们的国王，埃里的最高统治者帕尔森一直认为哈蒙代尔应当是我们的。关于这片土地的纠纷由来已久，反正是伊拉西亚很久以前就无耻地从我们手里骗取了这个地方，我们不把它夺回来是不会善罢甘休的。我们主人要在图拉利昂森林的匹尔邦特和你们见面，你们快去吧，一定会觉得不虚此行的。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/events/Global.lua:9274
@@ -88089,7 +88089,7 @@ msgid ""
 "Return with him before then and you will win respect, gold, and gratitude."
 msgstr ""
 "[凯瑟琳女王高贵地颔首] 我明白了，你们就是赢得马卡姆勋爵那场无聊竞赛的那群人。\n"
-"我必须承认，直到矮人王承认你们是和谐谷名正言顺的统治者之前，我都没什么信心。\n"
+"我必须承认，直到矮人王承认你们是哈蒙代尔名正言顺的统治者之前，我都没什么信心。\n"
 "你们一定做了什么事赢得了他的尊重，否则他才懒得搭理你们。\n"
 "我还是不明白他看中了你们什么，但也许你们这里确实有些真材实料。\n"
 "我们走着瞧。也许你能为我做点事，让我觉得应该允许你们保留新头衔。\n"
@@ -88313,7 +88313,7 @@ msgid ""
 "Not only that, there's a substantial gold reward as well.\n"
 "If the plans are to be any use to me at all, though, I need them delivered to me within a month."
 msgstr ""
-"欢迎，你们就是那个愚蠢的马克汉姆委派的所谓和谐谷的新主人吧。你们要明白，迟早有一天我会把和谐谷并入我们埃里的领土，它本来就是我们的地方，只不过被伊拉西亚暂时霸占了而已。至于你们吗，得看你们自己的表现了，如果忠心投靠我们，我自然会让你们在这个职位上继续舒舒服服的坐下去，但如果你们胆敢反抗我，那可是死路一条。\n"
+"欢迎，你们就是那个愚蠢的马克汉姆委派的所谓哈蒙代尔的新主人吧。你们要明白，迟早有一天我会把哈蒙代尔并入我们埃里的领土，它本来就是我们的地方，只不过被伊拉西亚暂时霸占了而已。至于你们吗，得看你们自己的表现了，如果忠心投靠我们，我自然会让你们在这个职位上继续舒舒服服的坐下去，但如果你们胆敢反抗我，那可是死路一条。\n"
 "（帕尔森国王亲切地微笑）开个玩笑而已，你们当然是帮我们的。不过我怎么才能相信你们是真心效忠我们呢？俗话说得好：人心隔肚皮，做事两难知。眼下我有个任务交给你们去完成，以证明你们的忠诚。你们要去利文斯德要塞，偷取那里的要塞设计图。这个要塞座落在我们与伊拉西亚之间，地势险要，防守坚固。你们只要潜入城堡，把它的设计图偷来，不仅可以表明你们的忠诚，还有一大笔赏金等着你们。不过你们得快点，我只给一个月的时间，过期不候。"
 
 # imported from packs (base v1.21)
@@ -88511,7 +88511,7 @@ msgid ""
 "You must prove that you're fit to rule."
 msgstr ""
 "我给你们的唯一忠告就是尽快修复城堡。但我可不管你们怎样去筹备修复城堡所需要的足够人力和财力，要知道，那可得花一大笔钱，只有王公贵族们才有钱搞这么大的工程。其实这是一个先有鸡还是先有蛋的老问题了，你们要高人一等就必须有权有势，而你们必须先有权有势才会显得高人一等。\n"
-"说明白点吧，你们要是想保住和谐谷的领导权，就必须干些惊天动地的大事，以证明自己并不是个光捡天上掉下来的馅饼的暴发户。你们要让别人知道，自己是这里真正的主宰。"
+"说明白点吧，你们要是想保住哈蒙代尔的领导权，就必须干些惊天动地的大事，以证明自己并不是个光捡天上掉下来的馅饼的暴发户。你们要让别人知道，自己是这里真正的主宰。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:658 assets_dev/engine/events/Global.lua:9743
@@ -88528,8 +88528,8 @@ msgid ""
 "Protect yourselves and your people first.\n"
 "We didn't have this conversation."
 msgstr ""
-"从前，伊拉西亚的人类和埃里的精灵族势如水火，为了和谐谷打得不可开交。作为这里的法官，我自然有义务把他们双方都拉到谈判桌上商讨如何结束战争。两方面势力上都势均力敌，谁都战胜不了谁。（法官靠近你们，压低嗓音）跟你们说实话吧，其实谁赢了我都不在乎。他们就象两个淘气的孩子在争夺一个玩具，没有人真的想要和谐谷，只是要和对方作对罢了。\n"
-"现在你们可以有自己的主意，选择到底是帮哪一方。每一种选择都会有不同的结果。不过你们要记住，他们对谁掌管和谐谷都不会在乎的，所以你们首先想到的应该是保护自己和和谐谷的百姓。好了，你们可以走了，希望我们这次谈话的内容你们对谁都别说。"
+"从前，伊拉西亚的人类和埃里的精灵族势如水火，为了哈蒙代尔打得不可开交。作为这里的法官，我自然有义务把他们双方都拉到谈判桌上商讨如何结束战争。两方面势力上都势均力敌，谁都战胜不了谁。（法官靠近你们，压低嗓音）跟你们说实话吧，其实谁赢了我都不在乎。他们就象两个淘气的孩子在争夺一个玩具，没有人真的想要哈蒙代尔，只是要和对方作对罢了。\n"
+"现在你们可以有自己的主意，选择到底是帮哪一方。每一种选择都会有不同的结果。不过你们要记住，他们对谁掌管哈蒙代尔都不会在乎的，所以你们首先想到的应该是保护自己和哈蒙代尔的百姓。好了，你们可以走了，希望我们这次谈话的内容你们对谁都别说。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/events/Global.lua:9749
@@ -88550,7 +88550,7 @@ msgid ""
 "I knew you were going to make this decision, and my bags are already packed and ready to go.\n"
 "All you need to do now is get me to my new home, and I'll take care of the rest."
 msgstr ""
-"英明的选择，你们一定不会后悔的，相信我。我早知道你们会这样做的，瞧，我连行李也准备好了，就等着你们下命令了。你们只要把我带到和谐谷我的新家，剩下的事我会解决的。"
+"英明的选择，你们一定不会后悔的，相信我。我早知道你们会这样做的，瞧，我连行李也准备好了，就等着你们下命令了。你们只要把我带到哈蒙代尔我的新家，剩下的事我会解决的。"
 
 # imported from packs (base v1.21)
 #: assets_dev/engine/data_tables/npc_topic_text.txt:677 assets_dev/engine/events/Global.lua:9784
@@ -109323,7 +109323,7 @@ msgstr "通关于{date}"
 
 # imported from packs (base v1.21)
 #~ msgid "We need to go to Judge Grey's old house in Harmondale."
-#~ msgstr "我们得先去和谐谷的格雷法官故居。"
+#~ msgstr "我们得先去哈蒙代尔的格雷法官故居。"
 
 # imported from packs (base v1.21)
 #~ msgid "[Sigh] Why have you returned?"
