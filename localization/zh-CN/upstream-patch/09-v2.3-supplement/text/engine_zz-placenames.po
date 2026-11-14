@@ -1,0 +1,23 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: zh-CN\n"
+
+# Harmondale：和谐谷 -> 哈蒙代尔（音译，与玩家习惯一致）
+msgid "Harmondale"
+msgstr "哈蒙代尔"
+
+msgid "Castle Harmondale"
+msgstr "哈蒙代尔城堡"
+
+msgid "Southern Village Group in Harmondale"
+msgstr "哈蒙代尔南部村落群"
+
+msgid "Won Arcomage at the On the House in Harmondale."
+msgstr "在哈蒙代尔的迎宾旅店赢得了魔幻牌比赛。"
+
+msgid "Won Arcomage at On the House in Harmondale."
+msgstr "在哈蒙代尔的本店请客酒馆赢得了魔幻牌对局。"
+
+msgid "Removed goblins from Castle Harmondale"
+msgstr "消灭了哈蒙代尔城堡里的大耳怪"
