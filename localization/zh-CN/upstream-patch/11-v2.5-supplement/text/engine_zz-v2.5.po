@@ -114,3 +114,13 @@ msgstr "指向一个专长以阅读说明。"
 msgid ""
 "Your adventurer goes on in first person, with an action bar and talents, and the party stays one for the rest of the adventure. This cannot be undone."
 msgstr "你的冒险者将以第一人称继续，拥有快捷栏和专长，队伍在整个冒险中保持一人。此操作无法撤销。"
+
+# MM9 NPC dialogue menu entries (data-driven, not in the templates)
+msgid "Prices"
+msgstr "价格"
+
+msgid "Magic Portals"
+msgstr "魔法传送门"
+
+msgid "Travel Seasons"
+msgstr "旅行季节"
