@@ -1,0 +1,88 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: zh-CN\n"
+
+msgid "Craftable stats"
+msgstr "可制作属性"
+
+msgid "An item's description shows in grey what crafting would add to it next, and its bonus power (rulesets with crafting, such as MAW)."
+msgstr "物品描述会用灰色显示下一次制作会为它增加什么，以及它的加成强度（适用于带制作系统的规则集，例如重铸版）。"
+
+msgid "Show craftable stats (hold)"
+msgstr "显示可制作属性（按住）"
+
+msgid "Show Craftable Stats"
+msgstr "显示可制作属性"
+
+msgid "{item} {enchantment}"
+msgstr "{item}·{enchantment}"
+
+msgid "{enchantment} {item}"
+msgstr "{enchantment}{item}"
+
+msgid "{stat} +X"
+msgstr "{stat} +X"
+
+msgid "Item Bonus Power: {power}"
+msgstr "物品加成强度：{power}"
+
+msgid "Action bar slot 1"
+msgstr "快捷栏第 1 格"
+
+msgid "Action Bar 1"
+msgstr "快捷栏 1"
+
+msgid "Action bar slot 2"
+msgstr "快捷栏第 2 格"
+
+msgid "Action Bar 2"
+msgstr "快捷栏 2"
+
+msgid "Action bar slot 3"
+msgstr "快捷栏第 3 格"
+
+msgid "Action Bar 3"
+msgstr "快捷栏 3"
+
+msgid "Action bar slot 4"
+msgstr "快捷栏第 4 格"
+
+msgid "Action Bar 4"
+msgstr "快捷栏 4"
+
+msgid "Action bar slot 5"
+msgstr "快捷栏第 5 格"
+
+msgid "Action Bar 5"
+msgstr "快捷栏 5"
+
+msgid "Action bar slot 6"
+msgstr "快捷栏第 6 格"
+
+msgid "Action Bar 6"
+msgstr "快捷栏 6"
+
+msgid "Action bar slot 7"
+msgstr "快捷栏第 7 格"
+
+msgid "Action Bar 7"
+msgstr "快捷栏 7"
+
+msgid "Action bar slot 8"
+msgstr "快捷栏第 8 格"
+
+msgid "Action Bar 8"
+msgstr "快捷栏 8"
+
+msgid "Action bar slot 9"
+msgstr "快捷栏第 9 格"
+
+msgid "Action Bar 9"
+msgstr "快捷栏 9"
+
+msgid "Action bar slot 10"
+msgstr "快捷栏第 10 格"
+
+msgid "Action Bar 10"
+msgstr "快捷栏 10"
