@@ -124,3 +124,7 @@ msgstr "魔法传送门"
 
 msgid "Travel Seasons"
 msgstr "旅行季节"
+
+# Challenge mode description (Doom); the other challenge modes' descriptions are not known yet
+msgid "Nightmare's rules with stronger monsters, larger groups, more bosses and hits that cause conditions. Items must be identified before wearing, locked chests need Disarm Trap skill and hirelings refuse to join. Masteries need skill 6, 12 and 20, and teachers charge more. Starts with 5,000 gold and bonus experience."
+msgstr "在恶梦难度的规则上，怪物更强、成群更大、首领更多，并且命中会带来异常状态。物品必须先鉴定才能穿戴，上锁的宝箱需要拆除陷阱技能，雇佣角色拒绝加入。晋升大师等级需要技能 6、12 和 20，导师收费更高。开局 5000 金币，并带有额外经验。"
