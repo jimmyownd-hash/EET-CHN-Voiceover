@@ -1,0 +1,132 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: zh-CN\n"
+
+# Talents (data_tables/talents.yml): names and effect lines
+
+msgid "Weapon Training"
+msgstr "武器训练"
+
+msgid "Cleave"
+msgstr "劈砍"
+
+msgid "Sweeping Blows"
+msgstr "横扫"
+
+msgid "Onslaught"
+msgstr "猛攻"
+
+msgid "Charge"
+msgstr "冲锋"
+
+msgid "Shield Wall"
+msgstr "盾墙"
+
+msgid "Marksman"
+msgstr "神射手"
+
+msgid "Multishot"
+msgstr "多重射击"
+
+msgid "Piercing Arrows"
+msgstr "穿透箭"
+
+msgid "Pinning Shot"
+msgstr "钉射"
+
+msgid "Steady Aim"
+msgstr "稳定瞄准"
+
+msgid "Quickfoot"
+msgstr "疾行"
+
+msgid "Attunement"
+msgstr "协调"
+
+msgid "Blink"
+msgstr "闪现"
+
+msgid "Spell Surge"
+msgstr "法术激涌"
+
+msgid "Resolve"
+msgstr "坚韧"
+
+msgid "Overload"
+msgstr "过载"
+
+msgid "Binding Circle"
+msgstr "束缚法阵"
+
+msgid "Bloodthirst"
+msgstr "嗜血"
+
+msgid "Cheat Death"
+msgstr "死里逃生"
+
+msgid "Unbroken"
+msgstr "不屈"
+
+msgid "+{value} % Might, Endurance and Speed"
+msgstr "力量、耐力和速度 +{value} %"
+
+msgid "A burst: every monster in the 120° arc in front takes a blow at 150 %; cooldown 12, 9 or 6 s"
+msgstr "爆发：前方 120° 扇形内的每个怪物都受到一次 150 % 的攻击；冷却 12、9 或 6 秒"
+
+msgid "Every swing also strikes {value} more in the same arc at 30 % + 0.25 % per weapon-skill point (at most 50 %)"
+msgstr "每次挥击还会在同一扇形内额外打击 {value} 个目标，威力为 30 % + 每点武器技能 0.25 %（最高 50 %）"
+
+msgid "Each kill: +1 % attack speed, at most {value} stacks; they last 30 s and every kill refreshes them"
+msgstr "每次击杀：攻击速度 +1 %，最多叠加 {value} 层；持续 30 秒，每次击杀刷新持续时间"
+
+msgid "Dash to the target, strike and stagger it for 1.5 s; each ordinary attack takes 1 s off the cooldown"
+msgstr "冲向目标并攻击，使其硬直 1.5 秒；每次普通攻击缩短 1 秒冷却"
+
+msgid "With a shield: 50 % less damage for 6 s"
+msgstr "持盾时：6 秒内受到的伤害减少 50 %"
+
+msgid "+{value} % Accuracy and Speed"
+msgstr "准确和速度 +{value} %"
+
+msgid "One shot of 2, 3 or 4 arrows (by rank) fanned over ±12°, 75 % each; each hits the first monster in its line"
+msgstr "一次射出 2、3 或 4 支箭（视阶数），呈 ±12° 扇形散开，每支 75 % 威力；每支命中其路线上的第一个怪物"
+
+msgid "Every arrow of a bow shot flies on through {value} more monsters at 30 % + 0.25 % per Bow point (at most 50 %)"
+msgstr "弓箭的每支箭会继续穿过 {value} 个怪物，威力为 30 % + 每点弓箭技能 0.25 %（最高 50 %）"
+
+msgid "A shot that slows the target by half for {value} s"
+msgstr "一次射击，使目标减速一半，持续 {value} 秒"
+
+msgid "After standing still for 1 s: +{value} % Luck (critical chance)"
+msgstr "站定 1 秒后：幸运 +{value} %（暴击几率）"
+
+msgid "+{value} % movement speed (five times as much out of combat)"
+msgstr "移动速度 +{value} %（非战斗时为五倍）"
+
+msgid "+{value} % Intellect, Personality, Endurance, spell damage and healing"
+msgstr "智力、个性、耐力、法术伤害和治疗 +{value} %"
+
+msgid "Teleport 15 m forward"
+msgstr "向前传送 15 米"
+
+msgid "The next spell costs no SP and hits 50 % harder"
+msgstr "下一个法术不消耗法术值，且威力提升 50 %"
+
+msgid "+{value} % to all resistances"
+msgstr "所有抗性 +{value} %"
+
+msgid "Area spells: +{value} % damage per monster near the target beyond the first (at most 3 more)"
+msgstr "范围法术：目标附近每多一个怪物，伤害 +{value} %（最多再多 3 个）"
+
+msgid "Every hostile within 5 m is held almost still, its attacks slowed, for {value} s"
+msgstr "5 米内的所有敌人几乎被定住，攻击变慢，持续 {value} 秒"
+
+msgid "+{value} % leech on melee, bow and spells; the leech floor grows (÷4, ÷3, ÷2.5 instead of ÷5)"
+msgstr "近战、弓箭和法术的吸血 +{value} %；吸血下限提高（÷4、÷3、÷2.5，原为 ÷5）"
+
+msgid "A hit that would kill you leaves 5 % HP, then 2 s of 95 % less damage; 3 minutes cooldown"
+msgstr "致命一击会让你剩下 5 % 生命值，随后 2 秒内受到的伤害减少 95 %；冷却 3 分钟"
+
+msgid "The part of one hit above 30 % of your maximum HP is halved"
+msgstr "单次攻击中超过你最大生命值 30 % 的部分减半"
