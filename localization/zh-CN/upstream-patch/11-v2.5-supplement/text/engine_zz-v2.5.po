@@ -86,3 +86,31 @@ msgstr "快捷栏第 10 格"
 
 msgid "Action Bar 10"
 msgstr "快捷栏 10"
+
+# Terminology: Talents -> 专长 (天赋 is easily confused with innate race abilities; skills stay 技能)
+
+msgid ""
+"One adventurer in first person, with an action bar and talents. A party of one can become a solo run at any time; it stays one for the rest of the adventure."
+msgstr "单人冒险：一名冒险者以第一人称行动，拥有快捷栏和专长。单人队伍可以随时转为单人冒险，转换后在整个冒险中保持单人。"
+
+msgid "Forget talents (free)"
+msgstr "遗忘专长（免费）"
+
+msgid "{name} forgets every talent; the points are free again."
+msgstr "{name} 遗忘了所有专长；点数重新可用。"
+
+msgid "No talent points: the next comes at level {level}"
+msgstr "没有专长点：下一点在 {level} 级获得"
+
+msgid "Talents"
+msgstr "专长"
+
+msgid "Click: bind it (until you forget your talents at a training hall)."
+msgstr "点击：绑定（直到你在训练场遗忘专长）。"
+
+msgid "Point at a talent to read it."
+msgstr "指向一个专长以阅读说明。"
+
+msgid ""
+"Your adventurer goes on in first person, with an action bar and talents, and the party stays one for the rest of the adventure. This cannot be undone."
+msgstr "你的冒险者将以第一人称继续，拥有快捷栏和专长，队伍在整个冒险中保持一人。此操作无法撤销。"
