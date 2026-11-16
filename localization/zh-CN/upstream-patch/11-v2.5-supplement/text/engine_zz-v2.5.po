@@ -132,3 +132,7 @@ msgstr "在恶梦难度的规则上，怪物更强、成群更大、首领更多
 # MAW item popup: the character's offensive rating change (pairs with Vitality = 生存力; Melee/Ranged Power are 近战/远程威力)
 msgid "Power"
 msgstr "威力"
+
+# Spell name (shown in the monster panel)
+msgid "Finger of Death"
+msgstr "死亡之指"
