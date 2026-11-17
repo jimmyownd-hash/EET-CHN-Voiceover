@@ -1,0 +1,347 @@
+# OpenYAMM 2.6 supplement (zh-CN). Loads after engine.po.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: zh-CN\n"
+
+msgid "One shot of 2, 3 or 4 arrows (by rank) fanned over ±12°, 75 % each; each hits the first monster in its line; each ordinary attack that hits a monster takes 1 s off the cooldown"
+msgstr "一次射出 2、3 或 4 支箭（按等级），在 ±12° 内扇形散开，每支 75 % 威力；每支命中其前方第一个怪物；每次普通攻击命中怪物，冷却缩短 1 秒"
+
+msgid "Chaining Arrows"
+msgstr "连锁箭"
+
+msgid "Every arrow of a bow shot leaps on to the nearest other monster within 10 m of the one it strikes, up to {value} times, each at 30 % + 0.25 % per Bow point (at most 50 %)"
+msgstr "弓箭每支箭命中怪物后，会弹向其 10 米内最近的另一个怪物，最多弹跳 {value} 次，每次伤害为 30 % + 每点弓箭技能 0.25 %（最高 50 %）"
+
+msgid "Power Shot"
+msgstr "强力射击"
+
+msgid "One shot at {value} % of a normal shot's power, in half a shot's recovery; each critical hit of an ordinary attack takes 0.5 s off the cooldown"
+msgstr "以普通射击 {value} % 的威力射出一箭，恢复时间为一次射击的一半；普通攻击每次暴击，冷却缩短 0.5 秒"
+
+msgid "+{value} % leech on melee, bow and spells; the leech floor grows (÷5 less 0.5 a rank: ÷2.5 at rank 5)"
+msgstr "近战、弓箭和法术的吸血 +{value} %；吸血下限提高（÷5，每级减 0.5：5 级时为 ÷2.5）"
+
+msgid "Conditioning"
+msgstr "体能训练"
+
+msgid "+{value} % to all seven stats"
+msgstr "全部七项属性 +{value} %"
+
+msgid "Spell Suppression"
+msgstr "法术压制"
+
+msgid "{value} % less damage from every hit that is not physical, after armour, resistances and their cap"
+msgstr "每次非物理伤害在计算护甲、抗性及其上限之后，减少 {value} %"
+
+msgid "Manathirst"
+msgstr "嗜魔"
+
+msgid "{value} % of the SP bar back the way leech heals, on melee, bow and spells (an area spell's from at most three monsters); its floor grows like Bloodthirst's (÷2.5 at rank 5)"
+msgstr "近战、弓箭和法术可按吸血回血的方式回复 {value} % 的魔法条（范围法术最多按三个怪物计算）；其下限与嗜血同样提高（5 级时为 ÷2.5）"
+
+msgid "A burst: every monster in the 120° arc in front takes a blow at 150 %, in half a swing's recovery; cooldown 12, 9 or 6 s"
+msgstr "爆发：前方 120° 扇形内的每个怪物都受到一次 150 % 的攻击，恢复时间为一次挥击的一半；冷却 12、9 或 6 秒"
+
+msgid "Each kill: +1 % attack speed, at most {value} stacks; they last 60 s and every kill refreshes them"
+msgstr "每次击杀：攻击速度 +1 %，最多叠加 {value} 层；持续 60 秒，每次击杀刷新持续时间"
+
+msgid "Before it drinks, the Upkeep key brews the potions the upkeep lists keep in stock, when fewer drinks are left than they keep. It brews from what the party carries, never from the stocked potions themselves. Set the stock of each potion in Battle Orders."
+msgstr "饮用前，当剩余的药水份数少于维持列表设定的库存时，维持键会先炼制这些药水。炼制所用材料来自队伍携带的物品，绝不会动用已存的药水。请在战斗指令中设置每种药水的库存。"
+
+msgid "Upkeep brews its potions"
+msgstr "维持时自动炼制药水"
+
+msgid "Cycle game speed"
+msgstr "切换游戏速度"
+
+msgid "Cycle game speed (1x to 4x)"
+msgstr "切换游戏速度（1 倍至 4 倍）"
+
+msgid "Fast mode (3x)"
+msgstr "快速模式（3 倍）"
+
+msgid "Fast mode (4x)"
+msgstr "快速模式（4 倍）"
+
+msgid "this save was made on {map}, a map that is not installed (a mod that brought it may be off)"
+msgstr "此存档保存于 {map}，该地图未安装（提供它的模组可能已关闭）"
+
+msgid "Nothing set to keep up (Battle Orders)"
+msgstr "没有设置需要维持的内容（战斗指令）"
+
+msgid "Upkeep: no {potion} left"
+msgstr "维持：{potion} 已用完"
+
+msgid "{count} x {potion}"
+msgstr "{count} 份{potion}"
+
+msgid "{potion}: no empty bottle"
+msgstr "{potion}：没有空瓶"
+
+msgid "{potion}: a reagent for {step} is missing"
+msgstr "{potion}：缺少{step}所需的材料"
+
+msgid "{potion}: the {step} recipe is unknown"
+msgstr "{potion}：不会{step}的配方"
+
+msgid "{potion}: {step} needs more Alchemy"
+msgstr "{potion}：{step}需要更高的炼金术"
+
+msgid "{potion}: the ingredients do not reach its power"
+msgstr "{potion}：材料不足以达到所需强度"
+
+msgid "{potion}: not enough ingredients"
+msgstr "{potion}：材料不足"
+
+msgid "Upkeep brewed {potions}"
+msgstr "维持已炼制 {potions}"
+
+msgid "Upkeep could not brew"
+msgstr "维持无法炼制"
+
+msgid "No upkeep potion keeps a stock"
+msgstr "没有设置库存的维持药水"
+
+msgid "The upkeep potions are in stock"
+msgstr "维持药水库存充足"
+
+msgid "Reduces physical damage taken by 15% (does not stack)."
+msgstr "受到的物理伤害减少 15%（不可叠加）。"
+
+msgid "+20 Air Resistance."
+msgstr "空气抗性 +20。"
+
+msgid "x{count}"
+msgstr "×{count}"
+
+msgid "At most {count} upkeep entries"
+msgstr "最多 {count} 个维持项"
+
+msgid "the Upkeep key (not set) casts or drinks the first that is due"
+msgstr "维持键（未设置）会施放或饮用第一个到期的项目"
+
+msgid "{key} casts or drinks the first that is due; hold it to go on"
+msgstr "按 {key} 施放或饮用第一个到期的项目；按住可连续进行"
+
+msgid "+ Add a spell or a potion to keep up: click it on the right"
+msgstr "+ 添加要维持的法术或药水：在右侧点击它"
+
+msgid "+ Add an order: click a spell, weapon or talent on the right"
+msgstr "+ 添加指令：在右侧点击法术、武器或专长"
+
+msgid "Select a spell or potion to set when it is used."
+msgstr "选择一个法术或药水，设置它何时使用。"
+
+msgid "The buffs, heals, cures and potions {member} keeps up. The Upkeep key casts or drinks the first that is due, at its usual cost. Add spells and potions on the right, or the member's buffs, healing or carried potions below."
+msgstr "{member} 维持的增益、治疗、解除状态和药水。维持键会按平时的消耗施放或饮用第一个到期的项目。在右侧添加法术和药水，或在下方添加该成员的增益、治疗或携带的药水。"
+
+msgid "Drunk when it is due; auto-brew keeps the stock."
+msgstr "到期时饮用；自动炼制会补充库存。"
+
+msgid "Keep in stock"
+msgstr "保持库存"
+
+msgid "{drinks} drinks ({carried} carried)"
+msgstr "{drinks} 份（携带 {carried}）"
+
+msgid "{carried} carried"
+msgstr "携带 {carried}"
+
+msgid "Brew at power at least"
+msgstr "炼制强度至少为"
+
+msgid "the strongest"
+msgstr "最强的"
+
+msgid "Strongest"
+msgstr "最强"
+
+msgid "Weakest"
+msgstr "最弱"
+
+msgid "Add: {member}'s spells and potions"
+msgstr "添加：{member} 的法术和药水"
+
+msgid "Add: spells, weapons and talents"
+msgstr "添加：法术、武器和专长"
+
+msgid "{talent}: {effect}"
+msgstr "{talent}：{effect}"
+
+msgid "none carried, auto-brew can brew it"
+msgstr "未携带，可自动炼制"
+
+msgid "One key for the whole party: each ready member uses what is due on their list."
+msgstr "全队共用一个键：每位准备好的成员会使用自己列表中到期的项目。"
+
+msgid "Auto-brew potions"
+msgstr "自动炼制药水"
+
+msgid "brews the stock first"
+msgstr "先炼制库存"
+
+msgid "The Upkeep key brews the stocked potions first"
+msgstr "维持键会先炼制库存药水"
+
+msgid "The Upkeep key brews no potions"
+msgstr "维持键不炼制药水"
+
+msgid "keeps {drinks} drinks of power {power}+"
+msgstr "保持 {drinks} 份强度 {power}+ 的药水"
+
+msgid "keeps {drinks} drinks"
+msgstr "保持 {drinks} 份"
+
+msgid "not learned"
+msgstr "未学会"
+
+msgid "when ready"
+msgstr "就绪时"
+
+msgid "ends in {duration}"
+msgstr "{duration} 后结束"
+
+msgid "Scroll blessing"
+msgstr "卷轴祝福"
+
+msgid "Ends in {duration}"
+msgstr "{duration} 后结束"
+
+msgid "off"
+msgstr "关"
+
+msgid "a stronger one is in force"
+msgstr "已有更强的效果"
+
+msgid "due: {time} left"
+msgstr "到期：剩余 {time}"
+
+msgid "due now"
+msgstr "现已到期"
+
+msgid "{time} left"
+msgstr "剩余 {time}"
+
+msgid "none carried"
+msgstr "未携带"
+
+msgid "No potions in {name}'s upkeep."
+msgstr "{name} 的维持列表中没有药水。"
+
+msgid "Right-click a potion in the Potions list and choose Upkeep, or add them in Battle Orders."
+msgstr "在药水列表中右键点击药水并选择“维持”，或在战斗指令中添加。"
+
+msgid "The Upkeep key (not set) drinks what is due, one press at a time."
+msgstr "维持键（未设置）每按一次饮用一个到期的药水。"
+
+msgid "{key} drinks what is due, one press at a time."
+msgstr "按 {key} 每次饮用一个到期的药水。"
+
+msgid "A press brews the missing stock first."
+msgstr "按一次会先炼制缺少的库存。"
+
+msgid "Brew now fills the stock."
+msgstr "立即炼制会补满库存。"
+
+msgid "Brew now"
+msgstr "立即炼制"
+
+msgid "Auto-brew"
+msgstr "自动炼制"
+
+msgid "Click a potion to drink it now; click a portrait to choose whose"
+msgstr "点击药水立即饮用；点击头像选择由谁饮用"
+
+msgid "- / +: one bottle less or more in stock"
+msgstr "- / +：库存减少或增加一瓶"
+
+msgid "Taken out of {name}'s upkeep"
+msgstr "已从 {name} 的维持列表中移除"
+
+msgid "Added to {name}'s upkeep"
+msgstr "已加入 {name} 的维持列表"
+
+msgid "{name} (click: use, Ctrl+click: change this key)"
+msgstr "{name}（点击：使用，Ctrl+点击：更换此键）"
+
+msgid "Casts or drinks what is due; hold to go on"
+msgstr "施放或饮用到期的项目；按住可连续进行"
+
+msgid "{rarity} or below"
+msgstr "{rarity} 及以下"
+
+msgid "{levels}+ levels below"
+msgstr "低 {levels} 级以上"
+
+msgid "Your rules"
+msgstr "你的规则"
+
+msgid "Legendary, Celestial or artifact"
+msgstr "传奇、天界或神器"
+
+msgid "Everything else"
+msgstr "其余所有"
+
+msgid "Edit rules"
+msgstr "编辑规则"
+
+msgid "Loot filter · rules"
+msgstr "战利品筛选 · 规则"
+
+msgid "Every drop is checked against these rules from the top; the first rule that fits decides. Quest items, spellbooks and crafting materials are never filtered."
+msgstr "每件掉落物都会从上到下依次对照这些规则，第一条符合的规则生效。任务物品、法术书和制作材料不会被筛选。"
+
+msgid "Presets"
+msgstr "预设"
+
+msgid "Add rule"
+msgstr "添加规则"
+
+msgid "Rule {number}"
+msgstr "规则 {number}"
+
+msgid "Rarity at most (weapons, armour and jewellery)"
+msgstr "稀有度至多（武器、护甲和首饰）"
+
+msgid "Turn into gold"
+msgstr "转为金币"
+
+msgid "Item types"
+msgstr "物品类型"
+
+msgid "Leave on the ground"
+msgstr "留在地上"
+
+msgid "All weapons"
+msgstr "所有武器"
+
+msgid "All armour"
+msgstr "所有护甲"
+
+msgid "All jewellery"
+msgstr "所有首饰"
+
+msgid "Item level"
+msgstr "物品等级"
+
+msgid "Any level"
+msgstr "任意等级"
+
+msgid "{levels}+ below"
+msgstr "低 {levels}+ 级以上"
+
+msgid "What becomes of a drop that no rule above takes. Below Legendary, items of a type no rule names come here too."
+msgstr "没有任何上述规则处理的掉落物的去向。传奇以下、且没有规则指明其类型的物品也在此处理。"
+
+msgid "Then"
+msgstr "然后"
+
+msgid "Decided {decided} of your last {count} drops."
+msgstr "在你最近的 {count} 件掉落物中，已决定 {decided} 件。"
+
+msgid "Your last {count} drops: {filtered} filtered ({gold} gold), {kept} kept."
+msgstr "你最近的 {count} 件掉落物：筛选 {filtered} 件（{gold} 金币），保留 {kept} 件。"
+
+msgid "No item types yet"
+msgstr "尚无物品类型"
