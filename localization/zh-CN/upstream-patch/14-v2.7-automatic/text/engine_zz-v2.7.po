@@ -1,0 +1,9 @@
+# OpenYAMM 2.7 supplement (zh-CN). Loads after engine.po.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: zh-CN\n"
+
+# Shared by the alchemy bench (potion power: pick automatically) and the save screen (kind: autosave).
+msgid "Automatic"
+msgstr "自动"
