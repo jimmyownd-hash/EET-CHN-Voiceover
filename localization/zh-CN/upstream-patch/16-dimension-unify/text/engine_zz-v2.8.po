@@ -1,0 +1,58 @@
+# OpenYAMM 2.8 supplement (zh-CN): one word for "dimension" (次元). Loads after engine.po.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: zh-CN\n"
+
+msgid "Dimension door"
+msgstr "次元门"
+
+msgid "Dimensional travel"
+msgstr "次元传送"
+
+msgid ""
+"To travel through time and step onto the paths meant to be traversed by other heroes, you will need to use dimension doors present in areas infused with magic. Fear not, they're safe. Somewhat.\n"
+"You'll find one of them in Murmurwoods, another in Dragonsand, and, if I recall correctly, one more awaits on the Evenmorn Island. There could be more. Or not. Who knows? Either way, once you find your door, you can activate it by casting the Town Portal spell nearby. There's also the option of finding Dimension Door scrolls rolling around with other junk at some stores. I think most folks take them for dicey cooking recipes, so ask for those.\n"
+"No need to rush, by the way. The Universe is slow in restructuring itself and acting on the changes made to the fabric of time, but do try to get it all done before you get old, aye?"
+msgstr ""
+"要穿越时间，踏上本该由其他英雄行走的道路，你需要借助那些藏身于充满魔力之地的次元门。别担心，它们是安全的——算是吧。你能在低语之森中找到一扇，飞龙沙漠里还有一扇，如果我没记错的话，埃弗蒙岛上也有一扇在等着你。\n"
+"你会在低语林找到其中之一，另一位在龙沙，如果我没记错的话，还有一位在晨昏岛上等着。也许还有更多。也许没有。谁知道呢？无论如何，一旦你找到你的门，在附近施展城镇传送术就能激活它。还有另一种选择，就是到一些商店里，在杂物堆里翻找次元门卷轴。我想大多数人把它们当成了不太靠谱的菜谱，所以直接去问就行。\n"
+"顺便说一句，不必着急。宇宙重构自身、对时间结构的变化作出反应，是个缓慢的过程，但还是要尽量在你们老去之前把这一切做完，好吗？"
+
+msgid ""
+"A map of a place another dimension has rewritten. Using it takes the party to its entrance. On the Workbench an Eye of Void or a Creator's Hourglass unlocks its next affix, a Crafting Cube moves it to another cleared place of the same kind and an Emerald of Power raises its level by 50."
+msgstr ""
+"一张被另一个次元重写的某地地图。使用它可将队伍带到其入口。在工作台上，虚空之眼或创造者沙漏可解锁它的下一项词缀，制造方块可将其移动到另一处已清除的同类地点，力量翡翠则将其等级提升 50。"
+
+msgid "Dimensional Maps"
+msgstr "次元地图"
+
+msgid ""
+"Road to Insanity, and every character, recruits too, starts at level 1. Maps have fixed levels up to 500, dimension maps replay old dungeons, and the Arena and bounties give no rewards. Every death counts, as does loading or quitting soon after a hit. No mercenaries. Horizontal progression; masteries need skill 10, 24 and 40."
+msgstr ""
+"在疯狂之路的基础上，每个角色（包括招募的角色）都从 1 级开始。地图有固定等级，最高 500 级，次元地图会重玩旧地下城，竞技场和悬赏不给奖励。每次死亡都会计入，受到攻击后不久读档或退出也一样。没有雇佣兵。横向成长；晋升大师等级需要技能 10、24 和 40。"
+
+msgid "Dimension Door destinations unavailable"
+msgstr "次元门目的地不可用"
+
+msgid "Dimension affix"
+msgstr "次元词缀"
+
+msgid "A dimension run is open"
+msgstr "有一场次元挑战可参加"
+
+msgid "dimension"
+msgstr "次元"
+
+msgid ""
+"Clearing it banks experience on this continent and adds it to the dimension map pool."
+msgstr "清理该地图会为本大陆累积经验，并将其加入次元地图池。"
+
+msgid "Dimension quest"
+msgstr "次元任务"
+
+msgid "Dimension runs"
+msgstr "次元挑战"
+
+msgid "Dimension"
+msgstr "次元"
