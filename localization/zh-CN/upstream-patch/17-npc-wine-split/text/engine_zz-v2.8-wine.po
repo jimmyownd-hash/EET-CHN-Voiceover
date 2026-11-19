@@ -1,0 +1,12 @@
+# OpenYAMM 2.8 supplement (zh-CN). Loads after engine.po.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: zh-CN\n"
+
+# The game shows this NPC topic as two separate lines, but engine.po has one msgid with both joined by "\n".
+msgid "My favorite wine is the stuff they give you for winning at the circus."
+msgstr "我最爱的酒，就是在马戏团里赢了比赛送你的那种。"
+
+msgid "I'll pay 300 gold for any keg of wine from the circus that you can bring me."
+msgstr "只要你能带来马戏团的酒，每桶我出 300 金币。"
