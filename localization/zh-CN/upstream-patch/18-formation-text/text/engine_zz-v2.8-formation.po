@@ -1,0 +1,12 @@
+# OpenYAMM 2.8 supplement (zh-CN). Loads after engine.po.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: zh-CN\n"
+
+# "covered" was translated as 站满 ("filled"), which made players think the front row needs three people.
+# The real rule: nobody may stand behind an empty cell of the same column; a whole column may be empty.
+#: assets_dev/engine/ui/gameplay/mm9_formation.yml:171
+msgid ""
+"The front line must be covered: nobody may stand behind an empty cell."
+msgstr "空格后面不能站人：某一列的前排没人，这一列后面也不能有人。"
