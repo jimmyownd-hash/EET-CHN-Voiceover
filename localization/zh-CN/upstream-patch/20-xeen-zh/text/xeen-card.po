@@ -14,10 +14,10 @@ msgid "Xeen (alpha)"
 msgstr "辛恩（测试版）"
 
 msgid "Begin in Vertigo"
-msgstr "从眩晕草甸开始"
+msgstr "从弗蒂戈草甸开始"
 
 msgid "Xeen"
 msgstr "辛恩"
 
 msgid "Vertigo Meadows"
-msgstr "眩晕草甸"
+msgstr "弗蒂戈草甸"

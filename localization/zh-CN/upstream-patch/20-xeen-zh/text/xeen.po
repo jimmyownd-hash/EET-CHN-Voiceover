@@ -4338,7 +4338,7 @@ msgid ""
 "5 Doom Bugs at 145 each 725\n"
 "Total: 1012 gold\n"
 "Deliver to: Joe, Pest Control, Vertigo. Back door, after dark."
-msgstr "繁殖史莱姆，一对交配过的，287\n厄运虫 5 只，每只 145，共 725\n合计：1012 金币\n送货地址：乔，除虫公司，眩晕镇。后门，天黑以后。"
+msgstr "繁殖史莱姆，一对交配过的，287\n厄运虫 5 只，每只 145，共 725\n合计：1012 金币\n送货地址：乔，除虫公司，弗蒂戈镇。后门，天黑以后。"
 
 #: assets_dev/worlds/xeen/data_tables/readable_items.txt:15
 msgid "Help! I'm in Darzog's tower!--Crodo"
@@ -4404,7 +4404,7 @@ msgid ""
 "Asp, in the savannah's swamps, has a snake problem, in that its people are becoming snakes. Winterkill, in the snows of the south-west, is a ghost town in the plain sense. Nightshadow, by the Lifeforce Lagoon, is pleasant by night and shut by day; I did not stay to learn why.\n"
 "The ruins of Newcastle lie by the lagoon. A taxman sits in a tent by the rubble and will sell them to anyone. He has not yet found anyone.\n"
 "Last, a word of advice that applies to all of Cloudside: the world is flat, and it ends. The meadows east of Vertigo stop at a cliff, and below the cliff are the stars. Mind the edge."
-msgstr "《一天三十金币游辛恩》第一卷：云侧。制图师伊莉著。\n辛恩有很多地方值得一看。想沿着我的足迹走的旅行者，每天要准备三十枚左右的金币作生活费，还要把自己武装好。辛恩虽然美，却也可能致命。\n眩晕镇。绿意盎然的东南部一个安静的河边小镇，自从镇上大部分人离开之后，更安静了。镇上的史莱姆是镇子自己的，镇长坚称并不危险。住宿很便宜；靴子可就不便宜了，待上一星期的史莱姆之后就明白了。留意广场上的摇钱树。我在上面也没找到钱。\n河城在眩晕镇以西，沿河路走，建在一座大桥上和桥底下。河城里的一切都有价钱，水也不例外。强盗住在桥底下，女术士住在码头边，老实人住在剩下的地方。一只手护着钱包，另一只手护着你另一个钱包。\n往北穿过草原，就是善良的伯洛克国王的居所伯洛克城堡。只有十字军才能通过内门，这倒省了我的麻烦。走廊里的牌匾值得一看：听说有一块写着“别担心，要快乐。”我没能进去核实。\n毒蛇镇在草原的沼泽里，有一个蛇的问题：镇上的人在变成蛇。冬杀镇在西南的雪地里，它就是字面意义上的鬼城。夜影镇在生命之力潟湖边，夜里宜人，白天关门；我没留下来弄清楚为什么。\n纽卡斯尔的废墟在潟湖边。一个税务官坐在废墟旁的帐篷里，谁来都卖。他还没找到买家。\n最后给整个云侧一个忠告：世界是平的，而且有尽头。眩晕镇以东的草地止于悬崖，悬崖之下是星星。当心脚下。"
+msgstr "《一天三十金币游辛恩》第一卷：云侧。制图师伊莉著。\n辛恩有很多地方值得一看。想沿着我的足迹走的旅行者，每天要准备三十枚左右的金币作生活费，还要把自己武装好。辛恩虽然美，却也可能致命。\n弗蒂戈镇。绿意盎然的东南部一个安静的河边小镇，自从镇上大部分人离开之后，更安静了。镇上的史莱姆是镇子自己的，镇长坚称并不危险。住宿很便宜；靴子可就不便宜了，待上一星期的史莱姆之后就明白了。留意广场上的摇钱树。我在上面也没找到钱。\n河城在弗蒂戈镇以西，沿河路走，建在一座大桥上和桥底下。河城里的一切都有价钱，水也不例外。强盗住在桥底下，女术士住在码头边，老实人住在剩下的地方。一只手护着钱包，另一只手护着你另一个钱包。\n往北穿过草原，就是善良的伯洛克国王的居所伯洛克城堡。只有十字军才能通过内门，这倒省了我的麻烦。走廊里的牌匾值得一看：听说有一块写着“别担心，要快乐。”我没能进去核实。\n毒蛇镇在草原的沼泽里，有一个蛇的问题：镇上的人在变成蛇。冬杀镇在西南的雪地里，它就是字面意义上的鬼城。夜影镇在生命之力潟湖边，夜里宜人，白天关门；我没留下来弄清楚为什么。\n纽卡斯尔的废墟在潟湖边。一个税务官坐在废墟旁的帐篷里，谁来都卖。他还没找到买家。\n最后给整个云侧一个忠告：世界是平的，而且有尽头。弗蒂戈镇以东的草地止于悬崖，悬崖之下是星星。当心脚下。"
 
 #: assets_dev/worlds/xeen/data_tables/readable_items.txt:3
 msgid "The World of Xeen on 30 gold a day: Cloudside"
@@ -5219,7 +5219,7 @@ msgstr "骨头、羽毛和偷来的小玩意儿一起烧了起来。鹰身女妖
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:11498
 msgid ""
 "The nest burns, and the smoke drifts down through a gap in the cloud toward Vertigo."
-msgstr "巢烧了起来，烟从云缝间飘向眩晕镇。"
+msgstr "巢烧了起来，烟从云缝间飘向弗蒂戈镇。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:1150
 msgid ""
@@ -5789,7 +5789,7 @@ msgstr "把雪花带给干草叉溪边的春之德鲁伊。他等了整个冬天
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:1682
 msgid ""
 "The last leaf. Then winter may begin. Here is the last Snowflake of Winter; carry it to the Spring Druid, by Pitchfork Creek in Vertigo's meadows."
-msgstr "最后一片叶子。那么冬天可以开始了。这是冬日最后一片雪花；把它带给眩晕镇草地上干草叉溪边的春之德鲁伊。"
+msgstr "最后一片叶子。那么冬天可以开始了。这是冬日最后一片雪花；把它带给弗蒂戈镇草地上干草叉溪边的春之德鲁伊。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:1688
 msgid ""
@@ -6367,12 +6367,12 @@ msgstr "藏宝图！正宗的！独一无二，1000 金币。（乔看了看你�
 #: assets_dev/worlds/xeen/events/maps/xeen_x1.lua:826 assets_dev/worlds/xeen/events/maps/xeen_x2.lua:649 assets_dev/worlds/xeen/events/maps/xeen_x7.lua:222
 #: assets_dev/worlds/xeen/events/maps/xeen_x7.lua:249
 msgid "Vertigo"
-msgstr "眩晕镇"
+msgstr "弗蒂戈镇"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:2498
 msgid ""
 "Vertigo? Never heard of it. Different Joe. I'm in maps now. Maps don't breed."
-msgstr "眩晕镇？没听说过。是另一个乔。我现在做地图生意。地图不会繁殖。"
+msgstr "弗蒂戈镇？没听说过。是另一个乔。我现在做地图生意。地图不会繁殖。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:2504
 msgid "Treasure map"
@@ -7841,7 +7841,7 @@ msgstr "马车"
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:4182
 msgid ""
 "East to Vertigo on the river road. North to the King when the savannah road's clear."
-msgstr "往东沿河路去眩晕镇。往北，草原路通畅时可去见国王。"
+msgstr "往东沿河路去弗蒂戈镇。往北，草原路通畅时可去见国王。"
 
 #: assets_dev/worlds/xeen/data_tables/npc.txt:68 assets_dev/worlds/xeen/events/common/xeen_quests.lua:4185
 msgid "Gossip"
@@ -8980,7 +8980,7 @@ msgstr "野蛮人在草原上扎营。烧了他们的帐篷，他们就搬。搬
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:4778
 msgid ""
 "Joe. No relation to the exterminator in Vertigo. People ask. People always ask."
-msgstr "乔。和眩晕镇的灭虫人没有关系。总有人问。人们总是问。"
+msgstr "乔。和弗蒂戈镇的灭虫人没有关系。总有人问。人们总是问。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:4783
 msgid ""
@@ -9538,7 +9538,7 @@ msgstr "你在瓶子里找到一张字条，上面写着：救命！我被困在
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:5520
 msgid ""
 "Vertigo. For weeks you dreamt of an old man in a dark tower who begged you to finish \"the sword\". Then a bolt from the sky destroyed Newcastle, and you woke here among its survivors. Mayor Gunther asks your help: slimes and doom bugs plague the town. The town hall is on the main street."
-msgstr "眩晕镇。几个星期来，你梦见一个黑塔里的老人，求你完成“那把剑”。然后一道天外落雷毁了纽卡斯尔，你就在它的幸存者中间醒来。贡瑟镇长请求你们的帮助：史莱姆和厄运虫在困扰这个镇。镇政厅在大街上。"
+msgstr "弗蒂戈镇。几个星期来，你梦见一个黑塔里的老人，求你完成“那把剑”。然后一道天外落雷毁了纽卡斯尔，你就在它的幸存者中间醒来。贡瑟镇长请求你们的帮助：史莱姆和厄运虫在困扰这个镇。镇政厅在大街上。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:5531
 msgid ""
@@ -10152,7 +10152,7 @@ msgstr "滑头：只要 100 金币，就有机会赢娃娃。快来快来，用�
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:677
 msgid ""
 "Welcome to Vertigo. Sadly, most of the population has left because the town is infested with pests. A couple years ago I hired Joe the exterminator to rid the town of this menace, but the problem seems to be getting worse. Perhaps you could help."
-msgstr "欢迎来到眩晕镇。可惜，镇上的大部分居民都走了，因为这里闹虫灾。几年前我雇了灭虫师乔来清除这个祸害，可问题似乎越来越严重了。也许你们能帮帮忙。"
+msgstr "欢迎来到弗蒂戈镇。可惜，镇上的大部分居民都走了，因为这里闹虫灾。几年前我雇了灭虫师乔来清除这个祸害，可问题似乎越来越严重了。也许你们能帮帮忙。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:6770
 msgid ""
@@ -10202,7 +10202,7 @@ msgstr "雕像底座的字条上写着：在岛塔上方的云中 / 辛恩领主
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:685
 msgid ""
 "Thank you for cleaning up Vertigo and discovering Joe's treachery. Now it makes sense why the extermination of the pests was taking so long. I present you with the outstanding citizenship award and this treasure. Congratulations. Oh, one more thing. I have received a message from the dwarves who reside in the Red Dwarf Range. They have urgently requested help and promise great reward to whoever is brave enough to come. Apparently, their mines have been invaded by the Mad Dwarf Clan, preventing them from mining. Help them and report back."
-msgstr "谢谢你们清理了眩晕镇，还揭穿了乔的背叛。现在我明白为什么灭虫拖了这么久了。我授予你们杰出市民奖和这份宝物。恭喜。哦，还有一件事。我收到了住在红矮人山脉的矮人们的消息。他们急求援助，并承诺重赏任何有胆前去的人。据说他们的矿井被疯矮人部落占领了，没法采矿。去帮帮他们，然后回来报告。"
+msgstr "谢谢你们清理了弗蒂戈镇，还揭穿了乔的背叛。现在我明白为什么灭虫拖了这么久了。我授予你们杰出市民奖和这份宝物。恭喜。哦，还有一件事。我收到了住在红矮人山脉的矮人们的消息。他们急求援助，并承诺重赏任何有胆前去的人。据说他们的矿井被疯矮人部落占领了，没法采矿。去帮帮他们，然后回来报告。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:6850
 msgid ""
@@ -11353,7 +11353,7 @@ msgstr "“谢谢你们救了我！”还没等你们问他的名字，他就穿
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:876
 msgid ""
 "The pyramid on the knoll east of Vertigo. Show it the sigil. Where it takes you, the King prefers not to know, so I don't tell him."
-msgstr "眩晕镇以东小丘上的金字塔。给它看印记。它会把你们带到哪里，国王不愿知道，所以我没告诉他。"
+msgstr "弗蒂戈镇以东小丘上的金字塔。给它看印记。它会把你们带到哪里，国王不愿知道，所以我没告诉他。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:8768
 msgid ""
@@ -11378,7 +11378,7 @@ msgstr "死亡卷轴。你们在上面读到了自己的名字，地板迎面撞
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:879
 msgid ""
 "The old pyramids are said to lead to the land below the land. The Prince went there, they say, before he came home. The King will not hear of it. So, quietly: the Pyramid Sigil. Try the pyramid on the knoll east of Vertigo."
-msgstr "据说古老的金字塔通向大地之下的土地。他们说，王子回家之前去过那里。国王不愿听到这事。所以悄悄告诉你们：金字塔印记。去眩晕镇以东小丘上的金字塔试试。"
+msgstr "据说古老的金字塔通向大地之下的土地。他们说，王子回家之前去过那里。国王不愿听到这事。所以悄悄告诉你们：金字塔印记。去弗蒂戈镇以东小丘上的金字塔试试。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:8796
 msgid ""
@@ -19886,19 +19886,19 @@ msgstr "阿什比宅"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x1.lua:115 assets_dev/worlds/xeen/events/maps/xeen_x1.lua:117 assets_dev/worlds/xeen/events/maps/xeen_x1.lua:120
 msgid "Fire Guild of Vertigo"
-msgstr "眩晕镇火系公会"
+msgstr "弗蒂戈镇火系公会"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x1.lua:123 assets_dev/worlds/xeen/events/maps/xeen_x1.lua:125 assets_dev/worlds/xeen/events/maps/xeen_x1.lua:128
 msgid "Air Guild of Vertigo"
-msgstr "眩晕镇风系公会"
+msgstr "弗蒂戈镇风系公会"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x1.lua:131 assets_dev/worlds/xeen/events/maps/xeen_x1.lua:133 assets_dev/worlds/xeen/events/maps/xeen_x1.lua:136
 msgid "Water Guild of Vertigo"
-msgstr "眩晕镇水系公会"
+msgstr "弗蒂戈镇水系公会"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x1.lua:139 assets_dev/worlds/xeen/events/maps/xeen_x1.lua:141 assets_dev/worlds/xeen/events/maps/xeen_x1.lua:144
 msgid "Earth Guild of Vertigo"
-msgstr "眩晕镇土系公会"
+msgstr "弗蒂戈镇土系公会"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x1.lua:147 assets_dev/worlds/xeen/events/maps/xeen_x1.lua:153 assets_dev/worlds/xeen/events/maps/xeen_x1.lua:156
 msgid "Joe the Exterminator"
@@ -19936,7 +19936,7 @@ msgstr "库珀宅"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x1.lua:207 assets_dev/worlds/xeen/events/maps/xeen_x1.lua:209 assets_dev/worlds/xeen/events/maps/xeen_x1.lua:212
 msgid "Vertigo Stables"
-msgstr "眩晕镇马厩"
+msgstr "弗蒂戈镇马厩"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x1.lua:215 assets_dev/worlds/xeen/events/maps/xeen_x1.lua:217 assets_dev/worlds/xeen/events/maps/xeen_x1.lua:220
 msgid "Wren House"
@@ -19968,7 +19968,7 @@ msgstr "女巫塔"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x1.lua:264
 msgid "Vertigo Bridge"
-msgstr "眩晕镇桥"
+msgstr "弗蒂戈镇桥"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x1.lua:272 assets_dev/worlds/xeen/events/maps/xeen_x1.lua:274
 msgid "Money Tree"
@@ -19981,7 +19981,7 @@ msgstr "贡瑟镇长的告示"
 #: assets_dev/worlds/xeen/events/maps/xeen_x1.lua:278
 msgid ""
 "NOTICE. By order of Mayor Gunther: slimes and doom bugs plague Vertigo. Any who clear them will be paid at the Town Hall. Joe the Exterminator (south bank, by the creek) is not to be paid in advance. Joe's warehouse stands at the end of the guild lane."
-msgstr "告示。镇长贡瑟令：史莱姆和厄运虫在眩晕镇肆虐。清除它们的人可在镇政厅领赏。灭虫师乔（南岸，溪边）不得预付酬金。乔的仓库在公会巷尽头。"
+msgstr "告示。镇长贡瑟令：史莱姆和厄运虫在弗蒂戈镇肆虐。清除它们的人可在镇政厅领赏。灭虫师乔（南岸，溪边）不得预付酬金。乔的仓库在公会巷尽头。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x1.lua:282 assets_dev/worlds/xeen/events/maps/xeen_x1.lua:284
 msgid "Rain barrel"
@@ -20009,7 +20009,7 @@ msgstr "氏族王的竖井"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x1.lua:31 assets_dev/worlds/xeen/events/maps/xeen_x1.lua:33 assets_dev/worlds/xeen/events/maps/xeen_x1.lua:36
 msgid "Vertigo Armoury"
-msgstr "眩晕镇军械库"
+msgstr "弗蒂戈镇军械库"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x1.lua:311
 msgid ""
@@ -20090,7 +20090,7 @@ msgstr "兽人补给品"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x1.lua:39 assets_dev/worlds/xeen/events/maps/xeen_x1.lua:41 assets_dev/worlds/xeen/events/maps/xeen_x1.lua:44
 msgid "Vertigo Town Hall"
-msgstr "眩晕镇政厅"
+msgstr "弗蒂戈镇政厅"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x1.lua:410
 msgid "Derek's campfire"
@@ -20175,19 +20175,19 @@ msgstr "城墙塔楼"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x1.lua:55 assets_dev/worlds/xeen/events/maps/xeen_x1.lua:57 assets_dev/worlds/xeen/events/maps/xeen_x1.lua:60
 msgid "Philters of Vertigo"
-msgstr "眩晕镇魔药店"
+msgstr "弗蒂戈镇魔药店"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x1.lua:553 assets_dev/worlds/xeen/events/maps/xeen_x1.lua:659
 msgid "Vertigo North gate"
-msgstr "眩晕镇北门"
+msgstr "弗蒂戈镇北门"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x1.lua:562 assets_dev/worlds/xeen/events/maps/xeen_x1.lua:662
 msgid "Vertigo East gate"
-msgstr "眩晕镇东门"
+msgstr "弗蒂戈镇东门"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x1.lua:571 assets_dev/worlds/xeen/events/maps/xeen_x1.lua:665
 msgid "Vertigo West gate"
-msgstr "眩晕镇西门"
+msgstr "弗蒂戈镇西门"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x1.lua:583
 msgid "Woodshed"
@@ -20217,7 +20217,7 @@ msgstr "镇墙"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x1.lua:63 assets_dev/worlds/xeen/events/maps/xeen_x1.lua:65 assets_dev/worlds/xeen/events/maps/xeen_x1.lua:68
 msgid "Bank of Vertigo"
-msgstr "眩晕镇银行"
+msgstr "弗蒂戈镇银行"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x1.lua:647
 msgid "Culvert"
@@ -20382,7 +20382,7 @@ msgstr "羊圈"
 #: assets_dev/worlds/xeen/events/maps/xeen_x1.lua:851
 msgid ""
 "An empty sheepfold. The sheep went to Vertigo when the orcs came down."
-msgstr "一个空羊圈。兽人下山时，羊都去了眩晕镇。"
+msgstr "一个空羊圈。兽人下山时，羊都去了弗蒂戈镇。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x1.lua:855 assets_dev/worlds/xeen/events/maps/xeen_x1.lua:857
 msgid "Eel traps"
@@ -20406,7 +20406,7 @@ msgstr "泥里有什么东西"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x1.lua:87 assets_dev/worlds/xeen/events/maps/xeen_x1.lua:93 assets_dev/worlds/xeen/events/maps/xeen_x1.lua:96
 msgid "Temple of Vertigo"
-msgstr "眩晕镇神庙"
+msgstr "弗蒂戈镇神庙"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x1.lua:870 assets_dev/worlds/xeen/events/maps/xeen_x1.lua:872 assets_dev/worlds/xeen/events/maps/xeen_x1.lua:875
 #: assets_dev/worlds/xeen/events/maps/xeen_x1.lua:877 assets_dev/worlds/xeen/events/maps/xeen_x1.lua:880 assets_dev/worlds/xeen/events/maps/xeen_x1.lua:882
@@ -22534,7 +22534,7 @@ msgstr "北：龙洞。东：火山洞穴。西：熔岩湖。南：缺口，回
 #: assets_dev/worlds/xeen/events/maps/xeen_x7.lua:310
 msgid ""
 "North: the Firestone Gap. South: Vertigo. West: the Shrine of Fire. East: the hermit's cave."
-msgstr "北：火石缺口。南：眩晕镇。西：火之神龛。东：隐士的洞穴。"
+msgstr "北：火石缺口。南：弗蒂戈镇。西：火之神龛。东：隐士的洞穴。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x7.lua:314 assets_dev/worlds/xeen/events/maps/xeen_x7.lua:316
 msgid "A demon idol"
@@ -22624,7 +22624,7 @@ msgstr "望远镜"
 #: assets_dev/worlds/xeen/events/maps/xeen_x8.lua:164
 msgid ""
 "Through the brass telescope the land lies small and clear far below: the lagoon to the west with the Tower of High Magic on its shore, Lake Darzog under the long bridge, and east, past Vertigo, the crooked Witch Tower."
-msgstr "透过黄铜望远镜，大地在下方远处又小又清晰：西边是泻湖，湖岸上有高等魔法之塔；长桥下是达佐格湖；东边，过了眩晕镇，是歪斜的女巫塔。"
+msgstr "透过黄铜望远镜，大地在下方远处又小又清晰：西边是泻湖，湖岸上有高等魔法之塔；长桥下是达佐格湖；东边，过了弗蒂戈镇，是歪斜的女巫塔。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x8.lua:100 assets_dev/worlds/xeen/events/maps/xeen_x8.lua:113 assets_dev/worlds/xeen/events/maps/xeen_x8.lua:68
 #: assets_dev/worlds/xeen/events/maps/xeen_x8.lua:81 assets_dev/worlds/xeen/events/maps/xeen_x8.lua:84 assets_dev/worlds/xeen/events/maps/xeen_x8.lua:97
@@ -22956,7 +22956,7 @@ msgstr "矿车沿着深线驶入黑暗。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_xd02.lua:144 assets_dev/worlds/xeen/events/maps/xeen_xd02.lua:146
 msgid "Daylight: the hills north of Vertigo"
-msgstr "日光：眩晕镇以北的山丘"
+msgstr "日光：弗蒂戈镇以北的山丘"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_xd02.lua:15
 msgid ""
@@ -23157,7 +23157,7 @@ msgstr "支柱被拔出，整堆塌方滑走了：日光！"
 #: assets_dev/worlds/xeen/events/maps/xeen_xd02.lua:414
 msgid ""
 "Mayor Gunther of Vertigo sent you here. The Mad Dwarf Clan has taken the Red Dwarves' mine, and their Clan King holds the Deep Mine below it. The way down is the Deep Line cart at the bottom of the Open Stope, past the Turntable; the clan keeps it chained, and the brake key lies in their strongbox in the tally room, in the camp north of the Turntable."
-msgstr "眩晕镇的贡瑟镇长派你们来这里。疯矮人氏族占了红矮人的矿，他们的氏族王控制着下面的深矿。下去的路是开放采场底部的深线矿车，经过转盘；氏族把它锁着，制动钥匙在他们的保险箱里，在转盘以北营地的计数室里。"
+msgstr "弗蒂戈镇的贡瑟镇长派你们来这里。疯矮人氏族占了红矮人的矿，他们的氏族王控制着下面的深矿。下去的路是开放采场底部的深线矿车，经过转盘；氏族把它锁着，制动钥匙在他们的保险箱里，在转盘以北营地的计数室里。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_xd02.lua:418 assets_dev/worlds/xeen/events/maps/xeen_xd02.lua:425
 msgid "Deep Line cart"
@@ -23307,7 +23307,7 @@ msgstr "你们爬进一辆车，拉动刹车绳：深线载着你们回到红矮
 
 #: assets_dev/worlds/xeen/events/maps/xeen_xd03.lua:250 assets_dev/worlds/xeen/events/maps/xeen_xd03.lua:257
 msgid "The shaft head: the hills north of Vertigo"
-msgstr "竖井口：眩晕镇以北的山丘"
+msgstr "竖井口：弗蒂戈镇以北的山丘"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_xd03.lua:252
 msgid ""
@@ -23316,7 +23316,7 @@ msgstr "舱口从外面被闩住，直到竖井的配重松脱。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_xd03.lua:256
 msgid "You push up the hatch: daylight, wind and the hills north of Vertigo."
-msgstr "你们把舱口顶开：日光、风，还有眩晕镇以北的山丘。"
+msgstr "你们把舱口顶开：日光、风，还有弗蒂戈镇以北的山丘。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_xd03.lua:26
 msgid "Leathery wings unfold in the geode's crown!"
@@ -23891,7 +23891,7 @@ msgstr "灵鼓"
 #: assets_dev/worlds/xeen/events/maps/xeen_xd05.lua:17
 msgid ""
 "Vertigo has not slept for a week: war drums boom out of the north hills every night, and every night orc raiders fall on another farm. The drums are in these caves: burn all three (the signal drum on the palisade's firing step, the shaman's spirit drum in the warren, and the great drum in the Drum Hall, where the Drum-Master beats it), and look for Tam, Oslo's boy, whom they carried off from his father's farm."
-msgstr "眩晕镇一个星期没睡了：每天夜里战鼓从北边的山丘里轰鸣，每天夜里兽人突袭队都扑向另一座农场。鼓就在这些洞穴里：把三面都烧了（栅栏射击台上的信号鼓、巢穴里萨满的灵鼓，还有鼓厅里由鼓手长敲响的大鼓），并找找塔姆，奥斯陆的儿子，他们从他父亲的农场把他掳走了。"
+msgstr "弗蒂戈镇一个星期没睡了：每天夜里战鼓从北边的山丘里轰鸣，每天夜里兽人突袭队都扑向另一座农场。鼓就在这些洞穴里：把三面都烧了（栅栏射击台上的信号鼓、巢穴里萨满的灵鼓，还有鼓厅里由鼓手长敲响的大鼓），并找找塔姆，奥斯陆的儿子，他们从他父亲的农场把他掳走了。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_xd05.lua:173
 msgid ""
