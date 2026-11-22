@@ -32,3 +32,16 @@ msgstr "重置版游戏"
 
 msgid "MAW"
 msgstr "MAW 重置版"
+
+msgid ""
+"The game speed while fast mode is on. Its key (F2 unless rebound) turns fast mode on and off; the Cycle game speed key (unbound unless set) steps through 1x and these speeds and sets this one."
+msgstr "快速模式开启时的游戏速度。其按键（未改动时为 F2）用于开启和关闭快速模式；“循环切换游戏速度”按键（未设置时为空）会在 1 倍和这些速度之间依次切换，并把当前速度设为此项。"
+
+msgid "Cycle game speed"
+msgstr "循环切换游戏速度"
+
+msgid "Cycle Speed"
+msgstr "切换速度"
+
+msgid "{name} gains an item!"
+msgstr "{name}获得了一件物品！"
