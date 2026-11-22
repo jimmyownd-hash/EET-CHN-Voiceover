@@ -33791,3 +33791,446 @@ msgstr "女教师"
 
 msgid "Goblin Warden"
 msgstr "地精看守"
+
+# --- map names, houses ---
+msgid "Magic Shop"
+msgstr "魔法商店"
+
+msgid "Slime Temple"
+msgstr "史莱姆神殿"
+
+msgid "Gunther's House"
+msgstr "冈瑟的家"
+
+msgid "Vern's House"
+msgstr "弗恩的家"
+
+msgid "Mylo's Maps"
+msgstr "迈洛地图店"
+
+msgid "Rialdo's Lodge"
+msgstr "里亚尔多小屋"
+
+msgid "Joe's Exterminations"
+msgstr "乔的灭虫服务"
+
+msgid "Rivercity and Lake Darzog"
+msgstr "河城与达佐格湖"
+
+msgid "Burlock Savannah"
+msgstr "伯洛克草原"
+
+msgid "Cloudreach"
+msgstr "云巅"
+
+msgid "Clouds of Xeen"
+msgstr "辛恩之云"
+
+msgid "Castleview Vale"
+msgstr "堡景谷"
+
+msgid "Sprite Forest and Ogre Pass"
+msgstr "小精灵森林与食人妖山口"
+
+msgid "Sandcaster and the Aging Forest"
+msgstr "沙堡镇与衰老森林"
+
+msgid "Lakeside and Blackfang"
+msgstr "湖畔镇与布莱克方"
+
+msgid "Desert of Doom"
+msgstr "末日沙漠"
+
+msgid "The Skyroads"
+msgstr "天路"
+
+msgid "Plane of Fire of Xeen"
+msgstr "辛恩火之位面"
+
+msgid "Plane of Air of Xeen"
+msgstr "辛恩风之位面"
+
+msgid "Plane of Earth of Xeen"
+msgstr "辛恩土之位面"
+
+msgid "Plane of Water of Xeen"
+msgstr "辛恩水之位面"
+
+msgid "Clouds of the Ancients"
+msgstr "远古之云"
+
+msgid "Shangri-La"
+msgstr "香格里拉"
+
+msgid "Deep Mine"
+msgstr "深矿"
+
+msgid "Golem Dungeon"
+msgstr "魔像地牢"
+
+msgid "Robbers' Den"
+msgstr "强盗巢穴"
+
+msgid "Ninja Pagoda"
+msgstr "忍者宝塔"
+
+msgid "Nightshadow Crypt"
+msgstr "夜影镇地穴"
+
+msgid "Asp Undercroft"
+msgstr "毒蛇镇地下室"
+
+msgid "The Gremlin Court"
+msgstr "地精王庭"
+
+msgid "Western Tower of Mok"
+msgstr "莫克西塔"
+
+msgid "Eastern Tower"
+msgstr "东塔"
+
+msgid "Northern Tower"
+msgstr "北塔"
+
+msgid "Temple of Bark"
+msgstr "树皮神殿"
+
+msgid "Gemstone Mines, west pocket"
+msgstr "宝石矿·西矿袋"
+
+msgid "Gemstone Mines, east pocket"
+msgstr "宝石矿·东矿袋"
+
+msgid "Gemstone Mines, north pocket"
+msgstr "宝石矿·北矿袋"
+
+msgid "Troll Holes, first pocket"
+msgstr "巨魔洞·第一洞"
+
+msgid "Troll Holes, second pocket"
+msgstr "巨魔洞·第二洞"
+
+msgid "Troll Holes, third pocket"
+msgstr "巨魔洞·第三洞"
+
+msgid "Dungeon of Lost Souls"
+msgstr "失魂地牢"
+
+msgid "Ogre Forts"
+msgstr "食人妖要塞"
+
+msgid "Great Pyramid"
+msgstr "大金字塔"
+
+msgid "Corak's Pod"
+msgstr "柯拉克的逃生舱"
+
+msgid "Lakeside Coven and Sewer"
+msgstr "湖畔镇女巫团与下水道"
+
+msgid "Necropolis Sewer"
+msgstr "亡灵之城下水道"
+
+msgid "Sheltem's Pod"
+msgstr "谢尔特姆的逃生舱"
+
+msgid "Gargoyle Lair"
+msgstr "石像鬼巢穴"
+
+msgid "Giants' Hall"
+msgstr "巨人大厅"
+
+msgid "Olympus Sewer"
+msgstr "奥林匹斯下水道"
+
+msgid "Alamar Depths"
+msgstr "阿拉玛深处"
+
+msgid "Dragon Tower and the Dungeon of Death"
+msgstr "龙塔与死亡地牢"
+
+msgid "Olympus"
+msgstr "奥林匹斯"
+
+msgid "Cloudside"
+msgstr "云侧"
+
+msgid "Darkside"
+msgstr "暗面"
+
+# --- script prompts ---
+msgid "I'm the smallest. What's my number?"
+msgstr "我是最小的。我是几号？"
+
+msgid "I'm the smallest even. What's my number?"
+msgstr "我是最小的偶数。我是几号？"
+
+msgid "I'm the smallest prime that's left. What's my number?"
+msgstr "我是剩下的最小质数。我是几号？"
+
+msgid "I'm what's left. What's my number?"
+msgstr "我是剩下的那个。我是几号？"
+
+msgid "I'm the largest prime. What's my number?"
+msgstr "我是最大的质数。我是几号？"
+
+msgid "I'm twice the smallest even. What's my number?"
+msgstr "我是最小偶数的两倍。我是几号？"
+
+msgid "I'm the smallest squared. What's my number?"
+msgstr "我是最小数的平方。我是几号？"
+
+msgid "I'm the largest. What's my number?"
+msgstr "我是最大的。我是几号？"
+
+msgid "Enter Combination. Left?"
+msgstr "输入密码。左边？"
+
+msgid "Enter Combination. Right?"
+msgstr "输入密码。右边？"
+
+msgid "Genie of the Lamp: \"Lucky day! For freeing me, I will grant you one of three wishes.\""
+msgstr "灯神：“好运的一天！为报答你们放我出来，我将满足你们三个愿望中的一个。”"
+
+msgid "Genie of the Lamp: \"My powers are low. I can give you 10,000 gold, but it is all that I have. Do you want it?\""
+msgstr "灯神：“我的法力不多了。我可以给你们 10,000 金币，但这是我的全部了。要吗？”"
+
+msgid "Take me"
+msgstr "带走我"
+
+msgid "Take my friends"
+msgstr "带走我的朋友们"
+
+msgid "Make me king"
+msgstr "让我当国王"
+
+msgid "Genie of the Lamp: \"(yawn) The people before you used up two wishes. There's one left. Take your pick.\""
+msgstr "灯神：“（打哈欠）你们之前的人用掉了两个愿望。还剩一个。挑吧。”"
+
+msgid "Genie of the Lamp: \"Thank you for releasing me. I like you, and I will grant you one wish. Choose one.\""
+msgstr "灯神：“谢谢你们放了我。我喜欢你们，愿意满足你们一个愿望。选一个吧。”"
+
+msgid "Genie of the Lamp: \"What took you so long? I've been stuck in that little lamp for 2000 years. If you had freed me after one thousand years, I would understand. But two? Two thousand years is simply unacceptable. I just can't let this slide. You can give up your life or the lives of your friends. What will it be?\""
+msgstr "灯神：“怎么这么久才来？我在那盏小灯里困了 2000 年。要是你们一千年后放我出来，我还能理解。可两千年？两千年简直不可接受。这事我不能就这么算了。你们可以交出自己的命，或者你们朋友的命。选哪个？”"
+
+msgid "Sky Bandits: \"Pay us 10,000 gold or else!\""
+msgstr "天空强盗：“交出 10,000 金币，否则有你们好看！”"
+
+msgid "Or else WHAT?"
+msgstr "否则怎样？"
+
+msgid "Sky Bandits: \"You have invaded our territory. Appease us with 10,000 gold or face our wrath!\""
+msgstr "天空强盗：“你们闯进了我们的地盘。拿 10,000 金币来平息我们的怒火，不然就等着挨揍！”"
+
+msgid "Take our money"
+msgstr "拿走我们的钱"
+
+msgid "Bow down before us!"
+msgstr "在我们面前跪下！"
+
+msgid "Sky Bandits: \"Many apologies, good folks, but this is a robbery. I'm afraid we are going to have to ask you for 10,000 gold.\""
+msgstr "天空强盗：“非常抱歉，各位好人，但这是抢劫。恐怕我们得向你们要 10,000 金币。”"
+
+msgid "Here you are"
+msgstr "给你"
+
+msgid "We must decline"
+msgstr "我们必须拒绝"
+
+msgid "Sky Bandits: \"Hold! The toll for passing this part of the road is 10,000 gold!\""
+msgstr "天空强盗：“站住！走这段路的过路费是 10,000 金币！”"
+
+msgid "Here you go"
+msgstr "拿去"
+
+msgid "Draw steel, knave!"
+msgstr "拔剑吧，恶棍！"
+
+msgid "Merchant of the Elements: \"Between Fire and Air I constantly travel, a simple clue to unravel. What's my cargo?\""
+msgstr "元素商人：“我总在火与风之间来往，一个简单的谜题等你解开。我运的是什么货？”"
+
+msgid "Merchant of the Elements: \"Between Air and Earth I constantly travel, a simple clue to unravel. What's my cargo?\""
+msgstr "元素商人：“我总在风与土之间来往，一个简单的谜题等你解开。我运的是什么货？”"
+
+msgid "Merchant of the Elements: \"Between Fire and Water I constantly travel, a simple clue to unravel. What's my cargo?\""
+msgstr "元素商人：“我总在火与水之间来往，一个简单的谜题等你解开。我运的是什么货？”"
+
+msgid "Merchant of the Elements: \"Between Water and Earth I constantly travel, a simple clue to unravel. What's my cargo?\""
+msgstr "元素商人：“我总在水与土之间来往，一个简单的谜题等你解开。我运的是什么货？”"
+
+msgid "A disembodied voice booms, \"What's the password?\""
+msgstr "一个没有形体的声音轰然响起：“口令是什么？”"
+
+msgid "The book is blank but for one page with the letters: \"Lt slpng dgs l\" So say the Voweless Knights. A blank line underneath awaits your answer."
+msgstr "书是空白的，只有一页写着这些字母：“Lt slpng dgs l”无元音骑士如是说。下面留着一行空白，等你写下答案。"
+
+msgid "The book is blank but for one page with the letters: \"H wh lghs lst, lghs bst\" So say the Voweless Knights. A blank line underneath awaits your answer."
+msgstr "书是空白的，只有一页写着这些字母：“H wh lghs lst, lghs bst”无元音骑士如是说。下面留着一行空白，等你写下答案。"
+
+msgid "The book is blank but for one page with the letters: \"Th nds f th mny twgh th nds f th fw\" So say the Voweless Knights. A blank line underneath awaits your answer."
+msgstr "书是空白的，只有一页写着这些字母：“Th nds f th mny twgh th nds f th fw”无元音骑士如是说。下面留着一行空白，等你写下答案。"
+
+msgid "The book is blank but for one page with the letters: \"Lv f mny s th rt f ll vl\" So say the Voweless Knights. A blank line underneath awaits your answer."
+msgstr "书是空白的，只有一页写着这些字母：“Lv f mny s th rt f ll vl”无元音骑士如是说。下面留着一行空白，等你写下答案。"
+
+msgid "The book is blank but for one page with the letters: \"Dn't lk gft hrs n th mth\" So say the Voweless Knights. A blank line underneath awaits your answer."
+msgstr "书是空白的，只有一页写着这些字母：“Dn't lk gft hrs n th mth”无元音骑士如是说。下面留着一行空白，等你写下答案。"
+
+msgid "The book is blank but for one page with the letters: \"Fl nd hs mny r sn prtd\" So say the Voweless Knights. A blank line underneath awaits your answer."
+msgstr "书是空白的，只有一页写着这些字母：“Fl nd hs mny r sn prtd”无元音骑士如是说。下面留着一行空白，等你写下答案。"
+
+msgid "The book is blank but for one page with the letters: \"F wshs wr hrss, bggrs wld rd\" So say the Voweless Knights. A blank line underneath awaits your answer."
+msgstr "书是空白的，只有一页写着这些字母：“F wshs wr hrss, bggrs wld rd”无元音骑士如是说。下面留着一行空白，等你写下答案。"
+
+msgid "The mirror shows a witch's face, which does not move when you do."
+msgstr "镜子里是一张女巫的脸，你动它却不动。"
+
+msgid "The mirror shows the castle as it was. It shows nothing else."
+msgstr "镜子里是城堡从前的样子。别的什么也照不出来。"
+
+msgid "An empty frame leans against the rubble. Emerson will hang the glass when there is a keep to hang it in."
+msgstr "一个空镜框靠在瓦砾上。等有了主堡，爱默生会把镜子挂上去。"
+
+msgid "The mirror is fogged with shed skin. It shows nothing."
+msgstr "镜面上糊满了蜕下的蛇皮。什么也照不出来。"
+
+msgid "A pale face looks back from the mirror. It is not yours."
+msgstr "镜子里有一张苍白的脸在看着你。那不是你的脸。"
+
+msgid "You have found a Barbarian camp. Destroy?"
+msgstr "你们发现了一处野蛮人营地。摧毁它？"
+
+msgid "Hello again, Adventurers. Would you like my griffin to fly you inside?"
+msgstr "又见面了，冒险者们。要让我的狮鹫载你们飞进去吗？"
+
+msgid "Fly in"
+msgstr "飞进去"
+
+msgid "Stay here"
+msgstr "留在这里"
+
+msgid "Leave the tower"
+msgstr "离开塔"
+
+msgid "Answer the question:"
+msgstr "回答问题："
+
+msgid "Let him take up his sword"
+msgstr "让他拿起剑"
+
+msgid "Cut him down"
+msgstr "砍倒他"
+
+msgid "I just don't know"
+msgstr "我也不知道"
+
+msgid "Oh, please don't kill me! I'm not like the others! I didn't want to mutiny against the High Priest! Slay him anyway?"
+msgstr "“哦，求求你们别杀我！我跟他们不一样！我不想背叛大祭司！”还是要杀他吗？"
+
+msgid "Swear the Voweless oath?"
+msgstr "立下无元音誓言？"
+
+msgid "A disembodied voice thunders through your brain, \"What do you seek?\"\nWht d y sk?"
+msgstr "一个没有形体的声音在你们脑中轰鸣：“你们寻求什么？”\nWht d y sk?"
+
+msgid "Will you find what you came for?"
+msgstr "你会找到你要找的东西吗？"
+
+msgid "Is the glass half full?"
+msgstr "杯子是半满的吗？"
+
+msgid "Will tomorrow be better than today?"
+msgstr "明天会比今天好吗？"
+
+msgid "Are your friends glad you came?"
+msgstr "你的朋友们为你的到来而高兴吗？"
+
+msgid "Is the Songbird waiting for you?"
+msgstr "歌鸟在等你吗？"
+
+msgid "Are you ready to leave this awful place, friends?"
+msgstr "朋友们，准备好离开这个可怕的地方了吗？"
+
+msgid "Before the throne. Open the Soul Box?"
+msgstr "在王座前。打开灵魂盒？"
+
+msgid "The Head speaks: \"Air power field operational.\" Shut the field down?"
+msgstr "头颅开口道：“风之力场运转中。”关闭力场？"
+
+msgid "The Head speaks: \"Earth power field operational.\" Shut the field down?"
+msgstr "头颅开口道：“土之力场运转中。”关闭力场？"
+
+msgid "The Head speaks: \"Fire power field operational.\" Shut the field down?"
+msgstr "头颅开口道：“火之力场运转中。”关闭力场？"
+
+msgid "The Head speaks: \"Water power field operational.\" Shut the field down?"
+msgstr "头颅开口道：“水之力场运转中。”关闭力场？"
+
+msgid "Vault release. Pull?"
+msgstr "金库释放。拉下？"
+
+msgid "Ask Sandro for his ritual first?"
+msgstr "先向桑德罗问他的仪式？"
+
+msgid "Give Sandro his heart?"
+msgstr "把心脏交给桑德罗？"
+
+msgid "Fire anyway?"
+msgstr "还是要开火？"
+
+msgid "Security lockdown: bridge sealed. Release?"
+msgstr "安全封锁：桥已封闭。解除？"
+
+msgid "\"For another 500 I'll give you a clue. Will you pay?\""
+msgstr "“再付 500，我就给你们一条线索。付吗？”"
+
+msgid "\"For 2,000 gold I can protect you from the Chopping Death. Will you pay?\""
+msgstr "“付 2,000 金币，我能保护你们免受斩首之死。付吗？”"
+
+msgid "\"For 2,000 gold I can protect you from the Swinging Death. Will you pay?\""
+msgstr "“付 2,000 金币，我能保护你们免受摆锤之死。付吗？”"
+
+msgid "A disc of dark crystal on a stone stem, turned toward the stars below the rim. Reflector. Activate?"
+msgstr "一块暗色水晶圆盘立在石柱上，朝向崖边下方的群星。反射器。启动？"
+
+msgid "You have come upon an Evil Ranger camp.  Destroy?"
+msgstr "你们发现了一处邪恶游侠营地。摧毁它？"
+
+msgid "You have stumbled upon a Barbarian encampment. Burn?"
+msgstr "你们撞见了一处野蛮人营地。烧掉它？"
+
+msgid "You have found the Cyclops' outpost! Burn?"
+msgstr "你们发现了独眼巨人的前哨！烧掉它？"
+
+msgid "A great bronze disc in a ring of stone, turned toward the glacier's edge. Reflector. Activate?"
+msgstr "一面巨大的青铜圆盘立在石环中，朝向冰川边缘。反射器。启动？"
+
+msgid "A pedestal crackling with blue sparks under an open roof. Shrine of Energy. Pray?"
+msgstr "一座噼啪闪着蓝色电火花的基座，上方屋顶敞开。能量神殿。祈祷？"
+
+msgid "A disc of pale crystal on a stone stem, turned toward the wind off the edge. Reflector. Activate?"
+msgstr "一块淡色水晶圆盘立在石柱上，朝向崖边吹来的风。反射器。启动？"
+
+msgid "Hides stretched on poles round a fire pit, bones and filth everywhere. You have found an Orc Outpost. Put it to the torch?"
+msgstr "火坑四周的木杆上绷着兽皮，到处是骨头和污物。你们发现了一处兽人前哨。放火烧掉？"
+
+msgid "A disc of red crystal on a stone stem, turned toward the heat off the mountain. Reflector. Activate?"
+msgstr "一块红色水晶圆盘立在石柱上，朝向山上吹来的热浪。反射器。启动？"
+
+msgid "Roc Nest.  Destroy?"
+msgstr "大鹏鸟巢。摧毁它？"
+
+msgid "Ten gems for +5 to Might, Endurance or Accuracy?"
+msgstr "十颗宝石换力量、耐力或准确 +5？"
+
+msgid "5 gems for +3 Intellect?"
+msgstr "5 颗宝石换智力 +3？"
+
+msgid "3 gems for +2 Luck?"
+msgstr "3 颗宝石换运气 +2？"
+
+msgid "3 gems for +2 Personality?"
+msgstr "3 颗宝石换个性 +2？"
+
+msgid "5 gems for +3 Speed?"
+msgstr "5 颗宝石换速度 +3？"
