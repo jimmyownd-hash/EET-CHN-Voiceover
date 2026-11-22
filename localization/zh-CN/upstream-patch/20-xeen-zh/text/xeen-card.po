@@ -20,4 +20,4 @@ msgid "Xeen"
 msgstr "辛恩"
 
 msgid "Vertigo Meadows"
-msgstr "弗蒂戈草甸"
+msgstr "弗蒂戈镇"

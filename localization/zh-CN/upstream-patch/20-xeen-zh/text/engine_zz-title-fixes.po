@@ -14,7 +14,7 @@ msgid "MAW Rules"
 msgstr "MAW 重置版规则"
 
 msgid "MAW rebalances monsters, items, skills and spells."
-msgstr "MAW（Monster Arts and Wonders，怪物·技艺·奇迹）重置版重新平衡了怪物、物品、技能与法术。"
+msgstr "MAW（Monster Arts and Wonders）重置版重新平衡了怪物、物品、技能与法术。"
 
 msgid "Universe of Might and Magic"
 msgstr "魔法门重生"
