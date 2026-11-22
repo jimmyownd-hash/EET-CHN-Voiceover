@@ -14,7 +14,7 @@ msgid "Xeen (alpha)"
 msgstr "辛恩（测试版）"
 
 msgid "Begin in Vertigo"
-msgstr "从弗蒂戈草甸开始"
+msgstr "从弗蒂戈镇开始"
 
 msgid "Xeen"
 msgstr "辛恩"
