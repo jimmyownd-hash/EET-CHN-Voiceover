@@ -278,7 +278,7 @@ msgstr "一个洞口，散发着烟味和兽人的臭味。外面的骨头并不
 #: assets_dev/worlds/xeen/data_tables/english/trans.txt:8
 msgid ""
 "The Temple of Yak. Incense, old stone, and something underneath that the incense is there to hide."
-msgstr "牛神庙。香火、古石，还有香火想要掩盖的、藏在底下的什么东西。"
+msgstr "牦牛神庙。香火、古石，还有香火想要掩盖的、藏在底下的什么东西。"
 
 #: assets_dev/worlds/xeen/data_tables/english/trans.txt:9
 msgid ""
@@ -350,15 +350,15 @@ msgstr "复原灵药"
 
 #: assets_dev/worlds/xeen/data_tables/items.txt:17
 msgid "Mirabeth's cure, kept in the Temple of Yak."
-msgstr "米拉贝丝的解药，存放在牛神庙里。"
+msgstr "米拉贝丝的解药，存放在牦牛神庙里。"
 
 #: assets_dev/worlds/xeen/data_tables/items.txt:18
 msgid "A King's Megacredit, worth a great deal to King Burlock's engineers."
-msgstr "一枚国王的兆信用点，对伯洛克国王的工程师们价值不菲。"
+msgstr "一枚国王的巨额币，对伯洛克国王的工程师们价值不菲。"
 
 #: assets_dev/worlds/xeen/data_tables/items.txt:18
 msgid "King's Megacredit"
-msgstr "国王兆信用点"
+msgstr "国王巨额币"
 
 #: assets_dev/worlds/xeen/data_tables/items.txt:19
 msgid "Library Key"
@@ -583,7 +583,7 @@ msgstr "克罗多的瓶子"
 
 #: assets_dev/worlds/xeen/data_tables/items.txt:24
 msgid "Mirabeth's stone. It opens the Temple of Yak."
-msgstr "米拉贝丝的石头。它能打开牛神庙。"
+msgstr "米拉贝丝的石头。它能打开牦牛神庙。"
 
 #: assets_dev/worlds/xeen/data_tables/items.txt:24
 msgid "Yak Stone of Opening"
@@ -1024,7 +1024,7 @@ msgstr "灵魂盒。柯拉克就在里面。"
 
 #: assets_dev/worlds/xeen/data_tables/items.txt:76
 msgid "Cube of Power"
-msgstr "能量立方"
+msgstr "力量魔方"
 
 #: assets_dev/worlds/xeen/data_tables/items.txt:76
 msgid "Taken from Castle Alamar as it fell."
@@ -1449,7 +1449,7 @@ msgstr "下水道蛞蝓"
 
 #: assets_dev/worlds/xeen/data_tables/monster_data.txt:187
 msgid "Wobbles"
-msgstr "软趴趴"
+msgstr "沃布尔斯"
 
 #: assets_dev/worlds/xeen/data_tables/monster_data.txt:188
 msgid "Sewer Rat"
@@ -2712,7 +2712,7 @@ msgstr "镇书记"
 
 #: assets_dev/worlds/xeen/data_tables/npc.txt:197
 msgid "Kai Wu"
-msgstr "武凯"
+msgstr "凯吴"
 
 #: assets_dev/worlds/xeen/data_tables/npc.txt:197
 msgid "Master of the Monastery"
@@ -2752,7 +2752,7 @@ msgstr "钟表匠"
 
 #: assets_dev/worlds/xeen/data_tables/npc.txt:202
 msgid "Halon the Efficient"
-msgstr "效率达人哈隆"
+msgstr "高效者哈隆"
 
 #: assets_dev/worlds/xeen/data_tables/npc.txt:203
 msgid "Freeda"
@@ -5392,7 +5392,7 @@ msgstr "夜莺在湖中岛上，湖畔镇过去就是。那里的地牢全是要
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:1186
 msgid ""
 "My father Dimitri was captain of the Queen's guard. Since she was taken he sits in the dark and won't eat. Only the Songbird of Serenity could lift his despair, and it's caged in the Dungeon of Lost Souls on the lake isle. Here is the key to its cage. Father kept it; he won't use it. The Isle eats parties, mind."
-msgstr "我父亲季米特里曾是女王卫队的队长。自从她被抓走，他就坐在黑暗里不肯吃饭。只有安宁夜莺能驱散他的绝望，它被关在湖中岛的迷魂地牢里。这是鸟笼的钥匙。父亲一直留着；他不肯用。要当心，那座岛会吞掉队伍的。"
+msgstr "我父亲季米特里曾是女王卫队的队长。自从她被抓走，他就坐在黑暗里不肯吃饭。只有宁静之歌鸟能驱散他的绝望，它被关在湖中岛的迷魂地牢里。这是鸟笼的钥匙。父亲一直留着；他不肯用。要当心，那座岛会吞掉队伍的。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:1193
 msgid "The Queen"
@@ -5421,12 +5421,12 @@ msgstr "挖好了，撑好了，扫干净了。底下有一扇门，我的人不
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:1222
 msgid ""
 "A permit, signed and sealed, and five Megacredits. Lovely. The old dungeon was caved in by the bolt that took the castle. My men will have it open by the time you get there."
-msgstr "一张签了字盖了章的许可证，外加五枚兆信用点。很好。旧地牢被带走城堡的那道闪电震塌了。你们到的时候，我的人会把它挖开。"
+msgstr "一张签了字盖了章的许可证，外加五枚巨额币。很好。旧地牢被带走城堡的那道闪电震塌了。你们到的时候，我的人会把它挖开。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:1236
 msgid ""
 "The permit's fine. The Megacredits aren't here. Five, please. Digging is the expensive kind of building."
-msgstr "许可证没问题。兆信用点不在这儿。请交五枚。挖掘是花钱的那种建设。"
+msgstr "许可证没问题。巨额币不在这儿。请交五枚。挖掘是花钱的那种建设。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:1239
 msgid ""
@@ -5724,7 +5724,7 @@ msgstr "真的吗？你有一个？小玩意儿！那么开启编钟就归你了
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:1611
 msgid ""
 "So you've come to me for the Chime of Opening. What could you possibly offer me in exchange? I've been around for thousands of years and I've seen everything... well, almost everything. There is one mysterious item that I haven't seen. It's called a widget. Go and see Halon the Efficient, the clockmaker, whose workshop stands east of Darkstone Tower in Winterkill Tundra. He's the one who first told me of it. Then don't come back 'til you find one!"
-msgstr "所以你们是来找我要开启编钟的。你们能拿什么来跟我交换呢？我活了几千年，什么都见过……嗯，几乎什么都见过。有一样神秘的东西我还没见过。它叫小玩意儿。去找效率达人哈隆，那位钟表匠，他的作坊在冬杀冻原的暗石塔以东。是他最先跟我说起它的。找到一个之前，别回来！"
+msgstr "所以你们是来找我要开启编钟的。你们能拿什么来跟我交换呢？我活了几千年，什么都见过……嗯，几乎什么都见过。有一样神秘的东西我还没见过。它叫小玩意儿。去找高效者哈隆，那位钟表匠，他的作坊在冬杀冻原的暗石塔以东。是他最先跟我说起它的。找到一个之前，别回来！"
 
 #: assets_dev/worlds/xeen/data_tables/items.txt:84 assets_dev/worlds/xeen/events/common/xeen_quests.lua:1617
 msgid "Chime of Opening"
@@ -6059,7 +6059,7 @@ msgstr "我在等你们从邪恶的牧师那里把复原灵药带来。"
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:2066
 msgid ""
 "I was once a beautiful mermaid. But one day a sorceress saw me swimming and became jealous of my beauty. She cast a spell that took away my beauty, but worst of all she took away my mermaid tail and gave me legs instead. I search to find an elixir of restoration so I can return to the way I once was. I've heard the clerics of the evil Temple of Yak, in the dark south end of the fairy woods below Rivercity, have one. If you could retrieve this elixir for me I would be eternally grateful. The temple's door is never locked. Its clerics want visitors; they do not let them leave."
-msgstr "我曾经是一条美丽的美人鱼。但有一天，一个女术士看见我游泳，嫉妒我的美貌。她施了一个咒，夺走了我的美貌，最糟的是还夺走了我的鱼尾，给了我一双腿。我一直在找一瓶复原灵药，好变回从前的样子。我听说河城以南、仙女森林黑暗南端的邪恶牛神庙的牧师们有一瓶。如果你们能为我取来这瓶灵药，我会永远感激。庙门从不上锁。庙里的牧师想要访客；他们不会让访客离开。"
+msgstr "我曾经是一条美丽的美人鱼。但有一天，一个女术士看见我游泳，嫉妒我的美貌。她施了一个咒，夺走了我的美貌，最糟的是还夺走了我的鱼尾，给了我一双腿。我一直在找一瓶复原灵药，好变回从前的样子。我听说河城以南、仙女森林黑暗南端的邪恶牦牛神庙的牧师们有一瓶。如果你们能为我取来这瓶灵药，我会永远感激。庙门从不上锁。庙里的牧师想要访客；他们不会让访客离开。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:2075
 msgid "The sea's cold and the fish are rude. I've never been happier."
@@ -6102,7 +6102,7 @@ msgstr "你们没有熔岩！既然能去找熔岩，为什么站在这里浪费
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:2130
 msgid ""
 "I am Halon the Efficient. I have moved here from Rivercity to avoid the timewasters that place is full of. To help me keep track of time I have constructed a massive water clock, but the water freezes every winter. If I had some magical lava from Mount Firestone, I could melt the ice in the clock. Bring me some lava and I will reward you."
-msgstr "我是效率达人哈隆。我从河城搬到这里，是为了躲开那里满是浪费时间的人。为了帮我掌握时间，我造了一座巨大的水钟，可水每年冬天都会结冰。如果我有火石山上的魔法熔岩，就能融化钟里的冰。给我带些熔岩来，我会酬谢你们。"
+msgstr "我是高效者哈隆。我从河城搬到这里，是为了躲开那里满是浪费时间的人。为了帮我掌握时间，我造了一座巨大的水钟，可水每年冬天都会结冰。如果我有火石山上的魔法熔岩，就能融化钟里的冰。给我带些熔岩来，我会酬谢你们。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:2137
 msgid "Water clock"
@@ -6946,11 +6946,11 @@ msgstr "还是有食人妖在袭击我的商队。请做点什么！"
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:3212
 msgid ""
 "These blasted Ogres are killing my business. Every time I try to get a caravan through Ogre Pass they attack it, stealing everything. Get rid of them for me. There is a reward, and a bounty if both their forts burn."
-msgstr "这些该死的食人妖在毁我的生意。每次我想让商队通过食人妖隘口，它们就袭击，把东西抢个精光。替我除掉它们。有奖励，如果它们的两座堡寨都烧了，还有赏金。"
+msgstr "这些该死的食人妖在毁我的生意。每次我想让商队通过食人妖山口，它们就袭击，把东西抢个精光。替我除掉它们。有奖励，如果它们的两座堡寨都烧了，还有赏金。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:3222
 msgid "The caravans run through Ogre Pass on time. Nearly on time. On a day."
-msgstr "商队按时通过食人妖隘口了。差不多按时。在某一天。"
+msgstr "商队按时通过食人妖山口了。差不多按时。在某一天。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:3231
 msgid ""
@@ -7332,7 +7332,7 @@ msgstr "大南塔在小精灵森林里，据说是盗贼的藏身处。盗贼会
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:3654
 msgid ""
 "A thief bragged of it in his haste to escape: the Great Southern Tower, in the woods south of Ogre Pass. It is the only help I can offer. Whoever took the Jewel of Ages went there first."
-msgstr "一个盗贼在匆忙逃跑时吹嘘过：大南塔，在食人妖隘口以南的林子里。这是我能提供的唯一帮助。不管是谁拿走了岁月宝玉，他最先去的就是那儿。"
+msgstr "一个盗贼在匆忙逃跑时吹嘘过：大南塔，在食人妖山口以南的林子里。这是我能提供的唯一帮助。不管是谁拿走了岁月宝玉，他最先去的就是那儿。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:3661 assets_dev/worlds/xeen/events/maps/xeen_d2.lua:348
 msgid "Southern Tower"
@@ -7417,17 +7417,17 @@ msgstr "戴着它，祝你健康。它保证你有很多。"
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:3772
 msgid ""
 "The stocks fell open when the Head Witch died, and the others are out. Lakeside is ours again. The tavern was never destroyed, by the way. They only painted it gone."
-msgstr "女巫首领死的时候，刑枷自己松开了，其他人也出来了。湖畔镇又是我们的了。顺便说一句，酒馆从来没被毁掉。她们只是把它涂没了。"
+msgstr "首领女巫死的时候，刑枷自己松开了，其他人也出来了。湖畔镇又是我们的了。顺便说一句，酒馆从来没被毁掉。她们只是把它涂没了。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:3782
 msgid ""
 "The Head Witch is dead and my stocks fell open. I'm staying until the others are out of the cells. Someone has to count them."
-msgstr "女巫首领死了，我的刑枷松开了。我要留到其他人都从牢房里出来。总得有人数数。"
+msgstr "首领女巫死了，我的刑枷松开了。我要留到其他人都从牢房里出来。总得有人数数。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:3786
 msgid ""
 "Four more of us are in the cells below the Guild, and the Head Witch above them. The Guild's door asks 'What am I?' The answer is witch."
-msgstr "我们还有四个人在行会下面的牢房里，女巫首领在牢房上面。行会的门会问“我是什么？”答案是女巫。"
+msgstr "我们还有四个人在行会下面的牢房里，首领女巫在牢房上面。行会的门会问“我是什么？”答案是女巫。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:3789
 msgid ""
@@ -7450,7 +7450,7 @@ msgstr "亡灵之城通行证"
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:3808
 msgid ""
 "Because they did this to me, I'll tell you where the Head Witch keeps her pass to Necropolis. It is in a chest in her room, in the north-west corner of the coven."
-msgstr "既然她们这么对我，我就告诉你们女巫首领把亡灵之城的通行证放在哪里。在她房间的箱子里，在女巫团西北角。"
+msgstr "既然她们这么对我，我就告诉你们首领女巫把亡灵之城的通行证放在哪里。在她房间的箱子里，在女巫团西北角。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:3817
 msgid ""
@@ -7698,7 +7698,7 @@ msgstr "乔的账户"
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:4106
 msgid ""
 "Joe the Exterminator banks with us. Every month the town pays him, and every month he deposits it. I say nothing. I'm a banker."
-msgstr "灭虫人乔在我们这儿存钱。镇上每个月给他付钱，他每个月存进来。我什么也不说。我是个银行家。"
+msgstr "灭虫师乔在我们这儿存钱。镇上每个月给他付钱，他每个月存进来。我什么也不说。我是个银行家。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:4109 assets_dev/worlds/xeen/events/common/xeen_quests.lua:4777
 msgid "The name"
@@ -8756,7 +8756,7 @@ msgstr "谢谢你们把城堡带回现实。自从阿拉玛把城堡移出现实
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:4662
 msgid ""
 "Surely you must know what Alamar has done! No? Why, he slew the guards and stole the Cube of Power, that's what!"
-msgstr "你们肯定知道阿拉玛干了什么！不知道？哎呀，他杀了卫兵，偷走了能量立方，就是这样！"
+msgstr "你们肯定知道阿拉玛干了什么！不知道？哎呀，他杀了卫兵，偷走了力量魔方，就是这样！"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:4665
 msgid "Lizard innards"
@@ -8980,7 +8980,7 @@ msgstr "野蛮人在草原上扎营。烧了他们的帐篷，他们就搬。搬
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:4778
 msgid ""
 "Joe. No relation to the exterminator in Vertigo. People ask. People always ask."
-msgstr "乔。和弗蒂戈镇的灭虫人没有关系。总有人问。人们总是问。"
+msgstr "乔。和弗蒂戈镇的灭虫师没有关系。总有人问。人们总是问。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:4783
 msgid ""
@@ -9117,7 +9117,7 @@ msgstr "宝塔"
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:4854
 msgid ""
 "Kai Wu's old pagoda is full of ninja now. You won't see them. That's the point of ninja."
-msgstr "武凯的旧宝塔现在满是忍者。你们看不见他们。那正是忍者的意义。"
+msgstr "凯吴的旧宝塔现在满是忍者。你们看不见他们。那正是忍者的意义。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:4857
 msgid "The skull"
@@ -9159,7 +9159,7 @@ msgstr "旧名册上四百个名字。新的上四十个。有些日子旧的那
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:4878
 msgid ""
 "Our brothers in the pagoda chose the dark path. Kai Wu still sets their places at dinner."
-msgstr "我们在宝塔里的兄弟选择了黑暗之路。武凯晚饭时还给他们摆座位。"
+msgstr "我们在宝塔里的兄弟选择了黑暗之路。凯吴晚饭时还给他们摆座位。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:4881
 msgid "The black tower"
@@ -9201,12 +9201,12 @@ msgstr "挖掘工把院子里的井叫作“你的井”。喝了就感觉武装
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:4901 assets_dev/worlds/xeen/events/common/xeen_quests.lua:4917
 msgid "Megacredits"
-msgstr "兆信用点"
+msgstr "巨额币"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:4902
 msgid ""
 "King's Megacredits pay the King's engineers. Gold pays everyone else. I keep both columns."
-msgstr "国王的兆信用点用来付国王的工程师。金币用来付其他所有人。我两栏都记账。"
+msgstr "国王的巨额币用来付国王的工程师。金币用来付其他所有人。我两栏都记账。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:4905
 msgid "Toast"
@@ -9237,7 +9237,7 @@ msgstr "微笑。你们脸上专注的表情正在从墙里隐藏的水晶向数
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:4918
 msgid ""
 "Once you have purchased a dungeon you have no need for Megacredits. Not that I would know. I inherited mine."
-msgstr "一旦你买了地牢，就不需要兆信用点了。不是说我知道。我的是继承来的。"
+msgstr "一旦你买了地牢，就不需要巨额币了。不是说我知道。我的是继承来的。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:4921
 msgid "Tips"
@@ -9548,12 +9548,12 @@ msgstr "雕像底座的牌匾上写着：解开木头，就像一棵树 / 砍断
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:5546
 msgid ""
 "Written on a plaque: All is set, it is plain to see / Master of Golems I now dub thee. King's Megacredit!"
-msgstr "牌匾上写着：一切就绪，一目了然 / 我现在封你为魔像大师。国王兆信用点！"
+msgstr "牌匾上写着：一切就绪，一目了然 / 我现在封你为魔像大师。国王巨额币！"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:5564
 msgid ""
 "King's Megacredit! Five of them, in a coffin that was never meant for anyone dead."
-msgstr "国王兆信用点！五枚，在一口根本不是给死人准备的棺材里。"
+msgstr "国王巨额币！五枚，在一口根本不是给死人准备的棺材里。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:5570
 msgid ""
@@ -9563,11 +9563,11 @@ msgstr "雕像底座的牌匾上写着：欢迎来到千重恐怖之墓。疯狂
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:5576
 msgid ""
 "The Temple of Yak. Mirabeth's Elixir of Restoration is kept somewhere inside, and the King's Megacredits too, they say. Incense, old stone, and something underneath that the incense is there to hide."
-msgstr "牛神庙。米拉贝丝的复原灵药就放在里面某处，据说国王的兆信用点也在。香火、古石，还有香火想要掩盖的、藏在底下的什么东西。"
+msgstr "牦牛神庙。米拉贝丝的复原灵药就放在里面某处，据说国王的巨额币也在。香火、古石，还有香火想要掩盖的、藏在底下的什么东西。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:5597
 msgid "King's Megacredits!"
-msgstr "国王兆信用点！"
+msgstr "国王巨额币！"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:5619
 msgid ""
@@ -10107,32 +10107,32 @@ msgstr "错误！拒绝通过！"
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:6801
 msgid ""
 "Slick: Get outta my face! You've already won the prize. Go play one of the other games."
-msgstr "滑头：离我远点！你已经赢过奖品了。去玩别的吧。"
+msgstr "斯利克：离我远点！你已经赢过奖品了。去玩别的吧。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:6706
 msgid ""
 "Slick: For only 10 gems you get a chance to win a doll. Step right up. Shoot the bullseye ten times in a row, and you win! (Ten.) You win a prize. Now get lost and don't come back."
-msgstr "滑头：只要 10 颗宝石，就有机会赢娃娃。快来快来。连续十次射中靶心就赢！（十环。）你赢得了奖品。现在滚吧，别再回来。"
+msgstr "斯利克：只要 10 颗宝石，就有机会赢娃娃。快来快来。连续十次射中靶心就赢！（十环。）你赢得了奖品。现在滚吧，别再回来。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:6712
 msgid ""
 "Slick: For only 10 gems you get a chance to win a doll. Shoot the bullseye ten times in a row. (Seven.) Oh! Too bad. Why not try again?"
-msgstr "滑头：只要 10 颗宝石，就有机会赢娃娃。连续十次射中靶心。（七环。）哎呀！太可惜了。要不再试一次？"
+msgstr "斯利克：只要 10 颗宝石，就有机会赢娃娃。连续十次射中靶心。（七环。）哎呀！太可惜了。要不再试一次？"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:6715
 msgid ""
 "Slick: For only 10 gems you get a chance to win a doll. The arrows are free. The gems are not."
-msgstr "滑头：只要 10 颗宝石，就有机会赢娃娃。箭是免费的，宝石可不是。"
+msgstr "斯利克：只要 10 颗宝石，就有机会赢娃娃。箭是免费的，宝石可不是。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:6731
 msgid ""
 "Slick: For only 5 gems you get a chance to win a doll. Step right up. If you can stay on the treadmill longer than 2 minutes, you win! (You can.) You win a prize. Now get lost and don't come back."
-msgstr "滑头：只要 5 颗宝石，就有机会赢娃娃。快来快来。要是你能在跑步机上撑过 2 分钟，就赢！（你撑住了。）你赢得了奖品。现在滚吧，别再回来。"
+msgstr "斯利克：只要 5 颗宝石，就有机会赢娃娃。快来快来。要是你能在跑步机上撑过 2 分钟，就赢！（你撑住了。）你赢得了奖品。现在滚吧，别再回来。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:6737
 msgid ""
 "Slick: For only 5 gems you get a chance to win a doll. Stay on the treadmill longer than 2 minutes. (You can't.) Oh! Too bad. Why not try again?"
-msgstr "滑头：只要 5 颗宝石，就有机会赢娃娃。在跑步机上撑过 2 分钟。（你撑不住。）哎呀！太可惜了。要不再试一次？"
+msgstr "斯利克：只要 5 颗宝石，就有机会赢娃娃。在跑步机上撑过 2 分钟。（你撑不住。）哎呀！太可惜了。要不再试一次？"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:674
 msgid ""
@@ -10142,12 +10142,12 @@ msgstr "乔发誓他把局面控制住了。他已经发誓两年了。"
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:6740
 msgid ""
 "Slick: For only 5 gems you get a chance to win a doll. Gems first, treadmill second."
-msgstr "滑头：只要 5 颗宝石，就有机会赢娃娃。先给宝石，再上跑步机。"
+msgstr "斯利克：只要 5 颗宝石，就有机会赢娃娃。先给宝石，再上跑步机。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:6764
 msgid ""
 "Slick: For only 100 gold you get a chance to win a doll. Step right up and ring the bell with the hammer! (DING.) You win a prize. Now get lost and don't come back."
-msgstr "滑头：只要 100 金币，就有机会赢娃娃。快来快来，用锤子敲响铃铛！（叮！）你赢得了奖品。现在滚吧，别再回来。"
+msgstr "斯利克：只要 100 金币，就有机会赢娃娃。快来快来，用锤子敲响铃铛！（叮！）你赢得了奖品。现在滚吧，别再回来。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:677
 msgid ""
@@ -10157,32 +10157,32 @@ msgstr "欢迎来到弗蒂戈镇。可惜，镇上的大部分居民都走了，
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:6770
 msgid ""
 "Slick: For only 100 gold you get a chance to win a doll. Step right up and ring the bell with the hammer! (thunk.) Oh! Too bad. Why not try again?"
-msgstr "滑头：只要 100 金币，就有机会赢娃娃。快来快来，用锤子敲响铃铛！（咚。）哎呀！太可惜了。要不再试一次？"
+msgstr "斯利克：只要 100 金币，就有机会赢娃娃。快来快来，用锤子敲响铃铛！（咚。）哎呀！太可惜了。要不再试一次？"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:6773
 msgid ""
 "Slick: For only 100 gold you get a chance to win a doll. No gold, no hammer."
-msgstr "滑头：只要 100 金币，就有机会赢娃娃。没金币，没锤子。"
+msgstr "斯利克：只要 100 金币，就有机会赢娃娃。没金币，没锤子。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:6793
 msgid ""
 "Slick: I see that you have four dolls. A genuine Lord Xeen cupie doll, then. Now get lost, and don't come back."
-msgstr "滑头：我看你有四个娃娃了。一个正宗的辛恩领主丘比娃娃，归你了。现在滚吧，别再回来。"
+msgstr "斯利克：我看你有四个娃娃了。一个正宗的辛恩领主丘比娃娃，归你了。现在滚吧，别再回来。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:6809
 msgid ""
 "Slick: For only 1000 gold you get a chance to win a doll. Step right up. If you are faster than the gremlin you'll win. (You are.) You win a prize. Now get lost and don't come back."
-msgstr "滑头：只要 1000 金币，就有机会赢娃娃。快来快来。要是你比小妖精快，就赢！（你更快。）你赢得了奖品。现在滚吧，别再回来。"
+msgstr "斯利克：只要 1000 金币，就有机会赢娃娃。快来快来。要是你比地精快，就赢！（你更快。）你赢得了奖品。现在滚吧，别再回来。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:6815
 msgid ""
 "Slick: For only 1000 gold you get a chance to win a doll. If you are faster than the gremlin you'll win. (The gremlin waves from the finish.) Oh! Too bad. Why not try again?"
-msgstr "滑头：只要 1000 金币，就有机会赢娃娃。要是你比小妖精快，就赢。（小妖精在终点冲你挥手。）哎呀！太可惜了。要不再试一次？"
+msgstr "斯利克：只要 1000 金币，就有机会赢娃娃。要是你比地精快，就赢。（地精在终点冲你挥手。）哎呀！太可惜了。要不再试一次？"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:6818
 msgid ""
 "Slick: For only 1000 gold you get a chance to win a doll. The gremlin doesn't race for free, and neither do you."
-msgstr "滑头：只要 1000 金币，就有机会赢娃娃。小妖精不会白白陪你赛跑，你也别想白玩。"
+msgstr "斯利克：只要 1000 金币，就有机会赢娃娃。地精不会白白陪你赛跑，你也别想白玩。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:6826
 msgid ""
@@ -10212,7 +10212,7 @@ msgstr "雕像底座的字条上写着：唯有能夺辛恩性命的剑 / 方能
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:6862
 msgid ""
 "Slick: Sure-Eye Tonic, two bottles. First round's on the house. Only the first."
-msgstr "滑头：神眼补剂，两瓶。第一轮算我请。只有第一轮。"
+msgstr "斯利克：神眼补剂，两瓶。第一轮算我请。只有第一轮。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:6870
 msgid ""
@@ -10679,12 +10679,12 @@ msgstr "竖着读四个头颅，上面写着：TYPE \"COMPUTER\" ON LEVEL 4 OF T
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:765
 msgid ""
 "You have destroyed the witches and for that I am grateful. For your gallant deeds, I dub thee all Crusaders! Now I must take the Alacorn, for if I can find Falista, I believe the healing power of the Alacorn is strong enough to resurrect her."
-msgstr "你们消灭了女巫，我对此十分感激。为了表彰你们的英勇事迹，我封你们全体为十字军！现在我得带走独角兽角，因为要是我能找到法莉丝塔，我相信独角兽角的治愈之力足以让她复活。"
+msgstr "你们消灭了女巫，我对此十分感激。为了表彰你们的英勇事迹，我封你们全体为十字军！现在我得带走独角兽角，因为要是我能找到法利斯塔，我相信独角兽角的治愈之力足以让她复活。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:7667
 msgid ""
 "You strike the Chime of Opening. The note goes on long after it should have stopped, and something you could not see cracks across like ice. The seal has been broken."
-msgstr "你们敲响了开启之钟。钟声久久不息，远超它该停的时候，有什么看不见的东西像冰一样裂开了。封印已被打破。"
+msgstr "你们敲响了开启编钟。钟声久久不息，远超它该停的时候，有什么看不见的东西像冰一样裂开了。封印已被打破。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:7675
 msgid "The black key turns without a sound. So does the door."
@@ -10794,7 +10794,7 @@ msgstr "休息站"
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:777
 msgid ""
 "The Alacorn! But the Head Witch still lives, and she will come for it. Finish what you started."
-msgstr "独角兽角！但是女巫头目还活着，她会来夺回它的。把你们开始的事做完。"
+msgstr "独角兽角！但是首领女巫还活着，她会来夺回它的。把你们开始的事做完。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:781
 msgid "I am waiting for you to destroy the witches and return the Alacorn."
@@ -10808,7 +10808,7 @@ msgstr "你们照着那七个词所说的地方挖掘。沙子下面躺着一只
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:784
 msgid ""
 "I am just an old woman but before I die I wish to see the witches of Toad Meadow destroyed. You see, when I was still a young maiden, I fell asleep in Toad Meadow. When I awoke I found a unicorn laying down beside me. Her name was Falista and she was fleeing from a band of witches who were trying to capture her. Since that day I have kept Falista safely hidden. But now she has disappeared. I fear the worst has happened and the witches have killed her for her Alacorn's magic. The witches fear nothing, and lock nothing. Their tower stands south-east of the meadow. Go quickly."
-msgstr "我只是个老太婆，但在死之前，我希望看到蟾蜍草地的女巫们被消灭。你们看，我还是少女的时候，在蟾蜍草地睡着了。醒来时发现身边躺着一只独角兽。她叫法莉丝塔，当时正在逃避一群想抓住她的女巫。从那天起，我一直把法莉丝塔安全地藏着。可现在她不见了。我担心最坏的事发生了，女巫们为了独角兽角的魔力杀了她。女巫什么都不怕，什么都不锁。她们的塔在草地东南方。快去吧。"
+msgstr "我只是个老太婆，但在死之前，我希望看到蟾蜍草地的女巫们被消灭。你们看，我还是少女的时候，在蟾蜍草地睡着了。醒来时发现身边躺着一只独角兽。她叫法利斯塔，当时正在逃避一群想抓住她的女巫。从那天起，我一直把法利斯塔安全地藏着。可现在她不见了。我担心最坏的事发生了，女巫们为了独角兽角的魔力杀了她。女巫什么都不怕，什么都不锁。她们的塔在草地东南方。快去吧。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:7840
 msgid "Carved into the obelisk, the first of six words: DIG."
@@ -10845,7 +10845,7 @@ msgstr "方尖碑上刻着，七个词中的第一个：SEEK。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:791
 msgid "Falista"
-msgstr "法莉丝塔"
+msgstr "法利斯塔"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:7917
 msgid "Carved into the obelisk, the second of seven words: THE."
@@ -10858,7 +10858,7 @@ msgstr "方尖碑上刻着，七个词中的第三个：HOARD。"
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:793
 msgid ""
 "Falista grazes behind my cottage again, Crusaders. She eats the roses. I let her."
-msgstr "法莉丝塔又在我小屋后面吃草了，十字军们。她吃玫瑰。我由着她。"
+msgstr "法利斯塔又在我小屋后面吃草了，十字军们。她吃玫瑰。我由着她。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:7935
 msgid "Carved into the obelisk, the fourth of seven words: BURIED."
@@ -11079,7 +11079,7 @@ msgstr "西莉亚手上沾着面粉开了门。“是你们！德里克，快看
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:8330
 msgid ""
 "The ogres' lair, in the river bluff. Boulders stacked by the cliff edge, and a smell of cooking you would rather not ask about."
-msgstr "食人魔的巢穴，在河边的崖壁上。崖边堆着巨石，还有一股你们不想多问的烹饪味道。"
+msgstr "食人妖的巢穴，在河边的崖壁上。崖边堆着巨石，还有一股你们不想多问的烹饪味道。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:8339
 msgid "You break everything you can find in the lair."
@@ -11088,7 +11088,7 @@ msgstr "你们把巢穴里能找到的东西都砸了。"
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:8348
 msgid ""
 "You knock the cross-beam out of the rack, and the whole heap of boulders goes thundering over the cliff into the river. That is the end of the ogres' ammunition."
-msgstr "你们把横梁从架子里打掉，整堆巨石轰隆隆滚下悬崖掉进河里。食人魔的弹药就这样没了。"
+msgstr "你们把横梁从架子里打掉，整堆巨石轰隆隆滚下悬崖掉进河里。食人妖的弹药就这样没了。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:835
 msgid "Earldom"
@@ -11214,7 +11214,7 @@ msgstr "最后一个洞穴之外，是清凉的空气和青草的气味。"
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:8547
 msgid ""
 "The robbers' den, under the great bridge. Somewhere in here the boss keeps Princess Roxanne's tiara. Dice on the tables, wet boots by the bunks, and the river loud overhead."
-msgstr "强盗的巢穴，在大桥底下。老大把罗克珊公主的头冠藏在这里某处。桌上有骰子，铺位旁有湿靴子，头顶上河水轰鸣。"
+msgstr "强盗的巢穴，在大桥底下。老大把罗珊公主的头冠藏在这里某处。桌上有骰子，铺位旁有湿靴子，头顶上河水轰鸣。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:8561
 msgid "The Robber Boss falls. A ring of heavy keys hangs at his belt."
@@ -11516,7 +11516,7 @@ msgstr "墙下的一个洞穴，有一扇小小的门和一块小小的牌子：
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:9021
 msgid ""
 "BY ORDER OF THE MAYOR: the treasury will pay to end the Gremlins' mischief. Their court is the burrow under the wall, east of this gate. Pass holders apply within. Everyone else, apply to the gremlins."
-msgstr "镇长令：国库将出资终结小妖精的恶作剧。他们的法庭在城门以东墙下的洞穴里。持通行证者请入内申请。其他人，请向小妖精申请。"
+msgstr "镇长令：国库将出资终结地精的恶作剧。他们的法庭在城门以东墙下的洞穴里。持通行证者请入内申请。其他人，请向地精申请。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:9039
 msgid ""
@@ -11540,7 +11540,7 @@ msgstr "原文只剩一小片还能辨认：……把西边的刻度盘设为 1�
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:9074
 msgid ""
 "Shaalth's key turns in the cage lock. The princess steps out and straightens her wings."
-msgstr "沙尔思的钥匙在笼锁里转动。公主走出来，整理好她的翅膀。"
+msgstr "沙尔斯的钥匙在笼锁里转动。公主走出来，整理好她的翅膀。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:9086
 msgid "You are hereby dubbed a Disciple of Bark!"
@@ -11638,7 +11638,7 @@ msgstr "你们这辈子喝的巨魔汁已经够多了。"
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:930
 msgid ""
 "You don't have enough Megacredits. Five. Craftsmen don't count in gold."
-msgstr "你们的兆信用点不够。要五个。工匠不收金币。"
+msgstr "你们的巨额币不够。要五个。工匠不收金币。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:9302
 msgid "Morgana is dead. Her robes keep glowing for a while, out of habit."
@@ -11661,12 +11661,12 @@ msgstr "紫色药水。你们的脚已经有一半迈向下一个房间了。（
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:9334
 msgid "Xenoc falls, still in the middle of a sentence about his betters."
-msgstr "泽诺克倒下了，话还停在一句关于他的上级的话中间。"
+msgstr "克塞诺克倒下了，话还停在一句关于他的上级的话中间。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:934
 msgid ""
 "Every defensible piece of land needs a wall around it. I can have craftsmen and laborers working on your land for 5 King's Megacredits. Bring them and we'll start."
-msgstr "每块可防守的土地都需要一圈围墙。你们付 5 个国王兆信用点，我就能让工匠和劳工在你们的土地上干活。把它们带来，我们就开工。"
+msgstr "每块可防守的土地都需要一圈围墙。你们付 5 个国王巨额币，我就能让工匠和劳工在你们的土地上干活。把它们带来，我们就开工。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:9348
 msgid ""
@@ -11722,7 +11722,7 @@ msgstr "“傻子和他的钱很快就会分开。”（A fool and his money are
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:943
 msgid ""
 "While building the rest of your castle, a worker came back from the tundra white as a sheet. The Golem Dungeon, by the lagoon, is stuffed with Megacredits, he says. And golems. Mostly golems."
-msgstr "在建造你们城堡的其余部分时，一名工人从冻原回来，脸白得像张纸。他说，泻湖边的魔像地牢里塞满了兆信用点。还有魔像。主要是魔像。"
+msgstr "在建造你们城堡的其余部分时，一名工人从冻原回来，脸白得像张纸。他说，泻湖边的魔像地牢里塞满了巨额币。还有魔像。主要是魔像。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:9430
 msgid ""
@@ -11772,7 +11772,7 @@ msgstr "“多数人的需要胜过少数人的需要。”书页自己补全了
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:948
 msgid ""
 "The workers have finished cleaning out the rubble and patching up the stone work. You should go inside and have a look around. Oh, one more thing. One of the workers swears the Tomb of a Thousand Terrors, out in the lagoon, is full of Megacredits. He won't go back for them. I thought you might."
-msgstr "工人们已经清理完了瓦砾，修补好了石砌工程。你们该进去看看。哦，还有一件事。有个工人发誓说，泻湖里的千重恐怖之墓里全是兆信用点。他不肯再回去拿。我想你们可能愿意。"
+msgstr "工人们已经清理完了瓦砾，修补好了石砌工程。你们该进去看看。哦，还有一件事。有个工人发誓说，泻湖里的千重恐怖之墓里全是巨额币。他不肯再回去拿。我想你们可能愿意。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:9481
 msgid ""
@@ -11806,7 +11806,7 @@ msgstr "一只银杯，镶着白金花纹，发出微弱的嗡鸣。没人阻止
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:952
 msgid ""
 "If you have enough Megacredits you should think about building up your castle. The King's engineers should be able to help you."
-msgstr "如果你们有足够的兆信用点，应该考虑扩建你们的城堡。国王的工程师应该能帮你们。"
+msgstr "如果你们有足够的巨额币，应该考虑扩建你们的城堡。国王的工程师应该能帮你们。"
 
 # imported from packs (base v1.21)
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:9522 assets_dev/worlds/xeen/events/common/xeen_quests.lua:9600
@@ -11853,7 +11853,7 @@ msgstr "门上写着：“Grnd rdr f Vwlss Knghts”。"
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:960
 msgid ""
 "Three places. The Temple of Yak in Rivercity's south woods. The Tomb of a Thousand Terrors in the lagoon. The Golem Dungeon in the tundra, by the lagoon. Evil people hoard Megacredits. Don't ask me why."
-msgstr "三个地方。里弗城南边树林里的牛神庙。泻湖里的千重恐怖之墓。冻原上泻湖边的魔像地牢。邪恶的人囤积兆信用点。别问我为什么。"
+msgstr "三个地方。里弗城南边树林里的牦牛神庙。泻湖里的千重恐怖之墓。冻原上泻湖边的魔像地牢。邪恶的人囤积巨额币。别问我为什么。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:9607
 msgid "\"Very Good! Lv Lng nd prspr!\" The iron door beside you swings open."
@@ -11874,7 +11874,7 @@ msgstr "你们的智力已经很惊人了！"
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:963
 msgid ""
 "King's Megacredits. The King mints them for his engineers, and somehow they all end up in evil places: the Temple of Yak, the Tomb of a Thousand Terrors and the Golem Dungeon. Fetch them; I build. Walls, keep and dungeon, five each."
-msgstr "国王兆信用点。国王为他的工程师铸造它们，不知怎么它们全都流落到了邪恶的地方：牛神庙、千重恐怖之墓和魔像地牢。你们去取，我来建。围墙、主堡和地牢，各五个。"
+msgstr "国王巨额币。国王为他的工程师铸造它们，不知怎么它们全都流落到了邪恶的地方：牦牛神庙、千重恐怖之墓和魔像地牢。你们去取，我来建。围墙、主堡和地牢，各五个。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:9631
 msgid ""
@@ -11937,7 +11937,7 @@ msgstr "能量盘。两块，裹在一张开给无名氏的盗贼公会发票里
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:9738
 msgid ""
 "Ledger. One (1) Griffin Statuette, sold to Mages of the Great Eastern Tower. One (1) Dragon Statuette, sold to Head Witch of Lakeside. One (1) Pegasus Statuette, sold to Head Heretical Cleric. One (1) Jewel of Ages, sold to Mages of the Great Eastern Tower."
-msgstr "账本。狮鹫雕像一尊，售予大东塔的法师们。龙雕像一尊，售予湖畔镇的女巫头目。天马雕像一尊，售予异端神甫头目。世纪宝石一颗，售予大东塔的法师们。"
+msgstr "账本。狮鹫雕像一尊，售予大东塔的法师们。龙雕像一尊，售予湖畔镇的首领女巫。天马雕像一尊，售予异端神甫头目。岁月宝玉一颗，售予大东塔的法师们。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:9751
 msgid "For the eyes of the prince only!"
@@ -11992,7 +11992,7 @@ msgstr "大锅。有铁和旧靴子的味道，你们觉得自己能挨一顿打
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:987
 msgid "You don't have enough Megacredits."
-msgstr "你们的兆信用点不够。"
+msgstr "你们的巨额币不够。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:9874
 msgid ""
@@ -12011,7 +12011,7 @@ msgstr "My first is in water but not in tear. My second is in hire but not in he
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:990
 msgid "How about a keep to go with those walls? Just 5 Megacredits!"
-msgstr "给那些围墙配一座主堡怎么样？只要 5 个兆信用点！"
+msgstr "给那些围墙配一座主堡怎么样？只要 5 个巨额币！"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:9907
 msgid ""
@@ -12035,7 +12035,7 @@ msgstr "你们已经喝过了。它还是蟾蜍味。"
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:9939
 msgid ""
 "The brew tastes of toad and ambition. 'Welcome, sisters,' says a witch, whatever you are. Those of you who walk the green ways come up from the cauldron Warlocks. Members may also help themselves to the Head Witch's chest. Politely."
-msgstr "药汤有蟾蜍和野心的味道。“欢迎，姐妹们，”一个女巫说，不管你们是什么人。你们当中走绿色之道的，从大锅里出来就成了术士。会员也可以随意取用女巫头目的箱子。要礼貌。"
+msgstr "药汤有蟾蜍和野心的味道。“欢迎，姐妹们，”一个女巫说，不管你们是什么人。你们当中走绿色之道的，从大锅里出来就成了术士。会员也可以随意取用首领女巫的箱子。要礼貌。"
 
 #: assets_dev/worlds/xeen/events/common/xeen_quests.lua:9950
 msgid ""
@@ -12155,7 +12155,7 @@ msgstr "兵营院子"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_d1.lua:144 assets_dev/worlds/xeen/events/maps/xeen_d1.lua:146 assets_dev/worlds/xeen/events/maps/xeen_d1.lua:149
 msgid "Kramer's Caravans"
-msgstr "克莱默商队"
+msgstr "克拉默商队"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_d1.lua:152 assets_dev/worlds/xeen/events/maps/xeen_d1.lua:154 assets_dev/worlds/xeen/events/maps/xeen_d1.lua:157
 msgid "Saddler's"
@@ -12412,12 +12412,12 @@ msgstr "你们祈祷。休息之前所有属性 +10。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_d1.lua:542 assets_dev/worlds/xeen/events/maps/xeen_d1.lua:545 assets_dev/worlds/xeen/events/maps/xeen_d1.lua:547
 msgid "Falista's hut"
-msgstr "法莉丝塔的小屋"
+msgstr "法利斯塔的小屋"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_d1.lua:546
 msgid ""
 "Falista's hut is empty. A note on the table: \"Gone to the Clouds. Back when I am restored.\""
-msgstr "法莉丝塔的小屋空着。桌上有张字条：“去了云上。恢复后回来。”"
+msgstr "法利斯塔的小屋空着。桌上有张字条：“去了云上。恢复后回来。”"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_d1.lua:550
 msgid "A castaway's wreck"
@@ -12537,7 +12537,7 @@ msgstr "堡景镇财产。请勿触碰。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_d1.lua:707 assets_dev/worlds/xeen/events/maps/xeen_d1.lua:709
 msgid "The gremlins' loot"
-msgstr "小妖精的战利品"
+msgstr "地精的战利品"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_d1.lua:713
 msgid "North: Griffin Pass and the Forbidden Zone."
@@ -13064,7 +13064,7 @@ msgstr "格拉尔格的原木座位"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_d2.lua:272 assets_dev/worlds/xeen/events/maps/xeen_d2.lua:274
 msgid "Kramer's strongbox"
-msgstr "克莱默的保险箱"
+msgstr "克拉默的保险箱"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_d2.lua:277 assets_dev/worlds/xeen/events/maps/xeen_d2.lua:279
 msgid "A brass plate"
@@ -13110,7 +13110,7 @@ msgstr "石头下面有一只装满金子的小铁罐，还有张字条：“谁
 #: assets_dev/worlds/xeen/events/maps/xeen_d2.lua:330 assets_dev/worlds/xeen/events/maps/xeen_d2.lua:345 assets_dev/worlds/xeen/events/maps/xeen_dd13.lua:233
 #: assets_dev/worlds/xeen/events/maps/xeen_dd13.lua:235 assets_dev/worlds/xeen/events/maps/xeen_dd13.lua:238 assets_dev/worlds/xeen/events/maps/xeen_dd13.lua:240
 msgid "Ogre Pass"
-msgstr "食人魔山口"
+msgstr "食人妖山口"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_d2.lua:333 assets_dev/worlds/xeen/events/maps/xeen_d2.lua:351
 msgid "Bark Glade"
@@ -13160,7 +13160,7 @@ msgstr "一块里程碑"
 #: assets_dev/worlds/xeen/events/maps/xeen_d2.lua:431
 msgid ""
 "SANDCASTER. Under it, newer: OGRES IN THE PASS. PAY OR GO ROUND. There is no round."
-msgstr "沙堡镇。下面是更新的字：山口有食人魔。付钱或绕道。没有路可绕。"
+msgstr "沙堡镇。下面是更新的字：山口有食人妖。付钱或绕道。没有路可绕。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_d2.lua:435 assets_dev/worlds/xeen/events/maps/xeen_d2.lua:437
 msgid "The Whispering Stone"
@@ -13197,7 +13197,7 @@ msgstr "空地上的小屋"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_d2.lua:69 assets_dev/worlds/xeen/events/maps/xeen_d2.lua:75
 msgid "Ogre blockhouse"
-msgstr "食人魔碉堡"
+msgstr "食人妖碉堡"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_d2.lua:12 assets_dev/worlds/xeen/events/maps/xeen_d2.lua:7 assets_dev/worlds/xeen/events/maps/xeen_d2.lua:9
 msgid "Sharla's Treehouse"
@@ -13468,12 +13468,12 @@ msgstr "井底有什么东西在嗡鸣。你们暂时觉得自己聪明了。（
 
 #: assets_dev/worlds/xeen/events/maps/xeen_d3.lua:49 assets_dev/worlds/xeen/events/maps/xeen_d3.lua:51 assets_dev/worlds/xeen/events/maps/xeen_d3.lua:54
 msgid "Vulture Repellant and Other Remedies"
-msgstr "驱秃鹫剂及其他药剂"
+msgstr "秃鹫驱逐剂及其他药剂"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_d3.lua:491
 msgid ""
 "Special today! Vulture Repellant, only 25,000 gold!   (Scratched underneath: Vulture Repellant doesn't work.)"
-msgstr "今日特价！驱秃鹫剂，只要 25,000 金币！（下面划着一行：驱秃鹫剂没用。）"
+msgstr "今日特价！秃鹫驱逐剂，只要 25,000 金币！（下面划着一行：秃鹫驱逐剂没用。）"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_d3.lua:495 assets_dev/worlds/xeen/events/maps/xeen_d3.lua:497 assets_dev/worlds/xeen/events/maps/xeen_xd01.lua:248
 #: assets_dev/worlds/xeen/events/maps/xeen_xd01.lua:250 assets_dev/worlds/xeen/events/maps/xeen_xd10.lua:135 assets_dev/worlds/xeen/events/maps/xeen_xd10.lua:137
@@ -15091,7 +15091,7 @@ msgstr "你们把拉杆扳回去。水闸升起，小镇的水又从中涌过；
 #: assets_dev/worlds/xeen/events/maps/xeen_dd01.lua:232
 msgid ""
 "You throw your weight on the lever. Gears grind, crack and spit out of the sluice: the gremlins' wedge. The gate drops shut, the channel stills, and somewhere below you water drains away with a long gurgle."
-msgstr "你们用全身重量压下拉杆。齿轮磨响、崩裂，从水闸里吐出了小妖精塞的楔子。闸门落下关上，水道静止了，你们下方某处，水带着长长的咕噜声排空了。"
+msgstr "你们用全身重量压下拉杆。齿轮磨响、崩裂，从水闸里吐出了地精塞的楔子。闸门落下关上，水道静止了，你们下方某处，水带着长长的咕噜声排空了。"
 
 # imported from packs (base v1.21)
 #: assets_dev/worlds/xeen/events/maps/xeen_dd01.lua:27 assets_dev/worlds/xeen/events/maps/xeen_dd01.lua:29 assets_dev/worlds/xeen/events/maps/xeen_dd05.lua:103
@@ -15685,7 +15685,7 @@ msgstr "松动的石头"
 #: assets_dev/worlds/xeen/events/maps/xeen_dd04.lua:136
 msgid ""
 "Gettlewaithe, Imperator Primus of the Gremlins, topples off his throne of chairs."
-msgstr "小妖精至尊皇帝格特尔韦特从他的椅子王座上栽了下来。"
+msgstr "地精至尊皇帝格特尔韦特从他的椅子王座上栽了下来。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_dd04.lua:149 assets_dev/worlds/xeen/events/maps/xeen_dd04.lua:151
 msgid "The Mayor's portrait"
@@ -15720,7 +15720,7 @@ msgstr "活板门"
 #: assets_dev/worlds/xeen/events/maps/xeen_dd04.lua:18
 msgid ""
 "THE GREMLIN COURT. A burrow under Castleview's wall, built for folk half your size. Mayor Snarfblad wants the gremlins' pranks stopped, and their king, Gettlewaithe, holds court at the far end. His courtiers watch you pass. Nobody has drawn a sword. Yet."
-msgstr "小妖精法庭。堡景镇城墙下的一个洞穴，是为只有你们一半大的人建的。斯纳夫布拉德镇长想制止小妖精的恶作剧，而他们的国王格特尔韦特在最里面开庭。他的朝臣看着你们走过。没人拔剑。暂时没有。"
+msgstr "地精法庭。堡景镇城墙下的一个洞穴，是为只有你们一半大的人建的。斯纳夫布拉德镇长想制止地精的恶作剧，而他们的国王格特尔韦特在最里面开庭。他的朝臣看着你们走过。没人拔剑。暂时没有。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_dd04.lua:182 assets_dev/worlds/xeen/events/maps/xeen_dd04.lua:184
 msgid "A cart wheel"
@@ -15765,7 +15765,7 @@ msgstr "圆盘"
 #: assets_dev/worlds/xeen/events/maps/xeen_dd05.lua:16
 msgid ""
 "THE WESTERN TOWER OF MOK. You climb in over the sill. Sacks of bread, a windlass, the heretics' candles: they trust their wards, not their windows. Somewhere below them, Dreyfus says, the Cult Leader preaches by the altar where the key to the front door lies."
-msgstr "莫克西塔。你们从窗台爬进去。一袋袋面包、一台绞盘、异教徒的蜡烛：他们信任自己的结界，而不是窗户。德莱弗斯说，在他们下面某处，邪教首领在祭坛旁布道，前门的钥匙就在祭坛那里。"
+msgstr "莫克西塔。你们从窗台爬进去。一袋袋面包、一台绞盘、异教徒的蜡烛：他们信任自己的结界，而不是窗户。德赖弗斯说，在他们下面某处，邪教首领在祭坛旁布道，前门的钥匙就在祭坛那里。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_dd05.lua:182 assets_dev/worlds/xeen/events/maps/xeen_dd05.lua:185 assets_dev/worlds/xeen/events/maps/xeen_dd14.lua:302
 #: assets_dev/worlds/xeen/events/maps/xeen_dd14.lua:305 assets_dev/worlds/xeen/events/maps/xeen_dd14.lua:313 assets_dev/worlds/xeen/events/maps/xeen_dd14.lua:316
@@ -16254,7 +16254,7 @@ msgstr "转盘"
 #: assets_dev/worlds/xeen/events/maps/xeen_dd09.lua:19
 msgid ""
 "THE TEMPLE OF BARK. The round door shuts behind you on the bark glade. Inside the great tree the air is warm and smells of sap and orc. Shaalth's orcs hold the old temple, and somewhere in it Princess Sheewana, the sprites' sister. This door is the way back out."
-msgstr "树皮神庙。圆门在你们身后关上，把树皮林间空地隔在外面。大树里面空气温暖，有树汁和兽人的味道。沙尔思的兽人占据着古老的神庙，神庙里某处还有希瓦娜公主，小精灵们的姐妹。这扇门是回去的路。"
+msgstr "树皮神庙。圆门在你们身后关上，把树皮林间空地隔在外面。大树里面空气温暖，有树汁和兽人的味道。沙尔斯的兽人占据着古老的神庙，神庙里某处还有希瓦娜公主，小精灵们的姐妹。这扇门是回去的路。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_dd09.lua:204 assets_dev/worlds/xeen/events/maps/xeen_dd09.lua:224 assets_dev/worlds/xeen/events/maps/xeen_dd09.lua:244
 msgid "Turn (Yes/No)?"
@@ -17047,7 +17047,7 @@ msgstr "破碎的盘盒"
 #: assets_dev/worlds/xeen/events/maps/xeen_dd13.lua:185
 msgid ""
 "A disk case of Sardaj beadwork, smashed open and empty. Scratched into its lid in a big ogre hand: \"We are Ogres! We take what we want. Yesterday, we took the Sardaj's Energy disks!\""
-msgstr "一只萨尔达珠串工艺的盘盒，被砸开了，空空如也。盖子上用大大的食人魔笔迹划着：“我们是食人魔！我们想拿什么就拿什么。昨天，我们拿走了萨尔达的能量盘！”"
+msgstr "一只萨尔达珠串工艺的盘盒，被砸开了，空空如也。盖子上用大大的食人妖笔迹划着：“我们是食人妖！我们想拿什么就拿什么。昨天，我们拿走了萨尔达的能量盘！”"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_dd13.lua:248
 msgid "Graalg's hall: a bigger fire, a seat of antlers. Nobody is home."
@@ -17060,7 +17060,7 @@ msgstr "一座围着火坑的木厅，墙上挂着兽皮，一张长桌摆满偷
 
 #: assets_dev/worlds/xeen/events/maps/xeen_dd13.lua:266
 msgid "The ogres' kennel. Sabertooths lift their heads from the gnawed logs."
-msgstr "食人魔的犬舍。剑齿虎从啃过的原木上抬起头。"
+msgstr "食人妖的犬舍。剑齿虎从啃过的原木上抬起头。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_dd13.lua:270 assets_dev/worlds/xeen/events/maps/xeen_dd13.lua:305 assets_dev/worlds/xeen/events/maps/xeen_dd13.lua:308
 #: assets_dev/worlds/xeen/events/maps/xeen_dd13.lua:351 assets_dev/worlds/xeen/events/maps/xeen_xd23.lua:107 assets_dev/worlds/xeen/events/maps/xeen_xd23.lua:56
@@ -17073,7 +17073,7 @@ msgstr "你们暂且没动堡垒。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_dd13.lua:303 assets_dev/worlds/xeen/events/maps/xeen_dd13.lua:349
 msgid "You've found an Ogre fort, but the Ogres are out hunting. Burn?"
-msgstr "你们发现了一座食人魔堡垒，但食人魔们出去打猎了。要烧吗？"
+msgstr "你们发现了一座食人妖堡垒，但食人妖们出去打猎了。要烧吗？"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_dd13.lua:304 assets_dev/worlds/xeen/events/maps/xeen_dd13.lua:350
 msgid "Burn (Yes/No)?"
@@ -17091,12 +17091,12 @@ msgstr "格拉尔格的座位"
 #: assets_dev/worlds/xeen/events/maps/xeen_dd13.lua:364
 msgid ""
 "Graalg's seat, a heap of antlers and bones. Above it a fat purse of Alamar's gold hangs on a hook, nailed there for every ogre to see."
-msgstr "格拉尔格的座位，一堆鹿角和骨头。上方的挂钩上挂着一只鼓鼓的阿拉玛金币钱袋，钉在那里让每个食人魔都能看见。"
+msgstr "格拉尔格的座位，一堆鹿角和骨头。上方的挂钩上挂着一只鼓鼓的阿拉玛金币钱袋，钉在那里让每个食人妖都能看见。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_dd13.lua:594
 msgid ""
 "Ogre Pass: a fort of the ogres on its knoll, timber and hides inside a log palisade, and another across the road joined to it under the pass. Kramer pays for burned forts; Graalg keeps what he takes in his own quarters in the east fort."
-msgstr "食人魔山口：山丘上有一座食人魔的堡垒，原木栅栏里是木头和兽皮，路对面还有一座，在山口下与它相连。克莱默出钱烧堡垒；格拉尔格把抢来的东西放在东堡自己的住处。"
+msgstr "食人妖山口：山丘上有一座食人妖的堡垒，原木栅栏里是木头和兽皮，路对面还有一座，在山口下与它相连。克拉默出钱烧堡垒；格拉尔格把抢来的东西放在东堡自己的住处。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_dd14.lua:10
 msgid ""
@@ -17979,7 +17979,7 @@ msgstr "幻影公会"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_dd19.lua:145 assets_dev/worlds/xeen/events/maps/xeen_dd19.lua:147
 msgid "Xenoc's study"
-msgstr "泽诺克的书房"
+msgstr "克塞诺克的书房"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_dd19.lua:150 assets_dev/worlds/xeen/events/maps/xeen_dd19.lua:152 assets_dev/worlds/xeen/events/maps/xeen_dd19.lua:165
 #: assets_dev/worlds/xeen/events/maps/xeen_dd19.lua:167
@@ -18018,7 +18018,7 @@ msgstr "结界闪烁着熄灭了。"
 #: assets_dev/worlds/xeen/events/maps/xeen_dd19.lua:19
 msgid ""
 "THE WIZARD QUARTER. Beyond the guild gate, a court of rose-coloured stone under a dimming sky. To the west, the Mirage Guild, where Xenoc the Wizard holds court; to the east, the Sorceress HQ, Morgana's house. Astra wants them both defeated. The gate behind you is the way back to Sandcaster."
-msgstr "巫师区。公会大门之外，是一座玫瑰色石头的庭院，天空渐暗。西边是幻影公会，巫师泽诺克在那里开庭；东边是女术士总部，摩根娜的住所。阿斯特拉希望把两人都击败。你们身后的大门是回沙堡镇的路。"
+msgstr "巫师区。公会大门之外，是一座玫瑰色石头的庭院，天空渐暗。西边是幻影公会，巫师克塞诺克在那里开庭；东边是女术士总部，摩根娜的住所。阿斯特拉希望把两人都击败。你们身后的大门是回沙堡镇的路。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_dd19.lua:190 assets_dev/worlds/xeen/events/maps/xeen_dd19.lua:214 assets_dev/worlds/xeen/events/maps/xeen_dd19.lua:334
 msgid "The ward thins, but holds."
@@ -18082,7 +18082,7 @@ msgstr "三联窗俯视着庭院。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_dd19.lua:297 assets_dev/worlds/xeen/events/maps/xeen_dd19.lua:299
 msgid "Xenoc's chair"
-msgstr "泽诺克的椅子"
+msgstr "克塞诺克的椅子"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_dd19.lua:298
 msgid ""
@@ -18097,7 +18097,7 @@ msgstr "书桌"
 #: assets_dev/worlds/xeen/events/maps/xeen_dd19.lua:303
 msgid ""
 "A treatise on the inferiority of everyone else, in Xenoc's hand. Unfinished."
-msgstr "一篇论述其他所有人都低人一等的论文，是泽诺克的笔迹。没写完。"
+msgstr "一篇论述其他所有人都低人一等的论文，是克塞诺克的笔迹。没写完。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_dd19.lua:309
 msgid "The iron door stands raised."
@@ -18239,7 +18239,7 @@ msgstr "一个没有身体的声音低语：“你是所有人中最美的一个
 #: assets_dev/worlds/xeen/events/maps/xeen_dd20.lua:31
 msgid ""
 "LAKESIDE'S UNDERSIDE. Under the Guild the coven keeps house; half a storey below its hall are the cells, and under everything the town's sewer runs east to the lake. Naomi said four prisoners wait in the cells, and that the Head Witch keeps the coven's north-west corner."
-msgstr "湖畔镇地下。公会下面是巫团的住处；比大厅低半层是牢房，而在一切之下，镇上的下水道向东通向湖。娜奥米说牢房里关着四个囚犯，女巫头目占据着巫团的西北角。"
+msgstr "湖畔镇地下。公会下面是巫团的住处；比大厅低半层是牢房，而在一切之下，镇上的下水道向东通向湖。娜奥米说牢房里关着四个囚犯，首领女巫占据着巫团的西北角。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_dd20.lua:310
 msgid ""
@@ -18276,7 +18276,7 @@ msgstr "头骨没人问就开口了：要做耐力药水，需集齐在冷石下
 #: assets_dev/worlds/xeen/events/maps/xeen_dd20.lua:354
 msgid ""
 "Unprompted, the skull begins to speak: To make a Potion of Personality, gather together the ground horn of a Unicorn, the tanned hide of an Ogre, and the blood of a monkeydog sacrificed 'neath the blackness of a new moon. Slowly pour a half part of the blood into a twenty gallon cauldron and mix in the horn powder. Heat to a low simmer and let sit for three days. At the stroke of midnight on the third night, drop the Ogre hide into the stew and stir rapidly. If the hide dissolves any sooner or later than three minutes, the brew is sour and will turn its drinkers to stone. Makes one serving."
-msgstr "头骨没人问就开口了：要做个性药水，需集齐独角兽的角粉、食人魔的鞣制兽皮，还有在新月的黑暗下献祭的猴犬之血。把半份血慢慢倒进二十加仑的大锅，混入角粉。以小火慢炖，放置三天。第三夜午夜钟响时，把食人魔兽皮丢进炖汤，快速搅拌。如果兽皮溶解得比三分钟早或晚，药汤就是酸的，会把饮用者变成石头。可制一份。"
+msgstr "头骨没人问就开口了：要做个性药水，需集齐独角兽的角粉、食人妖的鞣制兽皮，还有在新月的黑暗下献祭的猴犬之血。把半份血慢慢倒进二十加仑的大锅，混入角粉。以小火慢炖，放置三天。第三夜午夜钟响时，把食人妖兽皮丢进炖汤，快速搅拌。如果兽皮溶解得比三分钟早或晚，药汤就是酸的，会把饮用者变成石头。可制一份。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_dd20.lua:359
 msgid ""
@@ -20589,7 +20589,7 @@ msgstr "尼斯托的告示"
 #: assets_dev/worlds/xeen/events/maps/xeen_x2.lua:375
 msgid ""
 "Captain Nystor: \"Those Ogres are ruining me! For months they have been throwing boulders at the boats that ply the waters around here. I want those Ogres gone and I am willing to pay well for the service.\" Their lair is in the hills north-west, up the north river."
-msgstr "尼斯托船长：“那些食人魔要毁了我！几个月来他们一直向在这一带水域航行的船扔巨石。我要那些食人魔消失，愿意出高价。”他们的巢穴在西北方的山丘里，沿北河上去。"
+msgstr "尼斯托船长：“那些食人妖要毁了我！几个月来他们一直向在这一带水域航行的船扔巨石。我要那些食人妖消失，愿意出高价。”他们的巢穴在西北方的山丘里，沿北河上去。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x2.lua:387
 msgid ""
@@ -20668,7 +20668,7 @@ msgstr "巴洛宅"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x2.lua:471 assets_dev/worlds/xeen/events/maps/xeen_x2.lua:473
 msgid "Enter the Ogre Lair"
-msgstr "进入食人魔巢穴"
+msgstr "进入食人妖巢穴"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x2.lua:476 assets_dev/worlds/xeen/events/maps/xeen_x2.lua:478 assets_dev/worlds/xeen/events/maps/xeen_x2.lua:481
 #: assets_dev/worlds/xeen/events/maps/xeen_x2.lua:483 assets_dev/worlds/xeen/events/maps/xeen_x2.lua:486 assets_dev/worlds/xeen/events/maps/xeen_x2.lua:488
@@ -20679,7 +20679,7 @@ msgstr "巨石"
 #: assets_dev/worlds/xeen/events/maps/xeen_x2.lua:477 assets_dev/worlds/xeen/events/maps/xeen_x2.lua:482 assets_dev/worlds/xeen/events/maps/xeen_x2.lua:487
 #: assets_dev/worlds/xeen/events/maps/xeen_x2.lua:492
 msgid "Boulders thrown into the river by the ogres: no boat gets past."
-msgstr "食人魔扔进河里的巨石：没有船能通过。"
+msgstr "食人妖扔进河里的巨石：没有船能通过。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x2.lua:496 assets_dev/worlds/xeen/events/maps/xeen_x2.lua:685
 msgid "Medin's jetty"
@@ -20745,20 +20745,20 @@ msgstr "银行"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x2.lua:634
 msgid "The boulder does not budge. An ogre could move it (Might 30)."
-msgstr "巨石纹丝不动。食人魔也许能挪动它（力量 30）。"
+msgstr "巨石纹丝不动。食人妖也许能挪动它（力量 30）。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x2.lua:639
 msgid ""
 "You heave the boulder aside: an ogre's stash of coins lies under it. +400 gold"
-msgstr "你们把巨石掀到一边：下面有食人魔藏的一堆钱币。+400 金币"
+msgstr "你们把巨石掀到一边：下面有食人妖藏的一堆钱币。+400 金币"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x2.lua:643
 msgid "The ogres' bridge"
-msgstr "食人魔的桥"
+msgstr "食人妖的桥"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x2.lua:646 assets_dev/worlds/xeen/events/maps/xeen_x2.lua:673
 msgid "Ogre Lair"
-msgstr "食人魔巢穴"
+msgstr "食人妖巢穴"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x2.lua:658 assets_dev/worlds/xeen/events/maps/xeen_x3.lua:612 assets_dev/worlds/xeen/events/maps/xeen_x4.lua:1061
 #: assets_dev/worlds/xeen/events/maps/xeen_x4.lua:1063 assets_dev/worlds/xeen/events/maps/xeen_x4.lua:315 assets_dev/worlds/xeen/events/maps/xeen_x4.lua:849
@@ -21526,7 +21526,7 @@ msgstr "你们冲向刺靶，躲开摆过来的沙袋。（休息之前 +5 准�
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x4.lua:691 assets_dev/worlds/xeen/events/maps/xeen_x4.lua:699
 msgid "The ogres' fire"
-msgstr "食人魔的火堆"
+msgstr "食人妖的火堆"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x4.lua:693
 msgid "Ashes and gnawed bones."
@@ -21535,7 +21535,7 @@ msgstr "灰烬和啃过的骨头。"
 #: assets_dev/worlds/xeen/events/maps/xeen_x4.lua:698
 msgid ""
 "You scatter the ogres' fire into their bedding and the camp burns. (+1,500 experience)"
-msgstr "你们把食人魔的火堆踢进他们的铺盖里，营地烧了起来。（+1,500 经验）"
+msgstr "你们把食人妖的火堆踢进他们的铺盖里，营地烧了起来。（+1,500 经验）"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x4.lua:12 assets_dev/worlds/xeen/events/maps/xeen_x4.lua:7 assets_dev/worlds/xeen/events/maps/xeen_x4.lua:9
 msgid "Chapel of the Crown"
@@ -21543,7 +21543,7 @@ msgstr "王冠礼拜堂"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x4.lua:702 assets_dev/worlds/xeen/events/maps/xeen_x4.lua:704
 msgid "The ogres' loot"
-msgstr "食人魔的战利品"
+msgstr "食人妖的战利品"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x4.lua:707 assets_dev/worlds/xeen/events/maps/xeen_x4.lua:709
 msgid "Boundary stone"
@@ -21619,7 +21619,7 @@ msgstr "尼斯托船长的码头"
 #: assets_dev/worlds/xeen/events/maps/xeen_x4.lua:771
 msgid ""
 "A mooring post with Captain Nystor's mark. \"Closed until the ogres stop throwing boulders.\""
-msgstr "一根系着尼斯托船长标记的系船柱。“食人魔不再扔巨石之前，停业。”"
+msgstr "一根系着尼斯托船长标记的系船柱。“食人妖不再扔巨石之前，停业。”"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x4.lua:774
 msgid ""
@@ -21956,7 +21956,7 @@ msgstr "蒸汽和暖意：+100 生命值"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x5.lua:454 assets_dev/worlds/xeen/events/maps/xeen_x5.lua:462
 msgid "The ogres' camp"
-msgstr "食人魔的营地"
+msgstr "食人妖的营地"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x5.lua:456 assets_dev/worlds/xeen/events/maps/xeen_x5.lua:475
 msgid "Ash and a few charred bones."
@@ -22091,7 +22091,7 @@ msgstr "巨魔森林"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x5.lua:656
 msgid "The last of the Spirit Bones falls apart in the snow."
-msgstr "最后一根灵骨在雪里散了架。"
+msgstr "最后一根灵魂骸骨在雪里散了架。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x5.lua:677
 msgid "The Polter-Fools are gone. The town is very quiet."
@@ -22311,7 +22311,7 @@ msgstr "战区马车行"
 #: assets_dev/worlds/xeen/events/maps/xeen_x6.lua:245 assets_dev/worlds/xeen/events/maps/xeen_x6.lua:383 assets_dev/worlds/xeen/events/maps/xeen_x6.lua:385
 #: assets_dev/worlds/xeen/events/maps/xeen_x6.lua:56
 msgid "Castle Basenji"
-msgstr "巴辛吉城堡"
+msgstr "巴森吉城堡"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x6.lua:59
 msgid "Saul's hermitage"
@@ -23538,7 +23538,7 @@ msgstr "云梯"
 #: assets_dev/worlds/xeen/events/maps/xeen_xd04.lua:177
 msgid ""
 "The clouds answer to the Head Witch. While she lives, they will not bear you."
-msgstr "云听命于女巫头目。只要她还活着，它们就不会托起你们。"
+msgstr "云听命于首领女巫。只要她还活着，它们就不会托起你们。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_xd04.lua:181
 msgid "You climb the stair of cloud into the sky."
@@ -23598,7 +23598,7 @@ msgstr "你们把塔门推开，通向草地的空气。"
 #: assets_dev/worlds/xeen/events/maps/xeen_xd04.lua:256
 msgid ""
 "The Head Witch shrieks a word: the witch-marks split, and her familiars crawl out of the floor!"
-msgstr "女巫头目尖叫了一个词：女巫印记裂开，她的魔宠从地板里爬了出来！"
+msgstr "首领女巫尖叫了一个词：女巫印记裂开，她的魔宠从地板里爬了出来！"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_xd04.lua:260 assets_dev/worlds/xeen/events/maps/xeen_xd04.lua:262
 msgid "Roof hatch"
@@ -23606,7 +23606,7 @@ msgstr "屋顶舱口"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_xd04.lua:274
 msgid "The Head Witch shrieks, shrivels and is still."
-msgstr "女巫头目尖叫着萎缩，不动了。"
+msgstr "首领女巫尖叫着萎缩，不动了。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_xd04.lua:280
 msgid ""
@@ -23758,12 +23758,12 @@ msgstr "一道闪烁的结界"
 #: assets_dev/worlds/xeen/events/maps/xeen_xd04.lua:451
 msgid ""
 "A web of green witch-light bars the stair to the roof, the coven's moon-eye burning in it. It is the Head Witch's ward: it holds while she lives."
-msgstr "一张绿色女巫之光织成的网挡住了通往屋顶的楼梯，巫团的月眼在其中燃烧。这是女巫头目的结界：她活着，它就撑着。"
+msgstr "一张绿色女巫之光织成的网挡住了通往屋顶的楼梯，巫团的月眼在其中燃烧。这是首领女巫的结界：她活着，它就撑着。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_xd04.lua:455
 msgid ""
 "With the Head Witch dead, her ward gutters out and sinks hissing into the floor."
-msgstr "女巫头目死后，她的结界摇曳熄灭，嘶嘶地沉进了地板。"
+msgstr "首领女巫死后，她的结界摇曳熄灭，嘶嘶地沉进了地板。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_xd04.lua:491 assets_dev/worlds/xeen/events/maps/xeen_xd04.lua:493
 msgid "Winch drum"
@@ -24421,7 +24421,7 @@ msgstr "大树枝被砍断了。"
 #: assets_dev/worlds/xeen/events/maps/xeen_xd09.lua:18
 msgid ""
 "The slab door grinds open at a push, and shut again behind you. Emerson's King's Megacredits for Newcastle lie somewhere below, the golems' hoard; the golems that keep this place were never told to stop."
-msgstr "石板门一推就磨响着打开，在你们身后又关上。爱默生要给纽卡斯尔的国王兆信用点就在下面某处，是魔像们的宝藏；守着这地方的魔像从没被告知该停下。"
+msgstr "石板门一推就磨响着打开，在你们身后又关上。爱默生要给纽卡斯尔的国王巨额币就在下面某处，是魔像们的宝藏；守着这地方的魔像从没被告知该停下。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_xd09.lua:23
 msgid "Chisels, mallets and stone dust: the golem-makers' bench."
@@ -25375,7 +25375,7 @@ msgstr "纽卡斯尔的纹章"
 #: assets_dev/worlds/xeen/events/maps/xeen_xd14.lua:12
 msgid ""
 "Castle Basenji: the wizard cult's keep on its crag over the rim. Somewhere above is Arie's master's Scroll of Insight; somewhere below, the dogs that are not dogs. The gate is the way back out."
-msgstr "巴辛吉城堡：巫师邪教建在边缘之上峭壁上的主堡。上方某处是阿里的主人的洞察卷轴；下方某处，是那些不是狗的狗。大门是出去的路。"
+msgstr "巴森吉城堡：巫师邪教建在边缘之上峭壁上的主堡。上方某处是阿里的主人的洞察卷轴；下方某处，是那些不是狗的狗。大门是出去的路。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_xd14.lua:134 assets_dev/worlds/xeen/events/maps/xeen_xd14.lua:136
 msgid "Cell row"
@@ -26700,11 +26700,11 @@ msgstr "闩横在大门的叉形柱子里。先把闩抬起来。"
 #: assets_dev/worlds/xeen/events/maps/xeen_xd27.lua:109
 msgid ""
 "The log gate does not move: it is barred on the inside. A reek of old bones and rotten meat blows from a crack in the west wall of the mouth: the ogres throw their scraps down there, and what they throw down, you can climb up."
-msgstr "原木门纹丝不动：它从里面闩住了。西壁洞口的一道裂缝里吹来陈年骨头和腐肉的臭味：食人魔把残渣扔到那里，而他们扔下去的东西，你们能爬上来。"
+msgstr "原木门纹丝不动：它从里面闩住了。西壁洞口的一道裂缝里吹来陈年骨头和腐肉的臭味：食人妖把残渣扔到那里，而他们扔下去的东西，你们能爬上来。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_xd27.lua:116 assets_dev/worlds/xeen/events/maps/xeen_xd27.lua:139
 msgid "Ogre lair"
-msgstr "食人魔巢穴"
+msgstr "食人妖巢穴"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_xd27.lua:134
 msgid ""
@@ -26713,22 +26713,22 @@ msgstr "酋长的巨石座椅，挂满了尼斯托船只的战利品。现在打
 
 #: assets_dev/worlds/xeen/events/maps/xeen_xd27.lua:137
 msgid "You have found an Ogre lair.  Destroy?"
-msgstr "你们发现了一座食人魔巢穴。要摧毁吗？"
+msgstr "你们发现了一座食人妖巢穴。要摧毁吗？"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_xd27.lua:144
 msgid ""
 "A heavy plank door with an iron lock. The Ogre Chieftain keeps its key on his belt; he directs the boulder throwing on the ledge beyond the quarry."
-msgstr "一道带铁锁的厚木板门。食人魔酋长把钥匙挂在腰带上；他在采石场之外的岩架上指挥扔巨石。"
+msgstr "一道带铁锁的厚木板门。食人妖酋长把钥匙挂在腰带上；他在采石场之外的岩架上指挥扔巨石。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_xd27.lua:156
 msgid ""
 "Daylight and the roar of the river! The ledge hangs over the gorge. At its south end a heap of boulders waits on a timber rack, and the Ogre Chieftain bellows at his throwers."
-msgstr "日光和河水的轰鸣！岩架悬在峡谷上。南端，一堆巨石放在木架上，食人魔酋长对他的投掷手们咆哮。"
+msgstr "日光和河水的轰鸣！岩架悬在峡谷上。南端，一堆巨石放在木架上，食人妖酋长对他的投掷手们咆哮。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_xd27.lua:165
 msgid ""
 "Bones and refuse slither under your feet: the ogres throw their scraps down this crack. Something growls above."
-msgstr "骨头和垃圾在你们脚下滑动：食人魔把残渣从这条裂缝扔下来。上方有什么东西在低吼。"
+msgstr "骨头和垃圾在你们脚下滑动：食人妖把残渣从这条裂缝扔下来。上方有什么东西在低吼。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_xd27.lua:169 assets_dev/worlds/xeen/events/maps/xeen_xd27.lua:180
 msgid "Boulder rack"
@@ -26742,7 +26742,7 @@ msgstr "你们翻过护墙，掉进下面的河里。水流把你们冲下峡谷
 #: assets_dev/worlds/xeen/events/maps/xeen_xd27.lua:51
 msgid ""
 "The Ogre Chieftain crashes down. A heavy iron key hangs from his belt."
-msgstr "食人魔酋长轰然倒下。一把沉重的铁钥匙挂在他腰带上。"
+msgstr "食人妖酋长轰然倒下。一把沉重的铁钥匙挂在他腰带上。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_xd27.lua:62
 msgid "A boulder comes bounding down the chute behind you!"
@@ -26750,12 +26750,12 @@ msgstr "一块巨石沿着滑槽在你们身后蹦着滚下来！"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_xd27.lua:66 assets_dev/worlds/xeen/events/maps/xeen_xd27.lua:68
 msgid "Leave the Ogre Lair"
-msgstr "离开食人魔巢穴"
+msgstr "离开食人妖巢穴"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_xd27.lua:83
 msgid ""
 "Below, a great cauldron bubbles over the fire in the cooking pit: the ogres' supper. Best not to look in."
-msgstr "下面，一口大锅在烹饪坑的火上冒泡：食人魔的晚饭。最好别往里看。"
+msgstr "下面，一口大锅在烹饪坑的火上冒泡：食人妖的晚饭。最好别往里看。"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_xd27.lua:89
 msgid "The bar is up; the gate opens on the mouth."
@@ -26825,13 +26825,13 @@ msgid "A message in a bottle: \"Help! I'm in Darzog's tower!--Crodo\""
 msgstr "瓶中信：“救命！我被困在达佐格的塔里！——克罗多”"
 
 msgid "A drunk in Lady Geraldine's Tavern says Joe the Exterminator breeds the pests in his warehouse."
-msgstr "贝杰拉丁夫人酒馆里的一个醉汉说，灭虫人乔在自己的仓库里饲养害虫。"
+msgstr "贝杰拉丁夫人酒馆里的一个醉汉说，灭虫师乔在自己的仓库里饲养害虫。"
 
 msgid "The dwarf mines are still being over-run. Please help them."
 msgstr "矮人矿坑仍在遭受侵袭。请帮帮他们。"
 
 msgid "Old Valia of Toad Meadow wants the witches destroyed and the Alacorn of Falista brought back."
-msgstr "蟾蜍草甸的老瓦莉娅希望消灭女巫，并把法利斯塔的阿拉科恩带回来。"
+msgstr "蟾蜍草地的老瓦莉娅希望消灭女巫，并把法利斯塔的阿拉科恩带回来。"
 
 msgid "King Burlock wants the Sixth Mirror, last seen near the great volcano. He offers an earldom."
 msgstr "伯洛克国王想要第六面魔镜，据说最后一次出现在大火山附近。他许诺封你为伯爵。"
@@ -26843,28 +26843,28 @@ msgid "Artemus gave you the Pyramid Sigil, quietly. The old pyramids are said to
 msgstr "阿尔忒弥斯悄悄交给你一枚金字塔印记。据说古老的金字塔通往地下之地。"
 
 msgid "You own the ruins of Newcastle. Emerson, the King's engineer at Castle Burlock, builds castles for King's Megacredits."
-msgstr "你拥有纽卡斯尔的废墟。伯洛克城堡里国王的工程师艾默生用国王巨额币建造城堡。"
+msgstr "你拥有纽卡斯尔的废墟。伯洛克城堡里国王的工程师爱默生用国王巨额币建造城堡。"
 
 msgid "Emerson will build Newcastle's walls for 5 King's Megacredits."
-msgstr "艾默生愿以5枚国王巨额币为纽卡斯尔修筑城墙。"
+msgstr "爱默生愿以5枚国王巨额币为纽卡斯尔修筑城墙。"
 
 msgid "Newcastle has walls. Ebenezer, at the site, has something the workers found."
 msgstr "纽卡斯尔有城墙了。工地上的埃比尼泽手里有工人们发现的东西。"
 
 msgid "Ebenezer's workers say the Tomb of a Thousand Terrors in the lagoon is full of Megacredits."
-msgstr "埃比尼泽的工人说，泻湖里的千恐墓穴里堆满了巨额币。"
+msgstr "埃比尼泽的工人说，泻湖里的千重恐怖之墓里堆满了巨额币。"
 
 msgid "Megacredits lie in three evil places: the Temple of Yak, the Tomb of a Thousand Terrors and the Golem Dungeon."
-msgstr "巨额币藏在三处邪恶之地：雅克神殿、千恐墓穴和傀儡地牢。"
+msgstr "巨额币藏在三处邪恶之地：牦牛神庙、千重恐怖之墓和魔像地牢。"
 
 msgid "Emerson will build Newcastle's keep for 5 more Megacredits."
-msgstr "艾默生愿再收5枚巨额币，为纽卡斯尔修建主堡。"
+msgstr "爱默生愿再收5枚巨额币，为纽卡斯尔修建主堡。"
 
 msgid "Newcastle has a keep. Ebenezer has news from his workers."
 msgstr "纽卡斯尔有主堡了。埃比尼泽带来了工人们的消息。"
 
 msgid "Ebenezer's workers say the Golem Dungeon in the tundra, by the lagoon, is full of Megacredits."
-msgstr "埃比尼泽的工人说，泻湖边冻原上的傀儡地牢里堆满了巨额币。"
+msgstr "埃比尼泽的工人说，泻湖边冻原上的魔像地牢里堆满了巨额币。"
 
 msgid "Darzog's tower opens to a Skeleton Key kept in the Archmage's study atop the Tower of High Magic. A talking skull in the Cave of Illusion sells the study's key for ten gems."
 msgstr "达佐格之塔需要用万能钥匙开启，钥匙存放在高等魔法之塔顶层大法师的书房里。幻象洞穴里一个会说话的骷髅以十颗宝石出售书房的钥匙。"
@@ -26882,16 +26882,16 @@ msgid "Zelda gave you a glowing orb she found in a crater. Madame Oorla the gyps
 msgstr "泽尔达送给你一颗她在陨石坑里找到的发光宝珠。吉普赛人乌拉夫人能解读这类东西。"
 
 msgid "Madame Oorla: the orb belongs to the Dragon Pharaoh, but first it must see Ellinger, the Queen's wizard, in his tower in Castleview."
-msgstr "乌拉夫人：这颗宝珠属于龙法老，但必须先让它去见女王的巫师艾林格，他住在堡景镇的塔里。"
+msgstr "乌拉夫人：这颗宝珠属于龙法老，但必须先让它去见女王的巫师埃林格，他住在堡景镇的塔里。"
 
 msgid "The sewer rats under Castleview took Nadia's onyx necklace. She will pay for it."
 msgstr "堡景镇下水道的老鼠偷走了娜迪亚的玛瑙项链。她愿意出钱赎回。"
 
 msgid "Ellinger, the Queen's wizard: the key to the Dragon Pharaoh's pyramid is in Castle Kalindra, which Alamar moved out of phase. Twenty Energy Disks bring it back, five at a time; Ellinger takes them."
-msgstr "女王的巫师艾林格说：龙法老金字塔的钥匙在卡琳德拉城堡里，而阿拉玛把它移出了相位。二十个能量盘可以把它带回来，每次五个，艾林格负责收取。"
+msgstr "女王的巫师埃林格说：龙法老金字塔的钥匙在卡琳德拉城堡里，而阿拉玛把它移出了相位。二十个能量盘可以把它带回来，每次五个，埃林格负责收取。"
 
 msgid "Energy disks: the gremlins, the sprites, the ogres, the four towers, the Temple of Bark and Kalindra's own safes hold them. Ellinger takes them five at a time."
-msgstr "能量盘：地精、精灵、食人妖、四座塔、树皮神殿以及卡琳德拉自己的保险柜里都有。艾林格每次收取五个。"
+msgstr "能量盘：地精、精灵、食人妖、四座塔、树皮神殿以及卡琳德拉自己的保险柜里都有。埃林格每次收取五个。"
 
 msgid "Five disks brought Castle Kalindra's gate and first floor back into the world."
 msgstr "五个能量盘让卡琳德拉城堡的大门和一楼回到了现世。"
@@ -26900,13 +26900,13 @@ msgid "Ten disks: Castle Kalindra's second floor is back. Someone up there is ve
 msgstr "十个能量盘：卡琳德拉城堡的二楼回来了。楼上有人非常悲伤。"
 
 msgid "Megan's father Dimitri, captain of the Queen's guard, has lost all hope. The Songbird of Serenity, caged in the Dungeon of Lost Souls on the lake isle, could lift it."
-msgstr "梅根的父亲迪米特里是女王卫队的队长，已经万念俱灰。关在湖心岛失魂地牢里的宁静歌鸟也许能让他振作起来。"
+msgstr "梅根的父亲季米特里是女王卫队的队长，已经万念俱灰。关在湖心岛失魂地牢里的宁静之歌鸟也许能让他振作起来。"
 
 msgid "Crodo is free. The man at the King's side is Lord Xeen; only the sword under Newcastle can kill him, and Artemus can grant the leave to dig."
 msgstr "克罗多自由了。国王身边的那个人是辛恩领主；只有纽卡斯尔地下的那把剑能杀死他，而阿尔忒弥斯可以批准你前去挖掘。"
 
 msgid "Artemus granted an Excavation Permit for Newcastle's dungeon. Emerson digs for five more Megacredits."
-msgstr "阿尔忒弥斯颁发了纽卡斯尔地牢的挖掘许可。艾默生再收5枚巨额币便可动工挖掘。"
+msgstr "阿尔忒弥斯颁发了纽卡斯尔地牢的挖掘许可。爱默生再收5枚巨额币便可动工挖掘。"
 
 msgid "The sword that can kill Lord Xeen lies in a vault under Newcastle. Its door wants a word."
 msgstr "能杀死辛恩领主的剑藏在纽卡斯尔地下的一座密室里。密室的门需要一个口令。"
@@ -26915,10 +26915,10 @@ msgid "You have the Xeen Slayer Sword. Lord Xeen's hideout is in the clouds abov
 msgstr "你得到了辛恩斩杀之剑。辛恩领主的藏身处就在达佐格之塔上方的云端。"
 
 msgid "Dimitri is himself again. The Queen is Count Blackfang's prisoner and a vampire; only her crown can cure her. Ambrose, the Queen's Knight, has a way into Castle Blackfang."
-msgstr "迪米特里恢复了原样。女王是布莱克牙伯爵的囚徒，已变成吸血鬼；只有她的王冠能治好她。女王的骑士安布罗斯知道进入布莱克牙城堡的办法。"
+msgstr "季米特里恢复了原样。女王是布莱克方伯爵的囚徒，已变成吸血鬼；只有她的王冠能治好她。女王的骑士安布罗斯知道进入布莱克方城堡的办法。"
 
 msgid "Dimitri sends you to Ambrose, the Queen's Knight, at Griffin Pass on the south edge of the Forbidden Zone."
-msgstr "迪米特里让你去找女王的骑士安布罗斯，他在禁区南缘的狮鹫关隘。"
+msgstr "季米特里让你去找女王的骑士安布罗斯，他在禁区南缘的狮鹫关隘。"
 
 msgid "Ambrose's griffin will not bear a plain bridle. Natasha the Enchantress, in Sandcaster, enchants things for a fee."
 msgstr "安布罗斯的狮鹫不肯戴普通的缰绳。沙堡镇的女附魔师娜塔莎收费为物品附魔。"
@@ -26927,7 +26927,7 @@ msgid "Natasha enchanted the bridle. Ambrose waits at Griffin Pass."
 msgstr "娜塔莎为缰绳附了魔。安布罗斯正在狮鹫关隘等你。"
 
 msgid "Ambrose's griffin will carry you onto the walls of Castle Blackfang, on Lakeside's north shore."
-msgstr "安布罗斯的狮鹫会载你飞上布莱克牙城堡的城墙，城堡位于湖畔镇的北岸。"
+msgstr "安布罗斯的狮鹫会载你飞上布莱克方城堡的城墙，城堡位于湖畔镇的北岸。"
 
 msgid "Fifteen disks: Castle Kalindra's dungeon is back, with whoever was locked in it."
 msgstr "十五个能量盘：卡琳德拉城堡的地牢回来了，连同被关在里面的那些人。"
@@ -26939,7 +26939,7 @@ msgid "Queen Kalindra is herself again and home. The key to the Great Pyramid is
 msgstr "卡琳德拉女王恢复了原样，回到了家中。大金字塔的钥匙归你了；龙法老正在等他的宝珠。"
 
 msgid "The Queen is a vampire in Castle Blackfang's dungeon. Her crown, in her bedroom safe at Castle Kalindra (3-31-62), can cure her."
-msgstr "女王是布莱克牙城堡地牢里的吸血鬼。她的王冠放在卡琳德拉城堡她卧室的保险柜里（3-31-62），可以治好她。"
+msgstr "女王是布莱克方城堡地牢里的吸血鬼。她的王冠放在卡琳德拉城堡她卧室的保险柜里（3-31-62），可以治好她。"
 
 msgid "The Dragon Pharaoh waits for his orb at the top of the Great Pyramid, in the Desert of Doom."
 msgstr "龙法老在沙漠末日之地大金字塔的顶端等着他的宝珠。"
@@ -26957,7 +26957,7 @@ msgid "The Dragon Pharaoh named you the Chosen Ones. Lucio's celestial boats sai
 msgstr "龙法老称你们为天选之人。卢西奥的天空之船驶往奥林匹斯，古人在那里保存着一个灵魂盒。"
 
 msgid "The only Soul Box left on Xeen is in Soul Storage, in Olympus. Corak needs it to hide from Sheltem."
-msgstr "辛恩上仅存的灵魂盒在奥林匹斯的灵魂仓库里。柯拉克需要它来躲避谢尔特姆。"
+msgstr "辛恩上仅存的灵魂盒在奥林匹斯的灵魂存放处里。柯拉克需要它来躲避谢尔特姆。"
 
 msgid "You have the Soul Box. Take it to Corak in his pod in the Forbidden Zone."
 msgstr "你拿到了灵魂盒。把它带给禁区里舱中的柯拉克。"
@@ -27011,7 +27011,7 @@ msgid "Prince Roland is free and home with his brother. He gave you the Amulet o
 msgstr "罗兰王子自由了，已和他的兄弟回到家中。他给了你南方斯芬克斯护身符：暗石塔上方云端的钥匙就在南方斯芬克斯里。"
 
 msgid "Picard the Aged traded you the Chime of Opening for Halon's widget. It breaks the seal on Darkstone Tower's roof."
-msgstr "年迈的皮卡德用开启之钟与你交换了哈隆的小玩意。它能打破暗石塔屋顶的封印。"
+msgstr "年迈的皮卡德用开启编钟与你交换了哈隆的小玩意。它能打破暗石塔屋顶的封印。"
 
 msgid "The seal on Darkstone Tower's roof is broken. The Clouds of the Ancients are above it."
 msgstr "暗石塔屋顶的封印已被打破。古人之云就在它的上方。"
@@ -27023,7 +27023,7 @@ msgid "The sorceresses of Rivercity stole Barok's pendant. Barok wants it back."
 msgstr "河城的女巫偷走了巴洛克的吊坠。巴洛克想要拿回来。"
 
 msgid "Princess Roxanne's tiara was stolen by the Rivercity robbers, who hide under the bridge."
-msgstr "罗克珊公主的冠冕被藏身桥下的河城强盗偷走了。"
+msgstr "罗珊公主的冠冕被藏身桥下的河城强盗偷走了。"
 
 msgid "The Ninja clan drove Kai Wu the monk from his pagoda, due south of his monastery in the tundra. Rid it of them."
 msgstr "忍者一族把僧人凯武赶出了他的宝塔，宝塔位于冻原上他的寺院正南方。把他们清除掉。"
@@ -27053,7 +27053,7 @@ msgid "Falagar the Wizard's Crystals of Piezoelectricity were taken. He thinks t
 msgstr "巫师法拉加的压电水晶被人偷走了。他认为它们为毒蛇镇地下的一台机器提供动力。"
 
 msgid "Mirabeth wants the Elixir of Restoration from the Temple of Yak, in Rivercity's southern woods."
-msgstr "米拉贝丝想要河城南面树林里雅克神殿的复原灵药。"
+msgstr "米拉贝丝想要河城南面树林里牦牛神庙的复原灵药。"
 
 msgid "Medin the Fisherman says lake beasts are eating all the fish in Lake Darzog."
 msgstr "渔夫梅丁说，湖中怪兽正在吃光达佐格湖里所有的鱼。"
@@ -27062,13 +27062,13 @@ msgid "Halon the Efficient's water clock freezes every winter. He wants magical 
 msgstr "高效者哈隆的水钟每到冬天就会冻住。他想要火石山的魔法熔岩。"
 
 msgid "The trolls gnaw Thickbark's bark and uproot saplings. The trees of the Troll Forest want them dead."
-msgstr "巨魔啃咬瑟克巴克的树皮，还拔起树苗。巨魔森林的树木想要它们的命。"
+msgstr "巨魔啃咬厚树皮的树皮，还拔起树苗。巨魔森林的树木想要它们的命。"
 
 msgid "Cyclopes have built an outpost in the Land of the Giants and eat any gnome they catch. Glom wants it burnt."
 msgstr "独眼巨人在巨人之地建了一座前哨站，抓到侏儒就吃。格洛姆想把它烧掉。"
 
 msgid "Crazed sprites stole Danulf the Faery King's Wand of Faery Magic. They nest in the south woods."
-msgstr "疯狂的精灵偷走了精灵王达努夫的精灵魔杖。它们在南面的树林里筑巢。"
+msgstr "疯狂的精灵偷走了精灵王达努夫的精灵魔法杖。它们在南面的树林里筑巢。"
 
 msgid "Tito the Elf Priest dropped the Holy Book of Elvenkind in the Troll Forest when he was ambushed."
 msgstr "精灵牧师蒂托遭到伏击时，把精灵圣书掉在了巨魔森林里。"
@@ -27080,13 +27080,13 @@ msgid "Orothin the Hermit lost his bone whistle somewhere in Pitchfork Creek."
 msgstr "隐士奥罗辛把他的骨哨丢在了干草叉溪的某个地方。"
 
 msgid "Myra the Herbalist gives five potions for every Phirna root from Toad Meadow."
-msgstr "草药师米拉每收到一株蟾蜍草甸的菲尔娜根，就给五瓶药水。"
+msgstr "草药师米拉每收到一株蟾蜍草地的菲尔娜根，就给五瓶药水。"
 
 msgid "Derek the Ranger's bride Celia was carried off by zombies into the Forest of the Walking Dead."
 msgstr "游侠德里克的新娘西莉亚被僵尸掳进了行尸森林。"
 
 msgid "Ogres throw boulders at the boats around Rivercity. Captain Nystor wants them gone."
-msgstr "食人魔向河城周围的船只投掷巨石。尼斯特船长希望除掉它们。"
+msgstr "食人妖向河城周围的船只投掷巨石。尼斯特船长希望除掉它们。"
 
 msgid "Joe is on the Darkside, selling treasure maps. Jethro the mapmaker would like a look at one."
 msgstr "乔在暗面贩卖藏宝图。制图师杰思罗想看看其中的一张。"
@@ -27095,7 +27095,7 @@ msgid "Scaldrith, at the Dragon Tax Office in the Dragon Cave's mouth, wants 2,0
 msgstr "斯卡尔德里斯在龙洞口的龙税办公室，要2,000金币和20颗宝石，龙王才会见你。"
 
 msgid "Gremlins are sabotaging Castleview. Mayor Snarfblad pays to end it; their king Gettlewaithe holds court outside the walls."
-msgstr "地精正在破坏堡景镇。斯纳夫布莱德镇长出钱要平息此事；他们的国王盖特尔韦特在城墙外设朝。"
+msgstr "地精正在破坏堡景镇。斯纳夫布莱德镇长出钱要平息此事；他们的国王格特尔韦特在城墙外设朝。"
 
 msgid "Jethro's brother Jasper is in Castleview Jail, framed by Joe the map seller. Jethro wants him out."
 msgstr "杰思罗的弟弟贾斯珀被乔这个卖地图的陷害，关在堡景镇监狱里。杰思罗希望救他出来。"
@@ -27110,7 +27110,7 @@ msgid "Valio, who lives in the Castleview Sewer, wants Rooka the Queen Rat dead.
 msgstr "住在堡景镇下水道的瓦利奥想要鼠后鲁卡死。"
 
 msgid "Heretics have cast Dreyfus, High Priest of Mok, out of his Western Tower. They haul their supplies up a rope on the north wall."
-msgstr "异端分子把莫克的大祭司德莱弗斯赶出了他的西塔。他们用绳子沿北墙把补给吊上去。"
+msgstr "异端分子把莫克的大祭司德赖弗斯赶出了他的西塔。他们用绳子沿北墙把补给吊上去。"
 
 msgid "The gemsmiths outside Castleview make gear from five rocks of their gem and a few gems. The rocks come from the Gemstone Mines."
 msgstr "堡景镇外的宝石匠用五块他们那种宝石的原石和几颗宝石打造装备。原石来自宝石矿坑。"
@@ -27125,16 +27125,16 @@ msgid "The Orcs have kidnapped Princess Sheewana, a sister of the Sprites, into 
 msgstr "兽人把精灵的姐妹希瓦娜公主绑架到了树皮神殿里。莎拉请求你的帮助。"
 
 msgid "Graalg's Ogres rob Kramer's caravans in Ogre Pass. Kramer pays to be rid of them; Graalg might be talked round."
-msgstr "格拉尔格的食人魔在食人魔隘口抢劫克莱默的商队。克莱默出钱要除掉他们；格拉尔格或许可以说服。"
+msgstr "格拉尔格的食人妖在食人妖隘口抢劫克拉默的商队。克拉默出钱要除掉他们；格拉尔格或许可以说服。"
 
 msgid "Yog of the Sardaj barbarians asks whether you have come to his lands for battle."
 msgstr "萨尔达蛮族的约格问你，是不是为了战斗来到他的领地。"
 
 msgid "The Thieves' Guild says the trolls stole its gold. Hobstadt, the Troll King, sits at the bottom of the troll holes."
-msgstr "盗贼公会说巨魔偷走了他们的金子。巨魔之王霍布斯塔特坐镇在巨魔洞穴的最深处。"
+msgstr "盗贼公会说巨魔偷走了他们的金子。巨魔之王霍布施塔特坐镇在巨魔洞穴的最深处。"
 
 msgid "Xenoc the Wizard and Morgana the Sorceress have seized Sandcaster's guilds. Astra the Good Sorceress wants them defeated."
-msgstr "巫师泽诺克和女巫摩根娜夺取了沙堡镇的各个公会。善良的女巫阿斯特拉希望打败他们。"
+msgstr "巫师克塞诺克和女巫摩根娜夺取了沙堡镇的各个公会。善良的女巫阿斯特拉希望打败他们。"
 
 msgid "Caleb the Inventor at the Crossroads can't work without his magnifying glass. He saw gargoyles loitering by his tent."
 msgstr "十字路口的发明家凯莱布没有放大镜就无法工作。他看到石像鬼在他的帐篷旁闲逛。"
@@ -27173,7 +27173,7 @@ msgid "Sandro's key has opened his old home under the Dragon Tower, the Dungeon 
 msgstr "桑德罗的钥匙打开了他在龙塔下的旧居，也就是死亡地牢。下面仍有东西在运转。"
 
 msgid "Dimitri asks you to finish the liches locked in Castle Kalindra's dungeon. The guard never could."
-msgstr "迪米特里请你消灭关在卡琳德拉城堡地牢里的巫妖。卫兵一直没能做到。"
+msgstr "季米特里请你消灭关在卡琳德拉城堡地牢里的巫妖。卫兵一直没能做到。"
 
 msgid "Shinobu, in the Ninja Pagoda's cellar, will make your Initiates Ninja once Queen Kalindra's walls are rising."
 msgstr "忍者宝塔地窖里的忍丸，在卡琳德拉女王的城墙开始修建后，会把你的修士转职为忍者。"
@@ -27416,13 +27416,13 @@ msgid "Mind the toads. Some of them were people."
 msgstr "小心蟾蜍。有些以前是人。"
 
 msgid "Toad Meadow. The toads were here first."
-msgstr "蟾蜍草甸。蟾蜍比我们先到这里。"
+msgstr "蟾蜍草地。蟾蜍比我们先到这里。"
 
 msgid "Wipe your feet, it's a bog."
 msgstr "擦擦脚，这里是沼泽。"
 
 msgid "When I was still a young maiden, I fell asleep in Toad Meadow, and woke beside a unicorn."
-msgstr "我还是年轻姑娘时，在蟾蜍草甸睡着了，醒来时身边有一头独角兽。"
+msgstr "我还是年轻姑娘时，在蟾蜍草地睡着了，醒来时身边有一头独角兽。"
 
 msgid "Sit, sit. I'll tell you of Falista."
 msgstr "坐，坐。我来给你讲讲法利斯塔。"
@@ -27539,7 +27539,7 @@ msgid "I can give ya a boat ride to the Eastern shore, if ya be interested."
 msgstr "你要是有兴趣，我可以用船把你送到东岸去。"
 
 msgid "Those Ogres are ruining me!"
-msgstr "那些食人魔要把我毁了！"
+msgstr "那些食人妖要把我毁了！"
 
 msgid "A mace settles arguments. I'll show you how."
 msgstr "一根硬头锤能平息争论。我来教你怎么用。"
@@ -27632,7 +27632,7 @@ msgid "Fish are biting. People too."
 msgstr "鱼在咬钩。人也在咬。"
 
 msgid "Nystor's boats used to run upriver. Then the ogres came."
-msgstr "尼斯特的船以前逆流而上。后来食人魔来了。"
+msgstr "尼斯特的船以前逆流而上。后来食人妖来了。"
 
 msgid "Nothing biting."
 msgstr "没有鱼咬钩。"
@@ -27776,7 +27776,7 @@ msgid "Any word of the Book?"
 msgstr "有圣书的消息吗？"
 
 msgid "Crazed sprites hold my Wand of Faery Magic in the south woods."
-msgstr "疯狂的精灵把我的精灵魔杖扣在南面的树林里。"
+msgstr "疯狂的精灵把我的精灵魔法杖扣在南面的树林里。"
 
 msgid "My wand?"
 msgstr "我的魔杖呢？"
@@ -28610,7 +28610,7 @@ msgid "Where does it hurt?"
 msgstr "哪里疼？"
 
 msgid "The ogres burned two of my wagons. I pay well for two of their forts."
-msgstr "食人魔烧了我两辆马车。我愿出高价买下他们的两座堡垒。"
+msgstr "食人妖烧了我两辆马车。我愿出高价买下他们的两座堡垒。"
 
 msgid "Ready to ride?"
 msgstr "准备好骑行了吗？"
@@ -28652,7 +28652,7 @@ msgid "Solved it?"
 msgstr "解开了吗？"
 
 msgid "Show me your orb. Ah. First it must see Ellinger."
-msgstr "给我看看你的宝珠。啊。它得先去见艾林格。"
+msgstr "给我看看你的宝珠。啊。它得先去见埃林格。"
 
 msgid "The orb remembers you."
 msgstr "宝珠还记得你。"
@@ -28760,7 +28760,7 @@ msgid "Lamps lit."
 msgstr "灯点亮了。"
 
 msgid "Saddles for Kramer's caravans. When there are horses."
-msgstr "给克莱默商队的马鞍。有马的时候。"
+msgstr "给克拉默商队的马鞍。有马的时候。"
 
 msgid "Saddle?"
 msgstr "要鞍吗？"
@@ -28844,7 +28844,7 @@ msgid "The disks?"
 msgstr "能量盘呢？"
 
 msgid "I am Gettlewaithe, Imperator Primus of the Gremlins! Give me one good reason why I should not command my mighty army to cut your grotesque human heads from your shoulders and hang your eviscerated corpses above my throne for the entertainment of my subjects!"
-msgstr "我是盖特尔韦特，地精的至尊皇帝！给我一个理由，说明我为什么不命令我强大的军队把你们这些丑陋人类的脑袋从肩膀上砍下来，把你们开膛破肚的尸体挂在我的王座上方，供我的臣民取乐！"
+msgstr "我是格特尔韦特，地精的至尊皇帝！给我一个理由，说明我为什么不命令我强大的军队把你们这些丑陋人类的脑袋从肩膀上砍下来，把你们开膛破肚的尸体挂在我的王座上方，供我的臣民取乐！"
 
 msgid "Back to petition the king?"
 msgstr "又来向国王请愿吗？"
@@ -28892,7 +28892,7 @@ msgid "Leave me be."
 msgstr "别管我。"
 
 msgid "Father has lost all hope. Only the Songbird of Serenity could lift it."
-msgstr "父亲已经万念俱灰。只有宁静歌鸟能让他振作起来。"
+msgstr "父亲已经万念俱灰。只有宁静之歌鸟能让他振作起来。"
 
 msgid "The Songbird?"
 msgstr "歌鸟呢？"
@@ -29084,7 +29084,7 @@ msgid "Castleview, and Lakeside when the coven lets us through."
 msgstr "去堡景镇，女巫团放行时也去湖畔镇。"
 
 msgid "Xenoc kept us under lock. Now you hold the key. Do not insult it."
-msgstr "泽诺克把我们锁了起来。现在钥匙在你手里。别辱没它。"
+msgstr "克塞诺克把我们锁了起来。现在钥匙在你手里。别辱没它。"
 
 msgid "Mind your tongue."
 msgstr "注意你的言辞。"
@@ -29114,7 +29114,7 @@ msgid "Bring me something to boil."
 msgstr "给我带点要煮的东西来。"
 
 msgid "Xenoc and Morgana have seized the guilds of the quarter. Help me throw them out."
-msgstr "泽诺克和摩根娜夺取了这一区的公会。帮我把他们赶出去。"
+msgstr "克塞诺克和摩根娜夺取了这一区的公会。帮我把他们赶出去。"
 
 msgid "The quarter?"
 msgstr "这一区？"
@@ -29345,7 +29345,7 @@ msgid "Hear the water?"
 msgstr "听到水声了吗？"
 
 msgid "I quit Castle Blackfang. The hours were terrible and the master worse."
-msgstr "我辞去了布莱克牙城堡的差事。工时很糟，主人更糟。"
+msgstr "我辞去了布莱克方城堡的差事。工时很糟，主人更糟。"
 
 msgid "Come in. Not too close to the window."
 msgstr "进来。别离窗户太近。"
@@ -29660,7 +29660,7 @@ msgid "No egg yet? I'm not getting any younger."
 msgstr "还没有蛋吗？我可不会再年轻了。"
 
 msgid "Welcome to Vertigo. Sadly, most of the population has left because the town is infested with pests. A couple years ago I hired Joe the exterminator to rid the town of this menace, but the problem seems to be getting worse. Perhaps you could help."
-msgstr "欢迎来到弗蒂戈镇。可惜，因为镇上害虫横行，大部分居民都走了。几年前我雇了灭虫人乔来清除这个祸害，但问题似乎越来越严重。也许你们能帮上忙。"
+msgstr "欢迎来到弗蒂戈镇。可惜，因为镇上害虫横行，大部分居民都走了。几年前我雇了灭虫师乔来清除这个祸害，但问题似乎越来越严重。也许你们能帮上忙。"
 
 msgid "Vertigo. For weeks you dreamt of an old man in a dark tower who begged you to finish \"the sword\". Then a bolt from the sky destroyed Newcastle, and you woke here among its survivors. Mayor Gunther asks your help: slimes and doom bugs plague the town. The town hall is on the main street."
 msgstr "弗蒂戈镇。几周来，你一直梦见一个黑塔里的老人，求你完成“那把剑”。然后一道天降闪电摧毁了纽卡斯尔，你在这里醒来，身边是它的幸存者。冈瑟镇长请求你们帮忙：史莱姆和厄运虫在镇上肆虐。市政厅在主街上。"
@@ -29711,10 +29711,10 @@ msgid "You have destroyed the witches and for that I am grateful. For your galla
 msgstr "你们消灭了女巫，我很感激。为了你们英勇的事迹，我册封你们所有人为十字军！现在我必须带走阿拉科恩，因为如果我能找到法利斯塔，我相信阿拉科恩的治愈之力足以让她复活。"
 
 msgid "The Alacorn! But the Head Witch still lives, and she will come for it. Finish what you started."
-msgstr "阿拉科恩！但女巫头目还活着，她会来夺回它。把你开始的事做完。"
+msgstr "阿拉科恩！但首领女巫还活着，她会来夺回它。把你开始的事做完。"
 
 msgid "I am just an old woman but before I die I wish to see the witches of Toad Meadow destroyed. You see, when I was still a young maiden, I fell asleep in Toad Meadow. When I awoke I found a unicorn laying down beside me. Her name was Falista and she was fleeing from a band of witches who were trying to capture her. Since that day I have kept Falista safely hidden. But now she has disappeared. I fear the worst has happened and the witches have killed her for her Alacorn's magic. The witches fear nothing, and lock nothing. Their tower stands south-east of the meadow. Go quickly."
-msgstr "我只是个老妇人，但在我死之前，我希望看到蟾蜍草甸的女巫被消灭。你瞧，我还是年轻姑娘时，在蟾蜍草甸睡着了。醒来时我发现一头独角兽躺在我身边。她名叫法利斯塔，正在逃避一伙想要抓住她的女巫。从那天起，我一直把法利斯塔安全地藏起来。但现在她失踪了。我担心最坏的事情发生了，女巫为了她阿拉科恩的魔力杀了她。女巫什么都不怕，什么都不锁。她们的塔在草甸东南方。快去。"
+msgstr "我只是个老妇人，但在我死之前，我希望看到蟾蜍草地的女巫被消灭。你瞧，我还是年轻姑娘时，在蟾蜍草地睡着了。醒来时我发现一头独角兽躺在我身边。她名叫法利斯塔，正在逃避一伙想要抓住她的女巫。从那天起，我一直把法利斯塔安全地藏起来。但现在她失踪了。我担心最坏的事情发生了，女巫为了她阿拉科恩的魔力杀了她。女巫什么都不怕，什么都不锁。她们的塔在草甸东南方。快去。"
 
 msgid "Every child is home. Their mothers have stopped crying. Their fathers have started."
 msgstr "每个孩子都回家了。他们的母亲不再哭泣。他们的父亲开始了。"
@@ -29735,7 +29735,7 @@ msgid "The ring turns the lock and the cage rattles up its chain. The boy steps 
 msgstr "戒指转动了锁，笼子沿着链条哗啦啦升起。男孩走出来，又停住：“不行，带着这对耳朵不行。妈妈会吓死的。女巫的阿拉科恩能治好它们。它在顶层，大锅上面。”"
 
 msgid "The ring turns the lock and the cage rattles up its chain. A girl with a green tinge to her skin tumbles out and hugs you. 'I'm Rosebud. The door at the top of the north stair has a witch's face on it, and it only opens to the coven's key. They keep it in their stores in the herb loft, past the vats. Don't tell them I told you!' Then she is gone, running for Toad Meadow."
-msgstr "戒指转动了锁，笼子沿着链条哗啦啦升起。一个皮肤泛绿的女孩滚出来抱住了你。“我是玫瑰蕾。北楼梯顶端的门上有一张女巫的脸，只有女巫团的钥匙才能打开。她们把钥匙放在草药阁楼的库房里，经过大桶就是。别说是我告诉你的！”然后她就跑向蟾蜍草甸，不见了。"
+msgstr "戒指转动了锁，笼子沿着链条哗啦啦升起。一个皮肤泛绿的女孩滚出来抱住了你。“我是玫瑰蕾。北楼梯顶端的门上有一张女巫的脸，只有女巫团的钥匙才能打开。她们把钥匙放在草药阁楼的库房里，经过大桶就是。别说是我告诉你的！”然后她就跑向蟾蜍草地，不见了。"
 
 msgid "The ring turns the lock and the cage rattles up its chain. A boy crawls out of the cage, wiping his nose. \"Thanks for getting me out of there,\" he says. \"I thought the witches were going to turn me into a goblin for sure. I want to go home.\" And he runs. Valia will hear of it."
 msgstr "戒指转动了锁，笼子沿着链条哗啦啦升起。一个男孩从笼子里爬出来，擦着鼻子。“谢谢你们救我出来，”他说。“我以为女巫肯定要把我变成哥布林了。我想回家。”然后他跑了。瓦莉娅会听说这件事的。"
@@ -29759,7 +29759,7 @@ msgid "I was away a long time, further than most. The castle seems smaller now. 
 msgstr "我离开了很久，比大多数人都远。城堡现在看起来小了。一切都是。"
 
 msgid "Only Crusaders are allowed to enter Castle Burlock. Old Valia of Toad Meadow names Crusaders."
-msgstr "只有十字军才能进入伯洛克城堡。蟾蜍草甸的老瓦莉娅会任命十字军。"
+msgstr "只有十字军才能进入伯洛克城堡。蟾蜍草地的老瓦莉娅会任命十字军。"
 
 msgid "Crodo is free. Good. The King was pleased for almost a minute, and then asked about the mirror."
 msgstr "克罗多自由了。很好。国王高兴了将近一分钟，然后又问起了镜子。"
@@ -29777,7 +29777,7 @@ msgid "The old pyramids are said to lead to the land below the land. The Prince 
 msgstr "据说古老的金字塔通往地下之地。他们说王子回家之前去过那里。国王不愿听这个。所以，悄悄告诉你：金字塔印记。试试弗蒂戈镇东边小丘上的金字塔。"
 
 msgid "If you want to make some improvements here you should see the King's engineers. Emerson, at Castle Burlock. I am sure he will be able to help you."
-msgstr "如果你想在这里做些改进，应该去找国王的工程师。伯洛克城堡的艾默生。我相信他能帮你。"
+msgstr "如果你想在这里做些改进，应该去找国王的工程师。伯洛克城堡的爱默生。我相信他能帮你。"
 
 msgid "Wanna buy the land this lovely castle rests upon? Only twelve thousand gold! The rubble is included. So are the wood golems in the foundations."
 msgstr "想买下这座可爱城堡所在的土地吗？只要一万二千金币！废墟包括在内。地基里的木傀儡也包括在内。"
@@ -29804,28 +29804,28 @@ msgid "I'm sorry, but I cannot do any work on land that you do not own! Buy some
 msgstr "抱歉，我不能在不属于你的土地上施工！买下一块地，我们再谈。"
 
 msgid "While building the rest of your castle, a worker came back from the tundra white as a sheet. The Golem Dungeon, by the lagoon, is stuffed with Megacredits, he says. And golems. Mostly golems."
-msgstr "在修建你城堡的其余部分时，一个工人从冻原回来，脸白得像纸。他说，泻湖边的傀儡地牢里塞满了巨额币。还有傀儡。主要是傀儡。"
+msgstr "在修建你城堡的其余部分时，一个工人从冻原回来，脸白得像纸。他说，泻湖边的魔像地牢里塞满了巨额币。还有傀儡。主要是傀儡。"
 
 msgid "The workers have finished cleaning out the rubble and patching up the stone work. You should go inside and have a look around. Oh, one more thing. One of the workers swears the Tomb of a Thousand Terrors, out in the lagoon, is full of Megacredits. He won't go back for them. I thought you might."
-msgstr "工人们已经清理完废墟，并修补了石工。你们应该进去四处看看。哦，还有一件事。一个工人发誓，泻湖里的千恐墓穴里堆满了巨额币。他不肯再回去取。我想你们也许愿意。"
+msgstr "工人们已经清理完废墟，并修补了石工。你们应该进去四处看看。哦，还有一件事。一个工人发誓，泻湖里的千重恐怖之墓里堆满了巨额币。他不肯再回去取。我想你们也许愿意。"
 
 msgid "If you have enough Megacredits you should think about building up your castle. The King's engineers should be able to help you."
 msgstr "如果你有足够的巨额币，应该考虑扩建你的城堡。国王的工程师应该能帮你。"
 
 msgid "Three places. The Temple of Yak in Rivercity's south woods. The Tomb of a Thousand Terrors in the lagoon. The Golem Dungeon in the tundra, by the lagoon. Evil people hoard Megacredits. Don't ask me why."
-msgstr "三个地方。河城南面树林里的雅克神殿。泻湖里的千恐墓穴。泻湖边冻原上的傀儡地牢。邪恶之人囤积巨额币。别问我为什么。"
+msgstr "三个地方。河城南面树林里的牦牛神庙。泻湖里的千重恐怖之墓。泻湖边冻原上的魔像地牢。邪恶之人囤积巨额币。别问我为什么。"
 
 msgid "King's Megacredits. The King mints them for his engineers, and somehow they all end up in evil places: the Temple of Yak, the Tomb of a Thousand Terrors and the Golem Dungeon. Fetch them; I build. Walls, keep and dungeon, five each."
-msgstr "国王巨额币。国王为他的工程师铸造，而它们不知怎么全都流落到邪恶之地：雅克神殿、千恐墓穴和傀儡地牢。去取来；我来建造。城墙、主堡和地牢，各五枚。"
+msgstr "国王巨额币。国王为他的工程师铸造，而它们不知怎么全都流落到邪恶之地：牦牛神庙、千重恐怖之墓和魔像地牢。去取来；我来建造。城墙、主堡和地牢，各五枚。"
 
 msgid "The Temple of Yak. Mirabeth's Elixir of Restoration is kept somewhere inside, and the King's Megacredits too, they say. Incense, old stone, and something underneath that the incense is there to hide."
-msgstr "雅克神殿。据说米拉贝丝的复原灵药就存放在里面，国王巨额币也在。香火、古老的石头，还有香火想要掩盖的底下的东西。"
+msgstr "牦牛神庙。据说米拉贝丝的复原灵药就存放在里面，国王巨额币也在。香火、古老的石头，还有香火想要掩盖的底下的东西。"
 
 msgid "The strongbox is empty."
 msgstr "保险箱是空的。"
 
 msgid "A plaque at the base of the statue reads: Welcome to the Tomb of a Thousand Terrors. Insanity is our fame, undead is our game."
-msgstr "雕像底座上的牌匾写着：欢迎来到千恐墓穴。疯狂是我们的名声，亡灵是我们的游戏。"
+msgstr "雕像底座上的牌匾写着：欢迎来到千重恐怖之墓。疯狂是我们的名声，亡灵是我们的游戏。"
 
 msgid "King's Megacredit! Five of them, in a coffin that was never meant for anyone dead."
 msgstr "国王巨额币！五枚，放在一口从来不是为死人准备的棺材里。"
@@ -29900,10 +29900,10 @@ msgid "Something fell out of the sky last month and made a crater by the river. 
 msgstr "上个月有东西从天上掉下来，在河边砸出个坑。坑中央就是这颗宝珠。它发光，嗡嗡响，还看着我。我不想要它。带给乌拉夫人吧；她能解读这类东西。"
 
 msgid "The Pharaoh's orb wants to go home, but first it must see Ellinger. I don't make the rules. The orb does."
-msgstr "法老的宝珠想回家，但它必须先见艾林格。规矩不是我定的。是宝珠定的。"
+msgstr "法老的宝珠想回家，但它必须先见埃林格。规矩不是我定的。是宝珠定的。"
 
 msgid "Let me see... This orb belongs to the Dragon Pharaoh, in his pyramid in the desert. But first it must see Ellinger, the Queen's wizard. He locked himself in his tower with traps, so you will need his key, and at the top his tower will ask whom you seek: say his name, 'Ellinger'."
-msgstr "让我看看……这颗宝珠属于沙漠金字塔里的龙法老。但它必须先去见女王的巫师艾林格。他用陷阱把自己锁在塔里，所以你需要他的钥匙，到了塔顶，塔会问你找谁：说出他的名字，“艾林格”。"
+msgstr "让我看看……这颗宝珠属于沙漠金字塔里的龙法老。但它必须先去见女王的巫师埃林格。他用陷阱把自己锁在塔里，所以你需要他的钥匙，到了塔顶，塔会问你找谁：说出他的名字，“埃林格”。"
 
 msgid "I see a bird in a cage on an island, and a sad man in a castle. Free the one and the other will smile."
 msgstr "我看见一只鸟关在岛上的笼子里，还有一个悲伤的人在城堡里。放了前者，后者就会微笑。"
@@ -29912,7 +29912,7 @@ msgid "I see the castle growing back, stone by stone. More disks. Always more di
 msgstr "我看见城堡一块石头一块石头地长回来。更多的能量盘。总是需要更多的能量盘。"
 
 msgid "I see little round things that hum. Twenty of them. Gremlins, sprites, ogres, the towers. Ellinger counts them."
-msgstr "我看见嗡嗡响的小圆东西。二十个。地精、精灵、食人妖、各座塔。艾林格在数它们。"
+msgstr "我看见嗡嗡响的小圆东西。二十个。地精、精灵、食人妖、各座塔。埃林格在数它们。"
 
 msgid "I see a tower full of traps and a man at the top who loves his boots. Go up."
 msgstr "我看见一座满是陷阱的塔，塔顶有个爱靴子的男人。上去吧。"
@@ -29921,7 +29921,7 @@ msgid "I see a woman who lost her necklace to the rats under the town, and holds
 msgstr "我看见一个女人，她的项链被镇下的老鼠偷走了，手里握着一把她用不着的钥匙。娜迪亚。"
 
 msgid "My necklace! It still smells of sewer, but it's mine. Here, for your trouble. And Ellinger owes me a favour. Tell him Nadia sent you."
-msgstr "我的项链！它还有下水道的味道，但是是我的。拿着，算你的辛苦费。艾林格还欠我一个人情。告诉他是娜迪亚让你来的。"
+msgstr "我的项链！它还有下水道的味道，但是是我的。拿着，算你的辛苦费。埃林格还欠我一个人情。告诉他是娜迪亚让你来的。"
 
 msgid "The rats came up the drain and took my onyx necklace right off the dresser. They live in the sewers under town. Bring it back and I'll make it worth your while."
 msgstr "老鼠从下水道爬上来，把我的玛瑙项链从梳妆台上直接拖走了。它们住在镇子下面的下水道里。带回来，我会重谢你。"
@@ -29948,19 +29948,19 @@ msgid "\"Intruders, answer the following question or be destroyed!\" A barbarous
 msgstr "“入侵者，回答下面的问题，否则就毁灭！”一个野蛮的恶棍数月来一直在山中抢劫、杀害旅人。你的领主命你阻止他。你把他的剑从手中击落。你是侠义地让他取回武器，明知他可能获胜并继续作恶，还是在他手无寸铁时杀了他，以履行对领主的誓言？1）我允许他取回武器。2）我当场砍倒他。3）呃，我……我不知道。"
 
 msgid "Boots of Paradise, by Ellinger J. Hofenhager. \"Ah, lovely boots! Sweet leather foot holders, hard iron hobnail, how I adore thee!\" The rest goes on like that for two hundred pages."
-msgstr "《天堂之靴》，艾林格·J·霍芬哈格著。“啊，可爱的靴子！柔软的皮质承足，坚硬的铁钉鞋底，我多么爱你！”其余部分两百页都是这样。"
+msgstr "《天堂之靴》，埃林格·J·霍芬哈格著。“啊，可爱的靴子！柔软的皮质承足，坚硬的铁钉鞋底，我多么爱你！”其余部分两百页都是这样。"
 
 msgid "As you read the book, the pages begin to swim before your eyes and your head begins to ache. The ache builds to pain, the pain to agony. Understanding belatedly that you shouldn't be reading the book, you put it back on the shelf, but not quickly enough to avoid getting hurt."
 msgstr "你读着书，书页开始在眼前游动，头也疼了起来。疼痛不断加重，变成剧痛，又变成折磨。你后知后觉地意识到不该读这本书，把它放回书架，但已经来不及避免受伤了。"
 
 msgid "The lift does not move. Ellinger does not take visitors who haven't earned the stairs."
-msgstr "升降机纹丝不动。艾林格不接待没有挣得爬楼梯资格的访客。"
+msgstr "升降机纹丝不动。埃林格不接待没有挣得爬楼梯资格的访客。"
 
 msgid "The chest scuttles away on little brass feet before you can touch it."
 msgstr "箱子在你碰到它之前就踩着小小的黄铜脚跑开了。"
 
 msgid "A list in Ellinger's hand: \"Discs. Gremlins (3, if they can be made to talk). Sprites. Ogres. The towers, two each. The Temple of Bark. The castle itself, once it is back. The giants, if anyone is that brave.\""
-msgstr "艾林格笔迹的清单：“能量盘。地精（3个，如果能让他们开口）。精灵。食人妖。四座塔，每座两个。树皮神殿。城堡本身，等它回来之后。巨人，如果有人有这么勇敢。”"
+msgstr "埃林格笔迹的清单：“能量盘。地精（3个，如果能让他们开口）。精灵。食人妖。四座塔，每座两个。树皮神殿。城堡本身，等它回来之后。巨人，如果有人有这么勇敢。”"
 
 msgid "Have I taken the time to tell you that you are doing a wonderful job? All of you. I mean it. These discs will free the second level of the castle from Alamar's curse. Perhaps you will find more on the newly restored section."
 msgstr "我有没有抽时间告诉你们，你们干得很棒？你们所有人。我是认真的。这些能量盘将把城堡的第二层从阿拉玛的诅咒中解放出来。也许你们会在新恢复的部分找到更多。"
@@ -29993,7 +29993,7 @@ msgid "The Songbird is on the isle in the lake, past Lakeside. The dungeon there
 msgstr "歌鸟在湖心岛上，湖畔镇的另一边。那里的地牢全是要你振作起来的门。父亲永远过不去。"
 
 msgid "My father Dimitri was captain of the Queen's guard. Since she was taken he sits in the dark and won't eat. Only the Songbird of Serenity could lift his despair, and it's caged in the Dungeon of Lost Souls on the lake isle. Here is the key to its cage. Father kept it; he won't use it. The Isle eats parties, mind."
-msgstr "我的父亲迪米特里曾是女王卫队的队长。自从女王被带走，他就坐在黑暗里，不肯吃饭。只有宁静歌鸟能解除他的绝望，而它被关在湖心岛的失魂地牢里。这是它笼子的钥匙。父亲留着它；他不肯用。小心，那座岛会吞掉队伍。"
+msgstr "我的父亲季米特里曾是女王卫队的队长。自从女王被带走，他就坐在黑暗里，不肯吃饭。只有宁静之歌鸟能解除他的绝望，而它被关在湖心岛的失魂地牢里。这是它笼子的钥匙。父亲留着它；他不肯用。小心，那座岛会吞掉队伍。"
 
 msgid "The Queen is gone. What is a captain without a queen? A man in a chair. Leave me be."
 msgstr "女王不见了。没有女王的队长算什么？一个坐在椅子上的男人。别管我。"
@@ -30005,7 +30005,7 @@ msgid "Baron Darzog falls. In the Well, a black grille rises from his disc's lan
 msgstr "达佐格男爵倒下了。在水井中，一道黑色格栅从他的能量盘降落处升起。他施加在你们法术上的禁制仍在：它在石头里。"
 
 msgid "Crodo the Overseer, thin and grey, gets up from his stool. \"Thank you for rescuing me from Darzog's clutches. I didn't know that someone else had received my message. Listen. The man at the King's side is not Prince Roland. I struck him with Dancing Blades and saw what he is: Lord Xeen, an undead general who serves a greater master. Xeen's hideout is just above us in the clouds. You will need the sword the adventurers were working on in the dungeon of Newcastle to defeat Lord Xeen. Ask Artemus for leave to dig it out. The vault's word is 'laboratory'. You must make haste. Xeen plans to summon an army from the Darkside to conquer our world.\" Darzog's ward still holds him, but it is fading. He has strength for one small spell, and he spends it on going home. He touches your hand, says a word, and is gone."
-msgstr "监督者克罗多，又瘦又灰，从凳子上站起来。“谢谢你们把我从达佐格的魔掌中救出来。我不知道还有别人收到了我的信息。听着。国王身边的那个人不是罗兰王子。我用舞动之刃打了他，看清了他的真身：辛恩领主，一个为更伟大的主人效力的不死将军。辛恩的藏身处就在我们上方的云端。你们需要冒险者们在纽卡斯尔地牢里研究的那把剑，才能击败辛恩领主。去向阿尔忒弥斯请求挖掘许可。密室的口令是‘实验室’。你们必须抓紧。辛恩计划从暗面召唤一支军队来征服我们的世界。”达佐格的禁制仍然束缚着他，但正在减弱。他还有力量施展一道小法术，他用它回了家。他碰了碰你的手，说了一个词，然后消失了。"
+msgstr "监督者克罗多，又瘦又灰，从凳子上站起来。“谢谢你们把我从达佐格的魔掌中救出来。我不知道还有别人收到了我的信息。听着。国王身边的那个人不是罗兰王子。我用舞动之刃打了他，看清了他的真身：辛恩领主，一个为更伟大的主人效力的不死将军。辛恩的藏身处就在我们上方的云端。你们需要冒险者们在纽卡斯尔地牢里研究的那把剑，才能击败辛恩领主。去向阿尔忒弥斯请求挖掘许可。密室的口令是‘laboratory’（实验室）。你们必须抓紧。辛恩计划从暗面召唤一支军队来征服我们的世界。”达佐格的禁制仍然束缚着他，但正在减弱。他还有力量施展一道小法术，他用它回了家。他碰了碰你的手，说了一个词，然后消失了。"
 
 msgid "Crodo's stool, and the marks of his chain on the wall."
 msgstr "克罗多的凳子，还有他的锁链在墙上留下的痕迹。"
@@ -30014,7 +30014,7 @@ msgid "Dig, and say nothing at table. He smiles at me now. He never used to smil
 msgstr "去挖吧，席间什么都别说。他现在对我微笑了。他以前从不笑。"
 
 msgid "Crodo is home, and he says the Prince is... no. I believe him. I have watched that man not eat for a year. The King would not hear it, and the thing at his side would. So, quietly again: an Excavation Permit for Newcastle's dungeon. Emerson will dig where you tell him."
-msgstr "克罗多回家了，他说王子是……不。我相信他。我看着那个人一年没吃东西。国王不愿听，而他身边的那东西会听。所以，再次悄悄告诉你：纽卡斯尔地牢的挖掘许可。艾默生会在你指定的地方挖掘。"
+msgstr "克罗多回家了，他说王子是……不。我相信他。我看着那个人一年没吃东西。国王不愿听，而他身边的那东西会听。所以，再次悄悄告诉你：纽卡斯尔地牢的挖掘许可。爱默生会在你指定的地方挖掘。"
 
 msgid "Dug, shored and swept. There's a door at the bottom my men won't touch. It hums. I put a chalk mark on it: NOT MY DEPARTMENT."
 msgstr "挖好、加固、打扫干净了。底下有一扇门，我的人都不敢碰。它在嗡嗡响。我在上面用粉笔画了个记号：不归我管。"
@@ -30038,10 +30038,10 @@ msgid "On a rack of tools nobody remembers how to use: a long blade with no shin
 msgstr "一个没人记得怎么用的工具架上：一把完全没有光泽的长刃。剑柄上的标签写着：辛恩斩杀者。试验品。请勿掉落。"
 
 msgid "Ambrose is at Griffin Pass, on the south edge of the Forbidden Zone. He asks everyone who sent them. Tell him Dimitri did, and he'll listen."
-msgstr "安布罗斯在狮鹫关隘，禁区南缘。他会问每个人是谁派来的。告诉他是迪米特里，他就会听。"
+msgstr "安布罗斯在狮鹫关隘，禁区南缘。他会问每个人是谁派来的。告诉他是季米特里，他就会听。"
 
 msgid "That song... I have been sitting in the dark like a fool. Listen. When Alamar took the castle, he gave the Queen to Count Blackfang, and the Count made her a vampire. Only her own crown can undo it, and it is in her bedroom safe, upstairs, in the part of the castle that isn't back yet. The disk safes on this floor open to 64, 52, 31. And go to Ambrose, the Queen's Knight, at Griffin Pass. He has been trying to reach Blackfang for a year. Keep the bird. I'll hear it when you pass."
-msgstr "那首歌……我一直像个傻瓜一样坐在黑暗里。听着。阿拉玛夺取城堡时，把女王交给了布莱克牙伯爵，伯爵把她变成了吸血鬼。只有她自己的王冠才能解除，而王冠就在她卧室的保险柜里，楼上，城堡还没回来的那部分。这一层的能量盘保险柜密码是64、52、31。还有，去狮鹫关隘找女王的骑士安布罗斯。他一年来一直想要到达布莱克牙。留着那只鸟。你们经过时我会听到的。"
+msgstr "那首歌……我一直像个傻瓜一样坐在黑暗里。听着。阿拉玛夺取城堡时，把女王交给了布莱克方伯爵，伯爵把她变成了吸血鬼。只有她自己的王冠才能解除，而王冠就在她卧室的保险柜里，楼上，城堡还没回来的那部分。这一层的能量盘保险柜密码是64、52、31。还有，去狮鹫关隘找女王的骑士安布罗斯。他一年来一直想要到达布莱克方。留着那只鸟。你们经过时我会听到的。"
 
 msgid "Father laughed this morning. At breakfast. At nothing! Here, it's all I have that's worth anything. I took it from the guard room when nobody was guarding it."
 msgstr "父亲今早笑了。在早餐桌上。毫无缘由地笑了！这里，这是我仅有的值点钱的东西。我趁没人看守时从卫兵室里拿的。"
@@ -30083,19 +30083,19 @@ msgid "A griffin's bridle? Five thousand gold. Griffins are a specialty, and spe
 msgstr "狮鹫的缰绳？五千金币。狮鹫是专长，专长要加钱。"
 
 msgid "Dimitri? Then the old bear is awake again. Good. I caught a griffin to fly into Blackfang, and the beast will not take a bridle. An enchanted one, it might. Natasha in Sandcaster could do it. Here is the bridle."
-msgstr "迪米特里？那老熊又醒了。很好。我抓了一头狮鹫要飞进布莱克牙，但那畜生不肯戴缰绳。附了魔的也许肯。沙堡镇的娜塔莎能做到。这是缰绳。"
+msgstr "季米特里？那老熊又醒了。很好。我抓了一头狮鹫要飞进布莱克方，但那畜生不肯戴缰绳。附了魔的也许肯。沙堡镇的娜塔莎能做到。这是缰绳。"
 
 msgid "It took it! Look at him, calm as a cart horse. Blackfang has no gate that opens to the living, but it has walls, and walls have tops. When you are ready, we fly. And take this, from the Queen's own purse; she would want it spent on her rescue."
-msgstr "它戴上了！看它，像拉车的马一样平静。布莱克牙没有对活人开的门，但它有城墙，而墙是有顶的。等你们准备好，我们就飞。还有，拿着这个，是从女王自己的钱袋里拿的；她会希望把它用在营救她上。"
+msgstr "它戴上了！看它，像拉车的马一样平静。布莱克方没有对活人开的门，但它有城墙，而墙是有顶的。等你们准备好，我们就飞。还有，拿着这个，是从女王自己的钱袋里拿的；她会希望把它用在营救她上。"
 
 msgid "The griffin still bites anything that looks like leather. Natasha, in Sandcaster."
 msgstr "狮鹫还是会咬一切看起来像皮革的东西。去沙堡镇找娜塔莎。"
 
 msgid "The griffin drops you on Castle Blackfang's walls. Ambrose sets it down beside you and waits."
-msgstr "狮鹫把你放在布莱克牙城堡的城墙上。安布罗斯让它落在你们身边，等着。"
+msgstr "狮鹫把你放在布莱克方城堡的城墙上。安布罗斯让它落在你们身边，等着。"
 
 msgid "Iron, black, and no handle on this side. Castle Blackfang does not take visitors on foot."
-msgstr "黑铁，这一侧没有把手。布莱克牙城堡不接待步行的访客。"
+msgstr "黑铁，这一侧没有把手。布莱克方城堡不接待步行的访客。"
 
 msgid "The griffin lifts you over the walls and sets you down on the battlements."
 msgstr "狮鹫载着你们越过城墙，把你们放在垛口上。"
@@ -30131,13 +30131,13 @@ msgid "The safe in my bedroom. Three, thirty-one, sixty-two. Hurry. I am trying 
 msgstr "我卧室里的保险柜。三，三十一，六十二。快点。我正努力不去看你们的脖子。"
 
 msgid "Stay back. Count Blackfang made me what I am, and I am hungry all the time. Only my own crown can undo it. It is in the safe in my bedroom, in my own castle: three, thirty-one, sixty-two. Bring it, Crusaders. Please."
-msgstr "退后。布莱克牙伯爵把我变成了这个样子，我一直都很饿。只有我自己的王冠才能解除。它在我自己城堡里卧室的保险柜里：三，三十一，六十二。把它带来，十字军们。求你们了。"
+msgstr "退后。布莱克方伯爵把我变成了这个样子，我一直都很饿。只有我自己的王冠才能解除。它在我自己城堡里卧室的保险柜里：三，三十一，六十二。把它带来，十字军们。求你们了。"
 
 msgid "Castle Blackfang's battlements. Coffins stand in rows along the wall walk, lids ajar, like beds left unmade. The way down is through the Count."
-msgstr "布莱克牙城堡的垛口。棺材沿着城墙走道排成一列，盖子半开，像没铺好的床。通往下面的路要穿过伯爵。"
+msgstr "布莱克方城堡的垛口。棺材沿着城墙走道排成一列，盖子半开，像没铺好的床。通往下面的路要穿过伯爵。"
 
 msgid "Count Blackfang falls, and every coffin lid in the castle slams shut at once. The stair to the dungeon grinds open."
-msgstr "布莱克牙伯爵倒下了，城堡里的每口棺材盖同时砰地合上。通往地牢的楼梯嘎吱作响地打开了。"
+msgstr "布莱克方伯爵倒下了，城堡里的每口棺材盖同时砰地合上。通往地牢的楼梯嘎吱作响地打开了。"
 
 msgid "A force like wind pushes you back, lightly at first, but gaining strength as you put more effort into advancing. You are unable to descend."
 msgstr "一股像风一样的力量把你推回来，起初很轻，但你越用力前进，它越强。你无法下去。"
@@ -30266,7 +30266,7 @@ msgid "Strange energy device. It hums, and holds you a moment too long. Your sta
 msgstr "奇怪的能量装置。它嗡嗡作响，把你留住的时间长了那么一点。你的所有属性各提升了1点，但你的年龄也增加了五岁。"
 
 msgid "Olympus. Soul Storage. One box. Do not open the others' doors; the gods are touchy about their storage."
-msgstr "奥林匹斯。灵魂仓库。一个盒子。别打开其他的门；众神对自己的仓库很敏感。"
+msgstr "奥林匹斯。灵魂存放处。一个盒子。别打开其他的门；众神对自己的仓库很敏感。"
 
 msgid "Corak is awake. Then the prophecy is not a poem after all. You are the Chosen Ones: I say so, and the gods of Olympus will let you in on my word. Here is my pass. Lucio's boats sail from the jetties at Castleview and Sandcaster, and from Lakeside's dock. In Olympus is the only Soul Box left on Xeen. Corak needs it."
 msgstr "柯拉克醒了。那么预言毕竟不只是一首诗。你们就是天选之人：我这么说，奥林匹斯的众神会凭我的话放你们进去。这是我的通行证。卢西奥的船从堡景镇和沙堡镇的码头出发，也从湖畔镇的码头出发。奥林匹斯有辛恩上仅存的灵魂盒。柯拉克需要它。"
@@ -30287,10 +30287,10 @@ msgid "Prince Roland is held by Alamar in the bottom level of the Castle. Alive,
 msgstr "罗兰王子被阿拉玛关押在城堡最底层。还活着，算是吧。阿拉玛什么都收藏。"
 
 msgid "Welcome to Olympus. The clouds hold you up, which takes some getting used to. Somewhere up here is Soul Storage."
-msgstr "欢迎来到奥林匹斯。云托着你们，需要一点时间适应。这上面某处有灵魂仓库。"
+msgstr "欢迎来到奥林匹斯。云托着你们，需要一点时间适应。这上面某处有灵魂存放处。"
 
 msgid "Soul Storage. Shelf after shelf, all empty but one. On it, a small box of dull metal that is somehow heavier to look at than to lift. The Soul Box."
-msgstr "灵魂仓库。一排接一排的架子，只有一个有东西。上面放着一个黯淡金属的小盒子，看着比拿起来更沉。灵魂盒。"
+msgstr "灵魂存放处。一排接一排的架子，只有一个有东西。上面放着一个黯淡金属的小盒子，看着比拿起来更沉。灵魂盒。"
 
 msgid "Empty shelves. The gods have stopped storing souls; nobody asked them to."
 msgstr "空空的架子。众神已不再存放灵魂；没人要求他们这么做。"
@@ -30641,10 +30641,10 @@ msgid "Nice to see you again, adventurers! The widget that you brought to me is 
 msgstr "很高兴再见到你们，冒险者们！你们带给我的小玩意太迷人了！我每天早晨都把它翻过来看。它仍然什么也不做。太奇妙了。"
 
 msgid "Really? You have one? A widget! Then the Chime of Opening is yours. Make it so!"
-msgstr "真的吗？你有一个？小玩意！那么开启之钟就是你的了。就这么办！"
+msgstr "真的吗？你有一个？小玩意！那么开启编钟就是你的了。就这么办！"
 
 msgid "So you've come to me for the Chime of Opening. What could you possibly offer me in exchange? I've been around for thousands of years and I've seen everything... well, almost everything. There is one mysterious item that I haven't seen. It's called a widget. Go and see Halon the Efficient, the clockmaker, whose workshop stands east of Darkstone Tower in Winterkill Tundra. He's the one who first told me of it. Then don't come back 'til you find one!"
-msgstr "所以你是来找我要开启之钟的。你能拿什么来跟我交换呢？我活了几千年，什么都见过……嗯，几乎什么都见过。有一样神秘的东西我没见过。它叫小玩意。去找高效者哈隆，那位钟表匠，他的工坊在冬杀冻原暗石塔的东边。是他最先告诉我这东西的。找不到就别回来！"
+msgstr "所以你是来找我要开启编钟的。你能拿什么来跟我交换呢？我活了几千年，什么都见过……嗯，几乎什么都见过。有一样神秘的东西我没见过。它叫小玩意。去找高效者哈隆，那位钟表匠，他的工坊在冬杀冻原暗石塔的东边。是他最先告诉我这东西的。找不到就别回来！"
 
 msgid "The Sphinx's stone eyes find Roland's amulet. Its jaw opens on a stair."
 msgstr "斯芬克斯的石眼找到了罗兰的护身符。它的下颌张开，露出一道楼梯。"
@@ -30701,7 +30701,7 @@ msgid "Read down the columns, the four heads say: TYPE \"COMPUTER\" ON LEVEL 4 O
 msgstr "沿着竖列读下去，四个头像写着：在死亡地牢第4层输入“COMPUTER”。后会有期！"
 
 msgid "You strike the Chime of Opening. The note goes on long after it should have stopped, and something you could not see cracks across like ice. The seal has been broken."
-msgstr "你敲响了开启之钟。钟声久久不散，某种你看不见的东西像冰一样裂开。封印被打破了。"
+msgstr "你敲响了开启编钟。钟声久久不散，某种你看不见的东西像冰一样裂开。封印被打破了。"
 
 msgid "The stair to the roof is open. Cloud light comes down it."
 msgstr "通往屋顶的楼梯开了。云光从楼梯上倾泻而下。"
@@ -30785,7 +30785,7 @@ msgid "My servants have informed me that my diamond tiara has been stolen from m
 msgstr "我的仆人们告诉我，我的钻石冠冕从我的房间里被偷走了。我相信是住在河城大桥下的强盗干的。他们由一个狡猾奸诈的头目率领。他们必须被阻止，我的冠冕必须找回来。做到这些，你们将得到丰厚的奖赏。"
 
 msgid "The robbers' den, under the great bridge. Somewhere in here the boss keeps Princess Roxanne's tiara. Dice on the tables, wet boots by the bunks, and the river loud overhead."
-msgstr "强盗们的巢穴，在大桥下面。头目把罗克珊公主的冠冕藏在这里的某处。桌上有骰子，铺位旁有湿靴子，河水在头顶轰鸣。"
+msgstr "强盗们的巢穴，在大桥下面。头目把罗珊公主的冠冕藏在这里的某处。桌上有骰子，铺位旁有湿靴子，河水在头顶轰鸣。"
 
 msgid "The chest is locked with a little silver lock. The Princess's, and she hasn't said you may."
 msgstr "箱子用一把小银锁锁着。那是公主的，而她没说你可以动。"
@@ -31028,7 +31028,7 @@ msgid "I'm waiting for you to bring me the elixir of restoration from the evil c
 msgstr "我在等你们把邪恶牧师那里的复原灵药带给我。"
 
 msgid "I was once a beautiful mermaid. But one day a sorceress saw me swimming and became jealous of my beauty. She cast a spell that took away my beauty, but worst of all she took away my mermaid tail and gave me legs instead. I search to find an elixir of restoration so I can return to the way I once was. I've heard the clerics of the evil Temple of Yak, in the dark south end of the fairy woods below Rivercity, have one. If you could retrieve this elixir for me I would be eternally grateful. The temple's door is never locked. Its clerics want visitors; they do not let them leave."
-msgstr "我曾经是一条美丽的美人鱼。但有一天，一个女巫看见我游泳，嫉妒我的美貌。她施法夺走了我的美丽，更糟的是，她夺走了我的鱼尾，给了我双腿。我一直在寻找复原灵药，好让我恢复原样。我听说河城以南精灵森林黑暗南端的邪恶雅克神殿的牧师有一瓶。如果你们能为我取回这瓶灵药，我将永远感激。神殿的门从不上锁。它的牧师想要访客；他们不让访客离开。"
+msgstr "我曾经是一条美丽的美人鱼。但有一天，一个女巫看见我游泳，嫉妒我的美貌。她施法夺走了我的美丽，更糟的是，她夺走了我的鱼尾，给了我双腿。我一直在寻找复原灵药，好让我恢复原样。我听说河城以南精灵森林黑暗南端的邪恶牦牛神庙的牧师有一瓶。如果你们能为我取回这瓶灵药，我将永远感激。神殿的门从不上锁。它的牧师想要访客；他们不让访客离开。"
 
 msgid "My friends, I am always glad to see you. The fish are back, and so am I. My boat's at the jetty if you want the island."
 msgstr "朋友们，见到你们我总是很高兴。鱼回来了，我也回来了。我的船在码头，如果你们想去岛上的话。"
@@ -31082,13 +31082,13 @@ msgid "The forest is quiet again. The sprites are merely rude now, which for spr
 msgstr "森林又安静了。精灵现在只是无礼，对精灵来说这就是和平。"
 
 msgid "You have returned my Wand of Faery Magic! Now peace can be restored to the forest. Please accept this gold as a reward. And any of you with elven blood in the dark: kneel. The wand remembers its own."
-msgstr "你们归还了我的精灵魔杖！现在森林可以恢复和平了。请接受这些金币作为奖励。还有你们当中在黑暗中有精灵血统的人：跪下。魔杖认得它自己的人。"
+msgstr "你们归还了我的精灵魔法杖！现在森林可以恢复和平了。请接受这些金币作为奖励。还有你们当中在黑暗中有精灵血统的人：跪下。魔杖认得它自己的人。"
 
 msgid "A terrible thing has happened. My Wand of Faery Magic has been stolen by the Sprites. Without the Wand in my possession, my powers of magic are reduced. Now that the Sprites possess my Wand they are crazed with power, attacking anyone in the forest. If you return my Wand I will reward you handsomely."
-msgstr "发生了可怕的事。我的精灵魔杖被精灵偷走了。没有魔杖在手，我的魔力减弱了。现在精灵拿到了我的魔杖，它们因力量而发狂，攻击森林里的任何人。如果你们归还我的魔杖，我会重重酬谢。"
+msgstr "发生了可怕的事。我的精灵魔法杖被精灵偷走了。没有魔杖在手，我的魔力减弱了。现在精灵拿到了我的魔杖，它们因力量而发狂，攻击森林里的任何人。如果你们归还我的魔杖，我会重重酬谢。"
 
 msgid "A hollow full of blue speckled sprite eggs, and among them a slim wand of white wood: Danulf's Wand of Faery Magic."
-msgstr "一个满是蓝色斑点精灵蛋的洼地，其中有一根白木的纤细魔杖：达努夫的精灵魔杖。"
+msgstr "一个满是蓝色斑点精灵蛋的洼地，其中有一根白木的纤细魔杖：达努夫的精灵魔法杖。"
 
 msgid "Broken eggshells and angry chirping."
 msgstr "破碎的蛋壳和愤怒的啁啾声。"
@@ -31142,7 +31142,7 @@ msgid "Orothin the Wise: 'What falls past the rim does not come back.'"
 msgstr "智者奥罗辛：“越过边缘的东西不会回来。”"
 
 msgid "Toad meadow is the only known source of Phirna root, a vital ingredient in antidote potions. The witches of the meadow have been turning everyone they find into toads, so I don't dare go there. I will give you five potions for each Phirna root you bring me."
-msgstr "蟾蜍草甸是已知唯一出产菲尔娜根的地方，那是解毒药水的重要原料。草甸上的女巫把她们遇到的每个人都变成蟾蜍，所以我不敢去那里。你们每带给我一株菲尔娜根，我就给五瓶药水。"
+msgstr "蟾蜍草地是已知唯一出产菲尔娜根的地方，那是解毒药水的重要原料。草甸上的女巫把她们遇到的每个人都变成蟾蜍，所以我不敢去那里。你们每带给我一株菲尔娜根，我就给五瓶药水。"
 
 msgid "Sensing that you already have another Phirna root, the plant stubbornly resists your greedy fingers."
 msgstr "你察觉到自己已经有另一株菲尔娜根，这株植物顽固地抗拒你贪婪的手指。"
@@ -31172,22 +31172,22 @@ msgid "Not a boulder in a month! The boats run upriver again, and my crews have 
 msgstr "一个月没有巨石了！船又能逆流而上了，我的船员也不再被巨响吓得畏缩了。大多数时候。"
 
 msgid "Thank you for getting rid of the Ogres. Here is your reward. The upriver run opens tomorrow."
-msgstr "谢谢你们除掉了食人魔。这是你们的奖励。逆流航线明天开通。"
+msgstr "谢谢你们除掉了食人妖。这是你们的奖励。逆流航线明天开通。"
 
 msgid "The Ogres aren't gone yet. I think their base of operation is in the hills to the Northwest of here, up the north river."
-msgstr "食人魔还没走。我想它们的据点在这里西北方的山丘里，沿着北河上去。"
+msgstr "食人妖还没走。我想它们的据点在这里西北方的山丘里，沿着北河上去。"
 
 msgid "Those Ogres are ruining me! For months they have been throwing boulders at the boats that ply the waters around here. Three of my ships have gone to the bottom in as many months because the Ogres like the sound of crunching wood and screaming men. I want those Ogres gone and I am willing to pay well for the service."
-msgstr "那些食人魔要毁了我！几个月来它们一直向这一带水域航行的船只投掷巨石。三个月里我的三艘船沉了底，因为食人魔喜欢木头碎裂和男人尖叫的声音。我要那些食人魔消失，我愿意为此付出高价。"
+msgstr "那些食人妖要毁了我！几个月来它们一直向这一带水域航行的船只投掷巨石。三个月里我的三艘船沉了底，因为食人妖喜欢木头碎裂和男人尖叫的声音。我要那些食人妖消失，我愿意为此付出高价。"
 
 msgid "The ogres' lair, in the river bluff. Boulders stacked by the cliff edge, and a smell of cooking you would rather not ask about."
-msgstr "食人魔的巢穴，在河岸悬崖上。巨石堆在崖边，还有一股你最好别问是什么在煮的味道。"
+msgstr "食人妖的巢穴，在河岸悬崖上。巨石堆在崖边，还有一股你最好别问是什么在煮的味道。"
 
 msgid "Nothing is left to break."
 msgstr "没有什么可打破的了。"
 
 msgid "You knock the cross-beam out of the rack, and the whole heap of boulders goes thundering over the cliff into the river. That is the end of the ogres' ammunition."
-msgstr "你把横梁从架子上撞掉，整堆巨石轰隆隆地滚下悬崖落入河中。这就是食人魔弹药的终结。"
+msgstr "你把横梁从架子上撞掉，整堆巨石轰隆隆地滚下悬崖落入河中。这就是食人妖弹药的终结。"
 
 msgid "An empty rack."
 msgstr "一个空架子。"
@@ -31316,7 +31316,7 @@ msgid "You have saved Castleview from the wicked Gremlins! Oh, frabjous day! Her
 msgstr "你们从邪恶的地精手中救下了堡景镇！噢，美好的一天！这是你们的金币，还有一张通行证，好让城门不再跟你们争吵。"
 
 msgid "I am the mouthpiece of Castleview. The treasury will pay well for ending the Gremlins' mischief in town. Their king, Gettlewaithe, holds court in a burrow under our wall."
-msgstr "我是堡景镇的发言人。国库会重金酬谢终结地精在镇上捣乱的人。他们的国王盖特尔韦特在我们城墙下的洞穴里设朝。"
+msgstr "我是堡景镇的发言人。国库会重金酬谢终结地精在镇上捣乱的人。他们的国王格特尔韦特在我们城墙下的洞穴里设朝。"
 
 msgid "This came from the burrow this morning, with a note: 'For the delegation. Sir.' Three Energy Disks. I believe that is a gremlin apology. Take them before they explode."
 msgstr "今早这个从洞穴里送来，附有一张便条：“送给代表团。先生。”三个能量盘。我相信这是地精的道歉。趁它们没爆炸，拿走吧。"
@@ -31343,7 +31343,7 @@ msgid "A burrow under the wall, with a tiny door and a tiny sign: THE COURT. KNO
 msgstr "城墙下的一个洞穴，有一扇小小的门和一块小小的牌子：朝廷。请大声敲门。我们不会理你。"
 
 msgid "The last guard falls. On the throne, Gettlewaithe has gone a much paler shade of green."
-msgstr "最后一个卫兵倒下。王座上，盖特尔韦特的脸色变成了更苍白的绿色。"
+msgstr "最后一个卫兵倒下。王座上，格特尔韦特的脸色变成了更苍白的绿色。"
 
 msgid "The guards are still dead."
 msgstr "卫兵们还是死的。"
@@ -31469,7 +31469,7 @@ msgid "Your failure to breach the tower is not your fault; it is a test of my de
 msgstr "你们没能攻破塔，这不是你们的错；这是对我净化信仰、清除异端的决心的考验。我恳请你们继续为我努力。"
 
 msgid "Oh, wretched fortune! I, Dreyfus, high priest of Mok, have been cast from my tower by heretics in the priesthood! They warded the door against me, but they still haul their bread up a rope on the north wall. Perhaps you could climb in from the top and open the tower to me again."
-msgstr "哦，可悲的命运！我，莫克的大祭司德莱弗斯，被神职里的异端分子赶出了我的塔！他们对门施了禁制拒我于外，却仍然用绳子沿北墙把面包吊上去。也许你们能从塔顶爬进去，重新为我打开塔门。"
+msgstr "哦，可悲的命运！我，莫克的大祭司德赖弗斯，被神职里的异端分子赶出了我的塔！他们对门施了禁制拒我于外，却仍然用绳子沿北墙把面包吊上去。也许你们能从塔顶爬进去，重新为我打开塔门。"
 
 msgid "Humble and Pious came to me and begged forgiveness. I gave them the latrines. Mok is merciful; I am thorough."
 msgstr "谦卑和虔诚来找我，乞求宽恕。我把厕所给了他们。莫克是仁慈的；我是彻底的。"
@@ -31595,7 +31595,7 @@ msgid "Thank you for freeing me. I will return now to my sisters and tell them o
 msgstr "谢谢你们放了我。我现在要回到姐妹们身边，告诉她们你们的英勇事迹！"
 
 msgid "You came for me? Oh, how proper. The cage is locked, and Shaalth keeps the key on his belt."
-msgstr "你来救我？哦，真是礼貌。笼子是锁着的，沙尔思把钥匙挂在腰带上。"
+msgstr "你来救我？哦，真是礼貌。笼子是锁着的，沙尔斯把钥匙挂在腰带上。"
 
 msgid "Thank you for rescuing me from these foul orcs. Remember, Orcs can't jump."
 msgstr "谢谢你们把我从这些邪恶的兽人手里救出来。记住，兽人不会跳。"
@@ -31631,7 +31631,7 @@ msgid "The tea is hot, sweet and poisonous. The debate is over, and the Orcs won
 msgstr "茶又热、又甜、又有毒。辩论结束了，兽人赢了。"
 
 msgid "Shaalth's key turns in the cage lock. The princess steps out and straightens her wings."
-msgstr "沙尔思的钥匙在笼锁里转动。公主走出来，整理好翅膀。"
+msgstr "沙尔斯的钥匙在笼锁里转动。公主走出来，整理好翅膀。"
 
 msgid "The cage is open and empty."
 msgstr "笼子敞开着，空了。"
@@ -31649,10 +31649,10 @@ msgid "A sprite's chest, with a sprite sitting on it."
 msgstr "一个精灵的箱子，上面坐着一个精灵。"
 
 msgid "Thank you so much for getting rid of the Ogres! My caravans can now get through the pass safely. Here, take this gold as a reward."
-msgstr "非常感谢你们除掉了食人魔！我的商队现在可以安全通过隘口了。这里，拿着这些金币作为奖励。"
+msgstr "非常感谢你们除掉了食人妖！我的商队现在可以安全通过隘口了。这里，拿着这些金币作为奖励。"
 
 msgid "These blasted Ogres are killing my business. Every time I try to get a caravan through Ogre Pass they attack it, stealing everything. Get rid of them for me. There is a reward, and a bounty if both their forts burn."
-msgstr "这些该死的食人魔正在毁掉我的生意。每次我想带商队通过食人魔隘口，它们都会攻击，抢走一切。替我除掉它们。有奖励，如果两座堡垒都被烧毁，还有赏金。"
+msgstr "这些该死的食人妖正在毁掉我的生意。每次我想带商队通过食人妖隘口，它们都会攻击，抢走一切。替我除掉它们。有奖励，如果两座堡垒都被烧毁，还有赏金。"
 
 msgid "Two forts, burned to the ground. The bounty, as promised. And those of you who hunt for pay: the caravan guild has a title for hunters like you."
 msgstr "两座堡垒，烧成了平地。赏金，如约而至。还有你们当中受雇狩猎的人：商队公会有一个头衔，专门给你们这样的猎手。"
@@ -31664,7 +31664,7 @@ msgid "The Dragon Pharaoh is chief of nothing, now. Alamar is chief. We work for
 msgstr "龙法老现在什么头领都不是了。阿拉玛才是头领。我们为阿拉玛干活。我们现在要把你们的胳膊拔出来。"
 
 msgid "We are Ogres! We take what we want. Yesterday, we took the Sardaj's Energy disks! (grunt) Here are two energy disks. Caravans? Fine. We let caravans pass. Boring, but fine."
-msgstr "我们是食人魔！我们想拿什么就拿什么。昨天，我们拿了萨尔达的能量盘！（咕噜）这里有两个能量盘。商队？行。我们放商队过。无聊，但行。"
+msgstr "我们是食人妖！我们想拿什么就拿什么。昨天，我们拿了萨尔达的能量盘！（咕噜）这里有两个能量盘。商队？行。我们放商队过。无聊，但行。"
 
 msgid "The Orcs captured a sprite a little while ago... Har! (snort) Har! They sacrifice them to their God sometimes."
 msgstr "兽人不久前抓了一个精灵……哈！（哼）哈！他们有时会把它们献祭给他们的神。"
@@ -31673,7 +31673,7 @@ msgid "We didn't know you fight against Alamar. He pay us much gold to be on his
 msgstr "我们不知道你们对抗阿拉玛。他付我们很多金子站在他那边。因为我们喜欢你们，我们假装你们没说过那话。"
 
 msgid "Ash, and a smell of burned ogre laundry."
-msgstr "灰烬，还有一股烧焦的食人魔衣物的气味。"
+msgstr "灰烬，还有一股烧焦的食人妖衣物的气味。"
 
 msgid "Graalg's strongbox. Graalg is your friend. Graalg would notice."
 msgstr "格拉尔格的保险箱。格拉尔格是你们的朋友。格拉尔格会注意到的。"
@@ -31682,7 +31682,7 @@ msgid "I am Yog, chief of the Sardaj tribe. You do not come for battle? Then you
 msgstr "我是约格，萨尔达部落的首领。你们不是来战斗的？那么在我们中间你们是受欢迎的。"
 
 msgid "We would gladly give energy disks to you if we had them, but the Ogres stole the only ones we owned."
-msgstr "如果我们有能量盘，我们会很乐意给你们，但食人魔偷走了我们仅有的几个。"
+msgstr "如果我们有能量盘，我们会很乐意给你们，但食人妖偷走了我们仅有的几个。"
 
 msgid "You are welcome among us, friend. The giants of the desert are our friends too. Tell Gurodel that Yog sent you."
 msgstr "你们在我们中间是受欢迎的，朋友。沙漠的巨人也是我们的朋友。告诉古罗德尔是约格派你们来的。"
@@ -31697,19 +31697,19 @@ msgid "Ash and blackened tent poles."
 msgstr "灰烬和烧黑的帐篷杆。"
 
 msgid "Hobstadt wants all. You give two thousand. Hobstadt cannot count past two thousand. Good. Go where you like."
-msgstr "霍布斯塔特要全部。你给两千。霍布斯塔特数不过两千。好。想去哪去哪。"
+msgstr "霍布施塔特要全部。你给两千。霍布施塔特数不过两千。好。想去哪去哪。"
 
 msgid "Another troll? Hobstadt take him too. One night. (Morning.) War Troll. Hobstadt has two friends now."
-msgstr "又一个巨魔？霍布斯塔特也要带走他。一夜。（早晨。）战争巨魔。霍布斯塔特现在有两个朋友了。"
+msgstr "又一个巨魔？霍布施塔特也要带走他。一夜。（早晨。）战争巨魔。霍布施塔特现在有两个朋友了。"
 
 msgid "Troll in your party. Hobstadt take him. One night. (Morning. Your troll comes back taller, with new scars and no regrets.) Now he is War Troll. You are friends of Hobstadt."
-msgstr "队伍里有巨魔。霍布斯塔特带走他。一夜。（早晨。你的巨魔回来了，更高了，带着新伤疤，毫无悔意。）现在他是战争巨魔。你们是霍布斯塔特的朋友。"
+msgstr "队伍里有巨魔。霍布施塔特带走他。一夜。（早晨。你的巨魔回来了，更高了，带着新伤疤，毫无悔意。）现在他是战争巨魔。你们是霍布施塔特的朋友。"
 
 msgid "No troll. Hobstadt not eat your kind. Too many bones. You paid. Go where you like."
-msgstr "没有巨魔。霍布斯塔特不吃你们这种。骨头太多。你付了钱。想去哪去哪。"
+msgstr "没有巨魔。霍布施塔特不吃你们这种。骨头太多。你付了钱。想去哪去哪。"
 
 msgid "No troll. Hobstadt not eat your kind. Too many bones. Give gold, or fight."
-msgstr "没有巨魔。霍布斯塔特不吃你们这种。骨头太多。给金子，或者打架。"
+msgstr "没有巨魔。霍布施塔特不吃你们这种。骨头太多。给金子，或者打架。"
 
 msgid "A message on thieves' guild letterhead reads: To all members: The Trolls have stolen our gold. Get it back no matter the cost!"
 msgstr "一张盗贼公会信笺上的信息写着：致全体成员：巨魔偷走了我们的金子。无论代价如何，把它夺回来！"
@@ -31718,7 +31718,7 @@ msgid "The dead thief has nothing else to say."
 msgstr "死去的盗贼没有别的话可说了。"
 
 msgid "Your troll sits on the throne of Hobstadt. It fits. He stands up a War Troll."
-msgstr "你的巨魔坐在霍布斯塔特的王座上。很合适。他站起来时已是一个战争巨魔。"
+msgstr "你的巨魔坐在霍布施塔特的王座上。很合适。他站起来时已是一个战争巨魔。"
 
 msgid "The throne is vacant."
 msgstr "王座空着。"
@@ -31730,7 +31730,7 @@ msgid "Empty sacks. Labelled."
 msgstr "空袋子。贴着标签的。"
 
 msgid "A heap of sacks behind the throne. Hobstadt is sitting in front of it, and looking at you."
-msgstr "王座后面一堆袋子。霍布斯塔特坐在它前面，看着你们。"
+msgstr "王座后面一堆袋子。霍布施塔特坐在它前面，看着你们。"
 
 msgid "Troll Juice. This stuff is poisonous, but the experience improves you."
 msgstr "巨魔汁。这东西有毒，但这段经历让你变得更好。"
@@ -31745,7 +31745,7 @@ msgid "Every day that Sandcaster suffers under the rule of these evil masters is
 msgstr "沙堡镇在这些邪恶主人的统治下每多受一天苦，就是一天虚度。大家都指望你们把事情纠正过来。"
 
 msgid "Two years ago, Xenoc the Wizard and Morgana the Sorceress came to town with visions of conquest. They ruined my good name and made themselves heads of the guilds. Now I am dethroned, and the guilds are wicked. Will you help right the wrong?"
-msgstr "两年前，巫师泽诺克和女巫摩根娜带着征服的幻想来到镇上。他们毁了我的好名声，把自己变成了公会之首。现在我被废黜了，公会也变得邪恶。你们愿意帮忙纠正这个错误吗？"
+msgstr "两年前，巫师克塞诺克和女巫摩根娜带着征服的幻想来到镇上。他们毁了我的好名声，把自己变成了公会之首。现在我被废黜了，公会也变得邪恶。你们愿意帮忙纠正这个错误吗？"
 
 msgid "Good. I fear that it will be impossible to talk them from their lofty positions, so you will have to defeat them in battle. They hold the quarter behind the guild gate. Good luck."
 msgstr "很好。我担心不可能劝他们离开高位，所以你们得在战斗中击败他们。他们占据着公会大门后面的区域。祝你们好运。"
@@ -31757,7 +31757,7 @@ msgid "\"I think we're ready for that lesson right now.\" Blastem smiles. It is 
 msgstr "“我想我们现在就准备好上那一课了。”布拉斯特姆微笑着。那不是一个好看的微笑。"
 
 msgid "It's always a pleasure to be able to converse with other beings as intelligent as I. Xenoc keeps his door where nobody looks for it. Wizards like that never stop admiring themselves: try his mirror."
-msgstr "能和与我一样聪明的生物交谈总是一种乐趣。泽诺克把他的门放在没人会去找的地方。那样的巫师永远欣赏不够自己：试试他的镜子。"
+msgstr "能和与我一样聪明的生物交谈总是一种乐趣。克塞诺克把他的门放在没人会去找的地方。那样的巫师永远欣赏不够自己：试试他的镜子。"
 
 msgid "Orange Potion. It tastes of marmalade and arithmetic. (+2 Intellect, permanent)"
 msgstr "橙色药水。尝起来像橘子酱和算术。（智力+2，永久）"
@@ -31919,7 +31919,7 @@ msgid "Stay out from under the great oak. Its hornets don't take blood, they tak
 msgstr "别站在大橡树下面。它的黄蜂不吸血，它们吸走岁月。我的喷泉曾经能把岁月还回来。现在它是毒液，就像这一带的一切。"
 
 msgid "Ellinger's seal. 'To the Guildmaster of Sandcaster: the bearer has earned the robes of an Archmage.' Ellinger never wrote that about anyone. Those of you in a Wizard's robe, take these instead. The rest of you may hold the letter."
-msgstr "艾林格的封印。“致沙堡镇公会会长：持有者已赢得大法师长袍。”艾林格从未这样写过任何人。你们当中穿着巫师长袍的，拿这些吧。其余人可以持有这封信。"
+msgstr "埃林格的封印。“致沙堡镇公会会长：持有者已赢得大法师长袍。”埃林格从未这样写过任何人。你们当中穿着巫师长袍的，拿这些吧。其余人可以持有这封信。"
 
 msgid "Disc. Two Energy Disks, wired into a mage's experiment that no longer needs them."
 msgstr "圆盘。两个能量盘，接在一个法师不再需要它们的实验装置上。"
@@ -31928,7 +31928,7 @@ msgid "Loose wires where the disks were."
 msgstr "圆盘原来所在的地方只剩下松散的电线。"
 
 msgid "A letter sealed with Ellinger's mark, addressed 'To the Guildmaster of Sandcaster'. He left it where only those who could climb this tower would find it."
-msgstr "一封盖着艾林格印记的信，收件人是“沙堡镇公会会长”。他把它放在只有能爬上这座塔的人才能找到的地方。"
+msgstr "一封盖着埃林格印记的信，收件人是“沙堡镇公会会长”。他把它放在只有能爬上这座塔的人才能找到的地方。"
 
 msgid "The water is venom-green and smells of it. Thaddeus shakes his head at you from his door."
 msgstr "水是毒绿色的，闻起来也是。萨迪厄斯从门口对你们摇头。"
@@ -31952,7 +31952,7 @@ msgid "The Great Southern Tower is in Sprite Forest, rumored to be a hideout for
 msgstr "大南塔在精灵森林里，传闻是盗贼的藏身处。盗贼会记东西。找找看。"
 
 msgid "A thief bragged of it in his haste to escape: the Great Southern Tower, in the woods south of Ogre Pass. It is the only help I can offer. Whoever took the Jewel of Ages went there first."
-msgstr "一个盗贼在匆忙逃跑时吹嘘过：大南塔，在食人魔隘口以南的树林里。这是我所能提供的唯一帮助。偷走时代之宝的人先去了那里。"
+msgstr "一个盗贼在匆忙逃跑时吹嘘过：大南塔，在食人妖隘口以南的树林里。这是我所能提供的唯一帮助。偷走时代之宝的人先去了那里。"
 
 msgid "You got past the gongs, the chest and my accountants. Rogues and marksmen that good are wasted on heroics. Join the inner circle. No paperwork. Well, a ledger."
 msgstr "你们闯过了铜锣、箱子和我的会计们。这么出色的神偷和神射手浪费在英雄事业上。加入核心圈子吧。没有文书。好吧，有本账簿。"
@@ -31967,7 +31967,7 @@ msgid "The lid swings up. Among the thieves' takings, a receipt: 'Paid in full. 
 msgstr "盖子向上掀开。在盗贼的赃物中，有一张收据：“已全额付清。宝石一颗。已送往东塔。”"
 
 msgid "Ledger. One (1) Griffin Statuette, sold to Mages of the Great Eastern Tower. One (1) Dragon Statuette, sold to Head Witch of Lakeside. One (1) Pegasus Statuette, sold to Head Heretical Cleric. One (1) Jewel of Ages, sold to Mages of the Great Eastern Tower."
-msgstr "账本。狮鹫小雕像一尊（1），卖给大东塔的法师。巨龙小雕像一尊（1），卖给湖畔镇女巫头目。飞马小雕像一尊（1），卖给异端牧师头目。时代之宝一颗（1），卖给大东塔的法师。"
+msgstr "账本。狮鹫小雕像一尊（1），卖给大东塔的法师。巨龙小雕像一尊（1），卖给湖畔镇首领女巫。飞马小雕像一尊（1），卖给异端牧师头目。时代之宝一颗（1），卖给大东塔的法师。"
 
 msgid "The ledger. The prices are obscene."
 msgstr "账本。价格高得离谱。"
@@ -32021,19 +32021,19 @@ msgid "Lakeside has its tavern back and I have my feet back. I keep checking on 
 msgstr "湖畔镇找回了它的酒馆，我找回了我的脚。我一直在检查这两样。"
 
 msgid "The stocks fell open when the Head Witch died, and the others are out. Lakeside is ours again. The tavern was never destroyed, by the way. They only painted it gone."
-msgstr "女巫头目死时，枷锁松开了，其他人也出来了。湖畔镇又是我们的了。顺便说一句，酒馆从来没被毁掉。她们只是把它画没了。"
+msgstr "首领女巫死时，枷锁松开了，其他人也出来了。湖畔镇又是我们的了。顺便说一句，酒馆从来没被毁掉。她们只是把它画没了。"
 
 msgid "The Head Witch is dead and my stocks fell open. I'm staying until the others are out of the cells. Someone has to count them."
-msgstr "女巫头目死了，我的枷锁松开了。我留下来，直到其他人从牢房里出来。总得有人数数。"
+msgstr "首领女巫死了，我的枷锁松开了。我留下来，直到其他人从牢房里出来。总得有人数数。"
 
 msgid "Four more of us are in the cells below the Guild, and the Head Witch above them. The Guild's door asks 'What am I?' The answer is witch."
-msgstr "我们还有四个人在公会下面的牢房里，女巫头目在她们上面。公会的门会问“我是什么？”答案是 witch（女巫）。"
+msgstr "我们还有四个人在公会下面的牢房里，首领女巫在她们上面。公会的门会问“我是什么？”答案是 witch（女巫）。"
 
 msgid "They put me in the stocks for failing the initiation test. The test is the riddle at the Guild's door, 'What am I?', and the answer is witch. I said 'broom'. Four more of us are in the cells below. The good ones go to Castle Blackfang as guards; the rejects go to the Isle. Get them out, and break the coven."
-msgstr "她们因为我没通过入会测试，把我关进了枷锁。测试就是公会门口的谜语“我是什么？”，答案是 witch（女巫）。我说成了“broom（扫帚）”。下面的牢房里还有四个我们的人。好的被送到布莱克牙城堡当守卫；差的被送到岛上。把他们救出来，打破女巫团。"
+msgstr "她们因为我没通过入会测试，把我关进了枷锁。测试就是公会门口的谜语“我是什么？”，答案是 witch（女巫）。我说成了“broom（扫帚）”。下面的牢房里还有四个我们的人。好的被送到布莱克方城堡当守卫；差的被送到岛上。把他们救出来，打破女巫团。"
 
 msgid "Because they did this to me, I'll tell you where the Head Witch keeps her pass to Necropolis. It is in a chest in her room, in the north-west corner of the coven."
-msgstr "既然她们对我做了这些，我就告诉你们女巫头目把去亡灵之城的通行证放在哪里。在她房间的一个箱子里，位于女巫团西北角。"
+msgstr "既然她们对我做了这些，我就告诉你们首领女巫把去亡灵之城的通行证放在哪里。在她房间的一个箱子里，位于女巫团西北角。"
 
 msgid "My first is in water but not in tear. My second is in hire but not in hear. My third is in tree but not in peer. My fourth is in race but not in fear. My last is in sharp but not in spear."
 msgstr "我的第一个字母在 water 里，不在 tear 里。我的第二个字母在 hire 里，不在 hear 里。我的第三个字母在 tree 里，不在 peer 里。我的第四个字母在 race 里，不在 fear 里。我的最后一个字母在 sharp 里，不在 spear 里。"
@@ -32045,7 +32045,7 @@ msgid "Wrong! Begone fools! The floor of the porch drops away, and you land in t
 msgstr "错了！滚吧，傻瓜！门廊的地板塌了，你们掉进了公会下面的下水道。"
 
 msgid "Thanks for getting me out of there. The witches turn people into monsters: the good ones guard Castle Blackfang, the rejects end up on the Isle of Lost Souls. There are others. Find them."
-msgstr "谢谢你们救我出来。女巫把人变成怪物：好的守卫布莱克牙城堡，差的最后去了失魂岛。还有其他人。去找他们。"
+msgstr "谢谢你们救我出来。女巫把人变成怪物：好的守卫布莱克方城堡，差的最后去了失魂岛。还有其他人。去找他们。"
 
 msgid "Oh, thank you for rescuing me! The witches were going to use me for spare parts in their potions."
 msgstr "哦，谢谢你们救了我！女巫们原本要把我当零件用在她们的药水里。"
@@ -32063,10 +32063,10 @@ msgid "Another of the green ways drinks. The witches clap, politely. Warlock."
 msgstr "又一个走绿色之道的人喝了。女巫们礼貌地鼓掌。术士。"
 
 msgid "The brew tastes of toad and ambition. 'Welcome, sisters,' says a witch, whatever you are. Those of you who walk the green ways come up from the cauldron Warlocks. Members may also help themselves to the Head Witch's chest. Politely."
-msgstr "这药汤尝起来有蟾蜍和野心的味道。“欢迎，姐妹们，”一个女巫说，不管你们是什么。走绿色之道的人从大锅里出来时成为术士。成员也可以去拿女巫头目的箱子。有礼貌地。"
+msgstr "这药汤尝起来有蟾蜍和野心的味道。“欢迎，姐妹们，”一个女巫说，不管你们是什么。走绿色之道的人从大锅里出来时成为术士。成员也可以去拿首领女巫的箱子。有礼貌地。"
 
 msgid "The Head Witch's chest. The Head Witch is standing next to it."
-msgstr "女巫头目的箱子。女巫头目就站在它旁边。"
+msgstr "首领女巫的箱子。首领女巫就站在它旁边。"
 
 msgid "Cauldron. You taste the brew, and the witches' charm rubs off on you a little. (+2 Personality, permanent)"
 msgstr "大锅。你尝了尝药汤，女巫的魅力稍微沾到了你身上。（个性+2，永久）"
@@ -32417,7 +32417,7 @@ msgid "The guilds still talk about you. This one walks unseen too? Then the word
 msgstr "公会仍在谈论你们。这位也隐身行走？那么这个词是密探。"
 
 msgid "Ellinger's letter is in my files, and it says 'the bearer'. Close enough. Wizards, take the robes."
-msgstr "艾林格的信在我的档案里，上面写着“持有者”。差不多够了。巫师们，拿长袍吧。"
+msgstr "埃林格的信在我的档案里，上面写着“持有者”。差不多够了。巫师们，拿长袍吧。"
 
 msgid "A hunter who works for pay? The caravan guild's title is yours too. Bounty Hunter. It comes with a form."
 msgstr "一个受雇的猎手？商队公会的头衔你也可以拥有。赏金猎人。附带一张表格。"
@@ -32432,13 +32432,13 @@ msgid "Another druid who listens to trees. Stand in my shade a while. There. Arc
 msgstr "又一个倾听树木的德鲁伊。在我的树荫里站一会儿。好了。德鲁伊长老。"
 
 msgid "The wind says Thickbark has grown a new ring. He is unbearable about it."
-msgstr "风说瑟克巴克又长了一圈年轮。他为此变得令人难以忍受。"
+msgstr "风说厚树皮又长了一圈年轮。他为此变得令人难以忍受。"
 
 msgid "My cousin Thickbark says you are civilized. He is a poor judge of most things, but not of that. Druids, stand in my shade. A tree's patience is the last lesson, and you have just learned it."
-msgstr "我堂亲瑟克巴克说你们是文明人。他对大多数事情的判断都很差，但这件事不是。德鲁伊们，站在我的树荫里。树的耐心是最后一课，而你们刚刚学会了它。"
+msgstr "我堂亲厚树皮说你们是文明人。他对大多数事情的判断都很差，但这件事不是。德鲁伊们，站在我的树荫里。树的耐心是最后一课，而你们刚刚学会了它。"
 
 msgid "Civilized ones! Thickbark wrote, which for a tree means a century of rustling. If a druid among you ever wants the last lesson, come back."
-msgstr "文明人！瑟克巴克来信了，对一棵树来说那意味着一个世纪的沙沙声。如果你们当中的德鲁伊想要最后一课，就回来。"
+msgstr "文明人！厚树皮来信了，对一棵树来说那意味着一个世纪的沙沙声。如果你们当中的德鲁伊想要最后一课，就回来。"
 
 msgid "You dig where the seven words said. An iron box lies under the sand, left for a Sphinx that never came for it."
 msgstr "你们按七个词所说的地方挖掘。沙子下躺着一个铁盒，留给一只从未来取它的斯芬克斯。"
@@ -32672,7 +32672,7 @@ msgid "Dudley? He's been drinking since the plague started. Before that he drank
 msgstr "达德利？瘟疫开始以来他一直在喝酒。在那之前他喝酒是因为瘟疫还没来。"
 
 msgid "Joe the Exterminator banks with us. Every month the town pays him, and every month he deposits it. I say nothing. I'm a banker."
-msgstr "灭虫人乔在我们这里存钱。每个月镇上付他钱，每个月他都存进来。我什么都不说。我是银行家。"
+msgstr "灭虫师乔在我们这里存钱。每个月镇上付他钱，每个月他都存进来。我什么都不说。我是银行家。"
 
 msgid "The founders named it for the slime they cleared from the spring. Then the slime came back. We kept the name; it saves on signs."
 msgstr "创始人以他们从泉眼清除的史莱姆命名了这里。然后史莱姆又回来了。我们保留了这个名字；这样省招牌。"
@@ -32975,7 +32975,7 @@ msgid "The sun gets smaller every year and my lamps get bigger. One of us is goi
 msgstr "太阳每年都在变小，我的灯每年都在变大。我们之中总有一个会赢。"
 
 msgid "Ellinger has a great fondness for boots. Why, I couldn't say. I make saddles."
-msgstr "艾林格对靴子有着极大的喜爱。为什么，我说不上来。我做马鞍。"
+msgstr "埃林格对靴子有着极大的喜爱。为什么，我说不上来。我做马鞍。"
 
 msgid "The sewer drains into my moat, and the rats come with it. Big ones. One of them was wearing a necklace."
 msgstr "下水道排进我的护城河，老鼠也跟着来了。大的。其中一只戴着项链。"
@@ -33080,7 +33080,7 @@ msgid "Octopods in the deep water. They don't bite. They hug. Then they take you
 msgstr "深水里有章鱼怪。它们不咬人。它们拥抱。然后把你拖下去看个仔细。"
 
 msgid "Castle Blackfang sits on its crag in a storm of bats. You can't walk in. Nobody walks in. Some fly."
-msgstr "布莱克牙城堡坐落在峭壁上，被一场蝙蝠风暴包围。你走不进去。没人走进去。有些人飞进去。"
+msgstr "布莱克方城堡坐落在峭壁上，被一场蝙蝠风暴包围。你走不进去。没人走进去。有些人飞进去。"
 
 msgid "Being a goblin was great. You can eat anything. Mum says I have to stop eating anything."
 msgstr "当哥布林真棒。什么都能吃。妈妈说我必须停止什么都吃。"
@@ -33164,7 +33164,7 @@ msgid "The crypt under Nightshadow was full when the Count came. It is fuller no
 msgstr "伯爵来的时候，夜影镇下的地穴就满了。现在更满了。我们远远地为它祈祷。"
 
 msgid "The Tomb of a Thousand Terrors is out in the marsh. Somebody counted. There are a thousand."
-msgstr "千恐墓穴在沼泽里。有人数过。确实有一千个。"
+msgstr "千重恐怖之墓在沼泽里。有人数过。确实有一千个。"
 
 msgid "Nine years under the floorboards. We counted the Count's footsteps. He paced a lot, for a dead man."
 msgstr "地板下九年。我们数着伯爵的脚步声。对一个死人来说，他走得真多。"
@@ -33221,7 +33221,7 @@ msgid "Barbarians camp out on the savannah. Burn their tents and they move. Not 
 msgstr "蛮族在草原上扎营。烧了他们的帐篷，他们就搬走。搬不远。但会搬。"
 
 msgid "Joe. No relation to the exterminator in Vertigo. People ask. People always ask."
-msgstr "乔。与弗蒂戈镇的灭虫人没有关系。人们会问。人们总是问。"
+msgstr "乔。与弗蒂戈镇的灭虫师没有关系。人们会问。人们总是问。"
 
 msgid "Asp's open again. The townsfolk walk on legs now. Most of them don't hiss. Most."
 msgstr "毒蛇镇又开放了。镇民现在用腿走路了。大多数不再嘶嘶叫。大多数。"
@@ -33433,3 +33433,361 @@ msgstr "奥格登"
 msgid "He learned his kicks from the Drawkcab monks of Castleview. He speaks backwards and fights forwards."
 msgstr "他从堡景镇的反向僧侣那里学会了踢技。他倒着说话，向前战斗。"
 
+
+# --- autonotes, awards, named monsters ---
+msgid "Crodo's bottle: \"Help! I'm in Darzog's tower!\" Darzog's tower stands on the island in Lake Darzog, west of Rivercity."
+msgstr "克罗多的漂流瓶：“救命！我在达佐格的塔里！”达佐格之塔位于河城以西达佐格湖中的岛上。"
+
+msgid "Joe's invoice: Breeder Slimes, 1 mated pair, 287 gold. 5 Doom Bugs at 145 each, 725 gold. Total: 1012 gold. Mayor Gunther will want to see it."
+msgstr "乔的发货单：繁殖史莱姆，1 对，287 金币。厄运虫 5 只，每只 145，共 725 金币。合计：1012 金币。冈瑟镇长会想看看这个。"
+
+msgid "Artemus: Baron Darzog, the King's master sorcerer, was jealous of Crodo. Both vanished. Darzog's tower stands on the island in Lake Darzog."
+msgstr "阿尔忒弥斯：国王的首席术士达佐格男爵嫉妒克罗多。两人都失踪了。达佐格之塔位于达佐格湖中的岛上。"
+
+msgid "Newcastle: walls built (5 Megacredits). Next, a keep: 5 more."
+msgstr "纽卡斯尔：城墙已建好（5 枚巨额币）。下一步是主堡：再要 5 枚。"
+
+msgid "Megacredits: the Temple of Yak (Rivercity's south woods), the Tomb of a Thousand Terrors (Lifeforce Lagoon), the Golem Dungeon (Winterkill Tundra, by the lagoon)."
+msgstr "巨额币所在：牦牛神庙（河城南边的树林）、千重恐怖之墓（生命力泻湖）、魔像地牢（冬杀镇冻原，泻湖旁）。"
+
+msgid "Newcastle: keep built (5 Megacredits). A smith and a training hall work there now."
+msgstr "纽卡斯尔：主堡已建好（5 枚巨额币）。现在那里有了铁匠和训练所。"
+
+msgid "Madame Oorla: the Dragon Pharaoh's orb must go to Ellinger first. His tower's word is his own name."
+msgstr "乌拉夫人：龙法老的宝珠必须先交给埃林格。他塔门的口令就是他自己的名字。"
+
+msgid "Energy disks (Ellinger needs 20): the Gremlin Court (3), Sharla's sprites and the Temple of Bark (2 and 2), Graalg's ogres (2), the Southern, Western and Eastern Towers (2 each), the Chalice of Protection (2), Gurodel's giants (2), Castle Kalindra's own safes."
+msgstr "能量盘（埃林格需要 20 个）：地精王庭（3）、莎拉的小精灵和树皮神殿（各 2）、格拉尔格的食人妖（2）、南塔、西塔和东塔（各 2）、守护圣杯（2）、古罗德尔的巨人（2），以及卡琳德拉城堡自己的保险箱。"
+
+msgid "Crodo: the word of the sword vault under Newcastle (M23) is 'laboratory'."
+msgstr "克罗多：纽卡斯尔地下剑库（M23）的口令是“laboratory”（实验室）。"
+
+msgid "Artemus's Excavation Permit: Emerson, at Castle Burlock, digs out Newcastle's dungeon for the permit and 5 King's Megacredits."
+msgstr "阿尔忒弥斯的挖掘许可：伯洛克城堡的爱默生凭许可和 5 枚国王巨额币，为你们挖开纽卡斯尔的地牢。"
+
+msgid "The Xeen Slayer Sword: the only blade that can harm Lord Xeen. His castle is in the Clouds of Xeen, above Darzog's tower."
+msgstr "辛恩屠戮者之剑：唯一能伤到辛恩领主的剑。他的城堡在辛恩之云中，就在达佐格之塔上方。"
+
+msgid "Dimitri: the disk safes on Castle Kalindra's second floor open to 64-52-31. Ambrose, the Queen's Knight, waits at Griffin Pass."
+msgstr "季米特里：卡琳德拉城堡二楼的能量盘保险箱密码是 64-52-31。女王的骑士安布罗斯在狮鹫山口等候。"
+
+msgid "Ambrose, the Queen's Knight, flies to Castle Blackfang from Griffin Pass (the Forbidden Zone's south edge). Castle Blackfang has no other way in."
+msgstr "女王的骑士安布罗斯从狮鹫山口（禁区南缘）飞往布莱克方城堡。布莱克方城堡没有别的入口。"
+
+msgid "Queen Kalindra: her bedroom safe on Castle Kalindra's third floor opens to 3-31-62. The crown in it cures her."
+msgstr "卡琳德拉女王：她在卡琳德拉城堡三楼卧室的保险箱密码是 3-31-62。里面的王冠能治好她。"
+
+msgid "The Great Pyramid, in the Desert of Doom: the Queen's key opens it. The Dragon Pharaoh is on the top floor."
+msgstr "大金字塔，在末日沙漠：女王的钥匙能打开它。龙法老在顶层。"
+
+msgid "Corak, in Escape Pod 1 (the Forbidden Zone): he hunted Sheltem across the stars. Sheltem can sense him; he needs a place to hide."
+msgstr "柯拉克，在 1 号逃生舱（禁区）：他曾跨越星海追捕谢尔特姆。谢尔特姆能感应到他；他需要一个藏身之处。"
+
+msgid "Olympus, the city of the gods: Lucio's celestial boats from Castleview, Sandcaster and Lakeside, twice a week. The only Soul Box is in Soul Storage."
+msgstr "奥林匹斯，众神之城：卢西奥的天船从堡景镇、沙堡镇和湖畔镇出发，每周两班。仅存的灵魂盒在灵魂存放处。"
+
+msgid "Soul Storage, Olympus: the last Soul Box is yours. Corak waits in Escape Pod 1, in the Forbidden Zone."
+msgstr "奥林匹斯的灵魂存放处：最后一个灵魂盒归你们了。柯拉克在禁区的 1 号逃生舱等候。"
+
+msgid "A plaque in Soul Storage: all beings have a true name. Alamar's is Sheltem."
+msgstr "灵魂存放处的一块牌匾：万物皆有真名。阿拉玛的真名是 Sheltem（谢尔特姆）。"
+
+msgid "Corak, in the Soul Box: once in Sheltem's presence, throw the box to the ground. Lose the box, or die, and Xeen is doomed."
+msgstr "灵魂盒中的柯拉克：一到谢尔特姆面前，就把盒子摔到地上。弄丢盒子，或者死了，辛恩就完了。"
+
+msgid "Castle Alamar's true-name gate: the four sundials, Fire, Air, Earth and Water Time, must all read nine (Alamar's birth number, says Atlas in Olympus) and the gate asks for Alamar's true name, Sheltem."
+msgstr "阿拉玛城堡的真名之门：火、风、土、水四座日晷都必须指向九（据奥林匹斯的阿特拉斯说，这是阿拉玛的出生数字），然后门会要求说出阿拉玛的真名：Sheltem（谢尔特姆）。"
+
+msgid "Slick's carnival, before Castle Xeen: Might (100 gold), Speed (1,000 gold), Endurance (5 gems), Accuracy (10 gems). The member who plays needs about 60 in the game's statistic; Slick keeps a free round of tonic under the shooting line. Four dolls buy the Lord Xeen doll."
+msgstr "辛恩城堡前斯利克的游乐场：力量（100 金币）、速度（1,000 金币）、耐力（5 颗宝石）、准确（10 颗宝石）。上场的队员相应属性约需 60；斯利克在射击线下藏着一份免费的补药。四个娃娃可换辛恩领主娃娃。"
+
+msgid "The Pharaoh's checklist: the four Reflectors at Cloudside's corners; the four Sleepers on the elemental planes; Prince Roland in the bottom of Sheltem's dungeon; the cloud above Darkstone Tower; the Cube and the Scepter at his shrine."
+msgstr "法老的清单：云侧四角的四座反射器；元素位面上的四位沉睡者；谢尔特姆地牢底层的罗兰王子；暗石塔上方的云；他神殿里的魔方和权杖。"
+
+msgid "The Skyroads' corners: say Fire at the north-west corner, Air at the north-east, Earth at the south-east, Water at the south-west, then step off."
+msgstr "天路四角：在西北角说 Fire，东北角说 Air，东南角说 Earth，西南角说 Water，然后走下去。"
+
+msgid "The Southern Sphinx, in the Desert of the Sphinx: Prince Roland's amulet opens it. The key to the cloud above Darkstone Tower is inside."
+msgstr "斯芬克斯沙漠里的南方狮身人面像：罗兰王子的护身符能打开它。通往暗石塔上方云层的钥匙就在里面。"
+
+msgid "Darkstone Tower, the four heads of the top floor, read down: TYPE \"COMPUTER\" ON LEVEL 4 OF THE DUNGEON OF DEATH. SEE YA SOON!"
+msgstr "暗石塔顶层的四个头像，从上往下读：TYPE \"COMPUTER\" ON LEVEL 4 OF THE DUNGEON OF DEATH. SEE YA SOON!（在死亡地牢第 4 层输入“COMPUTER”。回头见！）"
+
+msgid "Winterkill: destroy all ghosts, bang the southern gong, re-visit Mayor Randon. Repeat as necessary."
+msgstr "冬杀镇：消灭所有幽灵，敲响南边的锣，再去找兰登镇长。必要时重复。"
+
+msgid "Arie's master's note: the password of Castle Basenji's second-floor door is 'There wolf'. The scroll is on the third floor."
+msgstr "阿里师父的笔记：巴森吉城堡二楼门的口令是“There wolf”。卷轴在三楼。"
+
+msgid "Jethro's real map: Slibo's cache, on Lakeside's eastern shore, under the cairn of five stones, two paces north. Slibo the wizard camps on Magic Mountain."
+msgstr "杰思罗的真地图：斯利博的藏宝处，在湖畔镇东岸，五块石头的石堆下，往北两步。巫师斯利博在魔法山扎营。"
+
+msgid "The Dragon Tax Office, at the Dragon Cave's mouth on Mount Firestone: 2,000 gold and 20 gems to see the Dragon King. Dragons who have read Dragon Lore become Great Wyrms there."
+msgstr "龙税务所，在火石山龙洞洞口：交 2,000 金币和 20 颗宝石可见龙王。读过《龙学》的龙在那里成为巨龙。"
+
+msgid "Shangri-La: the hidden valley beyond the Volcano Cave, on Mount Firestone. Its people know a great deal, and teach the rest."
+msgstr "香格里拉：火石山火山洞穴后面的隐秘山谷。那里的人懂得很多，也教授其余的东西。"
+
+msgid "The Gremlin Court: the burrow under Castleview's wall, outside the north gate. King Gettlewaithe talks big and fights small: beat his guards and he may listen."
+msgstr "地精王庭：堡景镇北门外城墙下的地洞。格特尔韦特国王说话凶，打架弱：打败他的卫兵，他也许会听。"
+
+msgid "The gremlins are done with Castleview. The gate will open for you now; Mayor Snarfblad owes you."
+msgstr "地精不再骚扰堡景镇了。城门现在会为你们打开；斯纳夫布莱德镇长欠你们一个人情。"
+
+msgid "Jasper: Castleview Jail. Joe says Jasper stole his map. A map of Joe's would prove what Joe is; the jail's back window is old, too."
+msgstr "贾斯珀：堡景镇监狱。乔说贾斯珀偷了他的地图。乔的一张地图就能证明乔是什么人；而且监狱的后窗也旧了。"
+
+msgid "Drawkcab lessons, in order: Brother Otto, Sister Hannah, Brother Bob, Sister Ada (their cells in Castleview)."
+msgstr "倒序僧的课程顺序：奥托修士、汉娜修女、鲍勃修士、艾达修女（他们的僧房在堡景镇）。"
+
+msgid "Brother Reger's cell, outside Castleview's walls: say the word the monks study at his door."
+msgstr "雷格修士的僧房，在堡景镇城墙外：在他门口说出僧侣们研习的那个词。"
+
+msgid "Public Storage: close the numbered chests from 1 to 9, and the lettered ones so they spell PITCHFORK."
+msgstr "公共仓库：把带数字的箱子从 1 到 9 依次关上，带字母的箱子按顺序拼出 PITCHFORK。"
+
+msgid "Rooka, the Queen Rat, nests in the Castleview Sewer. Valio, in the bed, will give you something for her."
+msgstr "鼠后鲁卡在堡景镇下水道筑巢。床上的瓦利奥会给你们对付她的东西。"
+
+msgid "The Western Tower's key is on its top floor. The heretics haul their supplies up a rope on the tower's north wall."
+msgstr "西塔的钥匙在塔顶。异端们用塔北墙上的绳子把补给拉上去。"
+
+msgid "The Western Tower's ground door is open. Dreyfus waits for news in the Temple of Mok."
+msgstr "西塔一楼的门开了。德赖弗斯在莫克神庙等消息。"
+
+msgid "Gemsmiths: Linus (ruby, 2 gems), Simon (emerald, 4), Toby (sapphire, 6), Hector (diamond, 10), each for five rocks. Rocks: the Gemstone Mines; diamonds only from the north adit, in the Forbidden Zone."
+msgstr "宝石匠：莱纳斯（红宝石，2 颗宝石）、西蒙（祖母绿，4）、托比（蓝宝石，6）、赫克托（钻石，10），各需五块原石。原石：宝石矿；钻石只出自北边的矿坑，在禁区。"
+
+msgid "Vespar's emerald handle: somewhere on the road from Sandcaster, east of the Sprite Forest. Sandcaster admits only pass holders."
+msgstr "维斯帕的祖母绿手柄：在从沙堡镇出来、小精灵森林以东的路上某处。沙堡镇只让持通行证的人进入。"
+
+msgid "Monga melons: the southern meadows of Castleview Vale, among the centipedes. Nibbler wants three."
+msgstr "蒙加甜瓜：堡景谷南边的草地上，蜈蚣中间。啃啃要三个。"
+
+msgid "Princess Sheewana is held by Shaalth's Orcs in the Temple of Bark, the great tree in Sprite Forest. Nibbler has the key."
+msgstr "希瓦娜公主被沙尔斯的兽人关在树皮神殿，也就是小精灵森林里的那棵巨树。啃啃有钥匙。"
+
+msgid "Sheewana is free and on her way home to Sharla's treehouse."
+msgstr "希瓦娜自由了，正在回莎拉树屋的路上。"
+
+msgid "Ogre Pass, in Sprite Forest: Graalg's Ogres and their two forts. Kramer pays to be rid of them, a bounty if both forts burn."
+msgstr "小精灵森林里的食人妖山口：格拉尔格的食人妖和他们的两座要塞。克拉默出钱要除掉他们，两座要塞都烧掉还有赏金。"
+
+msgid "Thieves' Guild letter: the Trolls have stolen the guild's gold. The troll holes of Sprite Forest lead down to Hobstadt, the Troll King."
+msgstr "盗贼公会的信：巨魔偷了公会的金子。小精灵森林里的巨魔洞通往下面的巨魔之王霍布施塔特。"
+
+msgid "Xenoc the Wizard and Morgana the Sorceress rule Sandcaster's guilds from the wizard quarter. They cannot be talked down: defeat them, then see Astra."
+msgstr "巫师克塞诺克和女术士摩根娜在巫师区统治沙堡镇的公会。他们说不通：打败他们，再去找阿斯特拉。"
+
+msgid "Xenoc and Morgana are dead. The wizard quarter of Sandcaster is open: the Guild of Night, Esoterica and the three towers."
+msgstr "克塞诺克和摩根娜死了。沙堡镇的巫师区开放了：暗夜行会、秘术店和三座塔。"
+
+msgid "The gargoyles roost on Magic Mountain, above Lakeside. Caleb's glass is probably in their lair."
+msgstr "石像鬼栖息在湖畔镇上方的魔法山。凯莱布的放大镜大概在它们的巢穴里。"
+
+msgid "The Northern Tower, in the Desert of Doom: the Voweless Knights. On the top floor a voice asks what you seek: answer without vowels, Chlc."
+msgstr "北塔，在末日沙漠：无元音骑士。顶层有个声音问你们在寻找什么：不带元音回答，Chlc。"
+
+msgid "The Voweless Knights' answers (Librarian Ormond's copy): Let sleeping dogs lie. He who laughs last, laughs best. The needs of the many outweigh the needs of the few. Love of money is the root of all evil. Don't look a gift horse in the mouth. A fool and his money are soon parted. If wishes were horses, beggars would ride. And what their voice wants to hear you seek: Chlc."
+msgstr "无元音骑士的答案（图书管理员奥蒙德的抄本）：Let sleeping dogs lie. He who laughs last, laughs best. The needs of the many outweigh the needs of the few. Love of money is the root of all evil. Don't look a gift horse in the mouth. A fool and his money are soon parted. If wishes were horses, beggars would ride. 而他们的声音想听到你们寻找的是：Chlc。"
+
+msgid "The Jewel of Ages is in the Great Eastern Tower, east of Sandcaster, with the mages who bought it. The key was in the thieves' Ali Baba chest."
+msgstr "岁月宝玉在沙堡镇以东的大东塔，在买下它的法师手里。钥匙在盗贼的阿里巴巴箱子里。"
+
+msgid "Ellinger's sealed letter, for the Guildmaster of Sandcaster: Nasir, of the Guild of Light."
+msgstr "埃林格给沙堡镇公会会长的密封信：光明公会的纳西尔。"
+
+msgid "The thieves' ledger: the Jewel of Ages and the Griffin statuette sold to the mages of the Eastern Tower, east of Sandcaster; the Dragon to the Head Witch of Lakeside; the Pegasus to the head heretical cleric of the Western Tower."
+msgstr "盗贼的账本：岁月宝玉和狮鹫雕像卖给了沙堡镇以东东塔的法师；龙雕像卖给了湖畔镇的首领女巫；天马雕像卖给了西塔的异端神甫头目。"
+
+msgid "Luna's statuettes: start with the thieves of the Great Southern Tower. The fountain keeper near Venom Pond has its key."
+msgstr "露娜的雕像：先从大南塔的盗贼下手。毒池附近的泉水看守人有那里的钥匙。"
+
+msgid "Lakeside's coven: the Guild's door asks 'What am I?' (the answer is witch). Four prisoners in the cells below, the Head Witch above them; Naomi in the stocks on the square."
+msgstr "湖畔镇的女巫团：公会的门会问“我是什么？”（答案是 witch，女巫）。下面的牢房关着四个囚犯，首领女巫在她们上面；娜奥米在广场的刑枷里。"
+
+msgid "The Head Witch keeps her pass to Necropolis in a chest in her room, in the coven's north-west corner."
+msgstr "首领女巫把去亡灵之城的通行证放在她房间的箱子里，在女巫团的西北角。"
+
+msgid "Sandro's heart is in a jar in the Necropolis Sewer. Bring it to him, and he can die."
+msgstr "桑德罗的心脏装在亡灵之城下水道的一个罐子里。把它带给他，他就能死去。"
+
+msgid "The Enchanted Boulders of the Desert of Doom keep a dead paladin's armour. One of them asks: What am I?"
+msgstr "末日沙漠的魔法巨石守着一位死去圣骑士的盔甲。其中一块会问：我是什么？"
+
+msgid "The tribble note, in four pieces from the drains of the Olympus sewer: TR, IB, BL, ES."
+msgstr "特里布尔字条，分四片，来自奥林匹斯下水道的排水口：TR、IB、BL、ES。"
+
+msgid "Obelisk in Vertigo Meadows: the first of seven Cloudside words, SEEK."
+msgstr "弗蒂戈草甸的方尖碑：七个云侧词中的第一个，SEEK。"
+
+msgid "Obelisk by Rivercity: the second Cloudside word, THE."
+msgstr "河城旁的方尖碑：第二个云侧词，THE。"
+
+msgid "Obelisk in Lifeforce Lagoon: the third Cloudside word, HOARD."
+msgstr "生命力泻湖的方尖碑：第三个云侧词，HOARD。"
+
+msgid "Obelisk in Burlock Savannah: the fourth Cloudside word, BURIED."
+msgstr "伯洛克草原的方尖碑：第四个云侧词，BURIED。"
+
+msgid "Obelisk in Winterkill Tundra: the fifth Cloudside word, FOR."
+msgstr "冬杀镇冻原的方尖碑：第五个云侧词，FOR。"
+
+msgid "Obelisk in the Desert of the Sphinx: the sixth Cloudside word, THE."
+msgstr "斯芬克斯沙漠的方尖碑：第六个云侧词，THE。"
+
+msgid "Obelisk on Mount Firestone: the seventh Cloudside word, SPHINX."
+msgstr "火石山的方尖碑：第七个云侧词，SPHINX。"
+
+msgid "Obelisk in Castleview Vale: the first of six Darkside words, DIG."
+msgstr "堡景谷的方尖碑：六个暗面词中的第一个，DIG。"
+
+msgid "Obelisk in the Sprite Forest: the second Darkside word, BENEATH."
+msgstr "小精灵森林的方尖碑：第二个暗面词，BENEATH。"
+
+msgid "Obelisk by Sandcaster: the third Darkside word, THE."
+msgstr "沙堡镇旁的方尖碑：第三个暗面词，THE。"
+
+msgid "Obelisk by Lakeside: the fourth Darkside word, BROKEN."
+msgstr "湖畔镇旁的方尖碑：第四个暗面词，BROKEN。"
+
+msgid "Obelisk in the Desert of Doom: the fifth Darkside word, TRAVEL."
+msgstr "末日沙漠的方尖碑：第五个暗面词，TRAVEL。"
+
+msgid "Obelisk in the Forbidden Zone: the sixth Darkside word, PYRAMID."
+msgstr "禁区的方尖碑：第六个暗面词，PYRAMID。"
+
+msgid "Won %u Page battles in the Warzone."
+msgstr "在战区赢得 %u 场侍从级战斗。"
+
+msgid "Won %u Squire battles in the Warzone."
+msgstr "在战区赢得 %u 场扈从级战斗。"
+
+msgid "Won %u Knight battles in the Warzone."
+msgstr "在战区赢得 %u 场骑士级战斗。"
+
+msgid "Won %u Lord battles in the Warzone."
+msgstr "在战区赢得 %u 场领主级战斗。"
+
+msgid "Received Vertigo's Outstanding Citizenship Award"
+msgstr "获得弗蒂戈镇杰出市民奖"
+
+msgid "Received the Red Dwarf Badge of Courage"
+msgstr "获得红矮人勇气勋章"
+
+msgid "Dubbed Crusaders by Old Valia of Toad Meadow"
+msgstr "被蟾蜍草地的老瓦莉娅封为十字军"
+
+msgid "Master of Golems"
+msgstr "魔像之主"
+
+msgid "Cheered Dimitri"
+msgstr "让季米特里振作起来"
+
+msgid "Saved the Queen"
+msgstr "救出了女王"
+
+msgid "Chosen One"
+msgstr "天选之人"
+
+msgid "Defeated Sheltem"
+msgstr "击败了谢尔特姆"
+
+msgid "Defeated Lord Xeen"
+msgstr "击败了辛恩领主"
+
+msgid "Awakened the Fire Sleeper"
+msgstr "唤醒了火之沉睡者"
+
+msgid "Awakened the Air Sleeper"
+msgstr "唤醒了风之沉睡者"
+
+msgid "Awakened the Earth Sleeper"
+msgstr "唤醒了土之沉睡者"
+
+msgid "Awakened the Water Sleeper"
+msgstr "唤醒了水之沉睡者"
+
+msgid "Rescued Prince Roland"
+msgstr "救出了罗兰王子"
+
+msgid "Made Xeen One World"
+msgstr "使辛恩合为一个世界"
+
+msgid "Dubbed Ghostslayers Extraordinaire by Mayor Randon of Winterkill"
+msgstr "被冬杀镇的兰登镇长封为超凡猎鬼者"
+
+msgid "Named the Sphinx"
+msgstr "为狮身人面像起了名字"
+
+msgid "Loremaster of Worms"
+msgstr "蠕龙学大师"
+
+msgid "Loremaster of Lizards"
+msgstr "蜥龙学大师"
+
+msgid "Loremaster of Serpents"
+msgstr "蛇龙学大师"
+
+msgid "Loremaster of Drakes"
+msgstr "幼龙学大师"
+
+msgid "Loremaster of Dragons"
+msgstr "巨龙学大师"
+
+msgid "Taxman Emeritus"
+msgstr "荣誉税务官"
+
+msgid "A member of the Drawkcab"
+msgstr "倒序僧一员"
+
+msgid "Helped Dreyfus, High Priest of Mok"
+msgstr "帮助了莫克大祭司德赖弗斯"
+
+msgid "Disciple of Bark"
+msgstr "树皮门徒"
+
+msgid "Royal Taste Tester to Bosco the Dwarf King"
+msgstr "矮人王博斯科的御用试吃官"
+
+msgid "Liberated Lakeside"
+msgstr "解放了湖畔镇"
+
+msgid "Dubbed Super Explorer by the statue on Cloudreach's highest rock"
+msgstr "被云巅最高岩石上的雕像封为超级探险家"
+
+msgid "Clemon the Dead"
+msgstr "亡者克莱蒙"
+
+msgid "Saxar the Permanent"
+msgstr "永恒者萨克萨"
+
+msgid "Morgrath the Grey"
+msgstr "灰袍莫格拉斯"
+
+msgid "Ulvane the Unrepentant"
+msgstr "不悔者乌尔瓦内"
+
+msgid "Iron Vithnipravad"
+msgstr "铁甲维斯尼普拉瓦德"
+
+msgid "Argonax"
+msgstr "阿尔戈纳克斯"
+
+msgid "Mr Wobbles"
+msgstr "沃布尔斯先生"
+
+msgid "Mrs Wobbles"
+msgstr "沃布尔斯夫人"
+
+msgid "Chief Librarian"
+msgstr "首席图书管理员"
+
+msgid "Gong Sentry"
+msgstr "守锣卫兵"
+
+msgid "Schoolmistress"
+msgstr "女教师"
+
+msgid "Goblin Warden"
+msgstr "地精看守"
