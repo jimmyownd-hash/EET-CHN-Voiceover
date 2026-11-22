@@ -1,0 +1,20 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenYAMM\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh-cn\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Might and Magic IV and V"
+msgstr "魔法门 IV 与 V"
+
+msgid "Xeen (alpha)"
+msgstr "辛恩（测试版）"
+
+msgid "Begin in Vertigo"
+msgstr "从眩晕镇开始"
+
+msgid "Xeen"
+msgstr "辛恩"
