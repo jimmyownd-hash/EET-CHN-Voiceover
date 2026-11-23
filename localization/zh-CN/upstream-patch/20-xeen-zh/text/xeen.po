@@ -32705,7 +32705,7 @@ msgid "Leaves. Leaves and a pigeon."
 msgstr "叶子。叶子和一只鸽子。"
 
 msgid "Paid up front, because in Rivercity the customer is gone by morning, and so is the sword."
-msgstr "先交钱，后拿货。在河城，客人天一亮就没影了，剑也跟着没影了。"
+msgstr "先交钱，后拿货。在河城，客人天一亮就没影了，连剑带人毛都不剩。"
 
 msgid "The robbers under the bridge have never robbed this bank. We pay them not to. It's called insurance."
 msgstr "桥下的强盗从来没抢过这家银行。我们付钱让他们别抢。这叫保险。"
