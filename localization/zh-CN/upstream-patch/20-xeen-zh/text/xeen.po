@@ -32804,7 +32804,7 @@ msgid "Well of Speed. The water is gone from the cup before you know you have dr
 msgstr "速度之井。杯里的水在你意识到自己喝下去之前就没了。（速度+2，永久）"
 
 msgid "A note nailed by the pay chest: \"The dragons came south. Pay owed to the end of the month. Nobody stays.\""
-msgstr "付款箱旁钉着一张字条：“龙往南去了。工钱欠到月底。没人留下。”"
+msgstr "付款箱旁钉着一张字条：“龙南下了。工钱只结到月底。人都跑光了。”"
 
 msgid "A demon and a devil, carved in black rock. The demon's eye sockets are empty. Their skulls are not here; someone has scratched an arrow pointing inside."
 msgstr "一个恶魔和一个魔鬼，雕刻在黑岩上。恶魔的眼窝是空的。它们的头骨不在这里；有人刻了一个指向里面的箭头。"
@@ -33188,7 +33188,7 @@ msgid "There's a woman on a rock in the lagoon, complaining about her legs. I wr
 msgstr "泻湖的一块岩石上有个女人，在抱怨她的腿。我记了下来。应该有人去问问她为什么。"
 
 msgid "Ebenezer taxed my lean-to. I told him the roof was a gift from the rain. He taxed the rain."
-msgstr "埃比尼泽对我的窝棚征税。我说屋顶是雨送的礼物。他就对雨征税。"
+msgstr "埃比尼泽给我的窝棚上税。我说屋顶是老天爷赏的，他当场就给老天爷开了税单。"
 
 msgid "The dials are set to the right hour now. Which one? All of them. That's the trick of a sundial."
 msgstr "转盘现在拨到了正确的时间。哪个时间？所有的时间。这就是日晷的诀窍。"
