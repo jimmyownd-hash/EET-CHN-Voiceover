@@ -19265,7 +19265,7 @@ msgstr "竖 47：进入需要一枚护身符。答案？"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_fd04.lua:372
 msgid "Southern Sphinx"
-msgstr "Southern Sphinx"
+msgstr "南方狮身人面像"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_fd04.lua:372
 msgid "Southern Sphinx."
@@ -19282,7 +19282,7 @@ msgstr "Sphinx."
 #: assets_dev/worlds/xeen/events/maps/xeen_fd04.lua:372 assets_dev/worlds/xeen/events/maps/xeen_x6.lua:269 assets_dev/worlds/xeen/events/maps/xeen_x6.lua:375
 #: assets_dev/worlds/xeen/events/maps/xeen_x6.lua:380 assets_dev/worlds/xeen/events/maps/xeen_x6.lua:391 assets_dev/worlds/xeen/events/maps/xeen_x6.lua:53
 msgid "The Southern Sphinx"
-msgstr "The Southern Sphinx"
+msgstr "南方狮身人面像"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_fd04.lua:372
 msgid "The Southern Sphinx."
@@ -34234,3 +34234,6 @@ msgstr "3 颗宝石换个性 +2？"
 
 msgid "5 gems for +3 Speed?"
 msgstr "5 颗宝石换速度 +3？"
+
+msgid "Vertigo Meadows"
+msgstr "弗蒂戈草甸"
