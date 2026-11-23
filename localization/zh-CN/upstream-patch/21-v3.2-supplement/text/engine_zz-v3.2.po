@@ -1,0 +1,35 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: zh-CN\n"
+
+msgid "UNREACHABLE"
+msgstr "无法到达"
+
+msgid "THREAT"
+msgstr "威胁"
+
+msgid "Purged"
+msgstr "已肃清"
+
+msgid "Beacons"
+msgstr "信标"
+
+msgid "Web of Worlds"
+msgstr "世界之网"
+
+msgid "{signal}: unreachable"
+msgstr "{signal}：无法到达"
+
+msgid "Travel to {planet}: {beacon}"
+msgstr "前往{planet}：{beacon}"
+
+msgid "No beacon is lit on {planet}"
+msgstr "{planet}上没有点亮的信标"
+
+msgid "Town Portal: {world}"
+msgstr "城镇传送：{world}"
+
+msgid "The beacon does not answer"
+msgstr "信标没有回应"
+

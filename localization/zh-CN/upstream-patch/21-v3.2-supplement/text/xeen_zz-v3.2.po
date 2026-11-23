@@ -1,0 +1,62 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: zh-CN\n"
+
+msgid "The Guild of Spirit takes all who seek."
+msgstr "灵魂公会接纳所有寻求者。"
+
+msgid "The Fire Guild of Vertigo. Open to all, and mind the curtains."
+msgstr "弗蒂戈镇火焰公会。人人都能入会，当心窗帘。"
+
+msgid "The guild was closed to newcomers. Then I fell asleep with the roll book open. (wink, wink) Go on in."
+msgstr "公会本来不收新人。可我睡着的时候，名册就那么摊开着。（挤眉弄眼）进去吧。"
+
+msgid "On the roll? Then off to the guild row."
+msgstr "名字登记了？那就去公会街吧。"
+
+msgid "Vern, clerk of the guild roll. Every name goes on it these days."
+msgstr "弗恩，公会名册的书记员。如今每个名字都得上册。"
+
+msgid "The Guild of Body. Come in, all of you."
+msgstr "肉体公会。你们都进来吧。"
+
+msgid "Back for a lesson?"
+msgstr "又来上课？"
+
+msgid "The roll's open. My lessons are not free."
+msgstr "名册开着呢。我的课可不免费。"
+
+msgid "The Guild of Mind keeps its roll here. Your names are on it already."
+msgstr "心智公会的名册在这儿。你们的名字早就在上面了。"
+
+msgid "You fall into the void between the stars... and wake on the rim."
+msgstr "你坠入群星之间的虚空……醒来时已躺在世界边缘。"
+
+msgid "The roll's open to anyone since the slimes came. No dues. Off to the guild row."
+msgstr "史莱姆来了以后，名册对谁都开着。不收会费。去公会街吧。"
+
+msgid "The guild is closed to all newcomers, so I can't enter your name on the rolls. But I sleep a lot, and the roll book lies open. (wink, wink) Your names are in it now."
+msgstr "公会不收任何新人，所以我没法把你们的名字登记上去。不过我爱打瞌睡，名册就那么敞着。（挤眉弄眼）你们的名字现在已经在上面了。"
+
+msgid "Southern Sphinx"
+msgstr "南方狮身人面像"
+
+msgid "The Southern Sphinx"
+msgstr "南方狮身人面像"
+
+msgid "Vertigo Meadows"
+msgstr "弗蒂戈草甸"
+
+msgid "The Orc Caves' back gate"
+msgstr "兽人洞穴的门"
+
+msgid "Ebenezer taxed my lean-to. I told him the roof was a gift from the rain. He taxed the rain."
+msgstr "埃比尼泽给我的窝棚上税。我说屋顶是老天爷赏的，他当场就给老天爷开了税单。"
+
+msgid "A note nailed by the pay chest: \"The dragons came south. Pay owed to the end of the month. Nobody stays.\""
+msgstr "付款箱旁钉着一张字条：“龙南下了。工钱只结到月底。人都跑光了。”"
+
+msgid "Paid up front, because in Rivercity the customer is gone by morning, and so is the sword."
+msgstr "先交钱，后拿货。在河城，客人天一亮就没影了，连剑带人毛都不剩。"
+
