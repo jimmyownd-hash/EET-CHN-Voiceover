@@ -22428,7 +22428,7 @@ msgstr "龙洞"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x7.lua:172 assets_dev/worlds/xeen/events/maps/xeen_x7.lua:178
 msgid "The Orc Caves' back gate"
-msgstr "兽人洞穴的后门"
+msgstr "兽人洞穴的门"
 
 #: assets_dev/worlds/xeen/events/maps/xeen_x7.lua:174
 msgid "A heavy door of logs in the hillside, barred from within."
