@@ -33,3 +33,6 @@ msgstr "城镇传送：{world}"
 msgid "The beacon does not answer"
 msgstr "信标没有回应"
 
+
+msgid "This month's bounty is on a %s.\nKill it and return before the end of the month to collect the %lu gold reward."
+msgstr "这个月的悬赏目标是%s。\n在月底前杀掉它并回来，领取 %lu 金币的赏金。"
