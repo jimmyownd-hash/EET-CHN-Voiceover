@@ -1,3 +1,9 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: zh-CN\n"
+
+msgid "UNREACHABLE"
 msgid "I used to pay 100 gold for a week of work. Then the robbers under the bridge took every job in town and paid themselves. There's nothing left for honest hands."
 msgstr "我以前一周工钱给一百金币。后来桥下的强盗把镇上的活全包了，还自己给自己发工钱。老实人什么都没剩下。"
 
