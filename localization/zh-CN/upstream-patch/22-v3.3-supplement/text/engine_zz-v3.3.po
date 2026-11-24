@@ -1,0 +1,47 @@
+msgid "New loot pouch"
+msgstr "新战利品袋"
+
+msgid "What the party picks up or loots goes to the leather pouch tab, unless it has a pouch of its own. Move what you want to keep into a bag; Sell trash in a shop picks the rest."
+msgstr "队伍拾取或搜刮到的东西会放进皮袋标签页，自带袋子的除外。把想留的东西移进背包，其余的可在商店用“出售垃圾”卖掉。"
+
+msgid "Show unidentified items (hold, inventory)"
+msgstr "显示未鉴定物品（按住，物品栏）"
+
+msgid "Show Unidentified Items"
+msgstr "显示未鉴定物品"
+
+msgid "This shop buys nothing of the new loot."
+msgstr "这家商店不收任何新战利品。"
+
+msgid "New loot"
+msgstr "新战利品"
+
+msgid "New loot sorted"
+msgstr "新战利品已分拣"
+
+msgid "New loot: what you leave here is trash"
+msgstr "新战利品：留在这里的都是垃圾"
+
+msgid "Adds {count} drink"
+msgstr "增加 {count} 杯饮品"
+
+msgid "{ground} picked up: {kept} kept, {sold} sold"
+msgstr "拾取 {ground} 件：保留 {kept} 件，卖出 {sold} 件"
+
+msgid "{satchels} emptied, {ground} picked up: {kept} kept, {sold} sold"
+msgstr "清空 {satchels} 个袋子，拾取 {ground} 件：保留 {kept} 件，卖出 {sold} 件"
+
+msgid "Known worlds (Town Portal)"
+msgstr "已知世界（城镇传送）"
+
+msgid "Cleansed"
+msgstr "已肃清"
+
+msgid "Infested"
+msgstr "被侵扰"
+
+msgid "CLEANSED"
+msgstr "已肃清"
+
+msgid "INFESTED"
+msgstr "被侵扰"

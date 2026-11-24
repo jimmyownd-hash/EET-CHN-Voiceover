@@ -1,0 +1,23 @@
+msgid "I used to pay 100 gold for a week of work. Then the robbers under the bridge took every job in town and paid themselves. There's nothing left for honest hands."
+msgstr "我以前一周工钱给一百金币。后来桥下的强盗把镇上的活全包了，还自己给自己发工钱。老实人什么都没剩下。"
+
+msgid "This Phirna plant has been dug up already. It will grow back in time."
+msgstr "这株菲尔娜植物已经被挖过了，过一阵会重新长出来。"
+
+msgid "The skull spits out three scrolls of Mind Blast. 'Pleasure doing business. Your nose is crooked.'"
+msgstr "头骨吐出三卷心灵冲击卷轴。“合作愉快。你的鼻子是歪的。”"
+
+msgid "\"Feed me!\" the skull demands, and clacks its jaw. 'Three scrolls of Mind Blast for it, dearie. One gem. A shiny one. And do something about that face.'"
+msgstr "“喂我！”头骨要求道，咔嗒咔嗒地动着下颚。“换三卷心灵冲击卷轴，亲爱的。一颗宝石。要闪亮的。还有，把那张脸收拾收拾。”"
+
+msgid "The skull spits out three scrolls of Heal. 'Pleasure doing business. Your nose is crooked.'"
+msgstr "头骨吐出三卷治疗卷轴。“合作愉快。你的鼻子是歪的。”"
+
+msgid "The skull clacks its jaw. 'Three scrolls of Heal, dearie? One gem. A shiny one. And do something about that face.'"
+msgstr "头骨咔嗒动着下颚。“三卷治疗卷轴吗，亲爱的？一颗宝石。要闪亮的。还有，把那张脸收拾收拾。”"
+
+msgid "The skull spits out three scrolls of Sparks. 'Pleasure doing business. Your nose is crooked.'"
+msgstr "头骨吐出三卷火花卷轴。“合作愉快。你的鼻子是歪的。”"
+
+msgid "The skull clacks its jaw. 'Three scrolls of Sparks, dearie? One gem. A shiny one. And do something about that face.'"
+msgstr "头骨咔嗒动着下颚。“三卷火花卷轴吗，亲爱的？一颗宝石。要闪亮的。还有，把那张脸收拾收拾。”"
