@@ -28,7 +28,8 @@ msgid "New loot: what you leave here is trash"
 msgstr "新战利品：留在这里的都是垃圾"
 
 msgid "Adds {count} drink"
-msgstr "增加 {count} 杯饮品"
+msgid_plural "Adds {count} drinks"
+msgstr[0] "增加 {count} 杯饮品"
 
 msgid "{ground} picked up: {kept} kept, {sold} sold"
 msgstr "拾取 {ground} 件：保留 {kept} 件，卖出 {sold} 件"
