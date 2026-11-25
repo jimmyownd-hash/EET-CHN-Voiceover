@@ -1,0 +1,7 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: zh_CN\n"
+
+msgid "Train {levels} levels to level {level} for {price} gold"
+msgstr "连续训练 {levels} 级，升到 {level} 级，共 {price} 金币"

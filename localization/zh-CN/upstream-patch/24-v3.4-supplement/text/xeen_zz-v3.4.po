@@ -1,0 +1,163 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: zh_CN\n"
+
+msgid "Crazed sprites stole Danulf the Faery King's Wand of Faery Magic. Their great nest of twigs lies in the hollow at the heart of the woods, west of his ring of stones."
+msgstr "疯狂的小精灵偷走了精灵王达努夫的精灵魔法杖。它们用树枝搭的大巢在森林中央的洼地里，就在他那圈石阵的西边。"
+
+msgid "Orothin the Hermit lost his bone whistle in the mud at the edge of Pitchfork Creek's shallows, upstream of Vertigo's bridge, west of the town."
+msgstr "隐士奥罗辛把他的骨哨掉进了干草叉溪浅滩边的泥里，在弗蒂戈镇那座桥的上游，镇子西边。"
+
+msgid "Goblin-eared boy"
+msgstr "长着地精耳朵的男孩"
+
+msgid "Goblin-eared girl"
+msgstr "长着地精耳朵的女孩"
+
+msgid "Marla"
+msgstr "玛拉"
+
+msgid "River Pilot"
+msgstr "河道领航员"
+
+msgid "Toad Meadow Child"
+msgstr "蟾蜍草地的孩子"
+
+msgid "Nystor's Mate"
+msgstr "尼斯特的大副"
+
+msgid "Rudd"
+msgstr "拉德"
+
+msgid "Downriver?"
+msgstr "顺流而下？"
+
+msgid "Two boats a week down to Rivercity, now nobody's throwing rocks at them. I still duck at the bend."
+msgstr "现在一周两班船下河城，没人再朝船扔石头了。到了那个河湾我还是会下意识缩脖子。"
+
+msgid "Don't stare at my ears!"
+msgstr "别盯着我的耳朵看！"
+
+msgid "Still goblin ears. Still not going home."
+msgstr "还是地精耳朵。还是不回家。"
+
+msgid "Back to Rivercity?"
+msgstr "回河城？"
+
+msgid "The Captain brings them up the creek. I row them back down. Rivercity, four days a week."
+msgstr "船长把船开上溪来，我再划回下游去。去河城，一周四天。"
+
+msgid "The Sprites still possess my Wand. Try harder. Their nest lies in the hollow at the heart of the woods, west of my ring of stones."
+msgstr "那些小精灵还拿着我的魔杖。再加把劲。它们的巢在森林中央的洼地里，就在我那圈石阵的西边。"
+
+msgid "A terrible thing has happened. My Wand of Faery Magic has been stolen by the Sprites. Without the Wand in my possession, my powers of magic are reduced. Now that the Sprites possess my Wand they are crazed with power, attacking anyone in the forest. Their nest lies in the hollow at the heart of the woods, west of my ring of stones. If you return my Wand I will reward you handsomely."
+msgstr "发生了可怕的事。我的精灵魔法杖被小精灵偷走了。没有魔杖在手，我的魔力减弱了。现在小精灵拿到了我的魔杖，它们因力量而发狂，攻击森林里的任何人。它们的巢在森林中央的洼地里，就在我那圈石阵的西边。如果你们归还我的魔杖，我会重重酬谢。"
+
+msgid "No luck finding the whistle? Well, if you find it be sure to bring it back to me. I'm sure I dropped it at the edge of the shallows of Pitchfork Creek, upstream of the bridge, just west of the town."
+msgstr "还没找到哨子？好吧，要是找到了一定给我送回来。我敢肯定是掉在干草叉溪的浅滩边了，在桥的上游，就在镇子西边。"
+
+msgid "A couple of years ago I built a statue on each of the two islands near here. The statues are supposed to teach spellcasters the cure poison and cure disease spells, but I lost the bone whistle needed to activate them. I think I dropped it at the edge of the shallows of Pitchfork Creek, upstream of Vertigo's bridge, just west of the town. If you can find my whistle I will activate the statues."
+msgstr "几年前，我在附近的两座岛上各建了一座雕像。这些雕像本应教施法者解毒和治疗疾病的法术，但我丢了启动它们所需的骨哨。我想我是把它掉在干草叉溪的浅滩边了，在弗蒂戈镇那座桥的上游，就在镇子西边。如果你们能找到我的哨子，我就会激活雕像。"
+
+msgid "The Queen Rat is still alive. I can hear her awful chittering through the walls. No reward for you yet! The culvert to the Rat Queen's den is flooded. Its sluice is worked from the sluice house, at the far north-west of the upper level."
+msgstr "鼠后还活着。我能隔着墙听到她那可怕的吱吱声。还不能给你们奖励！通往鼠后巢穴的涵洞被水淹了。它的水闸在水闸房里操作，就在上层的最西北角。"
+
+msgid "Hi. I live down here. There sure are a lot of rats. Too many for me to kill. Maybe you could kill the Queen Rat for me. I'll give you something if you do. The culvert to the Rat Queen's den is flooded. Its sluice is worked from the sluice house, at the far north-west of the upper level."
+msgstr "嗨。我住在这下面。这里的老鼠可真多，多到我杀不完。也许你们能帮我杀了鼠后。要是你们做到了，我会给你们点东西。通往鼠后巢穴的涵洞被水淹了。它的水闸在水闸房里操作，就在上层的最西北角。"
+
+msgid "Vertigo. For weeks you dreamt of an old man in a dark tower who begged you to finish \"the sword\". Then a bolt from the sky destroyed Newcastle, and you woke here among its survivors. Mayor Gunther asks your help: slimes and doom bugs pour into the town from Joe's warehouse. The town hall is on the main street."
+msgstr "弗蒂戈镇。几周来，你一直梦见一个黑塔里的老人，求你完成“那把剑”。然后一道天降闪电摧毁了纽卡斯尔，你在这里醒来，身边是它的幸存者。冈瑟镇长请求你们帮忙：史莱姆和厄运虫正从乔的仓库涌进镇里。市政厅在主街上。"
+
+msgid "\"One gem for three points,\" the skull says. \"Down here prices are honest. Up there you get two.\""
+msgstr "“一颗宝石换三点，”骷髅说。“下面价格公道。上面只给两点。”"
+
+msgid "\"One gem,\" the great skull says, \"and five points of Might, Endurance or Accuracy. Choose. I don't do refunds.\""
+msgstr "“一颗宝石，”巨大的骷髅说，“换五点力量、耐力或准确。选一个。恕不退款。”"
+
+msgid "\"One gem,\" the skull says, \"and I'll make you two better than you are. Once. I'm not a charity.\""
+msgstr "“一颗宝石，”骷髅说，“我让你比现在强上两点。仅此一次。我可不是慈善机构。”"
+
+msgid "Below the step the cloud thins over the Tower of High Magic. Its wards let down only those who hold the Enchanted Key from the Cave of Illusion."
+msgstr "台阶下方，高等魔法之塔上空的云层变薄了。塔的结界只放持有幻象洞穴魔法钥匙的人下去。"
+
+msgid "Welcome to Vertigo. Sadly, most of the population has left because of the pests. They are pouring out of Joe's warehouse, across the bridge, and into my streets. A couple years ago I hired Joe the exterminator to rid the town of this menace, but the problem seems to be getting worse. Perhaps you could help clear it out."
+msgstr "欢迎来到弗蒂戈镇。很遗憾，因为害虫，大部分居民都离开了。它们从乔的仓库涌出来，过了桥，涌进我的街道。几年前我雇了灭虫人乔来清除这个祸害，但问题似乎越来越严重。也许你们能帮忙清理掉它们。"
+
+msgid "'I'm not going home with goblin ears!' The boy will not budge. 'The witches' Alacorn cures anything. It's on a pedestal on the plank bridge over the cauldron shaft, three floors up.'"
+msgstr "“我不要带着地精耳朵回家！”男孩一动不动。“女巫的阿拉科恩能治好一切。它在三层楼上，摆在大锅竖井上方木板桥的台座上。”"
+
+msgid "The ring turns the lock and the cage rattles up its chain. The boy steps out and stops: 'Not with these ears. Mum would die. The witches' Alacorn could cure them. It's on a pedestal on the plank bridge over the cauldron shaft, three floors up.'"
+msgstr "戒指转动了锁，笼子顺着链条哗啦啦升了上去。男孩走出来，又停住了：“带着这对耳朵可不行。妈妈会吓死的。女巫的阿拉科恩能治好它们。它在三层楼上，摆在大锅竖井上方木板桥的台座上。”"
+
+msgid "Ears"
+msgstr "耳朵"
+
+msgid "Round ears! Pink ones! Mum's going to cry anyway."
+msgstr "圆耳朵！粉红色的！反正妈妈还是会哭的。"
+
+msgid "Woven twigs and straw, full of blue speckled sprite eggs, and something glinting among them: a slim wand of white wood, Danulf's Wand of Faery Magic."
+msgstr "树枝和稻草编成的巢，里面满是蓝色斑点的小精灵蛋，其中有东西在闪光：一根白木的纤细魔杖，达努夫的精灵魔法杖。"
+
+msgid "Not going home with these. The witches' Alacorn cures anything. It's on a pedestal on the plank bridge over the cauldron shaft, three floors up. Bring it and touch my ears with it."
+msgstr "带着这对耳朵我不回家。女巫的阿拉科恩能治好一切。它在三层楼上，摆在大锅竖井上方木板桥的台座上。把它拿来，碰一碰我的耳朵。"
+
+msgid "Get me out! The warden's keys, the big ring. He keeps it in his strongbox, there by his table. Then I'll tell you about my ears."
+msgstr "放我出去！看守的钥匙，那个大环。他放在他的保险箱里，就在他桌子旁边。然后我再跟你们说我耳朵的事。"
+
+msgid "Sluice"
+msgstr "水闸"
+
+msgid "The culvert to the Rat Queen's den is flooded. Its sluice is worked from the sluice house, at the far north-west of the upper level."
+msgstr "通往鼠后巢穴的涵洞被水淹了。它的水闸在水闸房里操作，就在上层的最西北角。"
+
+msgid "Nystor's Landing"
+msgstr "尼斯特码头"
+
+msgid "Sprite nest"
+msgstr "小精灵巢"
+
+msgid "You turn the sundial. It is set to {reading}."
+msgstr "你转动日晷。它拨到了{reading}。"
+
+msgid "Scorched planks. The barbarians will not camp here again."
+msgstr "烧焦的木板。野蛮人再也不会在这里扎营了。"
+
+msgid "The burnt outpost"
+msgstr "被烧毁的前哨"
+
+msgid "The clouds answer to the Head Witch. While she lives, they will not bear you down."
+msgstr "云听命于首领女巫。只要她还活着，云就不会载你们下去。"
+
+msgid "A board, the words scratched deep: 'THE SKULLS TAKE GEMS, NOT GOLD: ONE A HEAD FOR THEIR GIFTS. THE GREAT ONE AT THE BOTTOM WANTS TEN FOR HIS KEY - KEEP TEN. THE ECHO CAVE PAST THE GUARDIANS' POST KEEPS SOME. THE PLUG IN THE SLUICE LETS THE WATER OUT, IF YOU ARE STRONG.'"
+msgstr "一块板，字刻得很深：“头骨要宝石，不要金子：每个头骨的馈赠一颗。底下那个大的要十颗换他的钥匙——留十颗。守卫哨之后的回声洞里留着一些。水闸里的塞子能把水放出去，如果你们够强壮。”"
+
+msgid "The great skull takes one of your gems and grins wider. +5 {stat} (permanent)."
+msgstr "巨大的骷髅收下你们一颗宝石，笑得更开了。{stat} +5（永久）。"
+
+msgid "One gem for +5 to Might, Endurance or Accuracy?"
+msgstr "一颗宝石换力量、耐力或准确 +5？"
+
+msgid "The skull's jaw clacks shut on one gem. +3 Intellect (permanent)."
+msgstr "头骨的下颚咔嗒一声咬住了一颗宝石。+3 智力（永久）。"
+
+msgid "One gem for +3 Intellect?"
+msgstr "一颗宝石换智力 +3？"
+
+msgid "The skull's jaw clacks shut on one gem. +2 Luck (permanent)."
+msgstr "头骨的下颚咔嗒一声咬住了一颗宝石。+2 运气（永久）。"
+
+msgid "One gem for +2 Luck?"
+msgstr "一颗宝石换运气 +2？"
+
+msgid "The skull's jaw clacks shut on one gem. +2 Personality (permanent)."
+msgstr "头骨的下颚咔嗒一声咬住了一颗宝石。+2 个性（永久）。"
+
+msgid "One gem for +2 Personality?"
+msgstr "一颗宝石换个性 +2？"
+
+msgid "The skull's jaw clacks shut on one gem. +3 Speed (permanent)."
+msgstr "头骨的下颚咔嗒一声咬住了一颗宝石。+3 速度（永久）。"
+
+msgid "One gem for +3 Speed?"
+msgstr "一颗宝石换速度 +3？"
